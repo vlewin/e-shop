@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
+    title= content_for?(:title) ? yield(:title) : 'Optim Handel'
+    meta name="description" content="#{content_for?(:description) ? yield(:description) : 'Optim Handel'}"
+    == stylesheet_link_tag "application", :media => 'all', 'data-turbolinks-track' => true
+    == javascript_include_tag 'application', 'data-turbolinks-track' => true
+    == csrf_meta_tags
+  / body
+  /   == render 'layouts/navigation'
+  /   .container
+  /     == render 'layouts/messages'
+  /     == yield
+
+  body
+    header
+      == render 'layouts/navigation'
+    main.container
+      == render 'layouts/messages'
+      == yield
+
+    footer
+      .container
+        hr.featurette-divider
+        p.pull-right
+          a href="#"  Back to top
+        p
+          | &copy; 2014 Company, Inc. ·
+          a href="#"  Privacy
+          | ·
+          a href="#"  Terms

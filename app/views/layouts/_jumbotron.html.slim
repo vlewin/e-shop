@@ -1,0 +1,6 @@
+.jumbotron
+  h1 Home index
+  p This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML.
+  p To see the difference between static and fixed top navbars, just scroll.
+  - unless user_signed_in?
+    p= link_to 'Sign up now', new_user_registration_path, class: 'btn-lg btn-primary'
