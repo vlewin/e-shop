@@ -1,4 +1,4 @@
-e-shop
+E-Shop training application
 ======
 
-Training application for new ruby on rails gems and technologies
+Playground for new ruby on rails technologies and gems
