@@ -7,14 +7,28 @@
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to 'Optim Handel', root_path, class: 'navbar-brand'
+      = link_to 'E-Shop', root_path, class: 'navbar-brand'
 
     .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li.active
-          a href="#"  Link1
-        li
-          a href="#"  Link2
-
       ul.nav.navbar-nav.navbar-right
         == render 'layouts/navigation_links'
+
+  - if user_signed_in?
+    .container
+      - if current_user.admin?
+          ul.nav.nav-tabs
+            li.active
+              a href="#"  Categories
+            li
+              a href="#"  Products
+            li
+              a href="#"  Orders
+      - else
+          ul.nav.nav-tabs
+            li.active
+              a href="#"  Product category 1
+            li
+              a href="#"  Product category 2
+            li
+              a href="#"  Product category 3
+

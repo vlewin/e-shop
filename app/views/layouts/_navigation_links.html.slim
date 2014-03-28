@@ -7,7 +7,7 @@
 
 - if user_signed_in?
   p.navbar-text.navbar-right
-    = link_to current_user.name, edit_user_registration_path, class: 'navbar-link'
+    = link_to current_user.name, user_path(current_user), class: 'navbar-link'
 - else
   p.navbar-text.navbar-right
     = link_to 'Sign up', new_user_registration_path, class: 'navbar-link'
