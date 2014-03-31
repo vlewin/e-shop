@@ -19,5 +19,15 @@ module OptimHandel
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    config.generators do |g|
+      g.helper false
+      g.stylesheets false
+      g.assets false
+      g.view_specs false
+      g.template_engine :slim
+      g.test_framework :minitest, :spec => true, :fixture => false
+      g.fixture_replacement :factory_girl
+    end
   end
 end
