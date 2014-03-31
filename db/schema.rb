@@ -11,7 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328094148) do
+ActiveRecord::Schema.define(version: 20140331195621) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.integer  "part_number"
+    t.string   "title"
+    t.string   "name"
+    t.string   "description"
+    t.string   "amount"
+    t.decimal  "price",       precision: 10, scale: 2
+    t.decimal  "vat",         precision: 10, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "category_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
