@@ -1,0 +1,11 @@
+h3 Users
+
+table
+  thead
+    th= "Username"
+    th= "Last signup"
+
+  - @users.each do |user|
+    tr
+      td= link_to user.name, user
+      td= "#{user.created_at.to_date}"
