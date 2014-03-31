@@ -54,7 +54,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    columnize (0.3.6)
     commonjs (0.2.7)
     cucumber (1.3.12)
       builder (>= 2.1.2)
@@ -69,12 +68,6 @@ GEM
       rails (>= 3.0.0)
     database_cleaner (1.0.1)
     debug_inspector (0.0.2)
-    debugger (1.6.5)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.2.0)
-      debugger-ruby_core_source (~> 1.3.1)
-    debugger-linecache (1.2.0)
-    debugger-ruby_core_source (1.3.1)
     devise (3.2.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -123,8 +116,6 @@ GEM
     minitest-spec-rails (5.0.2)
       minitest (~> 5.0)
       rails (>= 4.1.0.beta, < 5.0)
-    minitest-wscolor (0.0.3)
-      minitest (>= 2.3.1)
     multi_json (1.9.2)
     multi_test (0.1.1)
     nokogiri (1.6.1)
@@ -210,7 +201,6 @@ DEPENDENCIES
   capybara
   cucumber-rails
   database_cleaner (= 1.0.1)
-  debugger
   devise
   factory_girl_rails
   font-awesome-less
@@ -220,7 +210,6 @@ DEPENDENCIES
   launchy
   less-rails
   minitest-spec-rails
-  minitest-wscolor
   puma
   pundit
   quiet_assets

@@ -33,7 +33,8 @@ end
 group :development, :test do
   gem 'awesome_print'
   gem 'factory_girl_rails'
-  gem 'debugger'
+  # gem 'debugger'
+  # gem 'minitest', branch: 'master'
 end
 
 group :test do
@@ -42,5 +43,5 @@ group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'launchy'
   gem 'minitest-spec-rails', branch: 'master'
-  gem 'minitest-wscolor'
+  # gem 'minitest-wscolor'
 end
