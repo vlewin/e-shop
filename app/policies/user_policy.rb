@@ -17,20 +17,22 @@ class UserPolicy
   end
 
   def index?
-    puts "***************************** INDEX"
+    puts "*** #{self.class} index? => #{@user.admin?}"
     @user.admin?
   end
 
   def show?
+    puts "*** #{self.class} show?"
     @user.admin? || scope.exists?
   end
 
   def update?
-    puts "***************************** UPDATE"
+    puts "*** #{self.class} update?"
     @user.admin?
   end
 
   def destroy?
+    puts "*** #{self.class} destroy?"
     @user.admin?
   end
 

@@ -1,22 +1,20 @@
 class ProductPolicy
   attr_reader :user, :record
 
-  # class Scope < Struct.new(:user, :scope)
-  #   def resolve
-  #     if user.admin?
-  #       scope.all
-  #     else
-  #       scope.where(:id => user.id)
-  #     end
-  #   end
-  # end
-
   def initialize(user, record)
     @user = user
     @record = record
   end
 
+  def edit?
+    @user.admin?
+  end
+
   def new?
+    @user.admin?
+  end
+
+  def create?
     @user.admin?
   end
 
@@ -27,9 +25,5 @@ class ProductPolicy
   def destroy?
     @user.admin?
   end
-
-  # def scope
-  #   Pundit.policy_scope!(@user, @record.class)
-  # end
-
 end
+

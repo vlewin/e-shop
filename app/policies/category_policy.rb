@@ -1,39 +1,32 @@
-class ProductPolicy
+class CategoryPolicy
   attr_reader :user, :record
-
-  # class Scope < Struct.new(:user, :scope)
-  #   def resolve
-  #     if user.admin?
-  #       scope.all
-  #     else
-  #       scope.where(:id => user.id)
-  #     end
-  #   end
-  # end
 
   def initialize(user, record)
     @user = user
     @record = record
   end
 
-  def index?
-    puts "***************************** INDEX"
+  def edit?
+    puts "*** #{self.class} edit? => #{@user.admin?}"
+    @user.admin?
   end
 
   def new?
+    puts "*** #{self.class} new? => #{@user.admin?}"
+    @user.admin?
+  end
+
+  def create?
     @user.admin?
   end
 
   def update?
+    puts "*** #{self.class} update? => #{@user.admin?}"
     @user.admin?
   end
 
   def destroy?
+    puts "*** #{self.class} destroy? => #{@user.admin?}"
     @user.admin?
   end
-
-  # def scope
-  #   Pundit.policy_scope!(@user, @record.class)
-  # end
-
 end
