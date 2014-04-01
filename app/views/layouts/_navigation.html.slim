@@ -1,5 +1,5 @@
 / Navigation styled for Bootstrap 3.0
-.navbar.navbar-default.navbar-fixed-top role="navigation"
+.navbar.navbar-static-top.bs-docs-nav.navbar-default role="navigation"
   .container
     .navbar-header
       button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
@@ -15,22 +15,30 @@
 
   - if user_signed_in?
     .container
-      - if current_user.admin?
-          ul.nav.nav-tabs
-            li.active
-              = link_to 'Categories', admin_categories_path
-            li
-              = link_to 'Products', admin_products_path
-            li
-              a href="#"  Orders
-      - else
-          ul.nav.nav-tabs
-            li.active
-              a href="#"  Product category 1
-            li
-              a href="#"  Product category 2
-            li
-              a href="#"  Product category 3
+      ul.nav.nav-tabs
+        li class=('active' if controller_name == "categories")
+          = link_to 'Categories', categories_path
+        li class=('active' if controller_name == "products")
+          = link_to 'Products', products_path
+        li class=('active' if controller_name == "users")
+          = link_to 'Users', users_path
+
+    / - if current_user.admin?
+      /     ul.nav.nav-tabs
+      /       li.active
+      /         = link_to 'Categories', admin_categories_path
+      /       li
+      /         = link_to 'Products', admin_products_path
+      /       li
+      /         a href="#"  Orders
+      / - else
+      /     ul.nav.nav-tabs
+      /       li.active
+      /         a href="#"  Product category 1
+      /       li
+      /         a href="#"  Product category 2
+      /       li
+      /         a href="#"  Product category 3
 
 
 .clearfix

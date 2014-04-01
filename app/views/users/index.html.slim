@@ -1,11 +1,15 @@
 h3 Users
 
-table
+table.table.table-bordered.table-hover.table-responsive
   thead
     th= "Username"
-    th= "Last signup"
+    th= "Email"
+    th= "Last sign in"
+    th= "Sign in count"
 
   - @users.each do |user|
     tr
       td= link_to user.name, user
-      td= "#{user.created_at.to_date}"
+      td= user.email
+      td= user.last_sign_in_at
+      td= user.sign_in_count
