@@ -1,12 +1,62 @@
 class ProductsController < ApplicationController
   before_filter :authenticate_user!
-  after_action :verify_authorized, except: [:index, :show]
+  before_action :set_product, only: [:show, :edit, :update, :destroy]
+  after_action :verify_authorized, :except => [:index, :show]
 
   def index
     @products = Product.all
   end
 
   def show
+  end
+
+  def new
+    @product = Product.new
+    authorize @product
+  end
+
+  def edit
+    authorize @product
+  end
+
+  def create
+    @product = Product.new(product_params)
+    authorize @product
+
+    if @product.save
+      redirect_to @product, notice: 'Product was successfully created.'
+    else
+      render action: 'new'
+    end
+  end
+
+  def update
+    authorize @product
+
+    if @product.update(product_params)
+      redirect_to @product, notice: 'Product was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    authorize @product
+
+    @product.destroy
+    redirect_to products_url, notice: 'Product was successfully destroyed.'
+  end
+
+  private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_product
     @product = Product.find(params[:id])
   end
+
+  # Only allow a trusted parameter "white list" through.
+  def product_params
+    params.require(:product).permit(:part_number, :title, :name, :description, :amount, :price, :price, :vat, :vat)
+  end
+
 end
