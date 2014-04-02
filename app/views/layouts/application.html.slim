@@ -11,14 +11,16 @@ html
   body
     header
       == render 'layouts/navigation'
-    main.container
-      == render 'layouts/messages'
-      == yield
+    main
+      .container
+        == render 'layouts/messages'
+        == yield
     footer
       .container
-        = debug(params) if Rails.env.development?
         p
           | &copy; 2014 Company, Inc. ·
           a href="#"  Privacy
           | ·
           a href="#"  Terms
+
+        p= debug(params) if Rails.env.development?
