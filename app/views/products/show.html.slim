@@ -28,6 +28,7 @@ p
   strong Vat:
   = @product.vat
 
-= link_to 'Edit', edit_product_path(@product)
-'|
+- if policy(@product).edit?
+  = link_to 'Edit', edit_product_path(@product)
+  '|
 = link_to 'Back', products_path

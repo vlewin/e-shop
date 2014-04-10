@@ -9,9 +9,7 @@ table.table.table-bordered.table-hover.table-responsive
       th Amount
       th Price
       th Vat
-      th
-      th
-      th
+      th colspan=3
 
   tbody
     - @products.each do |product|
@@ -22,10 +20,11 @@ table.table.table-bordered.table-hover.table-responsive
         td = product.amount
         td = product.price
         td = product.vat
-        td = link_to 'Show', product
-        td = link_to 'Edit', edit_product_path(product)
-        td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td= link_to 'Show', product
+        - if policy(product).update?
+          td= link_to 'Edit', edit_product_path(product)
+        - if policy(product).destroy?
+          td= link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
-
-= link_to 'New Product', new_product_path
+- if policy(Product).new?
+  = link_to 'New Product', new_product_path
