@@ -1,0 +1,28 @@
+table.table.table-striped.table-hover.table-responsive
+  thead
+    tr
+      th Article number
+      th Name
+      th Description
+      th Quantity
+      th Price
+      th Tax
+      th colspan=3
+
+  tbody
+    - @products.each do |product|
+      tr
+        td = product.article_number
+        td = product.name
+        td = product.description
+        td = product.quantity
+        td = product.price
+        td = product.tax
+        td= link_to 'Show', product
+        - if policy(product).update?
+          td= link_to 'Edit', edit_product_path(product)
+        - if policy(product).destroy?
+          td= link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+- if policy(Product).new?
+  = link_to 'New Product', new_product_path
