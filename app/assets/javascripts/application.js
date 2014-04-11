@@ -12,27 +12,15 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap/affix
-//= require bootstrap/alert
-//= require bootstrap/button
-//= require bootstrap/carousel
-//= require bootstrap/collapse
-//= require bootstrap/dropdown
-//= require bootstrap/modal
-//= require bootstrap/tooltip
-//= require bootstrap/popover
-//= require bootstrap/scrollspy
-//= require bootstrap/tab
-//= require bootstrap/transition
+//= require jquery_nested_form
+//= require twitter/bootstrap
 //= require jquery.turbolinks
 //= require turbolinks
 //= require_tree
 
 
 // $(document).ready(function () {
-  $('.carousel').carousel({
-    interval: 1000
-  })
+
 
 
 // })
