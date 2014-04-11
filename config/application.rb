@@ -26,7 +26,7 @@ module OptimHandel
       g.assets false
       g.view_specs false
       g.template_engine :slim
-      g.test_framework :minitest, :spec => true, :fixture => false
+      g.test_framework :rspec
       g.fixture_replacement :factory_girl
     end
   end
