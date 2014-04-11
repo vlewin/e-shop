@@ -11,25 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331195621) do
+ActiveRecord::Schema.define(version: 20140411071849) do
+
+  create_table "addresses", force: true do |t|
+    t.string   "country"
+    t.string   "city"
+    t.string   "street"
+    t.string   "zip"
+    t.string   "phone"
+    t.string   "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "products", force: true do |t|
-    t.integer  "part_number"
-    t.string   "title"
     t.string   "name"
-    t.string   "description"
-    t.string   "amount"
-    t.decimal  "price",       precision: 10, scale: 2
-    t.decimal  "vat",         precision: 10, scale: 2
+    t.string   "article_number"
+    t.text     "description"
+    t.integer  "quantity",                                default: 0
+    t.string   "cover"
+    t.integer  "category_id"
+    t.decimal  "price",          precision: 10, scale: 2
+    t.decimal  "tax",            precision: 10, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "category_id"
   end
 
   create_table "users", force: true do |t|
@@ -43,14 +55,16 @@ ActiveRecord::Schema.define(version: 20140331195621) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.string   "name"
+    t.string   "string"
+    t.integer  "role"
+    t.integer  "integer"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
