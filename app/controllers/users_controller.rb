@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-
   after_action :verify_authorized
 
   def index
@@ -9,7 +8,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = policy_scope(User).where(params[:id]).first
-    authorize @user
+    add_breadcrumb current_user.name
+
+    @user = current_user
+    authorize current_user
   end
 end

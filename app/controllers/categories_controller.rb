@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  # TODO: Fix set_breadcrumb action
+  add_breadcrumb controller_name.capitalize, "#{controller_name}_path".to_sym
+
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, except: [:index, :show]
 
@@ -9,13 +12,15 @@ class CategoriesController < ApplicationController
   def show
   end
 
-  def new
-    @category = Category.new
-    @category.products.build
+  def edit
     authorize @category
   end
 
-  def edit
+  def new
+    add_breadcrumb "New #{controller_name.singularize}"
+
+    @category = Category.new
+    @category.products.build
     authorize @category
   end
 
@@ -49,7 +54,8 @@ class CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category ||= Category.find(params[:id])
+      add_breadcrumb @category.name
     end
 
     # Only allow a trusted parameter "white list" through.

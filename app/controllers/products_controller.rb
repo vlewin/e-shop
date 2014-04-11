@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+  # TODO: Fix set_breadcrumb action
+  add_breadcrumb controller_name.capitalize, "#{controller_name}_path".to_sym
+
   before_filter :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, :except => [:index, :show]
@@ -11,6 +14,8 @@ class ProductsController < ApplicationController
   end
 
   def new
+    add_breadcrumb "New #{controller_name.singularize}"
+
     @product = Product.new
     @categories = Category.all
     authorize @product
@@ -55,6 +60,7 @@ class ProductsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
+    add_breadcrumb @product.name
   end
 
   # Only allow a trusted parameter "white list" through.
