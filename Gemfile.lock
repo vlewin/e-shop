@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/vlewin/acts_as_shopping_cart.git
+  revision: 6379bd71becc84af7f0aa21ecddc548df6ed290b
+  branch: master
+  specs:
+    acts_as_shopping_cart (0.2.0)
+      activerecord (~> 4.1.0.rc1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -198,6 +206,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_shopping_cart!
   awesome_print
   better_errors
   binding_of_caller

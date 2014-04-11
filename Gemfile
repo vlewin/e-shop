@@ -19,8 +19,9 @@ gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
 gem 'uglifier', '>= 1.3.0'
 
-gem 'nested_form'
 gem 'breadcrumbs_on_rails'
+gem 'nested_form' # Check for alternatives
+gem 'acts_as_shopping_cart', :github => 'vlewin/acts_as_shopping_cart', :branch => 'master'
 
 group :development do
   gem 'better_errors'
