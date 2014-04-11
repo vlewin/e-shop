@@ -12,18 +12,21 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @categories = Category.all
     authorize @product
   end
 
   def edit
+    @categories = Category.all
     authorize @product
   end
 
   def create
     @product = Product.new(product_params)
+    @product.category = Category.find(params[:category_id])
     authorize @product
 
-    if @product.save
+    if @product.save!
       redirect_to @product, notice: 'Product was successfully created.'
     else
       render action: 'new'
@@ -56,7 +59,17 @@ class ProductsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def product_params
-    params.require(:product).permit(:part_number, :title, :name, :description, :amount, :price, :price, :vat, :vat)
+    params.require(:product).permit(
+      :part_number,
+      :title,
+      :name,
+      :description,
+      :amount,
+      :price,
+      :price,
+      :vat,
+      :category_id
+    )
   end
 
 end
