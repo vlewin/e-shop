@@ -1,22 +1,39 @@
-user=User.where(:email => "customer@mail.com").first_or_initialize
+user=User.where(:email => "customer@example.com").first_or_initialize
 user.password = "password"
 user.name = "Customer"
 user.skip_confirmation!
 user.save
 
-user=User.where(:email => "admin@mail.com").first_or_initialize
-user.password = "password"
-user.name = "Admin"
-user.skip_confirmation!
-user.save
-user.admin!
+address = Address.create(
+    country: 'Germany',
+    city:     Faker::Address.city,
+    street:   Faker::Address.street_address,
+    zip:      Faker::Address.zip_code,
+    phone:    Faker::PhoneNumberDE.home_work_phone_number,
+    user_id: user.id
+)
+
+admin_user=User.where(:email => "admin@example.com").first_or_initialize
+admin_user.password = "password"
+admin_user.name = "Admin"
+admin_user.skip_confirmation!
+admin_user.save
+admin_user.admin!
 
 
-10.times do |c|
-  category = Category.create(:name => "Category #{c}")
-  3.times do |p|
-    part_number = Product.last ? (Product.last.id + 1000) : 1001
-    product = Product.create(part_number: part_number, title: "Product #{c+p}", name: "Product #{c+p}", amount: '1 kg', price: rand(25), vat: 7)
+
+
+2.times do |c|
+  category = Category.create(:name => Faker::Product.brand)
+  rand(1..2).times do |p|
+    product = Product.create(
+      name: Faker::Product.product,
+      description: Faker::Lorem.sentence,
+      article_number: Faker::Product.model,
+      price: rand(1..25),
+      quantity: rand(0..10),
+      tax: 7
+    )
     category.products << product
   end
 end
