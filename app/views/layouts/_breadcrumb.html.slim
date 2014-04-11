@@ -1,0 +1,7 @@
+- if controller_name != "home"
+  ol.breadcrumb
+    li
+      = link_to 'Home', root_path
+    li
+      = link_to controller_name.capitalize, controller_name
+    li.active Item ??

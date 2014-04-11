@@ -1,32 +1,23 @@
-p#notice = notice
+h2.page-header Product details
 
-p
-  strong Part number:
-  = @product.part_number
-p
-  strong Title:
-  = @product.title
-p
-  strong Name:
-  = @product.name
-p
-  strong Description:
-  = @product.description
-p
-  strong Amount:
-  = @product.amount
-p
-  strong Price:
-  = @product.price
-p
-  strong Price:
-  = @product.price
-p
-  strong Vat:
-  = @product.vat
-p
-  strong Vat:
-  = @product.vat
+- if current_user.admin?
+  = render partial: 'products/admin/show'
+- else
+  .row.featurette
+    .col-md-5
+      img.featurette-image.img-responsive alt="500x500" data-src="holder.js/500x500/auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4="
+    .col-md-7
+      h2.featurette-heading
+        = @product.name
+        span.text-muted - translated product name
+      p.lead Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
+
+      form.form-inline role="form"
+        .form-group
+          = text_field_tag :quantity, 1, class: 'form-control'
+
+        button.btn.btn-default type="submit"  Add to cart
+
 
 - if policy(@product).edit?
   = link_to 'Edit', edit_product_path(@product)

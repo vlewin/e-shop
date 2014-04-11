@@ -1,4 +1,4 @@
-= form_for @product do |f|
+= form_for @product, :html => { :role => 'form', :class => "form-horizontal"} do |f|
   - if @product.errors.any?
     #error_explanation
       h2 = "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
@@ -6,27 +6,38 @@
         - @product.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :part_number
-    = f.number_field :part_number
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_field :description
-  .field
-    = f.label :amount
-    = f.text_field :amount
-  .field
-    = f.label :price
-    = f.text_field :price
-  .field
-    = f.label :vat
-    = f.text_field :vat
-  .actions = f.submit 'Save'
+  .form-group
+    label.col-sm-2.control-label= f.label :name
+    .col-sm-10
+      = f.text_field :name, :autofocus => true, class: 'form-control'
+  .form-group
+    label.col-sm-2.control-label= f.label :part_number
+    .col-sm-10
+      = f.text_field :article_number, class: 'form-control'
+  .form-group
+    label.col-sm-2.control-label= f.label :description
+    .col-sm-10
+      = f.text_field :description, class: 'form-control'
+  .form-group
+    label.col-sm-2.control-label= f.label :amount
+    .col-sm-10
+      = f.text_field :quantity, class: 'form-control'
+  .form-group
+    label.col-sm-2.control-label= f.label :price
+    .col-sm-10
+      = f.text_field :price, class: 'form-control'
+  .form-group
+    label.col-sm-2.control-label= f.label :vat
+    .col-sm-10
+      = f.text_field :tax, class: 'form-control'
 
+  .form-group
+    label.col-sm-2.control-label= f.label :category
+    .col-sm-10
+      = select_tag 'category_id', options_for_select(@categories.collect{ |c| [c.name, c.id] }), class: 'form-control'
 
+  .form-group
+    .col-sm-offset-2.col-sm-10
+      = f.submit "Save #{controller_name.singularize}", :class => 'btn btn-primary'
+      |&nbsp;&nbsp;&nbsp;
+      = link_to 'Back', products_path

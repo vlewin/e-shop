@@ -1,30 +1,19 @@
-h1 Listing products
+h2.page-header Products
 
-table.table.table-bordered.table-hover.table-responsive
-  thead
-    tr
-      th Part number
-      th Name
-      th Name translated
-      th Amount
-      th Price
-      th Vat
-      th colspan=3
+- if current_user.admin?
+  = render partial: 'products/admin/index'
+- else
+  .container
+    .row
+      - @products.each do |product|
+        .col-lg-2
+          img.featurette-image.img-responsive alt="200x200" data-src="holder.js/200x200/auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=" style=("width: 150px; height: 150px;")
+            h4= product.name
+            p= "#{product.quantity} - #{product.price} EUR"
+            p
+              = link_to "View details »", product_path(product)
 
-  tbody
-    - @products.each do |product|
-      tr
-        td = product.part_number
-        td = product.title
-        td = product.name
-        td = product.amount
-        td = product.price
-        td = product.vat
-        td= link_to 'Show', product
-        - if policy(product).update?
-          td= link_to 'Edit', edit_product_path(product)
-        - if policy(product).destroy?
-          td= link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
+          br
 
-- if policy(Product).new?
-  = link_to 'New Product', new_product_path
+
+

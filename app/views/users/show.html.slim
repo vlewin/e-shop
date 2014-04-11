@@ -1,6 +1,24 @@
-h3 User
-p
-  | User: #{@user.name}
-p
-  | Email: #{@user.email if @user.email}
+h3.page-header Account
+
+dl
+  dt User
+  dd= @user.name
+
+  dt Email
+  dd= @user.email
+
+h3.page-header Address
+- @user.addresses.each do |address|
+  address
+    strong= @user.name
+    br
+      = address.city
+      br
+        = address.street
+        br
+          = address.phone
+          br
+            = mail_to @user.email
+
+
 = link_to 'Edit account', edit_user_registration_path

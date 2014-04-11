@@ -1,4 +1,4 @@
-h3 New category
+h2.page-header New category
 
 = form_for @category, :html => { :role => 'form'} do |f|
   - if @category.errors.any?
@@ -11,6 +11,7 @@ h3 New category
   .form-group
     = f.label :name
     = f.text_field :name, :autofocus => true, class: 'form-control'
+
   .form-group
     = f.submit 'Save', :class => 'btn btn-default'
     |&nbsp;&nbsp;&nbsp;
