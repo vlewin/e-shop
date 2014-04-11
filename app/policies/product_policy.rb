@@ -6,6 +6,15 @@ class ProductPolicy
     @record = record
   end
 
+  # Public
+  def index?
+  end
+
+
+  def show?
+  end
+
+  # Protected
   def edit?
     @user.admin?
   end

@@ -21,9 +21,15 @@ class UserPolicy
     @user.admin?
   end
 
+  def edit?
+    @user == record
+  end
+
   def show?
     puts "*** #{self.class} show?"
-    @user.admin? || scope.exists?
+    puts @user.inspect
+    puts @record.inspect
+    @user.admin? || @user == record
   end
 
   def update?
@@ -36,8 +42,8 @@ class UserPolicy
     @user.admin?
   end
 
-  def scope
-    Pundit.policy_scope!(@user, @record.class)
-  end
+  # def scope
+  #   Pundit.policy_scope!(@user, @record.class)
+  # end
 
 end

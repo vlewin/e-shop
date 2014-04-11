@@ -6,6 +6,14 @@ class CategoryPolicy
     @record = record
   end
 
+  # Public
+  def index?
+  end
+
+  def show?
+  end
+
+  # Protected
   def edit?
     puts "*** #{self.class} edit? => #{@user.admin?}"
     @user.admin?
