@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140411140902) do
+ActiveRecord::Schema.define(version: 20140414102719) do
 
   create_table "addresses", force: true do |t|
     t.string   "country"
@@ -43,15 +43,38 @@ ActiveRecord::Schema.define(version: 20140411140902) do
     t.datetime "updated_at"
   end
 
+  create_table "line_items", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "order_id"
+    t.integer  "cart_id"
+    t.integer  "quantity",                           default: 1
+    t.decimal  "price",      precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
+
+  create_table "orders", force: true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.string   "pay_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "products", force: true do |t|
     t.string   "name"
     t.string   "article_number"
     t.text     "description"
-    t.integer  "quantity",                                default: 0
+    t.integer  "quantity",                               default: 0
     t.string   "cover"
     t.integer  "category_id"
-    t.decimal  "price",          precision: 10, scale: 2
-    t.decimal  "tax",            precision: 10, scale: 2
+    t.decimal  "price",          precision: 8, scale: 2
+    t.decimal  "tax",            precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end
