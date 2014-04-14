@@ -9,8 +9,19 @@ class ApplicationController < ActionController::Base
   end
 
   before_filter :set_breadcrumb, only: [:index, :show, :edit]
+  before_filter :current_cart
 
-  private
+  # private
+
+  def current_cart
+    puts "*** current_cart"
+    @current_cart ||= Cart.find(session[:cart_id])
+  rescue ActiveRecord::RecordNotFound
+    @current_cart = Cart.create
+    session[:cart_id] = @current_cart.id
+    @current_cart
+  end
+
   def set_breadcrumb
     unless controller_name == 'home'
       add_breadcrumb "Home", :root_path, :options => { :title => "Home" }

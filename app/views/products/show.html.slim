@@ -12,11 +12,14 @@ h2.page-header Product details
         span.text-muted - translated product name
       p.lead Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.
 
-      form.form-inline role="form"
-        .form-group
-          = text_field_tag :quantity, 1, class: 'form-control'
+      p
+        | Price:
+        b= number_to_currency(@product.price)
 
-        button.btn.btn-default type="submit"  Add to cart
+      .col-md-3
+        = text_field_tag :quantity, 1, class: 'form-control'
+      .col-md-3
+        = button_to 'Add to Cart', line_items_path(:product_id => @product), class: 'btn btn-success'
 
 
 - if policy(@product).edit?

@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   # TODO: Fix set_breadcrumb action
   add_breadcrumb controller_name.capitalize, "#{controller_name}_path".to_sym
 
+  before_filter :current_cart
   before_filter :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, :except => [:index, :show]

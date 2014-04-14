@@ -3,17 +3,13 @@ h2.page-header Products
 - if current_user.admin?
   = render partial: 'products/admin/index'
 - else
-  .container
-    .row
-      - @products.each do |product|
-        .col-lg-2
-          img.featurette-image.img-responsive alt="200x200" data-src="holder.js/200x200/auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=" style=("width: 150px; height: 150px;")
-            h4= product.name
-            p= "#{product.quantity} - #{product.price} EUR"
-            p
-              = link_to "View details »", product_path(product)
-
-          br
-
+  .row
+    - @products.each do |product|
+      .col-md-3
+        a{href="#{product_path(product)}" class='productBox'}
+          = image_tag 'http://placehold.it/150x150'
+          h4= product.name
+          p.desc= product.description
+          p= "#{product.price} EUR"
 
 
