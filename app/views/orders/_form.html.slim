@@ -1,0 +1,39 @@
+= form_for @order, :html => { :role => 'form'} do |f|
+  - if @order.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+      ul
+        - @order.errors.full_messages.each do |message|
+          li = message
+
+
+  h3.page-header
+    | Shipping Address
+    .pull-right
+      = link_to 'New Address', new_address_path, class: 'btn btn-default'
+
+
+  - current_user.addresses.each do |address|
+    address
+      strong= current_user.name
+      br
+        = address.city
+        br
+          = address.street
+          br
+            = address.phone
+
+
+  p
+    = f.label :address, t('.address')
+    = f.text_field :address, value: current_user.addresses.first.id
+
+  p
+    = f.label :email, t('.email')
+    = f.email_field :email, value: current_user.email
+
+  p
+    = f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('.pay_prompt_html')
+
+  .pull-left= link_to 'Back to cart', cart_path(@current_cart), class: 'btn btn-default'
+  .pull-right= f.submit 'Purchase', :class => 'btn btn-success'
