@@ -3,7 +3,12 @@ class LineItem < ActiveRecord::Base
   belongs_to :product
   belongs_to :cart
 
-  def total_price
-    product.price * quantity
+  def total
+    subtotal + (subtotal * (product.tax / 100))
   end
+
+  def subtotal
+    (product.price * quantity)
+  end
+
 end
