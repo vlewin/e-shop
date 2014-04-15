@@ -10,14 +10,16 @@
       = link_to 'E-Shop', root_path, class: 'navbar-brand'
 
     .collapse.navbar-collapse
-
+      / TODO: Add separate navbar for admin user
       ul.nav.navbar-nav.navbar-link
         - if user_signed_in?
           li class=('active' if controller_name == "home")
             = link_to 'Home', root_path
 
-          li class=('active' if controller_name == "categories")
-            = link_to 'Categories', categories_path
+          - if current_user.admin?
+            li class=('active' if controller_name == "categories")
+              = link_to 'Categories', categories_path
+
           li class=('active' if controller_name == "products")
             = link_to 'Products', products_path
 
