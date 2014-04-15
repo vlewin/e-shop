@@ -18,7 +18,7 @@ de:
         precision: 2
         separator: "."
         delimiter: ","
-        format:    "%u%n"
+        format:    "%n %u"
 #END:currency
 
 #START:errors

@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :set_locale
 
-  before_filter :set_breadcrumb, only: [:index, :show, :edit]
+  before_filter :set_breadcrumb #, only: [:index, :show, :edit]
   before_filter :current_cart
 
   # private
@@ -39,30 +39,15 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options(options={})
-    logger.debug "default_url_options is passed options: #{options.inspect}\n"
+    # logger.debug "default_url_options is passed options: #{options.inspect}\n"
     { locale: I18n.locale }
   end
 
-  # def set_i18n_locale_from_params
-  #   if params[:locale]
-  #     if I18n.available_locales.map(&:to_s).include?(params[:locale])
-  #       I18n.locale = params[:locale]
-  #     else
-  #       flash.now[:notice] =
-  #         "#{params[:locale]} translation not available"
-  #       logger.error flash.now[:notice]
-  #     end
-  #   end
-  # end
-
-  # def default_url_options
-  #   { locale: I18n.locale }
-  # end
-
   def set_breadcrumb
     unless controller_name == 'home'
-      add_breadcrumb "Home", :root_path, :options => { :title => "Home" }
+      add_breadcrumb "Home", :root_path, options: { title: 'Home' }
     end
+
   #   unless controller_name == 'home'
   #     add_breadcrumb "Home", :root_path, :options => { :title => "Home" }
 

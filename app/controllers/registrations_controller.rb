@@ -2,7 +2,7 @@ class RegistrationsController < Devise::RegistrationsController
   before_filter :update_sanitized_params, if: :devise_controller?
 
   def edit
-    add_breadcrumb current_user.name
+    add_breadcrumb 'Profile'
     super
   end
 

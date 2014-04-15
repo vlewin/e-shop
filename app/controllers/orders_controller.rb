@@ -4,38 +4,40 @@ class OrdersController < ApplicationController
   end
 
   def show
+    add_breadcrumb 'Order'
   end
 
   def new
+    add_breadcrumb 'Order'
+
     @cart = current_cart
     if @cart.line_items.empty?
       redirect_to products_url, notice: "Your cart is empty"
       return
+    else
+      @order = Order.new
     end
-
-    @order = Order.new
   end
 
   def edit
   end
 
   def create
+    puts "**** Create order"
     @order = Order.new(order_params)
-    @order.add_line_items_from_cart(@cart)
+    @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
-        OrderNotifier.received(@order).deliver
-        format.html { redirect_to store_url, notice:
-          I18n.t('.thanks') }
-        format.json { render action: 'show', status: :created,
-          location: @order }
+
+        # FIXME: Send notification email
+        # OrderNotifier.received(@order).deliver
+
+        format.html { redirect_to products_url, notice: I18n.t('.thanks') }
       else
         format.html { render action: 'new' }
-        format.json { render json: @order.errors,
-          status: :unprocessable_entity }
       end
     end
   end

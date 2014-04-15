@@ -1,15 +1,35 @@
-h2.page-header Products
+h2.page-header
+  | Products
 
 - if current_user.admin?
   = render partial: 'products/admin/index'
 - else
-  .row
-    - @products.each do |product|
-      .col-md-3
-        a{href="#{product_path(product)}" class='productBox'}
-          = image_tag 'http://placehold.it/150x150'
-          h4= product.name
-          p.desc= product.description
-          p= "#{product.price} EUR"
+  .panel.panel-default
+    .panel-heading
+      b Search
+      .pull-right
+        form role="search"
+          input.form-control placeholder="Search" type="text"
 
+      .clearfix.visible-xs
 
+    .panel-body
+      .row
+        .col-md-3
+          / .well.well-sm
+          ul#sidebar.nav.nav-stacked
+            li Categories
+            - @categories.each do |category|
+              li
+                = link_to category.name, category
+
+        .col-md-9
+          .row
+            - @products.each do |product|
+              .col-md-4
+                a{href="#{product_path(product)}" class='thumbnail product'}
+                  = image_tag 'http://placehold.it/200x150'
+                  .caption
+                    h5= product.name
+                    p.desc= product.description
+                    b= number_to_currency(product.price)
