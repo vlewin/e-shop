@@ -4,7 +4,7 @@
 #START:currency
 #START:checkout
 #START:flash
-en:
+de:
 
 #END:cart
 #END:checkout
@@ -14,7 +14,7 @@ en:
   number:
     currency:
       format:
-        unit:      "$"
+        unit:      "€"
         precision: 2
         separator: "."
         delimiter: ","
@@ -33,20 +33,20 @@ en:
 #START:cart
   carts:
     cart:
-      add:         "Add to Cart"
-      title:       "Your Cart"
-      empty:       "Empty cart"
+      add:         "Zum Warenkorb"
+      title:       "Warenkorb"
+      empty:       "Warenkorb leeren"
       checkout:    "Checkout"
 #END:cart
 
 #START:main
   store:
     index:
-      welcome:  "E-Shop - Welcome!"
+      welcome:  "E-Shop - Herzlich Willkommen!"
 #END:main
 
   pundit:
-    not_authorized: 'You are not authorized to perform this action'
+    not_authorized: 'Sie sind nicht authorisiert'
 
 #START:checkout
   orders:
@@ -54,13 +54,14 @@ en:
       legend:       "Please Enter Your Details"
     form:
       name:         "Name"
-      address_html: "Address"
-      email:        "E-mail"
-      pay_type:     "Pay with"
-      pay_prompt_html: "Select a payment method"
-      submit:       "Place Order"
+      address_html: "Addresse"
+      email:        "E-Mail"
+      pay_type:     "Zahlen mit"
+      pay_prompt_html: "Wählen Sie Zahlungsmethode"
+      submit:       "Bestellen"
 #END:checkout
 
 #START:flash
-  thanks:          "Thank you for your order"
+  thanks:          "Danke für die Bestellung"
 #END:flash
+

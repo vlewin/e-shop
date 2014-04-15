@@ -4,7 +4,7 @@
       h2 Log in
       - if devise_mapping.registerable?
         h4
-          small Don't have an account?
+          small= t('devise.registrations.new')
           | &nbsp;
           small= link_to 'Sign up', new_registration_path(resource_name), class: 'right'
       = devise_error_messages!
