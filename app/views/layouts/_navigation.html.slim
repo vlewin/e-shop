@@ -13,7 +13,7 @@
 
       ul.nav.navbar-nav.navbar-link
         - if user_signed_in?
-          li class=('active' if controller_name == "home")
+          li class=('active' if controller_name == "store")
             = link_to 'Home', root_path
 
           li class=('active' if controller_name == "categories")
@@ -27,6 +27,14 @@
 
 
       ul.nav.navbar-nav.navbar-right
+        li.dropdown
+          a.dropdown-toggle data-toggle="dropdown" href="#"
+            = LANGUAGES[I18n.locale]
+            b.caret
+          ul.dropdown-menu
+            - LANGUAGES.each do |locale,language|
+              li= link_to language.to_s, language_path(set_locale: locale ), class: 'navbar-link'
+
         - if user_signed_in?
           li
             = icon_link_to "Cart (#{@current_cart.total_count})", cart_path(@current_cart), 'fa-shopping-cart'
