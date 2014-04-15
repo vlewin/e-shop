@@ -20,7 +20,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/new
   # GET /line_items/new.xml
   def new
-    @line_item = LineItem.new
+    @line_item = LineItem.new()
 
     respond_to do |format|
       format.html # new.html.erb
@@ -36,8 +36,9 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.xml
   def create
+    puts "**** #{params.inspect}"
     @cart = current_cart
-    @line_item = @cart.add_product(params[:product_id])
+    @line_item = @cart.add_product(params[:product_id], params[:quantity])
 
     respond_to do |format|
       if @line_item.save
@@ -70,9 +71,11 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
-    respond_to do |format|
-      format.html { redirect_to(line_items_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to_back_or_default line_items_url
+
+    # respond_to do |format|
+    #   format.html { redirect_to(line_items_url) }
+    #   format.xml  { head :ok }
+    # end
   end
 end

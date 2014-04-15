@@ -24,11 +24,12 @@ class ApplicationController < ActionController::Base
     @current_cart
   end
 
+  # Locale
   def set_locale
     I18n.locale = params[:locale] unless params[:locale].blank?
   end
 
-  # extract the language from the clients browser
+  # Extract the language from the clients browser
   def extract_locale_from_accept_language_header
     browser_locale = request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first).try(:to_sym)
     if I18n.available_locales.include? browser_locale
@@ -39,8 +40,15 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options(options={})
-    # logger.debug "default_url_options is passed options: #{options.inspect}\n"
     { locale: I18n.locale }
+  end
+
+  def redirect_to_back_or_default(default = root_url)
+    if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+      redirect_to :back
+    else
+      redirect_to default
+    end
   end
 
   def set_breadcrumb
