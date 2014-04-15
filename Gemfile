@@ -14,18 +14,22 @@ gem 'jquery-rails'
 gem 'slim-rails'
 gem 'less-rails'
 
-gem 'therubyracer', :platform=>:ruby
 gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
+
 gem 'uglifier', '>= 1.3.0'
+gem 'therubyracer', platform: :ruby
 
 gem 'breadcrumbs_on_rails'
 gem 'nested_form' # Check for alternatives
-gem 'acts_as_shopping_cart', :github => 'vlewin/acts_as_shopping_cart', :branch => 'master'
+
+group :production do
+  # gem 'pg' # Heroku
+end
 
 group :development do
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
+  gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
   gem 'foreman'
   gem 'quiet_assets'
   gem 'rails_layout'
@@ -39,12 +43,8 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara'
-  # gem 'cucumber-rails', :require=>false
   gem 'database_cleaner', '1.0.1'
   gem 'launchy'
   gem 'rspec-rails'
-
-  # gem 'minitest-wscolor'
 end
 
