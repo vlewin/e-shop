@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   # Locale
   def set_locale
-    I18n.locale = params[:locale] unless params[:locale].blank?
+    I18n.locale = params[:set_locale] unless params[:set_locale].blank?
   end
 
   # Extract the language from the clients browser
