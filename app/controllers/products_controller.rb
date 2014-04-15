@@ -7,7 +7,16 @@ class ProductsController < ApplicationController
   after_action :verify_authorized, :except => [:index, :show]
 
   def index
-    @products = Product.all
+    @search = Product.search(params[:q])
+
+    if params[:q].nil?
+      @products = @search.result(:distinct => true).order('created_at DESC')
+    else
+      @products = @search.result(:distinct => true)
+    end
+
+    # @search = Product.search(params[:q])
+    @products = @search.result
     @categories = Category.all
   end
 

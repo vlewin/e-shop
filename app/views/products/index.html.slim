@@ -1,11 +1,3 @@
-
-/ .well.well-sm
-/ ul#sidebar.nav.nav-stacked
-/   li Categories
-/   - @categories.each do |category|
-/     li
-/       = link_to category.name, category
-
 h2.page-header
   | Products
 
@@ -33,12 +25,13 @@ h2.page-header
     .col-md-9
       .panel.panel-default
         .panel-heading
-          | Filter
+          span= sort_link @search, :name, {}, { :remote => true, :method => :post }
+          span= sort_link @search, :name, {}, { :remote => false, :method => :post }
           .pull-right
-            form role="search"
-              input.form-control placeholder="Search" type="text"
-
-          .clearfix.visible-xs
+            = search_form_for @search, url: search_products_path, method: :post, class: 'form-inline' do |f|
+              .form-group
+              = f.label :name_cont, "Name contains", class: 'sr-only'
+              = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control'
 
         .panel-body
           .row

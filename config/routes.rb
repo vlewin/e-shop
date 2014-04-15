@@ -10,7 +10,10 @@ OptimHandel::Application.routes.draw do
     resources :carts
     resources :line_items
     resources :categories
-    resources :products
     resources :users
+
+    resources :products do
+      collection { post :search, to: 'products#index' }
+    end
   end
 end
