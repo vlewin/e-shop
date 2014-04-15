@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
-  # GET /carts
-  # GET /carts.xml
+  # before_filter :authenticate_user!
+
   def index
     @carts = Cart.all
 
@@ -10,19 +10,15 @@ class CartsController < ApplicationController
     end
   end
 
-  # GET /carts/1
-  # GET /carts/1.xml
   def show
-    @cart = current_cart
-    # @cart = Cart.find(params[:id])
+    add_breadcrumb 'Cart'
 
+    @cart = current_cart
     respond_to do |format|
       format.html
     end
   end
 
-  # GET /carts/new
-  # GET /carts/new.xml
   def new
     @cart = Cart.new
 
@@ -32,13 +28,10 @@ class CartsController < ApplicationController
     end
   end
 
-  # GET /carts/1/edit
   def edit
     @cart = Cart.find(params[:id])
   end
 
-  # POST /carts
-  # POST /carts.xml
   def create
     @cart = Cart.new(params[:cart])
 
@@ -51,8 +44,6 @@ class CartsController < ApplicationController
     end
   end
 
-  # PUT /carts/1
-  # PUT /carts/1.xml
   def update
     @cart = Cart.find(params[:id])
 
@@ -67,8 +58,6 @@ class CartsController < ApplicationController
     end
   end
 
-  # DELETE /carts/1
-  # DELETE /carts/1.xml
   def destroy
     @cart = Cart.find(params[:id])
     @cart.destroy

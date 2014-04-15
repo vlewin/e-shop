@@ -1,6 +1,4 @@
 class LineItemsController < ApplicationController
-  # GET /line_items
-  # GET /line_items.xml
   def index
     @line_items = LineItem.all
 
@@ -10,8 +8,6 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # GET /line_items/1
-  # GET /line_items/1.xml
   def show
     @line_item = LineItem.find(params[:id])
 
