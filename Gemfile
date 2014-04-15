@@ -23,6 +23,9 @@ gem 'therubyracer', platform: :ruby
 gem 'breadcrumbs_on_rails'
 gem 'nested_form' # Check for alternatives
 
+# Search, filtering and pagination
+gem 'ransack'
+
 group :production do
   # gem 'pg' # Heroku
 end
