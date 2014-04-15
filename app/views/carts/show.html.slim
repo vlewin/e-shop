@@ -1,35 +1,43 @@
 h2.page-header
   | Current cart
-  .pull-right= link_to 'Empty cart', @cart, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
 
-table.table.table-striped.table-hover.table-responsive
-  thead
-    tr
-      th
-      th Name
-      th Quantity
-      th Price
-      th Tax
-      th Total
+  - unless @cart.total.zero?
+    .pull-right
+      = link_to 'Empty cart', @cart, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
 
-  tbody
-    - @cart.line_items.each do |item|
+- if @cart.total.zero?
+ h4 Your cart is empty!
+- else
+  table.table.table-condensed.table-hover.table-responsive
+    thead
       tr
+        th Image
+        th Name
+        th Quantity
+        th Price
+        th Tax
+        th Total
+        th ---
+
+    tbody
+      - @cart.line_items.each do |item|
+        tr
+          td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
+          td= item.product.name
+          td= item.quantity
+          td= number_to_currency(item.price)
+          td= number_to_percentage(item.product.tax, precision: 0)
+          td= number_to_currency(item.total)
+          td= icon_link_to '', item, { method: :delete}, 'fa-times text-danger'
+
+      tr
+        td colspan=6
+          b Total:
         td
-          img.featurette-image.img-responsive alt="200x200" data-src="holder.js/200x200/auto" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MDAiIGhlaWdodD0iNTAwIj48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjUwMCIgZmlsbD0iI2VlZSIvPjx0ZXh0IHRleHQtYW5jaG9yPSJtaWRkbGUiIHg9IjI1MCIgeT0iMjUwIiBzdHlsZT0iZmlsbDojYWFhO2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjMxcHg7Zm9udC1mYW1pbHk6QXJpYWwsSGVsdmV0aWNhLHNhbnMtc2VyaWY7ZG9taW5hbnQtYmFzZWxpbmU6Y2VudHJhbCI+NTAweDUwMDwvdGV4dD48L3N2Zz4=" style=("width: 50px; height: 50px;")
-        td= item.product.name
-        td= item.quantity
-        td= item.price
-        td= item.product.tax
-        td= item.total_price
-
-    tr
-      td colspan=5
-        | Total:
-      td= @cart.total_price
+          b= number_to_currency(@cart.total)
 
 
-
-.pull-left= link_to 'Continue shopping', products_path, class: 'btn btn-default'
-.pull-right= link_to 'Checkout', new_order_path, class: 'btn btn-success'
+  p
+    .pull-left= link_to 'Continue shopping', products_path, class: 'btn btn-default'
+    .pull-right= link_to 'Checkout', new_order_path, class: 'btn btn-success'
 

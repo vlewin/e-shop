@@ -29,7 +29,7 @@
       ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
           li class=('active' if controller_name == 'carts')
-            = icon_link_to "Cart (#{@current_cart.total_count})", cart_path(@current_cart), 'fa-shopping-cart'
+            = icon_link_to "Cart (#{@current_cart.count})", cart_path(@current_cart), 'fa-shopping-cart'
 
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#"

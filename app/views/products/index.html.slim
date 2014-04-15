@@ -1,29 +1,46 @@
+
+/ .well.well-sm
+/ ul#sidebar.nav.nav-stacked
+/   li Categories
+/   - @categories.each do |category|
+/     li
+/       = link_to category.name, category
+
 h2.page-header
   | Products
 
 - if current_user.admin?
   = render partial: 'products/admin/index'
 - else
-  .panel.panel-default
-    .panel-heading
-      b Search
-      .pull-right
-        form role="search"
-          input.form-control placeholder="Search" type="text"
+  .row
+    .col-md-3
+      .panel.panel-default
+        .panel-heading
+          b Categories
+        .panel-body
 
-      .clearfix.visible-xs
-
-    .panel-body
-      .row
-        .col-md-3
-          / .well.well-sm
           ul#sidebar.nav.nav-stacked
-            li Categories
             - @categories.each do |category|
               li
                 = link_to category.name, category
 
-        .col-md-9
+          ul.list-group
+            li.list-group-item.active Categories
+            - @categories.each do |category|
+              li.list-group-item
+                = link_to category.name, category
+
+    .col-md-9
+      .panel.panel-default
+        .panel-heading
+          | Filter
+          .pull-right
+            form role="search"
+              input.form-control placeholder="Search" type="text"
+
+          .clearfix.visible-xs
+
+        .panel-body
           .row
             - @products.each do |product|
               .col-md-4
@@ -33,3 +50,4 @@ h2.page-header
                     h5= product.name
                     p.desc= product.description
                     b= number_to_currency(product.price)
+
