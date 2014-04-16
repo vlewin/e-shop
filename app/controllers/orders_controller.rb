@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @orders = Order.all
+    @orders = current_user.orders
   end
 
   def show
@@ -28,8 +28,8 @@ class OrdersController < ApplicationController
     @order.add_line_items_from_cart(current_cart)
 
     respond_to do |format|
-      if @order.save
-        Cart.destroy(session[:cart_id])
+      if @order.valid? && @order.save
+        @current_cart.destroy
         session[:cart_id] = nil
 
         # FIXME: Send notification email
@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    @order.destroy
+    current_user.orders.find(params[:id]).destroy
     respond_to do |format|
       format.html { redirect_to orders_url }
       format.json { head :no_content }
@@ -63,14 +63,9 @@ class OrdersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_order
-      @order = Order.find(params[:id])
-    end
-
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :address, :email, :pay_type)
+      params.require(:order).permit(:address_id, :pay_type)
     end
   #...
 end

@@ -23,11 +23,9 @@ class Cart < ActiveRecord::Base
     line_items.to_a.sum { |item| item.quantity }
   end
 
-  # acts_as_shopping_cart_using :cart_item
-
-  # def taxes
-  #   (subtotal) * 10.0
-  # end
+  def taxes
+    line_items.to_a.sum { |item| item.tax }
+  end
 
   # def tax_pct
   #   10.0

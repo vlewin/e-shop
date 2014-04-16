@@ -5,7 +5,7 @@ h2.page-header
   = render partial: 'products/admin/index'
 - else
   .row
-    .col-md-3
+    .col-md-2
       .panel.panel-default
         .panel-heading
           b Categories
@@ -17,7 +17,7 @@ h2.page-header
             - @categories.each do |category|
               li= link_to category.name, search_products_path('q' => {'category_name_cont' => category.name}), remote: :true
 
-    .col-md-9
+    .col-md-10
       .panel.panel-default
         .panel-heading
           = sort_link @search, :name

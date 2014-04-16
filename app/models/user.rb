@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
 
   has_many :addresses
+  has_many :orders, through: :addresses
 
   def set_default_role
     self.role ||= :user

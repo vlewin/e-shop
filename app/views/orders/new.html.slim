@@ -1,29 +1,36 @@
-h2.page-header Confirm you data
+h2.page-header Shipping and Payment
 
-table.table.table-striped.table-hover.table-responsive
-  thead
-    tr
-      th
-      th Name
-      th Quantity
-      th Price
-      th Tax
-      th Total
+= form_for @order, :html => { :role => 'form'} do |form|
+  - if @order.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+      ul
+        - @order.errors.full_messages.each do |message|
+          li = message
 
-  tbody
-    - @current_cart.line_items.each do |item|
-      tr
-        td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
-        td= item.product.name
-        td= item.quantity
-        td= item.price
-        td= item.product.tax
-        td= item.total
+  h3.page-header
+    | Shipping Address
+    .pull-right
+      small= link_to 'New Address', new_address_path
 
-    tr
-      td colspan=5
-        | Total:
-      td= @current_cart.total
+  - current_user.addresses.each_with_index do |address, index|
+    .radio
+      label
+        = form.radio_button :address_id, address.id, :checked => index.zero?
+        = "#{current_user.name}, #{address.street}, #{address.zip} #{address.city}"
+
+  h3.page-header
+    | Payment
+
+  - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
+    .radio
+      label
+        = form.radio_button :pay_type, payment_type, :checked => index.zero?
+        = payment_type
 
 
-== render 'form'
+  br
+
+  hr
+  .pull-left= link_to 'Back to cart', cart_path(@current_cart), class: 'btn btn-default'
+  .pull-right= form.submit 'Purchase', :class => 'btn btn-success'

@@ -1,8 +1,9 @@
 class Order < ActiveRecord::Base
-  PAYMENT_TYPES = [ 'Check', 'Credit card', 'Purchase order' ]
+  PAYMENT_TYPES = [ 'Bank transfer', 'Purchase order' ]
   has_many :line_items, dependent: :destroy
+  belongs_to :address
 
-  validates :address, :email, presence: true
+  validates :address_id, :pay_type, presence: true
   validates :pay_type, inclusion: PAYMENT_TYPES
 
   def add_line_items_from_cart(cart)
@@ -10,6 +11,18 @@ class Order < ActiveRecord::Base
       item.cart_id = nil
       line_items << item
     end
+  end
+
+  def total
+    line_items.to_a.sum { |item| item.total }
+  end
+
+  def count
+    line_items.to_a.sum { |item| item.quantity }
+  end
+
+  def taxes
+    line_items.to_a.sum { |item| item.tax }
   end
 
 end

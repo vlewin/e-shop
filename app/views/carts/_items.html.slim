@@ -1,0 +1,33 @@
+table.table.table-hover.table-responsive
+  thead
+    tr
+      th Image
+      th Name
+      th Quantity
+      th Tax
+      th Subtotal
+      th Total
+      th ---
+
+  tbody
+    - @current_cart.line_items.each do |item|
+      tr
+        td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
+        td= item.product.name
+        td= item.quantity
+        td= number_to_currency(item.price)
+        td= number_to_percentage(item.product.tax, precision: 0)
+        td= number_to_currency(item.total)
+        td= icon_link_to '', item, { method: :delete}, 'fa-times text-danger'
+    tr
+      td colspan=5
+      td
+        p
+          b Taxes:
+        p
+          b Total:
+      td
+        p
+          b= number_to_currency(@current_cart.taxes)
+        p
+          b= number_to_currency(@current_cart.total)

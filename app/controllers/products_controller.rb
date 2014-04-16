@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  # respond_to :html, :js
+  respond_to :html, :js
 
   add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
   add_breadcrumb 'Products', "#{controller_name}_path".to_sym
@@ -10,23 +10,15 @@ class ProductsController < ApplicationController
 
   def index
     @search = Product.search(params[:q])
-    @products = @search.result(distinct: true).page(params[:page])
+    @products = @search.result.page(params[:page])
     @categories = Category.all
-
-    print params.inspect
-
-    # respond_with(@products)
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
   def show
   end
 
   def new
-    add_breadcrumb "New #{controller_name.singularize}"
+    # add_breadcrumb "New #{controller_name.singularize}"
 
     @product = Product.new
     @categories = Category.all
@@ -72,7 +64,7 @@ class ProductsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
-    add_breadcrumb @product.name
+    # add_breadcrumb @product.name
   end
 
   # Only allow a trusted parameter "white list" through.

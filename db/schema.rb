@@ -49,8 +49,7 @@ ActiveRecord::Schema.define(version: 20140414102719) do
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: true do |t|
-    t.text     "address"
-    t.string   "email"
+    t.integer  "address_id"
     t.string   "pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"

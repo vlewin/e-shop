@@ -25,7 +25,7 @@ admin_user.admin!
 
 5.times do |c|
   category = Category.create(:name => Faker::Product.brand)
-  5.times do |p|
+  rand(3..6).times do |p|
     product = Product.create(
       name: Faker::Product.product,
       description: Faker::Lorem.sentence,

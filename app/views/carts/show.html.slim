@@ -1,40 +1,14 @@
 h2.page-header
   | Current cart
 
-  - unless @cart.total.zero?
+  - unless @current_cart.total.zero?
     .pull-right
-      = link_to 'Empty cart', @cart, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+      = link_to 'Empty cart', @current_cart, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
 
-- if @cart.total.zero?
+- if @current_cart.total.zero?
  h4 Your cart is empty!
 - else
-  table.table.table-condensed.table-hover.table-responsive
-    thead
-      tr
-        th Image
-        th Name
-        th Quantity
-        th Price
-        th Tax
-        th Total
-        th ---
-
-    tbody
-      - @cart.line_items.each do |item|
-        tr
-          td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
-          td= item.product.name
-          td= item.quantity
-          td= number_to_currency(item.price)
-          td= number_to_percentage(item.product.tax, precision: 0)
-          td= number_to_currency(item.total)
-          td= icon_link_to '', item, { method: :delete}, 'fa-times text-danger'
-
-      tr
-        td colspan=6
-          b Total:
-        td
-          b= number_to_currency(@cart.total)
+  == render 'items'
 
 
   p

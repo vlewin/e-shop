@@ -6,7 +6,7 @@ en:
         precision:      2
         separator:      "."
         delimiter:      ","
-        format:         "%u%n"
+        format:         "%u %n"
 
   errors:
     template:

@@ -9,10 +9,6 @@ class CartsController < ApplicationController
   end
 
   def show
-    @cart = current_cart
-    respond_to do |format|
-      format.html
-    end
   end
 
   def new
