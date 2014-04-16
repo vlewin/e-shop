@@ -1,66 +1,59 @@
-#START:layout
-#START:main
-#START:cart
-#START:currency
-#START:checkout
-#START:flash
 en:
-
-#END:cart
-#END:checkout
-#END:flash
-#END:main
-#END:layout
   number:
     currency:
       format:
-        unit:      "$"
-        precision: 2
-        separator: "."
-        delimiter: ","
-        format:    "%u%n"
-#END:currency
+        unit:           "$"
+        precision:      2
+        separator:      "."
+        delimiter:      ","
+        format:         "%u%n"
 
-#START:errors
   errors:
     template:
-      body:        "There were problems with the following fields:"
+      body:                   "There were problems with the following fields:"
       header:
-        one:       "1 error prohibited this %{model} from being saved"
-        other:     "%{count} errors prohibited this %{model} from being saved"
-#END:errors
+        one:                  "1 error prohibited this %{model} from being saved"
+        other:                "%{count} errors prohibited this %{model} from being saved"
 
-#START:cart
-  carts:
-    cart:
-      add:         "Add to Cart"
-      title:       "Your Cart"
-      empty:       "Empty cart"
-      checkout:    "Checkout"
-#END:cart
+  authentication:
+    sign_in:                  "Sign in"
+    sign_up:                  "Sign up"
+    sign_out:                 "Sign out"
+    account_new:              "Don't have an account?"
+    account_exist:            "Already have an account?"
+    forgot_password:          "Forgot password?"
 
-#START:main
+  authorization:
+    not_authorized:           "You are not authorized to perform this action"
+
+  forms:
+    name:                     "Name"
+    email:                    "Email"
+    password:                 "Password"
+    password_confirmation:    "Password confirmation"
+    remember_me:              "Remember me"
+
   store:
     index:
-      welcome:  "E-Shop - Welcome!"
-#END:main
+      welcome:                "E-Shop - Demo"
 
-  pundit:
-    not_authorized: 'You are not authorized to perform this action'
+  carts:
+    cart:
+      add:                    "Add to Cart"
+      title:                  "Your Cart"
+      empty:                  "Empty cart"
+      checkout:               "Checkout"
 
-#START:checkout
   orders:
     new:
-      legend:       "Please Enter Your Details"
+      legend:                 "Please Enter Your Details"
     form:
-      name:         "Name"
-      address_html: "Address"
-      email:        "E-mail"
-      pay_type:     "Pay with"
-      pay_prompt_html: "Select a payment method"
-      submit:       "Place Order"
-#END:checkout
+      name:                   "Name"
+      address_html:           "Address"
+      email:                  "E-mail"
+      pay_type:               "Pay with"
+      pay_prompt_html:        "Select a payment method"
+      submit:                 "Place Order"
 
-#START:flash
-  thanks:          "Thank you for your order"
-#END:flash
+  thanks:                     "Thank you for your order"
+

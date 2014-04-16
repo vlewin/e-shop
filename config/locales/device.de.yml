@@ -34,7 +34,6 @@ de:
       updated: "Ihr Passwort wurde geändert. Sie sind jetzt angemeldet."
       updated_not_active: "Ihr Passwort wurde geändert."
     registrations:
-      new: Haben Sie noch kein Konto?
       destroyed: "Ihr Account wurde gelöscht."
       signed_up: "Sie haben sich erfolgreich registriert."
       signed_up_but_inactive: "Sie haben sich erfolgreich registriert. Wir konnten Sie noch nicht anmelden, da Ihr Account inaktiv ist."
