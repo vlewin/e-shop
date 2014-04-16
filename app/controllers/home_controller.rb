@@ -5,6 +5,7 @@ class HomeController < ApplicationController
   end
 
   def language
-    redirect_to_back_or_default
+    redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
+    # redirect_to_back_or_default(locale: params[:set_locale])
   end
 end

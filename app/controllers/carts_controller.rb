@@ -9,8 +9,6 @@ class CartsController < ApplicationController
   end
 
   def show
-    add_breadcrumb 'Cart'
-
     @cart = current_cart
     respond_to do |format|
       format.html

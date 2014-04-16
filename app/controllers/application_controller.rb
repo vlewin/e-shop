@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   rescue_from Pundit::NotAuthorizedError do |exception|
-    flash[:error] = "You are not authorized to perform this action."
+    flash[:error] = t(authorization.not_authorized)
     redirect_to(request.referrer || root_path)
   end
 
   before_action :authenticate_user!
   before_action :set_locale
 
-  before_filter :set_breadcrumb #, only: [:index, :show, :edit]
+  # before_filter :set_breadcrumb #, only: [:index, :show, :edit]
   before_filter :current_cart
 
   # private
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
 
   # Locale
   def set_locale
-    I18n.locale = params[:set_locale] unless params[:set_locale].blank?
+    I18n.locale = params[:locale] unless params[:locale].blank?
   end
 
   # Extract the language from the clients browser
@@ -44,17 +44,17 @@ class ApplicationController < ActionController::Base
   end
 
   def redirect_to_back_or_default(default = root_url)
-    if request.env["HTTP_REFERER"].present? and request.env["HTTP_REFERER"] != request.env["REQUEST_URI"]
+    if request.env['HTTP_REFERER'].present? and request.env['HTTP_REFERER'] != request.env['REQUEST_URI']
       redirect_to :back
     else
       redirect_to default
     end
   end
 
-  def set_breadcrumb
-    unless controller_name == 'home'
-      add_breadcrumb "Home", :root_path, options: { title: 'Home' }
-    end
+  # def set_breadcrumb
+    # unless controller_name == 'home'
+      # add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
+    # end
 
   #   unless controller_name == 'home'
   #     add_breadcrumb "Home", :root_path, :options => { :title => "Home" }
@@ -92,7 +92,7 @@ class ApplicationController < ActionController::Base
   #   controller_name = controller_name == 'registrations' ? 'users' : params[:controller]
   #   var_name = controller_name.singularize.downcase
   #   instance_variable_set("@#{var_name}", model.find(params[:id]))
-  end
+  # end
 
   # Devise overrides
   def after_sign_in_path_for(resource)
