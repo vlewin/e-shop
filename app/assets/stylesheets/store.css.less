@@ -10,19 +10,28 @@ a.product {
   padding: 10px;
   cursor: pointer;
   margin: 5px 0;
+
+  p.desc {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
 }
 
 a.product:hover {
   border:1px solid #428bca;
 }
 
-a.product p.desc {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+a.sort_link {
+  margin: 0 5px;
+  min-width:64px;
+  display: inline-block;
 }
 
-
-
+ul.pagination {
+  li.first, li.next, li.prev, li.last {
+    display: none;
+  }
+}
 
 

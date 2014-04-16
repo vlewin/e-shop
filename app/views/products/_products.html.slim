@@ -1,0 +1,11 @@
+.row
+  - @products.each do |product|
+    .col-md-4
+      a{href="#{product_path(product)}" class='thumbnail product'}
+        = image_tag 'http://placehold.it/200x150'
+        .caption
+          h5= product.name
+          p.desc= product.description
+          b= number_to_currency(product.price)
+
+= paginate @products, remote: true

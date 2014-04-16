@@ -25,6 +25,8 @@ gem 'nested_form' # Check for alternatives
 
 # Search, filtering and pagination
 gem 'ransack'
+gem 'kaminari'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 
 group :production do
   # gem 'pg' # Heroku
@@ -50,4 +52,3 @@ group :test do
   gem 'launchy'
   gem 'rspec-rails'
 end
-

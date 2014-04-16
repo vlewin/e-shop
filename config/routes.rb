@@ -13,7 +13,7 @@ OptimHandel::Application.routes.draw do
     resources :users
 
     resources :products do
-      collection { post :search, to: 'products#index' }
+      collection { get :search, to: 'products#index' }
     end
   end
 end

@@ -1,24 +1,25 @@
 class ProductsController < ApplicationController
+  # respond_to :html, :js
+
   add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
   add_breadcrumb 'Products', "#{controller_name}_path".to_sym
 
   before_filter :authenticate_user!
-
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, :except => [:index, :show]
+  after_action :verify_authorized, except: [:index, :show]
 
   def index
     @search = Product.search(params[:q])
-
-    if params[:q].nil?
-      @products = @search.result(:distinct => true).order('created_at DESC')
-    else
-      @products = @search.result(:distinct => true)
-    end
-
-    # @search = Product.search(params[:q])
-    @products = @search.result
+    @products = @search.result(distinct: true).page(params[:page])
     @categories = Category.all
+
+    print params.inspect
+
+    # respond_with(@products)
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def show
