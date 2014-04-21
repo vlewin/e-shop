@@ -1,5 +1,8 @@
-h2.page-header Listing categories
-
+h2.page-header
+  | Categories
+  .pull-right
+    - if policy(Category).new?
+      small= link_to 'New category', new_category_path
 table.table.table-bordered.table-hover.table-responsive
   thead
     tr
@@ -19,5 +22,4 @@ table.table.table-bordered.table-hover.table-responsive
           td= link_to 'Destroy', category, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 
-- if policy(Category).new?
-  = link_to 'New Category', new_category_path
+

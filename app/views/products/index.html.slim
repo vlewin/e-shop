@@ -1,6 +1,3 @@
-/ h2.page-header
-/   | Products
-
 - if current_user.admin?
   = render partial: 'products/admin/index'
 - else

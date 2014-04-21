@@ -1,3 +1,9 @@
+h2.page-header
+  |Products
+  .pull-right
+    - if current_user.admin?
+      small= link_to 'New product', new_product_path
+
 table.table.table-striped.table-hover.table-responsive
   thead
     tr

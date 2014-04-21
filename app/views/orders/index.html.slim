@@ -1,4 +1,8 @@
-h2 Listing orders
+h2.page-header
+  | Orders
+  .pull-right
+    - if current_user.admin?
+      small= link_to 'New Order', new_order_path
 
 table.table.table-striped.table-hover.table-responsive
   thead
@@ -18,14 +22,14 @@ table.table.table-striped.table-hover.table-responsive
         td= number_to_currency order.subtotal
         td= number_to_currency order.taxes
         td= number_to_currency order.total
-        td= icon_link_to "Print invoice", order_path(order, format: 'pdf'), 'fa-print'
-        - if policy(order).update?
-          = link_to 'Edit', edit_order_path(order)
-        - if policy(order).destroy?
-          = link_to 'Destroy', order, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td
+          = icon_link_to "Print invoice", order_path(order, format: 'pdf'), 'fa-print'
+          / - if policy(order).update?
+          /   = link_to 'Edit', edit_order_path(order)
+          / - if policy(order).destroy?
+          /  = link_to 'Destroy', order, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 
 
 
-- if current_user.admin?
-  = link_to 'New Order', new_order_path
+
