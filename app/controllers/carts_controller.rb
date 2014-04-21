@@ -20,35 +20,35 @@ class CartsController < ApplicationController
     end
   end
 
-  def edit
-    @cart = Cart.find(params[:id])
-  end
+  # def edit
+  #   @cart = Cart.find(params[:id])
+  # end
 
-  def create
-    @cart = Cart.new(params[:cart])
+  # def create
+  #   @cart = Cart.new(params[:cart])
 
-    respond_to do |format|
-      if @cart.save
-        format.html { redirect_to(@cart, notice: 'Cart was successfully created.') }
-      else
-        format.html { render action: 'new' }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @cart.save
+  #       format.html { redirect_to(@cart, notice: 'Cart was successfully created.') }
+  #     else
+  #       format.html { render action: 'new' }
+  #     end
+  #   end
+  # end
 
-  def update
-    @cart = Cart.find(params[:id])
+  # def update
+  #   @cart = Cart.find(params[:id])
 
-    respond_to do |format|
-      if @cart.update_attributes(params[:cart])
-        format.html { redirect_to(@cart, :notice => 'Cart was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @cart.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
+  #   respond_to do |format|
+  #     if @cart.update_attributes(params[:cart])
+  #       format.html { redirect_to(@cart, :notice => 'Cart was successfully updated.') }
+  #       format.xml  { head :ok }
+  #     else
+  #       format.html { render :action => "edit" }
+  #       format.xml  { render :xml => @cart.errors, :status => :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   def destroy
     @cart = Cart.find(params[:id])

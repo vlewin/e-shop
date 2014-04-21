@@ -1,4 +1,14 @@
 de:
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    formats:
+      default: "%d.%m.%Y %H:%M"
+
+    am: vormittags
+    pm: nachmittags
+
   number:
     currency:
       format:
@@ -20,11 +30,12 @@ de:
     sign_up:          "Sign up"
     sign_out:         "Sign out"
     account_new:      "Don't have an account?"
-    account_exist:    "Haben Sie bereits ein Konto?"
-    forgot_password:  "Forgot password?"
+    account_exist:            "Haben Sie bereits ein Konto?"
+    forgot_password:          "Passwort vergessen?"
+    reset_password:           "Passwort zurücksetzen"
 
   authorization:
-    not_authorized:     "You are not authorized to perform this action"
+    not_authorized:           "You are not authorized to perform this action"
 
   forms:
     name:                     "Name"

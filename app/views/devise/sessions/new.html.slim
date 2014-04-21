@@ -1,26 +1,31 @@
 .panel.panel-default
   = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f|
-    .panel-body
+    .panel-heading
       h2= t('authentication.sign_in')
       - if devise_mapping.registerable?
         h4
           small= t('authentication.account_new')
           | &nbsp;
           small= link_to t('authentication.sign_up'), new_registration_path(resource_name), class: 'right'
+
+    .panel-body
       = devise_error_messages!
       .form-group
         = f.label :email
         = f.email_field :email, :autofocus => true, :placeholder => t('forms.email'), class: 'form-control'
       .form-group
-        - if devise_mapping.recoverable?
-          div.pull-right= link_to t('authentication.forgot_password'), new_password_path(resource_name), class: 'pill-right'
         = f.label :password
         = f.password_field :password, :placeholder => t('forms.password'), class: 'form-control'
+        - if devise_mapping.recoverable?
+          small
+            span= t('authentication.forgot_password')
+            |&nbsp;
+            = link_to t('authentication.reset_password'), new_password_path(resource_name), class: 'pill-right'
 
         - if devise_mapping.rememberable?
-          p
+          hr
             .checkbox
               = f.check_box :remember_me
               = f.label t('forms.remember_me')
     .panel-footer
-      = f.submit t('authentication.sign_in'), :class => 'btn btn-primary'
+      = f.submit t('authentication.sign_in'), :class => 'btn btn-lg btn-success'

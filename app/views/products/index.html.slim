@@ -1,25 +1,26 @@
-h2.page-header
-  | Products
+/ h2.page-header
+/   | Products
 
 - if current_user.admin?
   = render partial: 'products/admin/index'
 - else
   .row
-    .col-md-2
+    .col-md-3
+      .sidebar
+        .panel.panel-default
+          .panel-heading.panel-heading-dark
+            | Categories
+          .panel-body
+
+            ul#sidebar.nav.nav-stacked
+              li= link_to 'All', search_products_path({}), remote: :true, class: 'category'
+
+              - @categories.each do |category|
+                li= link_to category.name, search_products_path('q' => {'category_name_cont' => category.name}), remote: :true
+
+    .col-md-9
       .panel.panel-default
-        .panel-heading
-          b Categories
-        .panel-body
-
-          ul#sidebar.nav.nav-stacked
-            li= link_to 'All', search_products_path({}), remote: :true, class: 'category'
-
-            - @categories.each do |category|
-              li= link_to category.name, search_products_path('q' => {'category_name_cont' => category.name}), remote: :true
-
-    .col-md-10
-      .panel.panel-default
-        .panel-heading
+        .panel-heading.panel-heading-dark
           = sort_link @search, :name
           = sort_link @search, :price
           = sort_link @search, :created_at, 'Latest'

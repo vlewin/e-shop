@@ -7,9 +7,9 @@
           h5= product.name
           small= product.description
           p.price
-            span.label.label-primary
-              i.fa.fa-shopping-cart &nbsp;
-              = number_to_currency(product.price)
+            / span.label.label-default
+              / i.fa.fa-shopping-cart &nbsp;
+            = number_to_currency(product.price)
 
 
 = paginate @products, remote: true

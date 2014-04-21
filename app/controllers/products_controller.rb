@@ -19,7 +19,6 @@ class ProductsController < ApplicationController
 
   def new
     # add_breadcrumb "New #{controller_name.singularize}"
-
     @product = Product.new
     @categories = Category.all
     authorize @product

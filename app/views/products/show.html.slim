@@ -14,7 +14,7 @@ h2.page-header Product details
       p.lead= @product.description
       p
         span Price:
-        span= number_to_currency(@product.price)
+        span= " #{number_to_currency(@product.price)}"
 
       p
         span Tax:

@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   rescue_from Pundit::NotAuthorizedError do |exception|
-    flash[:error] = t(authorization.not_authorized)
+    flash[:error] = t('authorization.not_authorized')
     redirect_to(request.referrer || root_path)
   end
 

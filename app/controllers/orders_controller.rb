@@ -1,10 +1,22 @@
 class OrdersController < ApplicationController
   def index
-    @orders = current_user.orders
+    @orders = policy_scope(Order)
+    # authorize @orders
   end
 
   def show
-    add_breadcrumb 'Order'
+    @order = policy_scope(Order).find(params[:id])
+    authorize @order
+
+    respond_to do |format|
+      format.html
+      format.js
+      format.pdf do
+        pdf = OrderPdf.new(@order, view_context)
+        send_data pdf.render, filename: "order_#{@order.id}", type: "application/pdf", disposition: "inline"
+      end
+    end
+
   end
 
   def new
@@ -25,7 +37,7 @@ class OrdersController < ApplicationController
   def create
     puts "**** Create order"
     @order = Order.new(order_params)
-    @order.add_line_items_from_cart(current_cart)
+    @order.add_line_items_from_cart(@current_cart)
 
     respond_to do |format|
       if @order.valid? && @order.save

@@ -1,20 +1,77 @@
 @import "twitter/bootstrap.less";
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url("//themes.googleusercontent.com/static/fonts/opensans/v6/u-WUoqrET9fUeobQW7jkRT8E0i7KZn-EPnyo3HZu7kw.woff") format('woff');
+}
+
+// @link-color: #996600;
+@link-color: #777777;
+
+.btn-success {
+  -moz-box-orient: vertical;
+  background: none repeat scroll 0 0 #99CC33;
+  border: 1px solid #99CC33;
+  // border-radius: 2px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  // font-family: droid-sans,arial,sans-serif;
+  // font-size: 15px;
+  // line-height: 1.2;
+  // margin: 0;
+  // padding: 2px 8px;
+  // text-align: center;
+  // text-decoration: none;
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease 0s;
+  vertical-align: middle;
+  white-space: nowrap;
+}
 
 body {
-  // background-color: #E7E7E7;
-  background: url("https://www.paypalobjects.com/webstatic/mktg/consumer/gradients/interior-gradient-top.png") repeat-x scroll center top rgba(0, 0, 0, 0);
+  // background-color: #F2F2E9;
+  color: #333333;
   padding-top: 70px;
+  font-family: 'OpenSans';
 }
 
 .navbar-default {
-  background-color: #F5F5F5;
+  // background-color: #F2F2E9;
   color: #666666;
+
+  a.navbar-brand {
+    font-weight: bold;
+  }
 }
 
-main .wrapper {
-  // background-color: #FFFFFF;
-  // padding: 5px;
-  // border: 1px solid #CCCCCC;
+.container .jumbotron {
+  background-color: #FFF;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.panel-heading {
+  background: none repeat scroll 0 0 #F9F9F9;
+  border-bottom: 1px solid #DFDFDF;
+}
+
+.panel-default > .panel-heading.panel-heading-dark {
+  // background: none repeat scroll 0 0 #E7E3DB;
+  background: linear-gradient(#FFFFFF, #E9E9E9) repeat scroll 0 0 rgba(0, 0, 0, 0);
+  // color: #996600;
+  color: #777777;
+}
+
+.panel-default > .panel-heading.panel-heading-dark a {
+  color: #996600;
+  color: #777777;
+}
+
+.panel-footer {
+  background: none repeat scroll 0 0 #F2F2E9;
+  border-top: 1px solid #DFDFDF;
 }
 
 footer {
