@@ -22,6 +22,7 @@ gem 'therubyracer', platform: :ruby
 
 gem 'breadcrumbs_on_rails'
 gem 'nested_form' # Check for alternatives
+gem 'prawn'
 
 # Search, filtering and pagination
 gem 'ransack'
