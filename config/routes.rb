@@ -1,8 +1,7 @@
 OptimHandel::Application.routes.draw do
   resources :addresses
 
-  root to: 'home#index' #, as: 'store', via: :all
-  get 'language', to: 'home#language'
+  root to: 'store#index', via: [:get, :post]
 
   scope '(:locale)', locale: /en|de/ do
     devise_for :users, controllers: { registrations: 'registrations' }

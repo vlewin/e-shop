@@ -57,7 +57,7 @@
               b.caret
             ul.dropdown-menu
               - LANGUAGES.each do |locale,language|
-                li= link_to language.to_s, language_path(set_locale: locale ), class: 'navbar-link'
+                li= link_to language.to_s, root_path(set_locale: locale ), class: 'navbar-link'
 
           li.dropdown
             a.dropdown-toggle data-toggle="dropdown" href="#"

@@ -52,11 +52,11 @@ class ApplicationController < ActionController::Base
   end
 
   # def set_breadcrumb
-    # unless controller_name == 'home'
+    # unless controller_name == 'store'
       # add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
     # end
 
-  #   unless controller_name == 'home'
+  #   unless controller_name == 'store'
   #     add_breadcrumb "Home", :root_path, :options => { :title => "Home" }
 
   #     case params[:action]
