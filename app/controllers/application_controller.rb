@@ -8,8 +8,8 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
-  before_action :authenticate_user!
-  before_action :set_locale
+  before_filter :authenticate_user!
+  before_filter :set_locale
 
   # before_filter :set_breadcrumb #, only: [:index, :show, :edit]
   before_filter :current_cart
@@ -26,6 +26,7 @@ class ApplicationController < ActionController::Base
 
   # Locale
   def set_locale
+    puts "*** set_locale"
     I18n.locale = params[:locale] unless params[:locale].blank?
   end
 
@@ -96,6 +97,12 @@ class ApplicationController < ActionController::Base
 
   # Devise overrides
   def after_sign_in_path_for(resource)
-    current_user.admin? ? categories_path : products_path
+    if request.referrer.include? 'orders/new'
+      request.referrer
+    else
+      root_path
+    end
+    # current_user.admin? ? categories_path : products_path
+    # redirect_to_back_or_default
   end
 end

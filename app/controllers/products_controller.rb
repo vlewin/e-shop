@@ -1,8 +1,8 @@
 class ProductsController < ApplicationController
   respond_to :html, :js
 
-  add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
-  add_breadcrumb 'Products', "#{controller_name}_path".to_sym
+  # add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
+  # add_breadcrumb 'Products', "#{controller_name}_path".to_sym
 
   before_filter :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]

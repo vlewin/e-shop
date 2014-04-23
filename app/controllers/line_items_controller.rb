@@ -1,4 +1,6 @@
 class LineItemsController < ApplicationController
+  skip_before_filter :authenticate_user!
+
   # def index
   #   @line_items = LineItem.all
 
@@ -42,7 +44,7 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save!
-        format.html { redirect_to(@line_item.cart, notice: 'Line item was successfully created.') }
+        format.html { redirect_to(root_path, notice: 'Line item was successfully created.') }
       else
         format.html { render action: 'new' }
       end
