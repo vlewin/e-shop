@@ -8,3 +8,4 @@ TODO:
 - https://github.com/activerecord-hackery/ransack
 
 - Blog http://techbrownbags.wordpress.com/2014/01/17/rails-ajax-search-sort-paginate-with-ransack-kaminari/
+- Bootstrap Validator https://github.com/1000hz/bootstrap-validator
