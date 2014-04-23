@@ -22,11 +22,11 @@ class OrderPdf < Prawn::Document
   def header
     repeat :all do
       bounding_box([bounds.left, bounds.top], width: 250) do
-        text "Shopper", size: 20
+        text "E-Shop", size: 20
         move_down 10
-        text "Artellectual Co., Ltd., 5/37 Sukhumvit 71
-              Prakanong Nuea, Wattana, Bangkok
-              Thailand, 10110", size: 10
+        text "Musterstrasse 1
+              3000 Musterstadt
+              Deutschland", size: 10
       end
 
       bounding_box([bounds.left + 260, bounds.top], width: 260) do
