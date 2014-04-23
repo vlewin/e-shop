@@ -21,8 +21,6 @@ admin_user.save
 admin_user.admin!
 
 
-
-
 5.times do |c|
   category = Category.create(:name => Faker::Product.brand)
   rand(3..6).times do |p|
@@ -37,3 +35,6 @@ admin_user.admin!
     category.products << product
   end
 end
+
+DeliveryService.create(name: 'DHL Paket', rate: 6.99)
+DeliveryService.create(name: 'DHL Päckchen', rate: 4.10)

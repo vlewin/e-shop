@@ -1,4 +1,6 @@
 OptimHandel::Application.routes.draw do
+  resources :delivery_services
+
   root to: 'store#index', via: :get
 
   scope '(:locale)', locale: /en|de/ do
