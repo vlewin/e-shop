@@ -20,9 +20,11 @@ class OrdersController < ApplicationController
   end
 
   def new
-    add_breadcrumb 'Order'
+    # add_breadcrumb 'Order'
 
     @cart = current_cart
+    @delivery_services = DeliveryService.all
+
     if @cart.line_items.empty?
       redirect_to products_url, notice: "Your cart is empty"
       return
@@ -37,6 +39,7 @@ class OrdersController < ApplicationController
   def create
     puts "**** Create order"
     @order = Order.new(order_params)
+    @order.delivery_service = DeliveryService.find(order_params[:delivery_service_id])
     @order.add_line_items_from_cart(@current_cart)
 
     respond_to do |format|
@@ -77,7 +80,7 @@ class OrdersController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:address_id, :pay_type)
+      params.require(:order).permit(:address_id, :delivery_service_id, :pay_type)
     end
   #...
 end

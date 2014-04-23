@@ -1,5 +1,3 @@
-h2.page-header Shipping and Payment
-
 = form_for @order, :html => { :role => 'form'} do |form|
   - if @order.errors.any?
     #error_explanation
@@ -8,29 +6,105 @@ h2.page-header Shipping and Payment
         - @order.errors.full_messages.each do |message|
           li = message
 
-  h3.page-header
-    | Shipping Address
-    .pull-right
-      small= link_to 'New Address', new_address_path
 
-  - current_user.addresses.each_with_index do |address, index|
-    .radio
-      label
-        = form.radio_button :address_id, address.id, :checked => index.zero?
-        = "#{current_user.name}, #{address.street}, #{address.zip} #{address.city}"
+  #accordion.panel-group
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          a data-parent="#accordion" data-toggle="collapse" href="#collapseOne"
+            | Step 1: Billing and shipping address
+      #collapseOne.panel-collapse.collapse.in
+        .panel-body
+          h3.form-header
+            | Shipping Address
+            .pull-right
+              small= link_to 'New Address', new_address_path
 
-  h3.page-header
-    | Payment
+          - current_user.addresses.each_with_index do |address, index|
+            .radio
+              label
+                = form.radio_button :address_id, address.id, :checked => index.zero?
+                = "#{current_user.name}, #{address.street}, #{address.zip} #{address.city}"
 
-  - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
-    .radio
-      label
-        = form.radio_button :pay_type, payment_type, :checked => index.zero?
-        = payment_type
+          hr
+          .pull-left
+            = link_to 'Back to cart', cart_path(@current_cart), class: 'btn btn-default'
+          .pull-right
+            = link_to 'Continue', "#collapseTwo", class: 'btn btn-success', data: { parent: '#accordion', toggle: 'collapse' }
 
 
-  br
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          a data-parent="#accordion" data-toggle="collapse" href="#collapseTwo"
+            | Step 2: Delivery Details
+      #collapseTwo.panel-collapse.collapse
+        .panel-body
+          h3.form-header Shipping
 
-  hr
-  .pull-left= link_to 'Back to cart', cart_path(@current_cart), class: 'btn btn-default'
-  .pull-right= form.submit 'Purchase', :class => 'btn btn-success'
+          - @delivery_services.each_with_index do |delivery_service, index|
+            .radio
+              label
+                = form.radio_button :delivery_service_id, delivery_service.id, :checked => index.zero?
+                = delivery_service.name
+                b= " #{number_to_currency(delivery_service.rate)}"
+
+          hr
+          .pull-left= link_to 'Back', "#collapseOne", class: 'btn btn-default', data: { parent: '#accordion', toggle: 'collapse' }
+          .pull-right= link_to 'Continue', "#collapseThree", class: 'btn btn-success', data: { parent: '#accordion', toggle: 'collapse' }
+
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          a data-parent="#accordion" data-toggle="collapse" href="#collapseThree"
+            | Step 3: Payment Method
+      #collapseThree.panel-collapse.collapse
+        .panel-body
+          h3.form-header Payment
+
+          - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
+            .radio
+              label
+                = form.radio_button :pay_type, payment_type, :checked => index.zero?
+                = payment_type
+
+          hr
+          .pull-left= link_to 'Back', "#collapseTwo", class: 'btn btn-default', data: { parent: '#accordion', toggle: 'collapse' }
+          .pull-right= form.submit 'Purchase', :class => 'btn btn-success'
+
+/ h2.page-header Shipping and Payment
+
+/ = form_for @order, :html => { :role => 'form'} do |form|
+/   - if @order.errors.any?
+/     #error_explanation
+/       h2 = "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
+/       ul
+/         - @order.errors.full_messages.each do |message|
+/           li = message
+
+/   h3.page-header
+/     | Shipping Address
+/     .pull-right
+/       small= link_to 'New Address', new_address_path
+
+/   - current_user.addresses.each_with_index do |address, index|
+/     .radio
+/       label
+/         = form.radio_button :address_id, address.id, :checked => index.zero?
+/         = "#{current_user.name}, #{address.street}, #{address.zip} #{address.city}"
+
+/   h3.page-header
+/     | Payment
+
+/   - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
+/     .radio
+/       label
+/         = form.radio_button :pay_type, payment_type, :checked => index.zero?
+/         = payment_type
+
+
+/   br
+
+/   hr
+/   .pull-left= link_to 'Back to cart', cart_path(@current_cart), class: 'btn btn-default'
+/   .pull-right= form.submit 'Purchase', :class => 'btn btn-success'
