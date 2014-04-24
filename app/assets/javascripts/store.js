@@ -6,7 +6,7 @@ $(function() {
     }, 1000)
   });
 
-  $(".quantity-helper button").on('click', function(){
+  $( "body" ).on( "click", ".quantity-helper button", function() {
     var $input = $(this).parents('.quantity-helper').find('input');
     var quantity = parseInt($input.val())
 
