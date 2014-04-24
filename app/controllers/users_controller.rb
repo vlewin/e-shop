@@ -8,8 +8,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    add_breadcrumb current_user.name
-
     @user = current_user.admin? ? User.find(params[:id]) : current_user
     authorize current_user
   end

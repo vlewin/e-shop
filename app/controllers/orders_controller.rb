@@ -20,13 +20,11 @@ class OrdersController < ApplicationController
   end
 
   def new
-    # add_breadcrumb 'Order'
-
     @cart = current_cart
     @delivery_services = DeliveryService.all
 
     if @cart.line_items.empty?
-      redirect_to products_url, notice: "Your cart is empty"
+      redirect_to root_path, notice: "Your cart is empty"
       return
     else
       @order = Order.new
@@ -37,7 +35,6 @@ class OrdersController < ApplicationController
   end
 
   def create
-    puts "**** Create order"
     @order = Order.new(order_params)
     @order.delivery_service = DeliveryService.find(order_params[:delivery_service_id])
     @order.add_line_items_from_cart(@current_cart)
@@ -50,7 +47,7 @@ class OrdersController < ApplicationController
         # FIXME: Send notification email
         # OrderNotifier.received(@order).deliver
 
-        format.html { redirect_to products_url, notice: I18n.t('.thanks') }
+        format.html { redirect_to root_path, notice: I18n.t('.thanks') }
       else
         format.html { render action: 'new' }
       end

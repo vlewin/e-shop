@@ -18,7 +18,6 @@ class ProductsController < ApplicationController
   end
 
   def new
-    # add_breadcrumb "New #{controller_name.singularize}"
     @product = Product.new
     @categories = Category.all
     authorize @product
@@ -63,7 +62,6 @@ class ProductsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_product
     @product = Product.find(params[:id])
-    # add_breadcrumb @product.name
   end
 
   # Only allow a trusted parameter "white list" through.

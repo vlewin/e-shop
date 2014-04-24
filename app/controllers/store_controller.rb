@@ -1,6 +1,5 @@
 class StoreController < ApplicationController
   respond_to :html, :js
-
   skip_before_filter :authenticate_user!
 
   def index
@@ -14,9 +13,4 @@ class StoreController < ApplicationController
   def show
     @product = Product.find(params[:id])
   end
-
-  # def language
-  #   redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
-  #   # redirect_to_back_or_default(locale: params[:set_locale])
-  # end
 end
