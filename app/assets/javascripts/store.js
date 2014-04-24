@@ -6,8 +6,8 @@ $(function() {
     }, 1000)
   });
 
-  $("#products .input-group button").on('click', function(){
-    var $input = $(this).parents('.input-group').find('input');
+  $(".quantity-helper button").on('click', function(){
+    var $input = $(this).parents('.quantity-helper').find('input');
     var quantity = parseInt($input.val())
 
     if($(this).hasClass('quantity_minus')) {

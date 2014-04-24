@@ -16,14 +16,7 @@
         = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
           .row
             .col-xs-6
-              .input-group.input-group-sm
-                span.input-group-btn
-                  button.btn.btn-default.quantity_minus type="button"  -
-
-                = text_field_tag :quantity, 1, class: 'form-control input-qty text-center'
-
-                span.input-group-btn
-                  button.btn.btn-default.quantity_plus type="button"  +
+              = quantity_field_tag 1
 
             .col-xs-6
               = button_tag(type: "submit", class: "btn btn-sm btn-success") do

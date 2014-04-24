@@ -14,7 +14,7 @@ table.table.table-hover.table-responsive
       tr
         td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
         td= item.product.name
-        td= item.quantity
+        td= quantity_field_tag item.quantity
         td= number_to_currency(item.price)
         td= number_to_percentage(item.product.tax, precision: 0)
         td= number_to_currency(item.total)
