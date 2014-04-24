@@ -28,6 +28,11 @@ module OptimHandel
     # I18n.default_locale = :en
     config.enforce_available_locales = true
 
+    config.less.paths << File.join(Rails.root, 'app', 'assets', 'stylesheets')
+
+    # Should be set to true in production.
+    config.less.compress = false
+
     config.generators do |g|
       g.helper false
       g.stylesheets false
