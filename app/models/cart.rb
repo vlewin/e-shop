@@ -15,6 +15,10 @@ class Cart < ActiveRecord::Base
     current_item
   end
 
+  def empty?
+    line_items.count.zero?
+  end
+
   def total
     line_items.to_a.sum { |item| item.total }
   end
