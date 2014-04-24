@@ -1,0 +1,5 @@
+<%- if @current_cart.empty? %>
+  window.location.replace("/")
+<% else %>
+  $("#items").html("<%= escape_javascript(render :partial=> 'items') %>");
+<% end %>

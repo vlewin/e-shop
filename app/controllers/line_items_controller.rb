@@ -22,4 +22,15 @@ class LineItemsController < ApplicationController
 
     redirect_to_back_or_default line_items_url
   end
+
+  # private
+  # def line_item_params
+  #   params.require(:line_item).permit(
+  #     :product_id,
+  #     :order_id,
+  #     :cart_id,
+  #     :quantity,
+  #     :price
+  #   )
+  # end
 end

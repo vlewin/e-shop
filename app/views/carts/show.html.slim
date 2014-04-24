@@ -8,7 +8,8 @@ h2.page-header
 - if @current_cart.total.zero?
  h4 Your cart is empty!
 - else
-  == render 'items'
+  #items
+    == render 'items'
 
 p
   .pull-left= link_to 'Continue shopping', root_path, class: 'btn btn-default'
