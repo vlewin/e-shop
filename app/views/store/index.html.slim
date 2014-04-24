@@ -1,42 +1,29 @@
-h3.page-header
-  = t('store.index.welcome')
-  div
-    small Playground for new ruby on rails technologies and gems
-
 .row
   .col-xs-3.col-md-3
-    .sidebar
-      .panel.panel-default
-        .panel-heading.panel-heading-dark
-          b Categories
-        .panel-body
+    h4.page-header Categories
+    ul.categories
+      li= link_to 'All', root_path({}), remote: :true, class: 'category'
 
-          ul#sidebar.nav.nav-stacked
-            li= link_to 'All', root_path({}), remote: :true, class: 'category'
+      - @categories.each do |category|
+        li= link_to "#{category.name} (#{category.products.count})", root_path('q' => {'category_name_cont' => category.name}), remote: :true
 
-            - @categories.each do |category|
-              li= link_to "#{category.name} (#{category.products.count})", root_path('q' => {'category_name_cont' => category.name}), remote: :true
-
-      .panel.panel-default
-        .panel-heading.panel-heading-dark
-          b Search
-        .panel-body
-          = search_field_tag 'Search', '', class: 'form-control'
-
-
-  .col-xs-9.col-md-9
-    .panel.panel-default
-      .panel-heading.panel-heading-dark
+    h4.page-header Sort by
+    ul.sorting
+      li
         = sort_link @search, :name
+      li
         = sort_link @search, :price
+      li
         = sort_link @search, :created_at, 'Latest'
 
-        .pull-right
-          = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search form-inline' do |f|
-            .form-group
-              = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control'
+  .col-xs-9.col-md-9
+    h4.page-header
+      | Products
+      .pull-right
+        = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search form-inline' do |f|
+          .form-group
+            = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control input-xsm'
 
-      .panel-body
-        #products
-          = render 'products'
+    #products
+      = render 'products'
 

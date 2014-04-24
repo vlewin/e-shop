@@ -1,84 +1,33 @@
 .row
   - @products.each_with_index do |product, index|
     .col-xs-6.col-md-4
-      .product class=('out-of-stock' if (index%10).zero?)
+      .product
         a href=store_product_path(product)
-          = image_tag 'http://placehold.it/220x120', class: 'img-responsive'
-          h5= product.name
+          = image_tag 'http://placehold.it/240x180', class: 'img-responsive'
+          hr.line
+          b.name= product.name
           p.description
             = product.description
           p
             b= number_to_currency(product.price)
 
-          = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
-            .row
-              / .col-xs-3
-              / .col-xs-3
-              / = hidden_field_tag :quantity, 1, class: 'form-control input-sm'
-              / / .input-qty-detail
-              / .input-group.bootstrap-touchspin style=""
-              /   span.input-group-btn
-              /     button.btn.btn-default type="button"  -
-              /   / input.form-control.input-qty.text-center type="text" value="1"
-              /   = text_field_tag :quantity, 1, class: 'form-control input-qty text-center'
-              /   span.input-group-btn
-              /     button.btn.btn-default.bootstrap-touchspin-up type="button"  +
+        hr.line
 
-              / = button_tag(type: "submit", class: "btn btn-sm btn-success") do
-              /   i.fa.fa-shopping-cart
-              /   = ' Add to cart'
+        = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
+          .row
+            .col-xs-6
+              .input-group.input-group-sm
+                span.input-group-btn
+                  button.btn.btn-default.quantity_minus type="button"  -
 
-              .col-xs-6
-                .input-group.input-group-sm
-                  span.input-group-btn
-                    button.btn.btn-default.quantity_minus type="button"  -
+                = text_field_tag :quantity, 1, class: 'form-control input-qty text-center'
 
-                  = text_field_tag :quantity, 1, class: 'form-control input-qty text-center'
+                span.input-group-btn
+                  button.btn.btn-default.quantity_plus type="button"  +
 
-                  span.input-group-btn
-                    button.btn.btn-default.quantity_plus type="button"  +
-
-              .col-xs-6
-                = button_tag(type: "submit", class: "btn btn-sm btn-success") do
-                  i.fa.fa-shopping-cart
-                  = ' Add to cart'
-
-
-
-
-
-
-
-    / .col-xs-6.col-md-4
-    /   .thumbnail.text-center
-    /     a.link-p href="#{store_product_path(product)}"
-    /       p= image_tag 'http://placehold.it/220x120'
-    /     .caption.prod-caption
-    /       p
-    /         a.link-p href="#{store_product_path(product)}"= product.name
-    /       / p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, minima!
-    /       p
-    /         small= product.description
-
-    /       .btn-group
-    /         = link_to number_to_currency(product.price), store_product_path(product), class: 'btn btn-default'
-    /         = icon_link_to "Buy", cart_path(@current_cart), { class: 'btn btn-primary' }, 'fa-shopping-cart'
-
-    /       p
-
-
-    / .col-xs-6.col-md-4
-    /   a{href="#{store_product_path(product)}" class='product'}
-    /     = image_tag 'http://placehold.it/220x120'
-    /     span.caption
-    /       b= product.name
-    /       small
-    /         = product.description
-    /       p.price
-    /         span.label.label-default
-    /         | Price:
-    /         b= " #{number_to_currency(product.price)}"
-
-
+            .col-xs-6
+              = button_tag(type: "submit", class: "btn btn-sm btn-success") do
+                i.fa.fa-shopping-cart
+                = ' Add to cart'
 
 = paginate @products, remote: true
