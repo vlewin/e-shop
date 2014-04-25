@@ -20,11 +20,13 @@
             .pull-right
               small= link_to 'New Address', new_address_path
 
-          - current_user.addresses.each_with_index do |address, index|
+          - current_user.addresses.each do |address|
             .radio
               label
-                = form.radio_button :address_id, address.id, :checked => index.zero?
-                = "#{current_user.name}, #{address.street}, #{address.zip} #{address.city}"
+                = form.radio_button :address_id, address.id, :checked => address.default
+                = address.full_address
+                - if address.default
+                  span.label.label-info< Default address
 
           hr
           .pull-left

@@ -1,12 +1,7 @@
 fieldset
   legend Address
   = form_for @address, html: { class: 'form-horizontal' } do |f|
-    - if @address.errors.any?
-      #error_explanation
-        h2 = "#{pluralize(@address.errors.count, "error")} prohibited this address from being saved:"
-        ul
-          - @address.errors.full_messages.each do |message|
-            li = message
+    == render 'layouts/errors', object: @address
 
     .row
       .col-md-12

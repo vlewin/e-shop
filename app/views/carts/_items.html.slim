@@ -4,6 +4,7 @@ table.table.table-hover.table-responsive
       th Image
       th Name
       th Quantity
+      th Price
       th Subtotal
       th Tax
       th Total
@@ -19,6 +20,7 @@ table.table.table-hover.table-responsive
             = hidden_field_tag :line_item_id, item.id
             = quantity_field_tag item.quantity
         td= number_to_currency(item.price)
+        td= number_to_currency(item.subtotal)
         td= number_to_percentage(item.product.tax, precision: 0)
         td= number_to_currency(item.total)
         td= icon_link_to '', item, { method: :delete}, 'fa-times-circle-o fa-lg  text-danger'
