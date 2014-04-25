@@ -13,4 +13,8 @@ class User < ActiveRecord::Base
   def set_default_role
     self.role ||= :user
   end
+
+  def default_address
+    addresses.default.first
+  end
 end
