@@ -7,6 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :zip
       t.string :phone
       t.string :user_id
+      t.boolean :default, default: false
 
       t.timestamps
     end
