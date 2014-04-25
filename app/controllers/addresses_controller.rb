@@ -17,6 +17,7 @@ class AddressesController < ApplicationController
 
   def create
     @address = Address.new(address_params)
+    @address.user_id = current_user.id
 
     if @address.save
       redirect_to @address, notice: 'Address was successfully created.'
