@@ -1,8 +1,10 @@
-h2.page-header
+h3.page-header
   | Categories
   .pull-right
     - if policy(Category).new?
       small= link_to 'New category', new_category_path
+
+
 table.table.table-bordered.table-hover.table-responsive
   thead
     tr

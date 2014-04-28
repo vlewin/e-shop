@@ -1,13 +1,13 @@
 .row
   .col-xs-3.col-md-3
-    h4.page-header Categories
+    h3.page-header Categories
     ul.categories
       li= link_to 'All', root_path({}), remote: :true, class: 'category'
 
       - @categories.each do |category|
         li= link_to "#{category.name} (#{category.products.count})", root_path('q' => {'category_name_cont' => category.name}), remote: :true
 
-    h4.page-header Sort by
+    h3.page-header Sort by
     ul.sorting
       li
         = sort_link @search, :name
@@ -17,12 +17,12 @@
         = sort_link @search, :created_at, 'Latest'
 
   .col-xs-9.col-md-9
-    h4.page-header
+    h3.page-header
       | Products
       .pull-right
         = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search form-inline' do |f|
           .form-group
-            = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control input-xsm'
+            = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control input-sm'
 
     #products
       = render 'products'

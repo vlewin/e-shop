@@ -1,6 +1,9 @@
-h1 Listing addresses
+h3.page-header
+  | Listing addresses
+  .pull-right
+    small= link_to 'New Address', new_address_path
 
-table.table.table-hover.table-responsive
+table.table.table-bordered.table-hover.table-responsive
   thead
     tr
       th Country
@@ -26,6 +29,3 @@ table.table.table-hover.table-responsive
         td = link_to 'Edit', edit_address_path(address)
         td = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete
 
-br
-
-= link_to 'New Address', new_address_path

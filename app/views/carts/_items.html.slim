@@ -8,7 +8,7 @@ table.table.table-hover.table-responsive
       th Subtotal
       th Tax
       th Total
-      / th ---
+      th ---
 
   tbody
     - @current_cart.line_items.each do |item|
@@ -23,7 +23,8 @@ table.table.table-hover.table-responsive
         td= number_to_currency(item.subtotal)
         td= number_to_percentage(item.product.tax, precision: 0)
         td= number_to_currency(item.total)
-        / # td= icon_link_to '', item, { method: :delete}, 'fa-times-circle-o fa-lg  text-danger'
+        / # td= icon_link_to 'Remove', item, { class: 'text-danger', method: :delete}, 'fa-times-circle-o fa-lg'
+        td= link_to 'Remove', item, class: 'text-danger', method: :delete
     tr
       td colspan=5
       td
@@ -36,3 +37,5 @@ table.table.table-hover.table-responsive
         p= number_to_currency(Shipment.first.rate)
         p
           b= number_to_currency(@current_cart.total)
+
+      td

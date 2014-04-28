@@ -1,24 +1,96 @@
-h3.page-header Account
+h3.page-header Profile
+ul.nav.nav-tabs
+  li.active
+    a href="#account"
+      b Account
+  li
+    a href="#addresses"
+      b Addresses
+  li
+    a href="#orders"
+      b Orders
 
-dl
-  dt User
-  dd= @user.name
+.tab-content
+  #account.tab-pane.active.fade.in
+    h4 Edit user information
 
-  dt Email
-  dd= @user.email
+    = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f|
+      = devise_error_messages!
+      .form-group
+        = f.label :name
+        = f.text_field :name, value: current_user.name, autofocus: true, class: 'form-control'
+      .form-group
+        = f.label :email
+        = f.email_field :email, value: current_user.email, class: 'form-control'
+        - if devise_mapping.confirmable? && resource.pending_reconfirmation?
+          div
+            | Currently waiting confirmation for:
+            = resource.unconfirmed_email
+      fieldset
+        .form-group
+          = f.label :password
+          = f.password_field :password, :autocomplete => 'off', class: 'form-control'
+          small.text-muted Leave these fields blank if you don't want to change your password.
+        .form-group
+          = f.label :password_confirmation
+          = f.password_field :password_confirmation, class: 'form-control'
+      fieldset
+        .form-group
+          = f.label :current_password
+          = f.password_field :current_password, class: 'form-control'
+          small.text-muted You must enter your current password to make changes.
+      = f.submit 'Update', :class => 'btn btn-success'
 
-h3.page-header Address
-- @user.addresses.each do |address|
-  address
-    strong= @user.name
-    br
-      = address.city
-      br
-        = address.street
-        br
-          = address.phone
-          br
-            = mail_to @user.email
+    hr
+
+    h4
+      = "Cancel Account "
+      small.text-muted Unhappy? We'll be sad to see you go.
+    p
+    = button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-danger'
 
 
-= link_to 'Edit account', edit_user_registration_path
+  #addresses.tab-pane
+    h4 Your addresses
+    - if @user.addresses.present?
+      - @user.addresses.each do |address|
+        strong= @user.name
+        div= address.city
+        div= address.street
+        div= address.phone
+        div= mail_to @user.email
+    - else
+      = link_to 'New Address', new_address_path
+
+  #orders.tab-pane
+    h4 Your orders
+
+    table.table.table-bordered.table-hover.table-responsive
+      thead
+        tr
+          th Date
+          th Pay type
+          th Subtotal
+          th Taxes
+          th Total
+          th
+
+      tbody
+        - current_user.orders.each do |order|
+          tr
+            td= I18n.localize(order.created_at)
+            td= order.pay_type
+            td= number_to_currency order.subtotal
+            td= number_to_currency order.taxes
+            td= number_to_currency order.total
+            td
+              = icon_link_to "Print invoice", order_path(order, format: 'pdf'), 'fa-print'
+              / - if policy(order).update?
+              /   = link_to 'Edit', edit_order_path(order)
+              / - if policy(order).destroy?
+              /  = link_to 'Destroy', order, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+
+
+
+
