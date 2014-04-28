@@ -1,4 +1,16 @@
 module ApplicationHelper
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
+
   def icon_link_to(text, path, options = {}, icon)
     link_to "#{content_tag :i, nil, class: "fa #{icon}"} #{text}".html_safe, path, options
   end
