@@ -2,11 +2,11 @@ class Order < ActiveRecord::Base
   PAYMENT_TYPES = [ 'Bank transfer', 'Purchase order' ]
 
   belongs_to :address
-  belongs_to :delivery_service
+  belongs_to :shipment
 
   has_many :line_items, dependent: :destroy
 
-  validates :address_id, :delivery_service_id, :pay_type, presence: true
+  validates :address_id, :shipment_id, :pay_type, presence: true
   validates :pay_type, inclusion: PAYMENT_TYPES
 
   def add_line_items_from_cart(cart)

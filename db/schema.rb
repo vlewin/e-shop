@@ -35,13 +35,6 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.datetime "updated_at"
   end
 
-  create_table "delivery_services", force: true do |t|
-    t.string   "name"
-    t.decimal  "rate"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "line_items", force: true do |t|
     t.integer  "product_id"
     t.integer  "order_id"
@@ -58,7 +51,7 @@ ActiveRecord::Schema.define(version: 20140423194045) do
 
   create_table "orders", force: true do |t|
     t.integer  "address_id"
-    t.integer  "delivery_service_id"
+    t.integer  "shipment_id"
     t.string   "pay_type"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -73,6 +66,15 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.integer  "category_id"
     t.decimal  "price",          precision: 8, scale: 2
     t.decimal  "tax",            precision: 8, scale: 2
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "shipments", force: true do |t|
+    t.string   "provider"
+    t.string   "name"
+    t.decimal  "rate"
+    t.boolean  "default",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

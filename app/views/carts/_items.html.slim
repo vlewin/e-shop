@@ -8,13 +8,13 @@ table.table.table-hover.table-responsive
       th Subtotal
       th Tax
       th Total
-      th ---
+      / th ---
 
   tbody
     - @current_cart.line_items.each do |item|
       tr
         td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
-        td= item.product.name
+        td= link_to item.product.name, item.product
         td
           = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
             = hidden_field_tag :line_item_id, item.id
@@ -23,20 +23,16 @@ table.table.table-hover.table-responsive
         td= number_to_currency(item.subtotal)
         td= number_to_percentage(item.product.tax, precision: 0)
         td= number_to_currency(item.total)
-        td= icon_link_to '', item, { method: :delete}, 'fa-times-circle-o fa-lg  text-danger'
+        / # td= icon_link_to '', item, { method: :delete}, 'fa-times-circle-o fa-lg  text-danger'
     tr
       td colspan=5
       td
-        p
-          b Taxes:
-        p
-          b Shipping costs:
+        p Subtotal:
+        p Shipping:
         p
           b Total:
       td
-        p
-          b= number_to_currency(@current_cart.taxes)
-        p
-          b= number_to_currency(DeliveryService.first.rate)
+        p= number_to_currency(@current_cart.subtotal)
+        p= number_to_currency(Shipment.first.rate)
         p
           b= number_to_currency(@current_cart.total)

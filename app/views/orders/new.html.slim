@@ -44,12 +44,12 @@
         .panel-body
           h3.form-header Shipping
 
-          - @delivery_services.each_with_index do |delivery_service, index|
+          - @shipments.each_with_index do |shipment, index|
             .radio
               label
-                = form.radio_button :delivery_service_id, delivery_service.id, :checked => index.zero?
-                = delivery_service.name
-                b= " #{number_to_currency(delivery_service.rate)}"
+                = form.radio_button :shipment_id, shipment.id, :checked => index.zero?
+                = "#{shipment.provider} #{shipment.name}"
+                b= " #{number_to_currency(shipment.rate)}"
 
           hr
           .pull-left= link_to 'Back', "#collapseOne", class: 'btn btn-default', data: { parent: '#accordion', toggle: 'collapse' }
