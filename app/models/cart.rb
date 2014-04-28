@@ -2,8 +2,6 @@ class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
   def add_product(product_id, quantity=1)
-    puts "**** #{quantity.inspect}"
-
     current_item = line_items.find_by(product_id: product_id)
 
     if current_item
@@ -34,8 +32,4 @@ class Cart < ActiveRecord::Base
   def taxes
     line_items.to_a.sum { |item| item.tax }
   end
-
-  # def tax_pct
-  #   10.0
-  # end
 end

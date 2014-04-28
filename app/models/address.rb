@@ -6,7 +6,6 @@ class Address < ActiveRecord::Base
 
   # after_initialize :set_default, :if => :new_record?
   after_create :set_default
-  # before_update :set_default, if: -> { default == true and default_changed? and user.addresses.size > 1 }
 
   scope :default, -> { where(default: true) }
 
