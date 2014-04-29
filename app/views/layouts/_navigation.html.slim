@@ -30,11 +30,12 @@
 
       ul.nav.navbar-nav.navbar-right
         - unless user_signed_in? && current_user.admin?
-          li class=('active' if controller_name == 'carts')
+          li class=((controller_name == 'cart' ? 'active' : '') + (@current_cart.empty? ? 'disabled' : ''))
             = icon_link_to "Cart (#{@current_cart.count})", cart_path(@current_cart), 'fa-shopping-cart'
 
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#"
+            i.fa.fa-flag>
             = LANGUAGES[I18n.locale]
             b.caret
           ul.dropdown-menu
@@ -44,6 +45,7 @@
           - if user_signed_in?
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" href="#" class=('active' if controller_name == 'users')
+                i.fa.fa-user>
                 = current_user.name
                 b.caret
 
