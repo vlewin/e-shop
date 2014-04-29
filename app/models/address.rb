@@ -6,6 +6,7 @@ class Address < ActiveRecord::Base
 
   # after_initialize :set_default, :if => :new_record?
   after_create :set_default
+  after_destroy :set_default
 
   scope :default, -> { where(default: true) }
 
