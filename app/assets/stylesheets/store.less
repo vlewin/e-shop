@@ -99,13 +99,99 @@
 //   display: inline-block;
 // }
 
-
-
-
-
 .form-header {
   border-bottom: 1px solid #EEEEEE;
   margin: 10px 0 20px;
   padding-bottom: 9px;
+}
+
+
+// Wizard
+.wizard a {
+    padding: 10px 12px 10px;
+    margin-right: 5px;
+    background: #efefef;
+    position: relative;
+    display: inline-block;
+}
+.wizard a:before {
+    width: 0;
+    height: 0;
+    border-top: 20px inset transparent;
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #fff;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+}
+.wizard a:after {
+    width: 0;
+    height: 0;
+    border-top: 20px inset transparent;
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #efefef;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -20px;
+    z-index: 2;
+}
+.wizard a:first-child:before,
+.wizard a:last-child:after {
+    border: none;
+}
+.wizard a:first-child {
+    -webkit-border-radius: 4px 0 0 4px;
+       -moz-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+}
+.wizard a:last-child {
+    -webkit-border-radius: 0 4px 4px 0;
+       -moz-border-radius: 0 4px 4px 0;
+            border-radius: 0 4px 4px 0;
+}
+.wizard .badge {
+    margin: 0 5px 0 18px;
+    position: relative;
+    top: -1px;
+}
+.wizard a:first-child .badge {
+    margin-left: 0;
+}
+.wizard .current {
+    background: #007ACC;
+    color: #fff;
+}
+.wizard .current:after {
+    border-left-color: #007ACC;
+}
+
+// Buttons
+.btn-next {
+  border: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  margin-right: 20px;
+  padding: 6px 12px;
+  position: relative;
+  background-color: #94BA65;
+
+  &:hover {
+    background-color: #94BA65;
+  }
+
+  &:after {
+    width: 0;
+    height: 0;
+    border-top: 16px inset rgba(0, 0, 0, 0);
+    border-bottom: 16px inset rgba(0, 0, 0, 0);
+    border-left: 20px solid #94BA65;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -20px;
+    z-index: 2;
+  }
 }
 

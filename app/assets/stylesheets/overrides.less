@@ -11,6 +11,7 @@ hr.line {
 }
 
 body {
+  // background-color: #F5F5F5;
   color: #505050;
   padding-top: 100px;
   // font-family: 'OpenSans'
@@ -57,12 +58,6 @@ body {
     }
   }
 }
-
-// .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
-//     background-color: #E7E7E7;
-//     color: #555555;
-// }
-
 
 // Panels
 // .panel {
@@ -130,19 +125,20 @@ body {
 
 // Pagination
 .pagination {
+  li.active a {
+    background-color: #94BA65;
+    border-color: #94BA65;
+    color: #FFFFFF;
+  }
+
+  li.page:not(.active) a, li.first a, li.last a {
+    color: #94BA65;
+  }
+
   li.next, li.prev {
     display: none;
+    color: #94BA65;
   }
-}
-
-.pagination > .active > span,
-.pagination > .active > a,
-.pagination > .active > a:hover,
-.pagination > .active > span:hover,
-.pagination > .active > a:focus,
-.pagination > .active > span:focus {
-  background-color: #94BA65;
-  border-color: #94BA65;
 }
 
 // Tables

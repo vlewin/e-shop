@@ -30,6 +30,8 @@ table.table.table-bordered.table-hover.table-responsive
           /  = link_to 'Destroy', order, data: {:confirm => 'Are you sure?'}, :method => :delete
 
 
+== render :template => order_path(Order.last, format: 'pdf')
+
 
 
 
