@@ -1,0 +1,17 @@
+#addresses.tab-pane
+  h4 Your addresses
+
+  .row
+    - if @user.addresses.present?
+      - @user.addresses.each do |address|
+        .col-xs-4.col-md-4
+          strong>= @user.name
+          - if address.default
+            span.label.label-default Default
+          div= address.city
+          div= address.street
+          div= address.phone
+          div= mail_to @user.email
+          br
+    - else
+      = link_to 'New Address', new_address_path
