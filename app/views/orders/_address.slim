@@ -1,0 +1,25 @@
+.panel-heading
+  h4.panel-title
+    a data-parent="#accordion" data-toggle="collapse" href="#address"
+      | Step 1: Billing and shipping address
+#address.panel-collapse.collapse.in
+  .panel-body
+    h3.form-header
+      | Address
+      .pull-right
+        small= link_to 'New Address', new_address_path
+
+    - current_user.addresses.each do |address|
+      .radio
+        label
+          = form.radio_button :address_id, address.id, :checked => address.default
+          = address.full_address
+          - if address.default
+            span.label.label-default< Default
+
+    hr
+    .pull-left
+      = icon_link_to 'Back to cart', cart_path(@current_cart), { class: 'btn btn-back btn-default'}, 'fa-chevron-circle-left'
+
+    .pull-right
+      = link_to 'Next to shipping', "#shipping", class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse' }

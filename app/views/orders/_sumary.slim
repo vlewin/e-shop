@@ -1,0 +1,47 @@
+.panel-heading
+  h4.panel-title
+    a data-parent="#accordion" data-toggle="collapse" href="#sumary"
+      | Step 3: Order sumary
+#sumary.panel-collapse.collapse
+  .panel-body
+    h3.form-header Order sumary
+
+    table.table.table-hover.table-responsive
+      thead
+        tr
+          th Image
+          th Name
+          th Quantity
+          th Price
+          th Subtotal
+          th Tax
+          th Total
+
+      tbody
+        - @current_cart.line_items.each do |item|
+          tr
+            td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
+            td= link_to item.product.name, item.product
+            td= item.quantity
+            td= number_to_currency(item.price)
+            td= number_to_currency(item.subtotal)
+            td= number_to_percentage(item.product.tax, precision: 0)
+            td= number_to_currency(item.total)
+        tr
+          td colspan=5
+          td
+            p Subtotal:
+            p Shipping:
+            p
+              b Total:
+          td
+            p= number_to_currency(@current_cart.subtotal)
+            p= number_to_currency(Shipment.first.rate)
+            p
+              b= number_to_currency(@current_cart.total)
+
+          td
+
+    hr
+    .pull-left= icon_link_to 'Back', '#payment', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse' } }, 'fa-chevron-circle-left'
+    .pull-right= form.submit 'Purchase', :class => 'btn btn-success'

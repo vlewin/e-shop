@@ -1,0 +1,18 @@
+.panel-heading
+  h4.panel-title
+    a data-parent="#accordion" data-toggle="collapse" href="#shipping"
+      | Step 2: Delivery Details
+#shipping.panel-collapse.collapse
+  .panel-body
+    h3.form-header Shipping
+
+    - @shipments.each_with_index do |shipment, index|
+      .radio
+        label
+          = form.radio_button :shipment_id, shipment.id, :checked => shipment.default
+          = "#{shipment.provider} #{shipment.name}"
+          b= " #{number_to_currency(shipment.rate)}"
+
+    hr
+    .pull-left= icon_link_to 'Back', '#address', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse' } }, 'fa-chevron-circle-left'
+    .pull-right= link_to 'Next to payment', "#payment", class: 'btn btn-success btn-next', data: { parent: '#accordion', toggle: 'collapse' }

@@ -29,119 +29,15 @@
 
         #accordion.panel-group
           .panel.panel-default
-            .panel-heading
-              h4.panel-title
-                a data-parent="#accordion" data-toggle="collapse" href="#address"
-                  | Step 1: Billing and shipping address
-            #address.panel-collapse.collapse.in
-              .panel-body
-                h3.form-header
-                  | Address
-                  .pull-right
-                    small= link_to 'New Address', new_address_path
+            = render partial: 'address', locals: { form: form }
 
-                - current_user.addresses.each do |address|
-                  .radio
-                    label
-                      = form.radio_button :address_id, address.id, :checked => address.default
-                      = address.full_address
-                      - if address.default
-                        span.label.label-default< Default
-
-                hr
-                .pull-left
-                  = icon_link_to 'Back to cart', cart_path(@current_cart), { class: 'btn btn-back btn-default'}, 'fa-chevron-circle-left'
-
-                .pull-right
-                  = link_to 'Next to shipping', "#shipping", class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse' }
+          .panel.panel-default
+            = render partial: 'shipping', locals: { form: form }
 
 
           .panel.panel-default
-            .panel-heading
-              h4.panel-title
-                a data-parent="#accordion" data-toggle="collapse" href="#shipping"
-                  | Step 2: Delivery Details
-            #shipping.panel-collapse.collapse
-              .panel-body
-                h3.form-header Shipping
-
-                - @shipments.each_with_index do |shipment, index|
-                  .radio
-                    label
-                      = form.radio_button :shipment_id, shipment.id, :checked => index.zero?
-                      = "#{shipment.provider} #{shipment.name}"
-                      b= " #{number_to_currency(shipment.rate)}"
-
-                hr
-                .pull-left= icon_link_to 'Back', '#address', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse' } }, 'fa-chevron-circle-left'
-                .pull-right= link_to 'Next to payment', "#payment", class: 'btn btn-success btn-next', data: { parent: '#accordion', toggle: 'collapse' }
+            = render partial: 'payment', locals: { form: form }
 
           .panel.panel-default
-            .panel-heading
-              h4.panel-title
-                a data-parent="#accordion" data-toggle="collapse" href="#payment"
-                  | Step 3: Payment Method
-            #payment.panel-collapse.collapse
-              .panel-body
-                h3.form-header Payment
-
-                - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
-                  .radio
-                    label
-                      = form.radio_button :pay_type, payment_type, :checked => index.zero?
-                      = payment_type
-
-                hr
-                .pull-left= icon_link_to 'Back', '#shipping', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse' } }, 'fa-chevron-circle-left'
-                .pull-right= link_to 'Next to sumary', "#sumary", class: 'btn btn-success btn-next', data: { parent: '#accordion', toggle: 'collapse' }
-
-          .panel.panel-default
-            .panel-heading
-              h4.panel-title
-                a data-parent="#accordion" data-toggle="collapse" href="#sumary"
-                  | Step 3: Order sumary
-            #sumary.panel-collapse.collapse
-              .panel-body
-                h3.form-header Order sumary
-
-                table.table.table-hover.table-responsive
-                  thead
-                    tr
-                      th Image
-                      th Name
-                      th Quantity
-                      th Price
-                      th Subtotal
-                      th Tax
-                      th Total
-
-                  tbody
-                    - @current_cart.line_items.each do |item|
-                      tr
-                        td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
-                        td= link_to item.product.name, item.product
-                        td= item.quantity
-                        td= number_to_currency(item.price)
-                        td= number_to_currency(item.subtotal)
-                        td= number_to_percentage(item.product.tax, precision: 0)
-                        td= number_to_currency(item.total)
-                    tr
-                      td colspan=5
-                      td
-                        p Subtotal:
-                        p Shipping:
-                        p
-                          b Total:
-                      td
-                        p= number_to_currency(@current_cart.subtotal)
-                        p= number_to_currency(Shipment.first.rate)
-                        p
-                          b= number_to_currency(@current_cart.total)
-
-                      td
-
-                hr
-                .pull-left= icon_link_to 'Back', '#payment', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse' } }, 'fa-chevron-circle-left'
-                .pull-right= form.submit 'Purchase', :class => 'btn btn-success'
-
+            = render partial: 'sumary', locals: { form: form }
 
