@@ -2,7 +2,7 @@
   .col-xs-3.col-md-3
     h3.page-header Categories
     ul.categories
-      li= link_to 'All', root_path({}), remote: :true, class: 'category'
+      li= link_to "All products (#{@products.size})", root_path({}), remote: :true, class: 'category'
 
       - @categories.each do |category|
         li= link_to "#{category.name} (#{category.products.count})", root_path('q' => {'category_name_cont' => category.name}), remote: :true
