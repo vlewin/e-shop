@@ -112,6 +112,7 @@
     margin-right: 5px;
     background: #efefef;
     position: relative;
+    outline: none;
     display: inline-block;
 }
 .wizard a:before {
@@ -159,12 +160,18 @@
 .wizard a:first-child .badge {
     margin-left: 0;
 }
-.wizard .current {
-    background: #007ACC;
+
+.wizard .active {
+    background: #94BA65;
     color: #fff;
 }
-.wizard .current:after {
-    border-left-color: #007ACC;
+.wizard .active:after {
+    border-left-color: #94BA65;
+}
+
+.wizard .active .badge {
+    background: #FFF;
+    color: #454545;
 }
 
 // Buttons
