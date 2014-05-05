@@ -14,6 +14,7 @@
         label
           = form.radio_button :address_id, address.id, :checked => address.default
           = address.full_address
+
           - if address.default
             span.label.label-default< Default
 

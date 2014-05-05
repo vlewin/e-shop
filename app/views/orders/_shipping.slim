@@ -12,6 +12,9 @@
           = form.radio_button :shipment_id, shipment.id, :checked => shipment.default
           = "#{shipment.provider} #{shipment.name}"
           b= " #{number_to_currency(shipment.rate)}"
+          - if Shipment.default.include? shipment
+            span.label.label-default< Standard
+
 
     hr
     .pull-left= icon_link_to 'Back', '#address', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse' } }, 'fa-chevron-circle-left'
