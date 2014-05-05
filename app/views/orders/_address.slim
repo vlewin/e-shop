@@ -19,7 +19,7 @@
 
     hr
     .pull-left
-      = icon_link_to 'Back to cart', cart_path(@current_cart), { class: 'btn btn-back btn-default'}, 'fa-chevron-circle-left'
+      = icon_link_to 'Back to cart', cart_path(@current_cart), { class: 'btn btn-default'}, 'fa-chevron-circle-left'
 
     .pull-right
       = link_to 'Next to shipping', "#shipping", class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse' }
