@@ -35,5 +35,5 @@ admin_user.admin!
   end
 end
 
-Shipment.create(provider: 'DHL', name: 'Paket',    rate: 6.99)
+Shipment.create(provider: 'DHL', name: 'Paket',    rate: 6.99, default:true)
 Shipment.create(provider: 'DHL', name: 'Päckchen', rate: 4.10)
