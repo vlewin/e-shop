@@ -1,15 +1,4 @@
 $(function() {
-
-  // $('#checkout').collapse({
-  //   toggle: false
-  // })
-
-  // $('#checkout_tabs a').click(function (e) {
-  //   e.preventDefault()
-  //   $(this).tab('show')
-  // })
-
-
   $('.wizard a').click(function (e) {
     e.preventDefault()
     $(this).parents('div').find('a').removeClass('active')

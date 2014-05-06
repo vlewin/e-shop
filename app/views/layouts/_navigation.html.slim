@@ -51,7 +51,6 @@
 
               ul.dropdown-menu
                 li= icon_link_to 'Account settings', user_path(current_user), 'fa-gear'
-                li= icon_link_to 'Order history', orders_path, 'fa-list-alt'
                 li= icon_link_to 'Logout', destroy_user_session_path, { method: 'delete' }, 'fa-sign-out'
           - else
             li.dropdown

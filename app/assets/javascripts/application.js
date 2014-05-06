@@ -31,3 +31,23 @@
 //     $(this).tab('show')
 //   })
 // })
+
+
+// $(function() {
+//   $(window).load(function(){
+//     $('.nav-tabs a[href="' + location.hash +'"]').tab('show');
+//   })
+
+//   $(window).on('hashchange', function() {
+//     $('.nav-tabs a[href="' + location.hash +'"]').tab('show');
+//   });
+
+//   $('a[data-toggle="tab"]').click(function (e) {
+//     e.preventDefault()
+//     location.hash = $(this).attr('href');
+//     $(this).tab('show')
+//   })
+// })
+
+
+

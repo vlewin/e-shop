@@ -1,14 +1,11 @@
 h3.page-header Profile
 ul.nav.nav-tabs
   li.active
-    a href="#account"
-      b Account
+    = link_to 'Account', '#account', data: { toggle: 'tab'}
   li
-    a href="#addresses"
-      b Addresses
+    = link_to 'Addresses', '#addresses', data: { toggle: 'tab'}
   li
-    a href="#orders"
-      b Orders
+    = link_to 'Orders', '#orders', data: { toggle: 'tab'}
 
 .tab-content
   == render 'account'

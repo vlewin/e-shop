@@ -1,23 +1,28 @@
 #orders.tab-pane
-  h4 Your orders
+  - if current_user.orders.present?
+    h4 Your orders
 
-  table.table.table-hover.table-responsive
-    thead
-      tr
-        th Date
-        th Pay type
-        th Subtotal
-        th Taxes
-        th Total
-        th
 
-    tbody
-      - current_user.orders.each do |order|
+    table.table.table-hover.table-responsive
+      thead
         tr
-          td= I18n.localize(order.created_at)
-          td= order.pay_type
-          td= number_to_currency order.subtotal
-          td= number_to_currency order.taxes
-          td= number_to_currency order.total
-          td
-            = icon_link_to "Print invoice", order_path(order, format: 'pdf'), 'fa-print'
+          th Date
+          th Pay type
+          th Subtotal
+          th Taxes
+          th Total
+          th
+
+      tbody
+        - current_user.orders.each do |order|
+          tr
+            td= I18n.localize(order.created_at)
+            td= order.pay_type
+            td= number_to_currency order.subtotal
+            td= number_to_currency order.taxes
+            td= number_to_currency order.total
+            td
+              = icon_link_to "Print invoice", order_path(order, format: 'pdf'), 'fa-print'
+
+  - else
+    h4 Your orders list is empty
