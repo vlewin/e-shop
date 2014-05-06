@@ -3,26 +3,39 @@
     h3.page-header Categories
     ul.categories
       li= link_to "All products (#{@products.size})", root_path({}), remote: :true, class: 'category'
-
       - @categories.each do |category|
         li= link_to "#{category.name} (#{category.products.count})", root_path('q' => {'category_name_cont' => category.name}), remote: :true
 
     h3.page-header Sort by
     ul.sorting
-      li
-        = sort_link @search, :name
-      li
-        = sort_link @search, :price
-      li
-        = sort_link @search, :created_at, 'Latest'
+      li= sort_link @search, :name
+      li= sort_link @search, :price
+      li= sort_link @search, :created_at, 'Latest'
 
   .col-xs-9.col-md-9
     h3.page-header
       | Products
       .pull-right
         = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search form-inline' do |f|
-          .form-group
+          .input-group
+            .input-group-btn
+              button.btn.btn-default.btn-sm.dropdown-toggle data-toggle="dropdown" type="button"
+                => "Sort by"
+                span.caret
+              ul.dropdown-menu
+                li
+                  = sort_link @search, :name
+                li
+                  = sort_link @search, :price
+                li
+                  = sort_link @search, :created_at, 'Latest'
+                li.divider
+                li
+                  = link_to 'Reset', root_path
+
             = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control input-sm'
+            span.input-group-addon
+              i.fa.fa-search
 
     #products
       = render 'products'
