@@ -4,6 +4,9 @@ class Shipment < ActiveRecord::Base
   scope :default, -> { where(default: true) }
 
   def set_default
-    self.update_attributes(default: true) #if user.default_address.blank?
+    if self.class.default.blank?
+      self.class.update_all(default: false)
+      self.update_attributes(default: true)
+    end
   end
 end
