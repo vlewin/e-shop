@@ -1,26 +1,29 @@
-.panel.panel-default
-  = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
-    .panel-body
-      h2= t('authentication.sign_up')
-      h4
-        small= t('authentication.account_exist')
-        | &nbsp;
-        small= link_to t('authentication.sign_in'), new_user_session_path
+.row
+  .col-md-5.col-md-offset-3
+    .panel.panel-default
+      = form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form'}) do |f|
+        .panel-heading
+          h2= t('authentication.sign_up')
+          h4
+            small= t('authentication.account_exist')
+            | &nbsp;
+            small= link_to t('authentication.sign_in'), new_user_session_path
 
+        .panel-body
+          == render 'layouts/errors', object: resource
 
-      = devise_error_messages!
-      .form-group
-        label= t('forms.name')
-        = f.text_field :name, autofocus: true, placeholder: t('forms.name'), class: 'form-control'
-      .form-group
-        label= t('forms.email')
-        = f.email_field :email, placeholder: t('forms.email'), class: 'form-control'
-      .form-group
-        label= t('forms.password')
-        = f.password_field :password, placeholder: t('forms.password'), class: 'form-control'
-      .form-group
-        label= t('forms.password_confirmation')
-        = f.password_field :password_confirmation, placeholder: t('forms.password_confirmation'), class: 'form-control'
+          .form-group
+            label= t('forms.name')
+            = f.text_field :name, autofocus: true, required: true, placeholder: t('forms.name'), class: 'form-control'
+          .form-group
+            label= t('forms.email')
+            = f.email_field :email, required: true, placeholder: t('forms.email'), class: 'form-control'
+          .form-group
+            label= t('forms.password')
+            = f.password_field :password, required: true, :autocomplete => 'off', placeholder: t('forms.password'), class: 'form-control'
+          .form-group
+            label= t('forms.password_confirmation')
+            = f.password_field :password_confirmation, required: true, :autocomplete => 'off', placeholder: t('forms.password_confirmation'), class: 'form-control'
 
-    .panel-footer
-      = f.submit t('authentication.sign_up'), :class => 'btn btn-success'
+        .panel-footer
+          = f.submit t('authentication.sign_up'), :class => 'btn btn-success'
