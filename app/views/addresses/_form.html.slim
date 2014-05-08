@@ -8,27 +8,27 @@ fieldset
         .form-group
           = f.label :country, class: 'col-sm-2 control-label'
           .col-sm-4
-            = f.text_field :country, required: '', value: 'Germany', class: 'form-control'
+            = f.text_field :country, placeholder: 'country', required: '', value: 'Germany', class: 'form-control'
 
         .form-group
           = f.label :city, class: 'col-sm-2 control-label'
           .col-sm-4
-            = f.text_field :city, required: '', class: 'form-control'
+            = f.text_field :city, placeholder: 'City', required: '', class: 'form-control'
 
         .form-group
           = f.label :street, class: 'col-sm-2 control-label'
           .col-sm-4
-            = f.text_field :street, required: '', class: 'form-control'
+            = f.text_field :street, placeholder: 'Street', required: '', class: 'form-control'
 
         .form-group
           = f.label :zip, class: 'col-sm-2 control-label'
           .col-sm-4
-            = f.number_field :zip, required: '', class: 'form-control'
+            = f.text_field :zip, placeholder: '98765', required: '', class: 'form-control'
 
         .form-group
           = f.label :phone, class: 'col-sm-2 control-label'
           .col-sm-4
-            = f.telephone_field :phone, required: '', class: 'form-control'
+            = f.telephone_field :phone, placeholder: '(0800) 123456', required: '', class: 'form-control'
 
         .form-group
           .col-sm-offset-2.col-sm-10
