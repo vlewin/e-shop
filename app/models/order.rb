@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
   belongs_to :address
   belongs_to :shipment
 
+  has_one :user, :through => :address
   has_many :line_items, dependent: :destroy
 
   validates :address_id, :shipment_id, :pay_type, presence: true
