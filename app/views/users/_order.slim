@@ -22,7 +22,10 @@
             td= number_to_currency order.taxes
             td= number_to_currency order.total
             td
-              = icon_link_to "Print invoice", order_path(order, format: 'pdf'), 'fa-print'
+              = icon_link_to "Show", order_path(order), 'fa-eye'
+              | &nbsp;
+              = icon_link_to "Print", order_path(order, format: 'pdf'), 'fa-print'
+
 
   - else
     h4 Your orders list is empty

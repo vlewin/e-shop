@@ -1,0 +1,86 @@
+.panel.panel-default
+  .panel-body
+    .row
+      .col-xs-12
+        .invoice-title
+          h2
+            = "Invoice ##{@order.id}"
+        hr
+          .row
+            .col-xs-6
+              address
+                strong Billed To:
+                br
+                  = @order.user.name
+                  br
+                    = "#{@order.address.street}"
+                    br
+                      = "#{@order.address.zip} #{@order.address.city}"
+
+            .col-xs-6.text-right
+              address
+                strong Shipped To:
+                br
+                  = @order.user.name
+                  br
+                    = "#{@order.address.street}"
+                    br
+                      = "#{@order.address.zip} #{@order.address.city}"
+          .row
+            .col-xs-6
+              address
+                strong Payment Method:
+                br
+                  = @order.pay_type
+
+            .col-xs-6.text-right
+              address
+                strong Order Date:
+                br
+                  = I18n.localize(@order.created_at)
+                  br
+                    br
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            h3.panel-title
+              strong Order summary
+          .panel-body
+            table.table.table-condensed
+              thead
+                tr
+                  td
+                    strong Item
+                  td.text-center
+                    strong Price
+                  td.text-center
+                    strong Quantity
+                  td.text-right
+                    strong Totals
+
+              tbody
+                - @order.line_items.each do |item|
+                  tr
+                    td= item.product.name
+                    td.text-center= number_to_currency(item.price)
+                    td.text-center= item.quantity
+                    td.text-right= number_to_currency(item.total)
+              tr
+                td.thick-line
+                td.thick-line
+                td.thick-line.text-center
+                  strong Subtotal
+                td.thick-line.text-right= number_to_currency(@order.subtotal)
+              tr
+                td.no-line
+                td.no-line
+                td.no-line.text-center
+                  strong Shipping
+                td.no-line.text-right= number_to_currency(@order.shipment.rate)
+              tr
+                td.no-line
+                td.no-line
+                td.no-line.text-center
+                  strong Total
+                td.no-line.text-right= number_to_currency(@order.total)
