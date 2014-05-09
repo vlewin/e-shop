@@ -1,16 +1,46 @@
-h3.page-header Profile
-ul.nav.nav-tabs
-  li.active
-    = link_to 'Account', '#account', data: { toggle: 'tab'}
-  li
-    = link_to 'Addresses', '#addresses', data: { toggle: 'tab'}
-  li
-    = link_to 'Orders', '#orders', data: { toggle: 'tab'}
+#profile
+  #order
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          i.fa.fa-file>
+          | Orders
+      .panel-body
+        == render 'order'
 
-.tab-content
-  == render 'account'
-  == render 'address'
-  == render 'order'
+  #address
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          i.fa.fa-envelope>
+          | Addresses
+          .pull-right
+            small= link_to 'New Address', new_address_path
+      .panel-body
+        == render 'address'
+
+  #account
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          i.fa.fa-user>
+          | Account
+      .panel-body
+        == render 'account'
+
+
+      / ul.nav.nav-tabs
+      /   li.active
+      /     = link_to 'Account', '#account', data: { toggle: 'tab'}
+      /   li
+      /     = link_to 'Addresses', '#addresses', data: { toggle: 'tab'}
+      /   li
+      /     = link_to 'Orders', '#orders', data: { toggle: 'tab'}
+
+      / .tab-content
+      /   == render 'account'
+      /   == render 'address'
+      /   == render 'order'
 
 
 

@@ -1,26 +1,30 @@
-.row.featurette
-  .col-xs-4.col-md-4
-    h2
-      = image_tag 'http://placehold.it/250x250', class: 'img-responsive'
-  .col-xs-8.col-md-8
-    h2
-      = "#{@product.name} "
-      small Translation text
+/ h3.page-header Product details
 
-    h2
-      = " #{number_to_currency(@product.price)}"
-
-    hr
-
-    .text-muted= @product.description
-
-    hr
-
+.panel.panel-default
+  .panel-body
     .row
-      = form_tag line_items_path(:product_id => @product), :multipart => true do
-        .col-xs-3
-          = quantity_field_tag 1
-        .col-xs-4
-          = button_tag 'Add to cart', type: 'submit', class: 'btn btn-sm btn-success'
+      .col-xs-4.col-md-4
+        h2
+          = image_tag 'http://placehold.it/250x250', class: 'img-responsive'
+      .col-xs-8.col-md-8
+        h2
+          = "#{@product.name} "
+          small Translation text
+
+        h2
+          = " #{number_to_currency(@product.price)}"
+
+        hr
+
+        .text-muted= @product.description
+
+        hr
+
+        .row
+          = form_tag line_items_path(:product_id => @product), :multipart => true do
+            .col-xs-3
+              = quantity_field_tag 1
+            .col-xs-4
+              = button_tag 'Add to cart', type: 'submit', class: 'btn btn-sm btn-success'
 
 

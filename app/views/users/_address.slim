@@ -1,18 +1,21 @@
-#addresses.tab-pane
-  h4 Your addresses
-
-  .row
-    - if @user.addresses.present?
-      - @user.addresses.each do |address|
-        .col-xs-4.col-md-4
-          strong>= @user.name
-          - if address.default
-            span.label.label-default Default
-          div= address.city
-          div= address.street
-          div= address.phone
-          div= mail_to @user.email
-          br
-    - else
-      .col-xs-4.col-md-4
-        = link_to 'New Address', new_address_path
+- if @user.addresses.present?
+  - @user.addresses.each do |address|
+    .col-xs-6.col-md-6
+      .panel.panel-default
+        .panel-body
+          .row
+            .col-xs-12.col-md-12
+              = @user.name
+              div= address.street
+              div= "#{address.zip} #{address.city}"
+              br
+              p
+                i.fa.fa-phone>
+                = address.phone
+              hr
+              = link_to 'Edit', edit_address_path(address), class: 'btn btn-default'
+              | &nbsp;
+              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+- else
+  .col-xs-4.col-md-4
+    = link_to 'New Address', new_address_path

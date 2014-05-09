@@ -20,7 +20,11 @@ class AddressesController < ApplicationController
     @address.user_id = current_user.id
 
     if @address.save
-      redirect_to @address, notice: 'Address was successfully created.'
+      if current_user.admin?
+        redirect_to @address, notice: 'Address was successfully created.'
+      else
+        redirect_to user_path(current_user), notice: 'Address was successfully created.'
+      end
     else
       render action: 'new'
     end
@@ -28,7 +32,11 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-      redirect_to @address, notice: 'Address was successfully updated.'
+      if current_user.admin?
+        redirect_to @address, notice: 'Address was successfully updated.'
+      else
+        redirect_to user_path(current_user), notice: 'Address was successfully updated.'
+      end
     else
       render action: 'edit'
     end
