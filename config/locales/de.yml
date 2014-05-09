@@ -54,6 +54,7 @@ de:
     account_exist:            "Haben Sie bereits ein Konto?"
     forgot_password:          "Passwort vergessen?"
     reset_password:           "Passwort zurücksetzen"
+    reset_instraction:        "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
 
   authorization:
     not_authorized:           "You are not authorized to perform this action"
