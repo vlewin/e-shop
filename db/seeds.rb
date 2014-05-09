@@ -1,6 +1,6 @@
 user=User.where(:email => "customer@example.com").first_or_initialize
 user.password = "password"
-user.name = "Customer"
+user.name = "Happy Customer"
 user.skip_confirmation!
 user.save
 
@@ -15,7 +15,7 @@ address = Address.create(
 
 admin_user=User.where(:email => "admin@example.com").first_or_initialize
 admin_user.password = "password"
-admin_user.name = "Admin"
+admin_user.name = "E-Shop Admin"
 admin_user.skip_confirmation!
 admin_user.save
 admin_user.admin!
