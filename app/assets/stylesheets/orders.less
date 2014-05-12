@@ -1,0 +1,177 @@
+// Wizard
+.wizard a {
+    padding: 10px 12px 10px;
+    margin-right: 5px;
+    background: #efefef;
+    position: relative;
+    outline: none;
+    display: inline-block;
+}
+.wizard a:before {
+    width: 0;
+    height: 0;
+    border-top: 20px inset transparent;
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #fff;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+}
+.wizard a:after {
+    width: 0;
+    height: 0;
+    border-top: 20px inset transparent;
+    border-bottom: 20px inset transparent;
+    border-left: 20px solid #efefef;
+    position: absolute;
+    content: "";
+    top: 0;
+    right: -20px;
+    z-index: 2;
+}
+.wizard a:first-child:before,
+.wizard a:last-child:after {
+    border: none;
+}
+.wizard a:first-child {
+    -webkit-border-radius: 4px 0 0 4px;
+       -moz-border-radius: 4px 0 0 4px;
+            border-radius: 4px 0 0 4px;
+}
+.wizard a:last-child {
+    -webkit-border-radius: 0 4px 4px 0;
+       -moz-border-radius: 0 4px 4px 0;
+            border-radius: 0 4px 4px 0;
+}
+.wizard .badge {
+    margin: 0 5px 0 18px;
+    position: relative;
+    top: -1px;
+}
+.wizard a:first-child .badge {
+    margin-left: 0;
+}
+
+.wizard .active {
+    background: #94BA65;
+    color: #fff;
+}
+.wizard .active:after {
+    border-left-color: #94BA65;
+}
+
+.wizard .active .badge {
+    background: #FFF;
+    color: #454545;
+}
+
+// Buttons
+// .btn-next {
+//   border: none;
+//   border-top-right-radius: 0px;
+//   border-bottom-right-radius: 0px;
+//   margin-right: 20px;
+//   padding: 6px 12px;
+//   position: relative;
+//   background-color: #94BA65;
+
+//   &:hover {
+//     background-color: #94BA65;
+//   }
+
+//   &:after {
+//     width: 0;
+//     height: 0;
+//     border-top: 16px inset rgba(0, 0, 0, 0);
+//     border-bottom: 16px inset rgba(0, 0, 0, 0);
+//     border-left: 20px solid #94BA65;
+//     position: absolute;
+//     content: "";
+//     top: 0;
+//     right: -20px;
+//     z-index: 2;
+//   }
+// }
+
+// Order status
+.order-status {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position:relative;
+
+  .order-status-timeline {
+    height:12px;
+    border:1px solid #aaa;
+    border-radius:7px;
+    background:#eee;
+    box-shadow:0px 0px 5px 0px #C2C2C2 inset;
+
+    .order-status-timeline-completion {
+      height:8px;
+      margin:1px;
+      border-radius:7px;
+      background:#94BA65;
+      width:0px;
+
+      &.c1 { width:33%; }
+      &.c2 { width:66%; }
+      &.c3 { width:100%; }
+    }
+  }
+
+  .image-order-status {
+    border:1px solid #ddd;padding:7px;
+    // box-shadow:0px 0px 10px 0px #999;
+    background-color:#fdfdfd;
+    position:absolute;
+    margin-top:-35px;
+
+    &.active {
+      box-shadow:0px 0px 10px 0px #999999;
+      .icon{
+        color: #94BA65;
+      }
+
+      .status {
+        // color:#333;
+        // text-shadow:0px 0px 1px #777;
+      }
+    }
+
+    .icon{
+      font-size: 40px;
+      height: 40px;
+      width: 40px;
+
+      text-align: center;
+      vertical-align: middle;
+      color: #CCCCCC;
+
+      &.fa-archive {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      &.fa-truck {
+        font-size: 36px;
+        line-height: 36px;
+      }
+    }
+
+    .status{
+      position:absolute;
+      text-shadow:1px 1px #eee;
+      color:#333;
+      width: 80px;
+      top: 60px;
+      left: -11px;
+      text-align: center;
+    }
+  }
+
+  .image-order-status-new { left:0; }
+  .image-order-status-active { left:33%; }
+  .image-order-status-intransit { left:66%; }
+  .image-order-status-completed { right:0px; }
+}
