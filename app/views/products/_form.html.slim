@@ -34,7 +34,7 @@
   .form-group
     label.col-sm-2.control-label= f.label :category
     .col-sm-10
-      = select_tag 'category_id', options_for_select(@categories.collect{ |c| [c.name, c.id] }), class: 'form-control'
+      = f.select :category_id, options_for_select(@categories.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
 
   .form-group
     .col-sm-offset-2.col-sm-10

@@ -30,11 +30,12 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.category = Category.find(params[:category_id])
+    # @product.category = Category.find(params[:category_id])
+
     authorize @product
 
     if @product.save!
-      redirect_to @product, notice: 'Product was successfully created.'
+      redirect_to products_url, notice: 'Product was successfully created.'
     else
       render action: 'new'
     end
@@ -43,8 +44,8 @@ class ProductsController < ApplicationController
   def update
     authorize @product
 
-    if @product.update(product_params)
-      redirect_to @product, notice: 'Product was successfully updated.'
+    if @product.update!(product_params)
+      redirect_to products_url, notice: 'Product was successfully updated.'
     else
       render action: 'edit'
     end
@@ -54,8 +55,12 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     authorize @product
 
-    @product.destroy
-    redirect_to products_url, notice: 'Product was successfully destroyed.'
+    if @product.destroy
+      redirect_to products_url, notice: 'Product was successfully destroyed.'
+    else
+      redirect_to products_url, alert: "#{@product.errors.full_messages.join(', ')}"
+    end
+
   end
 
   private

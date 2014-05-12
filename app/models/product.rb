@@ -17,10 +17,6 @@ class Product < ActiveRecord::Base
 
   validates :name, length: { minimum: 4 }
 
-  def self.latest
-    Product.order(:updated_at).last
-  end
-
   private
 
   # ensure that there are no line items referencing this product
@@ -28,7 +24,7 @@ class Product < ActiveRecord::Base
     if line_items.empty?
       return true
     else
-      errors.add(:base, 'Line Items present')
+      errors.add(:product, 'is referenced by a line item')
       return false
     end
   end
