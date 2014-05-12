@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.integer  "address_id"
     t.integer  "shipment_id"
     t.string   "pay_type"
+    t.integer  "status",      default: 0
+    t.integer  "integer",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
