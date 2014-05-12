@@ -5,21 +5,19 @@
     .tracking-status
       .order-status
         .order-status-timeline
-          div class= "order-status-timeline-completion #{@order.status}"
-        .image-order-status.image-order-status-new.active.img-circle
+          div class="order-status-timeline-completion #{@order.status}"
+        div class="img-circle status-new active"
           span.status Accepted
           i.fa.fa-archive.icon
-        .image-order-status.image-order-status-active.active.img-circle
+        div class="img-circle status-active #{'active' if ['in_progress', 'shipped', 'completed'].include? @order.status}"
           span.status In progress
           i.fa.fa-clock-o.icon
-        .image-order-status.image-order-status-intransit.active.img-circle
+        div class="img-circle status-shipped #{'active' if @order.shipped? || @order.completed?}"
           span.status Shipped
           i.fa.fa-truck.icon
-        .image-order-status.image-order-status-completed.img-circle
+        div class="img-circle status-completed #{'active' if @order.completed?}"
           span.status Completed
           i.fa.fa-check-circle.icon
-
-
 
 .panel.panel-default
   .panel-body
