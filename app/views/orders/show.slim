@@ -5,7 +5,7 @@
     .tracking-status
       .order-status
         .order-status-timeline
-          .order-status-timeline-completion.c1
+          div class= "order-status-timeline-completion #{@order.status}"
         .image-order-status.image-order-status-new.active.img-circle
           span.status Accepted
           i.fa.fa-archive.icon

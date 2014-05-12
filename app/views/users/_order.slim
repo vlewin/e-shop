@@ -6,6 +6,7 @@
     table.table.table-hover.table-responsive
       thead
         tr
+          th Status
           th Date
           th Pay type
           th Subtotal
@@ -16,6 +17,7 @@
       tbody
         - current_user.orders.each do |order|
           tr
+            td= order_status(order)
             td= I18n.localize(order.created_at)
             td= order.pay_type
             td= number_to_currency order.subtotal
