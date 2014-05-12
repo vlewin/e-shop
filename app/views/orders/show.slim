@@ -1,10 +1,35 @@
 .panel.panel-default
+  .panel-heading
+    h4.panel-title Order status
+  .panel-body
+    .tracking-status
+      .order-status
+        .order-status-timeline
+          .order-status-timeline-completion.c1
+        .image-order-status.image-order-status-new.active.img-circle
+          span.status Accepted
+          i.fa.fa-archive.icon
+        .image-order-status.image-order-status-active.active.img-circle
+          span.status In progress
+          i.fa.fa-clock-o.icon
+        .image-order-status.image-order-status-intransit.active.img-circle
+          span.status Shipped
+          i.fa.fa-truck.icon
+        .image-order-status.image-order-status-completed.img-circle
+          span.status Completed
+          i.fa.fa-check-circle.icon
+
+
+
+.panel.panel-default
   .panel-body
     .row
       .col-xs-12
-        .invoice-title
-          h2
-            = "Invoice ##{@order.id}"
+        h3
+          = "Invoice ##{@order.id}"
+          .pull-right
+            = icon_link_to "", order_path(@order, format: 'pdf'), 'fa-print'
+
         hr
           .row
             .col-xs-6
@@ -44,8 +69,7 @@
       .col-md-12
         .panel.panel-default
           .panel-heading
-            h3.panel-title
-              strong Order summary
+            h4.panel-title Order summary
           .panel-body
             table.table.table-condensed
               thead
