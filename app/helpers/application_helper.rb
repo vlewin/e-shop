@@ -31,4 +31,11 @@ module ApplicationHelper
       )
     end
   end
+
+  def order_status(order)
+    labels = { 0 => 'label-default', 1 => 'label-info', 2 => 'label-info', 3 => 'label-success'}
+    content_tag(:span, nil, :class => "label #{labels[order[:status]]}") do
+      order.status
+    end
+  end
 end
