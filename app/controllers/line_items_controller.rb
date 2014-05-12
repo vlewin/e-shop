@@ -20,7 +20,11 @@ class LineItemsController < ApplicationController
     @line_item = LineItem.find(params[:id])
     @line_item.destroy
 
-    redirect_to_back_or_default line_items_url
+    if current_cart.empty?
+      redirect_to root_path
+    else
+      redirect_to_back_or_default root_path
+    end
   end
 
   # private
