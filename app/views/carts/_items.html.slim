@@ -14,7 +14,7 @@ table.table.table-hover.table-responsive
     - @current_cart.line_items.each do |item|
       tr
         td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
-        td= link_to item.product.name, item.product
+        td= link_to item.product.name, store_product_path(item.product)
         td
           = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
             = hidden_field_tag :line_item_id, item.id
