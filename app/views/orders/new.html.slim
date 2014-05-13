@@ -1,10 +1,10 @@
-= form_for @order, :html => { :role => 'form'} do |form|
+= form_for @order, :html => { :role => 'form', class: 'new_order_form'} do |form|
   == render 'layouts/errors', object: @order
 
-  #order
+  .wizard
     .row
       .col-xs-12.col-md-12
-        .nav.nav-pills.wizard
+        .nav.nav-pills
           a.active href="#address" data-toggle="collapse" data-parent="#accordion"
             span.badge> 1
             | Billing and shipping address
