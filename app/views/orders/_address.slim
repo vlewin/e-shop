@@ -2,21 +2,23 @@
   h4.panel-title
     a data-parent="#accordion" data-toggle="collapse" href="#address"
       | Step 1: Billing and shipping address
+
+    .pull-right
+      small= link_to 'New Address', new_address_path
 #address.panel-collapse.collapse.in
   .panel-body
-    h3.form-header
-      | Address
-      .pull-right
-        small= link_to 'New Address', new_address_path
-
-    - current_user.addresses.each do |address|
-      .radio
-        label
-          = form.radio_button :address_id, address.id, :checked => address.default
-          = address.full_address
-
-          - if address.default
-            span.label.label-default< Default
+    - if current_user.addresses.present?
+      - current_user.addresses.each_with_index do |address, index|
+        .radio
+          label
+            = form.radio_button :address_id, address.id, :checked => index.zero?
+            = address.full_address
+    - else
+      h4
+        i.fa.fa-info-circle>
+        | You addresses list is empty, please
+        | &nbsp;
+        = link_to 'add address', new_address_path
 
     hr
     .pull-left

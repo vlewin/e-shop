@@ -1,0 +1,8 @@
+<% if @category.errors.any? -%>
+  $('#new_category_modal .modal-body').html("<%= escape_javascript(render :partial=> 'form') %>");
+<% else -%>
+  $('#new_category_modal .modal-body').html("<%= escape_javascript(render :partial=> 'form') %>");
+  // $('#new_category_modal').modal('hide');
+<% end -%>
+
+$('#new_category_modal').modal('show');

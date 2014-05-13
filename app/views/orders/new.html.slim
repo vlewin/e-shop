@@ -1,43 +1,36 @@
-#order
-  .row
-    .col-xs-12.col-md-12
-      .nav.nav-pills.wizard
-        a.active href="#address" data-toggle="collapse" data-parent="#accordion"
-          span.badge> 1
-          | Billing and shipping address
-        a href="#shipping" data-toggle="collapse" data-parent="#accordion"
-          span.badge> 2
-          | Shipping
-        a href="#payment" data-toggle="collapse" data-parent="#accordion"
-          span.badge> 3
-          | Payment method
-        a href="#sumary" data-toggle="collapse" data-parent="#accordion"
-          span.badge> 4
-          | Order Sumary
+= form_for @order, :html => { :role => 'form'} do |form|
+  == render 'layouts/errors', object: @order
+
+  #order
+    .row
+      .col-xs-12.col-md-12
+        .nav.nav-pills.wizard
+          a.active href="#address" data-toggle="collapse" data-parent="#accordion"
+            span.badge> 1
+            | Billing and shipping address
+          a href="#shipping" data-toggle="collapse" data-parent="#accordion"
+            span.badge> 2
+            | Shipping
+          a href="#payment" data-toggle="collapse" data-parent="#accordion"
+            span.badge> 3
+            | Payment method
+          a href="#sumary" data-toggle="collapse" data-parent="#accordion"
+            span.badge> 4
+            | Order Sumary
 
   br
 
-  .row
-    .col-xs-12.col-md-12
-      = form_for @order, :html => { :role => 'form'} do |form|
-        - if @order.errors.any?
-          #error_explanation
-            h2 = "#{pluralize(@order.errors.count, "error")} prohibited this order from being saved:"
-            ul
-              - @order.errors.full_messages.each do |message|
-                li = message
+  #accordion.panel-group
+    .panel.panel-default
+      = render partial: 'address', locals: { form: form }
 
-        #accordion.panel-group
-          .panel.panel-default
-            = render partial: 'address', locals: { form: form }
-
-          .panel.panel-default
-            = render partial: 'shipping', locals: { form: form }
+    .panel.panel-default
+      = render partial: 'shipping', locals: { form: form }
 
 
-          .panel.panel-default
-            = render partial: 'payment', locals: { form: form }
+    .panel.panel-default
+      = render partial: 'payment', locals: { form: form }
 
-          .panel.panel-default
-            = render partial: 'sumary', locals: { form: form }
+    .panel.panel-default
+      = render partial: 'sumary', locals: { form: form }
 
