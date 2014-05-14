@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.string   "street"
     t.string   "zip"
     t.string   "phone"
-    t.string   "user_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
