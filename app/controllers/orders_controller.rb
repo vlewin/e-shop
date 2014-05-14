@@ -22,6 +22,7 @@ class OrdersController < ApplicationController
   def new
     @cart = current_cart
     @shipments = Shipment.all
+    @address = Address.new
 
     if @cart.line_items.empty?
       redirect_to root_path, notice: "Your cart is empty"

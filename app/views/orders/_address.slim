@@ -4,14 +4,14 @@
       | Step 1: Billing and shipping address
 
     .pull-right
-      small= link_to 'New Address', new_address_path
+      small= link_to 'New Address', '#address_modal', data: { target: '#address_modal', toggle: 'modal' }
 #address.panel-collapse.collapse.in
   .panel-body
     - if current_user.addresses.present?
       - current_user.addresses.each_with_index do |address, index|
         .radio
           label
-            = form.radio_button :address_id, address.id, :checked => index.zero?
+            = form.radio_button :address_id, address.id, :checked => (address == current_user.addresses.last)
             = address.full_address
     - else
       h4
@@ -26,3 +26,5 @@
 
     .pull-right
       = link_to 'Next to shipping', "#shipping", class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse' }
+
+
