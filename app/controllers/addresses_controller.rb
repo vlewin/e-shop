@@ -20,31 +20,31 @@ class AddressesController < ApplicationController
     @address.user_id = current_user.id
 
     if @address.save
-      if current_user.admin?
-        redirect_to @address, notice: 'Address was successfully created.'
-      else
-        redirect_to user_path(current_user), notice: 'Address was successfully created.'
-      end
+      flash[:notice] = 'Address was successfully created.'
     else
-      render action: 'new'
+      flash[:alert] = @address.errors.full_messages.join(', ')
     end
+
+    redirect_to_back_or_default addresses_url
   end
 
   def update
     if @address.update(address_params)
-      if current_user.admin?
-        redirect_to @address, notice: 'Address was successfully updated.'
-      else
-        redirect_to user_path(current_user), notice: 'Address was successfully updated.'
-      end
+      flash[:notice] = 'Address was successfully updated.'
     else
-      render action: 'edit'
+      flash[:alert] = @address.errors.full_messages.join(', ')
     end
+
+    redirect_to_back_or_default addresses_url
   end
 
   def destroy
-    @address.destroy
-    redirect_to addresses_url, notice: 'Address was successfully destroyed.'
+    if @address.destroy
+      flash[:notice] = 'Address was successfully destroyed.'
+    else
+      flash[:alert] = @address.errors.full_messages.join(', ')
+    end
+    redirect_to_back_or_default addresses_url
   end
 
   private
