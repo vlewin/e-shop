@@ -30,7 +30,8 @@ gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
 group :production do
-  # gem 'pg' # Heroku
+  gem 'rails_12factor'
+  gem 'pg'
 end
 
 group :development do
