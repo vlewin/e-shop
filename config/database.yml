@@ -10,3 +10,6 @@ test:
   timeout: 5000
   database: db/test.sqlite3
 
+production:
+  adapter: postgresql
+  url: <%= ENV["DATABASE_URL"] %>
