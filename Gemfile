@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '4.1.0.rc1'
-gem 'sqlite3'
 gem 'puma'
 gem 'pundit'
 gem 'devise'
@@ -29,9 +28,12 @@ gem 'ransack'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
-group :production do
-  gem 'rails_12factor'
-  gem 'pg'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'awesome_print'
+  gem 'factory_girl_rails'
+  gem 'debugger' if RUBY_PLATFORM =~ /linux/i
+  gem 'ffaker'
 end
 
 group :development do
@@ -42,15 +44,13 @@ group :development do
   gem 'rails_layout'
 end
 
-group :development, :test do
-  gem 'awesome_print'
-  gem 'factory_girl_rails'
-  gem 'debugger' if RUBY_PLATFORM =~ /linux/i
-  gem 'ffaker'
-end
-
 group :test do
   gem 'database_cleaner', '1.0.1'
   gem 'launchy'
   gem 'rspec-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
+  gem 'pg'
 end
