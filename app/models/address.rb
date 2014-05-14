@@ -5,6 +5,6 @@ class Address < ActiveRecord::Base
   validates :country, :city, :street, :zip, :phone, :user_id,  presence: true
 
   def full_address
-    "#{street} #{city}, #{zip} #{country}"
+    "#{user.name}, #{street}, #{zip} #{city}"
   end
 end
