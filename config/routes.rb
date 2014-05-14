@@ -12,18 +12,11 @@ OptimHandel::Application.routes.draw do
     resources :carts
     resources :line_items
 
+    resource :account, controller: :account, only: [:show]
+
     resource :store,  only: [:index] do
-      # get :index, to: 'store#index'
-      # collection { get :search, to: 'store#index' }
       resources :products, controller: :store, only: [:index, :show] do
-        # collection { get :search, to: 'products#index' }
       end
-
-      # get :search, to: 'products#index'
-
-      # resources :categories, only: [:index] do
-      #   collection { get :search, to: 'products#index' }
-      # end
     end
 
     resources :products do

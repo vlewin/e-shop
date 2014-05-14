@@ -1,0 +1,31 @@
+#profile
+  #order
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          i.fa.fa-file>
+          | Orders
+      .panel-body
+        == render 'order'
+
+  #address
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          i.fa.fa-envelope>
+          | Addresses
+          .pull-right
+            small= link_to 'New Address', '#address_modal', data: { target: '#address_modal', toggle: 'modal' }
+      .panel-body
+        == render 'address'
+
+  #account
+    .panel.panel-default
+      .panel-heading
+        h4.panel-title
+          i.fa.fa-user>
+          | Account
+      .panel-body
+        == render 'account'
+
+

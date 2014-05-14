@@ -1,0 +1,23 @@
+- if @user.addresses.present?
+  - @user.addresses.each do |address|
+    .col-xs-6.col-md-6
+      .panel.panel-default
+        .panel-body
+          .row
+            .col-xs-12.col-md-12
+              = @user.name
+              div= address.street
+              div= "#{address.zip} #{address.city}"
+              br
+              p
+                i.fa.fa-phone>
+                = address.phone
+              hr
+              = link_to 'Edit', edit_address_path(address), class: 'btn btn-default'
+              | &nbsp;
+              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+- else
+  h4 Your addresses list is empty
+
+== render 'addresses/new_address_modal', object: @address
+
