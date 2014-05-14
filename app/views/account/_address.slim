@@ -15,10 +15,13 @@
                 i.fa.fa-phone>
                 = address.phone
         .panel-footer
-          .text-center
-            = link_to 'Edit', edit_address_path(address), class: 'btn btn-default'
-            | &nbsp;
-            = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+          .btn-group.btn-group-justified
+            .btn-group
+              = link_to 'Edit', edit_address_path(address), class: 'btn btn-default'
+            .btn-group
+              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete, class: 'btn btn-danger'
+
+
 
 - else
   h4 Your addresses list is empty
