@@ -43,8 +43,8 @@
               li= link_to language.to_s, root_path(set_locale: locale ), class: 'navbar-link'
 
           - if user_signed_in?
-            li.dropdown
-              a.dropdown-toggle data-toggle="dropdown" href="#" class=('active' if controller_name == 'account')
+            li.dropdown class=('active' if controller_name == 'account')
+              a.dropdown-toggle data-toggle="dropdown" href="#"
                 i.fa.fa-user>
                 = current_user.name
                 b.caret
