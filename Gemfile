@@ -28,12 +28,13 @@ gem 'ransack'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 
+gem 'ffaker'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'debugger' if RUBY_PLATFORM =~ /linux/i
-  gem 'ffaker'
 end
 
 group :development do

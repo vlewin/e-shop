@@ -1,6 +1,6 @@
 user=User.where(:email => "customer@example.com").first_or_initialize
 user.password = "password"
-user.name = "Happy Customer"
+user.name = Faker::Name.name
 user.skip_confirmation!
 user.save
 
