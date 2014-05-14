@@ -5,7 +5,7 @@
       button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-collapse"]
         span.sr-only Toggle navigation
         i.fa.fa-bars.fa-lg
-      = icon_link_to 'E-Shop', root_path, { class: 'navbar-brand' }, 'fa-bitcoin text-warning'
+      = icon_link_to 'E-Shop', root_path, { class: 'navbar-brand' }, 'fa-bitcoin'
 
 
     .collapse.navbar-collapse
@@ -30,7 +30,7 @@
 
       ul.nav.navbar-nav.navbar-right
         - unless user_signed_in? && current_user.admin?
-          li class=((controller_name == 'cart' ? 'active' : '') + (@current_cart.empty? ? 'disabled' : ''))
+          li class=((controller_name == 'carts' ? 'active' : '') + (@current_cart.empty? ? 'disabled' : ''))
             = icon_link_to "Cart (#{@current_cart.count})", cart_path(@current_cart), 'fa-shopping-cart'
 
         li.dropdown
@@ -44,13 +44,13 @@
 
           - if user_signed_in?
             li.dropdown
-              a.dropdown-toggle data-toggle="dropdown" href="#" class=('active' if controller_name == 'users')
+              a.dropdown-toggle data-toggle="dropdown" href="#" class=('active' if controller_name == 'account')
                 i.fa.fa-user>
                 = current_user.name
                 b.caret
 
               ul.dropdown-menu
-                li= icon_link_to 'Account settings', user_path(current_user), 'fa-gear'
+                li= icon_link_to 'Account settings', account_path, 'fa-gear'
                 li= icon_link_to 'Logout', destroy_user_session_path, { method: 'delete' }, 'fa-sign-out'
           - else
             li.dropdown
