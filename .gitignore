@@ -22,7 +22,7 @@ db/*.sqlite3
 /tmp/*
 
 # FIXME: ignore Gemfile.lock bacause of debugger issue on Mavericks
-Gemfile.lock
+# Gemfile.lock
 
 # various artifacts
 **.war
