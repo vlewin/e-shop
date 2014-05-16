@@ -9,9 +9,7 @@ class ProductsController < ApplicationController
   after_action :verify_authorized, except: [:index, :show]
 
   def index
-    @search = Product.search(params[:q])
-    @products = @search.result.page(params[:page])
-    @categories = Category.all
+    @products = Product.all
   end
 
   def show
@@ -19,22 +17,21 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    @categories = Category.all
+    # @categories = Category.all
     authorize @product
   end
 
   def edit
-    @categories = Category.all
+    # @categories = Category.all
     authorize @product
   end
 
   def create
     @product = Product.new(product_params)
     # @product.category = Category.find(params[:category_id])
-
     authorize @product
 
-    if @product.save!
+    if @product.save
       redirect_to products_url, notice: 'Product was successfully created.'
     else
       render action: 'new'
@@ -78,7 +75,8 @@ class ProductsController < ApplicationController
       :quantity,
       :price,
       :tax,
-      :category_id
+      :category_id,
+      :image
     )
   end
 

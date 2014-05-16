@@ -30,6 +30,10 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 
 gem 'ffaker'
 
+# Image uploads
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'awesome_print'

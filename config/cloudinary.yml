@@ -1,0 +1,9 @@
+# production:
+#   cloud_name: "e-shop"
+#   api_key: ""
+#   api_secret: ""
+
+# development:
+#   cloud_name: "e-shop"
+#   api_key: ""
+#   api_secret: ""

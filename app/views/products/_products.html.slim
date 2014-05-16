@@ -2,7 +2,7 @@
   - @products.each do |product|
     .col-md-4
       a{href="#{product_path(product)}" class='thumbnail product'}
-        = image_tag 'http://placehold.it/220x120'
+        = product_image_tag @product, :width => 220, :height => 120, :crop => :fill
         .caption.text-center
           h5= product.name
           small= product.description

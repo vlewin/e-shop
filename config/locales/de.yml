@@ -26,6 +26,7 @@ de:
                 one: 1 error prohibited this {{model}} from being saved
                 other: "{{count}} errors prohibited this {{model}} from being saved"
         messages:
+            record_invalid:           "Record invalid"
             inclusion:                "is not included in the list"
             exclusion:                "is reserved"
             invalid:                  "is invalid"

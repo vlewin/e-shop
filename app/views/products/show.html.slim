@@ -6,7 +6,7 @@ h2.page-header Product details
   .row.featurette
     .col-md-3
       h2
-        = image_tag 'http://placehold.it/190x190', class: 'img-responsive'
+        = product_image_tag @product, :width => 250, :height => 250, :crop => :fill
     .col-md-9
       h2
         = "#{@product.name} "

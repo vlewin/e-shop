@@ -11,6 +11,19 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
+  def product_image_tag(product, options = {})
+    puts "IMAGE FOR #{product.name} => #{product.image.url} OPTIONS: #{options.inspect}"
+    if product.image.url
+      if Rails.env.production?
+        cl_image_tag product.image, options
+      else
+        image_tag product.image, options
+      end
+    else
+      image_tag "http://placehold.it/#{options[:width]}x#{options[:height]}", options
+    end
+  end
+
   def icon_link_to(text, path, options = {}, icon)
     link_to "#{content_tag :i, nil, class: "fa #{icon}"} #{text}".html_safe, path, options
   end

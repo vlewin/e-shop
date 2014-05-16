@@ -1,10 +1,8 @@
 = form_for @product, :html => { :role => 'form', :class => "form-horizontal"} do |f|
-  - if @product.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
-      ul
-        - @product.errors.full_messages.each do |message|
-          li = message
+  == render 'layouts/errors', object: @product
+
+  = f.hidden_field(:image_cache)
+  = f.file_field(:image)
 
   .form-group
     label.col-sm-2.control-label= f.label :name
@@ -34,7 +32,7 @@
   .form-group
     label.col-sm-2.control-label= f.label :category
     .col-sm-10
-      = f.select :category_id, options_for_select(@categories.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
+      = f.select :category_id, options_for_select(Category.all.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
 
   .form-group
     .col-sm-offset-2.col-sm-10

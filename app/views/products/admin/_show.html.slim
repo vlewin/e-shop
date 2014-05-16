@@ -1,20 +1,21 @@
-p#notice = notice
+.row.featurette
+  .col-md-4
+    h2
+      = product_image_tag @product, :width => 250, :height => 250, :crop => :fill
+  .col-md-8
+    h2
+      = "#{@product.name} "
+      small Small text
+    p.lead= @product.description
+    p.lead= @product.article_number
+    p
+      span Price:
+      span= " #{number_to_currency(@product.price)}"
 
-p
-  strong Article number:
-  = @product.article_number
-p
-  strong Name:
-  = @product.name
-p
-  strong Description:
-  = @product.description
-p
-  strong Quantity:
-  = @product.quantity
-p
-  strong Price:
-  = @product.price
-p
-  strong Tax:
-  = @product.tax
+    p
+      span Article number:
+      span= @product.article_number
+
+    p
+      span Tax:
+      span= " #{@product.tax}%"
