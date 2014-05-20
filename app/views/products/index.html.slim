@@ -1,33 +1,32 @@
-- if current_user.admin?
-  = render partial: 'products/admin/index'
-- else
-  .row
-    .col-md-3
-      .sidebar
-        .panel.panel-default
-          .panel-heading.panel-heading-dark
-            | Categories
-          .panel-body
+h3.page-header
+  | Products
+  .pull-right
+    - if policy(Product).new?
+      small= link_to 'New product', new_product_path
 
-            ul#sidebar.nav.nav-stacked
-              li= link_to 'All', search_products_path({}), remote: :true, class: 'category'
+table.table.table-bordered.table-hover.table-responsive
+  thead
+    tr
+      th Article number
+      th Name
+      th Description
+      th Quantity
+      th Price
+      th Tax
+      th
+      th
+      th
 
-              - @categories.each do |category|
-                li= link_to category.name, search_products_path('q' => {'category_name_cont' => category.name}), remote: :true
-
-    .col-md-9
-      .panel.panel-default
-        .panel-heading.panel-heading-dark
-          = sort_link @search, :name
-          = sort_link @search, :price
-          = sort_link @search, :created_at, 'Latest'
-
-          .pull-right
-            = search_form_for @search, url: search_products_path, method: :get, remote: true, class: 'form-search form-inline' do |f|
-              .form-group
-                = f.text_field :name_cont, class: 'form-control', placeholder: 'Search', class: 'form-control'
-
-        .panel-body
-          #search-results
-            = render 'products'
+  tbody
+    - @products.each do |product|
+      tr
+        td = product.article_number
+        td = product.name
+        td = product.description
+        td = product.quantity
+        td = product.price
+        td = product.tax
+        td = link_to 'Show', product
+        td = link_to 'Edit', edit_product_path(product)
+        td = link_to 'Destroy', product, data: {:confirm => 'Are you sure?'}, :method => :delete
 

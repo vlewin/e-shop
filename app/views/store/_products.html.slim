@@ -3,7 +3,7 @@
     .col-xs-6.col-md-4
       .product
         a href=store_product_path(product)
-          = product_image_tag product, :width => 220, :height => 120, :crop => :fill
+          = product_image_tag product, :thumbnail
           hr.line
           b.name= product.name
           p.description

@@ -1,32 +1,32 @@
-h2.page-header Product details
+h3.page-header Product details
 
-- if current_user.admin?
-  = render partial: 'products/admin/show'
-- else
-  .row.featurette
-    .col-md-3
-      h2
-        = product_image_tag @product, :width => 250, :height => 250, :crop => :fill
-    .col-md-9
-      h2
-        = "#{@product.name} "
-        small Small text
-      p.lead= @product.description
-      p
-        span Price:
-        span= " #{number_to_currency(@product.price)}"
+.panel.panel-default
+  .panel-body
+    .row
+      .col-xs-4.col-md-4
+        h2
+          = product_image_tag @product, :standard, class: 'img-responsive'
+      .col-xs-8.col-md-8
+        h2
+          = "#{@product.name} "
+          small Small text
 
-      p
-        span Tax:
-        span= " #{@product.tax}%"
+        p.text-muted= @product.description
 
-      = form_tag line_items_path(:product_id => @product), :multipart => true do
-        dl.dl-horizontal
-          dt= text_field_tag :quantity, 1, class: 'form-control'
-          dd= submit_tag 'Add to Cart', class: 'btn btn-success'
+        hr.line
 
+        p
+          span Price:
+          span= " #{number_to_currency(@product.price)}"
 
-- if policy(@product).edit?
-  = link_to 'Edit', edit_product_path(@product)
+        p
+          span Article number:
+          span= @product.article_number
 
+        p
+          span Tax:
+          span= " #{@product.tax}%"
 
+        hr.line
+
+        = link_to 'Edit product', edit_product_path(@product), class: 'btn btn-success'
