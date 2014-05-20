@@ -11,16 +11,24 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  def product_image_tag(product, options = {})
-    puts "IMAGE FOR #{product.name} => #{product.image.url} OPTIONS: #{options.inspect}"
+  # FIXME: Refactoring
+  def product_image_tag(product, version = :standard, options = {})
     if product.image.url
-      if Rails.env.production?
-        cl_image_tag product.image, options
-      else
-        image_tag product.image, options
-      end
+      # if Rails.env.production?
+        if version ==:standard
+          cl_image_tag product.image, :width => 250, :height => 250, :crop => :fill
+        else
+          cl_image_tag product.image, :width => 240, :height => 120, :crop => :fill
+        end
+      # else
+        # image_tag product.image.send(version).url, options
+      # end
     else
-      image_tag "http://placehold.it/#{options[:width]}x#{options[:height]}", options
+      if version ==:standard
+        image_tag "http://placehold.it/250x250", options
+      else
+        image_tag "http://placehold.it/220x120", options
+      end
     end
   end
 
