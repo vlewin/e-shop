@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-OptimHandel::Application.config.secret_key_base = '573ef9a7ea9d4a3fbc92f77b174fa8048b307d74e5922ef557637aeb8f472a58a6fa346bbad982ad6c9cd7e7d2002752dc66d326957b35b1178199ee0be4e8ed'
+OptimHandel::Application.config.secret_key_base = Rails.application.secrets['secret_key_base'] || ENV['secret_key_base']

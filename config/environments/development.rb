@@ -26,25 +26,23 @@ OptimHandel::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  # ActionMailer Config
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  # config.action_mailer.smtp_settings = {
-  #   :address   => "smtp.mandrillapp.com",
-  #   :port      => 587,
-  #   :user_name => ENV["MANDRILL_USERNAME"],
-  #   :password  => ENV["MANDRILL_APIKEY"],
-  #   :enable_starttls_auto => true,
-  #   :authentication => 'login',
-  #   :domain => 'optim-handel.de'
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.mandrillapp.com",
+    :port      => 587,
+    :user_name => Rails.application.secrets['mandrill_username'],
+    :password  => Rails.application.secrets['mandrill_apikey'],
+    :authentication => 'login',
+    :domain => 'http://e-shop-demo.herokuapp.com',
+    :enable_starttls_auto => true
+  }
 
-  # }
-
-  # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:4000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
-  # Send email in development mode?
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.perform_deliveries = false # Send email in development mode?
 
 end

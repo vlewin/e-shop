@@ -13,3 +13,8 @@ test:
 production:
   adapter: postgresql
   url: <%= ENV["DATABASE_URL"] %>
+
+  # adapter: sqlite3
+  # pool: 5
+  # timeout: 5000
+  # database: db/production.sqlite3

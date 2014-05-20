@@ -1,9 +1,17 @@
-# production:
-#   cloud_name: "e-shop"
-#   api_key: ""
-#   api_secret: ""
+production:
+  cloud_name: "e-shop"
 
-# development:
-#   cloud_name: "e-shop"
-#   api_key: ""
-#   api_secret: ""
+  api_key: <%= ENV['cloudinary_api_key'] %>
+  api_secret: <%= ENV['cloudinary_api_secret'] %>
+
+  enhance_image_tag: true
+  static_image_support: true
+
+development:
+  cloud_name: "e-shop"
+
+  api_key: <%= Rails.application.secrets['cloudinary_api_key'] %>
+  api_secret: <%= Rails.application.secrets['cloudinary_api_secret'] %>
+
+  enhance_image_tag: true
+  static_image_support: true

@@ -15,8 +15,6 @@
 /vendor/bundle/
 /vendor/ruby/
 
-/public/uploads
-
 # minimal Rails specific artifacts
 db/*.sqlite3
 /db/*.sqlite3-journal
@@ -34,6 +32,7 @@ db/*.sqlite3
 .redcar/
 .sass-cache
 /config/config.yml
+/config/secrets.yml
 /coverage.data
 /coverage/
 /db/*.javadb/
@@ -45,6 +44,7 @@ db/*.sqlite3
 /public/cache
 /public/stylesheets/compiled
 /public/system/*
+/public/uploads
 /spec/tmp/*
 /cache
 /capybara*
@@ -76,3 +76,4 @@ pickle-email-*.html
 # Environment files that may contain sensitive data
 .env
 .powenv
+

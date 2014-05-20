@@ -33,6 +33,9 @@ gem 'ffaker'
 # Image uploads
 gem 'carrierwave'
 gem 'cloudinary'
+gem 'rmagick'
+
+gem 'heroku'
 
 group :development, :test do
   gem 'sqlite3'
@@ -44,7 +47,6 @@ end
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
-  gem 'foreman'
   gem 'quiet_assets'
   gem 'rails_layout'
 end
