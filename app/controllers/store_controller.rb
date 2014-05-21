@@ -12,6 +12,7 @@ class StoreController < ApplicationController
   end
 
   def show
+    add_breadcrumb @product.name, store_product_url(@product)
   end
 
   private

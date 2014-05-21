@@ -20,6 +20,8 @@ class OrdersController < ApplicationController
   end
 
   def new
+    add_breadcrumb 'Checkout', new_order_path
+
     @cart = current_cart
     @shipments = Shipment.all
     @address = Address.new

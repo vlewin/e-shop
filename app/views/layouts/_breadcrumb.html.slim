@@ -1,3 +1,4 @@
-- unless controller_name == "store"
+- unless request.url == root_url
   ol.breadcrumb
     = render_breadcrumbs :tag => :li, :separator => ""
+

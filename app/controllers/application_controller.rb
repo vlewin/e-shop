@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
+  add_breadcrumb "Home", :root_path
+
   before_filter :authenticate_user!
   before_filter :set_locale
 

@@ -3,6 +3,8 @@ class CartsController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def show
+    add_breadcrumb 'Shopping cart', cart_url(@current_cart)
+
     if @current_cart.empty?
       flash.notice = "Your cart is empty!"
       redirect_to_back_or_default  # unless request.xhr?
