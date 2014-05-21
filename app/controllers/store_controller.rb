@@ -1,5 +1,6 @@
 class StoreController < ApplicationController
   respond_to :html, :js
+  before_filter :set_product, :check_product_availability, only: [:show]
   skip_before_filter :authenticate_user!
 
   def index
@@ -11,6 +12,10 @@ class StoreController < ApplicationController
   end
 
   def show
+  end
+
+  private
+  def set_product
     @product = Product.find(params[:id])
   end
 end

@@ -1,6 +1,5 @@
 class CartsController < ApplicationController
   respond_to :html, :js
-
   skip_before_filter :authenticate_user!
 
   def show

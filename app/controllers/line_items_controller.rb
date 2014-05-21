@@ -1,4 +1,5 @@
 class LineItemsController < ApplicationController
+  before_filter :set_product, :check_product_availability, only: [:create]
   skip_before_filter :authenticate_user!
 
   def new
@@ -27,14 +28,8 @@ class LineItemsController < ApplicationController
     end
   end
 
-  # private
-  # def line_item_params
-  #   params.require(:line_item).permit(
-  #     :product_id,
-  #     :order_id,
-  #     :cart_id,
-  #     :quantity,
-  #     :price
-  #   )
-  # end
+  private
+  def set_product
+    @product = Product.find(params[:product_id])
+  end
 end
