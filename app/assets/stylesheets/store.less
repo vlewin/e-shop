@@ -1,4 +1,3 @@
-// <-- Products
 .bordered {
   border: 1px solid #EEEEEE;
 }
@@ -25,33 +24,46 @@
   }
 }
 
-.product.out-of-stock {
-  background: none repeat scroll 0 0 #EEE;
-
-  &:before {
-    background: none repeat scroll 0 0 #E35E54;
-    border-radius: 0 3px;
-    color: #FFFFFF;
-    content: "Out of stock";
-    padding: 3px 8px;
-    position: absolute;
-    right: 15px;
-    top: 0;
-  }
-}
-
 .product {
   background-color: #FFF;
   border: 1px solid #EEEEEE;
-  border-radius: 3px;
+  border-radius:3px;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 20px 10px 10px 10px;
   text-align: center;
+
+  &:hover {
+    border: 1px solid #94BA65;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    overflow:hidden;
+  }
+
+  &.out-of-stock {
+    border: 1px solid #DDDDDD;
+    position: relative;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  .ribbon {
+    position: absolute;
+    top: 0;
+    right: 1px;
+
+    &.ribbon-small .text {
+      font-size: 12px;
+    }
+
+    .text {
+      text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.2);
+    }
+  }
 
   a {
     text-decoration: none;
     outline: none;
     color: #000;
+    display:block;
   }
   .name {
     text-overflow: ellipsis;
@@ -69,39 +81,31 @@
   }
 }
 
+
 .quantity-helper {
   width: 70px;
+
+  .btn:active, .btn:focus {
+    outline: none;
+  }
 
   span > button {
     width: 30px;
   }
+
   input[type="text"] {
     width: 40px !important;
-  }
-  button.quantity_minus {
-    // border-right: 0;
-  }
 
-  button.quantity_plus {
-    // border-left: 0;
+    &.input-disabled {
+      background-color: #F5F5F5;
+      pointer-events: none;
+      cursor: default;
+    }
   }
 }
-
-.product:hover {
-  border:1px solid #94BA65;
-}
-
-// a.sort_link {
-//   margin: 0 5px;
-//   min-width:64px;
-//   display: inline-block;
-// }
 
 .form-header {
   border-bottom: 1px solid #EEEEEE;
   margin: 10px 0 20px;
   padding-bottom: 9px;
 }
-
-
-// End products -->
