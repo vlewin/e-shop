@@ -5,7 +5,11 @@ class Cart < ActiveRecord::Base
     current_item = line_items.find_by(product_id: product_id)
 
     if current_item
-      current_item.quantity += quantity.to_i
+      if current_item.quantity
+        current_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i
+      else
+        current_item.quantity = quantity
+      end
     else
       current_item = line_items.build(product_id: product_id, quantity: quantity)
       current_item.price = current_item.product.price
@@ -26,7 +30,7 @@ class Cart < ActiveRecord::Base
   end
 
   def count
-    line_items.to_a.sum { |item| item.quantity }
+    line_items.sum(:quantity)
   end
 
   def taxes

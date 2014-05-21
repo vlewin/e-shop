@@ -3,6 +3,7 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
   has_many :line_items
+  self.
   has_many :orders, through: :line_items
 
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -10,12 +11,32 @@ class Product < ActiveRecord::Base
   validates :name, :description, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :name, uniqueness: true
-  # validates :image_url, allow_blank: true, format: {
-  #   with:    %r{\.(gif|jpg|png)\Z}i,
-  #   message: 'must be a URL for GIF, JPG or PNG image.'
-  # }
-
   validates :name, length: { minimum: 4 }
+
+  def decrease_quantity(amount=1)
+    self.update_attribute(:quantity, (self.quantity-amount)) unless self.quantity.zero? || (self.quantity-amount) < 0
+  end
+
+  def total_quantity
+    self.quantity + self.sold_quantity
+  end
+
+  def available_quantity
+    diff = self.quantity - reserved_quantity
+    diff > 0 ? diff : 0
+  end
+
+  def reserved_quantity
+    self.line_items.where('order_id is NULL').sum(:quantity)
+  end
+
+  def sold_quantity
+    self.line_items.where('order_id is not NULL').sum(:quantity)
+  end
+
+  def out_of_stock?
+    self.quantity.zero? || reserved_quantity >= self.quantity
+  end
 
   private
 
