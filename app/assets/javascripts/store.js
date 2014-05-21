@@ -11,9 +11,9 @@ $(function() {
     var quantity = parseInt($input.val())
 
     if($(this).hasClass('quantity_minus')) {
-      quantity = quantity == 0 ? 0 : quantity-1
+      quantity = (quantity == 0 || quantity == 1) ? 1 : quantity-1
     } else {
-      quantity = quantity+1;
+      quantity = (quantity+1 > $input.data('max')) ? quantity  : quantity+1
     }
 
     $input.val(quantity)

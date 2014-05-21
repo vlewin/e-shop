@@ -16,9 +16,9 @@ module ApplicationHelper
     if product.image.url
       # if Rails.env.production?
         if version ==:standard
-          cl_image_tag product.image, :width => 250, :height => 250, :crop => :fill
+          cl_image_tag product.image, {:width => 250, :height => 250, :crop => :fill}.merge(options)
         else
-          cl_image_tag product.image, :width => 240, :height => 120, :crop => :fill
+          cl_image_tag product.image, {:width => 220, :height => 120, :crop => :fill}.merge(options)
         end
       # else
         # image_tag product.image.send(version).url, options
@@ -36,7 +36,7 @@ module ApplicationHelper
     link_to "#{content_tag :i, nil, class: "fa #{icon}"} #{text}".html_safe, path, options
   end
 
-  def quantity_field_tag(quantity)
+  def quantity_field_tag(quantity, options = {})
     content_tag(:div, nil, :class => 'input-group input-group-sm quantity-helper') do
       concat(
         content_tag(:span, nil, :class => 'input-group-btn') do
@@ -44,7 +44,7 @@ module ApplicationHelper
         end
       )
 
-      concat(text_field_tag :quantity, quantity, class: 'form-control text-center')
+      concat(text_field_tag :quantity, quantity, class: 'form-control input-disabled text-center', 'data-max' => options[:max])
       concat(
         content_tag(:span, nil, :class => 'input-group-btn') do
           concat button_tag('+', type: 'button', class: 'btn btn-default quantity_plus')

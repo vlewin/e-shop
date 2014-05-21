@@ -22,7 +22,7 @@
         .row
           = form_tag line_items_path(:product_id => @product), :multipart => true do
             .col-xs-3
-              = quantity_field_tag 1
+              = quantity_field_tag 1, { max: @product.available_quantity}
             .col-xs-4
               = button_tag 'Add to cart', type: 'submit', class: 'btn btn-sm btn-success'
 
