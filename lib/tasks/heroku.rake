@@ -5,7 +5,7 @@ namespace :heroku do
 
     cmd = 'heroku config:set '
     secrets.each do |k,v|
-      cmd += "#{k}=#{v} "
+      cmd += "#{k.upcase}=#{v} "
     end
 
     puts `#{cmd.strip} --app e-shop-demo`

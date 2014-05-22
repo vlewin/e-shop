@@ -77,8 +77,8 @@ OptimHandel::Application.configure do
   config.action_mailer.smtp_settings = {
     :address   => "smtp.mandrillapp.com",
     :port      => 587,
-    :user_name => ENV['mrstealth@gmx.net'],
-    :password  => ENV['mandrill_apikey'],
+    :user_name => ENV['MANDRILL_USERNAME'],
+    :password  => ENV['MANDRILL_APIKEY'],
     :authentication => 'login',
     :domain => 'http://e-shop-demo.herokuapp.com',
     :enable_starttls_auto => true
