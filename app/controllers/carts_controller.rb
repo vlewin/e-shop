@@ -3,6 +3,7 @@ class CartsController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def show
+    add_breadcrumb 'Home', :root_path
     add_breadcrumb 'Shopping cart', cart_url(@current_cart)
 
     if @current_cart.empty?
