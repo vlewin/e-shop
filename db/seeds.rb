@@ -1,3 +1,4 @@
+# Users
 user=User.where(:email => "customer@example.com").first_or_initialize
 user.password = "password"
 user.name = Faker::Name.name
@@ -20,9 +21,10 @@ admin_user.skip_confirmation!
 admin_user.save
 admin_user.admin!
 
+# Categories and products
 5.times do |c|
   category = Category.create(:name => Faker::Product.brand)
-  rand(3..6).times do |p|
+  rand(1..4).times do |p|
     product = Product.create(
       name: Faker::Product.product,
       description: Faker::Lorem.sentence,
@@ -35,5 +37,15 @@ admin_user.admin!
   end
 end
 
-Shipment.create(provider: 'DHL', name: 'Paket',    rate: 6.99, default:true)
-Shipment.create(provider: 'DHL', name: 'Päckchen', rate: 4.10)
+# Shipments
+Shipment.create(provider: 'DHL', name: 'Paket',    rate: 6.99, default:true) unless Shipment.find_by_name('Paket')
+
+# Orders
+order = Order.create({
+  address_id: user.addresses.first.id,
+  shipment_id: Shipment.first.id,
+  pay_type: 'Purchase order',
+  status: 'shipped'
+})
+
+order.line_items << LineItem.create(product_id: Product.first.id, quantity: Product.first.quantity, price: Product.first.price)
