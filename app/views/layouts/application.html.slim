@@ -10,6 +10,8 @@ html
 
   body
     header
+      = "*** SECRET #{OptimHandel::Application.config.secret_key_base}"
+
       == render 'layouts/navigation'
     main
       .container

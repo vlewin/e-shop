@@ -32,7 +32,7 @@ db/*.sqlite3
 .redcar/
 .sass-cache
 /config/config.yml
-/config/secrets.yml
+/config/.secrets.yml
 /coverage.data
 /coverage/
 /db/*.javadb/

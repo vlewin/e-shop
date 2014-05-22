@@ -41,7 +41,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'awesome_print'
   gem 'factory_girl_rails'
-  gem 'debugger' if RUBY_PLATFORM =~ /linux/i
+  # gem 'debugger' if RUBY_PLATFORM =~ /linux/i
 end
 
 group :development do
