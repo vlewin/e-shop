@@ -13,6 +13,8 @@ class AddressesController < ApplicationController
   end
 
   def edit
+    add_breadcrumb 'Account settings', account_url
+    add_breadcrumb 'Edit address', edit_address_url(@address)
   end
 
   def create

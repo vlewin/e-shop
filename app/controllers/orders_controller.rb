@@ -8,6 +8,9 @@ class OrdersController < ApplicationController
     @order = policy_scope(Order).find(params[:id])
     authorize @order
 
+    add_breadcrumb 'Account settings', account_url
+    add_breadcrumb "Order ##{@order.id}", order_url(@order)
+
     respond_to do |format|
       format.html
       format.js
