@@ -1,6 +1,6 @@
 .row
   - @products.each_with_index do |product, index|
-    .col-xs-6.col-md-4
+    .col-xs-12.col-sm-6.col-md-4
       .product class=('out-of-stock' if product.out_of_stock?)
 
         - if product.out_of_stock?
@@ -8,7 +8,7 @@
             .banner
               .text OUT OF STOCK
 
-        a href=store_product_path(product)
+        a.thumbnail href=store_product_path(product)
           = product_image_tag product, :thumbnail, class: 'image-responsive'
           hr.line
           h4.name
@@ -22,17 +22,16 @@
         hr.line
 
         - if product.out_of_stock?
-          p.text-muted
-            i.fa.fa-info-circle>
-            | Product is currently not available
+          p
+            | &nbsp;
         - else
           = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
             .row
-              .col-xs-6
+              / .hidden-xs.hidden-sm.col-sm-12.col-md-6
+              .hidden-xs.hidden-sm.col-md-6
                 = quantity_field_tag 1, { max: product.available_quantity}
-
-              .col-xs-6
-                = button_tag(type: "submit", class: "btn btn-sm btn-success") do
+              .col-xs-12.col-sm-12.col-md-6
+                = button_tag(type: "submit", class: "btn btn-sm btn-success col-xs-12 col-sm-12 col-md-12") do
                   i.fa.fa-shopping-cart
                   = ' Add to cart'
 

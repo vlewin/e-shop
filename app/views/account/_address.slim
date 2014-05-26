@@ -1,12 +1,12 @@
 - if @user.addresses.present?
   - @user.addresses.each do |address|
-    .col-xs-6.col-md-4
+    .col-xs-12.col-sm-6.col-md-4
       .panel.panel-default
         .panel-body
           .row
-            .col-xs-3.col-md-3
+            .hidden-xs.col-sm-3.col-md-3
               i.fa.fa-4x.fa-envelope.light-gray
-            .col-xs-9.col-md-9
+            .col-xs-12.col-sm-9.col-md-9
               strong= @user.name
               div= address.street
               div= "#{address.zip} #{address.city}"

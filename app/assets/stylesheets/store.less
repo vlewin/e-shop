@@ -1,3 +1,5 @@
+@import "custom_bootstrap/mixins.less";
+
 .bordered {
   border: 1px solid #EEEEEE;
 }
@@ -59,25 +61,22 @@
     }
   }
 
-  a {
+  a.thumbnail {
+    border: none;
     text-decoration: none;
     outline: none;
     color: #000;
     display:block;
   }
   .name {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
+    .text-overflow;
   }
 
   .description {
     color: gray;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
     display: block;
     font-size: 11px;
+    .text-overflow;
   }
 }
 

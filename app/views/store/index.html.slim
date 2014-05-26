@@ -1,5 +1,5 @@
 #store-index.row
-  .col-xs-3.col-md-2
+  .hidden-xs.col-sm-3.col-md-2
     h3.page-header Categories
     ul.categories
       li= link_to "All products (#{@products.size})", root_path({}), remote: :true, class: 'category'
@@ -12,11 +12,11 @@
       li= sort_link @search, :price
       li= sort_link @search, :created_at, 'Latest'
 
-  .col-xs-9.col-md-9
-    h3.page-header.with_input
-      | Products
-      .pull-right
-        = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search form-inline' do |f|
+  .col-xs-12.col-sm-9.col-md-10
+    h3.page-header
+      .hidden-xs.col-sm-4.col-md-2 Products
+      .col-xs-12.col-sm-8.col-md-10
+        = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search' do |f|
           .input-group
             .input-group-btn
               button.btn.btn-default.btn-sm.dropdown-toggle data-toggle="dropdown" type="button"
