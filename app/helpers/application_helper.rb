@@ -24,10 +24,14 @@ module ApplicationHelper
         # image_tag product.image.send(version).url, options
       # end
     else
-      if version ==:standard
-        image_tag "http://placehold.it/250x250", options
+      if version.nil?
+        image_tag "http://placehold.it/#{options[:width]}x#{options[:height]}", options
       else
-        image_tag "http://placehold.it/220x120", options
+        if version ==:standard
+          image_tag "http://placehold.it/250x250", options
+        else
+          image_tag "http://placehold.it/220x120", options
+        end
       end
     end
   end
