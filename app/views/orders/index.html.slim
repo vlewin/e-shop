@@ -28,6 +28,8 @@ table.table.table-bordered.table-hover.table-responsive
           = icon_link_to "Show", order_path(order), 'fa-eye'
           | &nbsp;
           = icon_link_to "Print", order_path(order, format: 'pdf'), 'fa-print'
+          | &nbsp;
+          = icon_link_to "Destroy", order, { class: 'text-danger', data: {:confirm => 'Are you sure?'}, :method => :delete}, 'fa-times-circle'
 
 
 

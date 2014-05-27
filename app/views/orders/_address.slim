@@ -14,7 +14,7 @@
             = form.radio_button :address_id, address.id, :checked => (address == current_user.addresses.last)
             = address.full_address
     - else
-      h4
+      h5
         i.fa.fa-info-circle>
         | You addresses list is empty, please
         | &nbsp;
