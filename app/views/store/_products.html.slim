@@ -19,8 +19,7 @@
             br
             small.text-muted= "#{product.available_quantity} of #{product.quantity} available"
 
-        hr.line
-
+          hr.line
         - if product.out_of_stock?
           p
             | &nbsp;

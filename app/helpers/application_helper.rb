@@ -18,7 +18,7 @@ module ApplicationHelper
         if version ==:standard
           cl_image_tag product.image, {:width => 250, :height => 250, :crop => :fill}.merge(options)
         else
-          cl_image_tag product.image, {:width => 220, :height => 120, :crop => :fill}.merge(options)
+          cl_image_tag product.image, {:width => 280, :height => 140, :crop => :fill}.merge(options)
         end
       # else
         # image_tag product.image.send(version).url, options
@@ -30,7 +30,7 @@ module ApplicationHelper
         if version ==:standard
           image_tag "http://placehold.it/250x250", options
         else
-          image_tag "http://placehold.it/220x120", options
+          image_tag "http://placehold.it/280x140", options
         end
       end
     end
