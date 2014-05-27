@@ -1,7 +1,4 @@
 class CategoriesController < ApplicationController
-  # TODO: Fix set_breadcrumb action
-  add_breadcrumb controller_name.capitalize, "#{controller_name}_path".to_sym
-
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, except: [:index, :show]
 
@@ -17,8 +14,6 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    add_breadcrumb "New #{controller_name.singularize}"
-
     @category = Category.new
     @category.products.build
     authorize @category
