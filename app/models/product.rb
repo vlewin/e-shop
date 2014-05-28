@@ -3,15 +3,15 @@ class Product < ActiveRecord::Base
 
   belongs_to :category
   has_many :line_items
-  self.
   has_many :orders, through: :line_items
-
   before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :name, :description, presence: true
   validates :price, numericality: { greater_than_or_equal_to: 0.01 }
   validates :name, uniqueness: true
   validates :name, length: { minimum: 4 }
+
+
 
   def decrease_quantity(amount=1)
     self.update_attribute(:quantity, (self.quantity-amount)) unless self.quantity.zero? || (self.quantity-amount) < 0
@@ -40,7 +40,7 @@ class Product < ActiveRecord::Base
 
   private
 
-  # ensure that there are no line items referencing this product
+  # Ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item
     if line_items.empty?
       return true
