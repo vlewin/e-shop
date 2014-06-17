@@ -14,20 +14,17 @@
 ActiveRecord::Schema.define(version: 20140423194045) do
 
   create_table "addresses", force: true do |t|
-    t.string   "country",    default: "Germany"
+    t.string   "country"
     t.string   "city"
     t.string   "street"
     t.string   "zip"
     t.string   "phone"
-    t.string   "type",       default: "ShippingAddress"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "carts", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
   create_table "categories", force: true do |t|
@@ -52,12 +49,10 @@ ActiveRecord::Schema.define(version: 20140423194045) do
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: true do |t|
-    t.integer  "user_id"
+    t.integer  "address_id"
     t.integer  "shipment_id"
-    t.integer  "billing_address_id"
-    t.integer  "shipping_address_id"
-    t.integer  "status",              default: 0
     t.string   "pay_type"
+    t.integer  "status",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -103,8 +98,6 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
-    t.integer  "billing_address_id"
-    t.integer  "shipping_address_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
