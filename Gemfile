@@ -38,7 +38,9 @@ group :development, :test do
   gem 'awesome_print'
   gem 'factory_girl_rails'
   gem 'ffaker'
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'spring-commands-rspec'
+  gem 'guard-rspec'
+  gem 'rspec-rails', '~> 3.0.1'
   gem 'debugger' if RUBY_PLATFORM =~ /linux/i
 end
 
