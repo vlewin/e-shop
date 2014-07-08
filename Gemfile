@@ -41,7 +41,8 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'rspec-rails', '~> 3.0.1'
-  gem 'debugger' if RUBY_PLATFORM =~ /linux/i
+  gem 'shoulda'
+  gem 'byebug'
 end
 
 group :development do
