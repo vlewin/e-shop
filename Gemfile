@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.0.0'
 
-gem 'rails', '~> 4.1.2.rc2'
+gem 'rails', '~> 4.1.5'
 gem 'puma'
 gem 'pundit'
 gem 'devise'
@@ -10,7 +10,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 
 gem 'uglifier'
-gem "therubyracer"
+gem 'therubyracer'
 
 gem 'jquery-rails'
 gem 'slim-rails'
