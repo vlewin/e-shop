@@ -3,7 +3,6 @@ class Cart < ActiveRecord::Base
 
   def add_product(product_id, quantity=1)
     current_item = line_items.find_by(product_id: product_id)
-
     if current_item
       if current_item.quantity
         current_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i

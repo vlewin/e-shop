@@ -3,6 +3,17 @@ require "rails_helper"
 describe Product do
   subject { FactoryGirl.build(:product, quantity: 2) }
 
+  it { should belong_to :category }
+  it { should have_many :line_items }
+  it { should have_many :orders }
+
+  it { should validate_presence_of :name }
+  it { should validate_presence_of :description }
+  it { should validate_numericality_of(:price).is_greater_than_or_equal_to(0.01) }
+  it { should validate_uniqueness_of :name }
+  it { should ensure_length_of(:name).is_at_least(4) }
+
+
   describe '.decrease_quantity' do
     it 'decreases quantity by 1 per default' do
       subject.decrease_quantity
