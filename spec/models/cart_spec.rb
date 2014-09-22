@@ -8,9 +8,10 @@ describe Cart do
 
   it { should have_many :line_items }
 
-
   it 'adds product to cart' do
-    expect(subject.add_product(product.id, 1))
+    item = subject.add_product(product.id, 3)
+    expect(item.cart_id).to eq subject.id
+    expect(item.quantity).to eq 3
   end
 
   it 'checks if cart is empty' do
@@ -37,20 +38,5 @@ describe Cart do
   end
 end
 
-  # def add_product(product_id, quantity=1)
-  #   current_item = line_items.find_by(product_id: product_id)
-
-  #   if current_item
-  #     if current_item.quantity
-  #       current_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i
-  #     else
-  #       current_item.quantity = quantity
-  #     end
-  #   else
-  #     current_item = line_items.build(product_id: product_id, quantity: quantity)
-  #     current_item.price = current_item.product.price
-  #   end
-  #   current_item
-  # end
 
 
