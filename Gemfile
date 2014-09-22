@@ -31,7 +31,9 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 # Image uploads
 gem 'carrierwave'
 gem 'cloudinary'
-gem 'rmagick'
+gem 'rmagick', require: false
+
+
 
 group :development, :test do
   gem 'sqlite3'
