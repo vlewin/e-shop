@@ -26,12 +26,6 @@ describe Product do
     end
   end
 
-  describe '.total_quantity' do
-    it 'calculates total quantity' do
-      expect(subject.total_quantity).to be 2
-    end
-  end
-
   describe '.available_quantity' do
     it 'calculates available quantity' do
       expect(subject.available_quantity).to be 2

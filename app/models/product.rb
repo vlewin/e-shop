@@ -16,13 +16,8 @@ class Product < ActiveRecord::Base
     self.update_attribute(:quantity, (self.quantity-amount)) unless self.quantity.zero? || (self.quantity-amount) < 0
   end
 
-  def total_quantity
-    self.quantity + self.sold_quantity
-  end
-
   def available_quantity
-    diff = self.quantity - reserved_quantity
-    diff > 0 ? diff : 0
+    self.quantity - reserved_quantity
   end
 
   def reserved_quantity
