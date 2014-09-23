@@ -1,21 +1,4 @@
-class OrderPolicy
-  attr_reader :user, :record
-
-  class Scope < Struct.new(:user, :scope)
-    def resolve
-      if user.admin?
-        scope.all
-      else
-        user.orders
-      end
-    end
-  end
-
-  def initialize(user, record)
-    @user = user
-    @record = record
-  end
-
+class OrderPolicy < ApplicationPolicy
   def index?
     @user.admin?
   end
@@ -36,4 +19,13 @@ class OrderPolicy
     @user.admin?
   end
 
+  class Scope < Struct.new(:user, :scope)
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        user.orders
+      end
+    end
+  end
 end

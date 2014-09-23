@@ -1,15 +1,7 @@
-class ProductPolicy
-  attr_reader :user, :record
-
-  def initialize(user, record)
-    @user = user
-    @record = record
-  end
-
+class ProductPolicy < ApplicationPolicy
   # Public
   def index?
   end
-
 
   def show?
   end

@@ -1,11 +1,4 @@
-class CategoryPolicy
-  attr_reader :user, :record
-
-  def initialize(user, record)
-    @user = user
-    @record = record
-  end
-
+class CategoryPolicy < ApplicationPolicy
   # Public
   def index?
   end
@@ -15,12 +8,10 @@ class CategoryPolicy
 
   # Protected
   def edit?
-    puts "*** #{self.class} edit? => #{@user.admin?}"
     @user.admin?
   end
 
   def new?
-    puts "*** #{self.class} new? => #{@user.admin?}"
     @user.admin?
   end
 
@@ -29,12 +20,10 @@ class CategoryPolicy
   end
 
   def update?
-    puts "*** #{self.class} update? => #{@user.admin?}"
     @user.admin?
   end
 
   def destroy?
-    puts "*** #{self.class} destroy? => #{@user.admin?}"
     @user.admin?
   end
 end

@@ -1,21 +1,4 @@
-class UserPolicy
-  attr_reader :user, :record
-
-  class Scope < Struct.new(:user, :scope)
-    def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.where(:id => user.id)
-      end
-    end
-  end
-
-  def initialize(user, record)
-    @user = user
-    @record = record
-  end
-
+class UserPolicy < ApplicationPolicy
   def index?
     @user.admin?
   end
@@ -34,5 +17,15 @@ class UserPolicy
 
   def destroy?
     @user.admin?
+  end
+
+  class Scope < Struct.new(:user, :scope)
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        scope.where(id: user.id)
+      end
+    end
   end
 end
