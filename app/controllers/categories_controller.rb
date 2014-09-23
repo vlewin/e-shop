@@ -42,6 +42,7 @@ class CategoriesController < ApplicationController
 
   def destroy
     authorize @category
+
     @category.destroy
     redirect_to categories_url, notice: 'Category was successfully destroyed.'
   end

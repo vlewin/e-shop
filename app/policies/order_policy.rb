@@ -17,8 +17,7 @@ class OrderPolicy
   end
 
   def index?
-    puts "*** #{self.class} index? => #{@user.admin?}"
-    # @user.admin?
+    @user.admin?
   end
 
   def edit?
@@ -26,22 +25,15 @@ class OrderPolicy
   end
 
   def show?
-    puts "*** #{self.class} show?"
     @user.admin? || @user.orders.find(@record)
   end
 
   def update?
-    puts "*** #{self.class} update?"
     @user.admin?
   end
 
   def destroy?
-    puts "*** #{self.class} destroy?"
     @user.admin?
   end
-
-  # def scope
-  #   Pundit.policy_scope!(@user, @record.class)
-  # end
 
 end

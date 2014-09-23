@@ -1,11 +1,14 @@
 class OrdersController < ApplicationController
+  before_action :set_order, only: [:show, :edit, :update, :destroy]
+
   def index
     @orders = policy_scope(Order)
-    # authorize @orders
+    # FIXME: add permission check test!
+    authorize @orders
   end
 
   def show
-    @order = policy_scope(Order).find(params[:id])
+    # FIXME: add permission check test!
     authorize @order
 
     add_breadcrumb 'Home', :root_path
@@ -16,8 +19,7 @@ class OrdersController < ApplicationController
       format.html
       format.js
       format.pdf do
-        pdf = OrderPdf.new(@order, view_context)
-        send_data pdf.render, filename: "order_#{@order.id}", type: "application/pdf", disposition: "inline"
+        send_data OrderPdf.new(@order, view_context).render, filename: "order_#{@order.id}", type: "application/pdf", disposition: "inline"
       end
     end
 
@@ -39,8 +41,8 @@ class OrdersController < ApplicationController
     end
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
   def create
     @order = Order.new(order_params)
@@ -63,20 +65,21 @@ class OrdersController < ApplicationController
     end
   end
 
-  def update
-    respond_to do |format|
-      if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @order.update(order_params)
+  #       format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+  #       format.json { head :no_content }
+  #     else
+  #       format.html { render action: 'edit' }
+  #       format.json { render json: @order.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
+  # FIXME: Move admin actions to the separate controller!
   def destroy
-    current_user.orders.find(params[:id]).destroy
+    @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url }
       format.json { head :no_content }
@@ -84,9 +87,13 @@ class OrdersController < ApplicationController
   end
 
   private
+    def set_order
+      @order = policy_scope(Order).find(params[:id])
+    end
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:address_id, :shipment_id, :pay_type)
     end
-  #...
+
 end

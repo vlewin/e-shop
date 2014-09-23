@@ -1,9 +1,6 @@
 class ProductsController < ApplicationController
   respond_to :html, :js
 
-  # add_breadcrumb 'Home', :root_path, options: { title: 'Home' }
-  # add_breadcrumb 'Products', "#{controller_name}_path".to_sym
-
   before_filter :authenticate_user!
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   after_action :verify_authorized, except: [:index, :show]
@@ -17,18 +14,15 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
-    # @categories = Category.all
     authorize @product
   end
 
   def edit
-    # @categories = Category.all
     authorize @product
   end
 
   def create
     @product = Product.new(product_params)
-    # @product.category = Category.find(params[:category_id])
     authorize @product
 
     if @product.save
