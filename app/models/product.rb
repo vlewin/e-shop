@@ -26,11 +26,11 @@ class Product < ActiveRecord::Base
   end
 
   def reserved_quantity
-    self.line_items.where('order_id is NULL').sum(:quantity)
+    self.line_items.where(order_id: nil).sum(:quantity)
   end
 
   def sold_quantity
-    self.line_items.where('order_id is not NULL').sum(:quantity)
+    self.line_items.where.not(order_id: nil).sum(:quantity)
   end
 
   def out_of_stock?
