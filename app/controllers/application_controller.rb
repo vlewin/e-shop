@@ -11,10 +11,7 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :set_locale
 
-  # before_filter :set_breadcrumb #, only: [:index, :show, :edit]
   before_filter :current_cart
-
-  # private
 
   def current_cart
     @current_cart ||= Cart.find(session[:cart_id])
@@ -58,8 +55,6 @@ class ApplicationController < ActionController::Base
     else
       root_path
     end
-    # current_user.admin? ? categories_path : products_path
-    # redirect_to_back_or_default
   end
 
   private
