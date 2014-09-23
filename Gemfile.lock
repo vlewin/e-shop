@@ -155,7 +155,7 @@ GEM
       slop (~> 3.4)
     puma (2.8.2)
       rack (>= 1.1, < 2.0)
-    pundit (0.2.3)
+    pundit (0.3.0)
       activesupport (>= 3.0.0)
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
