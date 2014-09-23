@@ -3,6 +3,7 @@ class CreateCategories < ActiveRecord::Migration
     create_table :categories do |t|
       t.string   :name
       t.text     :description
+      t.integer  :products_count, default: 0
       t.timestamps
     end
   end

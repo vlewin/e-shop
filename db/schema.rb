@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140423194045) do
   create_table "categories", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "products_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
