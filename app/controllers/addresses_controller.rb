@@ -3,9 +3,11 @@ class AddressesController < ApplicationController
 
   def index
     @addresses = Address.all
+    authorize @addresses
   end
 
   def show
+    authorize @address
   end
 
   def new
@@ -13,6 +15,7 @@ class AddressesController < ApplicationController
   end
 
   def edit
+    # FIXME: revisit breadcrums
     add_breadcrumb 'Home', :root_path
     add_breadcrumb 'Account settings', account_url
     add_breadcrumb 'Edit address', edit_address_url(@address)

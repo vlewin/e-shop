@@ -8,6 +8,7 @@ class AccountController < ApplicationController
 
     @user = current_user
     @address = Address.new
+
     authorize current_user
   end
 end
