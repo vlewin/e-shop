@@ -1,35 +1,30 @@
 $(function() {
   $('#bill_to_shipping').on('click', function(e) {
-    check_and_disable()
+    if($(this).is(":checked")) {
+      $('#billing_addresses').find('input[type=radio]').attr( 'disabled', true);
+    } else {
+      $('#billing_addresses').find('input[type=radio]').attr( 'disabled', false);
+    }
+
     $('#billing_addresses').toggleClass('hidden')
   })
 
-  $('#shipping_addresses input[type=radio]:not(:disabled)').on('change', function(e) {
-    check_and_disable()
-  })
+  $('#shipping_addresses input[type=radio]').on('change', function(e) {
+    if(!$('#bill_to_shipping').is(":checked")) {
+      var $container = $('#billing_addresses');
+      var $current_shipping = $('#shipping_addresses').find('input[type=radio]:checked')
+      var $current_billing = $container.find('input[value=' + $current_shipping.val() + ']')
 
-  function check_and_disable() {
-    var checked = $('#shipping_addresses').find('input[type=radio]:checked')
+      // Reset disabled and text-decoration attributes
+      $container.find('input[type=radio]:disabled').attr( 'disabled', false);
+      $container.find('div.radio').css('text-decoration', 'none');
 
-    // Enable all radio buttons
-    $('#billing_addresses').find('input[type=radio]').attr( 'disabled', false);
-    // $('#billing_addresses').find('input[type=radio]').removeAttr( 'checked');
+      $current_billing.attr( 'disabled', true);
+      $current_billing.attr( 'checked', false);
+      $current_billing.parents('div.radio').css('text-decoration', 'line-through');
 
-
-    // Disable selected shipping address
-    $('#billing_addresses').find('input[value=' + checked.val() + ']').attr( 'disabled', true);
-
-    // Check first not disabled radio button from the list
-    var radios = $('#billing_addresses').find('input:not(:disabled)')
-    if(radios.length > 1) {
-      radios[0].attr( 'checked', true);
-      // radios[0].click();
-      radios[0].click();
-    } else {
-      radios.attr( 'checked', true);
-      // radios.click();
-      radios.click();
+      // Check first radio button from the list of available billing addresses
+      $container.find('input:not(:disabled)').first().prop("checked", true);
     }
-  }
-
+  })
 })

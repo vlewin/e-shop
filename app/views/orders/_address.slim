@@ -13,7 +13,7 @@
         - current_user.addresses.each_with_index do |address, index|
           .radio
             label
-              = form.radio_button :shipping_address_id, address.id, :checked => (address == current_user.addresses.first)
+              = form.radio_button :shipping_address_id, address.id, checked: (address == current_user.addresses.first)
               = address.full_address
       hr
 
@@ -27,23 +27,8 @@
         - current_user.addresses.each_with_index do |address, index|
           .radio.disabled
             label
-              = form.radio_button :billing_address_id, address.id, :checked => (address == current_user.addresses.last)
+              = form.radio_button :billing_address_id, address.id, checked: (address == current_user.addresses.last), disabled: true
               = address.full_address
-
-          / .radio
-          /   label
-          /     input#optionsRadios1 checked="" name="optionsRadios" type="radio" value="option1"
-          /       | Option one is this and that&mdash;be sure to include why it's great
-          / .radio
-          /   label
-          /     input#optionsRadios2 name="optionsRadios" type="radio" value="option2"
-          /       | Option two can be something else and selecting it will deselect option one
-          / .radio.disabled
-          /   label
-          /     input#optionsRadios3 disabled="" name="optionsRadios" type="radio" value="option3"
-          /       | Option three is disabled
-
-
 
     - else
       h5
