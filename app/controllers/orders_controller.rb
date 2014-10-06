@@ -15,6 +15,8 @@ class OrdersController < ApplicationController
     add_breadcrumb 'Account settings', account_url
     add_breadcrumb "Order ##{@order.id}", order_url(@order)
 
+    @billing_address = @order.billing_address || @order.address
+
     respond_to do |format|
       format.html
       format.js
@@ -93,7 +95,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:address_id, :shipment_id, :pay_type)
+      params.require(:order).permit(:shipping_address_id, :billing_address_id, :shipment_id, :pay_type)
     end
 
 end

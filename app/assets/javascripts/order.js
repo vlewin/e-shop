@@ -1,22 +1,35 @@
 $(function() {
-  $('.wizard a').click(function (e) {
-    e.preventDefault()
-    $(this).parents('div').find('a').removeClass('active')
-    $(this).addClass('active')
-    $(this).tab('show')
+  $('#bill_to_shipping').on('click', function(e) {
+    check_and_disable()
+    $('#billing_addresses').toggleClass('hidden')
   })
 
-  $('.new_order_form a.btn-next').click(function (e) {
-    console.log('Next clicked')
-    e.preventDefault()
-    $('.wizard a').removeClass('active')
-    $('.wizard').find('[href=' + $(this).attr('href') + ']').addClass('active')
-    console.log($(this).attr('href'))
+  $('#shipping_addresses input[type=radio]:not(:disabled)').on('change', function(e) {
+    check_and_disable()
   })
 
-  $('.new_order_form a.btn-back').click(function (e) {
-    e.preventDefault()
-    $('.wizard a').removeClass('active')
-    $('.wizard').find('[href^=' + $(this).attr('href') + ']').addClass('active')
-  })
+  function check_and_disable() {
+    var checked = $('#shipping_addresses').find('input[type=radio]:checked')
+
+    // Enable all radio buttons
+    $('#billing_addresses').find('input[type=radio]').attr( 'disabled', false);
+    // $('#billing_addresses').find('input[type=radio]').removeAttr( 'checked');
+
+
+    // Disable selected shipping address
+    $('#billing_addresses').find('input[value=' + checked.val() + ']').attr( 'disabled', true);
+
+    // Check first not disabled radio button from the list
+    var radios = $('#billing_addresses').find('input:not(:disabled)')
+    if(radios.length > 1) {
+      radios[0].attr( 'checked', true);
+      // radios[0].click();
+      radios[0].click();
+    } else {
+      radios.attr( 'checked', true);
+      // radios.click();
+      radios.click();
+    }
+  }
+
 })

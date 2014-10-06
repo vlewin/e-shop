@@ -7,7 +7,7 @@
             .hidden-xs.col-sm-3.col-md-3
               i.fa.fa-4x.fa-envelope.light-gray
             .col-xs-12.col-sm-9.col-md-9
-              strong= @user.name
+              strong= address.full_name
               div= address.street
               div= "#{address.zip} #{address.city}"
               hr.line
@@ -19,7 +19,7 @@
             .btn-group
               = link_to 'Edit', edit_address_path(address), class: 'btn btn-default'
             .btn-group
-              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, disabled: true, :method => :delete, class: 'btn btn-danger'
+              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, disabled: false, :method => :delete, class: 'btn btn-danger'
 
 
 

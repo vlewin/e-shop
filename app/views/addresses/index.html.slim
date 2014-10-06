@@ -6,7 +6,7 @@ h3.page-header
 table.table.table-bordered.table-hover.table-responsive
   thead
     tr
-      th Country
+      th Recipient
       th City
       th Street
       th Zip
@@ -19,7 +19,7 @@ table.table.table-bordered.table-hover.table-responsive
   tbody
     - @addresses.each do |address|
       tr
-        td = address.country
+        td = address.full_name
         td = address.city
         td = address.street
         td = address.zip
