@@ -6,7 +6,8 @@ user.skip_confirmation!
 user.save
 
 address = Address.create(
-    country: 'Germany',
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
     city:     Faker::Address.city,
     street:   Faker::Address.street_address,
     zip:      Faker::Address.zip_code,
@@ -41,8 +42,8 @@ end
 Shipment.create(provider: 'DHL', name: 'Paket',    rate: 6.99, default:true) unless Shipment.find_by_name('Paket')
 
 # Orders
-order = Order.create({
-  address_id: user.addresses.first.id,
+order = user.orders.create({
+  shipping_address_id: user.addresses.first.id,
   shipment_id: Shipment.first.id,
   pay_type: 'Purchase order',
   status: 'shipped'

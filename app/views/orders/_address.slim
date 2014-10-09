@@ -4,21 +4,38 @@
       | Step 1: Billing and shipping address
 
     .pull-right
-      small= link_to 'New Address', '#address_modal', data: { target: '#address_modal', toggle: 'modal' }
+      small= link_to 'New Address', '#address', data: { target: '#address_modal', toggle: 'modal' }
 #address.panel-collapse.collapse.in
   .panel-body
+    h5 Shipping address
     - if current_user.addresses.present?
-      - current_user.addresses.each_with_index do |address, index|
-        .radio
-          label
-            = form.radio_button :address_id, address.id, :checked => (address == current_user.addresses.last)
-            = address.full_address
+      #shipping_addresses
+        - current_user.addresses.each_with_index do |address, index|
+          .radio
+            label
+              = form.radio_button :shipping_address_id, address.id, checked: (address == current_user.addresses.first)
+              = address.full_address
+      hr
+
+      h5 Billing address
+      .checkbox
+        label
+          = check_box_tag :bill_to_shipping, true, checked: true
+          label billing address is same as shipping address
+
+      #billing_addresses.hidden
+        - current_user.addresses.each_with_index do |address, index|
+          .radio.disabled
+            label
+              = form.radio_button :billing_address_id, address.id, checked: (address == current_user.addresses.last), disabled: true
+              = address.full_address
+
     - else
       h5
         i.fa.fa-info-circle>
         | You addresses list is empty, please
         | &nbsp;
-        = link_to 'add address', new_address_path
+        = link_to 'add address', '#address_modal', data: { target: '#address_modal', toggle: 'modal' }
 
     hr
     .pull-left

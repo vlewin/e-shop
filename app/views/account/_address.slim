@@ -1,5 +1,5 @@
-- if @user.addresses.present?
-  - @user.addresses.each do |address|
+- if current_user.addresses.exists?
+  - current_user.addresses.each do |address|
     .col-xs-12.col-sm-6.col-md-4
       .panel.panel-default
         .panel-body
@@ -7,7 +7,7 @@
             .hidden-xs.col-sm-3.col-md-3
               i.fa.fa-4x.fa-envelope.light-gray
             .col-xs-12.col-sm-9.col-md-9
-              strong= @user.name
+              strong= address.full_name
               div= address.street
               div= "#{address.zip} #{address.city}"
               hr.line
@@ -17,14 +17,17 @@
         .panel-footer
           .btn-group.btn-group-justified
             .btn-group
-              = link_to 'Edit', edit_address_path(address), class: 'btn btn-default'
+              = link_to 'Edit', '#address', data: { target: "#address_modal_#{address.id}", toggle: 'modal' }, class: 'btn btn-default'
             .btn-group
-              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, disabled: true, :method => :delete, class: 'btn btn-danger'
+              = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, disabled: false, :method => :delete, class: 'btn btn-danger'
+
+      == render 'addresses/modal', address: address
+
 
 
 
 - else
   h4 Your addresses list is empty
 
-== render 'addresses/new_address_modal', object: @address
+== render 'addresses/modal', address: Address.new
 

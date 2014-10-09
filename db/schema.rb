@@ -14,7 +14,8 @@
 ActiveRecord::Schema.define(version: 20140423194045) do
 
   create_table "addresses", force: true do |t|
-    t.string   "country"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "city"
     t.string   "street"
     t.string   "zip"
@@ -52,10 +53,12 @@ ActiveRecord::Schema.define(version: 20140423194045) do
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
   create_table "orders", force: true do |t|
-    t.integer  "address_id"
+    t.integer  "shipping_address_id"
+    t.integer  "billing_address_id"
     t.integer  "shipment_id"
+    t.integer  "user_id"
     t.string   "pay_type"
-    t.integer  "status",      default: 0
+    t.integer  "status",              default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

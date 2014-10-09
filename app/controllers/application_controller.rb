@@ -13,6 +13,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :current_cart
 
+  # def current_user
+  #   @current_user ||= super
+  # end
+
   def current_cart
     @current_cart ||= Cart.find(session[:cart_id])
   rescue ActiveRecord::RecordNotFound

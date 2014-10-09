@@ -4,7 +4,7 @@
       .panel-heading
         strong= t('authentication.sign_in')
       .panel-body
-        = devise_error_messages!
+        == render 'layouts/errors', object: resource
         = form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f|
           .form-group
             = f.label :email
