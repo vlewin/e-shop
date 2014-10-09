@@ -1,6 +1,5 @@
-= form_for @address || Address.new, html: { class: 'form-horizontal' } do |f|
-  == render 'layouts/errors', object: @address || Address.new
-
+= render 'layouts/errors', object: address
+= form_for address, html: { class: 'form-horizontal' } do |f|
   .row
     .col-md-12
       .form-group

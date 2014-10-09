@@ -1,8 +1,8 @@
-#address_modal.modal.fade aria-hidden="true" role="dialog" tabindex="-1"
+.modal.fade id=(address.new_record? ? 'address_modal' : "address_modal_#{address.id}") aria-hidden="true" role="dialog" tabindex="-1"
   .modal-dialog
     .modal-content
       .modal-header
         button.close aria-hidden="true" data-dismiss="modal" type="button"  &times;
         h4.modal-title New address
       .modal-body
-        == render 'addresses/form', object: @address
+        == render 'addresses/form', address: address

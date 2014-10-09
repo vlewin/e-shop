@@ -38,9 +38,7 @@ class AccountController < Devise::RegistrationsController
     add_breadcrumb 'Account settings', account_url
 
     @user = current_user
-    @address = Address.new
-
-    authorize current_user
+    authorize @user
   end
 
   private
