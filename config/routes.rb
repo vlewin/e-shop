@@ -1,18 +1,20 @@
-OptimHandel::Application.routes.draw do
-  resources :delivery_services
-
+EShop::Application.routes.draw do
   root to: 'store#index', via: :get
 
   scope '(:locale)', locale: /en|de/ do
-    devise_for :users, controllers: { registrations: 'registrations' }
+    devise_for :users, controllers: { registrations: :account }
+    devise_scope :user do
+      resource :account, controller: :account do
+      end
+    end
+
     resources :users
     resources :addresses
     resources :categories
     resources :orders
     resources :carts
     resources :line_items
-
-    resource :account, controller: :account, only: [:show]
+    resources :delivery_services
 
     resource :store,  only: [:index] do
       resources :products, controller: :store, only: [:index, :show] do
