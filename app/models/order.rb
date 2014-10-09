@@ -17,7 +17,6 @@ class Order < ActiveRecord::Base
   before_create :set_billing_address
 
   def set_billing_address
-    puts "*** st billing address"
     billing_address_id = shipping_address_id  if billing_address_id.nil?
   end
 
@@ -46,5 +45,4 @@ class Order < ActiveRecord::Base
   def taxes
     line_items.to_a.sum { |item| item.tax }
   end
-
 end
