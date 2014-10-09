@@ -8,7 +8,7 @@ class Address < ActiveRecord::Base
   end
 
   def full_address
-    "#{first_name} #{first_name}, #{street}, #{zip} #{city}"
+    "#{first_name} #{last_name}, #{street}, #{zip} #{city}"
   end
 end
 
