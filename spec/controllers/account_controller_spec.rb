@@ -10,7 +10,6 @@ describe AccountController, type: :controller do
     it "assigns the current_user to @user" do
       get :show
       expect(assigns(:user)).to eq(subject.current_user)
-      expect(assigns(:address)).not_to be nil
     end
 
     it "renders the :account view" do
