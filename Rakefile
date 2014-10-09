@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-OptimHandel::Application.load_tasks
+EShop::Application.load_tasks
