@@ -17,7 +17,7 @@ class Order < ActiveRecord::Base
   before_create :set_billing_address
 
   def set_billing_address
-    billing_address_id = shipping_address_id  if billing_address_id.nil?
+    self.billing_address_id = shipping_address_id  if billing_address_id.nil?
   end
 
   def add_line_items_from_cart(cart)

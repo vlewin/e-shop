@@ -27,6 +27,23 @@ describe Order do
   end
 
   describe 'order with line items' do
+    describe '#set_billing_address' do
+      it 'sets a billing to shipping address if billing address is not specified' do
+        expect(subject.billing_address).to eq subject.address
+      end
+
+      it 'sets a billing address to provided address' do
+        billing_address = FactoryGirl.create(:address)
+        order = FactoryGirl.create(:order, billing_address: billing_address)
+        expect(order.billing_address).to eq billing_address
+      end
+    end
+
+    it 'calculates a subtotal without taxes and shipment' do
+      subtotal = subject.line_items.to_a.sum { |item| item.subtotal }
+      expect(subject.subtotal).to eq(subtotal)
+    end
+
     it 'calculates a total with taxes and shipment' do
       total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.rate
       expect(subject.total).to eq(total)
