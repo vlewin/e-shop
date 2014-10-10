@@ -3,13 +3,13 @@ FactoryGirl.define do
     pay_type  'Purchase order'
     status    :accepted
 
-    association :address, factory: :address
-    association :shipment, factory: :shipment
+    association :user,      factory: :user
+    association :address,   factory: :address
+    association :shipment,  factory: :shipment
 
     after :build do |order, evaluator|
       order.line_items << FactoryGirl.create(:order_item, order: order)
     end
-
 
     factory :order_in_progress do
       status :in_progress

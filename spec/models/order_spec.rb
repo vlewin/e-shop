@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe Order do
-  subject { FactoryGirl.build(:order) }
-  let(:cart) { FactoryGirl.build(:cart) }
+  subject { FactoryGirl.create(:order) }
+  let(:cart) { FactoryGirl.create(:cart) }
 
   it { should belong_to :user }
   it { should belong_to :shipment }
@@ -16,29 +16,29 @@ describe Order do
 
   it {should ensure_inclusion_of(:pay_type).in_array(Order::PAYMENT_TYPES) }
 
-  it 'transfers cart items to order' do
-    subject.line_items.destroy_all
+  context 'order without line items' do
+    subject { order = Order.new }
+    it 'transfers cart items to order' do
+      subject.add_line_items_from_cart(cart)
 
-    expect_any_instance_of(Product).to receive(:decrease_quantity).exactly(cart.line_items.count).times
-    expect_any_instance_of(LineItem).to receive(:save!).exactly(cart.line_items.count).times
-
-    subject.add_line_items_from_cart(cart)
-
-    expect(subject.line_items.count).to eq cart.line_items.count
-
+      expect(subject.line_items.size).to eq cart.line_items.size
+      expect(subject.line_items.all?{|i| i.cart_id.nil?}).to eq true
+    end
   end
 
-  it 'calculates a total with taxes and shipment' do
-    total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.rate
-    expect(subject.total).to eq(total)
-  end
+  describe 'order with line items' do
+    it 'calculates a total with taxes and shipment' do
+      total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.rate
+      expect(subject.total).to eq(total)
+    end
 
-  it 'calculates a price without taxes' do
-    expect(subject.subtotal).to eq(5)
-  end
+    it 'calculates a price without taxes' do
+      expect(subject.subtotal).to eq(5)
+    end
 
-  it 'calculates a tax amount' do
-    expect(subject.taxes).to eq(1)
+    it 'calculates a tax amount' do
+      expect(subject.taxes).to eq(1)
+    end
   end
 
 end

@@ -48,9 +48,8 @@ class OrdersController < ApplicationController
 
   def create
     @order = Order.new(order_params)
-    @order.shipment = Shipment.find(order_params[:shipment_id])
-    @order.add_line_items_from_cart(@current_cart)
     @order.user = current_user
+    @order.add_line_items_from_cart(@current_cart)
 
     respond_to do |format|
       if @order.valid? && @order.save
