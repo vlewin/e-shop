@@ -15,8 +15,6 @@ class OrdersController < ApplicationController
     add_breadcrumb 'Account settings', account_url
     add_breadcrumb "Order ##{@order.id}", order_url(@order)
 
-    @billing_address = @order.billing_address || @order.address
-
     respond_to do |format|
       format.html
       format.js

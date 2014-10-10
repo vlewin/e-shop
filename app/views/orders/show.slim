@@ -34,11 +34,11 @@
               address
                 strong Billed To:
                 br
-                  = @billing_address.full_name
+                  = @order.billing_address.full_name
                   br
-                    = "#{@billing_address.street}"
+                    = "#{@order.billing_address.street}"
                     br
-                      = "#{@billing_address.zip} #{@billing_address.city}"
+                      = "#{@order.billing_address.zip} #{@order.billing_address.city}"
 
             .col-xs-6.text-right
               address
