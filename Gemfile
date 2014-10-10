@@ -34,12 +34,13 @@ gem 'cloudinary'
 gem 'rmagick', require: false
 
 
+# Used in seed.rb
+gem 'ffaker'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'awesome_print'
   gem 'factory_girl_rails'
-  gem 'ffaker'
   gem 'spring-commands-rspec'
   gem 'guard-rspec'
   gem 'rspec-rails', '~> 3.0.1'
