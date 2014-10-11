@@ -67,12 +67,14 @@ en:
     index:
       welcome:                "E-Shop - Demo"
 
-  carts:
-    cart:
-      add:                    "Add to Cart"
-      title:                  "Your Cart"
-      empty:                  "Empty cart"
-      checkout:               "Checkout"
+  account:
+    title:                  "Account settings"
+
+  cart:
+    add:                    "Add to Cart"
+    title:                  "Your Cart"
+    empty:                  "Empty cart"
+    checkout:               "Checkout"
 
   orders:
     new:
