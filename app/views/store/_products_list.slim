@@ -1,0 +1,22 @@
+.row
+  - @products.each_with_index do |product, index|
+    .col-xs-12.col-sm-12.col-md-12.list_item
+      .col-xs-2.col-sm-2.col-md-2
+        a href=store_product_path(product)
+          = image_tag 'http://placehold.it/100x100', class: 'img-responsive'
+
+      .col-xs-7.col-sm-7.col-md-7
+        b
+          a href=store_product_path(product)
+            = product.name
+        p= product.description
+
+      .col-xs-3.col-sm-3.col-md-3
+        .pull-right.text-right
+          p
+            b= number_to_currency(product.price)
+          p= button_tag(type: "submit", class: "btn btn-sm btn-success") do
+            i.fa.fa-shopping-cart>
+            = t('cart.add')
+
+= paginate @products, remote: true

@@ -4,11 +4,21 @@ class StoreController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def index
-    @search = Product.search(params[:q])
+    puts "*** Index"
+    @search = Product.includes(:line_items).search(params[:q])
     @products = @search.result.page(params[:page])
     @categories = Category.all
+    @view = params[:view] || 'grid'
 
     redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
+
+    # respond_to do |format|
+    #   format.html { redirect_to root_url(locale: params[:set_locale]) if params[:set_locale] }
+    #   # format.js do
+    #   #   render partial: "products_#{params[:view] || 'grid'}"
+    #   # end
+    # end
+
   end
 
   def show
