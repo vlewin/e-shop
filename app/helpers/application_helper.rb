@@ -58,9 +58,14 @@ module ApplicationHelper
   end
 
   def order_status(order)
-    labels = { 0 => 'label-default', 1 => 'label-info', 2 => 'label-info', 3 => 'label-success'}
+    labels = { 0 => 'label-default', 1 => 'label-default', 2 => 'label-primary', 3 => 'label-success'}
+    icons = { 0 => 'fa-archive', 1 => 'fa-clock-o', 2 => 'fa-truck', 3 => 'fa-check-circle'}
     content_tag(:span, nil, :class => "label #{labels[order[:status]]}") do
-      order.status
+      concat(
+        content_tag(:i, nil, :class => "fa #{icons[order[:status]]}")
+      )
+
+      concat ' ' + order.status.humanize
     end
   end
 end

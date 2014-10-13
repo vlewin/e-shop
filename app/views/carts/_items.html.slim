@@ -13,23 +13,19 @@ table.table.table-hover.table-responsive
   tbody
     - @current_cart.line_items.each do |item|
       tr
-        td= image_tag 'http://placehold.it/64x64', class: 'img-responsive'
+        td= product_image_tag item.product, nil, width: 64, height: 64, crop: :fill
         td= link_to item.product.name, store_product_path(item.product)
         td
-          / - if item.product.out_of_stock?
-          /   = item.quantity
-          /   = number_field_tag 'quantity', item.quantity, min: 1, max: item.product.quantity, class: 'col-sm-2 form-control input-sm'
-          / - else
           = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
             = hidden_field_tag :line_item_id, item.id
-            = quantity_field_tag item.quantity, { max: item.product.available_quantity}
+            = quantity_field_tag item.quantity
 
         td= number_to_currency(item.price)
         td= number_to_currency(item.subtotal)
         td= number_to_percentage(item.product.tax, precision: 0)
         td= number_to_currency(item.total)
         td= icon_link_to '', item, { class: 'text-danger', method: :delete}, 'fa-trash-o'
-        / td= link_to 'Remove', item, class: 'text-danger', method: :delete
+
     tr
       td colspan=5
       td

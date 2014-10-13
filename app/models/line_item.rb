@@ -3,6 +3,10 @@ class LineItem < ActiveRecord::Base
   belongs_to :product
   belongs_to :cart
 
+  def max_quantity
+    quantity + product.available_quantity
+  end
+
   def total
     subtotal + tax
   end

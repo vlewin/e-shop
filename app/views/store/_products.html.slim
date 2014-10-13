@@ -31,7 +31,7 @@
                 = quantity_field_tag 1, { max: product.available_quantity}
               .col-xs-12.col-sm-12.col-md-6
                 = button_tag(type: "submit", class: "btn btn-sm btn-success col-xs-12 col-sm-12 col-md-12") do
-                  i.fa.fa-shopping-cart
-                  = ' Add to cart'
+                  i.fa.fa-shopping-cart>
+                  = t('cart.add')
 
 = paginate @products, remote: true

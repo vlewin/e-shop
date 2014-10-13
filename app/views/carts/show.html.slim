@@ -5,11 +5,11 @@
         .col-xs-6.col-md-6
           h4
             i.fa.fa-shopping-cart>
-            | Shopping cart
+            =t('cart.title')
 
         .col-xs-6.col-md-6.text-right
           - unless @current_cart.total.zero?
-            = link_to 'Empty cart', @current_cart, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
+            = link_to t('cart.empty'), @current_cart, data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-danger'
 
   .panel-body
     - if @current_cart.total.zero?
@@ -19,7 +19,7 @@
         == render 'items'
 
     p
-      .pull-left= link_to 'Continue shopping', root_path, class: 'btn btn-default'
-      .pull-right= link_to 'Checkout', new_order_path, class: 'btn btn-success'
+      .pull-left= link_to t('cart.continue'), root_path, class: 'btn btn-default'
+      .pull-right= link_to t('cart.checkout'), new_order_path, class: 'btn btn-success'
 
 

@@ -1,3 +1,23 @@
+#   date:
+#     formats:
+#       default: "%d.%m.%Y"
+#   time:
+#     formats:
+#       default: "%d.%m.%Y %H:%M"
+
+#     am: vormittags
+#     pm: nachmittags
+
+#   number:
+#     currency:
+#       format:
+#         unit:           "€"
+#         precision:      2
+#         separator:      ","
+#         delimiter:      "."
+#         format:         "%n %u"
+
+
 de:
   date:
     formats:
@@ -26,7 +46,6 @@ de:
                 one: 1 error prohibited this {{model}} from being saved
                 other: "{{count}} errors prohibited this {{model}} from being saved"
         messages:
-            record_invalid:           "Record invalid"
             inclusion:                "is not included in the list"
             exclusion:                "is reserved"
             invalid:                  "is invalid"
@@ -48,10 +67,10 @@ de:
             even:                     "must be even"
 
   authentication:
-    sign_in:          "Sign in"
-    sign_up:          "Sign up"
-    sign_out:         "Sign out"
-    account_new:      "Don't have an account?"
+    sign_in:                  "Anmelden"
+    sign_up:                  "Registrieren"
+    sign_out:                 "Abmelden"
+    account_new:              "Haben Sie kein Konto?"
     account_exist:            "Haben Sie bereits ein Konto?"
     forgot_password:          "Passwort vergessen?"
     reset_password:           "Passwort zurücksetzen"
@@ -62,32 +81,150 @@ de:
 
   forms:
     name:                     "Name"
-    email:                    "E-Mail"
+    email:                    "Email"
     password:                 "Passwort"
     password_confirmation:    "Passwort bestätigen"
     remember_me:              "Eingeloggt bleiben"
 
   store:
     index:
-      welcome:          "E-Shop - Demo"
+      welcome:                "E-Shop - Demo"
 
-  carts:
-    cart:
-      add:              "Add to Cart"
-      title:            "Your Cart"
-      empty:            "Empty cart"
-      checkout:         "Checkout"
+  account:
+    title:                  "Mein Konto"
+
+  cart:
+    add:                    "in Warenkorb"
+    title:                  "Ihr Warenkorb"
+    empty:                  "Warenkorb leeren"
+    checkout:               "Zur Kasse gehen"
+    continue:               "Weiter einkaufen"
 
   orders:
     new:
-      legend:           "Please Enter Your Details"
+      legend:                 "Please Enter Your Details"
     form:
-      name:             "Name"
-      address_html:     "Address"
-      email:            "E-mail"
-      pay_type:         "Pay with"
-      pay_prompt_html:  "Select a payment method"
-      submit:           "Place Order"
+      name:                   "Name"
+      address_html:           "Address"
+      email:                  "Email"
+      pay_type:               "Pay with"
+      pay_prompt_html:        "Select a payment method"
+      submit:                 "Bestellung aufgeben"
 
-  thanks:          "Thank you for your order"
+  thanks:                     "Vielen dank für Ihre Bestellung!"
+
+
+#   authentication:
+#     sign_in:          "Sign in"
+#     sign_up:          "Sign up"
+#     sign_out:         "Sign out"
+#     account_new:      "Don't have an account?"
+#     account_exist:            "Haben Sie bereits ein Konto?"
+#     forgot_password:          "Passwort vergessen?"
+#     reset_password:           "Passwort zurücksetzen"
+#     reset_instraction:        "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
+
+#   authorization:
+#     not_authorized:           "You are not authorized to perform this action"
+
+#   forms:
+#     name:                     "Name"
+#     email:                    "E-Mail"
+#     password:                 "Passwort"
+#     password_confirmation:    "Passwort bestätigen"
+#     remember_me:              "Eingeloggt bleiben"
+
+
+# de:
+#   date:
+#     formats:
+#       default: "%d.%m.%Y"
+#   time:
+#     formats:
+#       default: "%d.%m.%Y %H:%M"
+
+#     am: vormittags
+#     pm: nachmittags
+
+#   number:
+#     currency:
+#       format:
+#         unit:           "€"
+#         precision:      2
+#         separator:      ","
+#         delimiter:      "."
+#         format:         "%n %u"
+
+#   activerecord:
+#     errors:
+#         template:
+#             body: There were problems with the following fields
+#             header:
+#                 one: 1 error prohibited this {{model}} from being saved
+#                 other: "{{count}} errors prohibited this {{model}} from being saved"
+#         messages:
+#             record_invalid:           "Record invalid"
+#             inclusion:                "is not included in the list"
+#             exclusion:                "is reserved"
+#             invalid:                  "is invalid"
+#             confirmation:             "doesn't match confirmation"
+#             accepted:                 "must be accepted"
+#             empty:                    "can't be empty"
+#             blank:                    "can't be blank"
+#             too_long:                 "is too long (maximum is {{count}} characters)"
+#             too_short:                "is too short (minimum is {{count}} characters)"
+#             wrong_length:             "is the wrong length (should be {{count}} characters)"
+#             taken:                    "has already been taken"
+#             not_a_number:             "is not a number"
+#             greater_than:             "must be greater than {{count}}"
+#             greater_than_or_equal_to: "must be greater than or equal to {{count}}"
+#             equal_to:                 "must be equal to {{count}}"
+#             less_than:                "must be less than {{count}}"
+#             less_than_or_equal_to:    "must be less than or equal to {{count}}"
+#             odd:                      "must be odd"
+#             even:                     "must be even"
+
+#   authentication:
+#     sign_in:          "Sign in"
+#     sign_up:          "Sign up"
+#     sign_out:         "Sign out"
+#     account_new:      "Don't have an account?"
+#     account_exist:            "Haben Sie bereits ein Konto?"
+#     forgot_password:          "Passwort vergessen?"
+#     reset_password:           "Passwort zurücksetzen"
+#     reset_instraction:        "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
+
+#   authorization:
+#     not_authorized:           "You are not authorized to perform this action"
+
+#   forms:
+#     name:                     "Name"
+#     email:                    "E-Mail"
+#     password:                 "Passwort"
+#     password_confirmation:    "Passwort bestätigen"
+#     remember_me:              "Eingeloggt bleiben"
+
+#   store:
+#     index:
+#       welcome:          "E-Shop - Demo"
+
+#   carts:
+#     cart:
+#       add:              "Add to Cart"
+#       title:            "Your Cart"
+#       empty:            "Empty cart"
+#       checkout:         "Checkout"
+
+#   orders:
+#     new:
+#       legend:           "Please Enter Your Details"
+#     form:
+#       name:             "Name"
+#       address_html:     "Address"
+#       email:            "E-mail"
+#       pay_type:         "Pay with"
+#       pay_prompt_html:  "Select a payment method"
+#       submit:           "Place Order"
+
+#   thanks:          "Thank you for your order"
 
