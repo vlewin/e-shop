@@ -10,7 +10,7 @@ $(function() {
     var $form = $($(this).parents('form'));
     setTimeout(function(){
       $form.submit()
-    }, 1000)
+    }, 500)
   });
 });
 
