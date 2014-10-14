@@ -15,7 +15,7 @@
   .col-xs-12.col-sm-9.col-md-10
     h3.page-header
       .hidden-xs.col-sm-3.col-md-2
-        .pull-left Products
+        | Products
       .col-xs-10.col-sm-7.col-md-8
         = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search' do |f|
           = hidden_field_tag :view, params[:view]
