@@ -2,7 +2,7 @@
   .hidden-xs.col-sm-3.col-md-2
     h3.page-header Categories
     ul.categories
-      li= link_to "All products (#{@products.size})", root_path({}), remote: :true, class: 'category'
+      li= link_to "All products (#{@categories.sum(:products_count)})", root_path({}), remote: :true, class: 'category'
       - @categories.each do |cat|
         li= link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
 
@@ -14,9 +14,9 @@
 
   .col-xs-12.col-sm-9.col-md-10
     h3.page-header
-      .hidden-xs.col-sm-4.col-md-2
+      .hidden-xs.col-sm-3.col-md-2
         .pull-left Products
-      .col-xs-11.col-sm-8.col-md-8
+      .col-xs-10.col-sm-7.col-md-8
         = search_form_for @search, url: root_path, method: :get, remote: true, class: 'form-search' do |f|
           = hidden_field_tag :view, params[:view]
           .input-group.pull-left
@@ -38,10 +38,10 @@
             = f.text_field :name_cont, placeholder: 'Search', class: 'form-control'
             span.input-group-addon
               i.fa.fa-search
-      .col-xs-11.col-sm-1.col-md-2
-        span
-          = icon_link_to '', root_path(view: :grid), {}, 'fa-th fa-1'
-          = icon_link_to '', root_path(view: :list), {}, 'fa-list fa-1'
+      .col-xs-2.col-sm-2.col-md-2
+        .text-right
+          small= icon_link_to '', root_path(view: :grid), {}, 'fa-lg fa-th-large'
+          small= icon_link_to '', root_path(view: :list), {}, 'fa-lg fa-th-list'
 
       .clearfix
 

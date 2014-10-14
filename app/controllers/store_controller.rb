@@ -1,24 +1,18 @@
 class StoreController < ApplicationController
   respond_to :html, :js
+
   before_filter :set_product, :check_product_availability, only: [:show]
+  before_filter :current_view
+
   skip_before_filter :authenticate_user!
 
   def index
-    puts "*** Index"
+    # ActiveRecord::Base.logger = nil
     @search = Product.includes(:line_items).search(params[:q])
     @products = @search.result.page(params[:page])
     @categories = Category.all
-    @view = params[:view] || 'grid'
 
     redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
-
-    # respond_to do |format|
-    #   format.html { redirect_to root_url(locale: params[:set_locale]) if params[:set_locale] }
-    #   # format.js do
-    #   #   render partial: "products_#{params[:view] || 'grid'}"
-    #   # end
-    # end
-
   end
 
   def show

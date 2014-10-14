@@ -1,4 +1,4 @@
-<%- partial = "products_#{@view}" %>
+<%- partial = "products_#{@current_view}" %>
 <%- if @products.blank? %>
   $("#products").html('<h4>Sorry, the product was not found.</h4>')
 <% else %>

@@ -1,22 +1,31 @@
-.row
-  - @products.each_with_index do |product, index|
-    .col-xs-12.col-sm-12.col-md-12.list_item
-      .col-xs-2.col-sm-2.col-md-2
+- @products.each_with_index do |product, index|
+  .list-item
+    .hidden-xs.col-sm-2.col-md-1
+      a href=store_product_path(product)
+        = image_tag 'http://placehold.it/64x64', class: 'img-responsive'
+
+    .col-xs-6.col-sm-5.col-md-7
+      b
         a href=store_product_path(product)
-          = image_tag 'http://placehold.it/100x100', class: 'img-responsive'
+          = product.name
+      div= product.description
 
-      .col-xs-7.col-sm-7.col-md-7
-        b
-          a href=store_product_path(product)
-            = product.name
-        p= product.description
+    .col-xs-6.col-sm-5.col-md-4
+      .col-xs-5.col-sm-5.col-md-6
+        .text-left
+          b= number_to_currency(product.price)
+          div
+            small.text-muted= "(#{product.available_quantity} of #{product.quantity})"
 
-      .col-xs-3.col-sm-3.col-md-3
-        .pull-right.text-right
-          p
-            b= number_to_currency(product.price)
-          p= button_tag(type: "submit", class: "btn btn-sm btn-success") do
-            i.fa.fa-shopping-cart>
-            = t('cart.add')
+      .col-xs-7.col-sm-7.col-md-6
+        .text-right
+          - if product.out_of_stock?
+            span.label.label-danger out of stock
+          - else
+            = icon_link_to '', store_product_path(product), { class: 'btn btn-sm btn-default' }, 'fa fa-lg fa-eye'
+            span &nbsp;
+            = icon_link_to '', line_items_path(product_id: product.id, quantity: 1), { class: 'btn btn-sm btn-success', method: :post }, 'fa fa-lg fa-shopping-cart'
+
+    .clearfix
 
 = paginate @products, remote: true
