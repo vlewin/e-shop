@@ -1,5 +1,6 @@
+<%- partial = "products_#{@current_view}" %>
 <%- if @products.blank? %>
   $("#products").html('<h4>Sorry, the product was not found.</h4>')
 <% else %>
-  $("#products").html("<%= escape_javascript(render :partial=> 'products') %>");
+  $("#products").html("<%= escape_javascript(render :partial=> partial) %>");
 <% end %>

@@ -1,10 +1,14 @@
 class StoreController < ApplicationController
   respond_to :html, :js
+
   before_filter :set_product, :check_product_availability, only: [:show]
+  before_filter :current_view
+
   skip_before_filter :authenticate_user!
 
   def index
-    @search = Product.search(params[:q])
+    # ActiveRecord::Base.logger = nil
+    @search = Product.includes(:line_items).search(params[:q])
     @products = @search.result.page(params[:page])
     @categories = Category.all
 

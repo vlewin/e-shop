@@ -10,12 +10,13 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user!
   before_filter :set_locale
-
   before_filter :current_cart
 
-  # def current_user
-  #   @current_user ||= super
-  # end
+  def current_view
+    @current_view ||= (params[:view] || session[:view] || 'grid')
+    session[:view] = @current_view
+    @current_view
+  end
 
   def current_cart
     @current_cart ||= Cart.find(session[:cart_id])
