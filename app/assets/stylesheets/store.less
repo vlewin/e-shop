@@ -1,26 +1,20 @@
 @import "custom_bootstrap/mixins.less";
 
-.bordered {
-  border: 1px solid #EEEEEE;
-}
-
-#store-index h3.page-header {
-  margin: 0px 0 20px;
-}
-
-.categories, .sorting {
-  list-style-type: none;
-  padding-left: 0;
-
+#categories {
   li {
-    padding: 0px 0px 10px 0px;
-    a {
-      display: block;
-      outline: none;
+    &:first-child {
+      border-top-left-radius: 3px;
+      border-bottom-left-radius: 3px;
+    }
 
-      &:hover {
-        color: #505050;
-      }
+    border-left: 1px solid #cccccc;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+
+    &:last-child {
+      border-right: 1px solid #cccccc;
+      border-top-right-radius: 3px;
+      border-bottom-right-radius: 3px;
     }
   }
 }
@@ -28,17 +22,16 @@
 // Grig view
 .product {
   background-color: #FFF;
-  //border: 1px solid #EEEEEE;
+  border: 1px solid #EEEEEE;
   border-radius:3px;
   margin-bottom: 20px;
   padding: 5px;
-  height: 326px;
-  text-align: center;
+  max-height: 380px;
+  text-align: left;
 
   &:hover {
     border: 1px solid #94BA65;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    overflow:hidden;
   }
 
   &.out-of-stock {
@@ -99,7 +92,6 @@
   }
 }
 
-
 .quantity-helper {
   width: 70px;
 
@@ -122,8 +114,3 @@
   }
 }
 
-.form-header {
-  border-bottom: 1px solid #EEEEEE;
-  margin: 10px 0 20px;
-  padding-bottom: 9px;
-}
