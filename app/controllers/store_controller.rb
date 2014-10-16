@@ -10,7 +10,7 @@ class StoreController < ApplicationController
     # ActiveRecord::Base.logger = nil
     @search = Product.includes(:line_items).search(params[:q])
     @products = @search.result.page(params[:page])
-    @categories = Category.all
+    @categories = Category.all.order(:name)
 
     redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
   end
