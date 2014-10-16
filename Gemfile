@@ -9,6 +9,7 @@ gem 'uglifier'
 gem 'therubyracer'
 
 gem 'jquery-rails'
+gem 'haml-rails'
 gem 'slim-rails'
 gem 'less-rails'
 

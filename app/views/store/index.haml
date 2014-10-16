@@ -1,0 +1,50 @@
+.navbar
+  .row
+    .col-xs-12.col-sm-8.col-md-8
+      %ul.nav.navbar-nav.navbar-link
+        %li
+          %li= link_to "All categories", root_path(view: @view), remote: :true
+        - @categories.each do |cat|
+          %li= link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
+
+    .col-xs-12.col-sm-4.col-md-4
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          = search_form_for @search, url: root_path, method: :get, remote: true, class: 'navbar-form navbar-left' do |f|
+            = hidden_field_tag :view, params[:view]
+
+            .input-group
+              %span.input-group-addon
+                %i.fa.fa-search
+
+              = f.text_field :name_cont, placeholder: 'Search', class: 'form-control'
+
+
+#store-index
+  .row
+    .col-xs-6.col-sm-6.col-md-6
+      .pull-left
+        View as:
+        &nbsp;
+      .pull-left
+        .btn-toolbar
+          %span.btn-group
+            %button.btn.btn-default.btn-sm.dropdown-toggle{ 'data-toggle' => 'dropdown' }
+              Sort by
+              %span.caret
+            %ul.dropdown-menu
+              %li= sort_link @search, :name
+              %li= sort_link @search, :price
+              %li= sort_link @search, :created_at, 'Latest'
+
+    .col-xs-6.col-sm-6.col-md-6.text-right
+      View as:
+      %small= icon_link_to '', root_path(view: :grid), { class: 'btn btn-sm btn-default' }, 'fa-lg fa-th-large'
+      |
+      %mall= icon_link_to '', root_path(view: :list), { class: 'btn btn-sm btn-default' }, 'fa-lg fa-th-list'
+
+  %hr
+
+  #products
+    = render 'products'
+
