@@ -4,7 +4,7 @@ html
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title= 'E-Shop'
     meta name="description" content='E-Shop'
-    meta name='viewport' content='initial-scale=1' 
+    meta name='viewport' content='initial-scale=1'
     == stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
@@ -24,7 +24,10 @@ html
           | &copy; 2014 Company, Inc. ·
           a href="#"  Privacy
           | ·
-          a href="#"  Terms
-
-        p= debug(params) if Rails.env.development?
-
+          a href="about.html"  About Us
+          | ·
+          a href="delivery.html"  Delivery &amp; Returns
+          | ·
+          a href="delivery.html"  Terms &amp; Conditions
+          | ·
+          a href="contact.html"  Contact Us
