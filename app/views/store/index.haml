@@ -1,7 +1,8 @@
 %ul#categories.nav.navbar-nav.clearfix
-  %li= link_to "All categories", root_path(view: @view), remote: :true
+  %li{ class: params[:category_name_cont].nil? ? 'active' : '' }= link_to "All categories", root_path(view: @view), remote: :true
   - @categories.each do |cat|
-    %li= link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
+    %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
+      = link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
 
 .clearfix
 %hr
@@ -25,21 +26,21 @@
           -# %i.fa.fa-sort-alpha-asc
 
         .btn-group.btn-group-sm
-          .btn.btn-default
+          .btn.btn-default{ class: (params[:q] && params[:q][:s].include?('name')) ? 'active' : ''}
             = sort_link @search, :name
             -# %i.fa.fa-sort-alpha-asc
-          .btn.btn-default
+          .btn.btn-default{ class: (params[:q] && params[:q][:s].include?('price')) ? 'active' : ''}
             = sort_link @search, :price
             -# %i.fa.fa-sort-numeric-desc
-          .btn.btn-default
+          .btn.btn-default{ class: (params[:q] && params[:q][:s].include?('created_at')) ? 'active' : ''}
             = sort_link @search, :created_at
             -# %i.fa.fa-sort-amount-desc
 
         %span.hidden-xs
           %small View as:
         .btn-group
-          = icon_link_to '', root_path(view: :grid), { class: 'btn btn-sm btn-default' }, 'fa-lg fa-th-large text-muted'
-          = icon_link_to '', root_path(view: :list), { class: 'btn btn-sm btn-default' }, 'fa-lg fa-th-list text-muted'
+          = icon_link_to '', root_path(view: :grid), { class: "btn btn-sm btn-default #{'active' if params[:view] == 'grid'}" }, 'fa-lg fa-th-large text-muted'
+          = icon_link_to '', root_path(view: :list), { class: "btn btn-sm btn-default #{'active' if params[:view] == 'list'}" }, 'fa-lg fa-th-list text-muted'
 
   %hr
 

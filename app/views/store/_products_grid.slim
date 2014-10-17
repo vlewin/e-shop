@@ -3,7 +3,7 @@
     - out_of_stock = product.out_of_stock?
     .col-xs-6.col-sm-4.col-md-3
       = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
-        .product class=('out-of-stock' if out_of_stock)
+        .product-grid class=('out-of-stock' if out_of_stock)
 
           - if out_of_stock
             .ribbon.ribbon-medium.ribbon-red

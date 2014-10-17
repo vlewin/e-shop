@@ -1,9 +1,9 @@
 - @products.each_with_index do |product, index|
-  .list-item
+  .product-list
     .col-xs-8.col-sm-9.col-md-9
       .pull-left
         a href=store_product_path(product)
-          = image_tag 'http://placehold.it/64x64', class: 'img-responsive'
+          = image_tag 'http://placehold.it/128x128', class: 'img-responsive'
       b
         a href=store_product_path(product)
           = product.name
