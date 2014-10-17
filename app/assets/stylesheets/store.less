@@ -99,13 +99,39 @@
   margin-top: 5px;
 
   background-color: #fff;
-  border: 1px solid #eeeeee;
   border-radius: 3px;
 
   padding: 5px 0px 5px 0px;
 
+  &:hover {
+  }
+
+  &.out-of-stock {
+    border: 1px solid #DDDDDD;
+    position: relative;
+    pointer-events: none;
+    cursor: default;
+  }
+
   img {
     margin-right: 5px;
+  }
+
+  .name {
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .description {
+    color: gray;
+    display: block;
+    font-size: 12px;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2;
   }
 }
 
