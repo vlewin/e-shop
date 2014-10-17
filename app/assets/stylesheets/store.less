@@ -1,20 +1,37 @@
 @import "custom_bootstrap/mixins.less";
 
 #categories {
-  li {
-    &:first-child {
-      border-top-left-radius: 3px;
-      border-bottom-left-radius: 3px;
-    }
+  &.navbar-nav {
+    li {
+      // border-left: 1px solid #cccccc;
+      // &:first-child {
+      //   border-top-left-radius: 3px;
+      //   border-bottom-left-radius: 3px;
+      // }
 
-    border-left: 1px solid #cccccc;
-    border-top: 1px solid #cccccc;
-    border-bottom: 1px solid #cccccc;
+      // border-left: 1px solid #cccccc;
+      // border-top: 1px solid #cccccc;
+      // border-bottom: 1px solid #a02622;
 
-    &:last-child {
-      border-right: 1px solid #cccccc;
-      border-top-right-radius: 3px;
-      border-bottom-right-radius: 3px;
+      // &:last-child {
+      //   border-right: 1px solid #cccccc;
+      //   border-top-right-radius: 3px;
+      //   border-bottom-right-radius: 3px;
+      // }
+
+      a {
+        line-height: 2;
+        height: 32px;
+        padding: 2px 5px;
+        outline: 0;
+        text-decoration: none;
+        background: none;
+
+        &:focus {
+          color: #a02622;
+          border-bottom: 3px solid #a02622;
+        }
+      }
     }
   }
 }
