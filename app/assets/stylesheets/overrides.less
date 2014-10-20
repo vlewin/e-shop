@@ -1,13 +1,11 @@
-// Variables
-hr.line {
-  margin:10px 0px;
-}
-
-
 //a:link    { color: #9d3f21 }  /* unvisited links */
 //a:visited { color: #9d3f21 }  /* visited links   */
 //a:hover   { color: #9d3f21 }  /* user hovers     */
 //a:active  { color: #9d3f21 }  /* active links    */
+
+html, body {
+  height: 100%;
+}
 
 body {
   color: #444444;
@@ -15,6 +13,16 @@ body {
   padding-top: 80px;
   text-rendering: optimizeLegibility;
   font-family: "Roboto",sans-serif;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
 }
 
 // Navbars
@@ -107,61 +115,14 @@ ol.breadcrumb {
   }
 }
 
-// Tables
-.table thead > tr > th {
-  border-bottom: 0px;
+hr.line {
+  margin:10px 0px;
 }
 
-.table thead > tr > th,
-.table tbody > tr > th,
-.table tfoot > tr > th,
-.table thead > tr > td,
-.table tbody > tr > td,
-.table tfoot > tr > td {
-  vertical-align: middle;
-}
-
-.show-grid {
-  margin-bottom: 15px;
-}
-
-.invoice-title h2, .invoice-title h3 {
-    display: inline-block;
-}
-
-.table > tbody > tr > .no-line {
-    border-top: none;
-}
-
-.table > thead > tr > .no-line {
-    border-bottom: none;
-}
-
-.table > tbody > tr > .thick-line {
-    border-top: 2px solid;
-}
-
-// Buttons
-.btn-disabled {
-  background-color: #DDDDDD;
-  border-color: #CCCCCC;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.65;
-  pointer-events: none;
-}
-
-// Form elements
-.input-xsm {
-  border-radius: 3px;
-  font-size: 12px;
-  height: 24px;
-  line-height: 1.5;
-  padding: 5px 10px;
-}
-
-// Footer
 footer {
-  margin-top: 50px;
+  padding: 20px 0px 10px 0px;
+  background-color: #F5F5F5;
+  background-color: #ddd;
 }
+
 
