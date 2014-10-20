@@ -9,8 +9,9 @@ class StoreController < ApplicationController
   def index
     # ActiveRecord::Base.logger = nil
     @search = Product.includes(:line_items).search(params[:q])
+    @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
     @products = @search.result.page(params[:page])
-    @categories = Category.all.order(:name)
+    @categories ||= Category.all.order(:name)
 
     redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
   end

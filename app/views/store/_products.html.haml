@@ -1,0 +1,70 @@
+- if @products.present?
+  - if @current_view.nil? || @current_view == 'grid'
+    .row
+      - @products.each_with_index do |product, index|
+        - out_of_stock = product.out_of_stock?
+        .col-xs-6.col-sm-4.col-md-3
+          = form_tag line_items_path(product_id: product), class: 'form-inline' do
+            .product-grid{ class: out_of_stock ? 'out-of-stock' : '' }
+              - if out_of_stock
+                .ribbon.ribbon-medium.ribbon-red
+                  .banner
+                    .text OUT OF STOCK
+
+              %a.thumbnail{ href: store_product_path(product)}
+                = product_image_tag product, :thumbnail, class: 'image-responsive'
+                %hr.line
+                %h4.name
+                  = product.name
+                  %p.description= product.description
+
+                .row
+                  .col-xs-12.col-sm-5.col-md-5
+                    %h5= number_to_currency(product.price)
+                  .hidden-xs.col-sm-7.col-md-7
+                    .pull-right= quantity_field_tag 1, { max: product.available_quantity}
+                  .col-xs-12.col-sm-12.col-md-12
+                    %hr.line
+                    = button_tag(type: "submit", class: "btn btn-sm col-xs-12 col-sm-12 col-md-12 #{out_of_stock ? 'btn-disabled' : 'btn-success'}") do
+                      %i.fa.fa-shopping-cart
+                      = t('cart.add')
+
+
+    -# %hr.line
+    -# # = paginate @products, remote: true
+
+  - else
+    .panel.panel-default
+      / .panel-heading
+      .panel-body
+        %table.table.table-hover
+          %thead
+            %tr
+              %th{colspan: 2} Name
+              %th Price
+              %th{colspan: 2} Quantity
+          %tbody
+            - @products.each_with_index do |product, index|
+              %tr.product-list
+                = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
+                  %td= product_image_tag product, nil, :width => 50, :height => 50, :crop => :fill
+                  %td
+                    .name= link_to product.name, store_product_path(product)
+                    .description= product.description
+                  %td= number_to_currency(product.price)
+                  %td
+                    = quantity_field_tag 1, { max: product.available_quantity}
+                  %td
+                    = button_tag(type: "submit", class: "btn btn-sm btn-success") do
+                      %i.fa.fa-shopping-cart
+
+    -# # = paginate @products, remote: true
+
+  %hr.line
+  = paginate @products, remote: true
+
+- else
+  %br
+  %h4
+    %i.fa.fa-info-circle
+      = "Sorry, the product was not found."

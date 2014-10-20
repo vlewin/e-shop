@@ -1,6 +1,6 @@
 $(function() {
   // Categories
-  $('body').on('click', '#categories li>a', function() {
+  $(document).on('click', '#categories li>a', function() {
     $('#categories li').removeClass('active')
     $(this).parent().addClass('active')
   })
@@ -12,4 +12,10 @@ $(function() {
       $form.submit()
     }, 1000)
   });
+
+  // Alphabet
+  $(document).on('click', '#alphabet > a', function() {
+    $('#alphabet a').removeClass('active')
+    $(this).addClass('active')
+  })
 });

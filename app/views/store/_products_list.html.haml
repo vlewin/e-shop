@@ -9,12 +9,12 @@
           %th{colspan: 2} Quantity
       %tbody
         - @products.each_with_index do |product, index|
-          %tr
+          %tr.product-list
             = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
+              %td= product_image_tag product, nil, :width => 50, :height => 50, :crop => :fill
               %td
-                = product_image_tag product, nil, :width => 50, :height => 50, :crop => :fill
-              %td
-                = product.name
+                .name= link_to product.name, store_product_path(product)
+                .description= product.description
               %td= number_to_currency(product.price)
               %td
                 = quantity_field_tag 1, { max: product.available_quantity}
