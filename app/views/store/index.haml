@@ -47,9 +47,9 @@
   .row
     .col-xs-12.col-sm-12.col-md-12
       #alphabet
-        - letters = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
-        - letters.each do |char|
-          = link_to char, root_path(q: { name_start: char }),  remote: true
+        - alphabet = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
+        - alphabet.each do |char|
+          = link_to char, root_path(q: { name_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
   %hr.line
 
   #products

@@ -11,6 +11,7 @@ class StoreController < ApplicationController
     @search = Product.includes(:line_items).search(params[:q])
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
     @products = @search.result.page(params[:page])
+    @init_letters = Product.select(:name).map{ |product| product.name.first }.uniq.sort
     @categories ||= Category.all.order(:name)
   end
 
