@@ -2,6 +2,10 @@ class CartsController < ApplicationController
   respond_to :html, :js
   skip_before_filter :authenticate_user!
 
+  def index
+    @carts = Cart.all
+  end
+
   def show
     add_breadcrumb 'Home', :root_path
     add_breadcrumb 'Shopping cart', cart_path(@current_cart)
@@ -45,8 +49,11 @@ class CartsController < ApplicationController
     end
   end
 
+  # FIXME: define new clear method and point user empty cart link to that action,
+  # use destroy for admin view
   def destroy
-    @current_cart.destroy
-    redirect_to root_path
+    @cart = @current_cart || Cart.find(params[:id])
+    @cart.destroy
+    redirect_to_back_or_default root_path
   end
 end

@@ -1,0 +1,22 @@
+.panel.panel-default
+  / .panel-heading
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th ID
+          %th Created at
+          %th Updated at
+          %th Items count
+      %tbody
+        - @carts.each_with_index do |cart, index|
+          %tr.product-list
+            %td= cart.id
+            %td= cart.created_at
+            %td= cart.updated_at
+            %td= cart.line_items.count
+            %td= link_to 'Destroy', cart, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+
+
+
