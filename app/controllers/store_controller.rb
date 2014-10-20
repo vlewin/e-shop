@@ -12,8 +12,6 @@ class StoreController < ApplicationController
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
     @products = @search.result.page(params[:page])
     @categories ||= Category.all.order(:name)
-
-    redirect_to root_url(locale: params[:set_locale]) if params[:set_locale]
   end
 
   def show
