@@ -3,7 +3,7 @@
 //= require twitter/bootstrap
 //= require_tree
 
-$( "body" ).on( "click", ".quantity-helper button", function() {
+$(document).on( "click", ".quantity-helper button", function() {
   var $input = $(this).parents('.quantity-helper').find('input');
   var quantity = parseInt($input.val())
 
