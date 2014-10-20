@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '~> 4.1.6'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'devise-i18n'
+
 gem 'puma'
 gem 'pundit'
 gem 'devise'
@@ -28,7 +31,6 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'rmagick', require: false
-
 
 # Used in seed.rb
 gem 'ffaker'
