@@ -1,31 +1,33 @@
-h3.page-header
-  | Listing addresses
+h4.page-header.no-margin
+  | Addresses
   .pull-right
-    small= link_to 'New Address', new_address_path
+    small= link_to 'New address', new_address_path
 
-table.table.table-bordered.table-hover.table-responsive
-  thead
-    tr
-      th Recipient
-      th City
-      th Street
-      th Zip
-      th Phone
-      th User
-      th
-      th
-      th
+.panel.panel-default
+  .panel-body
+    table.table.table-hover
+      thead
+        tr
+          th Recipient
+          th City
+          th Street
+          th Zip
+          th Phone
+          th User
+          th
+          th
+          th
 
-  tbody
-    - @addresses.each do |address|
-      tr
-        td = address.full_name
-        td = address.city
-        td = address.street
-        td = address.zip
-        td = address.phone
-        td = address.user_id
-        td = link_to 'Show', address
-        td = link_to 'Edit', edit_address_path(address)
-        td = link_to 'Destroy', address, data: {:confirm => 'Are you sure?'}, :method => :delete
+      tbody
+        - @addresses.each do |address|
+          tr
+            td = address.full_name
+            td = address.city
+            td = address.street
+            td = address.zip
+            td = address.phone
+            td = address.user_id
+            td = link_to 'Show', address
+            td = link_to 'Edit', edit_address_path(address)
+            td = link_to 'Destroy', address, data: {confirm: 'Are you sure?'}, method: :delete
 

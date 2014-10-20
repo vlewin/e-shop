@@ -2,11 +2,11 @@ p#notice = notice
 
 p
   strong Name:
-  = @delivery_service.name
+  = @shipment.name
 p
   strong Rate:
-  = @delivery_service.rate
+  = @shipment.rate
 
-= link_to 'Edit', edit_delivery_service_path(@delivery_service)
+= link_to 'Edit', edit_shipment_path(@shipment)
 '|
-= link_to 'Back', delivery_services_path
+= link_to 'Back', shipments_path

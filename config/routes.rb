@@ -12,7 +12,7 @@ EShop::Application.routes.draw do
   resources :orders
   resources :carts
   resources :line_items
-  resources :delivery_services
+  resources :shipments
 
   resource :store,  only: [:index] do
     resources :products, controller: :store, only: [:index, :show] do

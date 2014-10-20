@@ -1,5 +1,7 @@
+%h4.page-header.no-margin
+  Carts
+
 .panel.panel-default
-  / .panel-heading
   .panel-body
     %table.table.table-hover
       %thead
@@ -10,12 +12,12 @@
           %th Items count
       %tbody
         - @carts.each_with_index do |cart, index|
-          %tr.product-list
+          %tr
             %td= cart.id
             %td= cart.created_at
             %td= cart.updated_at
             %td= cart.line_items.count
-            %td= link_to 'Destroy', cart, data: {:confirm => 'Are you sure?'}, :method => :delete
+            %td= link_to 'Destroy', cart, data: {confirm: 'Are you sure?'}, method: :delete
 
 
 

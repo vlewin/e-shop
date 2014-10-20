@@ -1,9 +1,9 @@
-= form_for @delivery_service do |f|
-  - if @delivery_service.errors.any?
+= form_for @shipment do |f|
+  - if @shipment.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@delivery_service.errors.count, "error")} prohibited this delivery_service from being saved:"
+      h2 = "#{pluralize(@shipment.errors.count, "error")} prohibited this shipment from being saved:"
       ul
-        - @delivery_service.errors.full_messages.each do |message|
+        - @shipment.errors.full_messages.each do |message|
           li = message
 
   .field
