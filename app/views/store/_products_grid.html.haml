@@ -2,30 +2,31 @@
   - @products.each_with_index do |product, index|
     - out_of_stock = product.out_of_stock?
     .col-xs-6.col-sm-4.col-md-3
-      = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
-        .product-grid class=('out-of-stock' if out_of_stock)
-
+      = form_tag line_items_path(product_id: product), class: 'form-inline' do
+        .product-grid{ class: out_of_stock ? 'out-of-stock' : '' }
           - if out_of_stock
             .ribbon.ribbon-medium.ribbon-red
               .banner
                 .text OUT OF STOCK
 
-          a.thumbnail href=store_product_path(product)
+          %a.thumbnail{ href: store_product_path(product)}
             = product_image_tag product, :thumbnail, class: 'image-responsive'
-            hr.line
-            h4.name
+            %hr.line
+            %h4.name
               = product.name
-              p.description= product.description
+              %p.description= product.description
 
             .row
               .col-xs-12.col-sm-5.col-md-5
-                h5= number_to_currency(product.price)
+                %h5= number_to_currency(product.price)
               .hidden-xs.col-sm-7.col-md-7
                 .pull-right= quantity_field_tag 1, { max: product.available_quantity}
               .col-xs-12.col-sm-12.col-md-12
-                hr.line
+                %hr.line
                 = button_tag(type: "submit", class: "btn btn-sm btn-success col-xs-12 col-sm-12 col-md-12") do
-                  i.fa.fa-shopping-cart>
+                  %i.fa.fa-shopping-cart>
                   = t('cart.add')
 
 
+%hr.line
+= paginate @products, remote: true

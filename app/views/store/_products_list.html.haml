@@ -1,0 +1,28 @@
+.panel.panel-default
+  / .panel-heading
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th{colspan: 2} Name
+          %th Price
+          %th{colspan: 2} Quantity
+      %tbody
+        - @products.each_with_index do |product, index|
+          %tr
+            = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
+              %td
+                = product_image_tag product, nil, :width => 50, :height => 50, :crop => :fill
+              %td
+                = product.name
+              %td= number_to_currency(product.price)
+              %td
+                = quantity_field_tag 1, { max: product.available_quantity}
+              %td
+                = button_tag(type: "submit", class: "btn btn-sm btn-success") do
+                  %i.fa.fa-shopping-cart
+
+= paginate @products, remote: true
+
+
+
