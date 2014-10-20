@@ -7,8 +7,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 LANGUAGES = {
-  :en => 'English',
-  :de => 'Deutsch'
+  en: 'English',
+  de: 'Deutsch',
+  ru: 'Русский'
 }
 
 module EShop
@@ -23,10 +24,10 @@ module EShop
     config.time_zone = 'Berlin'
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
-
+    # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
+    config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.yml"]
     config.i18n.default_locale = :de
-    # I18n.default_locale = :en
+    config.i18n.available_locales = [:en, :de, :ru ]
     config.enforce_available_locales = true
 
     config.less.paths << File.join(Rails.root, 'app', 'assets', 'stylesheets')
