@@ -12,16 +12,17 @@ html
     == csrf_meta_tags
 
   body
-    header
-      == render 'layouts/navigation'
-    main
-      .container
-        == render 'layouts/messages'
-        == render 'layouts/breadcrumb'
-        == yield
+    #wrap
+      header
+        == render 'layouts/navigation'
+      main
+        .container
+          == render 'layouts/messages'
+          == render 'layouts/breadcrumb'
+          == yield
+
     footer
       .container
-        hr
         p
           | &copy; 2014 Company, Inc. ·
           a href="#"  Privacy
