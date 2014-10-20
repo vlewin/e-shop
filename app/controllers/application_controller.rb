@@ -8,9 +8,7 @@ class ApplicationController < ActionController::Base
     redirect_to(request.referrer || root_path)
   end
 
-  before_filter :authenticate_user!
-  before_filter :set_locale
-  before_filter :current_cart
+  before_filter :authenticate_user!, :set_locale, :current_cart
 
   def current_view
     @current_view ||= (params[:view] || session[:view] || 'grid')
@@ -28,22 +26,24 @@ class ApplicationController < ActionController::Base
 
   # Locale
   def set_locale
-    I18n.locale = params[:locale] unless params[:locale].blank?
+    ap params
+    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
 
-  # Extract the language from the clients browser
-  def extract_locale_from_accept_language_header
-    browser_locale = request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first).try(:to_sym)
-    if I18n.available_locales.include? browser_locale
-      browser_locale
-    else
-      I18n.default_locale
-    end
-  end
+  # # Extract the language from the clients browser
+  # def extract_locale_from_accept_language_header
+  #   browser_locale = request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first).try(:to_sym)
+  #   if I18n.available_locales.include? browser_locale
+  #     browser_locale
+  #   else
+  #     I18n.default_locale
+  #   end
+  # end
 
-  def default_url_options(options={})
-    { locale: I18n.locale }
-  end
+  # def default_url_options(options={})
+  #   { locale: I18n.locale }
+  # end
 
   def redirect_to_back_or_default(default = root_url)
     if request.env['HTTP_REFERER'].present? && request.env['HTTP_REFERER'] != request.env['REQUEST_URI']
