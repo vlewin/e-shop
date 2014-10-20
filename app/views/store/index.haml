@@ -47,7 +47,8 @@
   .row
     .col-xs-12.col-sm-12.col-md-12
       #alphabet
-        - ('A'..'Z').each do |char|
+        - letters = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
+        - letters.each do |char|
           = link_to char, root_path(q: { name_start: char }),  remote: true
   %hr.line
 

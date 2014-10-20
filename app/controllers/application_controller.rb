@@ -26,9 +26,8 @@ class ApplicationController < ActionController::Base
 
   # Locale
   def set_locale
-    ap params
     I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
-    session[:locale] = I18n.locale
+    @current_locale ||= session[:locale] = I18n.locale
   end
 
   # # Extract the language from the clients browser
