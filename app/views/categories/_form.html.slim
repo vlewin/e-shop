@@ -11,3 +11,5 @@
     = f.text_field :name, :autofocus => true, class: 'form-control'
   .form-group
     = f.submit 'Save', :class => 'btn btn-default'
+    | &nbsp;
+    = link_to 'Back', categories_path

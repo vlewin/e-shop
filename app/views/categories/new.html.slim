@@ -1,18 +1,28 @@
-h2.page-header New category
+.panel.panel-default
+  .panel-heading
+    h4 New category
 
-= form_for @category, :html => { :role => 'form'} do |f|
-  - if @category.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
-      ul
-        - @category.errors.full_messages.each do |message|
-          li = message
+  .panel-body
 
-  .form-group
-    = f.label :name
-    = f.text_field :name, :autofocus => true, class: 'form-control'
+    == render 'form'
 
-  .form-group
-    = f.submit 'Save', :class => 'btn btn-default'
-    |&nbsp;&nbsp;&nbsp;
-    = link_to 'Back', categories_path
+    / = link_to 'Show', @category
+    / '|
+    / = link_to 'Back', categories_path
+
+    / = form_for @category, :html => { :role => 'form'} do |f|
+    /   - if @category.errors.any?
+    /     #error_explanation
+    /       h2 = "#{pluralize(@category.errors.count, "error")} prohibited this category from being saved:"
+    /       ul
+    /         - @category.errors.full_messages.each do |message|
+    /           li = message
+
+    /   .form-group
+    /     = f.label :name
+    /     = f.text_field :name, :autofocus => true, class: 'form-control'
+
+    /   .form-group
+    /     = f.submit 'Save', :class => 'btn btn-default'
+    /     |&nbsp;&nbsp;&nbsp;
+    /     = link_to 'Back', categories_path

@@ -1,13 +1,14 @@
-h2.page-header= @category.name
+.panel.panel-default
+  .panel-heading
+    h4= @category.name
 
-p
-  strong Products:
-  - @category.products.each do |product|
-    p= product.name
+  .panel-body
+
+    strong Products:
+    - @category.products.each_with_index do |product, index|
+      p= "#{index+1} #{product.name}"
 
 
-- if policy(Category).edit?
-  = link_to 'Edit', edit_category_path(@category)
-  '|
-
-= link_to 'Back', categories_path
+    = link_to 'Edit', edit_category_path(@category)
+    '|
+    = link_to 'Back', categories_path
