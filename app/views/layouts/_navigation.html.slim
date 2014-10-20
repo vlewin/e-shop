@@ -9,8 +9,9 @@
 
     .collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li class=((controller_name == 'carts' ? 'active' : '') + (@current_cart.empty? ? 'disabled' : ''))
-          = icon_link_to "#{t('cart.title')} (#{@current_cart.count})", cart_path(@current_cart), 'fa-shopping-cart'
+        - unless [new_user_registration_url, new_user_session_url, new_user_password_url].include? request.url
+          li class=((controller_name == 'carts' ? 'active' : '') + (@current_cart.empty? ? 'disabled' : ''))
+            = icon_link_to "#{t('cart.title')} (#{@current_cart.count})", cart_path(@current_cart), 'fa-shopping-cart'
 
         li.dropdown
           a.dropdown-toggle data-toggle="dropdown" href="#"
@@ -19,7 +20,7 @@
             b.caret
           ul.dropdown-menu
             - LANGUAGES.each do |locale,language|
-              li= link_to language.to_s, root_path(set_locale: locale ), class: 'navbar-link'
+              li= link_to language.to_s, url_for(locale: locale), class: 'navbar-link'
 
           - if user_signed_in?
             li.dropdown class=('active' if controller_name == 'account')
@@ -35,7 +36,7 @@
             li.dropdown
               a.dropdown-toggle data-toggle="dropdown" href="#"
                 i.fa.fa-lg.fa-sign-in>
-                | Login / Register
+                = "#{t('authentication.sign_in')} / #{t('authentication.sign_up')}"
                 b.caret
               ul.dropdown-menu
                 li= link_to t('authentication.sign_in'), new_user_session_path, class: 'navbar-link'
