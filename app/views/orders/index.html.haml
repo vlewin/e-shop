@@ -16,8 +16,20 @@
       %tbody
         - @orders.each do |order|
           %tr
-            %td= order_status(order)
-            %td= I18n.localize(order.created_at)
+            %td
+              = form_tag update_status_order_path(order), id: :update_status, method: :put do
+                .btn-group
+                  %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown"}
+                    = order.status.humanize
+                    %span.caret
+                  %ul.dropdown-menu
+                    - Order.statuses.except(order.status).keys.each_with_index do |status, index|
+                      - radio_id = "ex#{order.id}_#{index+1}"
+                      %li
+                        %input{id: radio_id, name: "order[status]", type: :radio, value: status}
+                        %label{for: radio_id, data: { target: "##{radio_id}"}}= status.humanize
+
+            %td= order.created_at
             %td= order.pay_type
             %td= number_to_currency order.subtotal
             %td= number_to_currency order.taxes
@@ -26,7 +38,4 @@
               = icon_link_to '', order, { class: 'btn btn-sm btn-default' }, 'fa-eye'
               = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-sm btn-default' }, 'fa-print'
               = icon_link_to '', order, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
-
-
-
 
