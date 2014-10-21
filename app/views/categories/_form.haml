@@ -1,12 +1,9 @@
 .panel.panel-default
   = form_for @category, html: { role: 'form'} do |f|
     .panel-heading
-
-      %h4.page-header.no-margin= "#{params[:action].capitalize} category"
-
+      %h4.page-header.no-margin= "#{action} category"
     .panel-body
-      - if @category.errors.any?
-        = render 'layouts/errors', object: @category
+      = render 'layouts/errors', object: @category
       .form-group
         = f.label :name
         = f.text_field :name, autofocus: true, class: 'form-control'
