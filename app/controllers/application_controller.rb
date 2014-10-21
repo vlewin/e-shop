@@ -54,7 +54,7 @@ class ApplicationController < ActionController::Base
 
   # Devise overrides
   def after_sign_in_path_for(resource)
-    if request.referrer.include? 'orders/new'
+    if request.referrer #&& request.referrer.include? 'orders/new'
       request.referrer
     else
       root_path
