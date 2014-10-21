@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
   before_action :set_address, only: [:show, :edit, :update, :destroy]
 
   def index
-    @addresses = Address.all
+    @addresses = Address.preload(:user).all
   end
 
   def show
@@ -13,10 +13,6 @@ class AddressesController < ApplicationController
   end
 
   def edit
-    # FIXME: revisit breadcrums
-    add_breadcrumb 'Home', :root_path
-    add_breadcrumb 'Account settings', account_url
-    add_breadcrumb 'Edit address', edit_address_url(@address)
   end
 
   def create
