@@ -10,16 +10,15 @@
         %tr
           %th Recipient
           %th User
-          %th
-          %th
-          %th
+          %th{ colspan: 3 }
 
       %tbody
         - @addresses.each do |address|
           %tr
             %td= address.full_address
             %td= address.user.name
-            %td= link_to 'Show', address
-            %td= link_to 'Edit', edit_address_path(address)
-            %td= link_to 'Destroy', address, data: {confirm: 'Are you sure?'}, method: :delete
+            %td.text-right
+              = icon_link_to '', address, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+              = icon_link_to '', edit_address_path(address), { class: 'btn btn-sm btn-default' }, 'fa-edit'
+              = icon_link_to '', address, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
 
