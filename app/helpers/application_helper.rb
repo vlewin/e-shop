@@ -11,28 +11,17 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  # FIXME: Refactoring
-  def product_image_tag(product, version = :standard, options = { class: 'img-responsive'})
-    if product.image.url
-      # if Rails.env.production?
-        if version ==:standard
-          cl_image_tag product.image, {width: 250, height: 250, crop: :fill}.merge(options)
-        else
-          cl_image_tag product.image, {width: 240, height: 200, crop: :fill}.merge(options)
-        end
-      # else
-        # image_tag product.image.send(version).url, options
-      # end
+  def product_image_tag(product, version = :thumbnail, options = { class: 'img-responsive', alt: 'image'})
+    if product.image_url
+      image_tag product.image_url(version), options
     else
-      if version.nil?
-        image_tag "http://placehold.it/#{options[:width]}x#{options[:height]}", options
-      else
-        if version ==:standard
-          image_tag "http://placehold.it/250x250", options
-        else
-          image_tag "http://placehold.it/240x200", options
-        end
-      end
+      versions = {
+        show:       { width: 250, height: 250 },
+        index:      { width: 250, height: 200 },
+        thumbnail:  { width: 50, height: 50 },
+      }
+
+      image_tag "http://placehold.it/#{versions[version][:width]}x#{versions[version][:height]}", options
     end
   end
 
