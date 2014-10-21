@@ -11,7 +11,7 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
-  def product_image_tag(product, version = :thumbnail, options = { class: 'img-responsive', alt: 'image'})
+  def product_image_tag(product, version=:thumbnail, options = { class: 'img-responsive', alt: 'image'})
     if product.image_url
       image_tag product.image_url(version), options
     else
@@ -46,15 +46,34 @@ module ApplicationHelper
     end
   end
 
-  def order_status(order)
-    labels = { 0 => 'label-default', 1 => 'label-default', 2 => 'label-primary', 3 => 'label-success'}
-    icons = { 0 => 'fa-archive', 1 => 'fa-clock-o', 2 => 'fa-truck', 3 => 'fa-check-circle'}
-    content_tag(:span, nil, class: "label #{labels[order[:status]]}") do
+  def order_status(status)
+    labels = { accepted: 'label-default', in_progress: 'label-default', shipped: 'label-primary', completed: 'label-success'}
+    icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
+    content_tag(:span, nil, class: "label #{labels[status.to_sym]}") do
       concat(
-        content_tag(:i, nil, class: "fa #{icons[order[:status]]}")
+        content_tag(:i, nil, class: "fa #{icons[status.to_sym]}")
       )
 
-      concat ' ' + order.status.humanize
+      concat ' ' + status.humanize
     end
   end
+
+  # def order_status_select(order)
+  #   form_tag update_status_order_path(order), id: :update_status, method: :put do
+  #     content_tag(:div, nil, class: 'btn-group') do
+  #       button_tag(order.status.humanize, type: :button, class: 'btn btn-default dropdown-toggle', "data-toggle" => "dropdown") do
+  #         order.status.humanize
+  #         content_tag(:span, nil, class: 'caret')
+  #         content_tag(:ul, nil, class: 'dropdown-menu') do
+  #           Order.statuses.except(order.status).keys.each_with_index do |status, index|
+  #             content_tag(:li, nil, class: 'dropdown-menu') do
+  #               radio_button_tag 'order', 'status', id: "ex1_#{index+1}"
+  #             end
+  #           end
+  #         end
+  #       end
+  #     end
+  #   end
+  # end
+
 end
