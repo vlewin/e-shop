@@ -37,21 +37,20 @@ gem 'ffaker'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'awesome_print'
   gem 'factory_girl_rails'
-  gem 'spring-commands-rspec'
-  gem 'guard-rspec'
+
   gem 'rspec-rails', '~> 3.0.1'
+  gem 'spring-commands-rspec'
   gem 'shoulda'
+
+  gem 'awesome_print'
   gem 'byebug'
 end
 
 group :development do
   gem 'heroku'
   gem 'better_errors'
-  gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
-  gem 'rails_layout'
 end
 
 group :test do
