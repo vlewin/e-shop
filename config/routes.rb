@@ -9,7 +9,11 @@ EShop::Application.routes.draw do
   resources :users
   resources :addresses
   resources :categories
-  resources :orders
+  resources :orders do
+    member do
+      put :update_status
+    end
+  end
   resources :carts
   resources :line_items
   resources :shipments
