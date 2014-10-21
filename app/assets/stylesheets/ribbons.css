@@ -325,3 +325,14 @@
 .no-css-transforms .ribbon-black .text {
 	background-color: #444444;
 }
+
+/* grey */
+.ribbon-grey .banner::after,
+.ribbon-grey .banner::before {
+	background-color: #777;
+}
+.ribbon-grey .text::before,
+.ribbon-grey .text::after,
+.no-css-transforms .ribbon-grey .text {
+	background-color: #999;
+}
