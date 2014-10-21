@@ -5,43 +5,43 @@
       = render 'layouts/errors', object: @product
     .panel-body
       .form-group
-        %label.col-sm-2.control-label= f.label :name
-        .col-sm-5
+        = f.label :name, class: 'col-sm-2 control-label'
+        .col-xs-12.col-sm-8.col-md-6
           = f.text_field :name, required: true, autofocus: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :part_number
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           = f.text_field :article_number, required: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :description
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           = f.text_field :description, required: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :amount
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           = f.number_field :quantity, required: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :price
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           = f.number_field :price, required: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :tax
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           = f.number_field :tax, required: true, value: 7, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :category
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           = f.select :category_id, options_for_select(Category.all.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :image
-        .col-sm-5
+        .col-xs-12.col-sm-8.col-md-6
           .well
             .media
               %a.pull-left{ href: '#' }
