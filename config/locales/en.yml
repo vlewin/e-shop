@@ -1,7 +1,19 @@
 en:
-  language: English
-  alphabet:
-    letters:                  ('A'..'Z')
+  date:
+    formats:
+      default: "%d.%m.%Y"
+  time:
+    formats:
+      default: "%d.%m.%Y %I:%M %p"
+
+  number:
+    currency:
+      format:
+        unit:           "$"
+        precision:      2
+        separator:      "."
+        delimiter:      ","
+        format:         "%u %n"
 
   authentication:
     sign_in:                  "Sign in"
