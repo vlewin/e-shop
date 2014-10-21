@@ -1,5 +1,5 @@
 .panel.panel-default
-  = form_for @product, html: { role: 'form', class: "form-horizontal"} do |f|
+  = form_for @product, html: { id: 'product_form', role: 'form', class: "form-horizontal"} do |f|
     .panel-heading
       %h4.page-header.no-margin= "#{params[:action].capitalize} product"
       = render 'layouts/errors', object: @product
