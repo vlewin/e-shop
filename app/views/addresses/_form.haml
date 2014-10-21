@@ -1,0 +1,43 @@
+- address = @address || address
+
+.panel.panel-default
+  = form_for address, html: { class: 'form-horizontal' } do |f|
+    .panel-heading
+      %h4.page-header.no-margin= "#{action} address"
+    .panel-body
+      = render 'layouts/errors', object: address
+      .row
+        .col-md-12
+          .form-group
+            = f.label :first_name, class: 'col-sm-2 control-label'
+            .col-sm-4
+              = f.text_field :first_name, placeholder: 'First name', required: true, class: 'form-control'
+
+          .form-group
+            = f.label :last_name, class: 'col-sm-2 control-label'
+            .col-sm-4
+              = f.text_field :last_name, placeholder: 'Last name', required: true, class: 'form-control'
+
+          .form-group
+            = f.label :city, class: 'col-sm-2 control-label'
+            .col-sm-4
+              = f.text_field :city, placeholder: 'City', required: true, class: 'form-control'
+
+          .form-group
+            = f.label :street, class: 'col-sm-2 control-label'
+            .col-sm-4
+              = f.text_field :street, placeholder: 'Street', required: true, class: 'form-control'
+
+          .form-group
+            = f.label :zip, class: 'col-sm-2 control-label'
+            .col-sm-4
+              = f.text_field :zip, placeholder: '98765', required: true, class: 'form-control'
+
+          .form-group
+            = f.label :phone, class: 'col-sm-2 control-label'
+            .col-sm-4
+              = f.telephone_field :phone, placeholder: '(0800) 123456', required: true, class: 'form-control'
+
+    .panel-footer
+      = f.submit 'Save address', class: 'btn btn-success'
+      = link_to 'Back to addresses', addresses_path

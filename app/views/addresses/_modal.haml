@@ -1,0 +1,50 @@
+.modal.fade{ id: (address.new_record? ? 'address_modal' : "address_modal_#{address.id}"), 'aria-hidden' => 'true', role: :dialog, tabindex: '-1' }
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{ 'aria-hidden' => true, 'data-dismiss' => 'modal', type: :button }  &times;
+        %h4.modal-title Address
+      .modal-body
+        - address = @address || address
+
+        = render 'layouts/errors', object: address
+        = form_for address, html: { class: 'form-horizontal' } do |f|
+          .row
+            .col-md-12
+              .form-group
+                = f.label :first_name, class: 'col-sm-2 control-label'
+                .col-sm-4
+                  = f.text_field :first_name, placeholder: 'First name', required: true, class: 'form-control'
+
+              .form-group
+                = f.label :last_name, class: 'col-sm-2 control-label'
+                .col-sm-4
+                  = f.text_field :last_name, placeholder: 'Last name', required: true, class: 'form-control'
+
+              .form-group
+                = f.label :city, class: 'col-sm-2 control-label'
+                .col-sm-4
+                  = f.text_field :city, placeholder: 'City', required: true, class: 'form-control'
+
+              .form-group
+                = f.label :street, class: 'col-sm-2 control-label'
+                .col-sm-4
+                  = f.text_field :street, placeholder: 'Street', required: true, class: 'form-control'
+
+              .form-group
+                = f.label :zip, class: 'col-sm-2 control-label'
+                .col-sm-4
+                  = f.text_field :zip, placeholder: '98765', required: true, class: 'form-control'
+
+              .form-group
+                = f.label :phone, class: 'col-sm-2 control-label'
+                .col-sm-4
+                  = f.telephone_field :phone, placeholder: '(0800) 123456', required: true, class: 'form-control'
+
+              %hr
+              .row
+                .col-sm-offset-2.col-sm-10
+                  .pull-left
+                    = submit_tag 'Save changes', class: 'btn btn-success'
+                    = link_to 'Cancel', request.referer, class: 'btn btn-default', data: { dismiss: 'modal' }
+

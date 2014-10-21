@@ -1,0 +1,25 @@
+%h4.page-header.no-margin
+  Addresses
+  .pull-right
+    %small= link_to 'New address', new_address_path
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Recipient
+          %th User
+          %th
+          %th
+          %th
+
+      %tbody
+        - @addresses.each do |address|
+          %tr
+            %td= address.full_address
+            %td= address.user.name
+            %td= link_to 'Show', address
+            %td= link_to 'Edit', edit_address_path(address)
+            %td= link_to 'Destroy', address, data: {confirm: 'Are you sure?'}, method: :delete
+
