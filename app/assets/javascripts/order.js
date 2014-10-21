@@ -27,4 +27,11 @@ $(function() {
       $container.find('input:not(:disabled)').first().prop("checked", true);
     }
   })
+
+
+  $('#update_status label').on('click', function(e) {
+    var target = $(this).data('target');
+    $(target).attr( 'checked', true);
+    $(this).parents('form').submit();
+  })
 })
