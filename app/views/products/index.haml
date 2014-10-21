@@ -1,0 +1,35 @@
+%h4.page-header.no-margin
+  Products
+  .pull-right
+    %small= link_to 'New product', new_product_path
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Image
+          %th Article number
+          %th Name
+          %th Description
+          %th Quantity
+          %th Price
+          %th Tax
+          %th Show
+          %th Edit
+          %th Delete
+
+      %tbody
+        - @products.each do |product|
+          %tr
+            %td= product_image_tag product
+            %td= product.article_number
+            %td= product.name
+            %td= product.description
+            %td= product.quantity
+            %td= product.price
+            %td= product.tax
+            %td= link_to 'Show', product
+            %td= link_to 'Edit', edit_product_path(product)
+            %td= link_to 'Destroy', product, data: {confirm: 'Are you sure?'}, method: :delete
+
