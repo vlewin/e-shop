@@ -12,7 +12,7 @@
                     .text OUT OF STOCK
 
               %a.thumbnail{ href: store_product_path(product)}
-                = product_image_tag product, :thumbnail, class: 'image-responsive'
+                = product_image_tag(product, :index)
                 %hr.line
                 %h4.name
                   = product.name
@@ -29,10 +29,6 @@
                       %i.fa.fa-shopping-cart
                       = t('cart.add')
 
-
-    -# %hr.line
-    -# # = paginate @products, remote: true
-
   - else
     .panel.panel-default
       / .panel-heading
@@ -47,7 +43,7 @@
             - @products.each_with_index do |product, index|
               %tr.product-list
                 = form_tag line_items_path(:product_id => product), :multipart => true, class: 'form-inline' do
-                  %td= product_image_tag product, nil, :width => 50, :height => 50, :crop => :fill
+                  %td= product_image_tag(product)
                   %td
                     .name= link_to product.name, store_product_path(product)
                     .description= product.description
@@ -57,8 +53,6 @@
                   %td
                     = button_tag(type: "submit", class: "btn btn-sm btn-success") do
                       %i.fa.fa-shopping-cart
-
-    -# # = paginate @products, remote: true
 
   %hr.line
   = paginate @products, remote: true
