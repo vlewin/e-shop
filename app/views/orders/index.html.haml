@@ -29,7 +29,7 @@
                         %input{id: radio_id, name: "order[status]", type: :radio, value: status}
                         %label{for: radio_id, data: { target: "##{radio_id}"}}= status.humanize
 
-            %td= order.created_at
+            %td= I18n.localize(order.created_at)
             %td= order.pay_type
             %td= number_to_currency order.subtotal
             %td= number_to_currency order.taxes
