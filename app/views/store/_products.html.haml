@@ -48,7 +48,7 @@
                     .name= link_to product.name, store_product_path(product)
                     .description= product.description
                   %td= number_to_currency(product.price)
-                  %td
+                  %td.hidden-xs
                     = quantity_field_tag 1, { max: product.available_quantity}
                   %td
                     = button_tag(type: "submit", class: "btn btn-sm btn-success") do
