@@ -1,0 +1,33 @@
+%h4.page-header.no-margin
+  Shipping methods
+  .pull-right
+    %small= link_to 'New shipment', new_shipment_path
+
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Default
+          %th Provider
+          %th Name
+          %th Rate
+          %th{ colspan: 3 }
+
+      %tbody
+        - @shipments.each do |shipment|
+          %tr
+            %td
+              - if shipment.default
+                %label.label.label-default Default
+              - else
+                = '---'
+
+            %td= shipment.provider
+            %td= shipment.name
+            %td= number_to_currency shipment.rate
+            %td.text-right
+              = icon_link_to '', shipment, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+              = icon_link_to '', edit_shipment_path(shipment), { class: 'btn btn-sm btn-default' }, 'fa-edit'
+              = icon_link_to '', shipment, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
