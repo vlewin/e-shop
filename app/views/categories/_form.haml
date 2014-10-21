@@ -1,0 +1,16 @@
+.panel.panel-default
+  = form_for @category, html: { role: 'form'} do |f|
+    .panel-heading
+
+      %h4.page-header.no-margin= "#{params[:action].capitalize} category"
+
+    .panel-body
+      - if @category.errors.any?
+        = render 'layouts/errors', object: @category
+      .form-group
+        = f.label :name
+        = f.text_field :name, autofocus: true, class: 'form-control'
+      .form-group
+    .panel-footer
+      = f.submit 'Save category', class: 'btn btn-success'
+      = link_to 'Back to categories', categories_path

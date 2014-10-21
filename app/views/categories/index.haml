@@ -1,0 +1,26 @@
+%h4.page-header.no-margin
+  Categories
+  .pull-right
+    %small= link_to 'New category', new_category_path
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Name
+          %th Product count
+          %th Show
+          %th Edit
+          %th Delete
+      %tbody
+        - @categories.each do |category|
+          %tr
+            %td= category.name
+            %td= link_to "#{category.products_count} products", category_path(category)
+            %td= link_to 'Show', category
+            %td= link_to 'Edit', edit_category_path(category)
+            %td= link_to 'Destroy', category, data: {confirm: 'Are you sure?'}, method: :delete
+
+
+
