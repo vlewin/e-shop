@@ -16,26 +16,26 @@ class ShipmentsController < ApplicationController
   end
 
   def create
-    @shipment = Shipment.new(shipments_params)
+    @shipment = Shipment.new(shipment_params)
 
     if @shipment.save
-      redirect_to @shipment, notice: 'Shipment was successfully created.'
+      redirect_to shipments_path, notice: 'Shipment was successfully created.'
     else
       render action: 'new'
     end
   end
 
   def update
-    if @shipment.update(shipments_params)
-      redirect_to @shipments, notice: 'Shipment was successfully updated.'
+    if @shipment.update(shipment_params)
+      redirect_to shipments_path, notice: 'Shipment was successfully updated.'
     else
       render action: 'edit'
     end
   end
 
   def destroy
-    @shipments.destroy
-    redirect_to shipmentss_url, notice: 'Shipment was successfully destroyed.'
+    @shipment.destroy
+    redirect_to shipments_path, notice: 'Shipment was successfully destroyed.'
   end
 
   private
@@ -45,7 +45,7 @@ class ShipmentsController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-    def shipments_params
-      params.require(:shipments).permit(:provider, :name, :rate)
+    def shipment_params
+      params.require(:shipment).permit(:provider, :name, :rate, :default)
     end
 end
