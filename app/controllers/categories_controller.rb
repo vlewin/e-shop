@@ -51,7 +51,6 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category ||= Category.find(params[:id])
-      # add_breadcrumb @category.name
     end
 
     # Only allow a trusted parameter "white list" through.
