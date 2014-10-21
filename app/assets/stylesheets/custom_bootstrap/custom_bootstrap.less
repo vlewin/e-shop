@@ -65,9 +65,24 @@
 @import "twitter/bootstrap/responsive-utilities.less";
 
 
-@light-gray: #E5E5E5;
-@link-color: #444444;
+html, body {
+  height: 100%;
+}
 
-@btn-success-border: #94BA65;
-@btn-success-bg: #94BA65;
+body {
+  color: #444444;
+  background: #f8f8f8;
+  padding-top: 80px;
+  text-rendering: optimizeLegibility;
+  font-family: "Roboto",sans-serif;
+}
 
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}

@@ -3,28 +3,6 @@
 //a:hover   { color: #9d3f21 }  /* user hovers     */
 //a:active  { color: #9d3f21 }  /* active links    */
 
-html, body {
-  height: 100%;
-}
-
-body {
-  color: #444444;
-  background: #f8f8f8;
-  padding-top: 80px;
-  text-rendering: optimizeLegibility;
-  font-family: "Roboto",sans-serif;
-}
-
-/* Wrapper for page content to push down footer */
-#wrap {
-  min-height: 100%;
-  height: auto;
-  /* Negative indent footer by its height */
-  margin: 0 auto -60px;
-  /* Pad bottom by footer height */
-  padding: 0 0 60px;
-}
-
 // Navbars
 .navbar-default {
   border-radius: 0;
@@ -73,18 +51,34 @@ ol.breadcrumb {
 
 // Panels
 .panel {
+  border-color: #dddddd;
+
   .panel-heading {
-    background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border-color: #ccc;
-    box-shadow: 0 1px 0 0 #fff inset;
+    h1,h2,h3,h4,h5 {
+      margin: 0;
+    }
   }
 
   .panel-footer {
-    background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border-color: #ccc;
-    box-shadow: 0 1px 0 0 #fff inset;
+    .btn {
+      margin-right: 10px;
+    }
   }
 }
+
+// .panel {
+//   .panel-heading {
+//     background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+//     border-color: #ccc;
+//     box-shadow: 0 1px 0 0 #fff inset;
+//   }
+
+//   .panel-footer {
+//     background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+//     border-color: #ccc;
+//     box-shadow: 0 1px 0 0 #fff inset;
+//   }
+// }
 
 .tab-content {
   padding: 20px 15px;
