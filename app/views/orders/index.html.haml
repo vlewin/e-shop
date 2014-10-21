@@ -1,0 +1,32 @@
+%h4.page-header.no-margin
+  Order
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Status
+          %th Date
+          %th Pay type
+          %th Subtotal
+          %th Taxes
+          %th Total
+          %th{ colspan: 3 }
+      %tbody
+        - @orders.each do |order|
+          %tr
+            %td= order_status(order)
+            %td= I18n.localize(order.created_at)
+            %td= order.pay_type
+            %td= number_to_currency order.subtotal
+            %td= number_to_currency order.taxes
+            %td= number_to_currency order.total
+            %td.text-right
+              = icon_link_to '', order, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+              = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-sm btn-default' }, 'fa-print'
+              = icon_link_to '', order, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+
+
+
+
