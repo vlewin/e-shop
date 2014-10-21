@@ -27,7 +27,7 @@
       .form-group
         %label.col-sm-2.control-label= f.label :price
         .col-xs-12.col-sm-8.col-md-6
-          = f.number_field :price, required: true, class: 'form-control'
+          = f.number_field :price, step: 0.01, required: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :tax
