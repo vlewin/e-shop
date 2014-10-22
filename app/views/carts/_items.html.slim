@@ -26,17 +26,23 @@ table.table.table-hover.table-responsive
         td= number_to_currency(item.total)
         td= icon_link_to '', item, { class: 'text-danger', method: :delete}, 'fa-trash-o'
 
+    tr.text-muted
+      td colspan=6 Subtotal
+      td colspan=2
+        = number_to_currency(@current_cart.subtotal)
+    tr.text-muted
+      td colspan=6 VAT
+      td colspan=2
+        = number_to_currency(@current_cart.taxes)
+    tr.text-muted
+      td colspan=6 Shipping
+      td colspan=2
+        = number_to_currency(Shipment.default.rate)
     tr
-      td colspan=5
-      td
-        p Subtotal:
-        p Shipping:
-        p
-          b Total:
-      td
-        p= number_to_currency(@current_cart.subtotal)
-        p= number_to_currency(Shipment.first.rate)
-        p
-          b= number_to_currency(@current_cart.total)
+      td colspan=6
+        b Total
+      td colspan=2
+        b= number_to_currency(@current_cart.total)
 
-      td
+
+

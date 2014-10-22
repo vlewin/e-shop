@@ -4,15 +4,13 @@
       | Step 2: Delivery Details
 #shipping.panel-collapse.collapse
   .panel-body
-    / h3.form-header Shipping
-
     - Shipment.all.each_with_index do |shipment, index|
       .radio
         label
           = form.radio_button :shipment_id, shipment.id, :checked => shipment.default
           = "#{shipment.provider} #{shipment.name}"
           b= " #{number_to_currency(shipment.rate)}"
-          - if Shipment.default.include? shipment
+          - if Shipment.default == shipment
             span.label.label-default< Standard
 
 

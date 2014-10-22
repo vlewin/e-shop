@@ -9,10 +9,8 @@
           th Status
           th Date
           th Pay type
-          th Subtotal
-          th Taxes
           th Total
-          th
+          th collspan=2
 
       tbody
         - current_user.orders.each do |order|
@@ -20,8 +18,6 @@
             td= order_status(order.status)
             td= I18n.localize(order.created_at)
             td= order.pay_type
-            td= number_to_currency order.subtotal
-            td= number_to_currency order.taxes
             td= number_to_currency order.total
             td
               = icon_link_to "Show", order_path(order), 'fa-eye'
