@@ -18,8 +18,11 @@
           %tr
             %td
               = form_tag update_status_order_path(order), id: :update_status, method: :put do
+                - labels = { accepted: 'btn-default', in_progress: 'btn-default', shipped: 'btn-primary', completed: 'btn-success'}
+                - icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
                 .btn-group
-                  %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown"}
+                  %button.btn.btn-default.dropdown-toggle{ class: labels[order.status.to_sym], data: { toggle: :dropdown }}
+                    %i{ class: "fa #{icons[order.status.to_sym]}"}
                     = order.status.humanize
                     %span.caret
                   %ul.dropdown-menu
@@ -27,7 +30,9 @@
                       - radio_id = "ex#{order.id}_#{index+1}"
                       %li
                         %input{id: radio_id, name: "order[status]", type: :radio, value: status}
-                        %label{for: radio_id, data: { target: "##{radio_id}"}}= status.humanize
+                        %label{for: radio_id, data: { target: "##{radio_id}"}}
+                          %i{ class: "fa #{icons[status.to_sym]}"}
+                          = status.humanize
 
             %td= I18n.localize(order.created_at)
             %td= order.pay_type
