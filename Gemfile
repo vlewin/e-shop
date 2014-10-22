@@ -19,7 +19,7 @@ gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
 
-# gem 'newrelic_rpm'
+gem 'newrelic_rpm'
 gem 'breadcrumbs_on_rails'
 gem 'prawn'
 
