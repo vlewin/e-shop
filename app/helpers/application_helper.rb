@@ -58,22 +58,4 @@ module ApplicationHelper
     end
   end
 
-  # def order_status_select(order)
-  #   form_tag update_status_order_path(order), id: :update_status, method: :put do
-  #     content_tag(:div, nil, class: 'btn-group') do
-  #       button_tag(order.status.humanize, type: :button, class: 'btn btn-default dropdown-toggle', "data-toggle" => "dropdown") do
-  #         order.status.humanize
-  #         content_tag(:span, nil, class: 'caret')
-  #         content_tag(:ul, nil, class: 'dropdown-menu') do
-  #           Order.statuses.except(order.status).keys.each_with_index do |status, index|
-  #             content_tag(:li, nil, class: 'dropdown-menu') do
-  #               radio_button_tag 'order', 'status', id: "ex1_#{index+1}"
-  #             end
-  #           end
-  #         end
-  #       end
-  #     end
-  #   end
-  # end
-
 end
