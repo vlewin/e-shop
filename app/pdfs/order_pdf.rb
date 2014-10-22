@@ -3,10 +3,13 @@
 class OrderPdf < Prawn::Document
   def initialize(order, view)
     super(page_size: 'A4', page_layout: :portrait)
+
     @order = order
     @view = view
+
     header
-    bounding_box([bounds.left, bounds.top - 100], height: 650, width: 523) do
+    bounding_box([bounds.left, bounds.top - 170], height: 650, width: 523) do
+      text "Invoice No. ##{@order.id}", style: :bold
       items
       total
     end
@@ -14,51 +17,71 @@ class OrderPdf < Prawn::Document
   end
 
   def price(num)
-    # Adjust font path / symbol such as ฿
-    self.font("/Library/Fonts/Arial Unicode.ttf") if File.exists? '/Library/Fonts/Arial Unicode.ttf'
+    self.font(Rails.root.join('app/pdfs/fonts/LiberationSans-Regular.ttf'))
     @view.number_to_currency(num)
   end
 
   def header
-    repeat :all do
-      bounding_box([bounds.left, bounds.top], width: 250) do
-        text "E-Shop", size: 20
-        move_down 10
-        text "Musterstrasse 1
-              3000 Musterstadt
-              Deutschland", size: 10
-      end
+    bounding_box([bounds.left, bounds.top], width: 250) do
+      text "E-Shop, Inc", size: 12, style: :bold
+      move_down 0
+      text "Musterstrasse 1
+            3000 Musterstadt
+            Deutschland", size: 10
+    end
 
-      bounding_box([bounds.left + 260, bounds.top], width: 260) do
-        text "Invoice No. ##{@order.id}", style: :bold
-        move_down 10
-        text "Shipping & Billing to:", style: :bold
-        text "#{@order.address.full_address}", size: 10
-      end
+    bounding_box([bounds.left, bounds.top-70], width: 250) do
+      text @order.billing_address.full_name, size: 12, style: :bold
+      move_down 0
+      text "#{@order.billing_address.street}
+            #{@order.billing_address.zip} #{@order.billing_address.city}", size: 10
+    end
+
+    bounding_box([bounds.left + 280, bounds.top], width: 260) do
+      move_down 0
+      text "Shipping to:", style: :bold
+      text "#{@order.address.full_address}", size: 10
+
+      move_down 10
+      text "Billing to:", style: :bold
+      text "#{@order.address.full_address}", size: 10
     end
   end
 
   def items
     move_down 15
-    table items_rows do |t|
+
+    table thead do |t|
       t.cell_style = { borders: [], size: 10 }
-      t.column_widths = { 0 => 253, 1 => 90, 2 => 90, 3 => 90 }
-      t.row_colors = ["EEEEEE", "FFFFFF"]
-      t.header = true
-      t.columns(1..3).align = :right
+      t.column_widths = { 0 => 20, 1 => 200, 2 => 100, 3 => 100, 4 => 100 }
+      t.columns(0..4).align = :left
 
       t.before_rendering_page do |p|
-        p.columns(0..3).borders = [:left, :right]
-        p.row(0).borders = [:top, :bottom, :left, :right]
+        p.row(-1).borders = [:top, :bottom, :left, :right]
+      end
+    end
+
+    table tbody do |t|
+      t.cell_style = { borders: [], size: 10 }
+      t.column_widths = { 0 => 20, 1 => 200, 2 => 100, 3 => 100, 4 => 100 }
+      t.row_colors = ["FAFAFA", "FFFFFF"]
+      t.columns(0..4).align = :left
+
+      t.before_rendering_page do |p|
+        p.columns(0..4).borders = [:left, :right]
         p.row(-1).borders = [:bottom, :left, :right]
       end
     end
   end
 
-  def items_rows
-    [["Product name", "Unit Price", "Quantity", "Full Price"]] +
-    @order.line_items.map do |item|
+  def thead
+    [["Nr", "Product name", "Unit Price", "Quantity", "Full Price"]]
+  end
+
+  def tbody
+    @order.line_items.each_with_index.map do |item, index|
       [
+        index + 1,
         item.product.name,
         price(item.product.price),
         item.quantity,
@@ -68,20 +91,22 @@ class OrderPdf < Prawn::Document
   end
 
   def total
-    move_down 15
+    move_down 10
+
     table total_rows do
       self.cell_style = { borders: [], size: 10, align: :right }
-      self.column_widths = { 0 => 343, 1 => 90, 2 => 90 }
+      self.column_widths = { 0 => 323, 1 => 100, 2 => 90 }
       self.header = true
-      rows(2).borders = [:top, :bottom]
+      rows(3).borders = [:top, :bottom]
     end
   end
 
   def total_rows
     [
-      ["", "Sub Total", "#{price(@order.total)}"],
-      ["", "Shipping Rate", "#{price(@order.address.rate) rescue 'not calculated'}"],
-      ["", "Balance", "#{price(@order.total)}"]
+      ["", "Sub Total", "#{price(@order.subtotal)}"],
+      ["", "Shipping & Handling", "#{price(@order.shipment.rate) rescue 'not calculated'}"],
+      ["", "VAT", "#{price(@order.taxes)}"],
+      ["", "Total", "#{price(@order.total)}"]
     ]
   end
 
@@ -89,8 +114,8 @@ class OrderPdf < Prawn::Document
     page_count.times do |i|
       page = i + 1
       go_to_page(page)
-      bounding_box([bounds.right - 22, bounds.bottom + 10], :width => 50) do
-        text "#{page} / #{page_count}", :size => 8
+      bounding_box([bounds.left+1, bounds.bottom + 10], :width => 500) do
+        text "Thank you for your business!", :size => 8
       end
     end
   end
