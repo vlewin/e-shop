@@ -1,9 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, except: [:index, :show]
+  after_action :verify_authorized
 
   def index
     @categories = Category.all
+    authorize @categories
   end
 
   def show

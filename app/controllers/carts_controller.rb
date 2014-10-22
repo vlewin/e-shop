@@ -1,9 +1,10 @@
 class CartsController < ApplicationController
-  respond_to :html, :js
-  skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, only: [:show, :update]
+  after_action :verify_authorized, except: [:show, :update]
 
   def index
-    @carts = policy_scope(Cart).order(:updated_at)
+    @carts = Cart.all.order(:updated_at)
+    authorize @carts
   end
 
   def show
@@ -30,18 +31,11 @@ class CartsController < ApplicationController
       end
     end
 
-    # FIXME: update cart line_item count in navbar (XHR request)
-    respond_to do |format|
-      format.html do
-        if @current_cart.empty?
-          flash.notice = "Your cart is empty!"
-          redirect_to root_path
-        else
-          redirect_to cart_path
-        end
-      end
-
-      format.js
+    if @current_cart.empty?
+      flash.notice = "Your cart is empty!"
+      redirect_to root_path
+    else
+      redirect_to cart_path
     end
   end
 
