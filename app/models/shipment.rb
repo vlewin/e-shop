@@ -5,7 +5,9 @@ class Shipment < ActiveRecord::Base
   before_update :set_default
   before_create :set_default
 
-  scope :default, -> { where(default: true) }
+  def self.default
+    where(default: true).first
+  end
 
   def set_default
     self.class.update_all(default: false) if self.default
