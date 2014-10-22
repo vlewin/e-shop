@@ -68,76 +68,78 @@
 
 // Order status
 .order-status {
+  margin-bottom: 25px;
   margin-top: 30px;
-  margin-bottom: 50px;
   position:relative;
 
   .order-status-timeline {
-    height:12px;
-    border:1px solid #aaa;
+    height:4px;
+    border:1px solid #ddd;
     border-radius:7px;
     background:#eee;
-    box-shadow:0px 0px 5px 0px #C2C2C2 inset;
+    box-shadow:0px 0px 2px 0px #ddd inset;
 
     .order-status-timeline-completion {
-      height:8px;
-      margin:1px;
+      height: 4px;
+      margin: -1px 2px 0px 2px;
       border-radius:7px;
-      background:#94BA65;
+      background: #5b5;
       width:0px;
 
-      &.in_progress { width:33%; }
-      &.shipped { width:66%; }
+      &.in_progress { width: 30%; }
+      &.shipped { width: 60%; }
       &.completed { width:100%; }
     }
   }
 
   .img-circle {
-    border:1px solid #ddd;padding:7px;
-    background-color:#fdfdfd;
+    background-color:#EAEAEA;
     position:absolute;
-    margin-top:-35px;
+    margin-top:-17px;
 
-    &.active {
-      box-shadow:0px 0px 10px 0px #999999;
-      .icon{
-        color: #94BA65;
-      }
-    }
+    box-shadow: 0px 0px 2px 0px #C2C2C2 inset;
 
     .icon{
-      font-size: 40px;
-      height: 40px;
-      width: 40px;
+      height: 30px;
+      width: 30px;
+
+      font-size: 20px;
+      line-height: 30px;
 
       text-align: center;
       vertical-align: middle;
-      color: #CCCCCC;
+      color: #AAAAAA;
+
+      &.fa-clock-o {
+        margin: 0 1px 0 -1px;
+      }
 
       &.fa-archive {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 17px;
+        line-height: 30px;
       }
 
       &.fa-truck {
-        font-size: 36px;
-        line-height: 36px;
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      &.fa-check-circle {
       }
     }
 
-    .status{
-      position:absolute;
-      text-shadow:1px 1px #eee;
-      color:#333;
-      width: 80px;
-      top: 60px;
-      left: -11px;
-      text-align: center;
+    &.active {
+      box-shadow: none;
+      background-color: #5b5;
+
+      .icon{
+        color: #fff;
+      }
     }
   }
 
   .status-new { left:0; }
-  .status-active { left:33%; }
-  .status-shipped { left:66%; }
+  .status-active { left:30%; }
+  .status-shipped { left:60%; }
   .status-completed { right:0px; }
 }
