@@ -44,7 +44,6 @@ class ApplicationController < ActionController::Base
   end
 
   def handle_exceptions(exception)
-    ap exception
     case exception
     when Pundit::NotAuthorizedError
       flash[:error] = t('authorization.not_authorized')
