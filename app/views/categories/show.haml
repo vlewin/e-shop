@@ -1,8 +1,7 @@
 .panel
-  .panel-heading
+  .panel-body
     %h4.page-header= @category.name
 
-  .panel-body
     %strong Associated products
     %ol
       - @category.products.each_with_index do |product, index|
