@@ -116,6 +116,7 @@ GEM
     minitest (5.4.2)
     multi_json (1.10.1)
     netrc (0.7.7)
+    newrelic_rpm (3.9.6.257)
     orm_adapter (0.5.0)
     pdf-core (0.2.5)
     pg (0.17.1)
@@ -251,6 +252,7 @@ DEPENDENCIES
   launchy
   less-rails
   less-rails-bootstrap
+  newrelic_rpm
   pg
   prawn
   puma
