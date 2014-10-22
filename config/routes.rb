@@ -26,4 +26,7 @@ EShop::Application.routes.draw do
   resources :products do
     collection { get :search, to: 'products#index' }
   end
+
+  # Handle non-existing routes
+  get '*path', to: 'application#not_found'
 end
