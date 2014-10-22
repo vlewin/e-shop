@@ -19,7 +19,6 @@ gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
 
-gem 'newrelic_rpm'
 gem 'breadcrumbs_on_rails'
 gem 'prawn'
 
@@ -42,8 +41,6 @@ group :development, :test do
 
   gem 'rspec-rails', '~> 3.0.1'
   gem 'spring-commands-rspec'
-  gem 'shoulda'
-
   gem 'awesome_print'
   gem 'byebug'
 end
@@ -56,10 +53,12 @@ end
 
 group :test do
   gem 'database_cleaner'
+  gem 'shoulda'
   gem 'launchy'
 end
 
 group :production do
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
   gem 'pg'
 end
