@@ -5,6 +5,7 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def show?
+    @user.admin?
   end
 
   # Protected

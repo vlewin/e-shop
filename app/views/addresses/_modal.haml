@@ -3,7 +3,7 @@
     .modal-content
       .modal-header
         %button.close{ 'aria-hidden' => true, 'data-dismiss' => 'modal', type: :button }  &times;
-        %h4.modal-title Address
+        %h4.modal-title= _('Address')
       .modal-body
         - address = @address || address
 
@@ -14,17 +14,17 @@
               .form-group
                 = f.label :recipient, class: 'col-sm-2 control-label'
                 .col-sm-4
-                  = f.text_field :recipient, placeholder: 'Recipient', required: true, class: 'form-control'
+                  = f.text_field :recipient, placeholder: 'Max Mustermann', required: true, class: 'form-control'
 
               .form-group
                 = f.label :city, class: 'col-sm-2 control-label'
                 .col-sm-4
-                  = f.text_field :city, placeholder: 'City', required: true, class: 'form-control'
+                  = f.text_field :city, placeholder: 'Berlin', required: true, class: 'form-control'
 
               .form-group
                 = f.label :street, class: 'col-sm-2 control-label'
                 .col-sm-4
-                  = f.text_field :street, placeholder: 'Street', required: true, class: 'form-control'
+                  = f.text_field :street, placeholder: 'Musterstr. 1', required: true, class: 'form-control'
 
               .form-group
                 = f.label :zip_code, class: 'col-sm-2 control-label'

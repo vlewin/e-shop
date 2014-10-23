@@ -24,7 +24,7 @@
           .row
             .col-xs-6
               address
-                strong Billed To:
+                strong= _('Billing address')
                 br
                   = @order.billing_address.recipient
                   br
@@ -34,7 +34,7 @@
 
             .col-xs-6.text-right
               address
-                strong Shipped To:
+                strong= _('Shipping address')
                 br
                   = @order.address.recipient
                   br
@@ -44,13 +44,13 @@
           .row
             .col-xs-6
               address
-                strong Payment Method:
+                strong= _('Payment type')
                 br
                   = @order.pay_type
 
             .col-xs-6.text-right
               address
-                strong Order Date:
+                strong= _('Order date')
                 br
                   = I18n.localize(@order.created_at)
                   br
@@ -59,42 +59,38 @@
       .col-md-12
         .panel.panel-default
           .panel-heading
-            h4.panel-title Order summary
+            b= _('Order summary')
           .panel-body
             table.table.table-condensed
               thead
                 tr
+                  td #
                   td
-                    strong Item
-                  td.text-center
-                    strong Price
-                  td.text-center
-                    strong Quantity
+                    strong= _('Product')
+                  td
+                    strong= _('Price')
+                  td
+                    strong= _('Quantity')
                   td.text-right
-                    strong Totals
+                    strong= _('Total')
 
               tbody
-                - @order.line_items.each do |item|
+                - @order.line_items.each_with_index do |item, index|
                   tr
+                    td= index+1
                     td= item.product.name
-                    td.text-center= number_to_currency(item.price)
-                    td.text-center= item.quantity
+                    td= number_to_currency(item.price)
+                    td= item.quantity
                     td.text-right= number_to_currency(item.total)
               tr
-                td.thick-line
-                td.thick-line
-                td.thick-line.text-center
-                  strong Subtotal
+                td.thick-line.text-right colspan=4
+                  strong= _('Subtotal')
                 td.thick-line.text-right= number_to_currency(@order.subtotal)
               tr
-                td.no-line
-                td.no-line
-                td.no-line.text-center
-                  strong Shipping
+                td.no-line.text-right colspan=4
+                  strong= _('Shipment')
                 td.no-line.text-right= number_to_currency(@order.shipment.fee)
               tr
-                td.no-line
-                td.no-line
-                td.no-line.text-center
-                  strong Total
+                td.no-line.text-right colspan=4
+                  strong= _('Total')
                 td.no-line.text-right= number_to_currency(@order.total)

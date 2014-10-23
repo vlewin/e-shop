@@ -1,6 +1,6 @@
 class CartsController < ApplicationController
   skip_before_filter :authenticate_user!, only: [:show, :update]
-  after_action :verify_authorized, except: [:show, :update]
+  after_action :verify_authorized, except: [:show, :update, :destroy]
 
   def index
     @carts = Cart.all.order(:updated_at)

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-23 22:04+0200\n"
-"PO-Revision-Date: 2014-10-23 22:04+0200\n"
+"POT-Creation-Date: 2014-10-23 23:17+0200\n"
+"PO-Revision-Date: 2014-10-23 23:17+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -22,15 +22,19 @@ msgstr ""
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16
-msgid "Account settings"
+#: ../app/helpers/application_helper.rb:66
+msgid "Accepted"
+msgstr ""
+
+#: ../app/views/account/show.haml:62
+msgid "Account"
 msgstr ""
 
 #: ../app/views/store/_products.html.haml:53 ../app/views/store/show.html.haml:56
 msgid "Add to cart"
 msgstr ""
 
-#: model_attributes.rb:2
+#: ../app/views/addresses/_modal.haml:11 model_attributes.rb:2
 msgid "Address"
 msgstr ""
 
@@ -44,6 +48,10 @@ msgstr ""
 
 #: ../app/controllers/addresses_controller.rb:33
 msgid "Address was successfully updated."
+msgstr ""
+
+#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.html.slim:63
+msgid "Addresses"
 msgstr ""
 
 #: model_attributes.rb:3
@@ -78,6 +86,10 @@ msgstr ""
 msgid "Available: %d of %d"
 msgstr ""
 
+#: ../app/views/orders/show.slim:27
+msgid "Billing address"
+msgstr ""
+
 #: ../app/controllers/orders_controller.rb:72
 msgid "Can not change order status"
 msgstr ""
@@ -86,19 +98,27 @@ msgstr ""
 msgid "Cart was successfully destroyed."
 msgstr ""
 
+#: ../app/views/layouts/_navigation.html.slim:72
+msgid "Carts"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.html.slim:54
+msgid "Categories"
+msgstr ""
+
 #: model_attributes.rb:8
 msgid "Category"
 msgstr ""
 
-#: ../app/controllers/categories_controller.rb:28
+#: ../app/controllers/categories_controller.rb:29
 msgid "Category was successfully created."
 msgstr ""
 
-#: ../app/controllers/categories_controller.rb:48
+#: ../app/controllers/categories_controller.rb:49
 msgid "Category was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/categories_controller.rb:38
+#: ../app/controllers/categories_controller.rb:39
 msgid "Category was successfully updated."
 msgstr ""
 
@@ -118,12 +138,28 @@ msgstr ""
 msgid "Checkout"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:41
+#: ../app/helpers/application_helper.rb:69
+msgid "Completed"
+msgstr ""
+
+#: ../app/views/account/_account.haml:46 ../app/views/devise/registrations/new.haml:41
 msgid "Confirm Password"
 msgstr ""
 
 #: ../app/views/store/index.haml:63
 msgid "Created at"
+msgstr ""
+
+#: ../app/views/account/_account.haml:60
+msgid "Current password"
+msgstr ""
+
+#: ../app/views/account/_order.haml:11
+msgid "Date"
+msgstr ""
+
+#: ../app/views/account/_address.haml:47
+msgid "Destroy"
 msgstr ""
 
 #: ../app/views/devise/shared/_links.html.slim:11
@@ -142,7 +178,11 @@ msgstr ""
 msgid "EAN: %s"
 msgstr ""
 
-#: ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
+#: ../app/views/account/_address.haml:42
+msgid "Edit"
+msgstr ""
+
+#: ../app/views/account/_account.haml:19 ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
 msgid "Email"
 msgstr ""
 
@@ -152,6 +192,14 @@ msgstr ""
 
 #: ../app/views/devise/shared/_links.html.slim:8
 msgid "Forgot your password?"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:67
+msgid "In progress"
+msgstr ""
+
+#: ../app/views/account/_account.haml:39
+msgid "Leave these fields blank if you don't want to change your password."
 msgstr ""
 
 #: model_attributes.rb:12
@@ -166,8 +214,16 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:20 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
+#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16 ../app/views/layouts/_navigation.html.slim:37
+msgid "My Account"
+msgstr ""
+
+#: ../app/views/account/_account.haml:8 ../app/views/devise/registrations/new.haml:20 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
 msgid "Name"
+msgstr ""
+
+#: ../app/views/account/show.haml:39
+msgid "New Address"
 msgstr ""
 
 #: model_attributes.rb:15
@@ -176,6 +232,18 @@ msgstr ""
 
 #: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.slim:19
 msgid "Order #%d"
+msgstr ""
+
+#: ../app/views/orders/show.slim:53
+msgid "Order date"
+msgstr ""
+
+#: ../app/views/orders/show.slim:62
+msgid "Order summary"
+msgstr ""
+
+#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.html.slim:69
+msgid "Orders"
 msgstr ""
 
 #: model_attributes.rb:16
@@ -190,11 +258,15 @@ msgstr ""
 msgid "Out of stock"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
+#: ../app/views/account/_account.haml:33 ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
 msgid "Password"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:71
+#: ../app/views/account/_order.haml:13 ../app/views/orders/show.slim:47
+msgid "Payment type"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:71 ../app/views/orders/show.slim:70
 msgid "Price"
 msgstr ""
 
@@ -202,7 +274,7 @@ msgstr ""
 msgid "Prise"
 msgstr ""
 
-#: model_attributes.rb:18
+#: ../app/views/orders/show.slim:68 model_attributes.rb:18
 msgid "Product"
 msgstr ""
 
@@ -216,6 +288,10 @@ msgstr ""
 
 #: ../app/controllers/products_controller.rb:39
 msgid "Product was successfully updated."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.html.slim:57
+msgid "Products"
 msgstr ""
 
 #: model_attributes.rb:19
@@ -246,7 +322,7 @@ msgstr ""
 msgid "Product|Vat"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:73
+#: ../app/views/store/_products.html.haml:73 ../app/views/orders/show.slim:72
 msgid "Quantity"
 msgstr ""
 
@@ -266,7 +342,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: model_attributes.rb:26
+#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:93 model_attributes.rb:26
 msgid "Shipment"
 msgstr ""
 
@@ -280,6 +356,10 @@ msgstr ""
 
 #: ../app/controllers/shipments_controller.rb:30
 msgid "Shipment was successfully updated."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.html.slim:66
+msgid "Shipments"
 msgstr ""
 
 #: model_attributes.rb:27
@@ -298,15 +378,27 @@ msgstr ""
 msgid "Shipment|Provider"
 msgstr ""
 
+#: ../app/helpers/application_helper.rb:68
+msgid "Shipped"
+msgstr ""
+
+#: ../app/views/orders/show.slim:37
+msgid "Shipping address"
+msgstr ""
+
 #: ../app/controllers/carts_controller.rb:12
 msgid "Shopping cart"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:46
 msgid "Sign in"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5
+#: ../app/views/layouts/_navigation.html.slim:38
+msgid "Sign out"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:47
 msgid "Sign up"
 msgstr ""
 
@@ -330,8 +422,16 @@ msgstr ""
 msgid "Sort"
 msgstr ""
 
+#: ../app/views/account/_order.haml:9
+msgid "Status"
+msgstr ""
+
 #: ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/store_controller.rb:19
 msgid "Store"
+msgstr ""
+
+#: ../app/views/orders/show.slim:87
+msgid "Subtotal"
 msgstr ""
 
 #: ../app/controllers/orders_controller.rb:58
@@ -342,8 +442,20 @@ msgstr ""
 msgid "This product is out of stock"
 msgstr ""
 
+#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:74 ../app/views/orders/show.slim:99
+msgid "Total"
+msgstr ""
+
+#: ../app/views/account/_account.haml:74
+msgid "Update account"
+msgstr ""
+
 #: model_attributes.rb:31
 msgid "User"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.html.slim:60
+msgid "Users"
 msgstr ""
 
 #: model_attributes.rb:32
@@ -430,6 +542,22 @@ msgstr ""
 msgid "You are not authorized to perform this action"
 msgstr ""
 
+#: ../app/views/account/_account.haml:65
+msgid "You must enter your current password to make changes."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.html.slim:15 ../app/views/layouts/_navigation.html.slim:18
+msgid "Your Cart"
+msgstr ""
+
+#: ../app/views/account/_address.haml:62
+msgid "Your addresses list is empty"
+msgstr ""
+
 #: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38
 msgid "Your cart is empty!"
+msgstr ""
+
+#: ../app/views/account/_order.haml:50
+msgid "Your orders list is empty"
 msgstr ""

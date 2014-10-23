@@ -20,8 +20,8 @@ msgstr ""
 msgid "Store"
 msgstr "Shop"
 
-msgid "Account settings"
-msgstr "Kontoeinstellungen"
+msgid "My Account"
+msgstr "Mein Konto"
 
 msgid "Address was successfully created."
 msgstr "Adresse wurde erfolgreich erstellt."
@@ -92,29 +92,95 @@ msgstr "Versandart wurde erfolgreich aktualisiert."
 msgid "Shipment was successfully destroyed."
 msgstr "Versandart wurde erfolgreich zerstört."
 
-msgid "Recipient"
-msgstr "Empfänger"
+msgid "Accepted"
+msgstr "Angenommen"
 
-msgid "Reset password"
-msgstr "Passwort zurücksetzen"
+msgid "In progress"
+msgstr "In Bearbeitung"
+
+msgid "Shipped"
+msgstr "Versand"
+
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+msgid "Name"
+msgstr "Name"
 
 msgid "Email"
 msgstr "E-Mail"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Leave these fields blank if you don't want to change your password."
+msgstr "Lassen Sie diese Feldern leer wenn Sie das Passwort nicht ändern wollen"
+
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+msgid "You must enter your current password to make changes."
+msgstr "Bitte geben Sie Ihr aktuelles Passwort um die Änderungen zu übernehmen"
+
+msgid "Update account"
+msgstr "Konto aktualisieren"
+
+msgid "Edit"
+msgstr "Ändern"
+
+msgid "Destroy"
+msgstr "Löschen"
+
+msgid "Your addresses list is empty"
+msgstr "Ihre Adressen-Liste ist leer"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Payment type"
+msgstr "Zahlungsart"
+
+msgid "Shipment"
+msgstr "Versand"
+
+msgid "Total"
+msgstr "Gesamt"
+
+msgid "Your orders list is empty"
+msgstr "Ihre Auftragsliste ist leer"
+
+msgid "Orders"
+msgstr "Aufträge"
+
+msgid "Addresses"
+msgstr "Adressen"
+
+msgid "New Address"
+msgstr "Neue Adresse"
+
+msgid "Account"
+msgstr "Konto"
+
+msgid "Recipient"
+msgstr "Empfänger"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
 
 msgid "We'll send password reset instructions."
 msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
 
 msgid "Sign-up"
 msgstr "Registrierung"
-
-msgid "Name"
-msgstr "Name"
-
-msgid "Password"
-msgstr "Passwort"
-
-msgid "Confirm Password"
-msgstr "Passwort bestätigen"
 
 msgid "Sign up"
 msgstr "Registrieren"
@@ -143,6 +209,51 @@ msgstr "Keine Anleitung zur Bestätigung erhalten?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Keine Anleitung zum Entsperren erhalten?"
 
+msgid "Your Cart"
+msgstr "Ihr Warenkorb"
+
+msgid "Sign out"
+msgstr "Abmelden"
+
+msgid "Categories"
+msgstr "Kategorien"
+
+msgid "Products"
+msgstr "Produkte"
+
+msgid "Users"
+msgstr "Benützer"
+
+msgid "Shipments"
+msgstr "Versandarts"
+
+msgid "Carts"
+msgstr "Warenkörbe"
+
+msgid "Billing address"
+msgstr "Rechnungsadresse"
+
+msgid "Shipping address"
+msgstr "Versandadresse"
+
+msgid "Order date"
+msgstr "Auftragsdatum"
+
+msgid "Order summary"
+msgstr "Bestellübersicht"
+
+msgid "Product"
+msgstr "Produkt"
+
+msgid "Price"
+msgstr "Preis"
+
+msgid "Quantity"
+msgstr "Anzahl"
+
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
 msgid "Fee"
 msgstr "Gebühr"
 
@@ -151,12 +262,6 @@ msgstr "Ausverkauft"
 
 msgid "Add to cart"
 msgstr "in den Warenkorb"
-
-msgid "Price"
-msgstr "Preis"
-
-msgid "Quantity"
-msgstr "Anzahl"
 
 msgid "Sorry, the product was not found."
 msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
@@ -184,9 +289,6 @@ msgstr "Artikelnummer: %s"
 
 msgid "Available: %d of %d"
 msgstr "Verfügbar: %d von %d"
-
-msgid "Address"
-msgstr "Addresse"
 
 msgid "Address|City"
 msgstr "Stadt"
@@ -233,9 +335,6 @@ msgstr "Zahlungsart"
 msgid "Order|Status"
 msgstr "Status"
 
-msgid "Product"
-msgstr "Produkt"
-
 msgid "Product|Description"
 msgstr "Beschreibung"
 
@@ -256,9 +355,6 @@ msgstr "Anzahl"
 
 msgid "Product|Vat"
 msgstr "MwSt"
-
-msgid "Shipment"
-msgstr "Versand"
 
 msgid "Shipment|Default"
 msgstr "Standard"

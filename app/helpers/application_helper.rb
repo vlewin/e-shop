@@ -47,14 +47,34 @@ module ApplicationHelper
   end
 
   def order_status(status)
-    labels = { accepted: 'label-default', in_progress: 'label-default', shipped: 'label-primary', completed: 'label-success'}
-    icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
-    content_tag(:span, nil, class: "label #{labels[status.to_sym]}") do
+    status = status.to_sym
+    labels = {
+      accepted: 'label-default',
+      in_progress: 'label-default',
+      shipped: 'label-primary',
+      completed: 'label-success'
+    }
+
+    icons = {
+      accepted: 'fa-archive',
+      in_progress: 'fa-clock-o',
+      shipped: 'fa-truck',
+      completed: 'fa-check-circle'
+    }
+
+    texts = {
+      accepted: _('Accepted'),
+      in_progress: _('In progress'),
+      shipped: _('Shipped'),
+      completed: _('Completed')
+    }
+
+    content_tag(:span, nil, class: "label #{labels[status]}") do
       concat(
-        content_tag(:i, nil, class: "fa #{icons[status.to_sym]}")
+        content_tag(:i, nil, class: "fa #{icons[status]}")
       )
 
-      concat ' ' + status.humanize
+      concat ' ' + texts[status]
     end
   end
 

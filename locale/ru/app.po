@@ -21,7 +21,7 @@ msgstr ""
 msgid "Store"
 msgstr ""
 
-msgid "Account settings"
+msgid "My Account"
 msgstr ""
 
 msgid "Address was successfully created."
@@ -93,28 +93,94 @@ msgstr ""
 msgid "Shipment was successfully destroyed."
 msgstr ""
 
-msgid "Recipient"
+msgid "Accepted"
 msgstr ""
 
-msgid "Reset password"
+msgid "In progress"
+msgstr ""
+
+msgid "Shipped"
+msgstr ""
+
+msgid "Completed"
+msgstr ""
+
+msgid "Name"
 msgstr ""
 
 msgid "Email"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Leave these fields blank if you don't want to change your password."
+msgstr ""
+
+msgid "Confirm Password"
+msgstr ""
+
+msgid "Current password"
+msgstr ""
+
+msgid "You must enter your current password to make changes."
+msgstr ""
+
+msgid "Update account"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Destroy"
+msgstr ""
+
+msgid "Your addresses list is empty"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Payment type"
+msgstr ""
+
+msgid "Shipment"
+msgstr ""
+
+msgid "Total"
+msgstr ""
+
+msgid "Your orders list is empty"
+msgstr ""
+
+msgid "Orders"
+msgstr ""
+
+msgid "Addresses"
+msgstr ""
+
+msgid "New Address"
+msgstr ""
+
+msgid "Account"
+msgstr ""
+
+msgid "Recipient"
+msgstr ""
+
+msgid "Address"
+msgstr ""
+
+msgid "Reset password"
 msgstr ""
 
 msgid "We'll send password reset instructions."
 msgstr ""
 
 msgid "Sign-up"
-msgstr ""
-
-msgid "Name"
-msgstr ""
-
-msgid "Password"
-msgstr ""
-
-msgid "Confirm Password"
 msgstr ""
 
 msgid "Sign up"
@@ -144,6 +210,51 @@ msgstr ""
 msgid "Didn't receive unlock instructions?"
 msgstr ""
 
+msgid "Your Cart"
+msgstr ""
+
+msgid "Sign out"
+msgstr ""
+
+msgid "Categories"
+msgstr ""
+
+msgid "Products"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "Shipments"
+msgstr ""
+
+msgid "Carts"
+msgstr ""
+
+msgid "Billing address"
+msgstr ""
+
+msgid "Shipping address"
+msgstr ""
+
+msgid "Order date"
+msgstr ""
+
+msgid "Order summary"
+msgstr ""
+
+msgid "Product"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Quantity"
+msgstr ""
+
+msgid "Subtotal"
+msgstr ""
+
 msgid "Fee"
 msgstr ""
 
@@ -151,12 +262,6 @@ msgid "Out of stock"
 msgstr ""
 
 msgid "Add to cart"
-msgstr ""
-
-msgid "Price"
-msgstr ""
-
-msgid "Quantity"
 msgstr ""
 
 msgid "Sorry, the product was not found."
@@ -184,9 +289,6 @@ msgid "EAN: %s"
 msgstr ""
 
 msgid "Available: %d of %d"
-msgstr ""
-
-msgid "Address"
 msgstr ""
 
 msgid "Address|City"
@@ -234,9 +336,6 @@ msgstr ""
 msgid "Order|Status"
 msgstr ""
 
-msgid "Product"
-msgstr ""
-
 msgid "Product|Description"
 msgstr ""
 
@@ -256,9 +355,6 @@ msgid "Product|Quantity"
 msgstr ""
 
 msgid "Product|Vat"
-msgstr ""
-
-msgid "Shipment"
 msgstr ""
 
 msgid "Shipment|Default"

@@ -11,9 +11,9 @@ class CartPolicy < ApplicationPolicy
     @user.admin?
   end
 
-  def destroy?
-    @user.admin?
-  end
+  # def destroy?
+  #   @user.admin?
+  # end
 
   class Scope < Struct.new(:user, :scope)
     def resolve
