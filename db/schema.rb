@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20140423194045) do
   create_table "shipments", force: true do |t|
     t.string   "provider"
     t.string   "name"
-    t.decimal  "rate"
+    t.decimal  "fee"
     t.boolean  "default",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"

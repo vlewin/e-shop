@@ -39,7 +39,7 @@ admin_user.admin!
 end
 
 # Shipments
-Shipment.create(provider: 'DHL', name: 'Paket',    rate: 6.99, default:true) unless Shipment.find_by_name('Paket')
+Shipment.create(provider: 'OH', name: 'Home Delivery', fee: 0.00, default: true) unless Shipment.find_by_name('Home Delivery')
 
 # Orders
 order = user.orders.create({
