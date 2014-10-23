@@ -20,7 +20,7 @@ class AddressesController < ApplicationController
     @address.user_id = current_user.id
 
     if @address.save
-      flash[:notice] = 'Address was successfully created.'
+      flash[:notice] = _('Address was successfully created.')
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
     end
@@ -30,7 +30,7 @@ class AddressesController < ApplicationController
 
   def update
     if @address.update(address_params)
-      flash[:notice] = 'Address was successfully updated.'
+      flash[:notice] = _('Address was successfully updated.')
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
     end
@@ -40,7 +40,7 @@ class AddressesController < ApplicationController
 
   def destroy
     if @address.destroy
-      flash[:notice] = 'Address was successfully destroyed.'
+      flash[:notice] = _('Address was successfully destroyed.')
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
     end

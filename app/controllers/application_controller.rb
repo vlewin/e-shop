@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
 
   private
   def check_product_availability
-    redirect_to(root_path, alert: 'This product is out of stock') if @product.out_of_stock?
+    redirect_to(root_path, alert: _('This product is out of stock')) if @product.out_of_stock?
   end
 
   def not_found
@@ -43,11 +43,10 @@ class ApplicationController < ActionController::Base
   def handle_exceptions(exception)
     case exception
     when Pundit::NotAuthorizedError
-      flash[:error] = t('authorization.not_authorized')
+      flash[:error] = _('You are not authorized to perform this action')
       redirect_to(request.referrer || root_path)
     when Pundit::AuthorizationNotPerformedError
-      flash[:error] = t('authorization.not_authorized')
-      # redirect_to(request.referrer || root_path) and return
+      flash[:error] = _('You are not authorized to perform this action')
     when ActionView::MissingTemplate
       not_found and return
     when ActiveRecord::RecordNotFound

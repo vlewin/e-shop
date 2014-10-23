@@ -8,11 +8,11 @@ class CartsController < ApplicationController
   end
 
   def show
-    add_breadcrumb 'Home', :root_path
-    add_breadcrumb 'Shopping cart', cart_path(@current_cart)
+    add_breadcrumb _('Store'), :root_path
+    add_breadcrumb _('Shopping cart'), cart_path(@current_cart)
 
     if @current_cart.empty?
-      flash.notice = "Your cart is empty!"
+      flash.notice = _('Your cart is empty!')
       redirect_to root_path
     end
   end
@@ -26,13 +26,11 @@ class CartsController < ApplicationController
     else
       if quantity <= line_item.max_quantity
         line_item.update_attribute(:quantity, params[:quantity])
-      else
-        puts "*** No more products available #{quantity} => #{line_item.product.available_quantity}"
       end
     end
 
     if @current_cart.empty?
-      flash.notice = "Your cart is empty!"
+      flash.notice = _('Your cart is empty!')
       redirect_to root_path
     else
       redirect_to cart_path
@@ -44,9 +42,9 @@ class CartsController < ApplicationController
     authorize @cart
 
     if @cart.destroy
-      flash.notice = 'Cart was successfully destroyed.'
+      flash.notice = _('Cart was successfully destroyed.')
     else
-      flash.error = "We were unable to destroy the cart #{cart.id}"
+      flash.error = _("We were unable to destroy the cart #{cart.id}")
     end
 
     redirect_to_back_or_default root_path

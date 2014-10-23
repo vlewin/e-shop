@@ -12,9 +12,9 @@ class OrdersController < ApplicationController
     # FIXME: add permission check test!
     authorize @order
 
-    add_breadcrumb 'Home', :root_path
-    add_breadcrumb 'Account settings', account_url
-    add_breadcrumb "Order ##{@order.id}", order_url(@order)
+    add_breadcrumb _('Store'), :root_path
+    add_breadcrumb _('Account settings'), account_url
+    add_breadcrumb _("Order ##{@order.id}"), order_url(@order)
 
     respond_to do |format|
       format.html
@@ -27,15 +27,15 @@ class OrdersController < ApplicationController
   end
 
   def new
-    add_breadcrumb 'Home', :root_path
-    add_breadcrumb 'Checkout', new_order_path
+    add_breadcrumb _('Store'), :root_path
+    add_breadcrumb _('Checkout'), new_order_path
 
     @cart = current_cart
     @shipments = Shipment.all
     @address = Address.new
 
     if @cart.line_items.empty?
-      redirect_to root_path, notice: "Your cart is empty"
+      redirect_to root_path, notice: _('Your cart is empty!')
       return
     else
       @order = Order.new
@@ -55,7 +55,7 @@ class OrdersController < ApplicationController
         # FIXME: Send notification email
         # OrderNotifier.received(@order).deliver
 
-        format.html { redirect_to root_path, notice: I18n.t('.thanks') }
+        format.html { redirect_to root_path, notice: _('Thank you for your order!') }
       else
         format.html { render action: 'new' }
       end
@@ -66,10 +66,10 @@ class OrdersController < ApplicationController
   def update_status
     prev_status = @order.status
     if @order.update(order_params)
-      notice = "Order status changed from '#{prev_status.humanize}' to '#{order_params[:status].humanize}'"
+      notice = "Order status changed from '%s' to '%s'" % [prev_status.humanize, order_params[:status].humanize]
       redirect_to orders_path, notice: notice
     else
-      redirect_to orders_path, error: 'Can not change order status'
+      redirect_to orders_path, error: _('Can not change order status')
     end
 
   end

@@ -16,7 +16,7 @@ class StoreController < ApplicationController
   end
 
   def show
-    add_breadcrumb 'Home', :root_path
+    add_breadcrumb _('Store'), :root_path
     add_breadcrumb @product.name, store_product_url(@product)
   end
 

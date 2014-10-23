@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.save
-      redirect_to products_url, notice: 'Product was successfully created.'
+      redirect_to products_url, notice: _('Product was successfully created.')
     else
       render action: 'new'
     end
@@ -36,7 +36,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.update!(product_params)
-      redirect_to products_url, notice: 'Product was successfully updated.'
+      redirect_to products_url, notice: _('Product was successfully updated.')
     else
       render action: 'edit'
     end
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.destroy
-      redirect_to products_url, notice: 'Product was successfully destroyed.'
+      redirect_to products_url, notice: _('Product was successfully destroyed.')
     else
       redirect_to products_url, alert: "#{@product.errors.full_messages.join(', ')}"
     end

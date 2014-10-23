@@ -5,7 +5,7 @@ class AccountController < Devise::RegistrationsController
   after_action :verify_authorized, only: [:show]
 
   def authenticate_user!
-    redirect_to new_user_session_path, alert: t('devise.failure.unauthenticated') if current_user.nil?
+    redirect_to new_user_session_path, alert: _('You need to sign in or sign up before continuing.') if current_user.nil?
   end
 
   def update
@@ -38,8 +38,8 @@ class AccountController < Devise::RegistrationsController
   end
 
   def show
-    add_breadcrumb "Home", :root_path
-    add_breadcrumb 'Account settings', account_url
+    add_breadcrumb _('Store'), :root_path
+    add_breadcrumb _('Account settings'), account_url
 
     @user = current_user
     authorize @user
