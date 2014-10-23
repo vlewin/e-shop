@@ -14,7 +14,7 @@
             = f.label _('Password')
             - if devise_mapping.recoverable?
               %small
-                = link_to "(#{t('authentication.reset_password')})", new_password_path(resource_name), class: 'pill-right'
+                = link_to "(#{_('Reset password')})", new_password_path(resource_name), class: 'pill-right'
             = f.password_field :password, class: 'form-control'
 
             - if devise_mapping.rememberable?
