@@ -12,14 +12,9 @@
           .row
             .col-md-12
               .form-group
-                = f.label :first_name, class: 'col-sm-2 control-label'
+                = f.label :recipient, class: 'col-sm-2 control-label'
                 .col-sm-4
-                  = f.text_field :first_name, placeholder: 'First name', required: true, class: 'form-control'
-
-              .form-group
-                = f.label :last_name, class: 'col-sm-2 control-label'
-                .col-sm-4
-                  = f.text_field :last_name, placeholder: 'Last name', required: true, class: 'form-control'
+                  = f.text_field :recipient, placeholder: 'Recipient', required: true, class: 'form-control'
 
               .form-group
                 = f.label :city, class: 'col-sm-2 control-label'
@@ -32,9 +27,9 @@
                   = f.text_field :street, placeholder: 'Street', required: true, class: 'form-control'
 
               .form-group
-                = f.label :zip, class: 'col-sm-2 control-label'
+                = f.label :zip_code, class: 'col-sm-2 control-label'
                 .col-sm-4
-                  = f.text_field :zip, placeholder: '98765', required: true, class: 'form-control'
+                  = f.text_field :zip_code, placeholder: '98765', required: true, class: 'form-control'
 
               .form-group
                 = f.label :phone, class: 'col-sm-2 control-label'

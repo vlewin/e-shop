@@ -31,20 +31,20 @@ class OrderPdf < Prawn::Document
     end
 
     bounding_box([bounds.left, bounds.top-70], width: 250) do
-      text @order.billing_address.full_name, size: 12, style: :bold
+      text @order.billing_address.recipient, size: 12, style: :bold
       move_down 0
       text "#{@order.billing_address.street}
-            #{@order.billing_address.zip} #{@order.billing_address.city}", size: 10
+            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
     end
 
     bounding_box([bounds.left + 280, bounds.top], width: 260) do
       move_down 0
       text "Shipping to:", style: :bold
-      text "#{@order.address.full_address}", size: 10
+      text "#{@order.address.recipient}", size: 10
 
       move_down 10
       text "Billing to:", style: :bold
-      text "#{@order.address.full_address}", size: 10
+      text "#{@order.address.recipient}", size: 10
     end
   end
 

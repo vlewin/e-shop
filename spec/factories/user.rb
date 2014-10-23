@@ -1,7 +1,7 @@
 FactoryGirl.define do
-  factory :user, :class => User do
-    sequence(:name)  { |n| "Customer#{n}" }
-    sequence(:email)  { |n| "email#{n}@factory.com" }
+  factory :user, class: User do
+    sequence(:name)   { |n| "Customer#{n}" }
+    sequence(:email)  { |n| "email#{n}@example.com" }
     password               'password'
     password_confirmation  'password'
 
@@ -15,7 +15,7 @@ FactoryGirl.define do
 
     factory :admin do
       name      'E-Shop Admin'
-      email     'admin@factory.com'
+      email     'admin@example.com'
 
       after :build do |user|
         user.admin!

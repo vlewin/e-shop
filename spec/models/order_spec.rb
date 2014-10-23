@@ -14,7 +14,7 @@ describe Order do
   it { should validate_presence_of :shipment_id }
   it { should validate_presence_of :pay_type }
 
-  it {should ensure_inclusion_of(:pay_type).in_array(Order::PAYMENT_TYPES) }
+  it {should validate_inclusion_of(:pay_type).in_array(Order::PAYMENT_TYPES) }
 
   context 'order without line items' do
     subject { order = Order.new }
@@ -45,7 +45,7 @@ describe Order do
     end
 
     it 'calculates a total with taxes and shipment' do
-      total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.rate
+      total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.fee
       expect(subject.total).to eq(total)
     end
 

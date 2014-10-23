@@ -1,14 +1,10 @@
 class Address < ActiveRecord::Base
   belongs_to :user
 
-  validates :first_name, :last_name, :city, :street, :zip, :phone, :user_id,  presence: true
-
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+  validates :recipient, :city, :street, :zip_code, :phone, :user_id,  presence: true
 
   def full_address
-    "#{first_name} #{last_name}, #{street}, #{zip} #{city}"
+    "#{recipient}, #{street}, #{zip_code} #{city}"
   end
 end
 

@@ -26,21 +26,21 @@
               address
                 strong Billed To:
                 br
-                  = @order.billing_address.full_name
+                  = @order.billing_address.recipient
                   br
                     = "#{@order.billing_address.street}"
                     br
-                      = "#{@order.billing_address.zip} #{@order.billing_address.city}"
+                      = "#{@order.billing_address.zip_code} #{@order.billing_address.city}"
 
             .col-xs-6.text-right
               address
                 strong Shipped To:
                 br
-                  = @order.address.full_name
+                  = @order.address.recipient
                   br
                     = "#{@order.address.street}"
                     br
-                      = "#{@order.address.zip} #{@order.address.city}"
+                      = "#{@order.address.zip_code} #{@order.address.city}"
           .row
             .col-xs-6
               address

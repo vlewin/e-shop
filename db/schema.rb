@@ -14,11 +14,10 @@
 ActiveRecord::Schema.define(version: 20140423194045) do
 
   create_table "addresses", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "recipient"
     t.string   "city"
     t.string   "street"
-    t.string   "zip"
+    t.string   "zip_code"
     t.string   "phone"
     t.integer  "user_id"
     t.datetime "created_at"

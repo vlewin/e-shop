@@ -5,19 +5,14 @@ describe Address do
 
   it { should belong_to :user }
 
-  it { should validate_presence_of :first_name }
-  it { should validate_presence_of :last_name }
+  it { should validate_presence_of :recipient }
   it { should validate_presence_of :city }
   it { should validate_presence_of :street }
-  it { should validate_presence_of :zip }
+  it { should validate_presence_of :zip_code }
   it { should validate_presence_of :phone }
   it { should validate_presence_of :user_id }
 
-  it 'returns a full username' do
-    expect(subject.full_name).to eq("#{subject.first_name} #{subject.last_name}")
-  end
-
   it 'returns a post address' do
-    expect(subject.full_address).to eq("#{subject.full_name}, #{subject.street}, #{subject.zip} #{subject.city}")
+    expect(subject.full_address).to eq("#{subject.recipient}, #{subject.street}, #{subject.zip_code} #{subject.city}")
   end
 end
