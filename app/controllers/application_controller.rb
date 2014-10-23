@@ -1,8 +1,10 @@
 class ApplicationController < ActionController::Base
+  include FastGettext::Translation
   include Pundit
+
   protect_from_forgery with: :exception
 
-  before_filter :authenticate_user!, :set_locale, :current_cart
+  before_filter :set_gettext_locale, :authenticate_user!, :current_cart
   helper_method :current_view, :current_cart
 
   rescue_from Exception, with: :handle_exceptions
@@ -19,11 +21,6 @@ class ApplicationController < ActionController::Base
     @current_cart = Cart.create
     session[:cart_id] = @current_cart.id
     @current_cart
-  end
-
-  def set_locale
-    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
-    @current_locale ||= session[:locale] = I18n.locale
   end
 
   def redirect_to_back_or_default(default = root_url)
