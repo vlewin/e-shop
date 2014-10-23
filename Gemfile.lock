@@ -69,9 +69,15 @@ GEM
     factory_girl_rails (4.4.1)
       factory_girl (~> 4.4.0)
       railties (>= 3.0.0)
+    fast_gettext (0.9.0)
     ffaker (1.24.0)
     font-awesome-less (4.1.0)
       less (~> 2.4.0)
+    gettext (3.1.4)
+      locale (>= 2.0.5)
+      text
+    gettext_i18n_rails (1.1.0)
+      fast_gettext (>= 0.9.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -110,6 +116,7 @@ GEM
     less-rails-bootstrap (3.1.1.0)
       less-rails (~> 2.4.2)
     libv8 (3.16.14.3)
+    locale (2.1.0)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
     mime-types (2.4.1)
@@ -167,7 +174,7 @@ GEM
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
-    rmagick (2.13.2)
+    rmagick (2.13.3)
     rspec-core (3.0.4)
       rspec-support (~> 3.0.0)
     rspec-expectations (3.0.4)
@@ -184,7 +191,10 @@ GEM
       rspec-mocks (~> 3.0.0)
       rspec-support (~> 3.0.0)
     rspec-support (3.0.4)
+    ruby_parser (3.6.3)
+      sexp_processor (~> 4.1)
     rubyzip (1.1.4)
+    sexp_processor (4.4.4)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -213,6 +223,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
     sqlite3 (1.3.9)
     temple (0.6.7)
+    text (1.3.0)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -242,8 +253,11 @@ DEPENDENCIES
   devise
   devise-i18n
   factory_girl_rails
+  fast_gettext
   ffaker
   font-awesome-less
+  gettext
+  gettext_i18n_rails
   haml-rails
   heroku
   jquery-rails
@@ -264,6 +278,7 @@ DEPENDENCIES
   ransack
   rmagick
   rspec-rails (~> 3.0.1)
+  ruby_parser
   shoulda
   slim-rails
   spring-commands-rspec

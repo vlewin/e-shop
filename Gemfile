@@ -2,8 +2,12 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '~> 4.1.6'
+
+# App localization
 gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
+gem 'fast_gettext'
+gem 'gettext_i18n_rails'
 
 gem 'puma'
 gem 'pundit'
@@ -38,20 +42,23 @@ gem 'ffaker'
 group :development, :test do
   gem 'sqlite3'
   gem 'factory_girl_rails'
-
-  gem 'rspec-rails', '~> 3.0.1'
-  gem 'spring-commands-rspec'
   gem 'awesome_print'
   gem 'byebug'
 end
 
 group :development do
-  gem 'heroku'
   gem 'better_errors'
   gem 'quiet_assets'
+
+  gem 'spring-commands-rspec', require: false
+  gem 'heroku', require: false
+
+  gem 'gettext', require: false
+  gem 'ruby_parser', require: false
 end
 
 group :test do
+  gem 'rspec-rails', '~> 3.0.1'
   gem 'database_cleaner'
   gem 'shoulda'
   gem 'launchy'
