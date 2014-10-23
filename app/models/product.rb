@@ -13,9 +13,8 @@ class Product < ActiveRecord::Base
   validates :name, length: { minimum: 4 }
 
   def decrease_quantity(amount=1)
-    return unless self.quantity.zero? || (self.quantity-amount) < 0
-
-    self.update_attribute(:quantity, (self.quantity-amount))
+    amount = ((quantity-amount) < 0) ? 0 : quantity-amount
+    self.update_attribute(:quantity, amount)
   end
 
   def available_quantity
