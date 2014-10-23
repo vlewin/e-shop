@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-23 23:17+0200\n"
-"PO-Revision-Date: 2014-10-23 23:17+0200\n"
+"POT-Creation-Date: 2014-10-23 23:44+0200\n"
+"PO-Revision-Date: 2014-10-23 23:44+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -92,6 +92,10 @@ msgstr ""
 
 #: ../app/controllers/orders_controller.rb:72
 msgid "Can not change order status"
+msgstr ""
+
+#: ../app/views/addresses/_modal.haml:90
+msgid "Cancel"
 msgstr ""
 
 #: ../app/controllers/carts_controller.rb:44
@@ -266,7 +270,7 @@ msgstr ""
 msgid "Payment type"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:71 ../app/views/orders/show.slim:70
+#: ../app/views/store/_products.html.haml:71 ../app/views/orders/show.slim:71
 msgid "Price"
 msgstr ""
 
@@ -274,7 +278,7 @@ msgstr ""
 msgid "Prise"
 msgstr ""
 
-#: ../app/views/orders/show.slim:68 model_attributes.rb:18
+#: ../app/views/orders/show.slim:69 model_attributes.rb:18
 msgid "Product"
 msgstr ""
 
@@ -322,7 +326,7 @@ msgstr ""
 msgid "Product|Vat"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:73 ../app/views/orders/show.slim:72
+#: ../app/views/store/_products.html.haml:73 ../app/views/orders/show.slim:73
 msgid "Quantity"
 msgstr ""
 
@@ -338,11 +342,15 @@ msgstr ""
 msgid "Reset password"
 msgstr ""
 
+#: ../app/views/addresses/_modal.haml:88
+msgid "Save changes"
+msgstr ""
+
 #: ../app/views/store/index.haml:30
 msgid "Search"
 msgstr ""
 
-#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:93 model_attributes.rb:26
+#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:91 model_attributes.rb:26
 msgid "Shipment"
 msgstr ""
 
@@ -442,7 +450,7 @@ msgstr ""
 msgid "This product is out of stock"
 msgstr ""
 
-#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:74 ../app/views/orders/show.slim:99
+#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:75 ../app/views/orders/show.slim:95
 msgid "Total"
 msgstr ""
 

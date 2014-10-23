@@ -189,11 +189,11 @@ msgstr "Datum"
 msgid "Payment type"
 msgstr "Zahlungsart"
 
-#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:93 model_attributes.rb:26
+#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:91 model_attributes.rb:26
 msgid "Shipment"
 msgstr "Versand"
 
-#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:74 ../app/views/orders/show.slim:99
+#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:75 ../app/views/orders/show.slim:95
 msgid "Total"
 msgstr "Gesamt"
 
@@ -224,6 +224,14 @@ msgstr "Empfänger"
 #: ../app/views/addresses/_modal.haml:11 model_attributes.rb:2
 msgid "Address"
 msgstr "Adresse"
+
+#: ../app/views/addresses/_modal.haml:88
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: ../app/views/addresses/_modal.haml:90
+msgid "Cancel"
+msgstr "Abbrechen"
 
 #: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
 msgid "Reset password"
@@ -317,15 +325,15 @@ msgstr "Auftragsdatum"
 msgid "Order summary"
 msgstr "Bestellübersicht"
 
-#: ../app/views/orders/show.slim:68 model_attributes.rb:18
+#: ../app/views/orders/show.slim:69 model_attributes.rb:18
 msgid "Product"
 msgstr "Produkt"
 
-#: ../app/views/orders/show.slim:70 ../app/views/store/_products.html.haml:71
+#: ../app/views/orders/show.slim:71 ../app/views/store/_products.html.haml:71
 msgid "Price"
 msgstr "Preis"
 
-#: ../app/views/orders/show.slim:72 ../app/views/store/_products.html.haml:73
+#: ../app/views/orders/show.slim:73 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
 msgstr "Anzahl"
 

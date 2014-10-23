@@ -173,6 +173,12 @@ msgstr "Empfänger"
 msgid "Address"
 msgstr "Adresse"
 
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
