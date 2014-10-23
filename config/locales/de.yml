@@ -15,6 +15,13 @@ de:
         delimiter:      "."
         format:         "%n %u"
 
+  # FIXME: Report an issue for devise-i18n gem
+  devise:
+    account:
+      user:
+        signed_up_but_unconfirmed: "Sie haben sich erfolgreich registriert. Wir konnten Sie noch nicht anmelden, da Ihr Account noch nicht bestätigt ist. Sie erhalten in Kürze eine E-Mail mit der Anleitung, wie Sie Ihren Account freischalten können."
+
+
   authentication:
     sign_in:                  "Anmelden"
     sign_up:                  "Registrieren"
