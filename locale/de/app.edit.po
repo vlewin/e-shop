@@ -53,11 +53,11 @@ msgstr "Warenkorb"
 msgid "Your cart is empty!"
 msgstr "Ihr Warenkorb ist leer!"
 
-#: ../app/controllers/carts_controller.rb:45
+#: ../app/controllers/carts_controller.rb:44
 msgid "Cart was successfully destroyed."
 msgstr "Warenkorb wurde erfolgreich zerstört."
 
-#: ../app/controllers/carts_controller.rb:47
+#: ../app/controllers/carts_controller.rb:46
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
 
@@ -77,9 +77,9 @@ msgstr "Kategorie wurde erfolgreich zerstört."
 msgid "%s x %s added to your cart!"
 msgstr "%s x %s in den Warenkorb gelegt!"
 
-#: ../app/controllers/orders_controller.rb:17
-msgid "\"Order ##{@order.id}\""
-msgstr ""
+#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.slim:19
+msgid "Order #%d"
+msgstr "Auftrag #%d"
 
 #: ../app/controllers/orders_controller.rb:31
 msgid "Checkout"
@@ -137,7 +137,7 @@ msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
 msgid "Sign-up"
 msgstr "Registrierung"
 
-#: ../app/views/devise/registrations/new.haml:20
+#: ../app/views/devise/registrations/new.haml:20 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
 msgid "Name"
 msgstr "Name"
 
@@ -179,15 +179,67 @@ msgstr "Passwort vergessen?"
 
 #: ../app/views/devise/shared/_links.html.slim:11
 msgid "Didn't receive confirmation instructions?"
-msgstr ""
+msgstr "Keine Anleitung zur Bestätigung erhalten?"
 
 #: ../app/views/devise/shared/_links.html.slim:14
 msgid "Didn't receive unlock instructions?"
-msgstr ""
+msgstr "Keine Anleitung zum Entsperren erhalten?"
 
 #: ../app/views/shipments/show.haml:26
 msgid "Fee"
 msgstr "Gebühr"
+
+#: ../app/views/store/_products.html.haml:15
+msgid "Out of stock"
+msgstr "Ausverkauft"
+
+#: ../app/views/store/_products.html.haml:53 ../app/views/store/show.html.haml:56
+msgid "Add to cart"
+msgstr "in den Warenkorb"
+
+#: ../app/views/store/_products.html.haml:71
+msgid "Price"
+msgstr "Preis"
+
+#: ../app/views/store/_products.html.haml:73
+msgid "Quantity"
+msgstr "Anzahl"
+
+#: ../app/views/store/_products.html.haml:117
+msgid "Sorry, the product was not found."
+msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
+
+#: ../app/views/store/index.haml:3
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+#: ../app/views/store/index.haml:30
+msgid "Search"
+msgstr "Suche"
+
+#: ../app/views/store/index.haml:42
+msgid "Sort"
+msgstr "Sortierung"
+
+#: ../app/views/store/index.haml:57
+msgid "Prise"
+msgstr "Preis"
+
+#: ../app/views/store/index.haml:63
+msgid "Created at"
+msgstr "Erstellt am"
+
+#: ../app/views/store/index.haml:71
+msgid "View"
+msgstr "Ansicht"
+
+#: ../app/views/store/show.html.haml:37
+msgid "EAN: %s"
+msgstr "Artikelnummer: %s"
+
+#: ../app/views/store/show.html.haml:39
+msgid "Available: %d of %d"
+msgstr "Verfügbar: %d von %d"
 
 #: model_attributes.rb:2
 msgid "Address"
@@ -319,7 +371,7 @@ msgstr "Bestätigungscode"
 
 #: model_attributes.rb:34
 msgid "User|Confirmed at"
-msgstr ""
+msgstr "bestätigt_at"
 
 #: model_attributes.rb:35
 msgid "User|Current sign in at"
@@ -367,7 +419,7 @@ msgstr ""
 
 #: model_attributes.rb:46
 msgid "User|Role"
-msgstr ""
+msgstr "Role"
 
 #: model_attributes.rb:47
 msgid "User|Sign in count"

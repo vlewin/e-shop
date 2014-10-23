@@ -62,8 +62,8 @@ msgstr "Kategorie wurde erfolgreich zerstört."
 msgid "%s x %s added to your cart!"
 msgstr "%s x %s in den Warenkorb gelegt!"
 
-msgid "\"Order ##{@order.id}\""
-msgstr ""
+msgid "Order #%d"
+msgstr "Auftrag #%d"
 
 msgid "Checkout"
 msgstr "zur Kasse"
@@ -138,13 +138,52 @@ msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
 msgid "Didn't receive confirmation instructions?"
-msgstr ""
+msgstr "Keine Anleitung zur Bestätigung erhalten?"
 
 msgid "Didn't receive unlock instructions?"
-msgstr ""
+msgstr "Keine Anleitung zum Entsperren erhalten?"
 
 msgid "Fee"
 msgstr "Gebühr"
+
+msgid "Out of stock"
+msgstr "Ausverkauft"
+
+msgid "Add to cart"
+msgstr "in den Warenkorb"
+
+msgid "Price"
+msgstr "Preis"
+
+msgid "Quantity"
+msgstr "Anzahl"
+
+msgid "Sorry, the product was not found."
+msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
+
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+msgid "Search"
+msgstr "Suche"
+
+msgid "Sort"
+msgstr "Sortierung"
+
+msgid "Prise"
+msgstr "Preis"
+
+msgid "Created at"
+msgstr "Erstellt am"
+
+msgid "View"
+msgstr "Ansicht"
+
+msgid "EAN: %s"
+msgstr "Artikelnummer: %s"
+
+msgid "Available: %d of %d"
+msgstr "Verfügbar: %d von %d"
 
 msgid "Address"
 msgstr "Addresse"
@@ -243,7 +282,7 @@ msgid "User|Confirmation token"
 msgstr "Bestätigungscode"
 
 msgid "User|Confirmed at"
-msgstr ""
+msgstr "bestätigt_at"
 
 msgid "User|Current sign in at"
 msgstr ""
@@ -279,7 +318,7 @@ msgid "User|Reset password token"
 msgstr ""
 
 msgid "User|Role"
-msgstr ""
+msgstr "Role"
 
 msgid "User|Sign in count"
 msgstr ""

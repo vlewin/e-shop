@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-23 17:04+0200\n"
-"PO-Revision-Date: 2014-10-23 17:04+0200\n"
+"POT-Creation-Date: 2014-10-23 22:04+0200\n"
+"PO-Revision-Date: 2014-10-23 22:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,16 +18,16 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../app/controllers/orders_controller.rb:17
-msgid "\"Order ##{@order.id}\""
-msgstr ""
-
 #: ../app/controllers/line_items_controller.rb:14
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:16 ../app/controllers/account_controller.rb:44
+#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16
 msgid "Account settings"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:53 ../app/views/store/show.html.haml:56
+msgid "Add to cart"
 msgstr ""
 
 #: model_attributes.rb:2
@@ -66,15 +66,23 @@ msgstr ""
 msgid "Address|Zip code"
 msgstr ""
 
+#: ../app/views/store/index.haml:3
+msgid "All categories"
+msgstr ""
+
 #: ../app/views/devise/registrations/new.haml:53
 msgid "Already have an account?"
+msgstr ""
+
+#: ../app/views/store/show.html.haml:39
+msgid "Available: %d of %d"
 msgstr ""
 
 #: ../app/controllers/orders_controller.rb:72
 msgid "Can not change order status"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:45
+#: ../app/controllers/carts_controller.rb:44
 msgid "Cart was successfully destroyed."
 msgstr ""
 
@@ -114,6 +122,10 @@ msgstr ""
 msgid "Confirm Password"
 msgstr ""
 
+#: ../app/views/store/index.haml:63
+msgid "Created at"
+msgstr ""
+
 #: ../app/views/devise/shared/_links.html.slim:11
 msgid "Didn't receive confirmation instructions?"
 msgstr ""
@@ -126,7 +138,11 @@ msgstr ""
 msgid "Don't have an account?"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/passwords/new.haml:19
+#: ../app/views/store/show.html.haml:37
+msgid "EAN: %s"
+msgstr ""
+
+#: ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
 msgid "Email"
 msgstr ""
 
@@ -150,12 +166,16 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:20
+#: ../app/views/devise/registrations/new.haml:20 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
 msgid "Name"
 msgstr ""
 
 #: model_attributes.rb:15
 msgid "Order"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.slim:19
+msgid "Order #%d"
 msgstr ""
 
 #: model_attributes.rb:16
@@ -166,8 +186,20 @@ msgstr ""
 msgid "Order|Status"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:27 ../app/views/devise/registrations/new.haml:34
+#: ../app/views/store/_products.html.haml:15
+msgid "Out of stock"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
 msgid "Password"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:71
+msgid "Price"
+msgstr ""
+
+#: ../app/views/store/index.haml:57
+msgid "Prise"
 msgstr ""
 
 #: model_attributes.rb:18
@@ -214,6 +246,10 @@ msgstr ""
 msgid "Product|Vat"
 msgstr ""
 
+#: ../app/views/store/_products.html.haml:73
+msgid "Quantity"
+msgstr ""
+
 #: ../app/views/addresses/_form.haml:24
 msgid "Recipient"
 msgstr ""
@@ -222,8 +258,12 @@ msgstr ""
 msgid "Remember me"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:32 ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
+#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
 msgid "Reset password"
+msgstr ""
+
+#: ../app/views/store/index.haml:30
+msgid "Search"
 msgstr ""
 
 #: model_attributes.rb:26
@@ -262,11 +302,11 @@ msgstr ""
 msgid "Shopping cart"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:57 ../app/views/devise/shared/_links.html.slim:2
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:47 ../app/views/devise/shared/_links.html.slim:5
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
 msgstr ""
 
@@ -278,11 +318,19 @@ msgstr ""
 msgid "Sign-up"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:47
+#: ../app/controllers/carts_controller.rb:46
 msgid "Something went wrong"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/store_controller.rb:19
+#: ../app/views/store/_products.html.haml:117
+msgid "Sorry, the product was not found."
+msgstr ""
+
+#: ../app/views/store/index.haml:42
+msgid "Sort"
+msgstr ""
+
+#: ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/store_controller.rb:19
 msgid "Store"
 msgstr ""
 
@@ -370,6 +418,10 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
+#: ../app/views/store/index.haml:71
+msgid "View"
+msgstr ""
+
 #: ../app/views/devise/passwords/new.haml:31
 msgid "We'll send password reset instructions."
 msgstr ""
@@ -378,6 +430,6 @@ msgstr ""
 msgid "You are not authorized to perform this action"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:38 ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33
+#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38
 msgid "Your cart is empty!"
 msgstr ""

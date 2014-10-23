@@ -15,16 +15,16 @@
           %hr
 
           .text-muted
-            %p= "Article number: #{@product.ean}"
-            %p= "Stock: #{@product.available_quantity} of #{@product.quantity} available"
+            %p= _("EAN: %s") % @product.ean
+            %p= _("Available: %d of %d") % [@product.available_quantity, @product.quantity]
 
           %hr
 
           .row
-            = form_tag line_items_path(:product_id => @product), :multipart => true do
+            = form_tag line_items_path(:product_id => @product) do
               .col-xs-3
                 = quantity_field_tag 1, { max: @product.available_quantity}
               .col-xs-4
-                = button_tag t('cart.add'), type: 'submit', class: 'btn btn-sm btn-success'
+                = button_tag _('Add to cart'), type: 'submit', class: 'btn btn-sm btn-success'
 
 

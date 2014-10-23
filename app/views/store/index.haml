@@ -1,5 +1,5 @@
 %ul#categories.nav.navbar-nav.clearfix
-  %li{ class: params[:category_name_cont].nil? ? 'active' : '' }= link_to "All categories", root_path(view: @view), remote: :true
+  %li{ class: params[:category_name_cont].nil? ? 'active' : '' }= link_to _('All categories'), root_path(view: @view), remote: :true
   - @categories.each do |cat|
     %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
       = link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
@@ -17,27 +17,27 @@
           %span.input-group-addon
             %i.fa.fa-search
 
-          = f.text_field :name_cont, placeholder: 'Search', class: 'form-control'
+          = f.text_field :name_cont, placeholder: _('Search'), class: 'form-control'
 
     .col-xs-7.col-sm-7.col-md-6
       .text-right
         %span.hidden-xs
-          %small Sort by:
+          %small= _('Sort')
           -# %i.fa.fa-sort-alpha-asc
 
         .btn-group.btn-group-sm
           .btn.btn-default{ class: (@sorting.include?('name')) ? 'active' : ''}
-            = sort_link @search, :name
+            = sort_link @search, :name, _('Name')
             -# %i.fa.fa-sort-alpha-asc
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
-            = sort_link @search, :price
+            = sort_link @search, :price, _('Prise')
             -# %i.fa.fa-sort-numeric-desc
           .btn.btn-default{ class: (@sorting.include?('created_at')) ? 'active' : ''}
-            = sort_link @search, :created_at
+            = sort_link @search, :created_at, _('Created at')
             -# %i.fa.fa-sort-amount-desc
 
         %span.hidden-xs
-          %small View as:
+          %small= _('View')
         .btn-group
           = icon_link_to '', root_path(view: :grid), { class: "btn btn-sm btn-default #{'active' if params[:view] == 'grid'}" }, 'fa-lg fa-th-large text-muted'
           = icon_link_to '', root_path(view: :list), { class: "btn btn-sm btn-default #{'active' if params[:view] == 'list'}" }, 'fa-lg fa-th-list text-muted'

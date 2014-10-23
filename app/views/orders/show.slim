@@ -16,7 +16,7 @@
     .row
       .col-xs-12
         h3
-          = "Invoice ##{@order.id}"
+          = _("Order #%d") % @order.id
           .pull-right
             = icon_link_to "", order_path(@order, format: 'pdf'), 'fa-print'
 

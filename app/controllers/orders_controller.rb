@@ -14,7 +14,7 @@ class OrdersController < ApplicationController
 
     add_breadcrumb _('Store'), :root_path
     add_breadcrumb _('Account settings'), account_url
-    add_breadcrumb _("Order ##{@order.id}"), order_url(@order)
+    add_breadcrumb _("Order #%d") % @order.id, order_url(@order)
 
     respond_to do |format|
       format.html

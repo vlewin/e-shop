@@ -9,7 +9,7 @@
               - if out_of_stock
                 .ribbon.ribbon-medium.ribbon-grey
                   .banner
-                    .text OUT OF STOCK
+                    .text= _('Out of stock').upcase
 
               %a.thumbnail{ href: store_product_path(product)}
                 = product_image_tag(product, :index)
@@ -27,7 +27,7 @@
                     %hr.line
                     = button_tag(type: "submit", class: "btn btn-sm col-xs-12 col-sm-12 col-md-12 #{out_of_stock ? 'btn-disabled' : 'btn-success'}") do
                       %i.fa.fa-shopping-cart
-                      = t('cart.add')
+                      = _('Add to cart')
 
   - else
     .panel.panel-default
@@ -36,9 +36,9 @@
         %table.table.table-hover
           %thead
             %tr
-              %th{colspan: 2} Name
-              %th Price
-              %th{colspan: 2} Quantity
+              %th{colspan: 2}= _('Name')
+              %th= _('Price')
+              %th{colspan: 2}= _('Quantity')
           %tbody
             - @products.each_with_index do |product, index|
               %tr.product-list
@@ -63,4 +63,4 @@
   %br
   %h4
     %i.fa.fa-info-circle.text-muted
-    = "Sorry, the product was not found."
+    = _('Sorry, the product was not found.')

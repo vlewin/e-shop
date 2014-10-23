@@ -63,7 +63,7 @@ msgstr ""
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-msgid "\"Order ##{@order.id}\""
+msgid "Order #%d"
 msgstr ""
 
 msgid "Checkout"
@@ -145,6 +145,45 @@ msgid "Didn't receive unlock instructions?"
 msgstr ""
 
 msgid "Fee"
+msgstr ""
+
+msgid "Out of stock"
+msgstr ""
+
+msgid "Add to cart"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Quantity"
+msgstr ""
+
+msgid "Sorry, the product was not found."
+msgstr ""
+
+msgid "All categories"
+msgstr ""
+
+msgid "Search"
+msgstr ""
+
+msgid "Sort"
+msgstr ""
+
+msgid "Prise"
+msgstr ""
+
+msgid "Created at"
+msgstr ""
+
+msgid "View"
+msgstr ""
+
+msgid "EAN: %s"
+msgstr ""
+
+msgid "Available: %d of %d"
 msgstr ""
 
 msgid "Address"
