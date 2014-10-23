@@ -39,7 +39,6 @@ class CartsController < ApplicationController
 
   def destroy
     @cart = (current_user.admin?) ? Cart.find(params[:id]) : @current_cart
-    authorize @cart
 
     if @cart.destroy
       flash.notice = _('Cart was successfully destroyed.')
