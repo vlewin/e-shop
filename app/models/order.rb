@@ -35,7 +35,7 @@ class Order < ActiveRecord::Base
   end
 
   def total
-    line_items.to_a.sum { |item| item.total } + shipment.rate
+    line_items.to_a.sum { |item| item.total } + shipment.fee
   end
 
   def count

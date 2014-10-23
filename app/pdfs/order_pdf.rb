@@ -104,7 +104,7 @@ class OrderPdf < Prawn::Document
   def total_rows
     [
       ["", "Sub Total", "#{price(@order.subtotal)}"],
-      ["", "Shipping & Handling", "#{price(@order.shipment.rate) rescue 'not calculated'}"],
+      ["", "Shipping & Handling", "#{price(@order.shipment.fee) rescue 'not calculated'}"],
       ["", "VAT", "#{price(@order.taxes)}"],
       ["", "Total", "#{price(@order.total)}"]
     ]

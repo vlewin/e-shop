@@ -12,7 +12,7 @@
           %th Default
           %th Provider
           %th Name
-          %th Rate
+          %th Fee
           %th{ colspan: 3 }
 
       %tbody
@@ -26,7 +26,7 @@
 
             %td= shipment.provider
             %td= shipment.name
-            %td= number_to_currency shipment.rate
+            %td= number_to_currency shipment.fee
             %td.text-right
               = icon_link_to '', shipment, { class: 'btn btn-sm btn-default' }, 'fa-eye'
               = icon_link_to '', edit_shipment_path(shipment), { class: 'btn btn-sm btn-default' }, 'fa-edit'

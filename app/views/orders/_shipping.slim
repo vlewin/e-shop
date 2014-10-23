@@ -9,7 +9,7 @@
         label
           = form.radio_button :shipment_id, shipment.id, :checked => shipment.default
           = "#{shipment.provider} #{shipment.name}"
-          b= " #{number_to_currency(shipment.rate)}"
+          b= " #{number_to_currency(shipment.fee)}"
           - if Shipment.default == shipment
             span.label.label-default< Standard
 

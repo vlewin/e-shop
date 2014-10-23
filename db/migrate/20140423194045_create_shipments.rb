@@ -3,7 +3,7 @@ class CreateShipments < ActiveRecord::Migration
     create_table :shipments do |t|
       t.string :provider
       t.string :name
-      t.decimal :rate
+      t.decimal :fee
       t.boolean :default, default: false
 
       t.timestamps

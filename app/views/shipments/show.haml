@@ -11,8 +11,8 @@
       = @shipment.name
 
     %p
-      %strong Rate
-      = @shipment.rate
+      %strong= _('Fee')
+      = @shipment.fee
 
   .panel-footer
     = link_to 'Edit shipment', edit_shipment_path(@shipment), class: 'btn btn-default'
