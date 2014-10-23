@@ -104,7 +104,7 @@ msgstr "E-Mail"
 msgid "We'll send password reset instructions."
 msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
 
-msgid "Sign up"
+msgid "Sign-up"
 msgstr "Registrierung"
 
 msgid "Name"
@@ -116,10 +116,16 @@ msgstr "Passwort"
 msgid "Confirm Password"
 msgstr "Passwort bestätigen"
 
+msgid "Sign up"
+msgstr "Registrieren"
+
 msgid "Already have an account?"
 msgstr "Haben Sie bereits ein Konto?"
 
 msgid "Sign in"
+msgstr "Anmelden"
+
+msgid "Sign-in"
 msgstr "Anmeldung"
 
 msgid "Remember me"

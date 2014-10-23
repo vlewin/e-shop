@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-23 16:54+0200\n"
-"PO-Revision-Date: 2014-10-23 16:54+0200\n"
+"POT-Creation-Date: 2014-10-23 17:04+0200\n"
+"PO-Revision-Date: 2014-10-23 17:04+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:16 ../app/controllers/account_controller.rb:43
+#: ../app/controllers/orders_controller.rb:16 ../app/controllers/account_controller.rb:44
 msgid "Account settings"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr ""
 msgid "Remember me"
 msgstr ""
 
-#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
+#: ../app/views/devise/sessions/new.haml:32 ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
 msgid "Reset password"
 msgstr ""
 
@@ -262,19 +262,27 @@ msgstr ""
 msgid "Shopping cart"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:9 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:57 ../app/views/devise/shared/_links.html.slim:2
+#: ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:57 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr ""
 
-#: ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:9 ../app/views/devise/registrations/new.haml:47 ../app/views/devise/shared/_links.html.slim:5
+#: ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:47 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:9
+msgid "Sign-in"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:9
+msgid "Sign-up"
 msgstr ""
 
 #: ../app/controllers/carts_controller.rb:47
 msgid "Something went wrong"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/account_controller.rb:42 ../app/controllers/carts_controller.rb:11 ../app/controllers/store_controller.rb:19
+#: ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/store_controller.rb:19
 msgid "Store"
 msgstr ""
 

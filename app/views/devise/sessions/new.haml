@@ -2,7 +2,7 @@
   .col-sm-8.col-sm-offset-2.col-md-5.col-md-offset-3
     .panel.panel-default
       .panel-heading
-        %strong= _('Sign in')
+        %strong= _('Sign-in')
       .panel-body
         = render 'layouts/errors', object: resource
         = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form'}) do |f|

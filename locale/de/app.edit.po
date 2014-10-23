@@ -17,33 +17,181 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-#: ../app/controllers/orders_controller.rb:17
-msgid "\"Order ##{@order.id}\""
-msgstr ""
+#: ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/store_controller.rb:19
+msgid "Store"
+msgstr "Shop"
 
-#: ../app/controllers/line_items_controller.rb:14
-msgid "%s x %s added to your cart!"
-msgstr "%s x %s in den Warenkorb gelegt!"
-
-#: ../app/controllers/orders_controller.rb:16 ../app/controllers/account_controller.rb:43
+#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16
 msgid "Account settings"
 msgstr "Kontoeinstellungen"
-
-#: model_attributes.rb:2
-msgid "Address"
-msgstr "Addresse"
 
 #: ../app/controllers/addresses_controller.rb:23
 msgid "Address was successfully created."
 msgstr "Adresse wurde erfolgreich erstellt."
 
+#: ../app/controllers/addresses_controller.rb:33
+msgid "Address was successfully updated."
+msgstr "Adresse wurde erfolgreich aktualisiert."
+
 #: ../app/controllers/addresses_controller.rb:43
 msgid "Address was successfully destroyed."
 msgstr "Adresse wurde erfolgreich zerstört."
 
-#: ../app/controllers/addresses_controller.rb:33
-msgid "Address was successfully updated."
-msgstr "Adresse wurde erfolgreich aktualisiert."
+#: ../app/controllers/application_controller.rb:36
+msgid "This product is out of stock"
+msgstr "Dieses Produkt ist ausverkauft"
+
+#: ../app/controllers/application_controller.rb:46 ../app/controllers/application_controller.rb:49
+msgid "You are not authorized to perform this action"
+msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
+
+#: ../app/controllers/carts_controller.rb:12
+msgid "Shopping cart"
+msgstr "Warenkorb"
+
+#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38
+msgid "Your cart is empty!"
+msgstr "Ihr Warenkorb ist leer!"
+
+#: ../app/controllers/carts_controller.rb:45
+msgid "Cart was successfully destroyed."
+msgstr "Warenkorb wurde erfolgreich zerstört."
+
+#: ../app/controllers/carts_controller.rb:47
+msgid "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
+
+#: ../app/controllers/categories_controller.rb:28
+msgid "Category was successfully created."
+msgstr "Kategorie wurde erfolgreich erstellt."
+
+#: ../app/controllers/categories_controller.rb:38
+msgid "Category was successfully updated."
+msgstr "Kategorie wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/categories_controller.rb:48
+msgid "Category was successfully destroyed."
+msgstr "Kategorie wurde erfolgreich zerstört."
+
+#: ../app/controllers/line_items_controller.rb:14
+msgid "%s x %s added to your cart!"
+msgstr "%s x %s in den Warenkorb gelegt!"
+
+#: ../app/controllers/orders_controller.rb:17
+msgid "\"Order ##{@order.id}\""
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:31
+msgid "Checkout"
+msgstr "zur Kasse"
+
+#: ../app/controllers/orders_controller.rb:58
+msgid "Thank you for your order!"
+msgstr "Vielen Dank für Ihre Bestellung!"
+
+#: ../app/controllers/orders_controller.rb:72
+msgid "Can not change order status"
+msgstr "Auftragsstatus kann nicht geändern werden"
+
+#: ../app/controllers/products_controller.rb:29
+msgid "Product was successfully created."
+msgstr "Produkt wurde erfolgreich erstellt."
+
+#: ../app/controllers/products_controller.rb:39
+msgid "Product was successfully updated."
+msgstr "Produkt wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/products_controller.rb:50
+msgid "Product was successfully destroyed."
+msgstr "Produkt wurde erfolgreich zerstört."
+
+#: ../app/controllers/shipments_controller.rb:22
+msgid "Shipment was successfully created."
+msgstr "Versandart wurde erfolgreich erstellt."
+
+#: ../app/controllers/shipments_controller.rb:30
+msgid "Shipment was successfully updated."
+msgstr "Versandart wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/shipments_controller.rb:38
+msgid "Shipment was successfully destroyed."
+msgstr "Versandart wurde erfolgreich zerstört."
+
+#: ../app/views/addresses/_form.haml:24
+msgid "Recipient"
+msgstr "Empfänger"
+
+#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+#: ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
+msgid "Email"
+msgstr "E-Mail"
+
+#: ../app/views/devise/passwords/new.haml:31
+msgid "We'll send password reset instructions."
+msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
+
+#: ../app/views/devise/registrations/new.haml:9
+msgid "Sign-up"
+msgstr "Registrierung"
+
+#: ../app/views/devise/registrations/new.haml:20
+msgid "Name"
+msgstr "Name"
+
+#: ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
+msgid "Password"
+msgstr "Passwort"
+
+#: ../app/views/devise/registrations/new.haml:41
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: ../app/views/devise/registrations/new.haml:53
+msgid "Already have an account?"
+msgstr "Haben Sie bereits ein Konto?"
+
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2
+msgid "Sign in"
+msgstr "Anmelden"
+
+#: ../app/views/devise/sessions/new.haml:9
+msgid "Sign-in"
+msgstr "Anmeldung"
+
+#: ../app/views/devise/sessions/new.haml:45
+msgid "Remember me"
+msgstr "Eingeloggt bleiben"
+
+#: ../app/views/devise/sessions/new.haml:58
+msgid "Don't have an account?"
+msgstr "Haben Sie noch kein Konto?"
+
+#: ../app/views/devise/shared/_links.html.slim:8
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+#: ../app/views/devise/shared/_links.html.slim:11
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:14
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+#: ../app/views/shipments/show.haml:26
+msgid "Fee"
+msgstr "Gebühr"
+
+#: model_attributes.rb:2
+msgid "Address"
+msgstr "Addresse"
 
 #: model_attributes.rb:3
 msgid "Address|City"
@@ -65,33 +213,9 @@ msgstr "Straße"
 msgid "Address|Zip code"
 msgstr "PLZ"
 
-#: ../app/views/devise/registrations/new.haml:53
-msgid "Already have an account?"
-msgstr "Haben Sie bereits ein Konto?"
-
-#: ../app/controllers/orders_controller.rb:72
-msgid "Can not change order status"
-msgstr "Auftragsstatus kann nicht geändern werden"
-
-#: ../app/controllers/carts_controller.rb:45
-msgid "Cart was successfully destroyed."
-msgstr "Warenkorb wurde erfolgreich zerstört."
-
 #: model_attributes.rb:8
 msgid "Category"
 msgstr "Kategorie"
-
-#: ../app/controllers/categories_controller.rb:28
-msgid "Category was successfully created."
-msgstr "Kategorie wurde erfolgreich erstellt."
-
-#: ../app/controllers/categories_controller.rb:48
-msgid "Category was successfully destroyed."
-msgstr "Kategorie wurde erfolgreich zerstört."
-
-#: ../app/controllers/categories_controller.rb:38
-msgid "Category was successfully updated."
-msgstr "Kategorie wurde erfolgreich aktualisiert."
 
 #: model_attributes.rb:9
 msgid "Category|Description"
@@ -105,38 +229,6 @@ msgstr "Name"
 msgid "Category|Products count"
 msgstr "Anzahl der Produkte"
 
-#: ../app/controllers/orders_controller.rb:31
-msgid "Checkout"
-msgstr "zur Kasse"
-
-#: ../app/views/devise/registrations/new.haml:41
-msgid "Confirm Password"
-msgstr "Passwort bestätigen"
-
-#: ../app/views/devise/shared/_links.html.slim:11
-msgid "Didn't receive confirmation instructions?"
-msgstr ""
-
-#: ../app/views/devise/shared/_links.html.slim:14
-msgid "Didn't receive unlock instructions?"
-msgstr ""
-
-#: ../app/views/devise/sessions/new.haml:58
-msgid "Don't have an account?"
-msgstr "Haben Sie noch kein Konto?"
-
-#: ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/passwords/new.haml:19
-msgid "Email"
-msgstr "E-Mail"
-
-#: ../app/views/shipments/show.haml:26
-msgid "Fee"
-msgstr "Gebühr"
-
-#: ../app/views/devise/shared/_links.html.slim:8
-msgid "Forgot your password?"
-msgstr "Passwort vergessen?"
-
 #: model_attributes.rb:12
 msgid "Line item"
 msgstr "Auftragsposition"
@@ -148,10 +240,6 @@ msgstr "Preis"
 #: model_attributes.rb:14
 msgid "LineItem|Quantity"
 msgstr "Anzahl"
-
-#: ../app/views/devise/registrations/new.haml:20
-msgid "Name"
-msgstr "Name"
 
 #: model_attributes.rb:15
 msgid "Order"
@@ -165,25 +253,9 @@ msgstr "Zahlungsart"
 msgid "Order|Status"
 msgstr "Status"
 
-#: ../app/views/devise/sessions/new.haml:27 ../app/views/devise/registrations/new.haml:34
-msgid "Password"
-msgstr "Passwort"
-
 #: model_attributes.rb:18
 msgid "Product"
 msgstr "Produkt"
-
-#: ../app/controllers/products_controller.rb:29
-msgid "Product was successfully created."
-msgstr "Produkt wurde erfolgreich erstellt."
-
-#: ../app/controllers/products_controller.rb:50
-msgid "Product was successfully destroyed."
-msgstr "Produkt wurde erfolgreich zerstört."
-
-#: ../app/controllers/products_controller.rb:39
-msgid "Product was successfully updated."
-msgstr "Produkt wurde erfolgreich aktualisiert."
 
 #: model_attributes.rb:19
 msgid "Product|Description"
@@ -213,33 +285,9 @@ msgstr "Anzahl"
 msgid "Product|Vat"
 msgstr "MwSt"
 
-#: ../app/views/addresses/_form.haml:24
-msgid "Recipient"
-msgstr "Empfänger"
-
-#: ../app/views/devise/sessions/new.haml:45
-msgid "Remember me"
-msgstr "Eingeloggt bleiben"
-
-#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
-msgid "Reset password"
-msgstr "Passwort zurücksetzen"
-
 #: model_attributes.rb:26
 msgid "Shipment"
 msgstr "Versand"
-
-#: ../app/controllers/shipments_controller.rb:22
-msgid "Shipment was successfully created."
-msgstr "Versandart wurde erfolgreich erstellt."
-
-#: ../app/controllers/shipments_controller.rb:38
-msgid "Shipment was successfully destroyed."
-msgstr "Versandart wurde erfolgreich zerstört."
-
-#: ../app/controllers/shipments_controller.rb:30
-msgid "Shipment was successfully updated."
-msgstr "Versandart wurde erfolgreich aktualisiert."
 
 #: model_attributes.rb:27
 msgid "Shipment|Default"
@@ -256,34 +304,6 @@ msgstr "Name"
 #: model_attributes.rb:30
 msgid "Shipment|Provider"
 msgstr "Anbieter"
-
-#: ../app/controllers/carts_controller.rb:12
-msgid "Shopping cart"
-msgstr "Warenkorb"
-
-#: ../app/views/devise/sessions/new.haml:9 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:57 ../app/views/devise/shared/_links.html.slim:2
-msgid "Sign in"
-msgstr "Anmeldung"
-
-#: ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:9 ../app/views/devise/registrations/new.haml:47 ../app/views/devise/shared/_links.html.slim:5
-msgid "Sign up"
-msgstr "Registrierung"
-
-#: ../app/controllers/carts_controller.rb:47
-msgid "Something went wrong"
-msgstr "Etwas ist schiefgelaufen"
-
-#: ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/account_controller.rb:42 ../app/controllers/carts_controller.rb:11 ../app/controllers/store_controller.rb:19
-msgid "Store"
-msgstr "Shop"
-
-#: ../app/controllers/orders_controller.rb:58
-msgid "Thank you for your order!"
-msgstr "Vielen Dank für Ihre Bestellung!"
-
-#: ../app/controllers/application_controller.rb:36
-msgid "This product is out of stock"
-msgstr "Dieses Produkt ist ausverkauft"
 
 #: model_attributes.rb:31
 msgid "User"
@@ -360,15 +380,3 @@ msgstr ""
 #: model_attributes.rb:49
 msgid "User|Unconfirmed email"
 msgstr ""
-
-#: ../app/views/devise/passwords/new.haml:31
-msgid "We'll send password reset instructions."
-msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
-
-#: ../app/controllers/application_controller.rb:46 ../app/controllers/application_controller.rb:49
-msgid "You are not authorized to perform this action"
-msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
-
-#: ../app/controllers/orders_controller.rb:38 ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33
-msgid "Your cart is empty!"
-msgstr "Ihr Warenkorb ist leer!"
