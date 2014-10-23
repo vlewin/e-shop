@@ -1,16 +1,11 @@
 class ApplicationController < ActionController::Base
   include Pundit
-
   protect_from_forgery with: :exception
 
-  rescue_from Pundit::NotAuthorizedError do |exception|
-    flash[:error] = t('authorization.not_authorized')
-    redirect_to(request.referrer || root_path)
-  end
+  before_filter :authenticate_user!, :set_locale, :current_cart
+  helper_method :current_view, :current_cart
 
-  before_filter :authenticate_user!
-  before_filter :set_locale
-  before_filter :current_cart
+  rescue_from Exception, with: :handle_exceptions
 
   def current_view
     @current_view ||= (params[:view] || session[:view] || 'grid')
@@ -26,23 +21,9 @@ class ApplicationController < ActionController::Base
     @current_cart
   end
 
-  # Locale
   def set_locale
-    I18n.locale = params[:locale] unless params[:locale].blank?
-  end
-
-  # Extract the language from the clients browser
-  def extract_locale_from_accept_language_header
-    browser_locale = request.env['HTTP_ACCEPT_LANGUAGE'].try(:scan, /^[a-z]{2}/).try(:first).try(:to_sym)
-    if I18n.available_locales.include? browser_locale
-      browser_locale
-    else
-      I18n.default_locale
-    end
-  end
-
-  def default_url_options(options={})
-    { locale: I18n.locale }
+    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    @current_locale ||= session[:locale] = I18n.locale
   end
 
   def redirect_to_back_or_default(default = root_url)
@@ -53,17 +34,34 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  # Devise overrides
-  def after_sign_in_path_for(resource)
-    if request.referrer.include? 'orders/new'
-      request.referrer
-    else
-      root_path
-    end
-  end
-
   private
   def check_product_availability
     redirect_to(root_path, alert: 'This product is out of stock') if @product.out_of_stock?
+  end
+
+  def not_found
+    render template: 'application/not_found', status: 404, formats: :html
+  end
+
+  def handle_exceptions(exception)
+    case exception
+    when Pundit::NotAuthorizedError
+      flash[:error] = t('authorization.not_authorized')
+      redirect_to(request.referrer || root_path)
+    when Pundit::AuthorizationNotPerformedError
+      flash[:error] = t('authorization.not_authorized')
+      # redirect_to(request.referrer || root_path) and return
+    when ActionView::MissingTemplate
+      not_found and return
+    when ActiveRecord::RecordNotFound
+      not_found and return
+    when ActionController::UnknownFormat
+      not_found and return
+    when ActionController::RoutingError
+      not_found and return
+    else
+      logger.error "Exception: #{exception.class}: #{exception.message}"
+      logger.error exception.backtrace.join("\n")
+    end
   end
 end

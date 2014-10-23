@@ -1,25 +1,17 @@
 .panel.panel-default
   .panel-heading
-    h4.panel-title Order status
-  .panel-body
     .tracking-status
       .order-status
         .order-status-timeline
           div class="order-status-timeline-completion #{@order.status}"
         div class="img-circle status-new active"
-          span.status Accepted
           i.fa.fa-archive.icon
         div class="img-circle status-active #{'active' if ['in_progress', 'shipped', 'completed'].include? @order.status}"
-          span.status In progress
           i.fa.fa-clock-o.icon
         div class="img-circle status-shipped #{'active' if @order.shipped? || @order.completed?}"
-          span.status Shipped
           i.fa.fa-truck.icon
         div class="img-circle status-completed #{'active' if @order.completed?}"
-          span.status Completed
           i.fa.fa-check-circle.icon
-
-.panel.panel-default
   .panel-body
     .row
       .col-xs-12

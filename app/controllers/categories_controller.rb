@@ -1,9 +1,10 @@
 class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, except: [:index, :show]
+  after_action :verify_authorized
 
   def index
     @categories = Category.all
+    authorize @categories
   end
 
   def show
@@ -51,7 +52,6 @@ class CategoriesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_category
       @category ||= Category.find(params[:id])
-      add_breadcrumb @category.name
     end
 
     # Only allow a trusted parameter "white list" through.

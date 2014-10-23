@@ -1,6 +1,11 @@
 class CartsController < ApplicationController
-  respond_to :html, :js
-  skip_before_filter :authenticate_user!
+  skip_before_filter :authenticate_user!, only: [:show, :update]
+  after_action :verify_authorized, except: [:show, :update]
+
+  def index
+    @carts = Cart.all.order(:updated_at)
+    authorize @carts
+  end
 
   def show
     add_breadcrumb 'Home', :root_path
@@ -10,10 +15,6 @@ class CartsController < ApplicationController
       flash.notice = "Your cart is empty!"
       redirect_to root_path
     end
-  end
-
-  def new
-    @cart = Cart.new
   end
 
   def update
@@ -30,23 +31,25 @@ class CartsController < ApplicationController
       end
     end
 
-    # FIXME: update cart line_item count in navbar (XHR request)
-    respond_to do |format|
-      format.html do
-        if @current_cart.empty?
-          flash.notice = "Your cart is empty!"
-          redirect_to root_path
-        else
-          redirect_to cart_path
-        end
-      end
-
-      format.js
+    if @current_cart.empty?
+      flash.notice = "Your cart is empty!"
+      redirect_to root_path
+    else
+      redirect_to cart_path
     end
   end
 
   def destroy
-    @current_cart.destroy
-    redirect_to root_path
+    @cart = (current_user.admin?) ? Cart.find(params[:id]) : @current_cart
+    authorize @cart
+
+    if @cart.destroy
+      flash.notice = 'Cart was successfully destroyed.'
+    else
+      flash.error = "We were unable to destroy the cart #{cart.id}"
+    end
+
+    redirect_to_back_or_default root_path
+
   end
 end

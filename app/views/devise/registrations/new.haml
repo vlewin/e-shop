@@ -1,0 +1,29 @@
+.row
+  .col-sm-8.col-sm-offset-2.col-md-5.col-md-offset-3
+    .panel.panel-default
+      .panel-heading
+        %strong= t('authentication.sign_up')
+
+      .panel-body
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form'}) do |f|
+          = render 'layouts/errors', object: resource
+          .form-group
+            = f.label :name
+            = f.text_field :name, autofocus: true, required: true, class: 'form-control'
+          .form-group
+            %label= t('forms.email')
+            = f.email_field :email, required: true, class: 'form-control'
+          .form-group
+            %label= t('forms.password')
+            = f.password_field :password, required: true, class: 'form-control'
+          .form-group
+            %label= t('forms.password_confirmation')
+            = f.password_field :password_confirmation, required: true, class: 'form-control'
+
+          = f.submit t('authentication.sign_up'), class: 'btn btn-success'
+
+          %hr.line
+
+          %small= t('authentication.account_exist')
+          |
+          %small= link_to t('authentication.sign_in'), new_user_session_path

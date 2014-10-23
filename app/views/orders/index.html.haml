@@ -1,0 +1,46 @@
+%h4.page-header.no-margin
+  Order
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %tr
+          %th Status
+          %th Date
+          %th Pay type
+          %th Subtotal
+          %th Taxes
+          %th Total
+          %th{ colspan: 3 }
+      %tbody
+        - @orders.each do |order|
+          %tr
+            %td
+              = form_tag update_status_order_path(order), id: :update_status, method: :put do
+                - labels = { accepted: 'btn-default', in_progress: 'btn-default', shipped: 'btn-primary', completed: 'btn-success'}
+                - icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
+                .btn-group
+                  %button.btn.btn-sm.btn-default.dropdown-toggle{ class: labels[order.status.to_sym], data: { toggle: :dropdown }}
+                    %i{ class: "fa #{icons[order.status.to_sym]}"}
+                    = order.status.humanize
+                    %span.caret
+                  %ul.dropdown-menu
+                    - Order.statuses.except(order.status).keys.each_with_index do |status, index|
+                      - radio_id = "ex#{order.id}_#{index+1}"
+                      %li
+                        %input{id: radio_id, name: "order[status]", type: :radio, value: status}
+                        %label{for: radio_id, data: { target: "##{radio_id}"}}
+                          %i{ class: "fa #{icons[status.to_sym]}"}
+                          = status.humanize
+
+            %td= I18n.localize(order.created_at)
+            %td= order.pay_type
+            %td= number_to_currency order.subtotal
+            %td= number_to_currency order.taxes
+            %td= number_to_currency order.total
+            %td.text-right
+              = icon_link_to '', order, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+              = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-sm btn-default' }, 'fa-print'
+              = icon_link_to '', order, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+

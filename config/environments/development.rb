@@ -10,7 +10,7 @@ EShop::Application.configure do
   config.eager_load = false
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local       = false
   config.action_controller.perform_caching = false
 
   config.action_controller.action_on_unpermitted_parameters = :log
@@ -40,7 +40,7 @@ EShop::Application.configure do
     :enable_starttls_auto => true
   }
 
-  config.action_mailer.default_url_options = { :host => 'localhost:4000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:4444' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = false # Send email in development mode?

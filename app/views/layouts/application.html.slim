@@ -4,27 +4,31 @@ html
     meta[name="viewport" content="width=device-width, initial-scale=1.0"]
     title= 'E-Shop'
     meta name="description" content='E-Shop'
-    meta name='viewport' content='initial-scale=1' 
+    / meta name='viewport' content='initial-scale=1'
+    meta content="width=device-width, initial-scale=1.0, user-scalable=no" name="viewport" /
+
     == stylesheet_link_tag "application", media: 'all', 'data-turbolinks-track' => true
     == javascript_include_tag 'application', 'data-turbolinks-track' => true
     == csrf_meta_tags
 
   body
-    header
-      == render 'layouts/navigation'
-    main
-      .container
-        == render 'layouts/messages'
-        == render 'layouts/breadcrumb'
-        == yield
+    #wrap
+      header
+        == render 'layouts/navigation'
+      main
+        .container
+          == render 'layouts/messages'
+          == render 'layouts/breadcrumb'
+          == yield
+
     footer
       .container
-        hr
         p
-          | &copy; 2014 Company, Inc. ·
+          | &copy; 2014 E-Shop, Inc. ·
           a href="#"  Privacy
           | ·
-          a href="#"  Terms
-
-        p= debug(params) if Rails.env.development?
-
+          a href="delivery.html"  Delivery &amp; Returns
+          | ·
+          a href="delivery.html"  Terms &amp; Conditions
+          | ·
+          a href="about.html"  About Us

@@ -1,24 +1,14 @@
-// Variables
-hr.line {
-  margin:10px 0px;
-}
-
-body {
-  background-color: #F8F8F8;
-  color: #505050;
-  padding-top: 80px;
-  text-rendering: optimizeLegibility;
-}
-
 // Navbars
 .navbar-default {
   border-radius: 0;
+  background-color: #f8f8f8;
 
   &.subnav {
-    background-color: #e7e7e7;
+    background-color: #fff;
     top: -29px;
     z-index: 0;
   }
+
   .navbar-header {
     vertical-align: middle;
     .navbar-brand {
@@ -43,7 +33,6 @@ body {
 
 ol.breadcrumb {
   border: 1px solid rgba(0, 0, 0, 0);
-  // border-radius: 4px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   border: 1px solid #DDDDDD;
   background-color: #FFF;
@@ -56,49 +45,53 @@ ol.breadcrumb {
 
 // Panels
 .panel {
+  border-color: #dddddd;
+
   .panel-heading {
-    background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border-color: #ccc;
-    box-shadow: 0 1px 0 0 #fff inset;
+
   }
 
+  .panel-body {
+    h1,h2,h3,h4,h5 {
+      margin: 0px 0px 15px 0px;
+      font-weight: normal;
+    }
+  }
   .panel-footer {
-    background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
-    border-color: #ccc;
-    box-shadow: 0 1px 0 0 #fff inset;
+    .btn {
+      margin-right: 10px;
+    }
+  }
+
+  .alert-danger {
+    margin: 5px 0px 5px 0px;
+    ol {
+      padding-left: 20px;
+
+      li {
+        margin: 0;
+      }
+    }
   }
 }
 
 // .panel {
-//   background-color: #FFFFFF;
-//   // border: 1px solid rgba(0, 0, 0, 0);
-//   border-radius: 4px;
-//   box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
-//   margin-bottom: 20px;
-
 //   .panel-heading {
-//     background: none repeat scroll 0 0 #F9F9F9;
-//     border-bottom: 1px solid #DFDFDF;
-//   }
-
-//   .panel-body {
-//     border: 1px solid #DDDDDD;
-//   }
-//   .panel .pull-right {
-//     padding: 0;
-//     margin: -7px;
+//     background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+//     border-color: #ccc;
+//     box-shadow: 0 1px 0 0 #fff inset;
 //   }
 
 //   .panel-footer {
-//     background: none repeat scroll 0 0 #F2F2E9;
-//     // border-top: 1px solid #DFDFDF;
+//     background: linear-gradient(to bottom, #f4f4f4 0px, #e7e7e7 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+//     border-color: #ccc;
+//     box-shadow: 0 1px 0 0 #fff inset;
 //   }
 // }
 
-// Tabs
-// .nav-tabs {
-//   // margin-bottom: 15px;
-// }
+
+// Alerts
+
 
 .tab-content {
   padding: 20px 15px;
@@ -114,76 +107,26 @@ ol.breadcrumb {
 // Pagination
 .pagination {
   li.active a, li.active a:hover {
-    background-color: #94BA65;
-    border-color: #94BA65;
+    background-color: #5B5;
+    border-color: #5B5;
+
+    border-color: none;
     color: #FFFFFF;
   }
 
   li.page:not(.active) a, li.first a, li.last a {
-    color: #94BA65;
+    color: #444;
   }
 
   li.next, li.prev {
     display: none;
-    color: #94BA65;
+    // color: #94BA65;
   }
 }
 
-// Tables
-.table thead > tr > th {
-  border-bottom: 0px;
-}
-
-.table thead > tr > th,
-.table tbody > tr > th,
-.table tfoot > tr > th,
-.table thead > tr > td,
-.table tbody > tr > td,
-.table tfoot > tr > td {
-  vertical-align: middle;
-}
-
-.show-grid {
-  margin-bottom: 15px;
-}
-
-.invoice-title h2, .invoice-title h3 {
-    display: inline-block;
-}
-
-.table > tbody > tr > .no-line {
-    border-top: none;
-}
-
-.table > thead > tr > .no-line {
-    border-bottom: none;
-}
-
-.table > tbody > tr > .thick-line {
-    border-top: 2px solid;
-}
-
-// Buttons
-.btn-disabled {
-  background-color: #DDDDDD;
-  border-color: #CCCCCC;
-  box-shadow: none;
-  cursor: not-allowed;
-  opacity: 0.65;
-  pointer-events: none;
-}
-
-// Form elements
-.input-xsm {
-  border-radius: 3px;
-  font-size: 12px;
-  height: 24px;
-  line-height: 1.5;
-  padding: 5px 10px;
-}
-
-// Footer
-footer {
-  margin-top: 50px;
+.well {
+  img {
+    border: 2px solid #fff;
+  }
 }
 

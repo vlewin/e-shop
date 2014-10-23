@@ -1,16 +1,18 @@
-h3.page-header
+h4.page-header.no-margin
   | Users
 
-table.table.table-bordered.table-hover.table-responsive
-  thead
-    th= "Username"
-    th= "Email"
-    th= "Last sign in"
-    th= "Sign in count"
+.panel.panel-default
+  .panel-body
+    table.table.table-hover
+      thead
+        th= "Username"
+        th= "Email"
+        th= "Last sign in"
+        th= "Sign in count"
 
-  - @users.each do |user|
-    tr
-      td= link_to user.name, user
-      td= user.email
-      td= user.last_sign_in_at
-      td= user.sign_in_count
+      - @users.each do |user|
+        tr
+          td= link_to user.name, user
+          td= user.email
+          td= user.last_sign_in_at
+          td= user.sign_in_count

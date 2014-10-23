@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit, :update_status, :destroy]
+  after_action :verify_policy_scoped, only: :index
 
   def index
     @orders = policy_scope(Order)
@@ -61,6 +62,18 @@ class OrdersController < ApplicationController
     end
   end
 
+
+  def update_status
+    prev_status = @order.status
+    if @order.update(order_params)
+      notice = "Order status changed from '#{prev_status.humanize}' to '#{order_params[:status].humanize}'"
+      redirect_to orders_path, notice: notice
+    else
+      redirect_to orders_path, error: 'Can not change order status'
+    end
+
+  end
+
   # def update
   #   respond_to do |format|
   #     if @order.update(order_params)
@@ -89,7 +102,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:shipping_address_id, :billing_address_id, :shipment_id, :pay_type)
+      params.require(:order).permit(:shipping_address_id, :billing_address_id, :shipment_id, :pay_type, :status)
     end
 
 end

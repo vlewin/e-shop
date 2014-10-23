@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'rails', '~> 4.1.6'
+gem 'rails-i18n', '~> 4.0.0'
+gem 'devise-i18n'
+
 gem 'puma'
 gem 'pundit'
 gem 'devise'
@@ -9,6 +12,7 @@ gem 'uglifier'
 gem 'therubyracer'
 
 gem 'jquery-rails'
+gem 'haml-rails'
 gem 'slim-rails'
 gem 'less-rails'
 
@@ -28,35 +32,33 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'rmagick', require: false
 
-
 # Used in seed.rb
 gem 'ffaker'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'awesome_print'
   gem 'factory_girl_rails'
-  gem 'spring-commands-rspec'
-  gem 'guard-rspec'
+
   gem 'rspec-rails', '~> 3.0.1'
-  gem 'shoulda'
+  gem 'spring-commands-rspec'
+  gem 'awesome_print'
   gem 'byebug'
 end
 
 group :development do
   gem 'heroku'
   gem 'better_errors'
-  gem 'binding_of_caller', platforms: [:mri_19, :mri_20, :rbx]
   gem 'quiet_assets'
-  gem 'rails_layout'
 end
 
 group :test do
   gem 'database_cleaner'
+  gem 'shoulda'
   gem 'launchy'
 end
 
 group :production do
   gem 'rails_12factor'
+  gem 'newrelic_rpm'
   gem 'pg'
 end

@@ -1,44 +1,78 @@
 @import "custom_bootstrap/mixins.less";
 
-.bordered {
-  border: 1px solid #EEEEEE;
-}
+#categories {
+  &.navbar-nav {
+    li {
+      // border-left: 1px solid #cccccc;
+      // &:first-child {
+      //   border-top-left-radius: 3px;
+      //   border-bottom-left-radius: 3px;
+      // }
 
-#store-index h3.page-header {
-  margin: 0px 0 20px;
-}
+      // border-left: 1px solid #cccccc;
+      // border-top: 1px solid #cccccc;
+      // border-bottom: 1px solid #a02622;
 
-.categories, .sorting {
-  list-style-type: none;
-  padding-left: 0;
+      // &:last-child {
+      //   border-right: 1px solid #cccccc;
+      //   border-top-right-radius: 3px;
+      //   border-bottom-right-radius: 3px;
+      // }
 
-  li {
-    padding: 0px 0px 10px 0px;
-    a {
+      // margin-bottom: 25px;
       display: block;
-      outline: none;
 
-      &:hover {
-        color: #505050;
+      a {
+        line-height: 2;
+        height: 32px;
+        padding: 2px 5px;
+        outline: 0;
+        text-decoration: none;
+        background: none;
+      }
+
+      &.active a {
+        color: #a02622;
+        color: #5B5;
+        border-bottom: 3px solid #a02622;
+        border-bottom: 3px solid #5B5;
       }
     }
   }
 }
 
+#alphabet {
+  a {
+    padding: 5px;
+    text-decoration: none;
+    outline: none;
+
+    &:active {
+      color: #fff;
+      background-color: #94BA65;
+    }
+
+    &.disabled {
+      color: #aaa;
+      pointer-events: none;
+      cursor: default;
+    }
+  }
+}
+
 // Grig view
-.product {
+.product-grid {
   background-color: #FFF;
   border: 1px solid #EEEEEE;
   border-radius:3px;
   margin-bottom: 20px;
   padding: 5px;
-  height: 326px;
-  text-align: center;
+  max-height: 380px;
+  text-align: left;
 
   &:hover {
     border: 1px solid #94BA65;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    overflow:hidden;
   }
 
   &.out-of-stock {
@@ -70,6 +104,7 @@
     display:block;
     margin-bottom: 0;
   }
+
   .name {
     .text-overflow;
   }
@@ -83,22 +118,59 @@
 }
 
 // List view
-.list-item {
+.product-list {
   background-color: #FFF;
   margin-bottom: 5px;
   margin-top: 5px;
 
   background-color: #fff;
-  border: 1px solid #eeeeee;
   border-radius: 3px;
 
   padding: 5px 0px 5px 0px;
 
+  &:hover {
+  }
+
+  &.out-of-stock {
+    border: 1px solid #DDDDDD;
+    position: relative;
+    pointer-events: none;
+    cursor: default;
+  }
+
   img {
-    margin-right: 5px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .description {
+    color: gray;
+    display: block;
+    font-size: 11px;
+  }
+
+  .price {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 2;
   }
 }
 
+// Product details
+.product-details {
+  img {
+    width: 100%;
+    height: 100%;
+    margin: 20px 10px;
+  }
+
+  .product {
+    border-left: 1px solid #eee;
+    padding-left: 20px;
+  }
+}
 
 .quantity-helper {
   width: 70px;
@@ -122,8 +194,3 @@
   }
 }
 
-.form-header {
-  border-bottom: 1px solid #EEEEEE;
-  margin: 10px 0 20px;
-  padding-bottom: 9px;
-}

@@ -1,4 +1,11 @@
 $(function() {
+  // Categories
+  $(document).on('click', '#categories li>a', function() {
+    $('#categories li').removeClass('active')
+    $(this).parent().addClass('active')
+  })
+
+  // Search
   $("#product_search input").on('keyup', function(){
     var $form = $(this);
     setTimeout(function(){
@@ -6,16 +13,9 @@ $(function() {
     }, 1000)
   });
 
-  $( "body" ).on( "click", ".quantity-helper button", function() {
-    var $input = $(this).parents('.quantity-helper').find('input');
-    var quantity = parseInt($input.val())
-
-    if($(this).hasClass('quantity_minus')) {
-      quantity = (quantity == 0 || quantity == 1) ? 1 : quantity-1
-    } else {
-      quantity = (quantity+1 > $input.data('max')) ? quantity  : quantity+1
-    }
-
-    $input.val(quantity)
-  });
+  // Alphabet
+  $(document).on('click', '#alphabet > a', function() {
+    $('#alphabet a').removeClass('active')
+    $(this).addClass('active')
+  })
 });

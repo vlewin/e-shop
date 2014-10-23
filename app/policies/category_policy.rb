@@ -1,6 +1,7 @@
 class CategoryPolicy < ApplicationPolicy
   # Public
   def index?
+    @user.admin?
   end
 
   def show?

@@ -13,7 +13,7 @@ table.table.table-hover.table-responsive
   tbody
     - @current_cart.line_items.each do |item|
       tr
-        td= product_image_tag item.product, nil, width: 64, height: 64, crop: :fill
+        td= product_image_tag item.product
         td= link_to item.product.name, store_product_path(item.product)
         td
           = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
@@ -26,17 +26,23 @@ table.table.table-hover.table-responsive
         td= number_to_currency(item.total)
         td= icon_link_to '', item, { class: 'text-danger', method: :delete}, 'fa-trash-o'
 
+    tr.text-muted
+      td colspan=6 Subtotal
+      td colspan=2
+        = number_to_currency(@current_cart.subtotal)
+    tr.text-muted
+      td colspan=6 VAT
+      td colspan=2
+        = number_to_currency(@current_cart.taxes)
+    tr.text-muted
+      td colspan=6 Shipping
+      td colspan=2
+        = number_to_currency(Shipment.default.rate)
     tr
-      td colspan=5
-      td
-        p Subtotal:
-        p Shipping:
-        p
-          b Total:
-      td
-        p= number_to_currency(@current_cart.subtotal)
-        p= number_to_currency(Shipment.first.rate)
-        p
-          b= number_to_currency(@current_cart.total)
+      td colspan=6
+        b Total
+      td colspan=2
+        b= number_to_currency(@current_cart.total)
 
-      td
+
+

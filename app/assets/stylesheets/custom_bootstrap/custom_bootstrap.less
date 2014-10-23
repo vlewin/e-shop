@@ -13,8 +13,8 @@
  */
 
 // Core variables and mixins
-@import "twitter/bootstrap/variables.less";
 @import "custom_bootstrap/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "twitter/bootstrap/variables.less";
 @import "twitter/bootstrap/mixins.less";
 @import "custom_bootstrap/mixins.less"; // Modify this for custom mixins
 
@@ -63,3 +63,34 @@
 // Utility classes
 @import "twitter/bootstrap/utilities.less";
 @import "twitter/bootstrap/responsive-utilities.less";
+
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: #444444;
+  background: #f8f8f8;
+  padding-top: 80px;
+  text-rendering: optimizeLegibility;
+  font-family: "Roboto",sans-serif;
+
+  // font: 14px/1 "Montserrat",sans-serif
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+footer {
+  padding: 20px 0px 10px 0px;
+  background-color: #F5F5F5;
+  background-color: #ddd;
+}
