@@ -10,10 +10,10 @@ address = FactoryGirl.create(:address, user: user)
     product = Product.create(
       name: Faker::Product.product,
       description: Faker::Lorem.sentence,
-      article_number: Faker::Product.model,
+      ean: Faker::Product.model,
       price: rand(1..25),
       quantity: rand(0..10),
-      tax: 7
+      vat: 7
     )
     category.products << product
   end

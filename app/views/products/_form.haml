@@ -10,9 +10,9 @@
           = f.text_field :name, required: true, autofocus: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :part_number
+        %label.col-sm-2.control-label= f.label :ean
         .col-xs-12.col-sm-8.col-md-6
-          = f.text_field :article_number, required: true, class: 'form-control'
+          = f.text_field :ean, required: true, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :description
@@ -30,9 +30,9 @@
           = f.number_field :price, step: 0.01, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :tax
+        %label.col-sm-2.control-label= f.label :vat
         .col-xs-12.col-sm-8.col-md-6
-          = f.number_field :tax, required: true, value: 7, class: 'form-control'
+          = f.number_field :vat, required: true, value: 7, class: 'form-control'
 
       .form-group
         %label.col-sm-2.control-label= f.label :category

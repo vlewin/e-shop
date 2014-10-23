@@ -64,13 +64,13 @@ ActiveRecord::Schema.define(version: 20140423194045) do
 
   create_table "products", force: true do |t|
     t.string   "name"
-    t.string   "article_number"
+    t.string   "ean"
     t.text     "description"
-    t.integer  "quantity",                               default: 0
+    t.integer  "quantity",                            default: 0
     t.string   "image"
     t.integer  "category_id"
-    t.decimal  "price",          precision: 8, scale: 2
-    t.decimal  "tax",            precision: 8, scale: 2
+    t.decimal  "price",       precision: 8, scale: 2
+    t.decimal  "vat",         precision: 8, scale: 2
     t.datetime "created_at"
     t.datetime "updated_at"
   end

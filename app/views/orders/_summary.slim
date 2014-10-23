@@ -25,7 +25,7 @@
             td= item.quantity
             td= number_to_currency(item.price)
             td= number_to_currency(item.subtotal)
-            td= number_to_percentage(item.product.tax, precision: 0)
+            td= number_to_percentage(item.product.vat, precision: 0)
             td= number_to_currency(item.total)
 
         tr.text-muted
