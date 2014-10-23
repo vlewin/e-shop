@@ -1,0 +1,375 @@
+# Russian translations for app package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2014-10-23 16:23+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4"
+" && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"\n"
+
+#: ../app/controllers/account_controller.rb:42 ../app/controllers/carts_controller.rb:11 ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/store_controller.rb:19
+msgid "Store"
+msgstr ""
+
+#: ../app/controllers/account_controller.rb:43 ../app/controllers/orders_controller.rb:16
+msgid "Account settings"
+msgstr ""
+
+#: ../app/controllers/addresses_controller.rb:23
+msgid "Address was successfully created."
+msgstr ""
+
+#: ../app/controllers/addresses_controller.rb:33
+msgid "Address was successfully updated."
+msgstr ""
+
+#: ../app/controllers/addresses_controller.rb:43
+msgid "Address was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/application_controller.rb:36
+msgid "This product is out of stock"
+msgstr ""
+
+#: ../app/controllers/application_controller.rb:46 ../app/controllers/application_controller.rb:49
+msgid "You are not authorized to perform this action"
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:12
+msgid "Shopping cart"
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38
+msgid "Your cart is empty!"
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:45
+msgid "Cart was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:47
+msgid "Something went wrong"
+msgstr ""
+
+#: ../app/controllers/categories_controller.rb:28
+msgid "Category was successfully created."
+msgstr ""
+
+#: ../app/controllers/categories_controller.rb:38
+msgid "Category was successfully updated."
+msgstr ""
+
+#: ../app/controllers/categories_controller.rb:48
+msgid "Category was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/line_items_controller.rb:14
+msgid "%s x %s added to your cart!"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:17
+msgid "\"Order ##{@order.id}\""
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:31
+msgid "Checkout"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:58
+msgid "Thank you for your order!"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:72
+msgid "Can not change order status"
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:29
+msgid "Product was successfully created."
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:39
+msgid "Product was successfully updated."
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:50
+msgid "Product was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/shipments_controller.rb:22
+msgid "Shipment was successfully created."
+msgstr ""
+
+#: ../app/controllers/shipments_controller.rb:30
+msgid "Shipment was successfully updated."
+msgstr ""
+
+#: ../app/controllers/shipments_controller.rb:38
+msgid "Shipment was successfully destroyed."
+msgstr ""
+
+#: ../app/views/addresses/_form.haml:24
+msgid "Recipient"
+msgstr ""
+
+#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
+msgid "Reset password"
+msgstr ""
+
+#: ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
+msgid "Email"
+msgstr ""
+
+#: ../app/views/devise/passwords/new.haml:31
+msgid "We'll send password reset instructions."
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:9 ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5
+msgid "Sign up"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:20
+msgid "Name"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
+msgid "Password"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:41
+msgid "Confirm Password"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:53
+msgid "Already have an account?"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:9 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2
+msgid "Sign in"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:45
+msgid "Remember me"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:58
+msgid "Don't have an account?"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:8
+msgid "Forgot your password?"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:11
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:14
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+#: ../app/views/shipments/show.haml:26
+msgid "Fee"
+msgstr ""
+
+#: model_attributes.rb:2
+msgid "Address"
+msgstr ""
+
+#: model_attributes.rb:3
+msgid "Address|City"
+msgstr ""
+
+#: model_attributes.rb:4
+msgid "Address|Phone"
+msgstr ""
+
+#: model_attributes.rb:5
+msgid "Address|Recipient"
+msgstr ""
+
+#: model_attributes.rb:6
+msgid "Address|Street"
+msgstr ""
+
+#: model_attributes.rb:7
+msgid "Address|Zip code"
+msgstr ""
+
+#: model_attributes.rb:8
+msgid "Category"
+msgstr ""
+
+#: model_attributes.rb:9
+msgid "Category|Description"
+msgstr ""
+
+#: model_attributes.rb:10
+msgid "Category|Name"
+msgstr ""
+
+#: model_attributes.rb:11
+msgid "Category|Products count"
+msgstr ""
+
+#: model_attributes.rb:12
+msgid "Line item"
+msgstr ""
+
+#: model_attributes.rb:13
+msgid "LineItem|Price"
+msgstr ""
+
+#: model_attributes.rb:14
+msgid "LineItem|Quantity"
+msgstr ""
+
+#: model_attributes.rb:15
+msgid "Order"
+msgstr ""
+
+#: model_attributes.rb:16
+msgid "Order|Pay type"
+msgstr ""
+
+#: model_attributes.rb:17
+msgid "Order|Status"
+msgstr ""
+
+#: model_attributes.rb:18
+msgid "Product"
+msgstr ""
+
+#: model_attributes.rb:19
+msgid "Product|Description"
+msgstr ""
+
+#: model_attributes.rb:20
+msgid "Product|Ean"
+msgstr ""
+
+#: model_attributes.rb:21
+msgid "Product|Image"
+msgstr ""
+
+#: model_attributes.rb:22
+msgid "Product|Name"
+msgstr ""
+
+#: model_attributes.rb:23
+msgid "Product|Price"
+msgstr ""
+
+#: model_attributes.rb:24
+msgid "Product|Quantity"
+msgstr ""
+
+#: model_attributes.rb:25
+msgid "Product|Vat"
+msgstr ""
+
+#: model_attributes.rb:26
+msgid "Shipment"
+msgstr ""
+
+#: model_attributes.rb:27
+msgid "Shipment|Default"
+msgstr ""
+
+#: model_attributes.rb:28
+msgid "Shipment|Fee"
+msgstr ""
+
+#: model_attributes.rb:29
+msgid "Shipment|Name"
+msgstr ""
+
+#: model_attributes.rb:30
+msgid "Shipment|Provider"
+msgstr ""
+
+#: model_attributes.rb:31
+msgid "User"
+msgstr ""
+
+#: model_attributes.rb:32
+msgid "User|Confirmation sent at"
+msgstr ""
+
+#: model_attributes.rb:33
+msgid "User|Confirmation token"
+msgstr ""
+
+#: model_attributes.rb:34
+msgid "User|Confirmed at"
+msgstr ""
+
+#: model_attributes.rb:35
+msgid "User|Current sign in at"
+msgstr ""
+
+#: model_attributes.rb:36
+msgid "User|Current sign in ip"
+msgstr ""
+
+#: model_attributes.rb:37
+msgid "User|Email"
+msgstr ""
+
+#: model_attributes.rb:38
+msgid "User|Encrypted password"
+msgstr ""
+
+#: model_attributes.rb:39
+msgid "User|Integer"
+msgstr ""
+
+#: model_attributes.rb:40
+msgid "User|Last sign in at"
+msgstr ""
+
+#: model_attributes.rb:41
+msgid "User|Last sign in ip"
+msgstr ""
+
+#: model_attributes.rb:42
+msgid "User|Name"
+msgstr ""
+
+#: model_attributes.rb:43
+msgid "User|Remember created at"
+msgstr ""
+
+#: model_attributes.rb:44
+msgid "User|Reset password sent at"
+msgstr ""
+
+#: model_attributes.rb:45
+msgid "User|Reset password token"
+msgstr ""
+
+#: model_attributes.rb:46
+msgid "User|Role"
+msgstr ""
+
+#: model_attributes.rb:47
+msgid "User|Sign in count"
+msgstr ""
+
+#: model_attributes.rb:48
+msgid "User|String"
+msgstr ""
+
+#: model_attributes.rb:49
+msgid "User|Unconfirmed email"
+msgstr ""

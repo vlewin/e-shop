@@ -1,0 +1,285 @@
+# German translations for app package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2014-10-23 16:23+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "Store"
+msgstr "Shop"
+
+msgid "Account settings"
+msgstr "Kontoeinstellungen"
+
+msgid "Address was successfully created."
+msgstr "Adresse wurde erfolgreich erstellt."
+
+msgid "Address was successfully updated."
+msgstr "Adresse wurde erfolgreich aktualisiert."
+
+msgid "Address was successfully destroyed."
+msgstr "Adresse wurde erfolgreich zerstört."
+
+msgid "This product is out of stock"
+msgstr "Dieses Produkt ist ausverkauft"
+
+msgid "You are not authorized to perform this action"
+msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
+
+msgid "Shopping cart"
+msgstr "Warenkorb"
+
+msgid "Your cart is empty!"
+msgstr "Ihr Warenkorb ist leer!"
+
+msgid "Cart was successfully destroyed."
+msgstr "Warenkorb wurde erfolgreich zerstört."
+
+msgid "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
+
+msgid "Category was successfully created."
+msgstr "Kategorie wurde erfolgreich erstellt."
+
+msgid "Category was successfully updated."
+msgstr "Kategorie wurde erfolgreich aktualisiert."
+
+msgid "Category was successfully destroyed."
+msgstr "Kategorie wurde erfolgreich zerstört."
+
+msgid "%s x %s added to your cart!"
+msgstr "%s x %s in den Warenkorb gelegt!"
+
+msgid "\"Order ##{@order.id}\""
+msgstr ""
+
+msgid "Checkout"
+msgstr "zur Kasse"
+
+msgid "Thank you for your order!"
+msgstr "Vielen Dank für Ihre Bestellung!"
+
+msgid "Can not change order status"
+msgstr "Auftragsstatus kann nicht geändern werden"
+
+msgid "Product was successfully created."
+msgstr "Produkt wurde erfolgreich erstellt."
+
+msgid "Product was successfully updated."
+msgstr "Produkt wurde erfolgreich aktualisiert."
+
+msgid "Product was successfully destroyed."
+msgstr "Produkt wurde erfolgreich zerstört."
+
+msgid "Shipment was successfully created."
+msgstr "Versandart wurde erfolgreich erstellt."
+
+msgid "Shipment was successfully updated."
+msgstr "Versandart wurde erfolgreich aktualisiert."
+
+msgid "Shipment was successfully destroyed."
+msgstr "Versandart wurde erfolgreich zerstört."
+
+msgid "Recipient"
+msgstr "Empfänger"
+
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "We'll send password reset instructions."
+msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
+
+msgid "Sign up"
+msgstr "Registrierung"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+msgid "Already have an account?"
+msgstr "Haben Sie bereits ein Konto?"
+
+msgid "Sign in"
+msgstr "Anmeldung"
+
+msgid "Remember me"
+msgstr "Eingeloggt bleiben"
+
+msgid "Don't have an account?"
+msgstr "Haben Sie noch kein Konto?"
+
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+msgid "Fee"
+msgstr "Gebühr"
+
+msgid "Address"
+msgstr "Addresse"
+
+msgid "Address|City"
+msgstr "Stadt"
+
+msgid "Address|Phone"
+msgstr "Telefon"
+
+msgid "Address|Recipient"
+msgstr "Empfänger"
+
+msgid "Address|Street"
+msgstr "Straße"
+
+msgid "Address|Zip code"
+msgstr "PLZ"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Category|Description"
+msgstr "Beschreibung"
+
+msgid "Category|Name"
+msgstr "Name"
+
+msgid "Category|Products count"
+msgstr "Anzahl der Produkte"
+
+msgid "Line item"
+msgstr "Auftragsposition"
+
+msgid "LineItem|Price"
+msgstr "Preis"
+
+msgid "LineItem|Quantity"
+msgstr "Anzahl"
+
+msgid "Order"
+msgstr "Auftrag"
+
+msgid "Order|Pay type"
+msgstr "Zahlungsart"
+
+msgid "Order|Status"
+msgstr "Status"
+
+msgid "Product"
+msgstr "Produkt"
+
+msgid "Product|Description"
+msgstr "Beschreibung"
+
+msgid "Product|Ean"
+msgstr "Artikelnummer"
+
+msgid "Product|Image"
+msgstr "Image"
+
+msgid "Product|Name"
+msgstr "Name"
+
+msgid "Product|Price"
+msgstr "Preis"
+
+msgid "Product|Quantity"
+msgstr "Anzahl"
+
+msgid "Product|Vat"
+msgstr "MwSt"
+
+msgid "Shipment"
+msgstr "Versand"
+
+msgid "Shipment|Default"
+msgstr "Standard"
+
+msgid "Shipment|Fee"
+msgstr "Gebühr"
+
+msgid "Shipment|Name"
+msgstr "Name"
+
+msgid "Shipment|Provider"
+msgstr "Anbieter"
+
+msgid "User"
+msgstr "Benutzer"
+
+msgid "User|Confirmation sent at"
+msgstr ""
+
+msgid "User|Confirmation token"
+msgstr "Bestätigungscode"
+
+msgid "User|Confirmed at"
+msgstr ""
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Email"
+msgstr ""
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|Integer"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Name"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Role"
+msgstr ""
+
+msgid "User|Sign in count"
+msgstr ""
+
+msgid "User|String"
+msgstr ""
+
+msgid "User|Unconfirmed email"
+msgstr ""
