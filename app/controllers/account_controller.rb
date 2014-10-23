@@ -1,12 +1,14 @@
 class AccountController < Devise::RegistrationsController
-  before_filter :authenticate_user!, only: [:show]
+  # before_filter :authenticate_user!, only: [:show]
   before_filter :update_sanitized_params, if: :devise_controller?
 
   after_action :verify_authorized, only: [:show]
 
-  def authenticate_user!
-    redirect_to new_user_session_path, alert: _('You need to sign in or sign up before continuing.') if current_user.nil?
-  end
+  # FIXME: BROKEN!!!
+  # def authenticate_user!
+  #   # redirect_to new_user_session_path, alert: _('You need to sign in or sign up before continuing.') if current_user.nil?
+  #   redirect_to new_user_session_path if current_user.nil?
+  # end
 
   def update
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)

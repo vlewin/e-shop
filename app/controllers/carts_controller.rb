@@ -44,7 +44,7 @@ class CartsController < ApplicationController
     if @cart.destroy
       flash.notice = _('Cart was successfully destroyed.')
     else
-      flash.error = _("We were unable to destroy the cart #{cart.id}")
+      flash.error = _('Something went wrong')
     end
 
     redirect_to_back_or_default root_path
