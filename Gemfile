@@ -60,7 +60,7 @@ end
 group :test do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'database_cleaner'
-  gem 'shoulda'
+  gem 'shoulda-matchers', '~>2.6.2'
   gem 'launchy'
 end
 
