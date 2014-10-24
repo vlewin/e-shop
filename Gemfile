@@ -36,12 +36,12 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'rmagick', require: false
 
-# Used in seed.rb
+# FIXME: move to development/test group (used in seed.rb)
 gem 'ffaker'
+gem 'factory_girl_rails'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'factory_girl_rails'
   gem 'awesome_print'
   gem 'byebug'
 end
