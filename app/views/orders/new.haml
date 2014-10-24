@@ -1,0 +1,33 @@
+= form_for @order, html: { role: 'form', class: 'new_order_form'} do |form|
+  = render 'layouts/errors', object: @order
+
+  .progress-steps
+    .progress-timeline
+      %ul.progress-timeline-completion{ step: 1, data: { step: 2 }}
+        %li.step.active{ rel: :tooltip, title: _('Shipping and Billing address') }
+          %a{ href: '#address', data: { toggle: 'collapse', parent: '#accordion', step: 1 }}
+            %i.fa.fa-envelope.icon
+        %li.step{ rel: :tooltip, title: _('Shipping method') }
+          %a{ href: '#shipping', data: { toggle: 'collapse', parent: '#accordion', step: 2 }}
+            %i.fa.fa-truck.icon
+        %li.step{ rel: :tooltip, title: _('Payment method') }
+          %a{ href: '#payment', data: { toggle: 'collapse', parent: '#accordion', step: 3 }}
+            %i.fa.fa-credit-card.icon
+        %li.step{ rel: :tooltip, title: _('Order sumary') }
+          %a{ href: '#summary', data: { toggle: 'collapse', parent: '#accordion', step: 4 }}
+            %i.fa.fa-list.icon
+
+  %br
+
+  #accordion.panel-group
+    .panel
+      = render partial: 'address', locals: { form: form }
+    .panel
+      = render partial: 'shipping', locals: { form: form }
+    .panel
+      = render partial: 'payment', locals: { form: form }
+    .panel
+      = render partial: 'summary', locals: { form: form }
+
+
+= render 'addresses/modal', address: Address.new

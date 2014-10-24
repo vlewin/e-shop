@@ -19,7 +19,7 @@
             %td
               = form_tag update_status_order_path(order), id: :update_status, method: :put do
                 - labels = { accepted: 'btn-default', in_progress: 'btn-default', shipped: 'btn-primary', completed: 'btn-success'}
-                - icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
+                - icons = { accepted: 'fa-clock-o', in_progress: 'fa-archive', shipped: 'fa-truck', completed: 'fa-check-circle'}
                 .btn-group
                   %button.btn.btn-sm.btn-default.dropdown-toggle{ class: labels[order.status.to_sym], data: { toggle: :dropdown }}
                     %i{ class: "fa #{icons[order.status.to_sym]}"}

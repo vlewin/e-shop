@@ -38,9 +38,6 @@ msgstr "Dieses Produkt ist ausverkauft"
 msgid "You are not authorized to perform this action"
 msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
 
-msgid "Shopping cart"
-msgstr "Warenkorb"
-
 msgid "Your cart is empty!"
 msgstr "Ihr Warenkorb ist leer!"
 
@@ -64,9 +61,6 @@ msgstr "%s x %s in den Warenkorb gelegt!"
 
 msgid "Order #%d"
 msgstr "Auftrag #%d"
-
-msgid "Checkout"
-msgstr "zur Kasse"
 
 msgid "Thank you for your order!"
 msgstr "Vielen Dank für Ihre Bestellung!"
@@ -143,7 +137,7 @@ msgstr "Status"
 msgid "Date"
 msgstr "Datum"
 
-msgid "Payment type"
+msgid "Payment method"
 msgstr "Zahlungsart"
 
 msgid "Shipment"
@@ -178,6 +172,12 @@ msgstr "Änderungen speichern"
 
 msgid "Cancel"
 msgstr "Abbrechen"
+
+msgid "Continue shopping"
+msgstr "Weiter einkaufen"
+
+msgid "Check out"
+msgstr "zur Kasse"
 
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
@@ -236,29 +236,62 @@ msgstr "Versandarts"
 msgid "Carts"
 msgstr "Warenkörbe"
 
-msgid "Billing address"
-msgstr "Rechnungsadresse"
+msgid "Shipping and Billing address"
+msgstr "Versand- und Rechnungsadresse"
 
 msgid "Shipping address"
 msgstr "Versandadresse"
 
-msgid "Order date"
-msgstr "Auftragsdatum"
+msgid "Billing address"
+msgstr "Rechnungsadresse"
+
+msgid "billing address is same as shipping address"
+msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
+
+msgid "Your addresses list is empty, please add at least one address"
+msgstr "Ihre Adressen-Liste ist leer, fügen Sie bitte mindestens eine Adresse hinzu"
+
+msgid "Back to cart"
+msgstr "Zurück zum Warenkorb"
+
+msgid "Next"
+msgstr "Weiter"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "Shipping method"
+msgstr "Versandart"
 
 msgid "Order summary"
 msgstr "Bestellübersicht"
 
-msgid "Product"
-msgstr "Produkt"
-
-msgid "Price"
-msgstr "Preis"
+msgid "Image"
+msgstr "Bild"
 
 msgid "Quantity"
 msgstr "Anzahl"
 
+msgid "Price"
+msgstr "Preis"
+
 msgid "Subtotal"
 msgstr "Zwischensumme"
+
+msgid "VAT"
+msgstr "MwSt"
+
+msgid "Place order"
+msgstr "Bestellung aufgeben"
+
+msgid "Order sumary"
+msgstr "Bestellübersicht"
+
+msgid "Order date"
+msgstr "Auftragsdatum"
+
+msgid "Product"
+msgstr "Produkt"
 
 msgid "Fee"
 msgstr "Gebühr"

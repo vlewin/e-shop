@@ -1,0 +1,16 @@
+.panel-heading
+  %h4.panel-title
+    %span.round 3
+    = _('Payment method')
+
+#payment.panel-collapse.collapse
+  .panel-body
+    - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
+      .radio
+        %label
+          = form.radio_button :pay_type, payment_type, :checked => index.zero?
+          = payment_type
+
+    %hr
+    .pull-left= icon_link_to _('Back'), '#shipping', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 2 } }, 'fa-chevron-circle-left'
+    .pull-right= icon_link_to _('Next'), '#summary', { class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse', step: 4 }}, 'fa-chevron-circle-right'

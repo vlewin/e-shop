@@ -5,7 +5,7 @@
         %tr
           %th= _('Status')
           %th= _('Date')
-          %th= _('Payment type')
+          %th= _('Payment method')
           %th= _('Shipment')
           %th= _('Total')
           %th{ collspan: 2}
@@ -18,7 +18,7 @@
             %td= order.pay_type
             %td= "#{order.shipment.provider} #{order.shipment.name}"
             %td= number_to_currency order.total
-            %td
+            %td{ width: '15%' }
               = icon_link_to '', order_path(order), { class: 'btn btn-default' }, 'fa-eye'
               = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-default' } , 'fa-print'
 

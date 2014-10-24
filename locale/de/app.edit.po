@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-#: ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/store_controller.rb:19
+#: ../app/controllers/account_controller.rb:43 ../app/controllers/orders_controller.rb:15 ../app/controllers/store_controller.rb:19
 msgid "Store"
 msgstr "Shop"
 
@@ -45,11 +45,7 @@ msgstr "Dieses Produkt ist ausverkauft"
 msgid "You are not authorized to perform this action"
 msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
 
-#: ../app/controllers/carts_controller.rb:12
-msgid "Shopping cart"
-msgstr "Warenkorb"
-
-#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38
+#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38 ../app/views/carts/show.html.slim:16
 msgid "Your cart is empty!"
 msgstr "Ihr Warenkorb ist leer!"
 
@@ -77,13 +73,9 @@ msgstr "Kategorie wurde erfolgreich zerstört."
 msgid "%s x %s added to your cart!"
 msgstr "%s x %s in den Warenkorb gelegt!"
 
-#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.slim:19
+#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.haml:41
 msgid "Order #%d"
 msgstr "Auftrag #%d"
-
-#: ../app/controllers/orders_controller.rb:31
-msgid "Checkout"
-msgstr "zur Kasse"
 
 #: ../app/controllers/orders_controller.rb:58
 msgid "Thank you for your order!"
@@ -117,23 +109,23 @@ msgstr "Versandart wurde erfolgreich aktualisiert."
 msgid "Shipment was successfully destroyed."
 msgstr "Versandart wurde erfolgreich zerstört."
 
-#: ../app/helpers/application_helper.rb:66
+#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:8
 msgid "Accepted"
 msgstr "Angenommen"
 
-#: ../app/helpers/application_helper.rb:67
+#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:13
 msgid "In progress"
 msgstr "In Bearbeitung"
 
-#: ../app/helpers/application_helper.rb:68
+#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:18
 msgid "Shipped"
 msgstr "Versand"
 
-#: ../app/helpers/application_helper.rb:69
+#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
 msgid "Completed"
 msgstr "Abgeschlossen"
 
-#: ../app/views/account/_account.haml:8 ../app/views/devise/registrations/new.haml:20 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
+#: ../app/views/account/_account.haml:8 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
 msgid "Name"
 msgstr "Name"
 
@@ -185,15 +177,15 @@ msgstr "Status"
 msgid "Date"
 msgstr "Datum"
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/show.slim:47
-msgid "Payment type"
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:27 ../app/views/orders/show.haml:108
+msgid "Payment method"
 msgstr "Zahlungsart"
 
-#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:91 model_attributes.rb:26
+#: ../app/views/account/_order.haml:15 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:215 model_attributes.rb:26
 msgid "Shipment"
 msgstr "Versand"
 
-#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:75 ../app/views/orders/show.slim:95
+#: ../app/views/account/_order.haml:17 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225
 msgid "Total"
 msgstr "Gesamt"
 
@@ -209,7 +201,7 @@ msgstr "Aufträge"
 msgid "Addresses"
 msgstr "Adressen"
 
-#: ../app/views/account/show.haml:39
+#: ../app/views/account/show.haml:39 ../app/views/orders/_address.haml:12
 msgid "New Address"
 msgstr "Neue Adresse"
 
@@ -232,6 +224,14 @@ msgstr "Änderungen speichern"
 #: ../app/views/addresses/_modal.haml:90
 msgid "Cancel"
 msgstr "Abbrechen"
+
+#: ../app/views/carts/show.html.slim:22
+msgid "Continue shopping"
+msgstr "Weiter einkaufen"
+
+#: ../app/views/carts/show.html.slim:23
+msgid "Check out"
+msgstr "zur Kasse"
 
 #: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
 msgid "Reset password"
@@ -309,37 +309,81 @@ msgstr "Versandarts"
 msgid "Carts"
 msgstr "Warenkörbe"
 
-#: ../app/views/orders/show.slim:27
-msgid "Billing address"
-msgstr "Rechnungsadresse"
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:11
+msgid "Shipping and Billing address"
+msgstr "Versand- und Rechnungsadresse"
 
-#: ../app/views/orders/show.slim:37
+#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:82
 msgid "Shipping address"
 msgstr "Versandadresse"
 
-#: ../app/views/orders/show.slim:53
-msgid "Order date"
-msgstr "Auftragsdatum"
+#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
+msgid "Billing address"
+msgstr "Rechnungsadresse"
 
-#: ../app/views/orders/show.slim:62
+#: ../app/views/orders/_address.haml:49
+msgid "billing address is same as shipping address"
+msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
+
+#: ../app/views/orders/_address.haml:73
+msgid "Your addresses list is empty, please add at least one address"
+msgstr "Ihre Adressen-Liste ist leer, fügen Sie bitte mindestens eine Adresse hinzu"
+
+#: ../app/views/orders/_address.haml:81
+msgid "Back to cart"
+msgstr "Zurück zum Warenkorb"
+
+#: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
+msgid "Next"
+msgstr "Weiter"
+
+#: ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108
+msgid "Back"
+msgstr "Zurück"
+
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:19
+msgid "Shipping method"
+msgstr "Versandart"
+
+#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:148
 msgid "Order summary"
 msgstr "Bestellübersicht"
 
-#: ../app/views/orders/show.slim:69 model_attributes.rb:18
-msgid "Product"
-msgstr "Produkt"
+#: ../app/views/orders/_summary.haml:22
+msgid "Image"
+msgstr "Bild"
 
-#: ../app/views/orders/show.slim:71 ../app/views/store/_products.html.haml:71
-msgid "Price"
-msgstr "Preis"
-
-#: ../app/views/orders/show.slim:73 ../app/views/store/_products.html.haml:73
+#: ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
 msgstr "Anzahl"
 
-#: ../app/views/orders/show.slim:87
+#: ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/store/_products.html.haml:71
+msgid "Price"
+msgstr "Preis"
+
+#: ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:205
 msgid "Subtotal"
 msgstr "Zwischensumme"
+
+#: ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72
+msgid "VAT"
+msgstr "MwSt"
+
+#: ../app/views/orders/_summary.haml:110
+msgid "Place order"
+msgstr "Bestellung aufgeben"
+
+#: ../app/views/orders/new.haml:35
+msgid "Order sumary"
+msgstr "Bestellübersicht"
+
+#: ../app/views/orders/show.haml:122
+msgid "Order date"
+msgstr "Auftragsdatum"
+
+#: ../app/views/orders/show.haml:163 model_attributes.rb:18
+msgid "Product"
+msgstr "Produkt"
 
 #: ../app/views/shipments/show.haml:26
 msgid "Fee"

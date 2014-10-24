@@ -56,8 +56,8 @@ module ApplicationHelper
     }
 
     icons = {
-      accepted: 'fa-archive',
-      in_progress: 'fa-clock-o',
+      accepted: 'fa-clock-o',
+      in_progress: 'fa-archive',
       shipped: 'fa-truck',
       completed: 'fa-check-circle'
     }

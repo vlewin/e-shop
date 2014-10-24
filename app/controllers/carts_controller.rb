@@ -8,8 +8,8 @@ class CartsController < ApplicationController
   end
 
   def show
-    add_breadcrumb _('Store'), :root_path
-    add_breadcrumb _('Shopping cart'), cart_path(@current_cart)
+    # add_breadcrumb _('Store'), :root_path
+    # add_breadcrumb _('Shopping cart'), cart_path(@current_cart)
 
     if @current_cart.empty?
       flash.notice = _('Your cart is empty!')

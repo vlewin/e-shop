@@ -1,0 +1,79 @@
+// FIXME: absolute to fixed
+form {
+  .progress-steps {
+    margin-bottom: 25px;
+    margin-top: 45px;
+  }
+}
+
+.panel-heading {
+  .progress-steps {
+    margin-bottom: 25px;
+    margin-top: 25px;
+  }
+}
+
+.progress-steps {
+  position:relative;
+
+  .progress-timeline {
+    height:4px;
+    border:1px solid #ddd;
+    background:#eee;
+    box-shadow:0px 0px 2px 0px #ddd inset;
+
+    .progress-timeline-completion {
+      width: 0;
+      height: 4px;
+      background: #5b5;
+      list-style-type: none;
+
+      &[step="1"] { width: 0%; }
+      &[step="2"] { width: 30%; }
+      &[step="3"] { width: 60%; }
+      &[step="4"] { width: 100%; }
+
+      a {
+        outline: none;
+      }
+
+      .step {
+        position:absolute;
+        margin-top: -28px;
+        padding: 5px;
+        border-radius: 50%;
+
+        background-color:#EAEAEA;
+        border: 3px solid #fff;
+        box-shadow: 0px 0px 2px 0px #C2C2C2 inset;
+
+        i {
+          height: 40px;
+          width: 40px;
+          line-height: 40px;
+          font-size: 24px;
+
+          text-align: center;
+          vertical-align: middle;
+          color: #AAAAAA;
+
+        }
+
+        &.active {
+          box-shadow: none;
+          background-color: #5b5;
+
+          i {
+            color: #fff;
+          }
+        }
+      }
+
+      li.step:nth-child(1) { left: 0; }
+      li.step:nth-child(2) { left: 30%; }
+      li.step:nth-child(3) { left: 60%; }
+      li.step:nth-child(4) { right: 0; }
+    }
+  }
+}
+

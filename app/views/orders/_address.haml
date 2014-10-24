@@ -1,0 +1,46 @@
+.panel-heading
+  %h4.panel-title
+    %span.round 1
+    = _('Shipping and Billing address')
+
+    .pull-right
+      %small= link_to _('New Address'), '#new_address', data: { target: '#address_modal', toggle: 'modal' }
+
+#address.panel-collapse.collapse.in
+  .panel-body
+    %h5= _('Shipping address')
+    - if current_user.addresses.present?
+      #shipping_addresses
+        - current_user.addresses.each_with_index do |address, index|
+          .radio
+            %label
+              = form.radio_button :shipping_address_id, address.id, checked: (address == current_user.addresses.first)
+              = address.full_address
+      %hr
+
+      %h5= _('Billing address')
+      .checkbox
+        %label
+          = check_box_tag :bill_to_shipping, true, checked: true
+          %label= _('billing address is same as shipping address')
+
+      #billing_addresses.hidden
+        - current_user.addresses.each_with_index do |address, index|
+          .radio.disabled
+            %label
+              = form.radio_button :billing_address_id, address.id, checked: (address == current_user.addresses.last), disabled: true
+              = address.full_address
+
+    - else
+      %h5
+        %i.fa.fa-info-circle
+        = _('Your addresses list is empty, please add at least one address')
+
+    %hr
+    .pull-left
+      = icon_link_to _('Back to cart'), cart_path(@current_cart), { class: 'btn btn-default' }, 'fa-chevron-circle-left'
+
+    .pull-right
+      = icon_link_to _('Next'), '#shipping', { class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse', step: 2 }}, 'fa-chevron-circle-right'
+
+

@@ -27,8 +27,8 @@ class OrdersController < ApplicationController
   end
 
   def new
-    add_breadcrumb _('Store'), :root_path
-    add_breadcrumb _('Checkout'), new_order_path
+    # add_breadcrumb _('Store'), :root_path
+    # add_breadcrumb _('Check-out'), new_order_path
 
     @cart = current_cart
     @shipments = Shipment.all

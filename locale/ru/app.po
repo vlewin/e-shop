@@ -39,9 +39,6 @@ msgstr ""
 msgid "You are not authorized to perform this action"
 msgstr ""
 
-msgid "Shopping cart"
-msgstr ""
-
 msgid "Your cart is empty!"
 msgstr ""
 
@@ -64,9 +61,6 @@ msgid "%s x %s added to your cart!"
 msgstr ""
 
 msgid "Order #%d"
-msgstr ""
-
-msgid "Checkout"
 msgstr ""
 
 msgid "Thank you for your order!"
@@ -144,7 +138,7 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
-msgid "Payment type"
+msgid "Payment method"
 msgstr ""
 
 msgid "Shipment"
@@ -178,6 +172,12 @@ msgid "Save changes"
 msgstr ""
 
 msgid "Cancel"
+msgstr ""
+
+msgid "Continue shopping"
+msgstr ""
+
+msgid "Check out"
 msgstr ""
 
 msgid "Reset password"
@@ -237,28 +237,61 @@ msgstr ""
 msgid "Carts"
 msgstr ""
 
-msgid "Billing address"
+msgid "Shipping and Billing address"
 msgstr ""
 
 msgid "Shipping address"
 msgstr ""
 
-msgid "Order date"
+msgid "Billing address"
+msgstr ""
+
+msgid "billing address is same as shipping address"
+msgstr ""
+
+msgid "Your addresses list is empty, please add at least one address"
+msgstr ""
+
+msgid "Back to cart"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Shipping method"
 msgstr ""
 
 msgid "Order summary"
 msgstr ""
 
-msgid "Product"
-msgstr ""
-
-msgid "Price"
+msgid "Image"
 msgstr ""
 
 msgid "Quantity"
 msgstr ""
 
+msgid "Price"
+msgstr ""
+
 msgid "Subtotal"
+msgstr ""
+
+msgid "VAT"
+msgstr ""
+
+msgid "Place order"
+msgstr ""
+
+msgid "Order sumary"
+msgstr ""
+
+msgid "Order date"
+msgstr ""
+
+msgid "Product"
 msgstr ""
 
 msgid "Fee"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-23 23:44+0200\n"
-"PO-Revision-Date: 2014-10-23 23:44+0200\n"
+"POT-Creation-Date: 2014-10-24 15:00+0200\n"
+"PO-Revision-Date: 2014-10-24 15:00+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:66
+#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:8
 msgid "Accepted"
 msgstr ""
 
@@ -86,7 +86,15 @@ msgstr ""
 msgid "Available: %d of %d"
 msgstr ""
 
-#: ../app/views/orders/show.slim:27
+#: ../app/views/orders/_summary.haml:108 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33
+msgid "Back"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:81
+msgid "Back to cart"
+msgstr ""
+
+#: ../app/views/orders/show.haml:58 ../app/views/orders/_address.haml:41
 msgid "Billing address"
 msgstr ""
 
@@ -138,16 +146,20 @@ msgstr ""
 msgid "Category|Products count"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:31
-msgid "Checkout"
+#: ../app/views/carts/show.html.slim:23
+msgid "Check out"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:69
+#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
 msgid "Completed"
 msgstr ""
 
-#: ../app/views/account/_account.haml:46 ../app/views/devise/registrations/new.haml:41
+#: ../app/views/devise/registrations/new.haml:41 ../app/views/account/_account.haml:46
 msgid "Confirm Password"
+msgstr ""
+
+#: ../app/views/carts/show.html.slim:22
+msgid "Continue shopping"
 msgstr ""
 
 #: ../app/views/store/index.haml:63
@@ -186,7 +198,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../app/views/account/_account.haml:19 ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
+#: ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/passwords/new.haml:19 ../app/views/account/_account.haml:19
 msgid "Email"
 msgstr ""
 
@@ -198,7 +210,11 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:67
+#: ../app/views/orders/_summary.haml:22
+msgid "Image"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:13
 msgid "In progress"
 msgstr ""
 
@@ -218,31 +234,39 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16 ../app/views/layouts/_navigation.html.slim:37
+#: ../app/controllers/orders_controller.rb:16 ../app/controllers/account_controller.rb:44 ../app/views/layouts/_navigation.html.slim:37
 msgid "My Account"
 msgstr ""
 
-#: ../app/views/account/_account.haml:8 ../app/views/devise/registrations/new.haml:20 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
+#: ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/account/_account.haml:8
 msgid "Name"
 msgstr ""
 
-#: ../app/views/account/show.haml:39
+#: ../app/views/orders/_address.haml:12 ../app/views/account/show.haml:39
 msgid "New Address"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
+msgid "Next"
 msgstr ""
 
 #: model_attributes.rb:15
 msgid "Order"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.slim:19
+#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.haml:41
 msgid "Order #%d"
 msgstr ""
 
-#: ../app/views/orders/show.slim:53
+#: ../app/views/orders/show.haml:122
 msgid "Order date"
 msgstr ""
 
-#: ../app/views/orders/show.slim:62
+#: ../app/views/orders/new.haml:35
+msgid "Order sumary"
+msgstr ""
+
+#: ../app/views/orders/show.haml:148 ../app/views/orders/_summary.haml:7
 msgid "Order summary"
 msgstr ""
 
@@ -262,15 +286,19 @@ msgstr ""
 msgid "Out of stock"
 msgstr ""
 
-#: ../app/views/account/_account.haml:33 ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
+#: ../app/views/devise/sessions/new.haml:27 ../app/views/devise/registrations/new.haml:34 ../app/views/account/_account.haml:33
 msgid "Password"
 msgstr ""
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/show.slim:47
-msgid "Payment type"
+#: ../app/views/orders/show.haml:108 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:27 ../app/views/account/_order.haml:13
+msgid "Payment method"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:71 ../app/views/orders/show.slim:71
+#: ../app/views/orders/_summary.haml:110
+msgid "Place order"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:71 ../app/views/orders/show.haml:168 ../app/views/orders/_summary.haml:28
 msgid "Price"
 msgstr ""
 
@@ -278,7 +306,7 @@ msgstr ""
 msgid "Prise"
 msgstr ""
 
-#: ../app/views/orders/show.slim:69 model_attributes.rb:18
+#: ../app/views/orders/show.haml:163 model_attributes.rb:18
 msgid "Product"
 msgstr ""
 
@@ -326,7 +354,7 @@ msgstr ""
 msgid "Product|Vat"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:73 ../app/views/orders/show.slim:73
+#: ../app/views/store/_products.html.haml:73 ../app/views/orders/show.haml:173 ../app/views/orders/_summary.haml:26
 msgid "Quantity"
 msgstr ""
 
@@ -338,7 +366,7 @@ msgstr ""
 msgid "Remember me"
 msgstr ""
 
-#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
+#: ../app/views/devise/sessions/new.haml:32 ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
 msgid "Reset password"
 msgstr ""
 
@@ -350,7 +378,7 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ../app/views/account/_order.haml:15 ../app/views/orders/show.slim:91 model_attributes.rb:26
+#: ../app/views/orders/show.haml:215 ../app/views/orders/_summary.haml:82 ../app/views/account/_order.haml:15 model_attributes.rb:26
 msgid "Shipment"
 msgstr ""
 
@@ -386,19 +414,23 @@ msgstr ""
 msgid "Shipment|Provider"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:68
+#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:18
 msgid "Shipped"
 msgstr ""
 
-#: ../app/views/orders/show.slim:37
+#: ../app/views/orders/show.haml:82 ../app/views/orders/_address.haml:22
 msgid "Shipping address"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:12
-msgid "Shopping cart"
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:11
+msgid "Shipping and Billing address"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:46
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:19
+msgid "Shipping method"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:57 ../app/views/devise/shared/_links.html.slim:2 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:46
 msgid "Sign in"
 msgstr ""
 
@@ -406,7 +438,7 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:47
+#: ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:47 ../app/views/devise/shared/_links.html.slim:5 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:47
 msgid "Sign up"
 msgstr ""
 
@@ -434,11 +466,11 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: ../app/controllers/account_controller.rb:43 ../app/controllers/carts_controller.rb:11 ../app/controllers/orders_controller.rb:15 ../app/controllers/orders_controller.rb:30 ../app/controllers/store_controller.rb:19
+#: ../app/controllers/orders_controller.rb:15 ../app/controllers/account_controller.rb:43 ../app/controllers/store_controller.rb:19
 msgid "Store"
 msgstr ""
 
-#: ../app/views/orders/show.slim:87
+#: ../app/views/orders/show.haml:205 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62
 msgid "Subtotal"
 msgstr ""
 
@@ -450,7 +482,7 @@ msgstr ""
 msgid "This product is out of stock"
 msgstr ""
 
-#: ../app/views/account/_order.haml:17 ../app/views/orders/show.slim:75 ../app/views/orders/show.slim:95
+#: ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/account/_order.haml:17
 msgid "Total"
 msgstr ""
 
@@ -538,6 +570,10 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
+#: ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72
+msgid "VAT"
+msgstr ""
+
 #: ../app/views/store/index.haml:71
 msgid "View"
 msgstr ""
@@ -562,10 +598,18 @@ msgstr ""
 msgid "Your addresses list is empty"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38
+#: ../app/views/orders/_address.haml:73
+msgid "Your addresses list is empty, please add at least one address"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:38 ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/views/carts/show.html.slim:16
 msgid "Your cart is empty!"
 msgstr ""
 
 #: ../app/views/account/_order.haml:50
 msgid "Your orders list is empty"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:49
+msgid "billing address is same as shipping address"
 msgstr ""

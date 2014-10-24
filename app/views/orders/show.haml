@@ -1,0 +1,97 @@
+.panel.panel-default
+  .panel-heading
+    .progress-steps
+      .progress-timeline
+        - status = @order.status.to_sym
+        %ul.progress-timeline-completion{ step: Order.statuses[@order.status] + 1 }
+          %li.step.active{ rel: :tooltip, title: _('Accepted') }
+            %i.fa.fa-clock-o
+          %li.step{ class: [:in_progress, :shipped, :completed].include?(status) ? 'active' : '', rel: :tooltip, title: _('In progress') }
+            %i.fa.fa-archive
+          %li.step{ class: [:shipped, :completed].include?(status) ? 'active' : '', rel: :tooltip, title: _('Shipped') }
+            %i.fa.fa-truck
+          %li.step{ class: @order.completed? ? 'active' : '', rel: :tooltip, title: _('Completed') }
+            %i.fa.fa-check
+
+  .panel-body
+    .row
+      .col-xs-12
+        %h3
+          = _("Order #%d") % @order.id
+          .pull-right
+            = icon_link_to "", order_path(@order, format: 'pdf'), 'fa-print'
+
+        %hr
+          .row
+            .col-xs-6
+              %address
+                %strong= _('Billing address')
+                %br
+                  = @order.billing_address.recipient
+                  %br
+                    = "#{@order.billing_address.street}"
+                    %br
+                      = "#{@order.billing_address.zip_code} #{@order.billing_address.city}"
+
+            .col-xs-6.text-right
+              %address
+                %strong= _('Shipping address')
+                %br
+                  = @order.address.recipient
+                  %br
+                    = "#{@order.address.street}"
+                    %br
+                      = "#{@order.address.zip_code} #{@order.address.city}"
+          .row
+            .col-xs-6
+              %address
+                %strong= _('Payment method')
+                %br
+                  = @order.pay_type
+
+            .col-xs-6.text-right
+              %address
+                %strong= _('Order date')
+                %br
+                  = I18n.localize(@order.created_at)
+                  %br
+                    %br
+    .row
+      .col-md-12
+        .panel.panel-default
+          .panel-heading
+            %b= _('Order summary')
+          .panel-body
+            %table.table.table-condensed
+              %thead
+                %tr
+                  %td #
+                  %td
+                    %strong= _('Product')
+                  %td
+                    %strong= _('Price')
+                  %td
+                    %strong= _('Quantity')
+                  %td.text-right
+                    %strong= _('Total')
+
+              %tbody
+                - @order.line_items.each_with_index do |item, index|
+                  %tr
+                    %td= index+1
+                    %td= item.product.name
+                    %td= number_to_currency(item.price)
+                    %td= item.quantity
+                    %td.text-right= number_to_currency(item.total)
+              %tr
+                %td.thick-line.text-right{ colspan: 4 }
+                  %strong= _('Subtotal')
+                %td.thick-line.text-right= number_to_currency(@order.subtotal)
+              %tr
+                %td.no-line.text-right{ colspan: 4 }
+                  %strong= _('Shipment')
+                %td.no-line.text-right= number_to_currency(@order.shipment.fee)
+              %tr
+                %td.no-line.text-right{ colspan: 4 }
+                  %strong= _('Total')
+                %td.no-line.text-right= number_to_currency(@order.total)

@@ -13,13 +13,13 @@
 
   .panel-body
     - if @current_cart.total.zero?
-     h4 Your cart is empty!
+     h4=_('Your cart is empty!')
     - else
       #items
         == render 'items'
 
     p
-      .pull-left= link_to t('cart.continue'), root_path, class: 'btn btn-default'
-      .pull-right= link_to t('cart.checkout'), new_order_path, class: 'btn btn-success'
+      .pull-left= link_to _('Continue shopping'), root_path, class: 'btn btn-default'
+      .pull-right= link_to _('Check out'), new_order_path, class: 'btn btn-success'
 
 

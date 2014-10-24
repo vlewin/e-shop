@@ -1,0 +1,50 @@
+.panel-heading
+  %h4.panel-title
+    %span.round 4
+    = _('Order summary')
+
+#summary.panel-collapse.collapse
+  .panel-body
+    %table.table.table-hover.table-responsive
+      %thead
+        %tr
+          %th= _('Image')
+          %th= _('Name')
+          %th= _('Quantity')
+          %th= _('Price')
+          %th= _('Subtotal')
+          %th= _('VAT')
+          %th= _('Total')
+
+      %tbody
+        - @current_cart.line_items.each do |item|
+          %tr
+            %td= product_image_tag item.product
+            %td= link_to item.product.name, item.product
+            %td= item.quantity
+            %td= number_to_currency(item.price)
+            %td= number_to_currency(item.subtotal)
+            %td= number_to_percentage(item.product.vat, precision: 0)
+            %td= number_to_currency(item.total)
+
+        %tr.text-muted
+          %td{ colspan: 6 }= _('Subtotal')
+          %td{ colspan: 2 }
+            = number_to_currency(@current_cart.subtotal)
+        %tr.text-muted
+          %td{ colspan: 6 }= _('VAT')
+          %td{ colspan: 2 }
+            = number_to_currency(@current_cart.taxes)
+        %tr.text-muted
+          %td{ colspan: 6 }= _('Shipment')
+          %td{ colspan: 2 }
+            = number_to_currency(Shipment.default.fee)
+        %tr
+          %td{ colspan: 6 }
+            %b= _('Total')
+          %td{ colspan: 2 }
+            %b= number_to_currency(@current_cart.total)
+
+    %hr
+    .pull-left= icon_link_to _('Back'), '#payment', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 3 } }, 'fa-chevron-circle-left'
+    .pull-right= form.submit _('Place order'), class: 'btn btn-success'
