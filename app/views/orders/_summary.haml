@@ -28,16 +28,16 @@
             %td= number_to_currency(item.total)
 
         %tr.text-muted
-          %td{ colspan: 6 }= _('Subtotal')
-          %td{ colspan: 2 }
+          %td.thick-line{ colspan: 6 }= _('Subtotal')
+          %td.thick-line{ colspan: 2 }
             = number_to_currency(@current_cart.subtotal)
         %tr.text-muted
           %td{ colspan: 6 }= _('VAT')
           %td{ colspan: 2 }
             = number_to_currency(@current_cart.taxes)
         %tr.text-muted
-          %td{ colspan: 6 }= _('Shipment')
-          %td{ colspan: 2 }
+          %td.thick-line{ colspan: 6 }= _('Shipment')
+          %td.thick-line{ colspan: 2 }
             = number_to_currency(Shipment.default.fee)
         %tr
           %td{ colspan: 6 }

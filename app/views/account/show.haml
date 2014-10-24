@@ -14,8 +14,9 @@
         %h4.panel-title
           %i.fa.fa-envelope
           = _('Addresses')
+
           .pull-right
-            %small= link_to _('New Address'), '#address_modal', data: { target: '#address_modal', toggle: 'modal' }
+            = link_to _('New Address'), '#address_modal', class: 'btn btn-xs btn-success',  data: { target: '#address_modal', toggle: 'modal' }
       .panel-body
         = render 'address'
 

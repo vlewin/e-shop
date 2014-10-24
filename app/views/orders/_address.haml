@@ -4,7 +4,7 @@
     = _('Shipping and Billing address')
 
     .pull-right
-      %small= link_to _('New Address'), '#new_address', data: { target: '#address_modal', toggle: 'modal' }
+      = link_to _('New Address'), '#new_address', class: 'btn btn-success', data: { target: '#address_modal', toggle: 'modal' }
 
 #address.panel-collapse.collapse.in
   .panel-body

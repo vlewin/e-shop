@@ -40,8 +40,8 @@ class AccountController < Devise::RegistrationsController
   end
 
   def show
-    add_breadcrumb _('Store'), :root_path
-    add_breadcrumb _('My Account'), account_url
+    # add_breadcrumb _('Store'), :root_path
+    # add_breadcrumb _('My Account'), account_url
 
     @user = current_user
     authorize @user
