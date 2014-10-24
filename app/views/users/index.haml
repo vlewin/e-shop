@@ -1,0 +1,21 @@
+%h4.page-header.no-margin
+  Users
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %th= "Role"
+        %th= "Name"
+        %th= "Email"
+        %th= "Last sign in"
+        %th= "Sign in count"
+
+      - @users.each do |user|
+        %tr
+          %td
+            %span.label{ class: user.admin? ? 'label-success' : 'label-default'}= user.role.capitalize
+          %td= link_to user.name, user
+          %td= user.email
+          %td= user.last_sign_in_at
+          %td= user.sign_in_count
