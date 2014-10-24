@@ -15,7 +15,7 @@
           %tr
             %td= order_status(order.status)
             %td= I18n.localize(order.created_at)
-            %td= order.pay_type
+            %td= _(order.pay_type)
             %td= "#{order.shipment.provider} #{order.shipment.name}"
             %td= number_to_currency order.total
             %td{ width: '15%' }

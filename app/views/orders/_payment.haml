@@ -9,7 +9,7 @@
       .radio
         %label
           = form.radio_button :pay_type, payment_type, :checked => index.zero?
-          = payment_type
+          = _(payment_type)
 
     %hr
     .pull-left= icon_link_to _('Back'), '#shipping', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 2 } }, 'fa-chevron-circle-left'
