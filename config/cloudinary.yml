@@ -10,8 +10,8 @@ production:
 development:
   cloud_name: "e-shop"
 
-  api_key: 652312234251764
-  api_secret: YneR7K6TxqHJdSpVe9Qy0ra8dMw
+  api_key: ''
+  api_secret: ''
 
   enhance_image_tag: true
   static_image_support: true
