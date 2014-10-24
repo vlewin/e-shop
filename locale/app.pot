@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-24 19:07+0200\n"
-"PO-Revision-Date: 2014-10-24 19:07+0200\n"
+"POT-Creation-Date: 2014-10-24 23:32+0200\n"
+"PO-Revision-Date: 2014-10-24 23:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Accepted"
 msgstr ""
 
-#: ../app/views/account/show.haml:62
+#: ../app/views/account/show.haml:63
 msgid "Account"
 msgstr ""
 
@@ -98,6 +98,10 @@ msgstr ""
 msgid "Back to cart"
 msgstr ""
 
+#: ../app/models/order.rb:4
+msgid "Bank transfer"
+msgstr ""
+
 #: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
 msgid "Billing address"
 msgstr ""
@@ -110,12 +114,16 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:44
+#: ../app/controllers/carts_controller.rb:51
 msgid "Cart was successfully destroyed."
 msgstr ""
 
 #: ../app/views/layouts/_navigation.html.slim:72
 msgid "Carts"
+msgstr ""
+
+#: ../app/models/order.rb:3
+msgid "Cash payment at pickup"
 msgstr ""
 
 #: ../app/views/layouts/_navigation.html.slim:54
@@ -242,7 +250,7 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16 ../app/views/layouts/_navigation.html.slim:37
+#: ../app/views/layouts/_navigation.html.slim:37
 msgid "My Account"
 msgstr ""
 
@@ -250,8 +258,24 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../app/views/account/show.haml:39 ../app/views/orders/_address.haml:12
+#: ../app/views/orders/_address.haml:12
 msgid "New Address"
+msgstr ""
+
+#: ../app/views/account/show.haml:40 ../app/views/addresses/index.haml:7
+msgid "New address"
+msgstr ""
+
+#: ../app/views/categories/index.haml:7
+msgid "New category"
+msgstr ""
+
+#: ../app/views/products/index.haml:7
+msgid "New product"
+msgstr ""
+
+#: ../app/views/shipments/index.haml:7
+msgid "New shipment"
 msgstr ""
 
 #: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
@@ -262,7 +286,7 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.haml:41
+#: ../app/views/orders/show.haml:41
 msgid "Order #%d"
 msgstr ""
 
@@ -362,6 +386,10 @@ msgstr ""
 msgid "Product|Vat"
 msgstr ""
 
+#: ../app/models/order.rb:5
+msgid "Purchase order"
+msgstr ""
+
 #: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
 msgstr ""
@@ -458,7 +486,7 @@ msgstr ""
 msgid "Sign-up"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:46
+#: ../app/controllers/carts_controller.rb:53
 msgid "Something went wrong"
 msgstr ""
 
@@ -474,7 +502,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: ../app/controllers/account_controller.rb:43 ../app/controllers/orders_controller.rb:15 ../app/controllers/store_controller.rb:19
+#: ../app/controllers/store_controller.rb:20
 msgid "Store"
 msgstr ""
 
@@ -486,7 +514,7 @@ msgstr ""
 msgid "Thank you for your order!"
 msgstr ""
 
-#: ../app/controllers/application_controller.rb:36
+#: ../app/controllers/application_controller.rb:40
 msgid "This product is out of stock"
 msgstr ""
 
@@ -494,7 +522,7 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
-#: ../app/views/account/_account.haml:74
+#: ../app/views/account/_account.haml:77
 msgid "Update account"
 msgstr ""
 
@@ -590,11 +618,11 @@ msgstr ""
 msgid "We'll send password reset instructions."
 msgstr ""
 
-#: ../app/controllers/application_controller.rb:46 ../app/controllers/application_controller.rb:49
+#: ../app/controllers/application_controller.rb:50 ../app/controllers/application_controller.rb:53
 msgid "You are not authorized to perform this action"
 msgstr ""
 
-#: ../app/views/account/_account.haml:65
+#: ../app/views/account/_account.haml:68
 msgid "You must enter your current password to make changes."
 msgstr ""
 

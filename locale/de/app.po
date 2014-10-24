@@ -17,12 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-msgid "Store"
-msgstr "Shop"
-
-msgid "My Account"
-msgstr "Mein Konto"
-
 msgid "Address was successfully created."
 msgstr "Adresse wurde erfolgreich erstellt."
 
@@ -59,9 +53,6 @@ msgstr "Kategorie wurde erfolgreich zerstört."
 msgid "%s x %s added to your cart!"
 msgstr "%s x %s in den Warenkorb gelegt!"
 
-msgid "Order #%d"
-msgstr "Auftrag #%d"
-
 msgid "Thank you for your order!"
 msgstr "Vielen Dank für Ihre Bestellung!"
 
@@ -86,6 +77,9 @@ msgstr "Versandart wurde erfolgreich aktualisiert."
 msgid "Shipment was successfully destroyed."
 msgstr "Versandart wurde erfolgreich zerstört."
 
+msgid "Store"
+msgstr "Shop"
+
 msgid "Accepted"
 msgstr "Angenommen"
 
@@ -97,6 +91,15 @@ msgstr "Versand"
 
 msgid "Completed"
 msgstr "Abgeschlossen"
+
+msgid "Cash payment at pickup"
+msgstr "Bezahlung bei Abholung"
+
+msgid "Bank transfer"
+msgstr "Überweisung"
+
+msgid "Purchase order"
+msgstr "Bestellung auf Rechnung"
 
 msgid "Name"
 msgstr "Name"
@@ -155,7 +158,7 @@ msgstr "Aufträge"
 msgid "Addresses"
 msgstr "Adressen"
 
-msgid "New Address"
+msgid "New address"
 msgstr "Neue Adresse"
 
 msgid "Account"
@@ -203,6 +206,9 @@ msgstr "Weiter einkaufen"
 msgid "Check out"
 msgstr "zur Kasse"
 
+msgid "New category"
+msgstr "Neue Kategorie"
+
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
 
@@ -239,6 +245,9 @@ msgstr "Keine Anleitung zur Bestätigung erhalten?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Keine Anleitung zum Entsperren erhalten?"
 
+msgid "My Account"
+msgstr "Mein Konto"
+
 msgid "Sign out"
 msgstr "Abmelden"
 
@@ -259,6 +268,9 @@ msgstr "Warenkörbe"
 
 msgid "Shipping and Billing address"
 msgstr "Versand- und Rechnungsadresse"
+
+msgid "New Address"
+msgstr "Neue Adresse"
 
 msgid "Shipping address"
 msgstr "Versandadresse"
@@ -293,11 +305,20 @@ msgstr "Bestellung aufgeben"
 msgid "Order sumary"
 msgstr "Bestellübersicht"
 
+msgid "Order #%d"
+msgstr "Auftrag #%d"
+
 msgid "Order date"
 msgstr "Auftragsdatum"
 
 msgid "Product"
 msgstr "Produkt"
+
+msgid "New product"
+msgstr "Neues Produkt"
+
+msgid "New shipment"
+msgstr "Neuer Versand"
 
 msgid "Fee"
 msgstr "Gebühr"

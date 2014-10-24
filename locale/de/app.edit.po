@@ -25,7 +25,7 @@ msgstr "%s x %s in den Warenkorb gelegt!"
 msgid "Accepted"
 msgstr "Angenommen"
 
-#: ../app/views/account/show.haml:62
+#: ../app/views/account/show.haml:63
 msgid "Account"
 msgstr "Konto"
 
@@ -97,6 +97,10 @@ msgstr "Zurück"
 msgid "Back to cart"
 msgstr "Zurück zum Warenkorb"
 
+#: ../app/models/order.rb:4
+msgid "Bank transfer"
+msgstr "Überweisung"
+
 #: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
 msgid "Billing address"
 msgstr "Rechnungsadresse"
@@ -109,13 +113,17 @@ msgstr "Auftragsstatus kann nicht geändern werden"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../app/controllers/carts_controller.rb:44
+#: ../app/controllers/carts_controller.rb:51
 msgid "Cart was successfully destroyed."
 msgstr "Warenkorb wurde erfolgreich zerstört."
 
 #: ../app/views/layouts/_navigation.html.slim:72
 msgid "Carts"
 msgstr "Warenkörbe"
+
+#: ../app/models/order.rb:3
+msgid "Cash payment at pickup"
+msgstr "Bezahlung bei Abholung"
 
 #: ../app/views/layouts/_navigation.html.slim:54
 msgid "Categories"
@@ -241,7 +249,7 @@ msgstr "Preis"
 msgid "LineItem|Quantity"
 msgstr "Anzahl"
 
-#: ../app/controllers/account_controller.rb:44 ../app/controllers/orders_controller.rb:16 ../app/views/layouts/_navigation.html.slim:37
+#: ../app/views/layouts/_navigation.html.slim:37
 msgid "My Account"
 msgstr "Mein Konto"
 
@@ -249,9 +257,25 @@ msgstr "Mein Konto"
 msgid "Name"
 msgstr "Name"
 
-#: ../app/views/account/show.haml:39 ../app/views/orders/_address.haml:12
+#: ../app/views/orders/_address.haml:12
 msgid "New Address"
 msgstr "Neue Adresse"
+
+#: ../app/views/account/show.haml:40 ../app/views/addresses/index.haml:7
+msgid "New address"
+msgstr "Neue Adresse"
+
+#: ../app/views/categories/index.haml:7
+msgid "New category"
+msgstr "Neue Kategorie"
+
+#: ../app/views/products/index.haml:7
+msgid "New product"
+msgstr "Neues Produkt"
+
+#: ../app/views/shipments/index.haml:7
+msgid "New shipment"
+msgstr "Neuer Versand"
 
 #: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
 msgid "Next"
@@ -261,7 +285,7 @@ msgstr "Weiter"
 msgid "Order"
 msgstr "Auftrag"
 
-#: ../app/controllers/orders_controller.rb:17 ../app/views/orders/show.haml:41
+#: ../app/views/orders/show.haml:41
 msgid "Order #%d"
 msgstr "Auftrag #%d"
 
@@ -361,6 +385,10 @@ msgstr "Anzahl"
 msgid "Product|Vat"
 msgstr "MwSt"
 
+#: ../app/models/order.rb:5
+msgid "Purchase order"
+msgstr "Bestellung auf Rechnung"
+
 #: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
 msgstr "Anzahl"
@@ -457,7 +485,7 @@ msgstr "Anmeldung"
 msgid "Sign-up"
 msgstr "Registrierung"
 
-#: ../app/controllers/carts_controller.rb:46
+#: ../app/controllers/carts_controller.rb:53
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
 
@@ -473,7 +501,7 @@ msgstr "Sortierung"
 msgid "Status"
 msgstr "Status"
 
-#: ../app/controllers/account_controller.rb:43 ../app/controllers/orders_controller.rb:15 ../app/controllers/store_controller.rb:19
+#: ../app/controllers/store_controller.rb:20
 msgid "Store"
 msgstr "Shop"
 
@@ -485,7 +513,7 @@ msgstr "Zwischensumme"
 msgid "Thank you for your order!"
 msgstr "Vielen Dank für Ihre Bestellung!"
 
-#: ../app/controllers/application_controller.rb:36
+#: ../app/controllers/application_controller.rb:40
 msgid "This product is out of stock"
 msgstr "Dieses Produkt ist ausverkauft"
 
@@ -493,7 +521,7 @@ msgstr "Dieses Produkt ist ausverkauft"
 msgid "Total"
 msgstr "Gesamt"
 
-#: ../app/views/account/_account.haml:74
+#: ../app/views/account/_account.haml:77
 msgid "Update account"
 msgstr "Konto aktualisieren"
 
@@ -589,11 +617,11 @@ msgstr "Ansicht"
 msgid "We'll send password reset instructions."
 msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
 
-#: ../app/controllers/application_controller.rb:46 ../app/controllers/application_controller.rb:49
+#: ../app/controllers/application_controller.rb:50 ../app/controllers/application_controller.rb:53
 msgid "You are not authorized to perform this action"
 msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
 
-#: ../app/views/account/_account.haml:65
+#: ../app/views/account/_account.haml:68
 msgid "You must enter your current password to make changes."
 msgstr "Bitte geben Sie Ihr aktuelles Passwort um die Änderungen zu übernehmen"
 
