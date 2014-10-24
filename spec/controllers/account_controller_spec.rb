@@ -16,12 +16,5 @@ describe AccountController, type: :controller do
       get :show
       expect(response).to render_template :show
     end
-
-    it "adds breadcrumb items" do
-      expect(subject).to receive(:add_breadcrumb).with('Store', :root_path)
-      expect(subject).to receive(:add_breadcrumb).with('Account settings', account_url)
-
-      get :show
-    end
   end
 end

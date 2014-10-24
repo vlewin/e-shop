@@ -15,6 +15,10 @@ class CartPolicy < ApplicationPolicy
   #   @user.admin?
   # end
 
+  def purge?
+    @user.admin?
+  end
+
   class Scope < Struct.new(:user, :scope)
     def resolve
       if user && user.admin?

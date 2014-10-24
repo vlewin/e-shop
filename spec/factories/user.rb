@@ -27,7 +27,7 @@ FactoryGirl.define do
         count 2
       end
 
-      after(:create) do |user, evaluator|
+      after(:build) do |user, evaluator|
         create_list(:address, evaluator.count, user: user)
       end
     end

@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
-    authorize @categories
+    authorize :categories, :index?
   end
 
   def show

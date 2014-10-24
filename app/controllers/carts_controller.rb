@@ -1,17 +1,17 @@
 class CartsController < ApplicationController
-  skip_before_filter :authenticate_user!, only: [:show, :update]
+  skip_before_filter :authenticate_user!, only: [:show, :update, :destroy]
   after_action :verify_authorized, except: [:show, :update, :destroy]
 
   def index
     @carts = Cart.all.order(:updated_at)
-    authorize @carts
+    authorize :carts, :index?
   end
 
   def show
     # add_breadcrumb _('Store'), :root_path
     # add_breadcrumb _('Shopping cart'), cart_path(@current_cart)
 
-    if @current_cart.empty?
+    if current_cart.empty?
       flash.notice = _('Your cart is empty!')
       redirect_to root_path
     end
@@ -19,7 +19,7 @@ class CartsController < ApplicationController
 
   def update
     quantity = params[:quantity].to_i
-    line_item = @current_cart.line_items.includes(:product).find(params[:line_item_id])
+    line_item = current_cart.line_items.includes(:product).find(params[:line_item_id])
 
     if quantity.zero?
       line_item.destroy
@@ -29,7 +29,7 @@ class CartsController < ApplicationController
       end
     end
 
-    if @current_cart.empty?
+    if current_cart.empty?
       flash.notice = _('Your cart is empty!')
       redirect_to root_path
     else
@@ -37,8 +37,15 @@ class CartsController < ApplicationController
     end
   end
 
+  def purge
+    puts "**** PURGE"
+    authorize :carts, :purge?
+    Cart.where("updated_at  <?", 2.hours.ago).destroy_all
+    redirect_to carts_path
+  end
+
   def destroy
-    @cart = (current_user.admin?) ? Cart.find(params[:id]) : @current_cart
+    @cart = (current_user && current_user.admin?) ? Cart.find(params[:id]) : current_cart
 
     if @cart.destroy
       flash.notice = _('Cart was successfully destroyed.')

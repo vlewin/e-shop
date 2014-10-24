@@ -1,16 +1,10 @@
 class AddressPolicy < ApplicationPolicy
-  # Public
-  def show?
-    @user.admin? || @user.addresses.find(@record)
-  end
-
-  # Protected
   def index?
     @user.admin?
   end
 
-  def edit?
-    @user.admin?
+  def show?
+    @user.admin? || @user.addresses.exists?(record)
   end
 
   def new?
@@ -18,6 +12,10 @@ class AddressPolicy < ApplicationPolicy
   end
 
   def create?
+    @user.admin?
+  end
+
+  def edit?
     @user.admin?
   end
 

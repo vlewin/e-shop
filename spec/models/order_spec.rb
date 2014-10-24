@@ -14,7 +14,7 @@ describe Order do
   it { should validate_presence_of :shipment_id }
   it { should validate_presence_of :pay_type }
 
-  it {should validate_inclusion_of(:pay_type).in_array(Order::PAYMENT_TYPES) }
+  it {should ensure_inclusion_of(:pay_type).in_array(Order::PAYMENT_TYPES) }
 
   context 'order without line items' do
     subject { order = Order.new }

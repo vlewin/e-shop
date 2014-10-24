@@ -1,5 +1,7 @@
 %h4.page-header.no-margin
   Carts
+  .pull-right
+    = link_to("Purge stale carts", purge_carts_path, class: 'btn btn-xs btn-danger', method: :delete)
 
 .panel.panel-default
   .panel-body

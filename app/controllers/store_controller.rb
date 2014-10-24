@@ -4,6 +4,7 @@ class StoreController < ApplicationController
   before_filter :set_product, :check_product_availability, only: [:show]
   before_filter :current_view
 
+  skip_before_filter :current_cart, only: [:index]
   skip_before_filter :authenticate_user!
 
   def index

@@ -1,4 +1,4 @@
-class CategoryPolicy < ApplicationPolicy
+class ShipmentPolicy < ApplicationPolicy
   def index?
     @user.admin?
   end
@@ -27,3 +27,4 @@ class CategoryPolicy < ApplicationPolicy
     @user.admin?
   end
 end
+
