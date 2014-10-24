@@ -1,0 +1,48 @@
+%table.table.table-hover.table-responsive
+  %thead
+    %tr
+      %th= _('Image')
+      %th= _('Name')
+      %th= _('Quantity')
+      %th= _('Price')
+      %th= _('Subtotal')
+      %th= _('VAT')
+      %th= _('Total')
+      %th ---
+
+  %tbody
+    - @current_cart.line_items.each do |item|
+      %tr
+        %td= product_image_tag item.product
+        %td= link_to item.product.name, store_product_path(item.product)
+        %td
+          = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
+            = hidden_field_tag :line_item_id, item.id
+            = quantity_field_tag item.quantity
+
+        %td= number_to_currency(item.price)
+        %td= number_to_currency(item.subtotal)
+        %td= number_to_percentage(item.product.vat, precision: 0)
+        %td= number_to_currency(item.total)
+        %td= icon_link_to '', item, { class: 'text-danger', method: :delete}, 'fa-%trash-o'
+
+    %tr.text-muted
+      %td.thick-line{ colspan: 6 }= _('Subtotal')
+      %td.thick-line{ colspan: 2 }
+        = number_to_currency(@current_cart.subtotal)
+    %tr.text-muted
+      %td{ colspan: 6 }= _('VAT')
+      %td{ colspan: 2 }
+        = number_to_currency(@current_cart.taxes)
+    %tr.text-muted
+      %td.thick-line{ colspan: 6 }= _('Shipment')
+      %td.thick-line{ colspan: 2 }
+        = number_to_currency(Shipment.default.fee)
+    %tr
+      %td{ colspan: 6 }
+        %b= _('Total')
+      %td{ colspan: 2 }
+        %b= number_to_currency(@current_cart.total)
+
+
+

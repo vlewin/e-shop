@@ -1,0 +1,6 @@
+- if object.errors.any?
+  .alert.fade.in.alert-danger.alert-dismissable
+    %button.close{ 'aria-hidden' => :true, 'data-dismiss' => :alert, type: 'button' }  ×
+    %ol
+      - object.errors.full_messages.each do |msg|
+        = content_tag :li, msg, id: "error_#{msg}" if msg.is_a?(String)
