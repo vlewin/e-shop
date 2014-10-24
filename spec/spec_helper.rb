@@ -20,6 +20,7 @@ RSpec.configure do |config|
     begin
       DatabaseCleaner.start
       FactoryGirl.lint
+      FastGettext.locale = 'de'
     ensure
       DatabaseCleaner.clean
     end
