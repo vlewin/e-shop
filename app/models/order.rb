@@ -1,5 +1,10 @@
 class Order < ActiveRecord::Base
-  PAYMENT_TYPES = [ 'Cash payment at pickup ', 'Bank transfer', 'Purchase order' ]
+  PAYMENT_TYPES = [
+    _('Cash payment at pickup'),
+    _('Bank transfer'),
+    _('Purchase order')
+  ]
+
   enum status: [ :accepted, :in_progress, :shipped, :completed ]
 
   belongs_to :user
