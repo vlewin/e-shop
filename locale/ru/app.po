@@ -204,8 +204,8 @@ msgstr "Очистить корзину"
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
-msgid "Check out"
-msgstr "Заказать"
+msgid "Checkout"
+msgstr "Оформить заказ"
 
 msgid "New category"
 msgstr "Новая категория"
@@ -268,7 +268,7 @@ msgid "Carts"
 msgstr "Корзины"
 
 msgid "Shipping and Billing address"
-msgstr "Адрес доставки и для выставления счета"
+msgstr "Адрес доставки и платежа"
 
 msgid "New Address"
 msgstr ""
@@ -277,7 +277,7 @@ msgid "Shipping address"
 msgstr "Адрес доставки"
 
 msgid "Billing address"
-msgstr "Адрес для выставления счета"
+msgstr "Платежный адрес"
 
 msgid "billing address is same as shipping address"
 msgstr "платежный адрес такой же, как адрес доставки"

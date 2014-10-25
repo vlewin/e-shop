@@ -38,19 +38,19 @@ msgstr "Добавить в корзину"
 msgid "Address"
 msgstr "Адрес"
 
-#: ../app/controllers/addresses_controller.rb:23
+#: ../app/controllers/addresses_controller.rb:25
 msgid "Address was successfully created."
 msgstr "Адрес был успешно создан."
 
-#: ../app/controllers/addresses_controller.rb:43
+#: ../app/controllers/addresses_controller.rb:45
 msgid "Address was successfully destroyed."
 msgstr "Адрес был успешно удалён."
 
-#: ../app/controllers/addresses_controller.rb:33
+#: ../app/controllers/addresses_controller.rb:35
 msgid "Address was successfully updated."
 msgstr "Адрес был успешно обновлен."
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.html.slim:63
+#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:122
 msgid "Addresses"
 msgstr "Адреса"
 
@@ -104,7 +104,7 @@ msgstr "Банковский перевод"
 
 #: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
 msgid "Billing address"
-msgstr "Адрес для выставления счета"
+msgstr "Платежный адрес"
 
 #: ../app/controllers/orders_controller.rb:72
 msgid "Can not change order status"
@@ -118,7 +118,7 @@ msgstr "Отменить"
 msgid "Cart was successfully destroyed."
 msgstr "Корзина была успешно уничтожена."
 
-#: ../app/views/layouts/_navigation.html.slim:72
+#: ../app/views/layouts/_navigation.haml:140
 msgid "Carts"
 msgstr "Корзины"
 
@@ -126,7 +126,7 @@ msgstr "Корзины"
 msgid "Cash payment at pickup"
 msgstr "Оплата наличными при получении"
 
-#: ../app/views/layouts/_navigation.html.slim:54
+#: ../app/views/layouts/_navigation.haml:104
 msgid "Categories"
 msgstr "Категории"
 
@@ -159,8 +159,8 @@ msgid "Category|Products count"
 msgstr "Количество продуктов"
 
 #: ../app/views/carts/show.haml:38
-msgid "Check out"
-msgstr "Заказать"
+msgid "Checkout"
+msgstr "Оформить заказ"
 
 #: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
 msgid "Completed"
@@ -258,7 +258,7 @@ msgstr "Цена"
 msgid "LineItem|Quantity"
 msgstr "Количество"
 
-#: ../app/views/layouts/_navigation.html.slim:37
+#: ../app/views/layouts/_navigation.haml:70
 msgid "My Account"
 msgstr "Мой аккаунт"
 
@@ -306,7 +306,7 @@ msgstr "Дата заказа"
 msgid "Order summary"
 msgstr "Перечень заказа"
 
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.html.slim:69
+#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:134
 msgid "Orders"
 msgstr "Заказы"
 
@@ -342,19 +342,19 @@ msgstr "Цена"
 msgid "Product"
 msgstr "Продукт"
 
-#: ../app/controllers/products_controller.rb:29
+#: ../app/controllers/products_controller.rb:31
 msgid "Product was successfully created."
 msgstr "Продукт был успешно создан."
 
-#: ../app/controllers/products_controller.rb:50
+#: ../app/controllers/products_controller.rb:52
 msgid "Product was successfully destroyed."
 msgstr "Продукт был успешно удален."
 
-#: ../app/controllers/products_controller.rb:39
+#: ../app/controllers/products_controller.rb:41
 msgid "Product was successfully updated."
 msgstr "Продукт был успешно обновлен."
 
-#: ../app/views/layouts/_navigation.html.slim:57
+#: ../app/views/layouts/_navigation.haml:110
 msgid "Products"
 msgstr "Продукты"
 
@@ -422,19 +422,19 @@ msgstr "Поиск"
 msgid "Shipment"
 msgstr "Доставка"
 
-#: ../app/controllers/shipments_controller.rb:22
+#: ../app/controllers/shipments_controller.rb:24
 msgid "Shipment was successfully created."
 msgstr "Доставка была успешно создана."
 
-#: ../app/controllers/shipments_controller.rb:38
+#: ../app/controllers/shipments_controller.rb:40
 msgid "Shipment was successfully destroyed."
 msgstr "Доставка была успешно удалена."
 
-#: ../app/controllers/shipments_controller.rb:30
+#: ../app/controllers/shipments_controller.rb:32
 msgid "Shipment was successfully updated."
 msgstr "Доставка была успешно обновлена​​."
 
-#: ../app/views/layouts/_navigation.html.slim:66
+#: ../app/views/layouts/_navigation.haml:128
 msgid "Shipments"
 msgstr "Доставки"
 
@@ -464,21 +464,21 @@ msgstr "Адрес доставки"
 
 #: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:10
 msgid "Shipping and Billing address"
-msgstr "Адрес доставки и для выставления счета"
+msgstr "Адрес доставки и платежа"
 
 #: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:18
 msgid "Shipping method"
 msgstr "Способ доставки"
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:46
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:88 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr "Вход"
 
-#: ../app/views/layouts/_navigation.html.slim:38
+#: ../app/views/layouts/_navigation.haml:72
 msgid "Sign out"
 msgstr "Выйти"
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:47
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
 msgstr "Зарегистрироваться"
 
@@ -534,7 +534,7 @@ msgstr "Обновить профиль"
 msgid "User"
 msgstr "Пользователь"
 
-#: ../app/views/layouts/_navigation.html.slim:60
+#: ../app/views/layouts/_navigation.haml:116
 msgid "Users"
 msgstr "Пользователи"
 
@@ -630,7 +630,7 @@ msgstr "Вы не авторизованы для выполнения этог�
 msgid "You must enter your current password to make changes."
 msgstr "Вы должны ввести текущий пароль, чтобы вносить изменения."
 
-#: ../app/views/carts/show.haml:15 ../app/views/layouts/_navigation.html.slim:15 ../app/views/layouts/_navigation.html.slim:18
+#: ../app/views/carts/show.haml:15 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
@@ -653,3 +653,4 @@ msgstr "Ваш список заказов пуст"
 #: ../app/views/orders/_address.haml:49
 msgid "billing address is same as shipping address"
 msgstr "платежный адрес такой же, как адрес доставки"
+

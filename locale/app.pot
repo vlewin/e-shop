@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-25 18:10+0200\n"
-"PO-Revision-Date: 2014-10-25 18:10+0200\n"
+"POT-Creation-Date: 2014-10-25 22:54+0200\n"
+"PO-Revision-Date: 2014-10-25 22:54+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -38,19 +38,19 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: ../app/controllers/addresses_controller.rb:23
+#: ../app/controllers/addresses_controller.rb:25
 msgid "Address was successfully created."
 msgstr ""
 
-#: ../app/controllers/addresses_controller.rb:43
+#: ../app/controllers/addresses_controller.rb:45
 msgid "Address was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/addresses_controller.rb:33
+#: ../app/controllers/addresses_controller.rb:35
 msgid "Address was successfully updated."
 msgstr ""
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.html.slim:63
+#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:122
 msgid "Addresses"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Cart was successfully destroyed."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:72
+#: ../app/views/layouts/_navigation.haml:140
 msgid "Carts"
 msgstr ""
 
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Cash payment at pickup"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:54
+#: ../app/views/layouts/_navigation.haml:104
 msgid "Categories"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "Category|Products count"
 msgstr ""
 
 #: ../app/views/carts/show.haml:38
-msgid "Check out"
+msgid "Checkout"
 msgstr ""
 
 #: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
@@ -258,7 +258,7 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:37
+#: ../app/views/layouts/_navigation.haml:70
 msgid "My Account"
 msgstr ""
 
@@ -306,7 +306,7 @@ msgstr ""
 msgid "Order summary"
 msgstr ""
 
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.html.slim:69
+#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:134
 msgid "Orders"
 msgstr ""
 
@@ -342,19 +342,19 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:29
+#: ../app/controllers/products_controller.rb:31
 msgid "Product was successfully created."
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:50
+#: ../app/controllers/products_controller.rb:52
 msgid "Product was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:39
+#: ../app/controllers/products_controller.rb:41
 msgid "Product was successfully updated."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:57
+#: ../app/views/layouts/_navigation.haml:110
 msgid "Products"
 msgstr ""
 
@@ -422,19 +422,19 @@ msgstr ""
 msgid "Shipment"
 msgstr ""
 
-#: ../app/controllers/shipments_controller.rb:22
+#: ../app/controllers/shipments_controller.rb:24
 msgid "Shipment was successfully created."
 msgstr ""
 
-#: ../app/controllers/shipments_controller.rb:38
+#: ../app/controllers/shipments_controller.rb:40
 msgid "Shipment was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/shipments_controller.rb:30
+#: ../app/controllers/shipments_controller.rb:32
 msgid "Shipment was successfully updated."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:66
+#: ../app/views/layouts/_navigation.haml:128
 msgid "Shipments"
 msgstr ""
 
@@ -470,15 +470,15 @@ msgstr ""
 msgid "Shipping method"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.slim:2 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:46
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:88 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:38
+#: ../app/views/layouts/_navigation.haml:72
 msgid "Sign out"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.slim:5 ../app/views/layouts/_navigation.html.slim:43 ../app/views/layouts/_navigation.html.slim:47
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
 msgstr ""
 
@@ -534,7 +534,7 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.html.slim:60
+#: ../app/views/layouts/_navigation.haml:116
 msgid "Users"
 msgstr ""
 
@@ -630,7 +630,7 @@ msgstr ""
 msgid "You must enter your current password to make changes."
 msgstr ""
 
-#: ../app/views/carts/show.haml:15 ../app/views/layouts/_navigation.html.slim:15 ../app/views/layouts/_navigation.html.slim:18
+#: ../app/views/carts/show.haml:15 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34
 msgid "Your Cart"
 msgstr ""
 
