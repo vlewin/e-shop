@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-24 23:32+0200\n"
-"PO-Revision-Date: 2014-10-24 23:32+0200\n"
+"POT-Creation-Date: 2014-10-25 13:31+0200\n"
+"PO-Revision-Date: 2014-10-25 13:31+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -90,7 +90,7 @@ msgstr ""
 msgid "Available: %d of %d"
 msgstr ""
 
-#: ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108
+#: ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108 ../app/views/products/_form.haml:126
 msgid "Back"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Categories"
 msgstr ""
 
-#: model_attributes.rb:8
+#: ../app/views/products/_form.haml:80 model_attributes.rb:8
 msgid "Category"
 msgstr ""
 
@@ -186,6 +186,10 @@ msgstr ""
 msgid "Date"
 msgstr ""
 
+#: ../app/views/products/_form.haml:25
+msgid "Description"
+msgstr ""
+
 #: ../app/views/account/_address.haml:47
 msgid "Destroy"
 msgstr ""
@@ -200,6 +204,10 @@ msgstr ""
 
 #: ../app/views/devise/sessions/new.haml:58
 msgid "Don't have an account?"
+msgstr ""
+
+#: ../app/views/products/_form.haml:36
+msgid "EAN"
 msgstr ""
 
 #: ../app/views/store/show.html.haml:37
@@ -226,7 +234,7 @@ msgstr ""
 msgid "Forgot your password?"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22
+#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/_form.haml:91
 msgid "Image"
 msgstr ""
 
@@ -254,7 +262,7 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
-#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
+#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/products/_form.haml:14 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
 msgid "Name"
 msgstr ""
 
@@ -294,7 +302,7 @@ msgstr ""
 msgid "Order date"
 msgstr ""
 
-#: ../app/views/orders/new.haml:35
+#: ../app/views/orders/new.haml:34
 msgid "Order sumary"
 msgstr ""
 
@@ -322,7 +330,7 @@ msgstr ""
 msgid "Password"
 msgstr ""
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:27 ../app/views/orders/show.haml:108
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:26 ../app/views/orders/show.haml:108
 msgid "Payment method"
 msgstr ""
 
@@ -330,7 +338,7 @@ msgstr ""
 msgid "Place order"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/store/_products.html.haml:71
+#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/_form.haml:58 ../app/views/store/_products.html.haml:71
 msgid "Price"
 msgstr ""
 
@@ -390,7 +398,7 @@ msgstr ""
 msgid "Purchase order"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/store/_products.html.haml:73
+#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
 msgstr ""
 
@@ -404,6 +412,10 @@ msgstr ""
 
 #: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
 msgid "Reset password"
+msgstr ""
+
+#: ../app/views/products/_form.haml:124
+msgid "Save"
 msgstr ""
 
 #: ../app/views/addresses/_modal.haml:88
@@ -458,11 +470,11 @@ msgstr ""
 msgid "Shipping address"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:11
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:10
 msgid "Shipping and Billing address"
 msgstr ""
 
-#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:19
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:18
 msgid "Shipping method"
 msgstr ""
 
@@ -606,7 +618,7 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:69 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72
+#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:69 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/_form.haml:69
 msgid "VAT"
 msgstr ""
 

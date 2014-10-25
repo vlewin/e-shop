@@ -89,7 +89,7 @@ msgstr "Sind Sie sicher?"
 msgid "Available: %d of %d"
 msgstr "Verfügbar: %d von %d"
 
-#: ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108
+#: ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108 ../app/views/products/_form.haml:126
 msgid "Back"
 msgstr "Zurück"
 
@@ -129,7 +129,7 @@ msgstr "Bezahlung bei Abholung"
 msgid "Categories"
 msgstr "Kategorien"
 
-#: model_attributes.rb:8
+#: ../app/views/products/_form.haml:80 model_attributes.rb:8
 msgid "Category"
 msgstr "Kategorie"
 
@@ -185,6 +185,10 @@ msgstr "Aktuelles Passwort"
 msgid "Date"
 msgstr "Datum"
 
+#: ../app/views/products/_form.haml:25
+msgid "Description"
+msgstr "Beschreibung"
+
 #: ../app/views/account/_address.haml:47
 msgid "Destroy"
 msgstr "Löschen"
@@ -200,6 +204,10 @@ msgstr "Keine Anleitung zum Entsperren erhalten?"
 #: ../app/views/devise/sessions/new.haml:58
 msgid "Don't have an account?"
 msgstr "Haben Sie noch kein Konto?"
+
+#: ../app/views/products/_form.haml:36
+msgid "EAN"
+msgstr ""
 
 #: ../app/views/store/show.html.haml:37
 msgid "EAN: %s"
@@ -225,7 +233,7 @@ msgstr "Gebühr"
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
 
-#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22
+#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/_form.haml:91
 msgid "Image"
 msgstr "Bild"
 
@@ -253,7 +261,7 @@ msgstr "Anzahl"
 msgid "My Account"
 msgstr "Mein Konto"
 
-#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
+#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/products/_form.haml:14 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
 msgid "Name"
 msgstr "Name"
 
@@ -293,7 +301,7 @@ msgstr "Auftrag #%d"
 msgid "Order date"
 msgstr "Auftragsdatum"
 
-#: ../app/views/orders/new.haml:35
+#: ../app/views/orders/new.haml:34
 msgid "Order sumary"
 msgstr "Bestellübersicht"
 
@@ -321,7 +329,7 @@ msgstr "Ausverkauft"
 msgid "Password"
 msgstr "Passwort"
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:27 ../app/views/orders/show.haml:108
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:26 ../app/views/orders/show.haml:108
 msgid "Payment method"
 msgstr "Zahlungsart"
 
@@ -329,7 +337,7 @@ msgstr "Zahlungsart"
 msgid "Place order"
 msgstr "Bestellung aufgeben"
 
-#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/store/_products.html.haml:71
+#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/_form.haml:58 ../app/views/store/_products.html.haml:71
 msgid "Price"
 msgstr "Preis"
 
@@ -389,7 +397,7 @@ msgstr "MwSt"
 msgid "Purchase order"
 msgstr "Bestellung auf Rechnung"
 
-#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/store/_products.html.haml:73
+#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
 msgstr "Anzahl"
 
@@ -404,6 +412,10 @@ msgstr "Eingeloggt bleiben"
 #: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
+
+#: ../app/views/products/_form.haml:124
+msgid "Save"
+msgstr "Speichern"
 
 #: ../app/views/addresses/_modal.haml:88
 msgid "Save changes"
@@ -457,11 +469,11 @@ msgstr "Versand"
 msgid "Shipping address"
 msgstr "Versandadresse"
 
-#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:11
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:10
 msgid "Shipping and Billing address"
 msgstr "Versand- und Rechnungsadresse"
 
-#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:19
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:18
 msgid "Shipping method"
 msgstr "Versandart"
 
@@ -605,7 +617,7 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:69 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72
+#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:69 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/_form.haml:69
 msgid "VAT"
 msgstr "MwSt"
 

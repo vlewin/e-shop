@@ -5,42 +5,42 @@
       = render 'layouts/errors', object: @product
     .panel-body
       .form-group
-        = f.label :name, class: 'col-sm-2 control-label'
+        = f.label _('Name'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.text_field :name, required: true, autofocus: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :description
+        = f.label _('Description'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.text_field :description, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :ean
+        = f.label _('EAN'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.text_field :ean, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :amount
+        = f.label _('Quantity'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.number_field :quantity, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :price
+        = f.label _('Price'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.number_field :price, step: 0.01, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :vat
+        = f.label _('VAT'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.number_field :vat, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :category
+        = f.label _('Category'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           = f.select :category_id, options_for_select(Category.all.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :image
+        = f.label _('Image'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           .well
             .media
@@ -53,5 +53,5 @@
                 %small Please be patient the image upload may take a few seconds...
 
     .panel-footer
-      = f.submit "Save product", class: 'btn btn-success'
-      = link_to 'Back to products', products_path
+      = f.submit _('Save'), class: 'btn btn-success'
+      = link_to _('Back'), products_path

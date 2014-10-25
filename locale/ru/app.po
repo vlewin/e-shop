@@ -195,10 +195,10 @@ msgstr ""
 msgid "Your Cart"
 msgstr ""
 
-msgid "Are you sure?"
+msgid "Empty cart"
 msgstr ""
 
-msgid "Empty cart"
+msgid "Are you sure?"
 msgstr ""
 
 msgid "Continue shopping"
@@ -315,6 +315,18 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
+msgid "Description"
+msgstr ""
+
+msgid "EAN"
+msgstr ""
+
+msgid "Category"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
 msgid "New product"
 msgstr ""
 
@@ -370,9 +382,6 @@ msgid "Address|Street"
 msgstr ""
 
 msgid "Address|Zip code"
-msgstr ""
-
-msgid "Category"
 msgstr ""
 
 msgid "Category|Description"
