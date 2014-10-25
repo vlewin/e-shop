@@ -7,9 +7,11 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    authorize :products, :index?
   end
 
   def show
+    authorize @product
   end
 
   def new

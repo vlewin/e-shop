@@ -3,9 +3,11 @@ class ShipmentsController < ApplicationController
 
   def index
     @shipments = Shipment.all
+    authorize :shipments, :index?
   end
 
   def show
+    authorize @shipment
   end
 
   def new
