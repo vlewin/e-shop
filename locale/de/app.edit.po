@@ -73,7 +73,7 @@ msgstr "Straße"
 msgid "Address|Zip code"
 msgstr "PLZ"
 
-#: ../app/views/store/index.haml:3
+#: ../app/views/store/index.haml:95
 msgid "All categories"
 msgstr "Alle Kategorien"
 
@@ -173,7 +173,7 @@ msgstr "Passwort bestätigen"
 msgid "Continue shopping"
 msgstr "Weiter einkaufen"
 
-#: ../app/views/store/index.haml:63
+#: ../app/views/store/index.haml:49
 msgid "Created at"
 msgstr "Erstellt am"
 
@@ -261,7 +261,7 @@ msgstr "Anzahl"
 msgid "My Account"
 msgstr "Mein Konto"
 
-#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/products/_form.haml:14 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:51
+#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/products/_form.haml:14 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:37
 msgid "Name"
 msgstr "Name"
 
@@ -301,11 +301,7 @@ msgstr "Auftrag #%d"
 msgid "Order date"
 msgstr "Auftragsdatum"
 
-#: ../app/views/orders/new.haml:34
-msgid "Order sumary"
-msgstr "Bestellübersicht"
-
-#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:148
+#: ../app/views/orders/_summary.haml:7 ../app/views/orders/new.haml:34 ../app/views/orders/show.haml:148
 msgid "Order summary"
 msgstr "Bestellübersicht"
 
@@ -337,12 +333,8 @@ msgstr "Zahlungsart"
 msgid "Place order"
 msgstr "Bestellung aufgeben"
 
-#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/_form.haml:58 ../app/views/store/_products.html.haml:71
+#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/_form.haml:58 ../app/views/store/_products.html.haml:71 ../app/views/store/index.haml:43
 msgid "Price"
-msgstr "Preis"
-
-#: ../app/views/store/index.haml:57
-msgid "Prise"
 msgstr "Preis"
 
 #: ../app/views/orders/show.haml:163 model_attributes.rb:18
@@ -421,7 +413,7 @@ msgstr "Speichern"
 msgid "Save changes"
 msgstr "Änderungen speichern"
 
-#: ../app/views/store/index.haml:30
+#: ../app/views/store/index.haml:16
 msgid "Search"
 msgstr "Suche"
 
@@ -505,7 +497,7 @@ msgstr "Etwas ist schiefgelaufen"
 msgid "Sorry, the product was not found."
 msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
 
-#: ../app/views/store/index.haml:42
+#: ../app/views/store/index.haml:28
 msgid "Sort"
 msgstr "Sortierung"
 
@@ -621,7 +613,7 @@ msgstr ""
 msgid "VAT"
 msgstr "MwSt"
 
-#: ../app/views/store/index.haml:71
+#: ../app/views/store/index.haml:57
 msgid "View"
 msgstr "Ansicht"
 
@@ -660,3 +652,10 @@ msgstr "Ihre Auftragsliste ist leer"
 #: ../app/views/orders/_address.haml:49
 msgid "billing address is same as shipping address"
 msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
+
+#: ../app/views/store/index.haml:43
+#~ msgid "Prise"
+#~ msgstr "Preis"
+
+#~ msgid "Order sumary"
+#~ msgstr "Bestellübersicht"

@@ -19,433 +19,427 @@ msgstr ""
 "\n"
 
 msgid "Address was successfully created."
-msgstr ""
+msgstr "Адрес был успешно создан."
 
 msgid "Address was successfully updated."
-msgstr ""
+msgstr "Адрес был успешно обновлен."
 
 msgid "Address was successfully destroyed."
-msgstr ""
+msgstr "Адрес был успешно удалён."
 
 msgid "This product is out of stock"
-msgstr ""
+msgstr "Этот продукт не в наличии"
 
 msgid "You are not authorized to perform this action"
-msgstr ""
+msgstr "Вы не авторизованы для выполнения этого действия"
 
 msgid "Your cart is empty!"
-msgstr ""
+msgstr "Ваша корзина пуста!"
 
 msgid "Cart was successfully destroyed."
-msgstr ""
+msgstr "Корзина была успешно уничтожена."
 
 msgid "Something went wrong"
-msgstr ""
+msgstr "Что пошло не так"
 
 msgid "Category was successfully created."
-msgstr ""
+msgstr "Категория была успешно создана."
 
 msgid "Category was successfully updated."
-msgstr ""
+msgstr "Категория была успешно обновлена​​."
 
 msgid "Category was successfully destroyed."
-msgstr ""
+msgstr "Категория была успешно уничтожена."
 
 msgid "%s x %s added to your cart!"
-msgstr ""
+msgstr "%s x %s добавлено в Вашу корзину!"
 
 msgid "Thank you for your order!"
-msgstr ""
+msgstr "Спасибо за Ваш заказ!"
 
 msgid "Can not change order status"
-msgstr ""
+msgstr "Невозможно изменить статус заказа"
 
 msgid "Product was successfully created."
-msgstr ""
+msgstr "Продукт был успешно создан."
 
 msgid "Product was successfully updated."
-msgstr ""
+msgstr "Продукт был успешно обновлен."
 
 msgid "Product was successfully destroyed."
-msgstr ""
+msgstr "Продукт был успешно удален."
 
 msgid "Shipment was successfully created."
-msgstr ""
+msgstr "Доставка была успешно создана."
 
 msgid "Shipment was successfully updated."
-msgstr ""
+msgstr "Доставка была успешно обновлена​​."
 
 msgid "Shipment was successfully destroyed."
-msgstr ""
+msgstr "Доставка была успешно удалена."
 
 msgid "Store"
-msgstr ""
+msgstr "Магазин"
 
 msgid "Accepted"
 msgstr ""
 
 msgid "In progress"
-msgstr ""
+msgstr "В обработке"
 
 msgid "Shipped"
-msgstr ""
+msgstr "Отправлено"
 
 msgid "Completed"
-msgstr ""
+msgstr "Завершено"
 
 msgid "Cash payment at pickup"
-msgstr ""
+msgstr "Оплата наличными при получении"
 
 msgid "Bank transfer"
-msgstr ""
+msgstr "Банковский перевод"
 
 msgid "Purchase order"
-msgstr ""
+msgstr "Покупка в рассрочку"
 
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 msgid "Email"
-msgstr ""
+msgstr "Электронная почта"
 
 msgid "Password"
-msgstr ""
+msgstr "Пароль"
 
 msgid "Leave these fields blank if you don't want to change your password."
-msgstr ""
+msgstr "Оставьте эти поля пустыми, если вы не хотите изменить пароль."
 
 msgid "Confirm Password"
-msgstr ""
+msgstr "Подтвердите пароль"
 
 msgid "Current password"
-msgstr ""
+msgstr "Текущий пароль"
 
 msgid "You must enter your current password to make changes."
-msgstr ""
+msgstr "Вы должны ввести текущий пароль, чтобы вносить изменения."
 
 msgid "Update account"
-msgstr ""
+msgstr "Обновить профиль"
 
 msgid "Edit"
-msgstr ""
+msgstr "Редактировать"
 
 msgid "Destroy"
-msgstr ""
+msgstr "Уничтожить"
 
 msgid "Your addresses list is empty"
-msgstr ""
+msgstr "Ваш список адресов пуст"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Date"
-msgstr ""
+msgstr "Дата"
 
 msgid "Payment method"
-msgstr ""
+msgstr "Способ оплаты"
 
 msgid "Shipment"
-msgstr ""
+msgstr "Доставка"
 
 msgid "Total"
-msgstr ""
+msgstr "Всего"
 
 msgid "Your orders list is empty"
-msgstr ""
+msgstr "Ваш список заказов пуст"
 
 msgid "Orders"
-msgstr ""
+msgstr "Заказы"
 
 msgid "Addresses"
-msgstr ""
+msgstr "Адреса"
 
 msgid "New address"
-msgstr ""
+msgstr "Новый адрес"
 
 msgid "Account"
-msgstr ""
+msgstr "Принято"
 
 msgid "Recipient"
-msgstr ""
+msgstr "Получатель"
 
 msgid "Address"
-msgstr ""
+msgstr "Адрес"
 
 msgid "Save changes"
-msgstr ""
+msgstr "Сохранить изменения"
 
 msgid "Cancel"
-msgstr ""
+msgstr "Отменить"
 
 msgid "Image"
-msgstr ""
+msgstr "Изображение"
 
 msgid "Quantity"
-msgstr ""
+msgstr "Количество"
 
 msgid "Price"
-msgstr ""
+msgstr "Цена"
 
 msgid "Subtotal"
-msgstr ""
+msgstr "Промежуточный итог"
 
 msgid "VAT"
-msgstr ""
+msgstr "НДС"
 
 msgid "Your Cart"
-msgstr ""
-
-msgid "Empty cart"
-msgstr ""
+msgstr "Ваша корзина"
 
 msgid "Are you sure?"
-msgstr ""
+msgstr "Вы уверены?"
+
+msgid "Empty cart"
+msgstr "Очистить корзину"
 
 msgid "Continue shopping"
-msgstr ""
+msgstr "Продолжить покупки"
 
 msgid "Check out"
-msgstr ""
+msgstr "Заказать"
 
 msgid "New category"
-msgstr ""
+msgstr "Новая категория"
 
 msgid "Reset password"
-msgstr ""
+msgstr "Сброс пароля"
 
 msgid "We'll send password reset instructions."
-msgstr ""
+msgstr "Мы вышлем инструкции по изменению пароля."
 
 msgid "Sign-up"
-msgstr ""
+msgstr "Регистрация"
 
 msgid "Sign up"
-msgstr ""
+msgstr "Зарегистрироваться"
 
 msgid "Already have an account?"
-msgstr ""
+msgstr "Уже есть аккаунт?"
 
 msgid "Sign in"
-msgstr ""
+msgstr "Вход"
 
 msgid "Sign-in"
-msgstr ""
+msgstr "Вход в систему"
 
 msgid "Remember me"
-msgstr ""
+msgstr "Запомни меня"
 
 msgid "Don't have an account?"
-msgstr ""
+msgstr "Еще нет учетной записи?"
 
 msgid "Forgot your password?"
-msgstr ""
+msgstr "Забыли свой пароль?"
 
 msgid "Didn't receive confirmation instructions?"
-msgstr ""
+msgstr "Не получили письмо с подтверждением?"
 
 msgid "Didn't receive unlock instructions?"
-msgstr ""
+msgstr "Не получили инструкции разблокировки?"
 
 msgid "My Account"
-msgstr ""
+msgstr "Мой аккаунт"
 
 msgid "Sign out"
-msgstr ""
+msgstr "Выйти"
 
 msgid "Categories"
-msgstr ""
+msgstr "Категории"
 
 msgid "Products"
-msgstr ""
+msgstr "Продукты"
 
 msgid "Users"
-msgstr ""
+msgstr "Пользователи"
 
 msgid "Shipments"
-msgstr ""
+msgstr "Доставки"
 
 msgid "Carts"
-msgstr ""
+msgstr "Корзины"
 
 msgid "Shipping and Billing address"
-msgstr ""
+msgstr "Адрес доставки и для выставления счета"
 
 msgid "New Address"
 msgstr ""
 
 msgid "Shipping address"
-msgstr ""
+msgstr "Адрес доставки"
 
 msgid "Billing address"
-msgstr ""
+msgstr "Адрес для выставления счета"
 
 msgid "billing address is same as shipping address"
-msgstr ""
+msgstr "платежный адрес такой же, как адрес доставки"
 
 msgid "Your addresses list is empty, please add at least one address"
-msgstr ""
+msgstr "Ваш список адресов пуст, пожалуйста, добавить хотя бы один адрес"
 
 msgid "Back to cart"
-msgstr ""
+msgstr "Вернуться в корзину"
 
 msgid "Next"
-msgstr ""
+msgstr "Следующая"
 
 msgid "Back"
-msgstr ""
+msgstr "Назад"
 
 msgid "Shipping method"
-msgstr ""
+msgstr "Способ доставки"
 
 msgid "Order summary"
-msgstr ""
+msgstr "Перечень заказа"
 
 msgid "Place order"
-msgstr ""
-
-msgid "Order sumary"
-msgstr ""
+msgstr "Разместить заказ"
 
 msgid "Order #%d"
-msgstr ""
+msgstr "Заказ #%d"
 
 msgid "Order date"
-msgstr ""
+msgstr "Дата заказа"
 
 msgid "Product"
-msgstr ""
+msgstr "Продукт"
 
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 msgid "EAN"
-msgstr ""
+msgstr "Артикул"
 
 msgid "Category"
-msgstr ""
+msgstr "Категория"
 
 msgid "Save"
-msgstr ""
+msgstr "Сохранить"
 
 msgid "New product"
-msgstr ""
+msgstr "Новый продукт"
 
 msgid "New shipment"
-msgstr ""
+msgstr "Новая отправка"
 
 msgid "Fee"
-msgstr ""
+msgstr "Плата"
 
 msgid "Out of stock"
-msgstr ""
+msgstr "Распродано"
 
 msgid "Add to cart"
-msgstr ""
+msgstr "Добавить в корзину"
 
 msgid "Sorry, the product was not found."
-msgstr ""
-
-msgid "All categories"
-msgstr ""
+msgstr "К сожалению, продукт не найден."
 
 msgid "Search"
-msgstr ""
+msgstr "Поиск"
 
 msgid "Sort"
-msgstr ""
-
-msgid "Prise"
-msgstr ""
+msgstr "Сортировка"
 
 msgid "Created at"
-msgstr ""
+msgstr "Добавлен"
 
 msgid "View"
-msgstr ""
+msgstr "Вид"
+
+msgid "All categories"
+msgstr "Все категории"
 
 msgid "EAN: %s"
-msgstr ""
+msgstr "Артикул %s"
 
 msgid "Available: %d of %d"
-msgstr ""
+msgstr "Доступно %d из %d"
 
 msgid "Address|City"
-msgstr ""
+msgstr "Город"
 
 msgid "Address|Phone"
-msgstr ""
+msgstr "Телефон"
 
 msgid "Address|Recipient"
-msgstr ""
+msgstr "Получатель"
 
 msgid "Address|Street"
-msgstr ""
+msgstr "Улица"
 
 msgid "Address|Zip code"
-msgstr ""
+msgstr "Почтовый индекс"
 
 msgid "Category|Description"
-msgstr ""
+msgstr "Описание"
 
 msgid "Category|Name"
-msgstr ""
+msgstr "Имя"
 
 msgid "Category|Products count"
-msgstr ""
+msgstr "Количество продуктов"
 
 msgid "Line item"
-msgstr ""
+msgstr "Позиция"
 
 msgid "LineItem|Price"
-msgstr ""
+msgstr "Цена"
 
 msgid "LineItem|Quantity"
-msgstr ""
+msgstr "Количество"
 
 msgid "Order"
-msgstr ""
+msgstr "Заказ"
 
 msgid "Order|Pay type"
-msgstr ""
+msgstr "Тип оплаты"
 
 msgid "Order|Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Product|Description"
-msgstr ""
+msgstr "Описание"
 
 msgid "Product|Ean"
-msgstr ""
+msgstr "Артикул"
 
 msgid "Product|Image"
-msgstr ""
+msgstr "Изображение"
 
 msgid "Product|Name"
-msgstr ""
+msgstr "Наименование"
 
 msgid "Product|Price"
-msgstr ""
+msgstr "Цена"
 
 msgid "Product|Quantity"
-msgstr ""
+msgstr "Количество"
 
 msgid "Product|Vat"
-msgstr ""
+msgstr "НДС"
 
 msgid "Shipment|Default"
-msgstr ""
+msgstr "По умолчанию"
 
 msgid "Shipment|Fee"
-msgstr ""
+msgstr "Плата"
 
 msgid "Shipment|Name"
-msgstr ""
+msgstr "Название"
 
 msgid "Shipment|Provider"
-msgstr ""
+msgstr "Провайдер"
 
 msgid "User"
-msgstr ""
+msgstr "Пользователь"
 
 msgid "User|Confirmation sent at"
 msgstr ""

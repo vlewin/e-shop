@@ -21,7 +21,7 @@
             = sort_link @search, :name, _('Name')
             -# %i.fa.fa-sort-alpha-asc
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
-            = sort_link @search, :price, _('Prise')
+            = sort_link @search, :price, _('Price')
             -# %i.fa.fa-sort-numeric-desc
           .btn.btn-default{ class: (@sorting.include?('created_at')) ? 'active' : ''}
             = sort_link @search, :created_at, _('Created at')
