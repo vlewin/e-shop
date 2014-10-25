@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-25 22:54+0200\n"
-"PO-Revision-Date: 2014-10-25 22:54+0200\n"
+"POT-Creation-Date: 2014-10-25 23:03+0200\n"
+"PO-Revision-Date: 2014-10-25 23:03+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -160,6 +160,10 @@ msgstr ""
 
 #: ../app/views/carts/show.haml:38
 msgid "Checkout"
+msgstr ""
+
+#: ../app/views/addresses/_form.haml:35
+msgid "City"
 msgstr ""
 
 #: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
@@ -508,6 +512,10 @@ msgstr ""
 
 #: ../app/controllers/store_controller.rb:20
 msgid "Store"
+msgstr ""
+
+#: ../app/views/addresses/_form.haml:46
+msgid "Street"
 msgstr ""
 
 #: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:59 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:205

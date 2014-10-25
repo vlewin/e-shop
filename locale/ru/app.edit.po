@@ -24,11 +24,11 @@ msgstr "%s x %s добавлено в Вашу корзину!"
 
 #: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:8
 msgid "Accepted"
-msgstr ""
+msgstr "Принято"
 
 #: ../app/views/account/show.haml:63
 msgid "Account"
-msgstr "Принято"
+msgstr "Аккаунт"
 
 #: ../app/views/store/_products.html.haml:53 ../app/views/store/show.html.haml:56
 msgid "Add to cart"
@@ -161,6 +161,10 @@ msgstr "Количество продуктов"
 #: ../app/views/carts/show.haml:38
 msgid "Checkout"
 msgstr "Оформить заказ"
+
+#: ../app/views/addresses/_form.haml:35
+msgid "City"
+msgstr ""
 
 #: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
 msgid "Completed"
@@ -510,6 +514,10 @@ msgstr "Статус"
 msgid "Store"
 msgstr "Магазин"
 
+#: ../app/views/addresses/_form.haml:46
+msgid "Street"
+msgstr ""
+
 #: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:59 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:205
 msgid "Subtotal"
 msgstr "Промежуточный итог"
@@ -653,4 +661,3 @@ msgstr "Ваш список заказов пуст"
 #: ../app/views/orders/_address.haml:49
 msgid "billing address is same as shipping address"
 msgstr "платежный адрес такой же, как адрес доставки"
-

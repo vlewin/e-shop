@@ -82,7 +82,7 @@ msgid "Store"
 msgstr "Магазин"
 
 msgid "Accepted"
-msgstr ""
+msgstr "Принято"
 
 msgid "In progress"
 msgstr "В обработке"
@@ -163,10 +163,16 @@ msgid "New address"
 msgstr "Новый адрес"
 
 msgid "Account"
-msgstr "Принято"
+msgstr "Аккаунт"
 
 msgid "Recipient"
 msgstr "Получатель"
+
+msgid "City"
+msgstr ""
+
+msgid "Street"
+msgstr ""
 
 msgid "Address"
 msgstr "Адрес"
@@ -195,11 +201,11 @@ msgstr "НДС"
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
-msgid "Are you sure?"
-msgstr "Вы уверены?"
-
 msgid "Empty cart"
 msgstr "Очистить корзину"
+
+msgid "Are you sure?"
+msgstr "Вы уверены?"
 
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
