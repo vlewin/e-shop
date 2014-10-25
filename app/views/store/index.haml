@@ -1,13 +1,4 @@
-%ul#categories.nav.navbar-nav.clearfix
-  %li{ class: params[:category_name_cont].nil? ? 'active' : '' }= link_to _('All categories'), root_path(view: @view), remote: :true
-  - @categories.each do |cat|
-    %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
-      = link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
-
-.clearfix
-%hr.line
-
-#store-index
+#store
   .row
     .col-xs-5.col-sm-5.col-md-6
       = search_form_for @search, url: root_path, method: :get, remote: true, class: '' do |f|
@@ -50,9 +41,19 @@
         - alphabet = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
         - alphabet.each do |char|
           = link_to char, root_path(q: { name_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
+
   %hr.line
 
-  #products
-    = render 'products'
+  %ul#categories.nav.nav-tabs
+    %li{ class: params[:category_name_cont].nil? ? 'active' : '' }
+      = link_to _('All categories'), root_path(view: @view), remote: :true
+    - @categories.each do |cat|
+      - name = "#{cat.name} (#{cat.products_count})"
+      - path = root_path(q: {'category_name_cont' => cat.name}, view: @view)
+      %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
+        = link_to name, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+  .tab-content
+    #products.tab-pane.active
+      = render 'products'
 
 

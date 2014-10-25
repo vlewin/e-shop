@@ -1,6 +1,12 @@
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+
+// INFO: https://github.com/metaskills/less-rails-bootstrap/tree/master/app/assets/javascripts/twitter/bootstrap
+//= require twitter/bootstrap/collapse
+//= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/alert
+//= require twitter/bootstrap/modal
+//= require twitter/bootstrap/tooltip
 //= require_tree
 
 // Boostrap tootip
