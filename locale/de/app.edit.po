@@ -97,15 +97,11 @@ msgstr "Zurück"
 msgid "Back to cart"
 msgstr "Zurück zum Warenkorb"
 
-#: ../app/models/order.rb:4
-msgid "Bank transfer"
-msgstr "Überweisung"
-
 #: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
 msgid "Billing address"
 msgstr "Rechnungsadresse"
 
-#: ../app/controllers/orders_controller.rb:72
+#: ../app/controllers/orders_controller.rb:73
 msgid "Can not change order status"
 msgstr "Auftragsstatus kann nicht geändern werden"
 
@@ -120,10 +116,6 @@ msgstr "Warenkorb wurde erfolgreich zerstört."
 #: ../app/views/layouts/_navigation.haml:142
 msgid "Carts"
 msgstr "Warenkörbe"
-
-#: ../app/models/order.rb:3
-msgid "Cash payment at pickup"
-msgstr "Bezahlung bei Abholung"
 
 #: ../app/views/layouts/_navigation.haml:106
 msgid "Categories"
@@ -388,10 +380,6 @@ msgstr "Anzahl"
 #: model_attributes.rb:25
 msgid "Product|Vat"
 msgstr "MwSt"
-
-#: ../app/models/order.rb:5
-msgid "Purchase order"
-msgstr "Bestellung auf Rechnung"
 
 #: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
@@ -660,3 +648,13 @@ msgstr "Ihre Auftragsliste ist leer"
 #: ../app/views/orders/_address.haml:49
 msgid "billing address is same as shipping address"
 msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
+
+# PAYMENT TYPES
+#~ msgid "Bank transfer"
+#~ msgstr "Überweisung"
+
+#~ msgid "Cash payment at pickup"
+#~ msgstr "Bezahlung bei Abholung"
+
+#~ msgid "Purchase order"
+#~ msgstr "Bestellung auf Rechnung"

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-25 23:12+0200\n"
-"PO-Revision-Date: 2014-10-25 23:12+0200\n"
+"POT-Creation-Date: 2014-10-25 23:28+0200\n"
+"PO-Revision-Date: 2014-10-25 23:28+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -98,15 +98,11 @@ msgstr ""
 msgid "Back to cart"
 msgstr ""
 
-#: ../app/models/order.rb:4
-msgid "Bank transfer"
-msgstr ""
-
 #: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
 msgid "Billing address"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:72
+#: ../app/controllers/orders_controller.rb:73
 msgid "Can not change order status"
 msgstr ""
 
@@ -120,10 +116,6 @@ msgstr ""
 
 #: ../app/views/layouts/_navigation.haml:142
 msgid "Carts"
-msgstr ""
-
-#: ../app/models/order.rb:3
-msgid "Cash payment at pickup"
 msgstr ""
 
 #: ../app/views/layouts/_navigation.haml:106
@@ -388,10 +380,6 @@ msgstr ""
 
 #: model_attributes.rb:25
 msgid "Product|Vat"
-msgstr ""
-
-#: ../app/models/order.rb:5
-msgid "Purchase order"
 msgstr ""
 
 #: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:73

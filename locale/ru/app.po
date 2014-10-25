@@ -93,15 +93,6 @@ msgstr "Отправлено"
 msgid "Completed"
 msgstr "Завершено"
 
-msgid "Cash payment at pickup"
-msgstr "Оплата наличными при получении"
-
-msgid "Bank transfer"
-msgstr "Банковский перевод"
-
-msgid "Purchase order"
-msgstr "Покупка в рассрочку"
-
 msgid "Name"
 msgstr "Имя"
 
@@ -201,11 +192,11 @@ msgstr "НДС"
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
-msgid "Empty cart"
-msgstr "Очистить корзину"
-
 msgid "Are you sure?"
 msgstr "Вы уверены?"
+
+msgid "Empty cart"
+msgstr "Очистить корзину"
 
 msgid "Continue shopping"
 msgstr "Продолжить покупки"

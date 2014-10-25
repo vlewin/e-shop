@@ -98,15 +98,11 @@ msgstr "Назад"
 msgid "Back to cart"
 msgstr "Вернуться в корзину"
 
-#: ../app/models/order.rb:4
-msgid "Bank transfer"
-msgstr "Банковский перевод"
-
 #: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
 msgid "Billing address"
 msgstr "Платежный адрес"
 
-#: ../app/controllers/orders_controller.rb:72
+#: ../app/controllers/orders_controller.rb:73
 msgid "Can not change order status"
 msgstr "Невозможно изменить статус заказа"
 
@@ -121,10 +117,6 @@ msgstr "Корзина была успешно уничтожена."
 #: ../app/views/layouts/_navigation.haml:142
 msgid "Carts"
 msgstr "Корзины"
-
-#: ../app/models/order.rb:3
-msgid "Cash payment at pickup"
-msgstr "Оплата наличными при получении"
 
 #: ../app/views/layouts/_navigation.haml:106
 msgid "Categories"
@@ -389,10 +381,6 @@ msgstr "Количество"
 #: model_attributes.rb:25
 msgid "Product|Vat"
 msgstr "НДС"
-
-#: ../app/models/order.rb:5
-msgid "Purchase order"
-msgstr "Покупка в рассрочку"
 
 #: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:73
 msgid "Quantity"
@@ -661,3 +649,13 @@ msgstr "Ваш список заказов пуст"
 #: ../app/views/orders/_address.haml:49
 msgid "billing address is same as shipping address"
 msgstr "платежный адрес такой же, как адрес доставки"
+
+# PAYMENT TYPES
+#~ msgid "Bank transfer"
+#~ msgstr "Банковский перевод"
+
+#~ msgid "Cash payment at pickup"
+#~ msgstr "Оплата наличными при получении"
+
+#~ msgid "Purchase order"
+#~ msgstr "Покупка в рассрочку"

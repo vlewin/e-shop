@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   def index
     @orders = policy_scope(Order)
     # FIXME: add permission check test!
-    authorize @orders
+    authorize :orders, :index?
   end
 
   def show
@@ -65,6 +65,7 @@ class OrdersController < ApplicationController
 
   def update_status
     prev_status = @order.status
+
     if @order.update(order_params)
       notice = "Order status changed from '%s' to '%s'" % [prev_status.humanize, order_params[:status].humanize]
       redirect_to orders_path, notice: notice
