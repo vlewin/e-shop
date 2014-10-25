@@ -50,7 +50,7 @@ msgstr "Адрес был успешно удалён."
 msgid "Address was successfully updated."
 msgstr "Адрес был успешно обновлен."
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:122
+#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:124
 msgid "Addresses"
 msgstr "Адреса"
 
@@ -118,7 +118,7 @@ msgstr "Отменить"
 msgid "Cart was successfully destroyed."
 msgstr "Корзина была успешно уничтожена."
 
-#: ../app/views/layouts/_navigation.haml:140
+#: ../app/views/layouts/_navigation.haml:142
 msgid "Carts"
 msgstr "Корзины"
 
@@ -126,7 +126,7 @@ msgstr "Корзины"
 msgid "Cash payment at pickup"
 msgstr "Оплата наличными при получении"
 
-#: ../app/views/layouts/_navigation.haml:104
+#: ../app/views/layouts/_navigation.haml:106
 msgid "Categories"
 msgstr "Категории"
 
@@ -196,7 +196,7 @@ msgstr "Описание"
 
 #: ../app/views/account/_address.haml:47
 msgid "Destroy"
-msgstr "Уничтожить"
+msgstr "Удалить"
 
 #: ../app/views/devise/shared/_links.html.slim:11
 msgid "Didn't receive confirmation instructions?"
@@ -310,7 +310,7 @@ msgstr "Дата заказа"
 msgid "Order summary"
 msgstr "Перечень заказа"
 
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:134
+#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:136
 msgid "Orders"
 msgstr "Заказы"
 
@@ -358,7 +358,7 @@ msgstr "Продукт был успешно удален."
 msgid "Product was successfully updated."
 msgstr "Продукт был успешно обновлен."
 
-#: ../app/views/layouts/_navigation.haml:110
+#: ../app/views/layouts/_navigation.haml:112
 msgid "Products"
 msgstr "Продукты"
 
@@ -438,7 +438,7 @@ msgstr "Доставка была успешно удалена."
 msgid "Shipment was successfully updated."
 msgstr "Доставка была успешно обновлена​​."
 
-#: ../app/views/layouts/_navigation.haml:128
+#: ../app/views/layouts/_navigation.haml:130
 msgid "Shipments"
 msgstr "Доставки"
 
@@ -474,7 +474,7 @@ msgstr "Адрес доставки и платежа"
 msgid "Shipping method"
 msgstr "Способ доставки"
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:88 ../app/views/devise/shared/_links.html.slim:2
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr "Вход"
 
@@ -482,7 +482,7 @@ msgstr "Вход"
 msgid "Sign out"
 msgstr "Выйти"
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:5
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
 msgstr "Зарегистрироваться"
 
@@ -498,7 +498,7 @@ msgstr "Регистрация"
 msgid "Something went wrong"
 msgstr "Что пошло не так"
 
-#: ../app/views/store/_products.html.haml:117
+#: ../app/views/store/_products.html.haml:114
 msgid "Sorry, the product was not found."
 msgstr "К сожалению, продукт не найден."
 
@@ -542,7 +542,7 @@ msgstr "Обновить профиль"
 msgid "User"
 msgstr "Пользователь"
 
-#: ../app/views/layouts/_navigation.haml:116
+#: ../app/views/layouts/_navigation.haml:118
 msgid "Users"
 msgstr "Пользователи"
 

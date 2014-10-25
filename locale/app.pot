@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-25 23:03+0200\n"
-"PO-Revision-Date: 2014-10-25 23:03+0200\n"
+"POT-Creation-Date: 2014-10-25 23:12+0200\n"
+"PO-Revision-Date: 2014-10-25 23:12+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Address was successfully updated."
 msgstr ""
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:122
+#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:124
 msgid "Addresses"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Cart was successfully destroyed."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:140
+#: ../app/views/layouts/_navigation.haml:142
 msgid "Carts"
 msgstr ""
 
@@ -126,7 +126,7 @@ msgstr ""
 msgid "Cash payment at pickup"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:104
+#: ../app/views/layouts/_navigation.haml:106
 msgid "Categories"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Order summary"
 msgstr ""
 
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:134
+#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:136
 msgid "Orders"
 msgstr ""
 
@@ -358,7 +358,7 @@ msgstr ""
 msgid "Product was successfully updated."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:110
+#: ../app/views/layouts/_navigation.haml:112
 msgid "Products"
 msgstr ""
 
@@ -438,7 +438,7 @@ msgstr ""
 msgid "Shipment was successfully updated."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:128
+#: ../app/views/layouts/_navigation.haml:130
 msgid "Shipments"
 msgstr ""
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid "Shipping method"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:88 ../app/views/devise/shared/_links.html.slim:2
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr ""
 
@@ -482,7 +482,7 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:81 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:5
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
 msgstr ""
 
@@ -498,7 +498,7 @@ msgstr ""
 msgid "Something went wrong"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:117
+#: ../app/views/store/_products.html.haml:114
 msgid "Sorry, the product was not found."
 msgstr ""
 
@@ -542,7 +542,7 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:116
+#: ../app/views/layouts/_navigation.haml:118
 msgid "Users"
 msgstr ""
 

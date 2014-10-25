@@ -130,7 +130,7 @@ msgid "Edit"
 msgstr "Редактировать"
 
 msgid "Destroy"
-msgstr "Уничтожить"
+msgstr "Удалить"
 
 msgid "Your addresses list is empty"
 msgstr "Ваш список адресов пуст"
