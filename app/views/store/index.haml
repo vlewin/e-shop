@@ -1,6 +1,6 @@
 #store
   .row
-    .col-xs-5.col-sm-5.col-md-6
+    .col-xs-12.col-sm-5.col-md-6
       = search_form_for @search, url: root_path, method: :get, remote: true, class: '' do |f|
         = hidden_field_tag :view, params[:view]
 
@@ -10,7 +10,9 @@
 
           = f.text_field :name_cont, placeholder: _('Search'), class: 'form-control'
 
-    .col-xs-7.col-sm-7.col-md-6
+    .col-xs-12.hidden-sm.hidden-md.hidden-lg &nbsp;
+
+    .col-xs-12.col-sm-7.col-md-6
       .text-right
         %span.hidden-xs
           %small= _('Sort')
@@ -35,7 +37,7 @@
 
   %hr.line
 
-  .row
+  .row.hidden-xs
     .col-xs-12.col-sm-12.col-md-12
       #alphabet
         - alphabet = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
@@ -44,7 +46,27 @@
 
   %hr.line
 
-  %ul#categories.nav.nav-tabs
+  %ul.list-group.hidden-sm.hidden-md.hidden-lg
+    = link_to _('All categories'), root_path(view: @view), class: params[:category_name_cont].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
+    - @categories.each do |cat|
+      - name = "#{cat.name} (#{cat.products_count})"
+      - path = root_path(q: {'category_name_cont' => cat.name}, view: @view)
+      - css_class = cat.name == params[:category_name_cont] ? 'list-group-item active' : 'list-group-item'
+      = link_to name, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
+
+  -# %ul#categories.nav.nav-tabs.hidden-sm.hidden-md.hidden-lg
+  -#   %li.active.dropdown
+  -#     = link_to _('Categories'), '#', class: "dropdown-toggle", 'data-toggle' => "dropdown"
+  -#     %ul.dropdown-menu
+  -#       %li{ class: params[:category_name_cont].nil? ? 'active' : '' }
+  -#         = link_to _('All categories'), root_path(view: @view), remote: :true
+  -#       - @categories.each do |cat|
+  -#         - name = "#{cat.name} (#{cat.products_count})"
+  -#         - path = root_path(q: {'category_name_cont' => cat.name}, view: @view)
+  -#         %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
+  -#           = link_to name, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+
+  %ul#categories.nav.nav-tabs.hidden-xs
     %li{ class: params[:category_name_cont].nil? ? 'active' : '' }
       = link_to _('All categories'), root_path(view: @view), remote: :true
     - @categories.each do |cat|

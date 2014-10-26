@@ -1,8 +1,14 @@
 $(function() {
-  // Categories
+  // Category links (desktop view)
   $(document).on('click', '#categories li>a', function() {
     $('#categories li').removeClass('active')
     $(this).parent().addClass('active')
+  })
+
+  // Category links (mobile view)
+  $(document).on('click', '#store a.list-group-item', function() {
+    $('a.list-group-item').removeClass('active')
+    $(this).addClass('active')
   })
 
   // Search
