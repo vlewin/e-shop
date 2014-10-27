@@ -78,9 +78,6 @@ msgstr "Доставка была успешно обновлена​​."
 msgid "Shipment was successfully destroyed."
 msgstr "Доставка была успешно удалена."
 
-msgid "Store"
-msgstr "Магазин"
-
 msgid "Accepted"
 msgstr "Принято"
 
@@ -160,10 +157,10 @@ msgid "Recipient"
 msgstr "Получатель"
 
 msgid "City"
-msgstr ""
+msgstr "Город"
 
 msgid "Street"
-msgstr ""
+msgstr "Улица"
 
 msgid "Address"
 msgstr "Адрес"
@@ -177,11 +174,14 @@ msgstr "Отменить"
 msgid "Image"
 msgstr "Изображение"
 
-msgid "Quantity"
-msgstr "Количество"
+msgid "Title"
+msgstr "Название"
 
 msgid "Price"
 msgstr "Цена"
+
+msgid "Quantity"
+msgstr "Количество"
 
 msgid "Subtotal"
 msgstr "Промежуточный итог"
@@ -206,6 +206,12 @@ msgstr "Оформить заказ"
 
 msgid "New category"
 msgstr "Новая категория"
+
+msgid "Product count"
+msgstr "Количество товаров"
+
+msgid "Products"
+msgstr "Продукты"
 
 msgid "Reset password"
 msgstr "Сброс пароля"
@@ -252,9 +258,6 @@ msgstr "Выйти"
 msgid "Categories"
 msgstr "Категории"
 
-msgid "Products"
-msgstr "Продукты"
-
 msgid "Users"
 msgstr "Пользователи"
 
@@ -266,9 +269,6 @@ msgstr "Корзины"
 
 msgid "Shipping and Billing address"
 msgstr "Адрес доставки и платежа"
-
-msgid "New Address"
-msgstr ""
 
 msgid "Shipping address"
 msgstr "Адрес доставки"
@@ -300,6 +300,12 @@ msgstr "Перечень заказа"
 msgid "Place order"
 msgstr "Разместить заказ"
 
+msgid "Payment"
+msgstr "Оплата"
+
+msgid "Tax"
+msgstr "Налог"
+
 msgid "Order #%d"
 msgstr "Заказ #%d"
 
@@ -318,14 +324,37 @@ msgstr "Артикул"
 msgid "Category"
 msgstr "Категория"
 
+msgid "Please be patient the image upload may take a few seconds..."
+msgstr ""
+"Пожалуйста, будьте терпеливы загрузки изображений может занять несколько секун"
+"д ..."
+
 msgid "Save"
 msgstr "Сохранить"
 
 msgid "New product"
 msgstr "Новый продукт"
 
+msgid "EAN:"
+msgstr "Артикул:"
+
+msgid "VAT:"
+msgstr "НДС:"
+
+msgid "Availability:"
+msgstr "Наличие:"
+
+msgid "Shipping methods"
+msgstr "Способы доставки"
+
 msgid "New shipment"
 msgstr "Новая отправка"
+
+msgid "Default"
+msgstr "Стандарт"
+
+msgid "Provider"
+msgstr "Провайдер"
 
 msgid "Fee"
 msgstr "Плата"

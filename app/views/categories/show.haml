@@ -2,7 +2,7 @@
   .panel-body
     %h4.page-header= @category.title
 
-    %strong= _('Associated products')
+    %strong= _('Products')
     %ol
       - @category.products.each_with_index do |product, index|
         %li= product.title

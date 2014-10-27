@@ -50,7 +50,7 @@ msgstr "Адрес был успешно удалён."
 msgid "Address was successfully updated."
 msgstr "Адрес был успешно обновлен."
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:124
+#: ../app/views/layouts/_navigation.haml:124 ../app/views/account/show.haml:35
 msgid "Addresses"
 msgstr "Адреса"
 
@@ -74,7 +74,7 @@ msgstr "Улица"
 msgid "Address|Zip code"
 msgstr "Почтовый индекс"
 
-#: ../app/views/store/index.haml:95
+#: ../app/views/store/index.haml:96 ../app/views/store/index.haml:122
 msgid "All categories"
 msgstr "Все категории"
 
@@ -82,15 +82,19 @@ msgstr "Все категории"
 msgid "Already have an account?"
 msgstr "Уже есть аккаунт?"
 
-#: ../app/views/carts/show.haml:23
+#: ../app/views/shipments/index.haml:59 ../app/views/carts/show.haml:23 ../app/views/orders/index.html.haml:84
 msgid "Are you sure?"
 msgstr "Вы уверены?"
+
+#: ../app/views/products/show.haml:53
+msgid "Availability:"
+msgstr "Наличие:"
 
 #: ../app/views/store/show.html.haml:39
 msgid "Available: %d of %d"
 msgstr "Доступно %d из %d"
 
-#: ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108 ../app/views/products/_form.haml:126
+#: ../app/views/shipments/show.haml:37 ../app/views/shipments/_form.haml:73 ../app/views/products/show.haml:64 ../app/views/products/_form.haml:126 ../app/views/orders/_summary.haml:108 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33
 msgid "Back"
 msgstr "Назад"
 
@@ -98,7 +102,7 @@ msgstr "Назад"
 msgid "Back to cart"
 msgstr "Вернуться в корзину"
 
-#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
+#: ../app/views/orders/show.haml:58 ../app/views/orders/_address.haml:41
 msgid "Billing address"
 msgstr "Платежный адрес"
 
@@ -156,13 +160,13 @@ msgstr "Оформить заказ"
 
 #: ../app/views/addresses/_form.haml:35
 msgid "City"
-msgstr ""
+msgstr "Город"
 
 #: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
 msgid "Completed"
 msgstr "Завершено"
 
-#: ../app/views/account/_account.haml:46 ../app/views/devise/registrations/new.haml:41
+#: ../app/views/devise/registrations/new.haml:41 ../app/views/account/_account.haml:46
 msgid "Confirm Password"
 msgstr "Подтвердите пароль"
 
@@ -170,7 +174,7 @@ msgstr "Подтвердите пароль"
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
-#: ../app/views/store/index.haml:49
+#: ../app/views/store/index.haml:52
 msgid "Created at"
 msgstr "Добавлен"
 
@@ -178,9 +182,13 @@ msgstr "Добавлен"
 msgid "Current password"
 msgstr "Текущий пароль"
 
-#: ../app/views/account/_order.haml:11
+#: ../app/views/orders/index.html.haml:16 ../app/views/account/_order.haml:11
 msgid "Date"
 msgstr "Дата"
+
+#: ../app/views/shipments/index.haml:22
+msgid "Default"
+msgstr "Стандарт"
 
 #: ../app/views/products/_form.haml:25
 msgid "Description"
@@ -202,19 +210,23 @@ msgstr "Не получили инструкции разблокировки?"
 msgid "Don't have an account?"
 msgstr "Еще нет учетной записи?"
 
-#: ../app/views/products/_form.haml:36
+#: ../app/views/products/index.haml:24 ../app/views/products/_form.haml:36
 msgid "EAN"
 msgstr "Артикул"
+
+#: ../app/views/products/show.haml:37
+msgid "EAN:"
+msgstr "Артикул:"
 
 #: ../app/views/store/show.html.haml:37
 msgid "EAN: %s"
 msgstr "Артикул %s"
 
-#: ../app/views/account/_address.haml:42
+#: ../app/views/shipments/show.haml:35 ../app/views/shipments/edit.haml:1 ../app/views/products/show.haml:62 ../app/views/account/_address.haml:42
 msgid "Edit"
 msgstr "Редактировать"
 
-#: ../app/views/account/_account.haml:19 ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
+#: ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/passwords/new.haml:19 ../app/views/account/_account.haml:19
 msgid "Email"
 msgstr "Электронная почта"
 
@@ -222,7 +234,7 @@ msgstr "Электронная почта"
 msgid "Empty cart"
 msgstr "Очистить корзину"
 
-#: ../app/views/shipments/show.haml:26
+#: ../app/views/shipments/show.haml:26 ../app/views/shipments/index.haml:28
 msgid "Fee"
 msgstr "Плата"
 
@@ -230,7 +242,7 @@ msgstr "Плата"
 msgid "Forgot your password?"
 msgstr "Забыли свой пароль?"
 
-#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/_form.haml:91
+#: ../app/views/products/index.haml:22 ../app/views/products/_form.haml:91 ../app/views/store/_products.html.haml:69 ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22
 msgid "Image"
 msgstr "Изображение"
 
@@ -258,15 +270,11 @@ msgstr "Количество"
 msgid "My Account"
 msgstr "Мой аккаунт"
 
-#: ../app/views/account/_account.haml:8 ../app/views/carts/_items.haml:9 ../app/views/devise/registrations/new.haml:20 ../app/views/orders/_summary.haml:24 ../app/views/products/_form.haml:14 ../app/views/store/_products.html.haml:69 ../app/views/store/index.haml:37
+#: ../app/views/devise/registrations/new.haml:20 ../app/views/account/_account.haml:8
 msgid "Name"
 msgstr "Имя"
 
-#: ../app/views/orders/_address.haml:12
-msgid "New Address"
-msgstr ""
-
-#: ../app/views/account/show.haml:40 ../app/views/addresses/index.haml:7
+#: ../app/views/addresses/index.haml:7 ../app/views/orders/_address.haml:12 ../app/views/account/show.haml:40
 msgid "New address"
 msgstr "Новый адрес"
 
@@ -298,11 +306,11 @@ msgstr "Заказ #%d"
 msgid "Order date"
 msgstr "Дата заказа"
 
-#: ../app/views/orders/_summary.haml:7 ../app/views/orders/new.haml:34 ../app/views/orders/show.haml:148
+#: ../app/views/orders/show.haml:148 ../app/views/orders/_summary.haml:7 ../app/views/orders/new.haml:34
 msgid "Order summary"
 msgstr "Перечень заказа"
 
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:136
+#: ../app/views/layouts/_navigation.haml:136 ../app/views/orders/index.html.haml:1 ../app/views/account/show.haml:13
 msgid "Orders"
 msgstr "Заказы"
 
@@ -314,15 +322,19 @@ msgstr "Тип оплаты"
 msgid "Order|Status"
 msgstr "Статус"
 
-#: ../app/views/store/_products.html.haml:15
+#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:100
 msgid "Out of stock"
 msgstr "Распродано"
 
-#: ../app/views/account/_account.haml:33 ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
+#: ../app/views/devise/sessions/new.haml:27 ../app/views/devise/registrations/new.haml:34 ../app/views/account/_account.haml:33
 msgid "Password"
 msgstr "Пароль"
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:26 ../app/views/orders/show.haml:108
+#: ../app/views/orders/index.html.haml:18
+msgid "Payment"
+msgstr "Оплата"
+
+#: ../app/views/orders/show.haml:108 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:26 ../app/views/account/_order.haml:13
 msgid "Payment method"
 msgstr "Способ оплаты"
 
@@ -330,13 +342,21 @@ msgstr "Способ оплаты"
 msgid "Place order"
 msgstr "Разместить заказ"
 
-#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/_form.haml:58 ../app/views/store/_products.html.haml:71 ../app/views/store/index.haml:43
+#: ../app/views/products/_form.haml:113
+msgid "Please be patient the image upload may take a few seconds..."
+msgstr "Пожалуйста, будьте терпеливы загрузки изображений может занять несколько секунд ..."
+
+#: ../app/views/products/index.haml:30 ../app/views/products/_form.haml:58 ../app/views/store/_products.html.haml:73 ../app/views/store/index.haml:46 ../app/views/carts/_items.haml:11 ../app/views/orders/show.haml:168 ../app/views/orders/_summary.haml:28
 msgid "Price"
 msgstr "Цена"
 
 #: ../app/views/orders/show.haml:163 model_attributes.rb:18
 msgid "Product"
 msgstr "Продукт"
+
+#: ../app/views/categories/index.haml:24
+msgid "Product count"
+msgstr "Количество товаров"
 
 #: ../app/controllers/products_controller.rb:31
 msgid "Product was successfully created."
@@ -350,7 +370,7 @@ msgstr "Продукт был успешно удален."
 msgid "Product was successfully updated."
 msgstr "Продукт был успешно обновлен."
 
-#: ../app/views/layouts/_navigation.haml:112
+#: ../app/views/categories/show.haml:8 ../app/views/layouts/_navigation.haml:112
 msgid "Products"
 msgstr "Продукты"
 
@@ -382,7 +402,11 @@ msgstr "Количество"
 msgid "Product|Vat"
 msgstr "НДС"
 
-#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:73
+#: ../app/views/shipments/show.haml:10 ../app/views/shipments/index.haml:24
+msgid "Provider"
+msgstr "Провайдер"
+
+#: ../app/views/products/index.haml:28 ../app/views/products/_form.haml:47 ../app/views/store/_products.html.haml:75 ../app/views/carts/_items.haml:13 ../app/views/orders/show.haml:173 ../app/views/orders/_summary.haml:26
 msgid "Quantity"
 msgstr "Количество"
 
@@ -394,11 +418,11 @@ msgstr "Получатель"
 msgid "Remember me"
 msgstr "Запомни меня"
 
-#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
+#: ../app/views/devise/sessions/new.haml:32 ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
 msgid "Reset password"
 msgstr "Сброс пароля"
 
-#: ../app/views/products/_form.haml:124
+#: ../app/views/shipments/_form.haml:71 ../app/views/products/_form.haml:124
 msgid "Save"
 msgstr "Сохранить"
 
@@ -410,7 +434,7 @@ msgstr "Сохранить изменения"
 msgid "Search"
 msgstr "Поиск"
 
-#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:79 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:215 model_attributes.rb:26
+#: ../app/views/carts/_items.haml:96 ../app/views/orders/show.haml:215 ../app/views/orders/_summary.haml:82 ../app/views/account/_order.haml:15 model_attributes.rb:26
 msgid "Shipment"
 msgstr "Доставка"
 
@@ -450,7 +474,7 @@ msgstr "Провайдер"
 msgid "Shipped"
 msgstr "Отправлено"
 
-#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:82
+#: ../app/views/orders/show.haml:82 ../app/views/orders/_address.haml:22
 msgid "Shipping address"
 msgstr "Адрес доставки"
 
@@ -462,7 +486,11 @@ msgstr "Адрес доставки и платежа"
 msgid "Shipping method"
 msgstr "Способ доставки"
 
-#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:2
+#: ../app/views/shipments/index.haml:3
+msgid "Shipping methods"
+msgstr "Способы доставки"
+
+#: ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:57 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:2
 msgid "Sign in"
 msgstr "Вход"
 
@@ -470,7 +498,7 @@ msgstr "Вход"
 msgid "Sign out"
 msgstr "Выйти"
 
-#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92 ../app/views/devise/shared/_links.html.slim:5
+#: ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:47 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92 ../app/views/devise/shared/_links.html.slim:5
 msgid "Sign up"
 msgstr "Зарегистрироваться"
 
@@ -486,29 +514,29 @@ msgstr "Регистрация"
 msgid "Something went wrong"
 msgstr "Что пошло не так"
 
-#: ../app/views/store/_products.html.haml:114
+#: ../app/views/store/_products.html.haml:122
 msgid "Sorry, the product was not found."
 msgstr "К сожалению, продукт не найден."
 
-#: ../app/views/store/index.haml:28
+#: ../app/views/store/index.haml:31
 msgid "Sort"
 msgstr "Сортировка"
 
-#: ../app/views/account/_order.haml:9
+#: ../app/views/orders/index.html.haml:14 ../app/views/account/_order.haml:9
 msgid "Status"
 msgstr "Статус"
 
-#: ../app/controllers/store_controller.rb:20
-msgid "Store"
-msgstr "Магазин"
-
 #: ../app/views/addresses/_form.haml:46
 msgid "Street"
-msgstr ""
+msgstr "Улица"
 
-#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:59 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:205
+#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:64 ../app/views/orders/show.haml:205 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/index.html.haml:20
 msgid "Subtotal"
 msgstr "Промежуточный итог"
+
+#: ../app/views/orders/index.html.haml:22
+msgid "Tax"
+msgstr "Налог"
 
 #: ../app/controllers/orders_controller.rb:58
 msgid "Thank you for your order!"
@@ -518,7 +546,11 @@ msgstr "Спасибо за Ваш заказ!"
 msgid "This product is out of stock"
 msgstr "Этот продукт не в наличии"
 
-#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:91 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225
+#: ../app/views/shipments/show.haml:18 ../app/views/shipments/index.haml:26 ../app/views/products/index.haml:26 ../app/views/products/_form.haml:14 ../app/views/store/_products.html.haml:71 ../app/views/store/index.haml:40 ../app/views/categories/index.haml:22 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24
+msgid "Title"
+msgstr "Название"
+
+#: ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:114 ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:24 ../app/views/account/_order.haml:17
 msgid "Total"
 msgstr "Всего"
 
@@ -606,11 +638,15 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:69 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/_form.haml:69
+#: ../app/views/products/index.haml:32 ../app/views/products/_form.haml:69 ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:80 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72
 msgid "VAT"
 msgstr "НДС"
 
-#: ../app/views/store/index.haml:57
+#: ../app/views/products/show.haml:45
+msgid "VAT:"
+msgstr "НДС:"
+
+#: ../app/views/store/index.haml:60
 msgid "View"
 msgstr "Вид"
 
@@ -626,7 +662,7 @@ msgstr "Вы не авторизованы для выполнения этог�
 msgid "You must enter your current password to make changes."
 msgstr "Вы должны ввести текущий пароль, чтобы вносить изменения."
 
-#: ../app/views/carts/show.haml:15 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34
+#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:15
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
@@ -638,7 +674,7 @@ msgstr "Ваш список адресов пуст"
 msgid "Your addresses list is empty, please add at least one address"
 msgstr "Ваш список адресов пуст, пожалуйста, добавить хотя бы один адрес"
 
-#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38 ../app/views/carts/show.haml:28
+#: ../app/controllers/orders_controller.rb:38 ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/views/carts/show.haml:28
 msgid "Your cart is empty!"
 msgstr "Ваша корзина пуста!"
 
@@ -650,12 +686,4 @@ msgstr "Ваш список заказов пуст"
 msgid "billing address is same as shipping address"
 msgstr "платежный адрес такой же, как адрес доставки"
 
-# PAYMENT TYPES
-#~ msgid "Bank transfer"
-#~ msgstr "Банковский перевод"
 
-#~ msgid "Cash payment at pickup"
-#~ msgstr "Оплата наличными при получении"
-
-#~ msgid "Purchase order"
-#~ msgstr "Покупка в рассрочку"

@@ -77,9 +77,6 @@ msgstr "Versandart wurde erfolgreich aktualisiert."
 msgid "Shipment was successfully destroyed."
 msgstr "Versandart wurde erfolgreich zerstört."
 
-msgid "Store"
-msgstr "Shop"
-
 msgid "Accepted"
 msgstr "Angenommen"
 
@@ -159,10 +156,10 @@ msgid "Recipient"
 msgstr "Empfänger"
 
 msgid "City"
-msgstr ""
+msgstr "Stadt"
 
 msgid "Street"
-msgstr ""
+msgstr "Straße"
 
 msgid "Address"
 msgstr "Adresse"
@@ -176,11 +173,14 @@ msgstr "Abbrechen"
 msgid "Image"
 msgstr "Bild"
 
-msgid "Quantity"
-msgstr "Anzahl"
+msgid "Title"
+msgstr "Bezeichnung"
 
 msgid "Price"
 msgstr "Preis"
+
+msgid "Quantity"
+msgstr "Anzahl"
 
 msgid "Subtotal"
 msgstr "Zwischensumme"
@@ -205,6 +205,12 @@ msgstr "zur Kasse"
 
 msgid "New category"
 msgstr "Neue Kategorie"
+
+msgid "Product count"
+msgstr "Produktanzahl"
+
+msgid "Products"
+msgstr "Produkte"
 
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
@@ -251,9 +257,6 @@ msgstr "Abmelden"
 msgid "Categories"
 msgstr "Kategorien"
 
-msgid "Products"
-msgstr "Produkte"
-
 msgid "Users"
 msgstr "Benützer"
 
@@ -265,9 +268,6 @@ msgstr "Warenkörbe"
 
 msgid "Shipping and Billing address"
 msgstr "Versand- und Rechnungsadresse"
-
-msgid "New Address"
-msgstr "Neue Adresse"
 
 msgid "Shipping address"
 msgstr "Versandadresse"
@@ -299,6 +299,12 @@ msgstr "Bestellübersicht"
 msgid "Place order"
 msgstr "Bestellung aufgeben"
 
+msgid "Payment"
+msgstr "Zahlung"
+
+msgid "Tax"
+msgstr "Steuer"
+
 msgid "Order #%d"
 msgstr "Auftrag #%d"
 
@@ -312,10 +318,13 @@ msgid "Description"
 msgstr "Beschreibung"
 
 msgid "EAN"
-msgstr ""
+msgstr "Artikelnummer"
 
 msgid "Category"
 msgstr "Kategorie"
+
+msgid "Please be patient the image upload may take a few seconds..."
+msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
 
 msgid "Save"
 msgstr "Speichern"
@@ -323,8 +332,26 @@ msgstr "Speichern"
 msgid "New product"
 msgstr "Neues Produkt"
 
+msgid "EAN:"
+msgstr "Artikelnummer:"
+
+msgid "VAT:"
+msgstr "MwSt:"
+
+msgid "Availability:"
+msgstr "Verfügbarkeit"
+
+msgid "Shipping methods"
+msgstr "Versandmöglichkeiten"
+
 msgid "New shipment"
 msgstr "Neuer Versand"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Provider"
+msgstr "Anbieter"
 
 msgid "Fee"
 msgstr "Gebühr"
@@ -483,10 +510,10 @@ msgid "User|Role"
 msgstr "Role"
 
 msgid "User|Sign in count"
-msgstr ""
+msgstr "Anzhal der Anmeldungen"
 
 msgid "User|String"
-msgstr ""
+msgstr "Benutzer"
 
 msgid "User|Unconfirmed email"
-msgstr ""
+msgstr "Unbestätigte email"
