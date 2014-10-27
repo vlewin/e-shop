@@ -1,5 +1,5 @@
 class Shipment < ActiveRecord::Base
-  validates :provider, :name, :fee,  presence: true
+  validates :provider, :title, :fee,  presence: true
   validates :fee, numericality: true
 
   before_update :set_default

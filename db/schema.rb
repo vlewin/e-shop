@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423194045) do
+ActiveRecord::Schema.define(version: 20141027075046) do
 
   create_table "addresses", force: true do |t|
     t.string   "recipient"
@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 20140423194045) do
   end
 
   create_table "categories", force: true do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.integer  "products_count", default: 0
     t.datetime "created_at"
@@ -56,32 +56,34 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.integer  "billing_address_id"
     t.integer  "shipment_id"
     t.integer  "user_id"
-    t.string   "pay_type"
+    t.integer  "payment_id"
     t.integer  "status",              default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "payments", force: true do |t|
+    t.string "title"
+  end
+
   create_table "products", force: true do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "ean"
     t.text     "description"
     t.integer  "quantity",                            default: 0
     t.string   "image"
-    t.integer  "category_id"
     t.decimal  "price",       precision: 8, scale: 2
-    t.decimal  "vat",         precision: 8, scale: 2
+    t.integer  "category_id"
+    t.integer  "vat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "shipments", force: true do |t|
-    t.string   "provider"
-    t.string   "name"
-    t.decimal  "fee"
-    t.boolean  "default",    default: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string  "provider"
+    t.string  "title"
+    t.decimal "fee",      precision: 8, scale: 2
+    t.boolean "default",                          default: false
   end
 
   create_table "users", force: true do |t|
@@ -109,5 +111,10 @@ ActiveRecord::Schema.define(version: 20140423194045) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "vats", force: true do |t|
+    t.string  "title"
+    t.decimal "rate",  precision: 8, scale: 2
+  end
 
 end
