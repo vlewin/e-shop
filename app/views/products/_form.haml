@@ -5,9 +5,9 @@
       = render 'layouts/errors', object: @product
     .panel-body
       .form-group
-        = f.label _('Name'), class: 'col-sm-2 control-label'
+        = f.label _('Title'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.text_field :name, required: true, autofocus: true, class: 'form-control'
+          = f.text_field :title, required: true, autofocus: true, class: 'form-control'
 
       .form-group
         = f.label _('Description'), class: 'col-sm-2 control-label'
@@ -32,12 +32,12 @@
       .form-group
         = f.label _('VAT'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.number_field :vat, required: true, class: 'form-control'
+          = f.select :vat_id, options_for_select(Vat.all.map{ |v| ["#{v.rate}% (#{v.title})", v.id] }, @product.vat_id), {}, class: 'form-control'
 
       .form-group
         = f.label _('Category'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.select :category_id, options_for_select(Category.all.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
+          = f.select :category_id, options_for_select(Category.all.map{ |c| [c.title, c.id] }, @product.category_id), {}, class: 'form-control'
 
       .form-group
         = f.label _('Image'), class: 'col-sm-2 control-label'
@@ -50,7 +50,7 @@
                 = f.hidden_field(:image_cache)
                 = f.file_field :image, accept: 'image/png,image/gif,image/jpeg'
               %p.help-block
-                %small Please be patient the image upload may take a few seconds...
+                %small= _('Please be patient the image upload may take a few seconds...')
 
     .panel-footer
       = f.submit _('Save'), class: 'btn btn-success'

@@ -6,7 +6,7 @@
       .col-xs-8.col-md-9
         .product
           %h3
-            = @product.name
+            = @product.title
           .text-muted
             %p= @product.description
           %h3
@@ -21,7 +21,7 @@
           %hr
 
           .row
-            = form_tag line_items_path(:product_id => @product) do
+            = form_tag line_items_path(product_id: @product) do
               .col-xs-3
                 = quantity_field_tag 1, { max: @product.available_quantity}
               .col-xs-4

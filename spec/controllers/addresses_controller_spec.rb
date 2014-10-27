@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe AddressesController, type: :controller do
-  login_user
+  login_admin
 
   let(:address) { FactoryGirl.create(:address)}
   it { should use_before_action(:set_address) }

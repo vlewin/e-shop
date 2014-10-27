@@ -5,11 +5,11 @@
 
 #payment.panel-collapse.collapse
   .panel-body
-    - Order::PAYMENT_TYPES.each_with_index do |payment_type, index|
+    - Payment.all.each_with_index do |payment, index|
       .radio
         %label
-          = form.radio_button :pay_type, payment_type, :checked => index.zero?
-          = _(payment_type)
+          = form.radio_button :payment_id, payment.id, checked: index.zero?
+          = _(payment.title)
 
     %hr
     .pull-left= icon_link_to _('Back'), '#shipping', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 2 } }, 'fa-chevron-circle-left'

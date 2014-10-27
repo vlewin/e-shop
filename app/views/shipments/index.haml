@@ -1,5 +1,5 @@
 %h4.page-header.no-margin
-  Shipping methods
+  = _('Shipping methods')
   .pull-right
     = link_to _('New shipment'), new_shipment_path, class: 'btn btn-xs btn-success'
 
@@ -8,10 +8,10 @@
     %table.table.table-hover
       %thead
         %tr
-          %th Default
-          %th Provider
-          %th Name
-          %th Fee
+          %th= _('Default')
+          %th= _('Provider')
+          %th= _('Title')
+          %th= _('Fee')
           %th{ colspan: 3 }
 
       %tbody
@@ -24,9 +24,9 @@
                 = '---'
 
             %td= shipment.provider
-            %td= shipment.name
+            %td= shipment.title
             %td= number_to_currency shipment.fee
             %td.text-right
               = icon_link_to '', shipment, { class: 'btn btn-sm btn-default' }, 'fa-eye'
               = icon_link_to '', edit_shipment_path(shipment), { class: 'btn btn-sm btn-default' }, 'fa-edit'
-              = icon_link_to '', shipment, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+              = icon_link_to '', shipment, { data: {confirm: _('Are you sure?') }, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'

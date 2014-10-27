@@ -5,8 +5,8 @@
     .panel-body
       = render 'layouts/errors', object: @category
       .form-group
-        = f.label :name
-        = f.text_field :name, autofocus: true, class: 'form-control'
+        = f.label :title
+        = f.text_field :title, autofocus: true, class: 'form-control'
       .form-group
     .panel-footer
       = f.submit 'Save category', class: 'btn btn-success'

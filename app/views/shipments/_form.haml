@@ -12,9 +12,9 @@
               = f.text_field :provider, placeholder: 'e.g. DHL', class: 'form-control'
 
           .form-group
-            = f.label :name, class: 'col-sm-2 control-label'
+            = f.label :title, class: 'col-sm-2 control-label'
             .col-sm-4
-              = f.text_field :name, placeholder: 'e.g. Paket', class: 'form-control'
+              = f.text_field :title, placeholder: 'e.g. Paket', class: 'form-control'
 
           .form-group
             = f.label :fee, class: 'col-sm-2 control-label'
@@ -22,12 +22,12 @@
               = f.text_field :fee, placeholder: "e.g. #{number_to_currency(4.99)}", class: 'form-control'
 
           .form-group
-            = f.label :default_delivery_method, class: 'col-sm-2 control-label'
+            = f.label :default, class: 'col-sm-2 control-label'
             .col-sm-4
               .checkbox
                 %label
                   = f.check_box :default
 
     .panel-footer
-      = f.submit 'Save shipping method', class: 'btn btn-success'
-      = link_to 'Back to shipping method', shipments_path
+      = f.submit _('Save'), class: 'btn btn-success'
+      = link_to _('Back'), shipments_path

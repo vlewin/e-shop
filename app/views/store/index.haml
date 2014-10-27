@@ -8,7 +8,7 @@
           %span.input-group-addon
             %i.fa.fa-search
 
-          = f.text_field :name_cont, placeholder: _('Search'), class: 'form-control'
+          = f.text_field :title_cont, placeholder: _('Search'), class: 'form-control'
 
     .col-xs-12.hidden-sm.hidden-md.hidden-lg &nbsp;
 
@@ -19,8 +19,8 @@
           -# %i.fa.fa-sort-alpha-asc
 
         .btn-group.btn-group-sm
-          .btn.btn-default{ class: (@sorting.include?('name')) ? 'active' : ''}
-            = sort_link @search, :name, _('Name')
+          .btn.btn-default{ class: (@sorting.include?('title')) ? 'active' : ''}
+            = sort_link @search, :title, _('Title')
             -# %i.fa.fa-sort-alpha-asc
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
             = sort_link @search, :price, _('Price')
@@ -42,17 +42,17 @@
       #alphabet
         - alphabet = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
         - alphabet.each do |char|
-          = link_to char, root_path(q: { name_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
+          = link_to char, root_path(q: { title_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
 
   %hr.line
 
   %ul.list-group.hidden-sm.hidden-md.hidden-lg
-    = link_to _('All categories'), root_path(view: @view), class: params[:category_name_cont].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
+    = link_to _('All categories'), root_path(view: @view), class: params[:category_title_cont].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
     - @categories.each do |cat|
-      - name = "#{cat.name} (#{cat.products_count})"
-      - path = root_path(q: {'category_name_cont' => cat.name}, view: @view)
-      - css_class = cat.name == params[:category_name_cont] ? 'list-group-item active' : 'list-group-item'
-      = link_to name, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
+      - title = "#{cat.title} (#{cat.products_count})"
+      - path = root_path(q: {'category_title_cont' => cat.title}, view: @view)
+      - css_class = cat.title == params[:category_title_cont] ? 'list-group-item active' : 'list-group-item'
+      = link_to title, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
 
   -# %ul#categories.nav.nav-tabs.hidden-sm.hidden-md.hidden-lg
   -#   %li.active.dropdown
@@ -67,13 +67,13 @@
   -#           = link_to name, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
 
   %ul#categories.nav.nav-tabs.hidden-xs
-    %li{ class: params[:category_name_cont].nil? ? 'active' : '' }
+    %li{ class: params[:category_title_cont].nil? ? 'active' : '' }
       = link_to _('All categories'), root_path(view: @view), remote: :true
     - @categories.each do |cat|
-      - name = "#{cat.name} (#{cat.products_count})"
-      - path = root_path(q: {'category_name_cont' => cat.name}, view: @view)
-      %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
-        = link_to name, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+      - title = "#{cat.title} (#{cat.products_count})"
+      - path = root_path(q: {'category_title_cont' => cat.title}, view: @view)
+      %li{ class: cat.title == params[:category_title_cont] ? 'active' : '' }
+        = link_to title, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
   .tab-content
     #products.tab-pane.active
       = render 'products'

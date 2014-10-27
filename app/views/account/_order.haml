@@ -15,8 +15,8 @@
           %tr
             %td= order_status(order.status)
             %td= I18n.localize(order.created_at)
-            %td= _(order.pay_type)
-            %td= "#{order.shipment.provider} #{order.shipment.name}"
+            %td= _(order.payment.title)
+            %td= "#{order.shipment.provider} #{order.shipment.title}"
             %td= number_to_currency order.total
             %td{ width: '15%' }
               = icon_link_to '', order_path(order), { class: 'btn btn-default' }, 'fa-eye'

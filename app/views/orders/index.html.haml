@@ -1,17 +1,16 @@
-%h4.page-header.no-margin
-  Order
+%h4.page-header.no-margin= _('Orders')
 
 .panel.panel-default
   .panel-body
     %table.table.table-hover
       %thead
         %tr
-          %th Status
-          %th Date
-          %th Pay type
-          %th Subtotal
-          %th Taxes
-          %th Total
+          %th= _('Status')
+          %th= _('Date')
+          %th= _('Payment')
+          %th= _('Subtotal')
+          %th= _('Tax')
+          %th= _('Total')
           %th{ colspan: 3 }
       %tbody
         - @orders.each do |order|
@@ -35,12 +34,12 @@
                           = status.humanize
 
             %td= I18n.localize(order.created_at)
-            %td= order.pay_type
+            %td= order.payment.title
             %td= number_to_currency order.subtotal
             %td= number_to_currency order.taxes
             %td= number_to_currency order.total
             %td.text-right
               = icon_link_to '', order, { class: 'btn btn-sm btn-default' }, 'fa-eye'
               = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-sm btn-default' }, 'fa-print'
-              = icon_link_to '', order, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+              = icon_link_to '', order, { data: {confirm: _('Are you sure?') }, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
 

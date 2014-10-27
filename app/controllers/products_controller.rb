@@ -66,11 +66,11 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(
       :ean,
-      :name,
+      :title,
       :description,
       :quantity,
       :price,
-      :vat,
+      :vat_id,
       :category_id,
       :image
     )

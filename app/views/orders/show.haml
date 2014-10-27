@@ -47,7 +47,7 @@
               %address
                 %strong= _('Payment method')
                 %br
-                  = _(@order.pay_type)
+                  = _(@order.payment.title)
 
             .col-xs-6.text-right
               %address
@@ -79,7 +79,7 @@
                 - @order.line_items.each_with_index do |item, index|
                   %tr
                     %td= index+1
-                    %td= item.product.name
+                    %td= item.product.title
                     %td= number_to_currency(item.price)
                     %td= item.quantity
                     %td.text-right= number_to_currency(item.total)

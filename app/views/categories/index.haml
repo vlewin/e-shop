@@ -8,14 +8,14 @@
     %table.table.table-hover
       %thead
         %tr
-          %th Name
-          %th Product count
+          %th= _('Title')
+          %th= _('Product count')
           %th{ colspan: 3 }
 
       %tbody
         - @categories.each do |category|
           %tr
-            %td= category.name
+            %td= category.title
             %td= link_to "#{category.products_count} products", category_path(category)
             %td.text-right
               = icon_link_to '', category, { class: 'btn btn-sm btn-default' }, 'fa-eye'

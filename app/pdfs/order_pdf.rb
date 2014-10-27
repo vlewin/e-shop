@@ -75,14 +75,14 @@ class OrderPdf < Prawn::Document
   end
 
   def thead
-    [["Nr", "Product name", "Unit Price", "Quantity", "Full Price"]]
+    [["Nr", "Product title", "Unit price", "Quantity", "Total"]]
   end
 
   def tbody
     @order.line_items.each_with_index.map do |item, index|
       [
         index + 1,
-        item.product.name,
+        item.product.title,
         price(item.product.price),
         item.quantity,
         price(item.subtotal)

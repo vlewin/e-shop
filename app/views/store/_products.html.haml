@@ -14,8 +14,8 @@
               %a.thumbnail{ href: store_product_path(product)}
                 = product_image_tag(product, :index)
                 %hr.line
-                %h4.name
-                  = product.name
+                %h4.title
+                  = product.title
                   %p.description= product.description
 
                 .row
@@ -37,9 +37,9 @@
           %thead
             %tr
               %th{ width: '5%'}= _('Image')
-              %th= _('Name')
+              %th= _('Title')
               %th= _('Price')
-              %th.hidden-xs= _('Quantity')
+              %th.hidden-xs.hidden-sm= _('Quantity')
 
           %tbody
             - @products.each_with_index do |product, index|
@@ -47,7 +47,7 @@
               %tr.product-list{ class: out_of_stock ? 'out-of-stock' : '' }
                 %td= product_image_tag(product)
                 %td
-                  .name= link_to product.name, store_product_path(product)
+                  .title= link_to product.title, store_product_path(product)
                   .description= product.description
                 %td= number_to_currency(product.price)
                 %td{ width: '15%'}

@@ -114,7 +114,7 @@ ActiveRecord::Schema.define(version: 20141027075046) do
 
   create_table "vats", force: true do |t|
     t.string  "title"
-    t.decimal "rate",  precision: 8, scale: 2
+    t.integer "rate"
   end
 
 end

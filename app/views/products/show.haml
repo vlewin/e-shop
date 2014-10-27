@@ -6,7 +6,7 @@
       .col-xs-8.col-md-9
         .product
           %h3
-            = @product.name
+            = @product.title
           .text-muted
             %p= @product.description
           %h3
@@ -15,12 +15,20 @@
           %hr
 
           .text-muted
-            %p= "Article number: #{@product.ean}"
-            %p= "Stock: #{@product.available_quantity} of #{@product.quantity} available"
+            = _('EAN:')
+            = @product.ean
+
+          .text-muted
+            = _('VAT:')
+            = number_to_percentage(@product.vat.rate, precision: 0)
+
+          .text-muted
+            = _('Availability:')
+            = "#{@product.available_quantity} of #{@product.quantity} available"
 
           %hr
 
-          = link_to 'Edit product', edit_product_path(@product), class: 'btn btn-default'
-          = link_to 'Back to products', products_path
+          = link_to _('Edit'), edit_product_path(@product), class: 'btn btn-default'
+          = link_to _('Back'), products_path
 
 

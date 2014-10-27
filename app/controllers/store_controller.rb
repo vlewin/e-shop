@@ -12,13 +12,11 @@ class StoreController < ApplicationController
     @search = Product.includes(:line_items).search(params[:q])
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
     @products = @search.result.page(params[:page])
-    @init_letters = Product.select(:name).map{ |product| product.name.first }.uniq.sort
-    @categories ||= Category.all.order(:name)
+    @init_letters = Product.select(:title).map{ |product| product.title.first }.uniq.sort
+    @categories ||= Category.all.order(:title)
   end
 
   def show
-    add_breadcrumb _('Store'), :root_path
-    add_breadcrumb @product.name, store_product_url(@product)
   end
 
   private

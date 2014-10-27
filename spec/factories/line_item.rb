@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :line_item do
     quantity    1
+    price       5
 
     association :product
 

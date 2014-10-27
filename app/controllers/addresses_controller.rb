@@ -3,7 +3,7 @@ class AddressesController < ApplicationController
 
   def index
     @addresses = Address.preload(:user).all
-    authorize :products, :index?
+    authorize :addresses, :index?
   end
 
   def show

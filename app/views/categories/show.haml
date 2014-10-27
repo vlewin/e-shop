@@ -1,11 +1,11 @@
 .panel
   .panel-body
-    %h4.page-header= @category.name
+    %h4.page-header= @category.title
 
-    %strong Associated products
+    %strong= _('Associated products')
     %ol
       - @category.products.each_with_index do |product, index|
-        %li= product.name
+        %li= product.title
 
   .panel-footer
     = link_to 'Edit category', edit_category_path(@category), class: 'btn btn-default'
