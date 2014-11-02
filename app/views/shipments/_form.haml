@@ -11,10 +11,7 @@
             .col-sm-4
               = f.text_field :provider, placeholder: 'e.g. DHL', class: 'form-control'
 
-          .form-group
-            = f.label :title, class: 'col-sm-2 control-label'
-            .col-sm-4
-              = f.text_field :title, placeholder: 'e.g. Paket', class: 'form-control'
+          = translation_fields_for @shipment, :title, _('Title')
 
           .form-group
             = f.label :fee, class: 'col-sm-2 control-label'

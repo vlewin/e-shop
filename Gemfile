@@ -8,6 +8,9 @@ gem 'rails-i18n', '~> 4.0.0'
 gem 'devise-i18n'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
+gem 'globalize'
+gem 'globalize-accessors'
+gem 'unicode'
 
 gem 'puma'
 gem 'pundit'
@@ -27,7 +30,7 @@ gem 'breadcrumbs_on_rails'
 gem 'prawn'
 
 # Search, filtering and pagination
-gem 'ransack'
+gem 'ransack', '~> 1.4.1'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 

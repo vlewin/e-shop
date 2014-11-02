@@ -9,10 +9,19 @@ class StoreController < ApplicationController
 
   def index
     # ActiveRecord::Base.logger = nil
-    @search = Product.includes(:line_items).search(params[:q])
+
+    # FIXME: ILIKE case insensitive search (use LOWER() in ransacker and check POSTGRESQL)
+    query = params[:q]
+
+    # INFO: issue with cyrillic characters 'слово'.capitalize => 'слово'
+    # query = Hash[params[:q].map{|k,v| [k,Unicode::capitalize(v)]}] if (params[:q] && params[:q][:translations_title_cont])
+
+    @limit = params[:limit] || 12
+    @search = Product.includes(:line_items).search(query)
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
-    @products = @search.result.page(params[:page])
-    @init_letters = Product.select(:title).map{ |product| product.title.first }.uniq.sort
+    @products = @search.result.page(params[:page]).per(params[:limit])
+
+    @init_letters = Product.joins(:translations).uniq.select('product_translations.title').map{ |product| product.title.first }.uniq.sort
     @categories ||= Category.all.order(:title)
   end
 

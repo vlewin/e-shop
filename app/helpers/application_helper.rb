@@ -78,4 +78,31 @@ module ApplicationHelper
     end
   end
 
+  def translation_fields_for(object, attribute, translation)
+    html ||= content_tag(:div, nil, class: 'form-group') do
+      concat content_tag(:label, translation, class: 'col-sm-2 control-label')
+      concat(
+        content_tag(:div, nil, class: 'col-xs-12 col-sm-8 col-md-6') do
+          text_field_tag "#{object.class.class_name.downcase}[#{attribute}]", object.send(attribute), class: 'form-control'
+        end
+      )
+    end
+
+    locales = object.class.globalize_locales - [current_locale]
+    locales.each do |locale|
+      title = "#{translation} %s" % locale.upcase
+      globilize_attribute = "#{attribute}_#{locale}"
+
+      html += content_tag(:div, nil, class: 'form-group') do
+        concat content_tag(:label, title, class: 'col-sm-2 control-label')
+        concat(
+          content_tag(:div, nil, class: 'col-xs-12 col-sm-8 col-md-6') do
+            text_field_tag "#{object.class.class_name.downcase}[#{globilize_attribute}]", object.send(globilize_attribute), class: 'form-control'
+          end
+        )
+      end
+    end
+
+    html.html_safe
+  end
 end

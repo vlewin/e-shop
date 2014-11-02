@@ -7,7 +7,7 @@
         = render 'layouts/errors', object: resource
         = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form'}) do |f|
           .form-group
-            = label_tag _('Email')
+            %label= _('Email')
             = f.email_field :email, autofocus: true, class: 'form-control'
 
           .form-group

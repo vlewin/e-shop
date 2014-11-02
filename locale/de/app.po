@@ -59,6 +59,15 @@ msgstr "Vielen Dank für Ihre Bestellung!"
 msgid "Can not change order status"
 msgstr "Auftragsstatus kann nicht geändern werden"
 
+msgid "Payment was successfully created."
+msgstr "Zahlungsart wurde erfolgreich erstellt."
+
+msgid "Payment was successfully updated."
+msgstr "Zahlungsart wurde erfolgreich aktualisiert."
+
+msgid "Payment was successfully destroyed."
+msgstr "Zahlungsart wurde erfolgreich zerstört."
+
 msgid "Product was successfully created."
 msgstr "Produkt wurde erfolgreich erstellt."
 
@@ -209,8 +218,17 @@ msgstr "Neue Kategorie"
 msgid "Product count"
 msgstr "Produktanzahl"
 
-msgid "Products"
-msgstr "Produkte"
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Title %s:"
+msgstr "Bezeichnung %s"
+
+msgid "Products:"
+msgstr "Produkte:"
+
+msgid "Back"
+msgstr "Zurück"
 
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
@@ -257,11 +275,17 @@ msgstr "Abmelden"
 msgid "Categories"
 msgstr "Kategorien"
 
+msgid "Products"
+msgstr "Produkte"
+
 msgid "Users"
 msgstr "Benützer"
 
 msgid "Shipments"
 msgstr "Versandarts"
+
+msgid "Payments"
+msgstr "Zahlungsarten"
 
 msgid "Carts"
 msgstr "Warenkörbe"
@@ -287,9 +311,6 @@ msgstr "Zurück zum Warenkorb"
 msgid "Next"
 msgstr "Weiter"
 
-msgid "Back"
-msgstr "Zurück"
-
 msgid "Shipping method"
 msgstr "Versandart"
 
@@ -314,20 +335,26 @@ msgstr "Auftragsdatum"
 msgid "Product"
 msgstr "Produkt"
 
+msgid "Title %s"
+msgstr "Bezeichnung %s"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Payment methods"
+msgstr "Zahlungsarten"
+
+msgid "New payment"
+msgstr "Neuer Zahlungsart"
+
 msgid "Description"
 msgstr "Beschreibung"
 
 msgid "EAN"
 msgstr "Artikelnummer"
 
-msgid "Category"
-msgstr "Kategorie"
-
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
-
-msgid "Save"
-msgstr "Speichern"
 
 msgid "New product"
 msgstr "Neues Produkt"
@@ -404,11 +431,20 @@ msgstr "PLZ"
 msgid "Category|Description"
 msgstr "Beschreibung"
 
-msgid "Category|Name"
-msgstr "Name"
-
 msgid "Category|Products count"
 msgstr "Anzahl der Produkte"
+
+msgid "Category|Title"
+msgstr "Bezeichnung"
+
+msgid "Globalize/active record/translation"
+msgstr "Übersetzung"
+
+msgid "Globalize::ActiveRecord::Translation|Locale"
+msgstr "Region"
+
+msgid "Globalize::ActiveRecord::Translation|Title"
+msgstr "Bezeichnung"
 
 msgid "Line item"
 msgstr "Auftragsposition"
@@ -422,11 +458,11 @@ msgstr "Anzahl"
 msgid "Order"
 msgstr "Auftrag"
 
-msgid "Order|Pay type"
-msgstr "Zahlungsart"
-
 msgid "Order|Status"
 msgstr "Status"
+
+msgid "Payment|Title"
+msgstr "Bezeichnung"
 
 msgid "Product|Description"
 msgstr "Beschreibung"
@@ -437,17 +473,14 @@ msgstr "Artikelnummer"
 msgid "Product|Image"
 msgstr "Image"
 
-msgid "Product|Name"
-msgstr "Name"
-
 msgid "Product|Price"
 msgstr "Preis"
 
 msgid "Product|Quantity"
 msgstr "Anzahl"
 
-msgid "Product|Vat"
-msgstr "MwSt"
+msgid "Product|Title"
+msgstr "Bezeichnung"
 
 msgid "Shipment|Default"
 msgstr "Standard"
@@ -455,11 +488,11 @@ msgstr "Standard"
 msgid "Shipment|Fee"
 msgstr "Gebühr"
 
-msgid "Shipment|Name"
-msgstr "Name"
-
 msgid "Shipment|Provider"
 msgstr "Anbieter"
+
+msgid "Shipment|Title"
+msgstr "Bezeichnung"
 
 msgid "User"
 msgstr "Benutzer"
@@ -517,3 +550,12 @@ msgstr "Benutzer"
 
 msgid "User|Unconfirmed email"
 msgstr "Unbestätigte email"
+
+msgid "Vat"
+msgstr "MwSt"
+
+msgid "Vat|Rate"
+msgstr "Satz"
+
+msgid "Vat|Title"
+msgstr "Bezeichnung"

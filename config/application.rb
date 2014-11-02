@@ -26,12 +26,11 @@ module EShop
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.yml"]
-    config.i18n.default_locale = :de
     config.i18n.available_locales = [:en, :de, :ru ]
-    config.enforce_available_locales = true
-
+    config.i18n.default_locale = :de
+    config.i18n.fallbacks = [config.i18n.default_locale]
+    config.i18n.fallbacks = true
     config.less.paths << File.join(Rails.root, 'app', 'assets', 'stylesheets')
-
     # Should be set to true in production.
     config.less.compress = false
 
@@ -39,8 +38,8 @@ module EShop
       g.helper false
       g.stylesheets false
       g.assets false
-      g.view_specs false
-      g.template_engine :slim
+      g.view_specs true
+      g.template_engine :haml
       g.test_framework :rspec
       g.fixture_replacement :factory_girl
     end

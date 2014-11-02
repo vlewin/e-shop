@@ -9,8 +9,8 @@
       %thead
         %tr
           %th= _('Image')
-          %th= _('EAN')
           %th= _('Title')
+          %th= _('EAN')
           %th= _('Quantity')
           %th= _('Price')
           %th= _('VAT')
@@ -20,8 +20,8 @@
         - @products.each do |product|
           %tr
             %td= product_image_tag product
-            %td= product.ean
             %td= product.title
+            %td= product.ean
             %td= product.quantity
             %td= number_to_currency product.price
             %td= number_to_percentage(product.vat.rate, precision: 0)

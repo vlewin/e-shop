@@ -7,7 +7,10 @@ FactoryGirl.define do
     price           5
 
     association :category
-    association :vat
+
+    after :build do |product, evaluator|
+      product.vat = Vat.find_or_create_by(title: 'normal', rate: 19)
+    end
   end
 end
 

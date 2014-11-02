@@ -60,6 +60,15 @@ msgstr "Спасибо за Ваш заказ!"
 msgid "Can not change order status"
 msgstr "Невозможно изменить статус заказа"
 
+msgid "Payment was successfully created."
+msgstr "Способ оплаты был успешно создан."
+
+msgid "Payment was successfully updated."
+msgstr "Способ оплаты был успешно обновлен."
+
+msgid "Payment was successfully destroyed."
+msgstr "Способ оплаты был успешно удален."
+
 msgid "Product was successfully created."
 msgstr "Продукт был успешно создан."
 
@@ -210,8 +219,17 @@ msgstr "Новая категория"
 msgid "Product count"
 msgstr "Количество товаров"
 
-msgid "Products"
-msgstr "Продукты"
+msgid "Category"
+msgstr "Категория"
+
+msgid "Title %s:"
+msgstr "Название %s:"
+
+msgid "Products:"
+msgstr "Продукты:"
+
+msgid "Back"
+msgstr "Назад"
 
 msgid "Reset password"
 msgstr "Сброс пароля"
@@ -258,11 +276,17 @@ msgstr "Выйти"
 msgid "Categories"
 msgstr "Категории"
 
+msgid "Products"
+msgstr "Продукты"
+
 msgid "Users"
 msgstr "Пользователи"
 
 msgid "Shipments"
 msgstr "Доставки"
+
+msgid "Payments"
+msgstr "Способы оплаты"
 
 msgid "Carts"
 msgstr "Корзины"
@@ -288,9 +312,6 @@ msgstr "Вернуться в корзину"
 msgid "Next"
 msgstr "Следующая"
 
-msgid "Back"
-msgstr "Назад"
-
 msgid "Shipping method"
 msgstr "Способ доставки"
 
@@ -315,22 +336,28 @@ msgstr "Дата заказа"
 msgid "Product"
 msgstr "Продукт"
 
+msgid "Title %s"
+msgstr "Название %s"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Payment methods"
+msgstr "Способы оплаты"
+
+msgid "New payment"
+msgstr "Новый метод оплаты"
+
 msgid "Description"
 msgstr "Описание"
 
 msgid "EAN"
 msgstr "Артикул"
 
-msgid "Category"
-msgstr "Категория"
-
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr ""
 "Пожалуйста, будьте терпеливы загрузки изображений может занять несколько секун"
 "д ..."
-
-msgid "Save"
-msgstr "Сохранить"
 
 msgid "New product"
 msgstr "Новый продукт"
@@ -407,11 +434,20 @@ msgstr "Почтовый индекс"
 msgid "Category|Description"
 msgstr "Описание"
 
-msgid "Category|Name"
-msgstr "Имя"
-
 msgid "Category|Products count"
 msgstr "Количество продуктов"
+
+msgid "Category|Title"
+msgstr "Название"
+
+msgid "Globalize/active record/translation"
+msgstr "Перевод"
+
+msgid "Globalize::ActiveRecord::Translation|Locale"
+msgstr "Регион"
+
+msgid "Globalize::ActiveRecord::Translation|Title"
+msgstr "Название"
 
 msgid "Line item"
 msgstr "Позиция"
@@ -425,11 +461,11 @@ msgstr "Количество"
 msgid "Order"
 msgstr "Заказ"
 
-msgid "Order|Pay type"
-msgstr "Тип оплаты"
-
 msgid "Order|Status"
 msgstr "Статус"
+
+msgid "Payment|Title"
+msgstr "Название"
 
 msgid "Product|Description"
 msgstr "Описание"
@@ -440,17 +476,14 @@ msgstr "Артикул"
 msgid "Product|Image"
 msgstr "Изображение"
 
-msgid "Product|Name"
-msgstr "Наименование"
-
 msgid "Product|Price"
 msgstr "Цена"
 
 msgid "Product|Quantity"
 msgstr "Количество"
 
-msgid "Product|Vat"
-msgstr "НДС"
+msgid "Product|Title"
+msgstr "Название"
 
 msgid "Shipment|Default"
 msgstr "По умолчанию"
@@ -458,11 +491,11 @@ msgstr "По умолчанию"
 msgid "Shipment|Fee"
 msgstr "Плата"
 
-msgid "Shipment|Name"
-msgstr "Название"
-
 msgid "Shipment|Provider"
 msgstr "Провайдер"
+
+msgid "Shipment|Title"
+msgstr "Название"
 
 msgid "User"
 msgstr "Пользователь"
@@ -520,3 +553,12 @@ msgstr ""
 
 msgid "User|Unconfirmed email"
 msgstr ""
+
+msgid "Vat"
+msgstr "НДС"
+
+msgid "Vat|Rate"
+msgstr "Ставка"
+
+msgid "Vat|Title"
+msgstr "Название"

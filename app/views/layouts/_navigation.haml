@@ -50,6 +50,9 @@
   .subnav.navbar.navbar-default
     .container
       %ul.nav.navbar-nav.navbar-link
+        %li{ class: controller_name == 'orders' ? 'active' : '' }
+          = link_to _('Orders'), orders_path
+
         %li{ class: controller_name == 'categories' ? 'active' : '' }
           = link_to _('Categories'), categories_path
 
@@ -65,8 +68,8 @@
         %li{ class: controller_name == 'shipments' ? 'active' : '' }
           = link_to _('Shipments'), shipments_path
 
-        %li{ class: controller_name == 'orders' ? 'active' : '' }
-          = link_to _('Orders'), orders_path
+        %li{ class: controller_name == 'payments' ? 'active' : '' }
+          = link_to _('Payments'), payments_path
 
         %li{ class: controller_name == 'carts' ? 'active' : '' }
           = link_to _('Carts'), carts_path

@@ -12,12 +12,24 @@ $(function() {
   })
 
   // Search
-  $("#product_search input").on('keyup', function(){
+  $("#product_search input").on('keyup', 300, function(event){
+    event.preventDefault()
     var $form = $(this);
-    setTimeout(function(){
+
+
+    // setTimeout(function(){
+    delay(function(){
       $form.submit()
-    }, 1000)
+    }, 500);
+    // }, 2000)
+
+    return false;
   });
+
+  // Alphabet
+  $(document).on('change', '#limit', function() {
+    $(this).parents('form').submit()
+  })
 
   // Alphabet
   $(document).on('click', '#alphabet > a', function() {

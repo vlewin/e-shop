@@ -11,6 +11,7 @@ EShop::Application.routes.draw do
   resources :categories
   resources :line_items
   resources :shipments
+  resources :payments
 
   resources :orders do
     member do

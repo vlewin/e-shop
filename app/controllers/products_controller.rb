@@ -37,7 +37,7 @@ class ProductsController < ApplicationController
   def update
     authorize @product
 
-    if @product.update!(product_params)
+    if @product.update(product_params)
       redirect_to products_url, notice: _('Product was successfully updated.')
     else
       render action: 'edit'
@@ -72,7 +72,8 @@ class ProductsController < ApplicationController
       :price,
       :vat_id,
       :category_id,
-      :image
+      :image,
+      *Product.globalize_attribute_names
     )
   end
 

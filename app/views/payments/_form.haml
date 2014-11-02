@@ -1,0 +1,19 @@
+.panel.panel-default
+  = form_for @payment, html: { class: 'form-horizontal' } do |f|
+    .panel-heading
+      %h4.page-header.no-margin= "#{action} payment method"
+    .panel-body
+      = render 'layouts/errors', object: @payment
+
+      = translation_fields_for @payment, :title, _('Title')
+      -# .row
+      -#   .col-md-12
+      -#     - Payment.globalize_locales.each do |locale|
+      -#       .form-group
+      -#         %label.col-sm-2.control-label= _("Title %s") % locale.upcase
+      -#         .col-xs-12.col-sm-8.col-md-6
+      -#           = f.text_field "title_#{locale}", class: 'form-control'
+
+    .panel-footer
+      = f.submit _('Save'), class: 'btn btn-success'
+      = link_to _('Back'), payments_path

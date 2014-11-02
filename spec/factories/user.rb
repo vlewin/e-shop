@@ -24,7 +24,7 @@ FactoryGirl.define do
 
     factory :user_with_addresses do
       ignore do
-        count 2
+        count 1
       end
 
       after(:build) do |user, evaluator|

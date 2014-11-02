@@ -78,6 +78,11 @@ GEM
       text
     gettext_i18n_rails (1.1.0)
       fast_gettext (>= 0.9.0)
+    globalize (4.0.2)
+      activemodel (>= 4.0.0, < 5)
+      activerecord (>= 4.0.0, < 5)
+    globalize-accessors (0.1.5)
+      globalize (>= 3)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -232,6 +237,7 @@ GEM
     uglifier (2.5.1)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode (0.4.4.1)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -254,6 +260,8 @@ DEPENDENCIES
   font-awesome-less
   gettext
   gettext_i18n_rails
+  globalize
+  globalize-accessors
   haml-rails
   heroku
   jquery-rails
@@ -271,7 +279,7 @@ DEPENDENCIES
   rails (~> 4.1.6)
   rails-i18n (~> 4.0.0)
   rails_12factor
-  ransack
+  ransack (~> 1.4.1)
   rmagick
   rspec-rails (~> 3.0.1)
   ruby_parser
@@ -281,3 +289,4 @@ DEPENDENCIES
   sqlite3
   therubyracer
   uglifier
+  unicode

@@ -17,7 +17,8 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    @category.products.build
+    # @category.products.build
+    # @category.translations.build
     authorize @category
   end
 
@@ -26,7 +27,7 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.save
-      redirect_to @category, notice: _('Category was successfully created.')
+      redirect_to categories_path, notice: _('Category was successfully created.')
     else
       render action: 'new'
     end
@@ -36,7 +37,7 @@ class CategoriesController < ApplicationController
     authorize @category
 
     if @category.update(category_params)
-      redirect_to @category, notice: _('Category was successfully updated.')
+      redirect_to categories_path, notice: _('Category was successfully updated.')
     else
       render action: 'edit'
     end
@@ -46,7 +47,7 @@ class CategoriesController < ApplicationController
     authorize @category
 
     @category.destroy
-    redirect_to categories_url, notice: _('Category was successfully destroyed.')
+    redirect_to categories_path, notice: _('Category was successfully destroyed.')
   end
 
   private
@@ -57,6 +58,6 @@ class CategoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def category_params
-      params.require(:category).permit(:title)
+      params.require(:category).permit(*Category.globalize_attribute_names, :title)
     end
 end

@@ -34,5 +34,5 @@
               = f.telephone_field :phone, placeholder: '(0800) 123456', required: true, class: 'form-control'
 
     .panel-footer
-      = f.submit 'Save address', class: 'btn btn-success'
-      = link_to 'Back to addresses', addresses_path
+      = f.submit _('Save'), class: 'btn btn-success'
+      = link_to _('Back'), addresses_path

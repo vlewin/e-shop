@@ -48,6 +48,6 @@ class ShipmentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def shipment_params
-      params.require(:shipment).permit(:provider, :title, :fee, :default)
+      params.require(:shipment).permit(:provider, :title, :fee, :default, *Shipment.globalize_attribute_names)
     end
 end
