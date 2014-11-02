@@ -39,7 +39,7 @@
               %th{ width: '5%'}= _('Image')
               %th= _('Title')
               %th= _('Price')
-              %th.hidden-xs.hidden-sm= _('Quantity')
+              %th.hidden-xs.hidden-sm{ width: '17%'}= _('Quantity')
 
           %tbody
             - @products.each_with_index do |product, index|
