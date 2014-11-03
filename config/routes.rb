@@ -1,10 +1,6 @@
 EShop::Application.routes.draw do
   root to: 'store#index', via: :get
-  devise_for :users, controllers: { registrations: :account, sessions: :sessions }
-  devise_scope :user do
-    resource :account, controller: :account do
-    end
-  end
+  devise_for :users, controllers: { registrations: :registrations, sessions: :sessions }
 
   resources :users
   resources :addresses
@@ -12,6 +8,7 @@ EShop::Application.routes.draw do
   resources :line_items
   resources :shipments
   resources :payments
+  resource :account, controller: :account, only: [:show]
 
   resources :orders do
     member do
