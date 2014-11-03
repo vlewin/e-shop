@@ -23,28 +23,28 @@ class OrderPdf < Prawn::Document
 
   def header
     bounding_box([bounds.left, bounds.top], width: 250) do
-      text "E-Shop, Inc", size: 12, style: :bold
-      move_down 0
+      text "E-Shop, Inc", color: "000000", size: 12, style: :bold
       text "Musterstrasse 1
-            3000 Musterstadt
-            Deutschland", size: 10
+            3000 Musterstadt", size: 10
     end
 
     bounding_box([bounds.left, bounds.top-70], width: 250) do
       text @order.billing_address.recipient, size: 12, style: :bold
-      move_down 0
       text "#{@order.billing_address.street}
             #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
     end
 
     bounding_box([bounds.left + 280, bounds.top], width: 260) do
-      move_down 0
-      text "Shipping to:", style: :bold
-      text "#{@order.address.full_address}", size: 10
+      if @order.billing_address == @order.address
+        text "Shipping & Billing to:", style: :bold
+        text "#{@order.address.full_address}", size: 10
+      else
+        text "Shipping to:", style: :bold, color: 'red'
+        text "#{@order.address.full_address}", size: 10
 
-      move_down 10
-      text "Billing to:", style: :bold
-      text "#{@order.billing_address.full_address}", size: 10
+        text "Billing to:", style: :bold
+        text "#{@order.billing_address.full_address}", size: 10
+      end
     end
   end
 
@@ -114,8 +114,8 @@ class OrderPdf < Prawn::Document
     page_count.times do |i|
       page = i + 1
       go_to_page(page)
-      bounding_box([bounds.left+1, bounds.bottom + 10], :width => 500) do
-        text "Thank you for your business!", :size => 8
+      bounding_box([bounds.left+1, bounds.bottom + 10], width: 500) do
+        text "Thank you for your business!", size: 8
       end
     end
   end
