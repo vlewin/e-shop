@@ -1,9 +1,11 @@
 class OrdersController < ApplicationController
   before_action :set_order, only: [:show, :edit, :update_status, :destroy]
+  after_action :verify_authorized, only: [:show, :destroy]
   after_action :verify_policy_scoped, only: :index
 
   def index
-    @orders = policy_scope(Order)
+    # @orders = policy_scope(Order)
+    @posts = OrderPolicy::Scope.new(current_user, Order).resolve
     # FIXME: add permission check test!
     authorize :orders, :index?
   end

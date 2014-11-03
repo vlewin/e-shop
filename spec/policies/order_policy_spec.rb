@@ -8,6 +8,28 @@ describe OrderPolicy do
   let(:order) { FactoryGirl.create(:order) }
   let(:user_order) { FactoryGirl.create(:order, user: user) }
 
+  permissions ".scope" do
+    context "for an ordinary user" do
+      let(:policy_scope) { OrderPolicy::Scope.new(user, Order).resolve }
+
+      it "hides other orders" do
+        expect(policy_scope).to eq []
+      end
+
+      it "shows user orders" do
+        expect(policy_scope).to eq [user_order]
+      end
+    end
+
+    context "for an admin user" do
+      let(:policy_scope) { OrderPolicy::Scope.new(admin, Order).resolve }
+
+      it "shows all orders" do
+        expect(policy_scope).to eq [order]
+      end
+    end
+  end
+
   permissions :index? do
     it "denies access to user" do
       expect(subject.new(user, order).index?).to eq false
