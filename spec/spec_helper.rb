@@ -15,6 +15,9 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'simplecov'
+SimpleCov.start
+
 RSpec.configure do |config|
   config.before(:suite) do
     begin
@@ -33,6 +36,16 @@ RSpec.configure do |config|
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples
   # get run.
+
+ # Use color in STDOUT
+   config.color = true
+
+ # Use color not only in STDOUT but also in pagers and files
+   config.tty = true
+
+ # Use the specified formatter
+   config.formatter = :documentation # :progress, :html, :textmate
+
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
 

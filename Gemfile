@@ -47,6 +47,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'awesome_print'
   gem 'byebug'
+  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
