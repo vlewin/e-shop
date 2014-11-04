@@ -4,9 +4,7 @@ class OrdersController < ApplicationController
   after_action :verify_policy_scoped, only: :index
 
   def index
-    # @orders = policy_scope(Order)
-    @posts = OrderPolicy::Scope.new(current_user, Order).resolve
-    # FIXME: add permission check test!
+    @orders = policy_scope(Order)
     authorize :orders, :index?
   end
 
