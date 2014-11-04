@@ -23,21 +23,41 @@ class AddressesController < ApplicationController
 
     if @address.save
       flash[:notice] = _('Address was successfully created.')
+
+      if current_user.admin?
+        redirect_to addresses_path
+      else
+        redirect_to :back
+      end
     else
-      flash[:alert] = @address.errors.full_messages.join(', ')
+      if current_user.admin?
+        render :new
+      else
+        redirect_to :back
+      end
     end
 
-    redirect_to_back_or_default addresses_url
+    # redirect_to_back_or_default addresses_url
   end
 
   def update
     if @address.update(address_params)
       flash[:notice] = _('Address was successfully updated.')
+
+      if current_user.admin?
+        redirect_to addresses_path
+      else
+        redirect_to :back
+      end
     else
-      flash[:alert] = @address.errors.full_messages.join(', ')
+      if current_user.admin?
+        render :new
+      else
+        redirect_to :back
+      end
     end
 
-    redirect_to_back_or_default addresses_url
+    # redirect_to_back_or_default addresses_url
   end
 
   def destroy
