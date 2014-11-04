@@ -5,13 +5,22 @@
       = render 'layouts/errors', object: @product
 
     .panel-body
+      .form-group
+        = f.label _('Category'), class: 'col-sm-2 control-label'
+        .col-xs-12.col-sm-8.col-md-6
+          - options = Category.all.map{ |c| [c.title, c.id] }
+          = f.select :category_id, options_for_select(options, @product.category_id), { prompt: _('Select country'), required: true }, class: 'form-control'
+
       = translation_fields_for @product, :title, _('Title')
       = translation_fields_for @product, :description, _('Description')
 
       .form-group
         = f.label _('EAN'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.text_field :ean, required: true, class: 'form-control'
+          = f.text_field :ean, required: true, 'data-id' => @next_id, class: 'form-control'
+          %p.help-block
+            %i.fa.fa-info-circle
+            = _('EAN is composed of category id prefix and next product id')
 
       .form-group
         = f.label _('Quantity'), class: 'col-sm-2 control-label'
@@ -29,11 +38,6 @@
           = f.select :vat_id, options_for_select(Vat.all.map{ |v| ["#{v.rate}% (#{v.title})", v.id] }, @product.vat_id), {}, class: 'form-control'
 
       .form-group
-        = f.label _('Category'), class: 'col-sm-2 control-label'
-        .col-xs-12.col-sm-8.col-md-6
-          = f.select :category_id, options_for_select(Category.all.map{ |c| [c.title, c.id] }, @product.category_id), {}, class: 'form-control'
-
-      .form-group
         = f.label _('Image'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           .well
@@ -42,7 +46,7 @@
                 = product_image_tag @product
               .media-body
                 = f.hidden_field(:image_cache)
-                = f.file_field :image, accept: 'image/png,image/gif,image/jpeg'
+                = f.file_field :image, accept: 'image/png,image/gif,image/jpeg', class: 'input-md'
               %p.help-block
                 %small= _('Please be patient the image upload may take a few seconds...')
 

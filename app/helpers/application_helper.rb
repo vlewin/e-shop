@@ -83,7 +83,7 @@ module ApplicationHelper
       concat content_tag(:label, translation, class: 'col-sm-2 control-label')
       concat(
         content_tag(:div, nil, class: 'col-xs-12 col-sm-8 col-md-6') do
-          text_field_tag "#{object.class.class_name.downcase}[#{attribute}]", object.send(attribute), class: 'form-control'
+          text_field_tag "#{object.class.class_name.downcase}[#{attribute}]", object.send(attribute), required: true, class: 'form-control'
         end
       )
     end
