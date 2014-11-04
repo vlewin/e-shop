@@ -289,7 +289,7 @@ DEPENDENCIES
   rmagick
   rspec-rails (~> 3.0.1)
   ruby_parser
-  shoulda-matchers (~> 2.6.2)
+  shoulda-matchers
   simplecov
   slim-rails
   spring-commands-rspec
