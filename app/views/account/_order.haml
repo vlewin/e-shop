@@ -18,7 +18,7 @@
             %td= _(order.payment.title)
             %td= "#{order.shipment.provider} #{order.shipment.title}"
             %td= number_to_currency order.total
-            %td{ width: '15%' }
+            %td.text-right{ width: '20%' }
               = icon_link_to '', order_path(order), { class: 'btn btn-default' }, 'fa-eye'
               = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-default' } , 'fa-print'
 
