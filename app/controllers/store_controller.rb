@@ -14,6 +14,12 @@ class StoreController < ApplicationController
     query = params[:q]
 
     # INFO: issue with cyrillic characters 'слово'.capitalize => 'слово'
+    # Try it out instead of Unicode::capitalize
+    # begin
+    #   str.encode("UTF-8")
+    # rescue Encoding::UndefinedConversionError
+    #  # ...
+    # end
     # query = Hash[params[:q].map{|k,v| [k,Unicode::capitalize(v)]}] if (params[:q] && params[:q][:translations_title_cont])
 
     @limit = params[:limit] || 12
