@@ -201,7 +201,7 @@ GEM
       sexp_processor (~> 4.1)
     rubyzip (1.1.4)
     sexp_processor (4.4.4)
-    shoulda-matchers (2.6.2)
+    shoulda-matchers (2.7.0)
       activesupport (>= 3.0.0)
     simplecov (0.9.1)
       docile (~> 1.1.0)
