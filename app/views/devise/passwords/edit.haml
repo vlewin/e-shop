@@ -1,0 +1,18 @@
+.row
+  .col-sm-8.col-sm-offset-2.col-md-5.col-md-offset-3
+    .panel.panel-default
+      .panel-heading
+        %strong= _('Change your password')
+      .panel-body
+        = render 'layouts/errors', object: resource
+        = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }, class: 'form-horizontal') do |f|
+          = f.hidden_field :reset_password_token
+          .form-group
+            = f.label :password, _('New password')
+            = f.password_field :password, autofocus: true, class: 'form-control'
+          .form-group
+            = f.label :password_confirmation, _('Confirm new password')
+            = f.password_field :password_confirmation, class: 'form-control'
+
+          = f.submit _('Change my password'), class: 'btn btn-success'
+

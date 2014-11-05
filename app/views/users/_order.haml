@@ -1,5 +1,8 @@
 #orders
-  - if current_user.orders.present?
+  - if @user.orders.present?
+    %h4 Your orders
+
+
     %table.table.table-hover.table-responsive
       %thead
         %tr
@@ -11,17 +14,16 @@
           %th{ collspan: 2}
 
       %tbody
-        - current_user.orders.each do |order|
+        - @user.orders.each do |order|
           %tr
             %td= order_status(order.status)
             %td= I18n.localize(order.created_at)
             %td= _(order.payment.title)
             %td= "#{order.shipment.provider} #{order.shipment.title}"
             %td= number_to_currency order.total
-            %td.text-right{ width: '20%' }
+            %td.text-right{ width: '15%' }
               = icon_link_to '', order_path(order), { class: 'btn btn-default' }, 'fa-eye'
               = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-default' } , 'fa-print'
 
-
   - else
-    %h4= _('Your orders list is empty')
+    %h4 Your orders list is empty

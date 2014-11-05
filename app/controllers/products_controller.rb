@@ -16,6 +16,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @next_id = (Product.maximum(:id) + 1).to_s.rjust(2, '0')
     authorize @product
   end
 
