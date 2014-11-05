@@ -25,7 +25,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   def public_id
-    return model.name
+    model.title.gsub(' ', '_').gsub('.', '').gsub('%', '')
   end
 end
 
