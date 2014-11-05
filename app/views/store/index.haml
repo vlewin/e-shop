@@ -16,24 +16,22 @@
       .text-right
         %span.hidden-xs.hidden-sm
           %small= _('Sort')
-          -# %i.fa.fa-sort-alpha-asc
 
         .btn-group.btn-group-sm
           .btn.btn-default{ class: (@sorting.include?('title')) ? 'active' : ''}
-            = sort_link @search, :title, _('Title')
-            -# %i.fa.fa-sort-alpha-asc
+            = sort_link @search, :title, _('Title'), { limit: @limit }
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
-            = sort_link @search, :price, _('Price')
-            -# %i.fa.fa-sort-numeric-desc
+            = sort_link @search, :price, _('Price'), { limit: @limit }
           .btn.btn-default{ class: (@sorting.include?('created_at')) ? 'active' : ''}
-            = sort_link @search, :created_at, _('Created at')
-            -# %i.fa.fa-sort-amount-desc
+            = sort_link @search, :created_at, _('Created at'), { limit: @limit }
 
         %span.hidden-xs.hidden-sm
           %small= _('View')
         .btn-group.btn-group-sm
-          = icon_link_to '', root_path(view: :grid), { class: "btn btn-default #{'active' if current_view == 'grid'}" }, 'fa-lg fa-th-large text-muted'
-          = icon_link_to '', root_path(view: :list), { class: "btn btn-default #{'active' if current_view == 'list'}" }, 'fa-lg fa-th-list text-muted'
+          - css_class = "btn btn-default #{'active' if current_view == 'grid'}"
+          = icon_link_to '', root_path(view: :grid, limit: @limit), { class: css_class }, 'fa-lg fa-th-large text-muted'
+          - css_class = "btn btn-default #{'active' if current_view == 'list'}"
+          = icon_link_to '', root_path(view: :list, limit: @limit), { class: css_class }, 'fa-lg fa-th-list text-muted'
 
         %span.hidden-xs.hidden-sm
           %small= _('Per page')
@@ -52,6 +50,7 @@
 
   %hr.line
 
+  -# Mobile
   %ul.list-group.hidden-sm.hidden-md.hidden-lg
     = link_to _('All categories'), root_path(view: @view), class: params[:category_translations_title_eq].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
     - @categories.each do |cat|
@@ -60,18 +59,7 @@
       - css_class = cat.title == params[:category_translations_title_eq] ? 'list-group-item active' : 'list-group-item'
       = link_to title, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
 
-  -# %ul#categories.nav.nav-tabs.hidden-sm.hidden-md.hidden-lg
-  -#   %li.active.dropdown
-  -#     = link_to _('Categories'), '#', class: "dropdown-toggle", 'data-toggle' => "dropdown"
-  -#     %ul.dropdown-menu
-  -#       %li{ class: params[:category_name_cont].nil? ? 'active' : '' }
-  -#         = link_to _('All categories'), root_path(view: @view), remote: :true
-  -#       - @categories.each do |cat|
-  -#         - name = "#{cat.name} (#{cat.products_count})"
-  -#         - path = root_path(q: {'category_name_cont' => cat.name}, view: @view)
-  -#         %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
-  -#           = link_to name, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
-
+  -# Desktop
   %ul#categories.nav.nav-tabs.hidden-xs
     %li{ class: params[:category_translations_title_eq].nil? ? 'active' : '' }
       = link_to _('All categories'), root_path(view: @view), remote: :true
