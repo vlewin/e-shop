@@ -7,7 +7,7 @@ class ImageUploader < CarrierWave::Uploader::Base
 
   version :show do
     process eager: true
-    process resize_to_fill: [250, 250]
+    process resize_to_fill: [380, 380]
   end
 
   version :index, from_version: :show do

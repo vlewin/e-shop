@@ -16,7 +16,7 @@ module ApplicationHelper
       image_tag product.image_url(version), options
     else
       versions = {
-        show:       { width: 250, height: 250 },
+        show:       { width: 380, height: 380 },
         index:      { width: 250, height: 200 },
         thumbnail:  { width: 50, height: 50 },
       }

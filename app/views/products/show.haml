@@ -1,9 +1,9 @@
 .panel.panel-default.product-details
   .panel-body
     .row
-      .col-xs-4.col-md-3
+      .col-xs-4.col-md-4.border-right
         = product_image_tag(@product, :show)
-      .col-xs-8.col-md-9
+      .col-xs-8.col-md-8
         .product
           %h3
             = @product.title
@@ -15,20 +15,11 @@
           %hr
 
           .text-muted
-            = _('EAN:')
-            = @product.ean
-
-          .text-muted
-            = _('VAT:')
-            = number_to_percentage(@product.vat.rate, precision: 0)
-
-          .text-muted
-            = _('Availability:')
-            = "#{@product.available_quantity} of #{@product.quantity} available"
+            %p= _("EAN: %s") % @product.ean
+            %p= _("MwSt: %s") % number_to_percentage(@product.vat.rate)
+            %p= _("Available: %d of %d") % [@product.available_quantity, @product.quantity]
 
           %hr
 
           = link_to _('Edit'), edit_product_path(@product), class: 'btn btn-default'
           = link_to _('Back'), products_path
-
-

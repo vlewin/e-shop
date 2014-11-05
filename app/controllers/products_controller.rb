@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   after_action :verify_authorized, except: [:index, :show]
 
   def index
-    @products = Product.all
+    @products = Product.includes(:vat).all
     authorize :products, :index?
   end
 
