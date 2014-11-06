@@ -100,10 +100,22 @@ describe AddressesController, type: :controller do
     end
   end
 
+  describe "DELETE #delete" do
+    before { delete :delete, id: address.id }
+
+    it " will redirect to account path" do
+      expect(response).to redirect_to account_path
+    end
+
+    it "will set flash[:notice]" do
+      expect(flash[:notice]).to be_present
+    end
+  end
+
   describe "DELETE #destroy" do
     before { delete :destroy, id: address.id }
 
-    it " will redirect to posts path" do
+    it " will redirect to addresses path" do
       expect(response).to redirect_to addresses_path
     end
 

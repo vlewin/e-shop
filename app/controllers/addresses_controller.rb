@@ -67,7 +67,8 @@ class AddressesController < ApplicationController
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
     end
-    redirect_to_back_or_default addresses_url
+
+    redirect_to account_path
   end
 
   def destroy
@@ -77,7 +78,7 @@ class AddressesController < ApplicationController
       flash[:alert] = @address.errors.full_messages.join(', ')
     end
 
-    redirect_to account_path
+    redirect_to_back_or_default addresses_url
   end
 
   private
