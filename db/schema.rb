@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.string   "zip_code"
     t.string   "phone"
     t.integer  "user_id"
+    t.integer  "status",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
