@@ -42,15 +42,15 @@ describe AddressPolicy do
     end
   end
 
-  permissions :new? do
-    it "denies access to user" do
-      expect(subject).not_to permit(user, address)
-    end
+  # permissions :new? do
+  #   it "denies access to user" do
+  #     expect(subject).not_to permit(user, address)
+  #   end
 
-    it "grants access to admin" do
-      expect(subject).to permit(admin, address)
-    end
-  end
+  #   it "grants access to admin" do
+  #     expect(subject).to permit(admin, address)
+  #   end
+  # end
 
   permissions :update? do
     it "denies access to user" do
