@@ -13,8 +13,6 @@ gem 'globalize-accessors'
 gem 'unicode'
 
 gem 'puma'
-gem 'pundit'
-gem 'devise'
 gem 'uglifier'
 gem 'therubyracer'
 
@@ -28,6 +26,11 @@ gem 'font-awesome-less'
 
 gem 'breadcrumbs_on_rails'
 gem 'prawn'
+
+# Authentication and authorization
+gem 'devise'
+gem 'devise_invitable'
+gem 'pundit'
 
 # Search, filtering and pagination
 gem 'ransack', '~> 1.4.1'
