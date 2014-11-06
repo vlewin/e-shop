@@ -1,6 +1,6 @@
 EShop::Application.routes.draw do
   root to: 'store#index', via: :get
-  devise_for :users, controllers: { registrations: :registrations, sessions: :sessions }
+  devise_for :users, controllers: { registrations: :registrations, sessions: :sessions, invitations: :invitations }
 
   resources :users
   resources :categories
