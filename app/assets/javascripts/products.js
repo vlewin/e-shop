@@ -1,6 +1,6 @@
 $(function() {
   // Set EAN prefix to category id
-  $('#product_form #product_category_id').change(function() {
+  $('#new_product #product_category_id').change(function() {
     var $ean = $('#product_ean');
     var next_product_id = $ean.data('id');
     var prefixed_ean = $(this).val() + next_product_id;

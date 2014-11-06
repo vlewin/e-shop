@@ -1,9 +1,9 @@
 .panel.panel-default.product-details
   .panel-body
     .row
-      .col-xs-4.col-md-3
+      .col-xs-4.col-md-4.border-right
         = product_image_tag(@product, :show)
-      .col-xs-8.col-md-9
+      .col-xs-8.col-md-8
         .product
           %h3
             = @product.title
@@ -16,15 +16,16 @@
 
           .text-muted
             %p= _("EAN: %s") % @product.ean
+            %p= _("MwSt: %s") % number_to_percentage(@product.vat.rate)
             %p= _("Available: %d of %d") % [@product.available_quantity, @product.quantity]
 
           %hr
 
           .row
             = form_tag line_items_path(product_id: @product) do
-              .col-xs-3
+              .col-xs-3.col-md-2
                 = quantity_field_tag 1, { max: @product.available_quantity}
-              .col-xs-4
+              .col-xs-4.col-md-4
                 = button_tag _('Add to cart'), type: 'submit', class: 'btn btn-sm btn-success'
 
 
