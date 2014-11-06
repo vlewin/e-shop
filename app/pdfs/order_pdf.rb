@@ -28,23 +28,31 @@ class OrderPdf < Prawn::Document
             3000 Musterstadt", size: 10
     end
 
-    bounding_box([bounds.left, bounds.top-70], width: 250) do
-      text @order.billing_address.recipient, size: 12, style: :bold
-      text "#{@order.billing_address.street}
-            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
-    end
+    # bounding_box([bounds.left, bounds.top-70], width: 250) do
+    #   text @order.billing_address.recipient, size: 12, style: :bold
+    #   text "#{@order.billing_address.street}
+    #         #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
+    # end
 
-    bounding_box([bounds.left + 280, bounds.top], width: 260) do
-      if @order.billing_address == @order.address
+    bounding_box([bounds.left + 380, bounds.top], width: 260) do
+      if @order.billing_address == @order.shipping_address
         text "Shipping & Billing to:", style: :bold
-        text "#{@order.address.full_address}", size: 10
+        text @order.billing_address.recipient, style: :bold
+        text "#{@order.billing_address.street}
+            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
+
       else
-        text "Shipping to:", style: :bold, color: 'red'
-        text "#{@order.address.full_address}", size: 10
+        text "Shipping to:", style: :bold
+        text @order.shipping_address.recipient, style: :bold
+        text "#{@order.shipping_address.street}
+            #{@order.shipping_address.zip_code} #{@order.shipping_address.city}", size: 10
+
+        move_down 10
 
         text "Billing to:", style: :bold
-        text "#{@order.billing_address.full_address}", size: 10
-      end
+        text @order.billing_address.recipient, style: :bold
+        text "#{@order.billing_address.street}
+            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10      end
     end
   end
 
