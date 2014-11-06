@@ -4,6 +4,7 @@ class AccountController < ApplicationController
 
   def show
     @user = current_user
+    @addresses = current_user.addresses.active
     authorize @user
   end
 end
