@@ -3,12 +3,17 @@ EShop::Application.routes.draw do
   devise_for :users, controllers: { registrations: :registrations, sessions: :sessions }
 
   resources :users
-  resources :addresses
   resources :categories
   resources :line_items
   resources :shipments
   resources :payments
   resource :account, controller: :account, only: [:show]
+
+  resources :addresses do
+    member do
+      delete :delete
+    end
+  end
 
   resources :orders do
     member do

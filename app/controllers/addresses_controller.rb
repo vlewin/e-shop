@@ -1,5 +1,6 @@
 class AddressesController < ApplicationController
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, only: [:show, :edit, :update, :destroy, :delete]
+  after_action :verify_authorized, except: [ :new, :create ]
 
   def index
     @addresses = Address.preload(:user).all
@@ -7,7 +8,7 @@ class AddressesController < ApplicationController
   end
 
   def show
-    authorize @address
+
   end
 
   def new
@@ -60,8 +61,8 @@ class AddressesController < ApplicationController
     # redirect_to_back_or_default addresses_url
   end
 
-  def destroy
-    if @address.destroy
+  def delete
+    if @address.inactive!
       flash[:notice] = _('Address was successfully destroyed.')
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
@@ -69,9 +70,25 @@ class AddressesController < ApplicationController
     redirect_to_back_or_default addresses_url
   end
 
+  def destroy
+    if @address.destroy
+      flash[:notice] = _('Address was successfully destroyed.')
+    else
+      flash[:alert] = @address.errors.full_messages.join(', ')
+    end
+
+    redirect_to account_path
+  end
+
   private
     def set_address
-      @address = Address.find(params[:id])
+      @address = if current_user.admin?
+        Address.find(params[:id])
+      else
+        current_user.addresses.active.find(params[:id])
+      end
+
+       authorize @address
     end
 
     def address_params
