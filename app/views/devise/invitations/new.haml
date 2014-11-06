@@ -1,0 +1,19 @@
+.row
+  .col-sm-8.col-sm-offset-2.col-md-5.col-md-offset-3
+    .panel.panel-default
+      .panel-heading
+        %strong= _('Send invitation')
+      .panel-body
+        = render 'layouts/errors', object: resource
+        = form_for(resource, as: resource_name, url: invitation_path(resource_name), html: { method: :post }, class: 'form-horizontal') do |f|
+          .form-group
+            = label_tag _('Email')
+            = f.email_field :email, autofocus: true, class: 'form-control'
+
+          = f.submit _('Send an invitation'), class: 'btn btn-success'
+
+
+          %hr.line
+          %small= _("We'll send the invitation instructions.")
+
+
