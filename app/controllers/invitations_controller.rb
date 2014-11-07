@@ -5,6 +5,10 @@ class InvitationsController < Devise::InvitationsController
 
   protected
 
+  def after_invite_path_for(resource)
+    redirect_to users_path
+  end
+
   def update_sanitized_params
     devise_parameter_sanitizer.for(:accept_invitation) do |u|
       u.permit(:name, :password, :password_confirmation, :invitation_token, :avatar, :avatar_cache)
