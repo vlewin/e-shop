@@ -3,14 +3,11 @@ class CartsController < ApplicationController
   after_action :verify_authorized, except: [:show, :update, :destroy]
 
   def index
-    @carts = Cart.all.order(:updated_at)
     authorize :carts, :index?
+    @carts = Cart.all.order(:updated_at)
   end
 
   def show
-    # add_breadcrumb _('Store'), :root_path
-    # add_breadcrumb _('Shopping cart'), cart_path(@current_cart)
-
     if current_cart.empty?
       flash.notice = _('Your cart is empty!')
       redirect_to root_path
