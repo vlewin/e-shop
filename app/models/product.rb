@@ -44,7 +44,7 @@ class Product < ActiveRecord::Base
 
   private
 
-  # ensure that there are no line items referencing this product
+  # Ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item
     if line_items.empty?
       return true
