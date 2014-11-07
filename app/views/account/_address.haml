@@ -1,4 +1,4 @@
-- if @addresses.exists?
+- if @addresses.present?
   - @addresses.each do |address|
     .col-xs-12.col-sm-6.col-md-4
       .panel.panel-default
@@ -19,7 +19,9 @@
             .btn-group
               = link_to _('Edit'), '#address', data: { target: "#address_modal_#{address.id}", toggle: 'modal' }, class: 'btn btn-default'
             .btn-group
-              = link_to _('Destroy'), delete_address_url(address), data: {:confirm => 'Are you sure?'}, disabled: false, :method => :delete, class: 'btn btn-danger'
+              - link = address.in_use? ? delete_address_url(address) : address
+              = link_to _('Destroy'), link, data: {:confirm => 'Are you sure?'}, disabled: false, :method => :delete, class: 'btn btn-danger'
+
 
       = render 'addresses/modal', address: address
 
