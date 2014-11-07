@@ -9,7 +9,7 @@
         = f.label _('Category'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           - options = Category.all.map{ |c| [c.title, c.id] }
-          = f.select :category_id, options_for_select(options, @product.category_id), { prompt: _('Select country'), required: true }, class: 'form-control'
+          = f.select :category_id, options_for_select(options, @product.category_id), { prompt: _('Select category'), required: true }, class: 'form-control'
 
       = translation_fields_for @product, :title, _('Title')
       = translation_fields_for @product, :description, _('Description')
