@@ -10,6 +10,7 @@ describe AccountController, type: :controller do
     it "assigns the current_user to @user" do
       get :show
       expect(assigns(:user)).to eq(subject.current_user)
+      expect(assigns(:addresses)).to eq(subject.current_user.addresses)
     end
 
     it "renders the :account view" do
