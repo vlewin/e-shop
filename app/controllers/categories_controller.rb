@@ -3,8 +3,8 @@ class CategoriesController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @categories = Category.all
     authorize :categories, :index?
+    @categories = Category.all
   end
 
   def show
@@ -17,8 +17,6 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
-    # @category.products.build
-    # @category.translations.build
     authorize @category
   end
 

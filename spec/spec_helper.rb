@@ -20,12 +20,15 @@ SimpleCov.start
 
 RSpec.configure do |config|
   config.before(:suite) do
-    begin
-      DatabaseCleaner.start
-      FactoryGirl.lint
-      FastGettext.locale = 'en'
-    ensure
-      DatabaseCleaner.clean
+    FactoryGirl.lint
+    FastGettext.locale = 'en'
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
     end
   end
 
@@ -100,3 +103,11 @@ RSpec.configure do |config|
   end
 
 end
+
+# setup_sqlite_db = lambda do
+#   ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
+
+#   load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
+#   # ActiveRecord::Migrator.up('db/migrate') # use migrations
+# end
+# # silence_stream(STDOUT, &setup_sqlite_db)
