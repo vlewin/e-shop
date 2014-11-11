@@ -1,0 +1,46 @@
+{
+  "name": "E-Shop Demo Application",
+  "description": "E-Shop playground rails application",
+  "logo": "https://avatars2.githubusercontent.com/u/611466",
+  "repository": "https://github.com/vlewin/e-shop",
+  "keywords": [
+    "E-Shop Demo",
+    "Online Shop",
+    "E-Shop",
+    "Rails shop",
+    "RSpec",
+    "Bootstrap",
+    "Devise",
+    "Pundit",
+    "Rails"
+  ],
+  "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
+  "env": {
+    "CLOUDINARY_API_KEY": {
+      "description": "Your Cloudinary username - Cloud-based image management & upload (cloudinary.com)",
+      "value": "user@example.com",
+      "required": false
+    },
+    "CLOUDINARY_API_SECRET": {
+      "description": "Your Cloudinary api secret - Cloud-based image management & upload (cloudinary.com)",
+      "value": "password",
+      "required": false
+    },
+    "MANDRILL_USERNAME": {
+      "description": "Your Mandrill username - Transactional Email from MailChimp (mandrill.com)",
+      "value": "user@example.com",
+      "required": true
+    },
+    "MANDRILL_APIKEY": {
+      "description": "Your Mandrill api secret - Transactional Email from MailChimp (mandrill.com)",
+      "value": "password",
+      "required": true
+    },
+    "SECRET_KEY_BASE": {
+      "description": "Rails secret key base - rake secret",
+      "value": "884af2b1930bfae31b5e62ed1ce8aadc7183b46792b29bb6dde44fd54d2b8c13fff6fd0e631f19e0666c777d8090b0031cc21b2d6aa84f1b0aacfb7fe6031118",
+      "required": false
+    },
+    "RAILS_ENV": "production"
+  }
+}
