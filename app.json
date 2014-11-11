@@ -19,23 +19,28 @@
   "scripts": {"postdeploy": "bundle exec rake db:migrate; bundle exec rake db:seed"},
   "env": {
     "CLOUDINARY_API_KEY": {
-      "description": "Your Cloudinary username - Cloud-based image management & upload (cloudinary.com)",
-      "value": "user@example.com",
+      "description": "Your Cloudinary API key - Cloud-based image management & upload (cloudinary.com)",
+      "value": "API key",
       "required": false
     },
     "CLOUDINARY_API_SECRET": {
-      "description": "Your Cloudinary api secret - Cloud-based image management & upload (cloudinary.com)",
-      "value": "password",
+      "description": "Your Cloudinary API secret - Cloud-based image management & upload (cloudinary.com)",
+      "value": "API secret",
       "required": false
     },
     "MANDRILL_USERNAME": {
       "description": "Your Mandrill username - Transactional Email from MailChimp (mandrill.com)",
-      "value": "user@example.com",
+      "value": "username",
       "required": true
     },
     "MANDRILL_APIKEY": {
-      "description": "Your Mandrill api secret - Transactional Email from MailChimp (mandrill.com)",
-      "value": "password",
+      "description": "Your Mandrill API key - Transactional Email from MailChimp (mandrill.com)",
+      "value": "API key",
+      "required": true
+    },
+    "NEW_RELIC_LICENSE_KEY": {
+      "description": "Your NewRelic license key - New Relic: Application Performance Management and Monitoring (newrelic.com)",
+      "value": "license key",
       "required": true
     },
     "SECRET_KEY_BASE": {
