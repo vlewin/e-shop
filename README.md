@@ -5,7 +5,7 @@ Playground for new ruby on rails technologies and gems
 
 Visit the [DEMO SHOP](http://e-shop-demo-eu.herokuapp.com) 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-sample)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/vlewin/e-shop)
 
 TODO:
 - add counter cache for products
