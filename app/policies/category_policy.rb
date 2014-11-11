@@ -1,14 +1,9 @@
 class CategoryPolicy < ApplicationPolicy
-  # Public
   def index?
     @user.admin?
   end
 
   def show?
-  end
-
-  # Protected
-  def edit?
     @user.admin?
   end
 
@@ -17,6 +12,10 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def create?
+    @user.admin?
+  end
+
+  def edit?
     @user.admin?
   end
 

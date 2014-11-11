@@ -3,9 +3,11 @@ class ShipmentsController < ApplicationController
 
   def index
     @shipments = Shipment.all
+    authorize :shipments, :index?
   end
 
   def show
+    authorize @shipment
   end
 
   def new
@@ -19,7 +21,7 @@ class ShipmentsController < ApplicationController
     @shipment = Shipment.new(shipment_params)
 
     if @shipment.save
-      redirect_to shipments_path, notice: 'Shipment was successfully created.'
+      redirect_to shipments_path, notice: _('Shipment was successfully created.')
     else
       render action: 'new'
     end
@@ -27,7 +29,7 @@ class ShipmentsController < ApplicationController
 
   def update
     if @shipment.update(shipment_params)
-      redirect_to shipments_path, notice: 'Shipment was successfully updated.'
+      redirect_to shipments_path, notice: _('Shipment was successfully updated.')
     else
       render action: 'edit'
     end
@@ -35,7 +37,7 @@ class ShipmentsController < ApplicationController
 
   def destroy
     @shipment.destroy
-    redirect_to shipments_path, notice: 'Shipment was successfully destroyed.'
+    redirect_to shipments_path, notice: _('Shipment was successfully destroyed.')
   end
 
   private
@@ -46,6 +48,6 @@ class ShipmentsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def shipment_params
-      params.require(:shipment).permit(:provider, :name, :rate, :default)
+      params.require(:shipment).permit(:provider, :title, :fee, :default, *Shipment.globalize_attribute_names)
     end
 end

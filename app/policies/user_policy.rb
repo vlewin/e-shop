@@ -3,12 +3,20 @@ class UserPolicy < ApplicationPolicy
     @user.admin?
   end
 
-  def edit?
-    @user == record
-  end
-
   def show?
     @user.admin? || @user == record
+  end
+
+  def new?
+    @user.admin?
+  end
+
+  def create?
+    @user.admin?
+  end
+
+  def edit?
+    @user.admin?
   end
 
   def update?
@@ -17,15 +25,5 @@ class UserPolicy < ApplicationPolicy
 
   def destroy?
     @user.admin?
-  end
-
-  class Scope < Struct.new(:user, :scope)
-    def resolve
-      if user.admin?
-        scope.all
-      else
-        scope.where(id: user.id)
-      end
-    end
   end
 end

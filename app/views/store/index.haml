@@ -1,58 +1,75 @@
-%ul#categories.nav.navbar-nav.clearfix
-  %li{ class: params[:category_name_cont].nil? ? 'active' : '' }= link_to "All categories", root_path(view: @view), remote: :true
-  - @categories.each do |cat|
-    %li{ class: cat.name == params[:category_name_cont] ? 'active' : '' }
-      = link_to "#{cat.name} (#{cat.products_count})", root_path(q: {'category_name_cont' => cat.name}, view: @view), remote: :true
-
-.clearfix
-%hr.line
-
-#store-index
+#store
   .row
-    .col-xs-5.col-sm-5.col-md-6
-      = search_form_for @search, url: root_path, method: :get, remote: true, class: '' do |f|
+    .col-xs-12.col-sm-5.col-md-5
+      = search_form_for @search, url: root_path(view: current_view, limit: @limit), method: :get, remote: true, class: '' do |f|
         = hidden_field_tag :view, params[:view]
 
         .input-group
           %span.input-group-addon
             %i.fa.fa-search
 
-          = f.text_field :name_cont, placeholder: 'Search', class: 'form-control'
+          = f.text_field :translations_title_cont, placeholder: _('Search'), class: 'form-control'
 
-    .col-xs-7.col-sm-7.col-md-6
+    .col-xs-12.hidden-sm.hidden-md.hidden-lg &nbsp;
+
+    .col-xs-12.col-sm-7.col-md-7
       .text-right
-        %span.hidden-xs
-          %small Sort by:
-          -# %i.fa.fa-sort-alpha-asc
+        %span.hidden-xs.hidden-sm
+          %small= _('Sort')
 
         .btn-group.btn-group-sm
-          .btn.btn-default{ class: (@sorting.include?('name')) ? 'active' : ''}
-            = sort_link @search, :name
-            -# %i.fa.fa-sort-alpha-asc
+          .btn.btn-default{ class: (@sorting.include?('title')) ? 'active' : ''}
+            = sort_link @search, :title, _('Title'), { limit: @limit }
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
-            = sort_link @search, :price
-            -# %i.fa.fa-sort-numeric-desc
+            = sort_link @search, :price, _('Price'), { limit: @limit }
           .btn.btn-default{ class: (@sorting.include?('created_at')) ? 'active' : ''}
-            = sort_link @search, :created_at
-            -# %i.fa.fa-sort-amount-desc
+            = sort_link @search, :created_at, _('Created at'), { limit: @limit }
 
-        %span.hidden-xs
-          %small View as:
+        %span.hidden-xs.hidden-sm
+          %small= _('View')
+        .btn-group.btn-group-sm
+          - css_class = "btn btn-default #{'active' if current_view == 'grid'}"
+          = icon_link_to '', root_path(view: :grid, limit: @limit), { class: css_class }, 'fa-lg fa-th-large text-muted'
+          - css_class = "btn btn-default #{'active' if current_view == 'list'}"
+          = icon_link_to '', root_path(view: :list, limit: @limit), { class: css_class }, 'fa-lg fa-th-list text-muted'
+
+        %span.hidden-xs.hidden-sm
+          %small= _('Per page')
         .btn-group
-          = icon_link_to '', root_path(view: :grid), { class: "btn btn-sm btn-default #{'active' if params[:view] == 'grid'}" }, 'fa-lg fa-th-large text-muted'
-          = icon_link_to '', root_path(view: :list), { class: "btn btn-sm btn-default #{'active' if params[:view] == 'list'}" }, 'fa-lg fa-th-list text-muted'
+          = form_tag root_path, method: :get do
+            = select_tag :limit, options_for_select([12, 24, 36, 48], selected: @limit || 12), class: 'input-sm form-control'
 
   %hr.line
 
-  .row
+  .row.hidden-xs
     .col-xs-12.col-sm-12.col-md-12
       #alphabet
-        - alphabet = (@current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
+        - alphabet = (current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
         - alphabet.each do |char|
-          = link_to char, root_path(q: { name_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
+          = link_to char, root_path(q: { translations_title_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
+
   %hr.line
 
-  #products
-    = render 'products'
+  -# Mobile
+  %ul.list-group.hidden-sm.hidden-md.hidden-lg
+    = link_to _('All categories'), root_path(view: @view), class: params[:category_translations_title_eq].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
+    - @categories.each do |cat|
+      - title = "#{cat.title} (#{cat.products_count})"
+      - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
+      - css_class = cat.title == params[:category_translations_title_eq] ? 'list-group-item active' : 'list-group-item'
+      = link_to title, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
+
+  -# Desktop
+  %ul#categories.nav.nav-tabs.hidden-xs
+    %li{ class: params[:category_translations_title_eq].nil? ? 'active' : '' }
+      = link_to _('All categories'), root_path(view: @view), remote: :true
+    - @categories.each do |cat|
+      - title = "#{cat.title} (#{cat.products_count})"
+      - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
+      %li{ class: cat.title == params[:category_translations_title_eq] ? 'active' : '' }
+        = link_to title, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+  .tab-content
+    #products.tab-pane.active
+      = render 'products'
 
 

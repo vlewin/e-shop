@@ -1,12 +1,23 @@
 .panel
   .panel-body
-    %h4.page-header= @category.name
+    %h4.page-header= _('Category')
 
-    %strong Associated products
-    %ol
-      - @category.products.each_with_index do |product, index|
-        %li= product.name
+    %dl.dl-horizontal
+      - Category.globalize_locales.each do |locale|
+        %dt= _("Title %s:") % locale.upcase
+        %dd= @category.send("title_#{locale}")
+
+    %dl.dl-horizontal
+      %dt= _('Products:')
+      - if @category.products.exists?
+        - @category.products.each_with_index do |product, index|
+          %dd
+            -# # = "#{index+1}. #{product.title}"
+            = icon_link_to "#{index+1}. #{product.title}", edit_product_path(product), { class: '' }, 'fa-edit'
+      - else
+        %dd
+          = link_to _('New product'), new_product_path
 
   .panel-footer
-    = link_to 'Edit category', edit_category_path(@category), class: 'btn btn-default'
-    = link_to 'Back to categories', categories_path
+    = link_to _('Edit'), edit_category_path(@category), class: 'btn btn-default'
+    = link_to _('Back'), categories_path

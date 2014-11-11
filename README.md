@@ -1,9 +1,11 @@
-E-Shop training application
+E-Shop training application [![Build Status](https://secure.travis-ci.org/vlewin/e-shop.png?branch=master)](https://travis-ci.org/vlewin/e-shop)
 ======
 
 Playground for new ruby on rails technologies and gems
 
-DEMO SHOP: (http://e-shop-demo-eu.herokuapp.com/)
+Visit the [DEMO SHOP](http://e-shop-demo-eu.herokuapp.com) 
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/vlewin/e-shop)
 
 TODO:
 - add counter cache for products

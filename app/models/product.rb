@@ -1,21 +1,29 @@
 class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
+  translates :title, :description, fallbacks_for_empty_translations: true
+  globalize_accessors locales: [:de, :ru], attributes: [:title, :description]
+
   belongs_to :category, counter_cache: true
+  belongs_to :vat
   has_many :line_items
   has_many :orders, through: :line_items
 
+  # has_many :translations, dependent: :destroy
+
+  validates :title, :description, presence: true
+  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
+  validates :title, uniqueness: true
+
   before_destroy :ensure_not_referenced_by_any_line_item
 
-  validates :name, :description, presence: true
-  validates :price, numericality: { greater_than_or_equal_to: 0.01 }
-  validates :name, uniqueness: true
-  validates :name, length: { minimum: 4 }
+  default_scope {
+    includes(:translations)
+  }
 
   def decrease_quantity(amount=1)
-    return unless self.quantity.zero? || (self.quantity-amount) < 0
-
-    self.update_attribute(:quantity, (self.quantity-amount))
+    amount = ((quantity-amount) < 0) ? 0 : quantity-amount
+    self.update_attribute(:quantity, amount)
   end
 
   def available_quantity
@@ -36,7 +44,7 @@ class Product < ActiveRecord::Base
 
   private
 
-  # ensure that there are no line items referencing this product
+  # Ensure that there are no line items referencing this product
   def ensure_not_referenced_by_any_line_item
     if line_items.empty?
       return true

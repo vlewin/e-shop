@@ -1,18 +1,23 @@
 class Order < ActiveRecord::Base
-  PAYMENT_TYPES = [ 'Cash payment at pickup ', 'Bank transfer', 'Purchase order' ]
+  # PAYMENT_TYPES = [
+  #   'Cash payment at pickup',
+  #   'Bank transfer',
+  #   'Purchase order'
+  # ]
+
   enum status: [ :accepted, :in_progress, :shipped, :completed ]
 
   belongs_to :user
   belongs_to :shipment
+  belongs_to :payment
 
-  # has_one :user, :through => :address
   belongs_to :address, foreign_key: :shipping_address_id
   belongs_to :billing_address, class_name: 'Address', foreign_key: :billing_address_id
+  belongs_to :shipping_address, class_name: 'Address', foreign_key: :shipping_address_id
 
   has_many :line_items, dependent: :destroy
 
-  validates :shipping_address_id, :shipment_id, :pay_type, presence: true
-  validates :pay_type, inclusion: PAYMENT_TYPES
+  validates :shipping_address_id, :shipment_id, :payment_id, presence: true
 
   before_create :set_billing_address
 
@@ -31,18 +36,18 @@ class Order < ActiveRecord::Base
   end
 
   def subtotal
-    line_items.to_a.sum { |item| item.subtotal }
+    line_items.to_a.sum(&:subtotal)
   end
 
   def total
-    line_items.to_a.sum { |item| item.total } + shipment.rate
+    line_items.to_a.sum { |item| item.total } + shipment.fee
   end
 
   def count
-    line_items.to_a.sum { |item| item.quantity }
+    line_items.to_a.sum(&:quantity)
   end
 
   def taxes
-    line_items.to_a.sum { |item| item.tax }
+    line_items.to_a.sum(&:tax)
   end
 end

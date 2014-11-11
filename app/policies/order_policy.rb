@@ -1,4 +1,14 @@
 class OrderPolicy < ApplicationPolicy
+  class Scope < Struct.new(:user, :scope)
+    def resolve
+      if user.admin?
+        scope.all
+      else
+        user.orders
+      end
+    end
+  end
+
   def index?
     @user.admin?
   end
@@ -8,7 +18,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def show?
-    @user.admin? || @user.orders.find(@record)
+    @user.admin? || @user.orders.exists?(record)
   end
 
   def update?
@@ -17,15 +27,5 @@ class OrderPolicy < ApplicationPolicy
 
   def destroy?
     @user.admin?
-  end
-
-  class Scope < Struct.new(:user, :scope)
-    def resolve
-      if user.admin?
-        scope.all
-      else
-        user.orders
-      end
-    end
   end
 end

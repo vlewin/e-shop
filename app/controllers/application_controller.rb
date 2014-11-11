@@ -1,14 +1,24 @@
 class ApplicationController < ActionController::Base
+  include FastGettext::Translation
   include Pundit
+
   protect_from_forgery with: :exception
 
-  before_filter :authenticate_user!, :set_locale, :current_cart
-  helper_method :current_view, :current_cart
+  before_filter :set_gettext_locale, :authenticate_user!, :current_cart #, :purge_stale_carts
+  helper_method :current_view, :current_cart, :current_locale
 
   rescue_from Exception, with: :handle_exceptions
 
+  # def purge_stale_carts
+  #   Cart.where("updated_at  <?", 30.minutes.ago).destroy_all
+  # end
+
+  def current_locale
+    I18n.locale
+  end
+
   def current_view
-    @current_view ||= (params[:view] || session[:view] || 'grid')
+    @current_view ||= params[:view] || ((session[:view] == '')? nil : session[:view]) || 'grid'
     session[:view] = @current_view
     @current_view
   end
@@ -21,11 +31,6 @@ class ApplicationController < ActionController::Base
     @current_cart
   end
 
-  def set_locale
-    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
-    @current_locale ||= session[:locale] = I18n.locale
-  end
-
   def redirect_to_back_or_default(default = root_url)
     if request.env['HTTP_REFERER'].present? && request.env['HTTP_REFERER'] != request.env['REQUEST_URI']
       redirect_to :back
@@ -36,7 +41,7 @@ class ApplicationController < ActionController::Base
 
   private
   def check_product_availability
-    redirect_to(root_path, alert: 'This product is out of stock') if @product.out_of_stock?
+    redirect_to(root_path, alert: _('This product is out of stock')) if @product.out_of_stock?
   end
 
   def not_found
@@ -46,11 +51,10 @@ class ApplicationController < ActionController::Base
   def handle_exceptions(exception)
     case exception
     when Pundit::NotAuthorizedError
-      flash[:error] = t('authorization.not_authorized')
+      flash[:error] = _('You are not authorized to perform this action')
       redirect_to(request.referrer || root_path)
     when Pundit::AuthorizationNotPerformedError
-      flash[:error] = t('authorization.not_authorized')
-      # redirect_to(request.referrer || root_path) and return
+      flash[:error] = _('You are not authorized to perform this action')
     when ActionView::MissingTemplate
       not_found and return
     when ActiveRecord::RecordNotFound

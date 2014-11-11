@@ -2,34 +2,34 @@
   .col-sm-8.col-sm-offset-2.col-md-5.col-md-offset-3
     .panel.panel-default
       .panel-heading
-        %strong= t('authentication.sign_in')
+        %strong= _('Sign-in')
       .panel-body
         = render 'layouts/errors', object: resource
         = form_for(resource, as: resource_name, url: session_path(resource_name), html: { role: 'form'}) do |f|
           .form-group
-            = label_tag t('forms.email')
+            %label= _('Email')
             = f.email_field :email, autofocus: true, class: 'form-control'
 
           .form-group
-            = f.label t('forms.password')
+            = f.label _('Password')
             - if devise_mapping.recoverable?
               %small
-                = link_to "(#{t('authentication.reset_password')})", new_password_path(resource_name), class: 'pill-right'
+                = link_to "(#{_('Reset password')})", new_password_path(resource_name), class: 'pill-right'
             = f.password_field :password, class: 'form-control'
 
             - if devise_mapping.rememberable?
               .checkbox
                 %small
                   = f.check_box :remember_me
-                  = f.label t('forms.remember_me')
+                  = f.label _('Remember me')
 
-          = f.submit t('authentication.sign_in'), class: 'btn btn-success'
+          = f.submit _('Sign in'), class: 'btn btn-success'
 
           %hr.line
 
           - if devise_mapping.registerable?
-            %small= t('authentication.account_new')
+            %small= _("Don't have an account?")
             |
-            %small= link_to t('authentication.sign_up'), new_registration_path(resource_name)
+            %small= link_to _('Sign up'), new_registration_path(resource_name)
 
 

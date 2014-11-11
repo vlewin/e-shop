@@ -20,3 +20,45 @@ hr.line {
 .no-padding {
   padding: 0;
 }
+
+
+.bs-callout {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  border-color: #eee;
+  border-image: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px 1px 1px 1px;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #fff;
+
+  h4 {
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+
+  &.bs-callout-warning {
+    border-color: #f0ad4e;
+    h4 {
+      color: #f0ad4e;
+    }
+  }
+
+  &.bs-callout-danger {
+    border-left-color: #d9534f;
+    h4 {
+      color: #d9534f;
+    }
+  }
+
+  &.bs-callout-info {
+    border-left-color: #5bc0de;
+    h4 {
+      color: #5bc0de;
+    }
+  }
+}

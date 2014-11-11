@@ -11,7 +11,11 @@ class CartPolicy < ApplicationPolicy
     @user.admin?
   end
 
-  def destroy?
+  # def destroy?
+  #   @user.admin?
+  # end
+
+  def purge?
     @user.admin?
   end
 

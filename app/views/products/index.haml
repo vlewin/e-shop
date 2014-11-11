@@ -1,30 +1,30 @@
 %h4.page-header.no-margin
   Products
   .pull-right
-    %small= link_to 'New product', new_product_path
+    = link_to _('New product'), new_product_path, class: 'btn btn-xs btn-success'
 
 .panel.panel-default
   .panel-body
     %table.table.table-hover
       %thead
         %tr
-          %th Image
-          %th EAN
-          %th Name
-          %th Quantity
-          %th Price
-          %th Tax
+          %th= _('Image')
+          %th= _('Title')
+          %th= _('EAN')
+          %th= _('Quantity')
+          %th= _('Price')
+          %th= _('VAT')
           %th{ colspan: 3, width: '20%' }
 
       %tbody
         - @products.each do |product|
           %tr
             %td= product_image_tag product
-            %td= product.article_number
-            %td= product.name
+            %td= product.title
+            %td= product.ean
             %td= product.quantity
             %td= number_to_currency product.price
-            %td= number_to_percentage product.tax
+            %td= number_to_percentage(product.vat.rate, precision: 0)
             %td.text-right
               = icon_link_to '', product, { class: 'btn btn-sm btn-default' }, 'fa-eye'
               = icon_link_to '', edit_product_path(product), { class: 'btn btn-sm btn-default' }, 'fa-edit'

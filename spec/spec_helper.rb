@@ -15,13 +15,20 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
+require 'simplecov'
+SimpleCov.start
+
 RSpec.configure do |config|
   config.before(:suite) do
-    begin
-      DatabaseCleaner.start
-      FactoryGirl.lint
-    ensure
-      DatabaseCleaner.clean
+    FactoryGirl.lint
+    FastGettext.locale = 'en'
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with(:truncation)
+  end
+
+  config.around(:each) do |example|
+    DatabaseCleaner.cleaning do
+      example.run
     end
   end
 
@@ -32,6 +39,16 @@ RSpec.configure do |config|
   # to individual examples or groups you care about by tagging them with
   # `:focus` metadata. When nothing is tagged with `:focus`, all examples
   # get run.
+
+ # Use color in STDOUT
+   config.color = true
+
+ # Use color not only in STDOUT but also in pagers and files
+   config.tty = true
+
+ # Use the specified formatter
+   config.formatter = :documentation # :progress, :html, :textmate
+
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
 
@@ -86,3 +103,11 @@ RSpec.configure do |config|
   end
 
 end
+
+# setup_sqlite_db = lambda do
+#   ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: ':memory:')
+
+#   load "#{Rails.root.to_s}/db/schema.rb" # use db agnostic schema by default
+#   # ActiveRecord::Migrator.up('db/migrate') # use migrations
+# end
+# # silence_stream(STDOUT, &setup_sqlite_db)

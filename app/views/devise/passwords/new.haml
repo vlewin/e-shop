@@ -2,16 +2,16 @@
   .col-sm-8.col-sm-offset-2.col-md-5.col-md-offset-3
     .panel.panel-default
       .panel-heading
-        %strong= t('authentication.reset_password')
+        %strong= _('Reset password')
       .panel-body
         = render 'layouts/errors', object: resource
         = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post}, class: 'form-horizontal') do |f|
           .form-group
-            = label_tag t('forms.email')
+            = label_tag _('Email')
             = f.email_field :email, autofocus: true, class: 'form-control'
 
-          = f.submit t('authentication.reset_password'), class: 'btn btn-success'
+          = f.submit _('Reset password'), class: 'btn btn-success'
 
 
           %hr.line
-          %small= t('authentication.reset_instraction')
+          %small= _("We'll send password reset instructions.")

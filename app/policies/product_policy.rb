@@ -1,13 +1,9 @@
 class ProductPolicy < ApplicationPolicy
-  # Public
   def index?
+    @user.admin?
   end
 
   def show?
-  end
-
-  # Protected
-  def edit?
     @user.admin?
   end
 
@@ -16,6 +12,10 @@ class ProductPolicy < ApplicationPolicy
   end
 
   def create?
+    @user.admin?
+  end
+
+  def edit?
     @user.admin?
   end
 

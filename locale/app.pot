@@ -1,0 +1,743 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-29 11:17+0100\n"
+"PO-Revision-Date: 2014-10-29 11:17+0100\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../app/controllers/line_items_controller.rb:14
+msgid "%s x %s added to your cart!"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:8
+msgid "Accepted"
+msgstr ""
+
+#: ../app/views/account/show.haml:63
+msgid "Account"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:53 ../app/views/store/show.html.haml:56
+msgid "Add to cart"
+msgstr ""
+
+#: ../app/views/addresses/_modal.haml:11 model_attributes.rb:2
+msgid "Address"
+msgstr ""
+
+#: ../app/controllers/addresses_controller.rb:25
+msgid "Address was successfully created."
+msgstr ""
+
+#: ../app/controllers/addresses_controller.rb:45
+msgid "Address was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/addresses_controller.rb:35
+msgid "Address was successfully updated."
+msgstr ""
+
+#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:130
+msgid "Addresses"
+msgstr ""
+
+#: model_attributes.rb:3
+msgid "Address|City"
+msgstr ""
+
+#: model_attributes.rb:4
+msgid "Address|Phone"
+msgstr ""
+
+#: model_attributes.rb:5
+msgid "Address|Recipient"
+msgstr ""
+
+#: model_attributes.rb:6
+msgid "Address|Street"
+msgstr ""
+
+#: model_attributes.rb:7
+msgid "Address|Zip code"
+msgstr ""
+
+#: ../app/views/store/index.haml:98 ../app/views/store/index.haml:124
+msgid "All categories"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:53
+msgid "Already have an account?"
+msgstr ""
+
+#: ../app/views/carts/show.haml:23 ../app/views/orders/index.html.haml:84 ../app/views/payments/index.haml:42 ../app/views/shipments/index.haml:59
+msgid "Are you sure?"
+msgstr ""
+
+#: ../app/views/products/show.haml:53
+msgid "Availability:"
+msgstr ""
+
+#: ../app/views/store/show.html.haml:39
+msgid "Available: %d of %d"
+msgstr ""
+
+#: ../app/views/categories/show.haml:34 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108 ../app/views/payments/_form.haml:35 ../app/views/payments/show.haml:21 ../app/views/products/_form.haml:109 ../app/views/products/show.haml:64 ../app/views/shipments/_form.haml:79 ../app/views/shipments/show.haml:37
+msgid "Back"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:81
+msgid "Back to cart"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
+msgid "Billing address"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:73
+msgid "Can not change order status"
+msgstr ""
+
+#: ../app/views/addresses/_modal.haml:90
+msgid "Cancel"
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:51
+msgid "Cart was successfully destroyed."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:148
+msgid "Carts"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:112
+msgid "Categories"
+msgstr ""
+
+#: ../app/views/categories/show.haml:5 ../app/views/products/_form.haml:63 model_attributes.rb:8
+msgid "Category"
+msgstr ""
+
+#: ../app/controllers/categories_controller.rb:30
+msgid "Category was successfully created."
+msgstr ""
+
+#: ../app/controllers/categories_controller.rb:50
+msgid "Category was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/categories_controller.rb:40
+msgid "Category was successfully updated."
+msgstr ""
+
+#: model_attributes.rb:9
+msgid "Category|Description"
+msgstr ""
+
+#: model_attributes.rb:10
+msgid "Category|Products count"
+msgstr ""
+
+#: model_attributes.rb:11
+msgid "Category|Title"
+msgstr ""
+
+#: ../app/views/carts/show.haml:38
+msgid "Checkout"
+msgstr ""
+
+#: ../app/views/addresses/_form.haml:35
+msgid "City"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
+msgid "Completed"
+msgstr ""
+
+#: ../app/views/account/_account.haml:46 ../app/views/devise/registrations/new.haml:41
+msgid "Confirm Password"
+msgstr ""
+
+#: ../app/views/carts/show.haml:36
+msgid "Continue shopping"
+msgstr ""
+
+#: ../app/views/store/index.haml:52
+msgid "Created at"
+msgstr ""
+
+#: ../app/views/account/_account.haml:60
+msgid "Current password"
+msgstr ""
+
+#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:16
+msgid "Date"
+msgstr ""
+
+#: ../app/views/shipments/index.haml:22
+msgid "Default"
+msgstr ""
+
+#: ../app/views/products/_form.haml:14
+msgid "Description"
+msgstr ""
+
+#: ../app/views/account/_address.haml:47
+msgid "Destroy"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:11
+msgid "Didn't receive confirmation instructions?"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:14
+msgid "Didn't receive unlock instructions?"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:58
+msgid "Don't have an account?"
+msgstr ""
+
+#: ../app/views/products/_form.haml:19 ../app/views/products/index.haml:26
+msgid "EAN"
+msgstr ""
+
+#: ../app/views/products/show.haml:37
+msgid "EAN:"
+msgstr ""
+
+#: ../app/views/store/show.html.haml:37
+msgid "EAN: %s"
+msgstr ""
+
+#: ../app/views/account/_address.haml:42 ../app/views/categories/show.haml:32 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/show.haml:62 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35
+msgid "Edit"
+msgstr ""
+
+#: ../app/views/account/_account.haml:19 ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:27 ../app/views/devise/sessions/new.haml:19
+msgid "Email"
+msgstr ""
+
+#: ../app/views/carts/show.haml:23
+msgid "Empty cart"
+msgstr ""
+
+#: ../app/views/shipments/index.haml:28 ../app/views/shipments/show.haml:26
+msgid "Fee"
+msgstr ""
+
+#: ../app/views/devise/shared/_links.html.slim:8
+msgid "Forgot your password?"
+msgstr ""
+
+#: model_attributes.rb:12
+msgid "Globalize/active record/translation"
+msgstr ""
+
+#: model_attributes.rb:13
+msgid "Globalize::ActiveRecord::Translation|Locale"
+msgstr ""
+
+#: model_attributes.rb:14
+msgid "Globalize::ActiveRecord::Translation|Title"
+msgstr ""
+
+#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/_form.haml:74 ../app/views/products/index.haml:22 ../app/views/store/_products.html.haml:69
+msgid "Image"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:13
+msgid "In progress"
+msgstr ""
+
+#: ../app/views/account/_account.haml:39
+msgid "Leave these fields blank if you don't want to change your password."
+msgstr ""
+
+#: model_attributes.rb:15
+msgid "Line item"
+msgstr ""
+
+#: model_attributes.rb:16
+msgid "LineItem|Price"
+msgstr ""
+
+#: model_attributes.rb:17
+msgid "LineItem|Quantity"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:70
+msgid "My Account"
+msgstr ""
+
+#: ../app/views/account/_account.haml:8 ../app/views/devise/registrations/new.haml:20
+msgid "Name"
+msgstr ""
+
+#: ../app/views/account/show.haml:40 ../app/views/addresses/index.haml:7 ../app/views/orders/_address.haml:12
+msgid "New address"
+msgstr ""
+
+#: ../app/views/categories/index.haml:7
+msgid "New category"
+msgstr ""
+
+#: ../app/views/payments/index.haml:7
+msgid "New payment"
+msgstr ""
+
+#: ../app/views/products/index.haml:7
+msgid "New product"
+msgstr ""
+
+#: ../app/views/shipments/index.haml:7
+msgid "New shipment"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
+msgid "Next"
+msgstr ""
+
+#: model_attributes.rb:18
+msgid "Order"
+msgstr ""
+
+#: ../app/views/orders/show.haml:41
+msgid "Order #%d"
+msgstr ""
+
+#: ../app/views/orders/show.haml:122
+msgid "Order date"
+msgstr ""
+
+#: ../app/views/orders/_summary.haml:7 ../app/views/orders/new.haml:34 ../app/views/orders/show.haml:148
+msgid "Order summary"
+msgstr ""
+
+#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:106 ../app/views/orders/index.html.haml:1
+msgid "Orders"
+msgstr ""
+
+#: model_attributes.rb:19
+msgid "Order|Status"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:100
+msgid "Out of stock"
+msgstr ""
+
+#: ../app/views/account/_account.haml:33 ../app/views/devise/registrations/new.haml:34 ../app/views/devise/sessions/new.haml:27
+msgid "Password"
+msgstr ""
+
+#: ../app/views/orders/index.html.haml:18 model_attributes.rb:20
+msgid "Payment"
+msgstr ""
+
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:26 ../app/views/orders/show.haml:108
+msgid "Payment method"
+msgstr ""
+
+#: ../app/views/payments/index.haml:3
+msgid "Payment methods"
+msgstr ""
+
+#: ../app/controllers/payments_controller.rb:24
+msgid "Payment was successfully created."
+msgstr ""
+
+#: ../app/controllers/payments_controller.rb:40
+msgid "Payment was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/payments_controller.rb:32
+msgid "Payment was successfully updated."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:142
+msgid "Payments"
+msgstr ""
+
+#: model_attributes.rb:21
+msgid "Payment|Title"
+msgstr ""
+
+#: ../app/views/orders/_summary.haml:110
+msgid "Place order"
+msgstr ""
+
+#: ../app/views/products/_form.haml:96
+msgid "Please be patient the image upload may take a few seconds..."
+msgstr ""
+
+#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/_form.haml:41 ../app/views/products/index.haml:30 ../app/views/store/_products.html.haml:73 ../app/views/store/index.haml:46
+msgid "Price"
+msgstr ""
+
+#: ../app/views/orders/show.haml:163 model_attributes.rb:22
+msgid "Product"
+msgstr ""
+
+#: ../app/views/categories/index.haml:24
+msgid "Product count"
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:31
+msgid "Product was successfully created."
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:52
+msgid "Product was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:41
+msgid "Product was successfully updated."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:118
+msgid "Products"
+msgstr ""
+
+#: ../app/views/categories/show.haml:19
+msgid "Products:"
+msgstr ""
+
+#: model_attributes.rb:23
+msgid "Product|Description"
+msgstr ""
+
+#: model_attributes.rb:24
+msgid "Product|Ean"
+msgstr ""
+
+#: model_attributes.rb:25
+msgid "Product|Image"
+msgstr ""
+
+#: model_attributes.rb:26
+msgid "Product|Price"
+msgstr ""
+
+#: model_attributes.rb:27
+msgid "Product|Quantity"
+msgstr ""
+
+#: model_attributes.rb:28
+msgid "Product|Title"
+msgstr ""
+
+#: ../app/views/shipments/index.haml:24 ../app/views/shipments/show.haml:10
+msgid "Provider"
+msgstr ""
+
+#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/_form.haml:30 ../app/views/products/index.haml:28 ../app/views/store/_products.html.haml:75
+msgid "Quantity"
+msgstr ""
+
+#: ../app/views/addresses/_form.haml:24
+msgid "Recipient"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:45
+msgid "Remember me"
+msgstr ""
+
+#: ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
+msgid "Reset password"
+msgstr ""
+
+#: ../app/views/payments/_form.haml:33 ../app/views/products/_form.haml:107 ../app/views/shipments/_form.haml:77
+msgid "Save"
+msgstr ""
+
+#: ../app/views/addresses/_modal.haml:88
+msgid "Save changes"
+msgstr ""
+
+#: ../app/views/store/index.haml:16
+msgid "Search"
+msgstr ""
+
+#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:96 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:215 model_attributes.rb:29
+msgid "Shipment"
+msgstr ""
+
+#: ../app/controllers/shipments_controller.rb:24
+msgid "Shipment was successfully created."
+msgstr ""
+
+#: ../app/controllers/shipments_controller.rb:40
+msgid "Shipment was successfully destroyed."
+msgstr ""
+
+#: ../app/controllers/shipments_controller.rb:32
+msgid "Shipment was successfully updated."
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:136
+msgid "Shipments"
+msgstr ""
+
+#: model_attributes.rb:30
+msgid "Shipment|Default"
+msgstr ""
+
+#: model_attributes.rb:31
+msgid "Shipment|Fee"
+msgstr ""
+
+#: model_attributes.rb:32
+msgid "Shipment|Provider"
+msgstr ""
+
+#: model_attributes.rb:33
+msgid "Shipment|Title"
+msgstr ""
+
+#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:18
+msgid "Shipped"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:82
+msgid "Shipping address"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:10
+msgid "Shipping and Billing address"
+msgstr ""
+
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:18
+msgid "Shipping method"
+msgstr ""
+
+#: ../app/views/shipments/index.haml:3
+msgid "Shipping methods"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:57 ../app/views/devise/sessions/new.haml:51 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90 ../app/views/devise/shared/_links.html.slim:2
+msgid "Sign in"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:72
+msgid "Sign out"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:47 ../app/views/devise/sessions/new.haml:62 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92 ../app/views/devise/shared/_links.html.slim:5
+msgid "Sign up"
+msgstr ""
+
+#: ../app/views/devise/sessions/new.haml:9
+msgid "Sign-in"
+msgstr ""
+
+#: ../app/views/devise/registrations/new.haml:9
+msgid "Sign-up"
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:53
+msgid "Something went wrong"
+msgstr ""
+
+#: ../app/views/store/_products.html.haml:122
+msgid "Sorry, the product was not found."
+msgstr ""
+
+#: ../app/views/store/index.haml:31
+msgid "Sort"
+msgstr ""
+
+#: ../app/views/account/_order.haml:9 ../app/views/orders/index.html.haml:14
+msgid "Status"
+msgstr ""
+
+#: ../app/views/addresses/_form.haml:46
+msgid "Street"
+msgstr ""
+
+#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:64 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/index.html.haml:20 ../app/views/orders/show.haml:205
+msgid "Subtotal"
+msgstr ""
+
+#: ../app/views/orders/index.html.haml:22
+msgid "Tax"
+msgstr ""
+
+#: ../app/controllers/orders_controller.rb:58
+msgid "Thank you for your order!"
+msgstr ""
+
+#: ../app/controllers/application_controller.rb:44
+msgid "This product is out of stock"
+msgstr ""
+
+#: ../app/views/carts/_items.haml:9 ../app/views/categories/_form.haml:12 ../app/views/categories/index.haml:22 ../app/views/orders/_summary.haml:24 ../app/views/payments/index.haml:22 ../app/views/payments/show.haml:10 ../app/views/products/_form.haml:12 ../app/views/products/index.haml:24 ../app/views/shipments/index.haml:26 ../app/views/shipments/show.haml:18 ../app/views/store/_products.html.haml:71 ../app/views/store/index.haml:40
+msgid "Title"
+msgstr ""
+
+#: ../app/views/payments/_form.haml:19 ../app/views/shipments/_form.haml:35
+msgid "Title %s"
+msgstr ""
+
+#: ../app/views/categories/show.haml:11
+msgid "Title %s:"
+msgstr ""
+
+#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:114 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:24 ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225
+msgid "Total"
+msgstr ""
+
+#: ../app/views/account/_account.haml:77
+msgid "Update account"
+msgstr ""
+
+#: model_attributes.rb:34
+msgid "User"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:124
+msgid "Users"
+msgstr ""
+
+#: model_attributes.rb:35
+msgid "User|Confirmation sent at"
+msgstr ""
+
+#: model_attributes.rb:36
+msgid "User|Confirmation token"
+msgstr ""
+
+#: model_attributes.rb:37
+msgid "User|Confirmed at"
+msgstr ""
+
+#: model_attributes.rb:38
+msgid "User|Current sign in at"
+msgstr ""
+
+#: model_attributes.rb:39
+msgid "User|Current sign in ip"
+msgstr ""
+
+#: model_attributes.rb:40
+msgid "User|Email"
+msgstr ""
+
+#: model_attributes.rb:41
+msgid "User|Encrypted password"
+msgstr ""
+
+#: model_attributes.rb:42
+msgid "User|Integer"
+msgstr ""
+
+#: model_attributes.rb:43
+msgid "User|Last sign in at"
+msgstr ""
+
+#: model_attributes.rb:44
+msgid "User|Last sign in ip"
+msgstr ""
+
+#: model_attributes.rb:45
+msgid "User|Name"
+msgstr ""
+
+#: model_attributes.rb:46
+msgid "User|Remember created at"
+msgstr ""
+
+#: model_attributes.rb:47
+msgid "User|Reset password sent at"
+msgstr ""
+
+#: model_attributes.rb:48
+msgid "User|Reset password token"
+msgstr ""
+
+#: model_attributes.rb:49
+msgid "User|Role"
+msgstr ""
+
+#: model_attributes.rb:50
+msgid "User|Sign in count"
+msgstr ""
+
+#: model_attributes.rb:51
+msgid "User|String"
+msgstr ""
+
+#: model_attributes.rb:52
+msgid "User|Unconfirmed email"
+msgstr ""
+
+#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:80 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/_form.haml:52 ../app/views/products/index.haml:32
+msgid "VAT"
+msgstr ""
+
+#: ../app/views/products/show.haml:45
+msgid "VAT:"
+msgstr ""
+
+#: model_attributes.rb:53
+msgid "Vat"
+msgstr ""
+
+#: model_attributes.rb:54
+msgid "Vat|Rate"
+msgstr ""
+
+#: model_attributes.rb:55
+msgid "Vat|Title"
+msgstr ""
+
+#: ../app/views/store/index.haml:60
+msgid "View"
+msgstr ""
+
+#: ../app/views/devise/passwords/new.haml:31
+msgid "We'll send password reset instructions."
+msgstr ""
+
+#: ../app/controllers/application_controller.rb:54 ../app/controllers/application_controller.rb:57
+msgid "You are not authorized to perform this action"
+msgstr ""
+
+#: ../app/views/account/_account.haml:68
+msgid "You must enter your current password to make changes."
+msgstr ""
+
+#: ../app/views/carts/show.haml:15 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34
+msgid "Your Cart"
+msgstr ""
+
+#: ../app/views/account/_address.haml:62
+msgid "Your addresses list is empty"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:73
+msgid "Your addresses list is empty, please add at least one address"
+msgstr ""
+
+#: ../app/controllers/carts_controller.rb:15 ../app/controllers/carts_controller.rb:33 ../app/controllers/orders_controller.rb:38 ../app/views/carts/show.haml:28
+msgid "Your cart is empty!"
+msgstr ""
+
+#: ../app/views/account/_order.haml:50
+msgid "Your orders list is empty"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:49
+msgid "billing address is same as shipping address"
+msgstr ""

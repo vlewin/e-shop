@@ -1,17 +1,14 @@
-%h4.page-header.no-margin
-  Order
+%h4.page-header.no-margin= _('Orders')
 
 .panel.panel-default
   .panel-body
     %table.table.table-hover
       %thead
         %tr
-          %th Status
-          %th Date
-          %th Pay type
-          %th Subtotal
-          %th Taxes
-          %th Total
+          %th= _('Status')
+          %th= _('Date')
+          %th= _('Payment')
+          %th= _('Total')
           %th{ colspan: 3 }
       %tbody
         - @orders.each do |order|
@@ -19,7 +16,7 @@
             %td
               = form_tag update_status_order_path(order), id: :update_status, method: :put do
                 - labels = { accepted: 'btn-default', in_progress: 'btn-default', shipped: 'btn-primary', completed: 'btn-success'}
-                - icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
+                - icons = { accepted: 'fa-clock-o', in_progress: 'fa-archive', shipped: 'fa-truck', completed: 'fa-check-circle'}
                 .btn-group
                   %button.btn.btn-sm.btn-default.dropdown-toggle{ class: labels[order.status.to_sym], data: { toggle: :dropdown }}
                     %i{ class: "fa #{icons[order.status.to_sym]}"}
@@ -35,12 +32,10 @@
                           = status.humanize
 
             %td= I18n.localize(order.created_at)
-            %td= order.pay_type
-            %td= number_to_currency order.subtotal
-            %td= number_to_currency order.taxes
+            %td= order.payment.title
             %td= number_to_currency order.total
             %td.text-right
               = icon_link_to '', order, { class: 'btn btn-sm btn-default' }, 'fa-eye'
               = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-sm btn-default' }, 'fa-print'
-              = icon_link_to '', order, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+              = icon_link_to '', order, { data: {confirm: _('Are you sure?') }, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
 

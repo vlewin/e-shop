@@ -1,0 +1,59 @@
+%table.table.table-hover.table-responsive
+  %thead
+    %tr
+      %th.hidden-xs{width: '5%'}= _('Image')
+      %th= _('Title')
+      %th= _('Price')
+      %th= _('Quantity')
+      %th.hidden-xs= _('Subtotal')
+      %th.hidden-xs= _('VAT')
+      %th= _('Total')
+      %th ---
+
+  %tbody
+    - @current_cart.line_items.each do |item|
+      %tr
+        %td.hidden-xs= product_image_tag item.product
+        %td= link_to item.product.title, store_product_path(item.product)
+        %td= number_to_currency(item.price)
+        %td
+          = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
+            = hidden_field_tag :line_item_id, item.id
+            = quantity_field_tag item.quantity
+        %td.hidden-xs= number_to_currency(item.subtotal)
+        %td.hidden-xs= number_to_percentage(item.product.vat.rate, precision: 0)
+        %td= number_to_currency(item.total)
+        %td= icon_link_to '', item, { class: 'text-danger', method: :delete}, 'fa-trash-o'
+
+    %tr.text-muted
+      %td.hidden-xs
+      %td.hidden-xs
+      %td.hidden-xs
+      %td{ colspan: 3 }= _('Subtotal')
+      %td{ colspan: 2 }
+        = number_to_currency(@current_cart.subtotal)
+    %tr.text-muted
+      %td.no-line.hidden-xs
+      %td.no-line.hidden-xs
+      %td.no-line.hidden-xs
+      %td.no-line{ colspan: 3 }= _('VAT')
+      %td.no-line{ colspan: 2 }
+        = number_to_currency(@current_cart.taxes)
+    %tr.text-muted
+      %td.no-line.hidden-xs
+      %td.no-line.hidden-xs
+      %td.no-line.hidden-xs
+      %td.no-line{ colspan: 3 }= _('Shipment')
+      %td.no-line{ colspan: 2 }
+        = number_to_currency(Shipment.default.fee)
+    %tr
+      %td.thick-line.hidden-xs
+      %td.thick-line.hidden-xs
+      %td.thick-line.hidden-xs
+      %td.thick-line{ colspan: 3 }
+        %b= _('Total')
+      %td.thick-line{ colspan: 2 }
+        %b= number_to_currency(@current_cart.total)
+
+
+

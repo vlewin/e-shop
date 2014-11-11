@@ -1,11 +1,11 @@
 FactoryGirl.define do
   factory :order do
-    pay_type  'Purchase order'
-    status    :accepted
+    association :user
+    association :address
+    association :shipment
+    association :payment
 
-    association :user,      factory: :user
-    association :address,   factory: :address
-    association :shipment,  factory: :shipment
+    status    :accepted
 
     after :build do |order, evaluator|
       order.line_items << FactoryGirl.create(:order_item, order: order)

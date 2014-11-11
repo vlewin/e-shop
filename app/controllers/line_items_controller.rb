@@ -11,7 +11,7 @@ class LineItemsController < ApplicationController
     @line_item = @cart.add_product(params[:product_id], params[:quantity])
 
     if @line_item.save!
-      redirect_to(root_path, notice: "#{params[:quantity]} x #{@line_item.product.name} added to your cart!")
+      redirect_to root_path, notice: _("%s x %s added to your cart!") % [params[:quantity], @line_item.product.title]
     else
       render action: 'new'
     end

@@ -23,28 +23,36 @@ class OrderPdf < Prawn::Document
 
   def header
     bounding_box([bounds.left, bounds.top], width: 250) do
-      text "E-Shop, Inc", size: 12, style: :bold
-      move_down 0
+      text "E-Shop, Inc", color: "000000", size: 12, style: :bold
       text "Musterstrasse 1
-            3000 Musterstadt
-            Deutschland", size: 10
+            3000 Musterstadt", size: 10
     end
 
-    bounding_box([bounds.left, bounds.top-70], width: 250) do
-      text @order.billing_address.full_name, size: 12, style: :bold
-      move_down 0
-      text "#{@order.billing_address.street}
-            #{@order.billing_address.zip} #{@order.billing_address.city}", size: 10
-    end
+    # bounding_box([bounds.left, bounds.top-70], width: 250) do
+    #   text @order.billing_address.recipient, size: 12, style: :bold
+    #   text "#{@order.billing_address.street}
+    #         #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
+    # end
 
-    bounding_box([bounds.left + 280, bounds.top], width: 260) do
-      move_down 0
-      text "Shipping to:", style: :bold
-      text "#{@order.address.full_address}", size: 10
+    bounding_box([bounds.left + 380, bounds.top], width: 260) do
+      if @order.billing_address == @order.shipping_address
+        text "Shipping & Billing to:", style: :bold
+        text @order.billing_address.recipient, style: :bold
+        text "#{@order.billing_address.street}
+            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
 
-      move_down 10
-      text "Billing to:", style: :bold
-      text "#{@order.address.full_address}", size: 10
+      else
+        text "Shipping to:", style: :bold
+        text @order.shipping_address.recipient, style: :bold
+        text "#{@order.shipping_address.street}
+            #{@order.shipping_address.zip_code} #{@order.shipping_address.city}", size: 10
+
+        move_down 10
+
+        text "Billing to:", style: :bold
+        text @order.billing_address.recipient, style: :bold
+        text "#{@order.billing_address.street}
+            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10      end
     end
   end
 
@@ -75,14 +83,14 @@ class OrderPdf < Prawn::Document
   end
 
   def thead
-    [["Nr", "Product name", "Unit Price", "Quantity", "Full Price"]]
+    [["Nr", "Product title", "Unit price", "Quantity", "Total"]]
   end
 
   def tbody
     @order.line_items.each_with_index.map do |item, index|
       [
         index + 1,
-        item.product.name,
+        item.product.title,
         price(item.product.price),
         item.quantity,
         price(item.subtotal)
@@ -104,7 +112,7 @@ class OrderPdf < Prawn::Document
   def total_rows
     [
       ["", "Sub Total", "#{price(@order.subtotal)}"],
-      ["", "Shipping & Handling", "#{price(@order.shipment.rate) rescue 'not calculated'}"],
+      ["", "Shipping & Handling", "#{price(@order.shipment.fee) rescue 'not calculated'}"],
       ["", "VAT", "#{price(@order.taxes)}"],
       ["", "Total", "#{price(@order.total)}"]
     ]
@@ -114,8 +122,8 @@ class OrderPdf < Prawn::Document
     page_count.times do |i|
       page = i + 1
       go_to_page(page)
-      bounding_box([bounds.left+1, bounds.bottom + 10], :width => 500) do
-        text "Thank you for your business!", :size => 8
+      bounding_box([bounds.left+1, bounds.bottom + 10], width: 500) do
+        text "Thank you for your business!", size: 8
       end
     end
   end

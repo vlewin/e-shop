@@ -6,14 +6,17 @@ class ProductsController < ApplicationController
   after_action :verify_authorized, except: [:index, :show]
 
   def index
-    @products = Product.all
+    @products = Product.includes(:vat).all
+    authorize :products, :index?
   end
 
   def show
+    authorize @product
   end
 
   def new
     @product = Product.new
+    @next_id = (Product.maximum(:id) + 1).to_s.rjust(2, '0')
     authorize @product
   end
 
@@ -26,7 +29,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.save
-      redirect_to products_url, notice: 'Product was successfully created.'
+      redirect_to products_url, notice: _('Product was successfully created.')
     else
       render action: 'new'
     end
@@ -35,8 +38,8 @@ class ProductsController < ApplicationController
   def update
     authorize @product
 
-    if @product.update!(product_params)
-      redirect_to products_url, notice: 'Product was successfully updated.'
+    if @product.update(product_params)
+      redirect_to products_url, notice: _('Product was successfully updated.')
     else
       render action: 'edit'
     end
@@ -47,7 +50,7 @@ class ProductsController < ApplicationController
     authorize @product
 
     if @product.destroy
-      redirect_to products_url, notice: 'Product was successfully destroyed.'
+      redirect_to products_url, notice: _('Product was successfully destroyed.')
     else
       redirect_to products_url, alert: "#{@product.errors.full_messages.join(', ')}"
     end
@@ -63,14 +66,15 @@ class ProductsController < ApplicationController
   # Only allow a trusted parameter "white list" through.
   def product_params
     params.require(:product).permit(
-      :article_number,
-      :name,
+      :ean,
+      :title,
       :description,
       :quantity,
       :price,
-      :tax,
+      :vat_id,
       :category_id,
-      :image
+      :image,
+      *Product.globalize_attribute_names
     )
   end
 

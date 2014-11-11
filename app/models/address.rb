@@ -1,14 +1,31 @@
 class Address < ActiveRecord::Base
   belongs_to :user
+  validates :recipient, :city, :street, :zip_code, :phone, :user_id,  presence: true
 
-  validates :first_name, :last_name, :city, :street, :zip, :phone, :user_id,  presence: true
+  before_destroy :ensure_not_referenced_by_any_order
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+  enum status: { active: 0, inactive: 1 }
+
+  scope :active, -> { where(status: statuses[:active]) }
+  scope :inactive, -> { where(status: statuses[:inactive]) }
 
   def full_address
-    "#{first_name} #{last_name}, #{street}, #{zip} #{city}"
+    "#{recipient}, #{street}, #{zip_code} #{city}"
+  end
+
+  def in_use?
+    !ensure_not_referenced_by_any_order
+  end
+
+  private
+  # Ensure that there are no orders referencing this address
+  def ensure_not_referenced_by_any_order
+    if Order.where("billing_address_id = ? or shipping_address_id = ?", id, id).exists?
+      errors.add(:address, 'is referenced by an order')
+      return false
+    else
+      return true
+    end
   end
 end
 

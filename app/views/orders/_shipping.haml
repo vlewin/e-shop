@@ -1,0 +1,20 @@
+.panel-heading
+  %h4.panel-title
+    %span.round 2
+    = _('Shipping method')
+
+#shipping.panel-collapse.collapse
+  .panel-body
+    - Shipment.all.each_with_index do |shipment, index|
+      .radio
+        %label
+          = form.radio_button :shipment_id, shipment.id, checked: shipment.default
+          = "#{shipment.provider} #{shipment.title}"
+          %b= " #{number_to_currency(shipment.fee)}"
+          - if Shipment.default == shipment
+            %span.label.label-default< Standard
+
+
+    %hr
+    .pull-left= icon_link_to _('Back'), '#address', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 1 } }, 'fa-chevron-circle-left'
+    .pull-right= icon_link_to _('Next'), '#payment', { class: 'btn btn-next btn-success', data: { parent: '#accordion', toggle: 'collapse', step: 3 }}, 'fa-chevron-circle-right'

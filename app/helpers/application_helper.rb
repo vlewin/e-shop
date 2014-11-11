@@ -16,7 +16,7 @@ module ApplicationHelper
       image_tag product.image_url(version), options
     else
       versions = {
-        show:       { width: 250, height: 250 },
+        show:       { width: 380, height: 380 },
         index:      { width: 250, height: 200 },
         thumbnail:  { width: 50, height: 50 },
       }
@@ -47,15 +47,62 @@ module ApplicationHelper
   end
 
   def order_status(status)
-    labels = { accepted: 'label-default', in_progress: 'label-default', shipped: 'label-primary', completed: 'label-success'}
-    icons = { accepted: 'fa-archive', in_progress: 'fa-clock-o', shipped: 'fa-truck', completed: 'fa-check-circle'}
-    content_tag(:span, nil, class: "label #{labels[status.to_sym]}") do
+    status = status.to_sym
+    labels = {
+      accepted: 'label-default',
+      in_progress: 'label-default',
+      shipped: 'label-primary',
+      completed: 'label-success'
+    }
+
+    icons = {
+      accepted: 'fa-clock-o',
+      in_progress: 'fa-archive',
+      shipped: 'fa-truck',
+      completed: 'fa-check-circle'
+    }
+
+    texts = {
+      accepted: _('Accepted'),
+      in_progress: _('In progress'),
+      shipped: _('Shipped'),
+      completed: _('Completed')
+    }
+
+    content_tag(:span, nil, class: "label #{labels[status]}") do
       concat(
-        content_tag(:i, nil, class: "fa #{icons[status.to_sym]}")
+        content_tag(:i, nil, class: "fa #{icons[status]}")
       )
 
-      concat ' ' + status.humanize
+      concat ' ' + texts[status]
     end
   end
 
+  def translation_fields_for(object, attribute, translation)
+    html ||= content_tag(:div, nil, class: 'form-group') do
+      concat content_tag(:label, translation, class: 'col-sm-2 control-label')
+      concat(
+        content_tag(:div, nil, class: 'col-xs-12 col-sm-8 col-md-6') do
+          text_field_tag "#{object.class.class_name.downcase}[#{attribute}]", object.send(attribute), required: true, class: 'form-control'
+        end
+      )
+    end
+
+    locales = object.class.globalize_locales - [current_locale]
+    locales.each do |locale|
+      title = "#{translation} %s" % locale.upcase
+      globilize_attribute = "#{attribute}_#{locale}"
+
+      html += content_tag(:div, nil, class: 'form-group') do
+        concat content_tag(:label, title, class: 'col-sm-2 control-label')
+        concat(
+          content_tag(:div, nil, class: 'col-xs-12 col-sm-8 col-md-6') do
+            text_field_tag "#{object.class.class_name.downcase}[#{globilize_attribute}]", object.send(globilize_attribute), class: 'form-control'
+          end
+        )
+      end
+    end
+
+    html.html_safe
+  end
 end

@@ -1,0 +1,60 @@
+%h4.page-header.no-margin
+  Users
+  .pull-right
+    = link_to _('Invitation new user'), new_user_invitation_path, class: 'btn btn-xs btn-success'
+
+
+.panel.panel-default
+  .panel-body
+    %table.table.table-hover
+      %thead
+        %th= _('Role')
+        %th= _('Name')
+        %th= _('Email')
+        %th.visible-md.visible-lg= _('Last sign in')
+        %th.visible-md.visible-lg= _('Sign in count')
+        %th
+
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td
+
+              - if user.invitation_token
+                %span.label.label-default{ rel: :tooltip, title: _('Pending invitation') }
+                  %i.fa.fa-exclamation-circle
+                  = user.role.capitalize
+              - else
+                %span.label{ class: user.admin? ? 'label-danger' : 'label-success'}
+                  = user.role.capitalize
+            %td= link_to user.name, user
+            %td= user.email
+            %td.visible-md.visible-lg= user.last_sign_in_at
+            %td.visible-md.visible-lg= user.sign_in_count
+            %td.text-right
+              = icon_link_to '', user, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+
+.panel.panel-default
+  .panel-heading
+    %i.fa.fa-clock-o.fa-spin
+    = _('Pending user invitations')
+  .panel-body
+    - if User.invitation_not_accepted.exists?
+      %table.table.table-hover
+        %thead
+          %th= _('Sent at')
+          %th= _('Email')
+          %th= _('Invited by')
+          %th.visible-md.visible-lg= _('Token')
+
+        %tbody
+          - User.invitation_not_accepted.each do |user|
+            %tr
+              %td= user.invitation_sent_at
+              %td= user.email
+              %td= user.invited_by.try(:name)
+              %td.visible-md.visible-lg= user.invitation_token
+              %td.text-right= icon_link_to '', user, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+    - else
+      %b= _('No pending invitations')
+

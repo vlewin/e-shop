@@ -27,7 +27,7 @@ class Cart < ActiveRecord::Base
   end
 
   def total
-    line_items.to_a.sum { |item| item.total } + Shipment.default.rate # + Default shipping cost
+    line_items.to_a.sum { |item| item.total } + Shipment.default.fee # + Default shipping cost
   end
 
   def count

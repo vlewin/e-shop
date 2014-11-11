@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 describe AddressesController, type: :controller do
-  login_user
+  login_admin
 
   let(:address) { FactoryGirl.create(:address)}
   it { should use_before_action(:set_address) }
 
 
-  describe "GET index" do
-    it "assigns all addresses as @addresses" do
+  describe "GET #index" do
+    it "assigns addresses to @addresses" do
       get :index
       expect(assigns(:addresses)).to eq(Address.all)
     end
@@ -20,7 +20,7 @@ describe AddressesController, type: :controller do
   end
 
   describe "GET #show" do
-    it "assigns the users as @users" do
+    it "assigns @address" do
       get :show, id: address
       expect(assigns(:address)).to eq(address)
     end
@@ -31,16 +31,98 @@ describe AddressesController, type: :controller do
     end
   end
 
+  describe "GET #new" do
+    before { get :new }
+
+    it "assigns @address" do
+      expect(assigns(:address)).to be_a_new(Address)
+    end
+
+    it "renders the new view" do
+      expect(response).to render_template("new")
+    end
+  end
+
   describe "POST #create" do
-    it "is a pending example"
+    ActiveRecord::Base.logger = nil
+    context "when valid" do
+      before { post :create, address: FactoryGirl.build(:address).attributes }
+
+      it "redirects to addresses path" do
+        expect(response).to redirect_to(addresses_path)
+      end
+
+      it "sets flash[:notice]" do
+        expect(flash[:notice]).to be_present
+      end
+    end
+
+    context "when invalid" do
+      before { post :create, address: { recipient: 'Foo'} }
+
+      it "renders new template" do
+        expect(response).to render_template("new")
+      end
+    end
+  end
+
+  describe "GET #edit" do
+    before { get :edit, id: address.id }
+
+    it "assigns @address" do
+      expect(assigns(:address)).to eq(address)
+    end
+
+    it "renders the edit template" do
+      expect(response).to render_template("edit")
+    end
   end
 
   describe "PUT #update" do
-    it "is a pending example"
+    context "when success" do
+      before { put :update, address: {recipient: "Update recipient", city: "Update city"}, id: address.id }
+
+      it "redirects to root path" do
+        expect(response).to redirect_to addresses_path
+      end
+
+      it "sets flash[:notice]" do
+        expect(flash[:notice]).to be_present
+      end
+    end
+
+    context "when not success" do
+      before { put :update, address: {recipient: "", city: ""},id: address.id }
+
+      it "renders new template" do
+        expect(response).to render_template("new")
+      end
+    end
+  end
+
+  describe "DELETE #delete" do
+    before { delete :delete, id: address.id }
+
+    it " will redirect to account path" do
+      expect(response).to redirect_to account_path
+    end
+
+    it "will set flash[:notice]" do
+      expect(flash[:notice]).to be_present
+    end
   end
 
   describe "DELETE #destroy" do
-    it "is a pending example"
+    before { delete :destroy, id: address.id }
+
+    it " will redirect to addresses path" do
+      expect(response).to redirect_to addresses_path
+    end
+
+    it "will set flash[:notice]" do
+      expect(flash[:notice]).to be_present
+    end
   end
+
 end
 

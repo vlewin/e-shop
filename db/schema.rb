@@ -11,16 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140423194045) do
+ActiveRecord::Schema.define(version: 20141028203225) do
 
   create_table "addresses", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
+    t.string   "recipient"
     t.string   "city"
     t.string   "street"
-    t.string   "zip"
+    t.string   "zip_code"
     t.string   "phone"
     t.integer  "user_id"
+    t.integer  "status",     default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,12 +31,23 @@ ActiveRecord::Schema.define(version: 20140423194045) do
   end
 
   create_table "categories", force: true do |t|
-    t.string   "name"
+    t.string   "title"
     t.text     "description"
     t.integer  "products_count", default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "category_translations", force: true do |t|
+    t.integer  "category_id", null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
+  add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
 
   create_table "line_items", force: true do |t|
     t.integer  "product_id"
@@ -57,32 +68,68 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.integer  "billing_address_id"
     t.integer  "shipment_id"
     t.integer  "user_id"
-    t.string   "pay_type"
+    t.integer  "payment_id"
     t.integer  "status",              default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "products", force: true do |t|
-    t.string   "name"
-    t.string   "article_number"
+  create_table "payment_translations", force: true do |t|
+    t.integer  "payment_id", null: false
+    t.string   "locale",     null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  add_index "payment_translations", ["locale"], name: "index_payment_translations_on_locale"
+  add_index "payment_translations", ["payment_id"], name: "index_payment_translations_on_payment_id"
+
+  create_table "payments", force: true do |t|
+    t.string "title"
+  end
+
+  create_table "product_translations", force: true do |t|
+    t.integer  "product_id",  null: false
+    t.string   "locale",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "title"
     t.text     "description"
-    t.integer  "quantity",                               default: 0
+  end
+
+  add_index "product_translations", ["locale"], name: "index_product_translations_on_locale"
+  add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id"
+
+  create_table "products", force: true do |t|
+    t.string   "title"
+    t.string   "ean"
+    t.text     "description"
+    t.integer  "quantity",                            default: 0
     t.string   "image"
+    t.decimal  "price",       precision: 8, scale: 2
     t.integer  "category_id"
-    t.decimal  "price",          precision: 8, scale: 2
-    t.decimal  "tax",            precision: 8, scale: 2
+    t.integer  "vat_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "shipments", force: true do |t|
-    t.string   "provider"
-    t.string   "name"
-    t.decimal  "rate"
-    t.boolean  "default",    default: false
+  create_table "shipment_translations", force: true do |t|
+    t.integer  "shipment_id", null: false
+    t.string   "locale",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "title"
+  end
+
+  add_index "shipment_translations", ["locale"], name: "index_shipment_translations_on_locale"
+  add_index "shipment_translations", ["shipment_id"], name: "index_shipment_translations_on_shipment_id"
+
+  create_table "shipments", force: true do |t|
+    t.string  "provider"
+    t.string  "title"
+    t.decimal "fee",      precision: 8, scale: 2
+    t.boolean "default",                          default: false
   end
 
   create_table "users", force: true do |t|
@@ -104,11 +151,26 @@ ActiveRecord::Schema.define(version: 20140423194045) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.string   "invitation_token"
+    t.datetime "invitation_created_at"
+    t.datetime "invitation_sent_at"
+    t.datetime "invitation_accepted_at"
+    t.integer  "invitation_limit"
+    t.integer  "invited_by_id"
+    t.string   "invited_by_type"
+    t.integer  "invitations_count",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "vats", force: true do |t|
+    t.string  "title"
+    t.integer "rate"
+  end
 
 end

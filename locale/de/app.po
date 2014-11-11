@@ -1,0 +1,561 @@
+# German translations for app package.
+# Copyright (C) 2014 THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the app package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: app 1.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"PO-Revision-Date: 2014-10-23 16:23+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: German\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"\n"
+
+msgid "Address was successfully created."
+msgstr "Adresse wurde erfolgreich erstellt."
+
+msgid "Address was successfully updated."
+msgstr "Adresse wurde erfolgreich aktualisiert."
+
+msgid "Address was successfully destroyed."
+msgstr "Adresse wurde erfolgreich zerstört."
+
+msgid "This product is out of stock"
+msgstr "Dieses Produkt ist ausverkauft"
+
+msgid "You are not authorized to perform this action"
+msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
+
+msgid "Your cart is empty!"
+msgstr "Ihr Warenkorb ist leer!"
+
+msgid "Cart was successfully destroyed."
+msgstr "Warenkorb wurde erfolgreich zerstört."
+
+msgid "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
+
+msgid "Category was successfully created."
+msgstr "Kategorie wurde erfolgreich erstellt."
+
+msgid "Category was successfully updated."
+msgstr "Kategorie wurde erfolgreich aktualisiert."
+
+msgid "Category was successfully destroyed."
+msgstr "Kategorie wurde erfolgreich zerstört."
+
+msgid "%s x %s added to your cart!"
+msgstr "%s x %s in den Warenkorb gelegt!"
+
+msgid "Thank you for your order!"
+msgstr "Vielen Dank für Ihre Bestellung!"
+
+msgid "Can not change order status"
+msgstr "Auftragsstatus kann nicht geändern werden"
+
+msgid "Payment was successfully created."
+msgstr "Zahlungsart wurde erfolgreich erstellt."
+
+msgid "Payment was successfully updated."
+msgstr "Zahlungsart wurde erfolgreich aktualisiert."
+
+msgid "Payment was successfully destroyed."
+msgstr "Zahlungsart wurde erfolgreich zerstört."
+
+msgid "Product was successfully created."
+msgstr "Produkt wurde erfolgreich erstellt."
+
+msgid "Product was successfully updated."
+msgstr "Produkt wurde erfolgreich aktualisiert."
+
+msgid "Product was successfully destroyed."
+msgstr "Produkt wurde erfolgreich zerstört."
+
+msgid "Shipment was successfully created."
+msgstr "Versandart wurde erfolgreich erstellt."
+
+msgid "Shipment was successfully updated."
+msgstr "Versandart wurde erfolgreich aktualisiert."
+
+msgid "Shipment was successfully destroyed."
+msgstr "Versandart wurde erfolgreich zerstört."
+
+msgid "Accepted"
+msgstr "Angenommen"
+
+msgid "In progress"
+msgstr "In Bearbeitung"
+
+msgid "Shipped"
+msgstr "Versand"
+
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Email"
+msgstr "E-Mail"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Leave these fields blank if you don't want to change your password."
+msgstr "Lassen Sie diese Feldern leer wenn Sie das Passwort nicht ändern wollen"
+
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+msgid "You must enter your current password to make changes."
+msgstr "Bitte geben Sie Ihr aktuelles Passwort um die Änderungen zu übernehmen"
+
+msgid "Update account"
+msgstr "Konto aktualisieren"
+
+msgid "Edit"
+msgstr "Ändern"
+
+msgid "Destroy"
+msgstr "Löschen"
+
+msgid "Your addresses list is empty"
+msgstr "Ihre Adressen-Liste ist leer"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Payment method"
+msgstr "Zahlungsart"
+
+msgid "Shipment"
+msgstr "Versand"
+
+msgid "Total"
+msgstr "Gesamt"
+
+msgid "Your orders list is empty"
+msgstr "Ihre Auftragsliste ist leer"
+
+msgid "Orders"
+msgstr "Aufträge"
+
+msgid "Addresses"
+msgstr "Adressen"
+
+msgid "New address"
+msgstr "Neue Adresse"
+
+msgid "Account"
+msgstr "Konto"
+
+msgid "Recipient"
+msgstr "Empfänger"
+
+msgid "City"
+msgstr "Stadt"
+
+msgid "Street"
+msgstr "Straße"
+
+msgid "Address"
+msgstr "Adresse"
+
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Image"
+msgstr "Bild"
+
+msgid "Title"
+msgstr "Bezeichnung"
+
+msgid "Price"
+msgstr "Preis"
+
+msgid "Quantity"
+msgstr "Anzahl"
+
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+msgid "VAT"
+msgstr "MwSt"
+
+msgid "Your Cart"
+msgstr "Ihr Warenkorb"
+
+msgid "Are you sure?"
+msgstr "Sind Sie sicher?"
+
+msgid "Empty cart"
+msgstr "Warenkorb leeren"
+
+msgid "Continue shopping"
+msgstr "Weiter einkaufen"
+
+msgid "Checkout"
+msgstr "zur Kasse"
+
+msgid "New category"
+msgstr "Neue Kategorie"
+
+msgid "Product count"
+msgstr "Produktanzahl"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Title %s:"
+msgstr "Bezeichnung %s"
+
+msgid "Products:"
+msgstr "Produkte:"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+msgid "We'll send password reset instructions."
+msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
+
+msgid "Sign-up"
+msgstr "Registrierung"
+
+msgid "Sign up"
+msgstr "Registrieren"
+
+msgid "Already have an account?"
+msgstr "Haben Sie bereits ein Konto?"
+
+msgid "Sign in"
+msgstr "Anmelden"
+
+msgid "Sign-in"
+msgstr "Anmeldung"
+
+msgid "Remember me"
+msgstr "Eingeloggt bleiben"
+
+msgid "Don't have an account?"
+msgstr "Haben Sie noch kein Konto?"
+
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+msgid "Didn't receive confirmation instructions?"
+msgstr "Keine Anleitung zur Bestätigung erhalten?"
+
+msgid "Didn't receive unlock instructions?"
+msgstr "Keine Anleitung zum Entsperren erhalten?"
+
+msgid "My Account"
+msgstr "Mein Konto"
+
+msgid "Sign out"
+msgstr "Abmelden"
+
+msgid "Categories"
+msgstr "Kategorien"
+
+msgid "Products"
+msgstr "Produkte"
+
+msgid "Users"
+msgstr "Benützer"
+
+msgid "Shipments"
+msgstr "Versandarts"
+
+msgid "Payments"
+msgstr "Zahlungsarten"
+
+msgid "Carts"
+msgstr "Warenkörbe"
+
+msgid "Shipping and Billing address"
+msgstr "Versand- und Rechnungsadresse"
+
+msgid "Shipping address"
+msgstr "Versandadresse"
+
+msgid "Billing address"
+msgstr "Rechnungsadresse"
+
+msgid "billing address is same as shipping address"
+msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
+
+msgid "Your addresses list is empty, please add at least one address"
+msgstr "Ihre Adressen-Liste ist leer, fügen Sie bitte mindestens eine Adresse hinzu"
+
+msgid "Back to cart"
+msgstr "Zurück zum Warenkorb"
+
+msgid "Next"
+msgstr "Weiter"
+
+msgid "Shipping method"
+msgstr "Versandart"
+
+msgid "Order summary"
+msgstr "Bestellübersicht"
+
+msgid "Place order"
+msgstr "Bestellung aufgeben"
+
+msgid "Payment"
+msgstr "Zahlung"
+
+msgid "Tax"
+msgstr "Steuer"
+
+msgid "Order #%d"
+msgstr "Auftrag #%d"
+
+msgid "Order date"
+msgstr "Auftragsdatum"
+
+msgid "Product"
+msgstr "Produkt"
+
+msgid "Title %s"
+msgstr "Bezeichnung %s"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Payment methods"
+msgstr "Zahlungsarten"
+
+msgid "New payment"
+msgstr "Neuer Zahlungsart"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "EAN"
+msgstr "Artikelnummer"
+
+msgid "Please be patient the image upload may take a few seconds..."
+msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
+
+msgid "New product"
+msgstr "Neues Produkt"
+
+msgid "EAN:"
+msgstr "Artikelnummer:"
+
+msgid "VAT:"
+msgstr "MwSt:"
+
+msgid "Availability:"
+msgstr "Verfügbarkeit"
+
+msgid "Shipping methods"
+msgstr "Versandmöglichkeiten"
+
+msgid "New shipment"
+msgstr "Neuer Versand"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Provider"
+msgstr "Anbieter"
+
+msgid "Fee"
+msgstr "Gebühr"
+
+msgid "Out of stock"
+msgstr "Ausverkauft"
+
+msgid "Add to cart"
+msgstr "in den Warenkorb"
+
+msgid "Sorry, the product was not found."
+msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
+
+msgid "Search"
+msgstr "Suche"
+
+msgid "Sort"
+msgstr "Sortierung"
+
+msgid "Created at"
+msgstr "Erstellt am"
+
+msgid "View"
+msgstr "Ansicht"
+
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+msgid "EAN: %s"
+msgstr "Artikelnummer: %s"
+
+msgid "Available: %d of %d"
+msgstr "Verfügbar: %d von %d"
+
+msgid "Address|City"
+msgstr "Stadt"
+
+msgid "Address|Phone"
+msgstr "Telefon"
+
+msgid "Address|Recipient"
+msgstr "Empfänger"
+
+msgid "Address|Street"
+msgstr "Straße"
+
+msgid "Address|Zip code"
+msgstr "PLZ"
+
+msgid "Category|Description"
+msgstr "Beschreibung"
+
+msgid "Category|Products count"
+msgstr "Anzahl der Produkte"
+
+msgid "Category|Title"
+msgstr "Bezeichnung"
+
+msgid "Globalize/active record/translation"
+msgstr "Übersetzung"
+
+msgid "Globalize::ActiveRecord::Translation|Locale"
+msgstr "Region"
+
+msgid "Globalize::ActiveRecord::Translation|Title"
+msgstr "Bezeichnung"
+
+msgid "Line item"
+msgstr "Auftragsposition"
+
+msgid "LineItem|Price"
+msgstr "Preis"
+
+msgid "LineItem|Quantity"
+msgstr "Anzahl"
+
+msgid "Order"
+msgstr "Auftrag"
+
+msgid "Order|Status"
+msgstr "Status"
+
+msgid "Payment|Title"
+msgstr "Bezeichnung"
+
+msgid "Product|Description"
+msgstr "Beschreibung"
+
+msgid "Product|Ean"
+msgstr "Artikelnummer"
+
+msgid "Product|Image"
+msgstr "Image"
+
+msgid "Product|Price"
+msgstr "Preis"
+
+msgid "Product|Quantity"
+msgstr "Anzahl"
+
+msgid "Product|Title"
+msgstr "Bezeichnung"
+
+msgid "Shipment|Default"
+msgstr "Standard"
+
+msgid "Shipment|Fee"
+msgstr "Gebühr"
+
+msgid "Shipment|Provider"
+msgstr "Anbieter"
+
+msgid "Shipment|Title"
+msgstr "Bezeichnung"
+
+msgid "User"
+msgstr "Benutzer"
+
+msgid "User|Confirmation sent at"
+msgstr ""
+
+msgid "User|Confirmation token"
+msgstr "Bestätigungscode"
+
+msgid "User|Confirmed at"
+msgstr "bestätigt_at"
+
+msgid "User|Current sign in at"
+msgstr ""
+
+msgid "User|Current sign in ip"
+msgstr ""
+
+msgid "User|Email"
+msgstr ""
+
+msgid "User|Encrypted password"
+msgstr ""
+
+msgid "User|Integer"
+msgstr ""
+
+msgid "User|Last sign in at"
+msgstr ""
+
+msgid "User|Last sign in ip"
+msgstr ""
+
+msgid "User|Name"
+msgstr ""
+
+msgid "User|Remember created at"
+msgstr ""
+
+msgid "User|Reset password sent at"
+msgstr ""
+
+msgid "User|Reset password token"
+msgstr ""
+
+msgid "User|Role"
+msgstr "Role"
+
+msgid "User|Sign in count"
+msgstr "Anzhal der Anmeldungen"
+
+msgid "User|String"
+msgstr "Benutzer"
+
+msgid "User|Unconfirmed email"
+msgstr "Unbestätigte email"
+
+msgid "Vat"
+msgstr "MwSt"
+
+msgid "Vat|Rate"
+msgstr "Satz"
+
+msgid "Vat|Title"
+msgstr "Bezeichnung"

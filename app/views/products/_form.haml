@@ -3,44 +3,42 @@
     .panel-heading
       %h4.page-header.no-margin= "#{params[:action].capitalize} product"
       = render 'layouts/errors', object: @product
+
     .panel-body
       .form-group
-        = f.label :name, class: 'col-sm-2 control-label'
+        = f.label _('Category'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.text_field :name, required: true, autofocus: true, class: 'form-control'
+          - options = Category.all.map{ |c| [c.title, c.id] }
+          = f.select :category_id, options_for_select(options, @product.category_id), { prompt: _('Select category'), required: true }, class: 'form-control'
+
+      = translation_fields_for @product, :title, _('Title')
+      = translation_fields_for @product, :description, _('Description')
 
       .form-group
-        %label.col-sm-2.control-label= f.label :part_number
+        = f.label _('EAN'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.text_field :article_number, required: true, class: 'form-control'
+          = f.text_field :ean, required: true, 'data-id' => @next_id, class: 'form-control'
+          %p.help-block
+            %i.fa.fa-info-circle
+            = _('EAN is composed of category id prefix and next product id')
 
       .form-group
-        %label.col-sm-2.control-label= f.label :description
+        = f.label _('Quantity'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.text_field :description, required: true, class: 'form-control'
+          = f.number_field :quantity, min: 0, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :amount
+        = f.label _('Price'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.number_field :quantity, required: true, class: 'form-control'
+          = f.number_field :price, min: 0, step: 0.01, required: true, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :price
+        = f.label _('VAT'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
-          = f.number_field :price, step: 0.01, required: true, class: 'form-control'
+          = f.select :vat_id, options_for_select(Vat.all.map{ |v| ["#{v.rate}% (#{v.title})", v.id] }, @product.vat_id), {}, class: 'form-control'
 
       .form-group
-        %label.col-sm-2.control-label= f.label :tax
-        .col-xs-12.col-sm-8.col-md-6
-          = f.number_field :tax, required: true, value: 7, class: 'form-control'
-
-      .form-group
-        %label.col-sm-2.control-label= f.label :category
-        .col-xs-12.col-sm-8.col-md-6
-          = f.select :category_id, options_for_select(Category.all.map{ |c| [c.name, c.id] }, @product.category_id), {}, class: 'form-control'
-
-      .form-group
-        %label.col-sm-2.control-label= f.label :image
+        = f.label _('Image'), class: 'col-sm-2 control-label'
         .col-xs-12.col-sm-8.col-md-6
           .well
             .media
@@ -48,10 +46,10 @@
                 = product_image_tag @product
               .media-body
                 = f.hidden_field(:image_cache)
-                = f.file_field :image, accept: 'image/png,image/gif,image/jpeg'
+                = f.file_field :image, accept: 'image/png,image/gif,image/jpeg', class: 'input-md'
               %p.help-block
-                %small Please be patient the image upload may take a few seconds...
+                %small= _('Please be patient the image upload may take a few seconds...')
 
     .panel-footer
-      = f.submit "Save product", class: 'btn btn-success'
-      = link_to 'Back to products', products_path
+      = f.submit _('Save'), class: 'btn btn-success'
+      = link_to _('Back'), products_path

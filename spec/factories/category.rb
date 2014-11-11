@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :category do
-    name Faker::Product.brand
-    description Faker::Lorem.sentence
+    sequence(:title)   { |n| "#{Faker::Product.brand}#{n}" }
 
     after :build do |category, evaluator|
       category.products << FactoryGirl.create(:product, category: category)

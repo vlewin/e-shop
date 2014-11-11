@@ -23,7 +23,7 @@ describe Cart do
   end
 
   it 'calculates a price with taxes and shipping costs' do
-    total = subject.line_items.to_a.sum { |item| item.total } + shipment.rate
+    total = subject.line_items.to_a.sum { |item| item.total } + shipment.fee
     expect(subject.total).to eq(total)
   end
 

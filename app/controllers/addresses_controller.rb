@@ -1,11 +1,14 @@
 class AddressesController < ApplicationController
-  before_action :set_address, only: [:show, :edit, :update, :destroy]
+  before_action :set_address, only: [:show, :edit, :update, :destroy, :delete]
+  after_action :verify_authorized, except: [ :new, :create ]
 
   def index
     @addresses = Address.preload(:user).all
+    authorize :addresses, :index?
   end
 
   def show
+
   end
 
   def new
@@ -20,39 +23,76 @@ class AddressesController < ApplicationController
     @address.user_id = current_user.id
 
     if @address.save
-      flash[:notice] = 'Address was successfully created.'
+      flash[:notice] = _('Address was successfully created.')
+
+      if current_user.admin?
+        redirect_to addresses_path
+      else
+        redirect_to :back
+      end
     else
-      flash[:alert] = @address.errors.full_messages.join(', ')
+      if current_user.admin?
+        render :new
+      else
+        redirect_to :back
+      end
     end
 
-    redirect_to_back_or_default addresses_url
+    # redirect_to_back_or_default addresses_url
   end
 
   def update
     if @address.update(address_params)
-      flash[:notice] = 'Address was successfully updated.'
+      flash[:notice] = _('Address was successfully updated.')
+
+      if current_user.admin?
+        redirect_to addresses_path
+      else
+        redirect_to :back
+      end
+    else
+      if current_user.admin?
+        render :new
+      else
+        redirect_to :back
+      end
+    end
+
+    # redirect_to_back_or_default addresses_url
+  end
+
+  def delete
+    if @address.inactive!
+      flash[:notice] = _('Address was successfully destroyed.')
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
     end
 
-    redirect_to_back_or_default addresses_url
+    redirect_to account_path
   end
 
   def destroy
     if @address.destroy
-      flash[:notice] = 'Address was successfully destroyed.'
+      flash[:notice] = _('Address was successfully destroyed.')
     else
       flash[:alert] = @address.errors.full_messages.join(', ')
     end
+
     redirect_to_back_or_default addresses_url
   end
 
   private
     def set_address
-      @address = Address.find(params[:id])
+      @address = if current_user.admin?
+        Address.find(params[:id])
+      else
+        current_user.addresses.active.find(params[:id])
+      end
+
+       authorize @address
     end
 
     def address_params
-      params.require(:address).permit(:first_name, :last_name, :city, :street, :zip, :phone)
+      params.require(:address).permit(:recipient, :city, :street, :zip_code, :phone)
     end
 end

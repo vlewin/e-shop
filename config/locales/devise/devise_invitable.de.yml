@@ -1,0 +1,22 @@
+de:
+  devise:
+    failure:
+      invited: 'Sie haben eine offene Einladung bitte akzeptieren Sie die um das Konto zu erstellen.'
+
+    invitations:
+      send_instructions: 'Eine Einladungs-E-Mail wurde gesendet an %{email}'
+      invitation_token_invalid: 'Der Einladungs Schlüssel ist nicht gültig!'
+      updated: 'Ihr Passwort wurde erfolgreich gesetzt. Sie sind jetzt angemeldet.'
+      no_invitations_remaining: "Sie können keine weiteren Einladungen mehr vornehmen."
+      invitation_removed: 'Ihre Einladung wurde entfernt.'
+    mailer:
+      invitation_instructions:
+        subject: 'Einladungs-Anweisungen'
+
+    mailer:
+      invitation_instructions:
+        subject: 'Einladung Anweisungen'
+        hello: 'Hallo, %{email}'
+        someone_invited_you: 'Jemand hat Sie zu %{url} eingeladen, wenn Sie die Einladung annehmen wollen, bitte follgen Sie den Link unten.'
+        accept: 'Einladung annehmen'
+        ignore: "Wenn Sie die Einladung nicht annehmen wollen, bitte ignorieren Sie diese E-Mail.<br />Ihr Konto wird erst erstellt, wenn Sie den obigen Link follgen und Ihr Passwort setzen."

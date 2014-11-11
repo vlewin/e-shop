@@ -15,6 +15,13 @@ ru:
         delimiter:      "."
         format:         "%n %u"
 
+  # FIXME: Report an issue for devise-i18n gem
+  devise:
+    account:
+      user:
+        signed_up_but_unconfirmed: "На Ваш адрес электронной почты было отправлено сообщение с инструкциями по подтверждению Вашей учётной записи. Пожалуйста, проследуйте по ссылке из этого письма для активации Вашей учетной записи."
+        updated: "Ваша учётная запись успешно обновлена."
+
   authentication:
     sign_in:                  "Вход"
     sign_up:                  "Регистрация"

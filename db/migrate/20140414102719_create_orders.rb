@@ -5,7 +5,7 @@ class CreateOrders < ActiveRecord::Migration
       t.integer :billing_address_id, default: nil
       t.integer :shipment_id
       t.integer :user_id
-      t.string :pay_type
+      t.integer :payment_id
       t.integer :status, default: 0
 
       t.timestamps

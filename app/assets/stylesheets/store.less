@@ -3,23 +3,6 @@
 #categories {
   &.navbar-nav {
     li {
-      // border-left: 1px solid #cccccc;
-      // &:first-child {
-      //   border-top-left-radius: 3px;
-      //   border-bottom-left-radius: 3px;
-      // }
-
-      // border-left: 1px solid #cccccc;
-      // border-top: 1px solid #cccccc;
-      // border-bottom: 1px solid #a02622;
-
-      // &:last-child {
-      //   border-right: 1px solid #cccccc;
-      //   border-top-right-radius: 3px;
-      //   border-bottom-right-radius: 3px;
-      // }
-
-      // margin-bottom: 25px;
       display: block;
 
       a {
@@ -37,6 +20,50 @@
         border-bottom: 3px solid #a02622;
         border-bottom: 3px solid #5B5;
       }
+    }
+  }
+}
+
+#store {
+  a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+      background-color: #5B5;
+      border-color: #5B5;
+      color: #ffffff;
+      z-index: 2;
+  }
+
+  .nav-tabs > li {
+    // border-bottom: 1px solid #fafafa;
+  }
+
+  .nav-tabs > li.active {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .nav-tabs > li > a {
+    outline: none;
+  }
+
+  .nav-tabs > li > a:hover {
+    background-color: #eee;
+    outline: none;
+  }
+
+  .nav-tabs > li.active > a,
+  .nav-tabs > li.active > a:hover,
+  .nav-tabs > li.active > a:focus {
+    background-color: #ffffff;
+    outline: none;
+    width: 100%;
+  }
+
+  .tab-content {
+    padding: 20px 0px;
+    border-top: none;
+
+    ul.list-group li:first-child {
+      border-top:none;
+      border-top-left-radius: 0px;
     }
   }
 }
@@ -105,7 +132,7 @@
     margin-bottom: 0;
   }
 
-  .name {
+  .title {
     .text-overflow;
   }
 
@@ -132,8 +159,6 @@
   }
 
   &.out-of-stock {
-    border: 1px solid #DDDDDD;
-    position: relative;
     pointer-events: none;
     cursor: default;
   }
@@ -141,7 +166,7 @@
   img {
   }
 
-  .name {
+  .title {
     font-size: 16px;
   }
 
@@ -160,15 +185,17 @@
 
 // Product details
 .product-details {
+  .border-right {
+    border-right: 1px solid #eee;
+  }
   img {
-    width: 100%;
-    height: 100%;
-    margin: 20px 10px;
+    // width: 100%;
+    // height: 100%;
   }
 
   .product {
-    border-left: 1px solid #eee;
-    padding-left: 20px;
+    // border-left: 1px solid #eee;
+    // padding-left: 20px;
   }
 }
 
