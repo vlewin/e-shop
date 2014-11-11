@@ -3,7 +3,9 @@ E-Shop training application
 
 Playground for new ruby on rails technologies and gems
 
-DEMO SHOP: (http://e-shop-demo-eu.herokuapp.com/)
+Visit the [DEMO SHOP](http://e-shop-demo-eu.herokuapp.com) 
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/heroku/node-js-sample)
 
 TODO:
 - add counter cache for products
