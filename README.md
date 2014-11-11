@@ -1,4 +1,4 @@
-E-Shop training application
+E-Shop training application [![Build Status](https://secure.travis-ci.org/vlewin/e-shop.png?branch=master)](https://travis-ci.org/vlewin/e-shop)
 ======
 
 Playground for new ruby on rails technologies and gems
