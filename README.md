@@ -1,4 +1,4 @@
-E-Shop training application [![Build Status](https://secure.travis-ci.org/vlewin/e-shop.png?branch=master)](https://travis-ci.org/vlewin/e-shop) [![Code Climate](https://codeclimate.com/github/vlewin/e-shop/badges/gpa.svg)](https://codeclimate.com/github/vlewin/e-shop) [![Coverage Status](https://coveralls.io/repos/vlewin/e-shop/badge.png)](https://coveralls.io/r/vlewin/e-shop)
+##E-Shop training application [![Build Status](https://secure.travis-ci.org/vlewin/e-shop.png?branch=master)](https://travis-ci.org/vlewin/e-shop) [![Code Climate](https://codeclimate.com/github/vlewin/e-shop/badges/gpa.svg)](https://codeclimate.com/github/vlewin/e-shop) [![Coverage Status](https://coveralls.io/repos/vlewin/e-shop/badge.png)](https://coveralls.io/r/vlewin/e-shop)
 ======
 
 Playground for new ruby on rails technologies and gems
