@@ -8,6 +8,7 @@ Visit the [DEMO SHOP](http://e-shop-demo-eu.herokuapp.com)
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/vlewin/e-shop)
 
 TODO:
+- Set up [Coveralls](https://coveralls.io/r/vlewin/e-shop)
 - Refactor code based on [Consistent controller design "Beatiful constrollers"](https://leanpub.com/growing-rails/packages/book/purchases/c/ctc-hnYLzMjMo)
 - Take a look at [ActiveType](https://github.com/makandra/active_type)
 - Try [filterrific](https://github.com/jhund/filterrific)
