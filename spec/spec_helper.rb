@@ -15,8 +15,14 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
-require 'simplecov'
-SimpleCov.start
+if ENV['CODECLIMATE_REPO_TOKEN']
+  require 'codeclimate-test-reporter'
+  CodeClimate::TestReporter.start
+else
+  require 'simplecov'
+  # SimpleCov.start
+  SimpleCov.start 'rails'
+end
 
 RSpec.configure do |config|
   config.before(:suite) do

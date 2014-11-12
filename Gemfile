@@ -50,7 +50,6 @@ group :development, :test do
   gem 'sqlite3'
   gem 'awesome_print'
   gem 'byebug'
-  gem 'simplecov', require: false, group: :test
 end
 
 group :development do
@@ -65,6 +64,8 @@ group :development do
 end
 
 group :test do
+  gem 'simplecov'
+  gem 'codeclimate-test-reporter'
   gem 'rspec-rails', '~> 3.0.1'
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
