@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %title E-Shop
+    %meta{ name: :description, content: 'E-Shop' }
+    %meta{ content: 'width=device-width, initial-scale=1', name: 'viewport' }
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag "application", media: "all", 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    #wrap
+      = render 'layouts/navigation'
+
+      .container-fluid
+        .row
+          #sidebar.col-sm-3.col-md-2
+            = render 'layouts/sidebar'
+
+          #main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
+            = yield
+
+  %footer
+    .container-fluid
+      .row
+        .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2
+          %div
+            &copy; 2014 E-Shop, Inc. ·
+            %a{ href: '#' } Privacy
+            ·
+            %a{ href: '#' }  Delivery &amp; Returns
+            ·
+            %a{ href: '#' }  Terms &amp; Conditions
+            ·
+            %a{ href: '#' }  About Us

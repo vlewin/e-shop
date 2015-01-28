@@ -7,6 +7,8 @@ class StoreController < ApplicationController
   skip_before_filter :current_cart, only: [:index]
   skip_before_filter :authenticate_user!
 
+  # layout :main
+
   def index
     # ActiveRecord::Base.logger = nil
 

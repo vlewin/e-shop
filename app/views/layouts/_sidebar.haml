@@ -1,0 +1,15 @@
+- if @current_user
+  %ul.nav.nav-sidebar
+    %li.active
+      %a{:href => ""}
+        = "Logged in as: #{@current_user.name}"
+
+%ul.nav.nav-sidebar
+  %li{ class: params[:category_translations_title_eq].nil? ? 'active' : '' }
+    = link_to _('All categories'), root_path(view: @view), remote: :true
+  - Category.all.each do |cat|
+    - title = "#{cat.title} (#{cat.products_count})"
+    - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
+    %li{ class: cat.title == params[:category_translations_title_eq] ? 'active' : '' }
+      = link_to title, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+
