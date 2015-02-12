@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 #ruby '2.1.3'
 
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.2.0'
 
 # App localization
 gem 'rails-i18n', '~> 4.0.0'
@@ -18,7 +18,7 @@ gem 'therubyracer'
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'slim-rails'
+# gem 'slim-rails'
 gem 'less-rails'
 
 gem 'less-rails-bootstrap'
