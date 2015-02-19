@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20141028203225) do
 
-  create_table "addresses", force: true do |t|
+  create_table "addresses", force: :cascade do |t|
     t.string   "recipient"
     t.string   "city"
     t.string   "street"
@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
-  create_table "carts", force: true do |t|
+  create_table "carts", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "products_count", default: 0
@@ -38,18 +38,18 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
-  create_table "category_translations", force: true do |t|
+  create_table "category_translations", force: :cascade do |t|
     t.integer  "category_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "title"
   end
 
   add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
   add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
 
-  create_table "line_items", force: true do |t|
+  create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
     t.integer  "order_id"
     t.integer  "cart_id"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
   add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
 
-  create_table "orders", force: true do |t|
+  create_table "orders", force: :cascade do |t|
     t.integer  "shipping_address_id"
     t.integer  "billing_address_id"
     t.integer  "shipment_id"
@@ -74,26 +74,26 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
-  create_table "payment_translations", force: true do |t|
+  create_table "payment_translations", force: :cascade do |t|
     t.integer  "payment_id", null: false
     t.string   "locale",     null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "title"
   end
 
   add_index "payment_translations", ["locale"], name: "index_payment_translations_on_locale"
   add_index "payment_translations", ["payment_id"], name: "index_payment_translations_on_payment_id"
 
-  create_table "payments", force: true do |t|
+  create_table "payments", force: :cascade do |t|
     t.string "title"
   end
 
-  create_table "product_translations", force: true do |t|
+  create_table "product_translations", force: :cascade do |t|
     t.integer  "product_id",  null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "title"
     t.text     "description"
   end
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale"
   add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id"
 
-  create_table "products", force: true do |t|
+  create_table "products", force: :cascade do |t|
     t.string   "title"
     t.string   "ean"
     t.text     "description"
@@ -114,25 +114,25 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
-  create_table "shipment_translations", force: true do |t|
+  create_table "shipment_translations", force: :cascade do |t|
     t.integer  "shipment_id", null: false
     t.string   "locale",      null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.string   "title"
   end
 
   add_index "shipment_translations", ["locale"], name: "index_shipment_translations_on_locale"
   add_index "shipment_translations", ["shipment_id"], name: "index_shipment_translations_on_shipment_id"
 
-  create_table "shipments", force: true do |t|
+  create_table "shipments", force: :cascade do |t|
     t.string  "provider"
     t.string  "title"
     t.decimal "fee",      precision: 8, scale: 2
     t.boolean "default",                          default: false
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
@@ -168,7 +168,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
   add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
-  create_table "vats", force: true do |t|
+  create_table "vats", force: :cascade do |t|
     t.string  "title"
     t.integer "rate"
   end
