@@ -8,8 +8,8 @@ test:
   adapter: sqlite3
   pool: 5
   timeout: 5000
-  # database: db/development.sqlite3
-  database: ":memory:"
+  database: db/development.sqlite3
+  # database: ":memory:"
   verbosity: quiet
 
 production:
