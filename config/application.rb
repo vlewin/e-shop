@@ -28,13 +28,16 @@ module EShop
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.yml"]
     config.i18n.available_locales = [:en, :de, :ru ]
     config.i18n.default_locale = :de
-    config.i18n.fallbacks = [config.i18n.default_locale]
-    config.i18n.fallbacks = true
-    config.less.paths << File.join(Rails.root, 'app', 'assets', 'stylesheets')
+    config.i18n.fallbacks = [config.i18n.available_locales]
+
     # Should be set to true in production.
     config.less.compress = false
+    config.less.paths << File.join(Rails.root, 'app', 'assets', 'stylesheets')
 
+    # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    config.active_record.schema_format = :ruby
 
     config.generators do |g|
       g.helper false
