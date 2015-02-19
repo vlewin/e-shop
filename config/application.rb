@@ -34,6 +34,8 @@ module EShop
     # Should be set to true in production.
     config.less.compress = false
 
+    config.active_record.raise_in_transactional_callbacks = true
+
     config.generators do |g|
       g.helper false
       g.stylesheets false
