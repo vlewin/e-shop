@@ -19,27 +19,34 @@ class Product < ActiveRecord::Base
 
   default_scope {
     includes(:translations)
+
   }
+
+  class << self
+    def next_id
+      (Product.maximum(:id).to_i + 1).to_s.rjust(2, '0')
+    end
+  end
 
   def decrease_quantity(amount=1)
     amount = ((quantity-amount) < 0) ? 0 : quantity-amount
-    self.update_attribute(:quantity, amount)
+    update_attribute(:quantity, amount)
   end
 
   def available_quantity
-    self.quantity - reserved_quantity
+    quantity - reserved_quantity
   end
 
   def reserved_quantity
-    self.line_items.where(order_id: nil).sum(:quantity)
+    line_items.where(order_id: nil).sum(:quantity)
   end
 
   def sold_quantity
-    self.line_items.where.not(order_id: nil).sum(:quantity)
+    line_items.where.not(order_id: nil).sum(:quantity)
   end
 
   def out_of_stock?
-    self.quantity.zero? || reserved_quantity >= self.quantity
+    quantity.zero? || reserved_quantity >= quantity
   end
 
   private
