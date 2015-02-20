@@ -7,7 +7,6 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 LANGUAGES = {
-  en: 'English',
   de: 'Deutsch',
   ru: 'Русский'
 }
@@ -26,8 +25,9 @@ module EShop
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}')]
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.yml"]
-    config.i18n.available_locales = [:en, :de, :ru ]
+    config.i18n.locale = :de
     config.i18n.default_locale = :de
+    config.i18n.available_locales = [:de, :ru ]
     config.i18n.fallbacks = [config.i18n.available_locales]
 
     # Should be set to true in production.
@@ -50,3 +50,9 @@ module EShop
     end
   end
 end
+
+
+# WARNING: I18n.enforce_available_locales will default to true in the future.
+# If you really want to skip validation of your locale you can set I18n.enforce_available_locales = false to avoid this message.
+# Don't raise an InvalidLocale exception when the passed locale is not available
+I18n.config.enforce_available_locales = false
