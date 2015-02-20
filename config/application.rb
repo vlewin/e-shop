@@ -27,7 +27,7 @@ module EShop
     config.i18n.load_path += Dir["#{Rails.root.to_s}/config/locales/**/*.yml"]
     config.i18n.locale = :de
     config.i18n.default_locale = :de
-    config.i18n.available_locales = [:de, :ru ]
+    config.i18n.available_locales = [:en, :de, :ru ]
     config.i18n.fallbacks = [config.i18n.available_locales]
     config.gettext_i18n_rails.default_options = ['--sort-by-msgid', '--no-wrap']
 
