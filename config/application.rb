@@ -29,6 +29,7 @@ module EShop
     config.i18n.default_locale = :de
     config.i18n.available_locales = [:de, :ru ]
     config.i18n.fallbacks = [config.i18n.available_locales]
+    config.gettext_i18n_rails.default_options = ['--sort-by-msgid', '--no-wrap']
 
     # Should be set to true in production.
     config.less.compress = false
@@ -52,7 +53,11 @@ module EShop
 end
 
 
-# WARNING: I18n.enforce_available_locales will default to true in the future.
-# If you really want to skip validation of your locale you can set I18n.enforce_available_locales = false to avoid this message.
+### Application localization
 # Don't raise an InvalidLocale exception when the passed locale is not available
 I18n.config.enforce_available_locales = false
+
+# FastGettext settings
+FastGettext.add_text_domain 'app', path: 'locale', type: :po
+FastGettext.default_available_locales = Rails.application.config.i18n.available_locales
+FastGettext.default_text_domain = 'app'
