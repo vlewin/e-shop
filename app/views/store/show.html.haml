@@ -9,8 +9,6 @@
             = @product.title
           .text-muted
             %p= @product.description
-          %h3
-            = " #{number_to_currency(@product.price)}"
 
           %hr
 
@@ -20,6 +18,10 @@
             %p= _("Available: %d of %d") % [@product.available_quantity, @product.quantity]
 
           %hr
+
+          %h3
+            = _('Price:')
+            = " #{number_to_currency(@product.price)}"
 
           .row
             = form_tag line_items_path(product_id: @product) do

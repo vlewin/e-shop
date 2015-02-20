@@ -19,7 +19,7 @@
 
         .btn-group.btn-group-sm
           .btn.btn-default{ class: (@sorting.include?('title')) ? 'active' : ''}
-            = sort_link @search, :title, _('Title'), { limit: @limit }
+            = sort_link @search, :translations_title, _('Title'), { limit: @limit }
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
             = sort_link @search, :price, _('Price'), { limit: @limit }
           .btn.btn-default{ class: (@sorting.include?('created_at')) ? 'active' : ''}

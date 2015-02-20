@@ -18,8 +18,7 @@ class Product < ActiveRecord::Base
   before_destroy :ensure_not_referenced_by_any_line_item
 
   default_scope {
-    includes(:translations)
-
+    includes(:translations).uniq
   }
 
   class << self
