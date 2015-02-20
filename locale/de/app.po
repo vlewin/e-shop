@@ -68,6 +68,9 @@ msgstr "Zahlungsart wurde erfolgreich aktualisiert."
 msgid "Payment was successfully destroyed."
 msgstr "Zahlungsart wurde erfolgreich zerstört."
 
+msgid "Please create a category first."
+msgstr ""
+
 msgid "Product was successfully created."
 msgstr "Produkt wurde erfolgreich erstellt."
 
@@ -110,8 +113,8 @@ msgstr "Passwort"
 msgid "Leave these fields blank if you don't want to change your password."
 msgstr "Lassen Sie diese Feldern leer wenn Sie das Passwort nicht ändern wollen"
 
-msgid "Confirm Password"
-msgstr "Passwort bestätigen"
+msgid "Password confirmation"
+msgstr ""
 
 msgid "Current password"
 msgstr "Aktuelles Passwort"
@@ -170,6 +173,12 @@ msgstr "Stadt"
 msgid "Street"
 msgstr "Straße"
 
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Back"
+msgstr "Zurück"
+
 msgid "Address"
 msgstr "Adresse"
 
@@ -178,6 +187,12 @@ msgstr "Änderungen speichern"
 
 msgid "Cancel"
 msgstr "Abbrechen"
+
+msgid "This address is referenced by an order"
+msgstr ""
+
+msgid "User"
+msgstr "Benutzer"
 
 msgid "Image"
 msgstr "Bild"
@@ -227,17 +242,89 @@ msgstr "Bezeichnung %s"
 msgid "Products:"
 msgstr "Produkte:"
 
-msgid "Back"
-msgstr "Zurück"
+msgid "New product"
+msgstr "Neues Produkt"
 
 msgid "Reset password"
 msgstr "Passwort zurücksetzen"
+
+msgid "Resend confirmation instructions"
+msgstr "Bestätigungsmail erneut senden"
+
+msgid "We'll resend the confirmation instructions."
+msgstr "Bald bekommen Sie eine Bestätigung Anweisungen."
+
+msgid "Set your password"
+msgstr "Passwort setzen"
+
+msgid "New password"
+msgstr "Neues Passwort"
+
+msgid "Confirm new password"
+msgstr "Passwort bestätigen"
+
+msgid "Send invitation"
+msgstr ""
+
+msgid "Send an invitation"
+msgstr ""
+
+msgid "We'll send the invitation instructions."
+msgstr "Bald bekommen Sie eine Einladung Anweisungen."
+
+msgid "Welcome"
+msgstr ""
+
+msgid "You can confirm your account email through the link below:"
+msgstr ""
+
+msgid "Confirm my account"
+msgstr ""
+
+msgid "Hello"
+msgstr ""
+
+msgid ""
+"Someone has requested a link to change your password. You can do this through "
+"the link below."
+msgstr ""
+
+msgid "Change my password"
+msgstr "Passwort ändern"
+
+msgid "If you didn't request this, please ignore this email."
+msgstr ""
+
+msgid ""
+"Your password won't change until you access the link above and create a new on"
+"e."
+msgstr ""
+
+msgid ""
+"Your account has been locked due to an excessive number of unsuccessful sign i"
+"n attempts."
+msgstr ""
+
+msgid "Click the link below to unlock your account:"
+msgstr ""
+
+msgid "Unlock my account"
+msgstr "Konto freischalten"
+
+msgid "Change your password"
+msgstr "Ihr Passwort ändern"
 
 msgid "We'll send password reset instructions."
 msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
 
 msgid "Sign-up"
 msgstr "Registrierung"
+
+msgid "Didn't receive confirmation instructions?"
+msgstr "Keine Anleitung zur Bestätigung erhalten?"
+
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
 
 msgid "Sign up"
 msgstr "Registrieren"
@@ -259,9 +346,6 @@ msgstr "Haben Sie noch kein Konto?"
 
 msgid "Forgot your password?"
 msgstr "Passwort vergessen?"
-
-msgid "Didn't receive confirmation instructions?"
-msgstr "Keine Anleitung zur Bestätigung erhalten?"
 
 msgid "Didn't receive unlock instructions?"
 msgstr "Keine Anleitung zum Entsperren erhalten?"
@@ -289,6 +373,20 @@ msgstr "Zahlungsarten"
 
 msgid "Carts"
 msgstr "Warenkörbe"
+
+msgid "Hi %s,"
+msgstr ""
+
+msgid "thank you for your order."
+msgstr "Vielen Dank für Ihre Bestellung!"
+
+msgid "Your order has been received and will be processed shortly."
+msgstr ""
+
+msgid ""
+"If you need to contact us about your order please send us an email. You may al"
+"so call us at (0123) 45678"
+msgstr ""
 
 msgid "Shipping and Billing address"
 msgstr "Versand- und Rechnungsadresse"
@@ -323,9 +421,6 @@ msgstr "Bestellung aufgeben"
 msgid "Payment"
 msgstr "Zahlung"
 
-msgid "Tax"
-msgstr "Steuer"
-
 msgid "Order #%d"
 msgstr "Auftrag #%d"
 
@@ -335,17 +430,14 @@ msgstr "Auftragsdatum"
 msgid "Product"
 msgstr "Produkt"
 
-msgid "Title %s"
-msgstr "Bezeichnung %s"
-
-msgid "Save"
-msgstr "Speichern"
-
 msgid "Payment methods"
 msgstr "Zahlungsarten"
 
 msgid "New payment"
 msgstr "Neuer Zahlungsart"
+
+msgid "Select category"
+msgstr "Kategorie wählen"
 
 msgid "Description"
 msgstr "Beschreibung"
@@ -353,20 +445,20 @@ msgstr "Beschreibung"
 msgid "EAN"
 msgstr "Artikelnummer"
 
+msgid "EAN is composed of category id prefix and next product id"
+msgstr ""
+
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
 
-msgid "New product"
-msgstr "Neues Produkt"
+msgid "EAN: %s"
+msgstr "Artikelnummer: %s"
 
-msgid "EAN:"
-msgstr "Artikelnummer:"
+msgid "MwSt: %s"
+msgstr ""
 
-msgid "VAT:"
-msgstr "MwSt:"
-
-msgid "Availability:"
-msgstr "Verfügbarkeit"
+msgid "Available: %d of %d"
+msgstr "Verfügbar: %d von %d"
 
 msgid "Shipping methods"
 msgstr "Versandmöglichkeiten"
@@ -404,14 +496,44 @@ msgstr "Erstellt am"
 msgid "View"
 msgstr "Ansicht"
 
+msgid "Per page"
+msgstr ""
+
 msgid "All categories"
 msgstr "Alle Kategorien"
 
-msgid "EAN: %s"
-msgstr "Artikelnummer: %s"
+msgid "Price:"
+msgstr "Preis:"
 
-msgid "Available: %d of %d"
-msgstr "Verfügbar: %d von %d"
+msgid "Invitation new user"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Last sign in"
+msgstr ""
+
+msgid "Sign in count"
+msgstr "Anzhal der Anmeldungen"
+
+msgid "Pending invitation"
+msgstr ""
+
+msgid "Pending user invitations"
+msgstr ""
+
+msgid "Sent at"
+msgstr ""
+
+msgid "Invited by"
+msgstr ""
+
+msgid "Token"
+msgstr ""
+
+msgid "No pending invitations"
+msgstr ""
 
 msgid "Address|City"
 msgstr "Stadt"
@@ -493,9 +615,6 @@ msgstr "Anbieter"
 
 msgid "Shipment|Title"
 msgstr "Bezeichnung"
-
-msgid "User"
-msgstr "Benutzer"
 
 msgid "User|Confirmation sent at"
 msgstr ""

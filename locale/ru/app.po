@@ -69,6 +69,9 @@ msgstr "Способ оплаты был успешно обновлен."
 msgid "Payment was successfully destroyed."
 msgstr "Способ оплаты был успешно удален."
 
+msgid "Please create a category first."
+msgstr ""
+
 msgid "Product was successfully created."
 msgstr "Продукт был успешно создан."
 
@@ -111,8 +114,8 @@ msgstr "Пароль"
 msgid "Leave these fields blank if you don't want to change your password."
 msgstr "Оставьте эти поля пустыми, если вы не хотите изменить пароль."
 
-msgid "Confirm Password"
-msgstr "Подтвердите пароль"
+msgid "Password confirmation"
+msgstr ""
 
 msgid "Current password"
 msgstr "Текущий пароль"
@@ -171,6 +174,12 @@ msgstr "Город"
 msgid "Street"
 msgstr "Улица"
 
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Back"
+msgstr "Назад"
+
 msgid "Address"
 msgstr "Адрес"
 
@@ -179,6 +188,12 @@ msgstr "Сохранить изменения"
 
 msgid "Cancel"
 msgstr "Отменить"
+
+msgid "This address is referenced by an order"
+msgstr ""
+
+msgid "User"
+msgstr "Пользователь"
 
 msgid "Image"
 msgstr "Изображение"
@@ -228,17 +243,93 @@ msgstr "Название %s:"
 msgid "Products:"
 msgstr "Продукты:"
 
-msgid "Back"
-msgstr "Назад"
+msgid "New product"
+msgstr "Новый продукт"
 
 msgid "Reset password"
 msgstr "Сброс пароля"
+
+msgid "Resend confirmation instructions"
+msgstr "Повторно выслать письмо с подтверждением"
+
+msgid "We'll resend the confirmation instructions."
+msgstr "Не получили письмо с подтверждением?"
+
+msgid "Set your password"
+msgstr "Установите пароль"
+
+msgid "New password"
+msgstr "Новый пароль"
+
+msgid "Confirm new password"
+msgstr "Подтвердите новый пароль"
+
+msgid "Send invitation"
+msgstr "Отправить приглашение"
+
+msgid "Send an invitation"
+msgstr "Отправить приглашение"
+
+msgid "We'll send the invitation instructions."
+msgstr "Мы вышлем инструкции по приглашениям."
+
+msgid "Welcome"
+msgstr "Добро пожаловать"
+
+msgid "You can confirm your account email through the link below:"
+msgstr "Вы можете подтвердить свой аккаунт электронной почты через ссылку ниже:"
+
+msgid "Confirm my account"
+msgstr ""
+
+msgid "Hello"
+msgstr ""
+
+msgid ""
+"Someone has requested a link to change your password. You can do this through "
+"the link below."
+msgstr ""
+
+msgid "Change my password"
+msgstr "Изменение пароля"
+
+msgid "If you didn't request this, please ignore this email."
+msgstr ""
+
+msgid ""
+"Your password won't change until you access the link above and create a new on"
+"e."
+msgstr ""
+"Ваш пароль не будет меняться до тех пор, пока вы не пройдёте по ссылке и созда"
+"тите новый."
+
+msgid ""
+"Your account has been locked due to an excessive number of unsuccessful sign i"
+"n attempts."
+msgstr ""
+"Ваш аккаунт был заблокирован из-за чрезмерного количества неудачных попыток вх"
+"ода."
+
+msgid "Click the link below to unlock your account:"
+msgstr ""
+
+msgid "Unlock my account"
+msgstr "Разблокировать профиль"
+
+msgid "Change your password"
+msgstr "Изменение пароля"
 
 msgid "We'll send password reset instructions."
 msgstr "Мы вышлем инструкции по изменению пароля."
 
 msgid "Sign-up"
 msgstr "Регистрация"
+
+msgid "Didn't receive confirmation instructions?"
+msgstr "Не получили письмо с подтверждением?"
+
+msgid "Confirm Password"
+msgstr "Подтвердите пароль"
 
 msgid "Sign up"
 msgstr "Зарегистрироваться"
@@ -260,9 +351,6 @@ msgstr "Еще нет учетной записи?"
 
 msgid "Forgot your password?"
 msgstr "Забыли свой пароль?"
-
-msgid "Didn't receive confirmation instructions?"
-msgstr "Не получили письмо с подтверждением?"
 
 msgid "Didn't receive unlock instructions?"
 msgstr "Не получили инструкции разблокировки?"
@@ -290,6 +378,20 @@ msgstr "Способы оплаты"
 
 msgid "Carts"
 msgstr "Корзины"
+
+msgid "Hi %s,"
+msgstr ""
+
+msgid "thank you for your order."
+msgstr "Спасибо за Ваш заказ!"
+
+msgid "Your order has been received and will be processed shortly."
+msgstr "Ваш заказ был получен и будет обработан в ближайшее время."
+
+msgid ""
+"If you need to contact us about your order please send us an email. You may al"
+"so call us at (0123) 45678"
+msgstr ""
 
 msgid "Shipping and Billing address"
 msgstr "Адрес доставки и платежа"
@@ -324,9 +426,6 @@ msgstr "Разместить заказ"
 msgid "Payment"
 msgstr "Оплата"
 
-msgid "Tax"
-msgstr "Налог"
-
 msgid "Order #%d"
 msgstr "Заказ #%d"
 
@@ -336,17 +435,14 @@ msgstr "Дата заказа"
 msgid "Product"
 msgstr "Продукт"
 
-msgid "Title %s"
-msgstr "Название %s"
-
-msgid "Save"
-msgstr "Сохранить"
-
 msgid "Payment methods"
 msgstr "Способы оплаты"
 
 msgid "New payment"
 msgstr "Новый метод оплаты"
+
+msgid "Select category"
+msgstr "Выберите категорию"
 
 msgid "Description"
 msgstr "Описание"
@@ -354,22 +450,22 @@ msgstr "Описание"
 msgid "EAN"
 msgstr "Артикул"
 
+msgid "EAN is composed of category id prefix and next product id"
+msgstr ""
+
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr ""
 "Пожалуйста, будьте терпеливы загрузки изображений может занять несколько секун"
 "д ..."
 
-msgid "New product"
-msgstr "Новый продукт"
+msgid "EAN: %s"
+msgstr "Артикул %s"
 
-msgid "EAN:"
-msgstr "Артикул:"
+msgid "MwSt: %s"
+msgstr ""
 
-msgid "VAT:"
-msgstr "НДС:"
-
-msgid "Availability:"
-msgstr "Наличие:"
+msgid "Available: %d of %d"
+msgstr "Доступно %d из %d"
 
 msgid "Shipping methods"
 msgstr "Способы доставки"
@@ -407,14 +503,44 @@ msgstr "Добавлен"
 msgid "View"
 msgstr "Вид"
 
+msgid "Per page"
+msgstr ""
+
 msgid "All categories"
 msgstr "Все категории"
 
-msgid "EAN: %s"
-msgstr "Артикул %s"
+msgid "Price:"
+msgstr "Цена:"
 
-msgid "Available: %d of %d"
-msgstr "Доступно %d из %d"
+msgid "Invitation new user"
+msgstr ""
+
+msgid "Role"
+msgstr ""
+
+msgid "Last sign in"
+msgstr ""
+
+msgid "Sign in count"
+msgstr "Количество входов"
+
+msgid "Pending invitation"
+msgstr ""
+
+msgid "Pending user invitations"
+msgstr ""
+
+msgid "Sent at"
+msgstr "Отправлено в"
+
+msgid "Invited by"
+msgstr ""
+
+msgid "Token"
+msgstr ""
+
+msgid "No pending invitations"
+msgstr ""
 
 msgid "Address|City"
 msgstr "Город"
@@ -496,9 +622,6 @@ msgstr "Провайдер"
 
 msgid "Shipment|Title"
 msgstr "Название"
-
-msgid "User"
-msgstr "Пользователь"
 
 msgid "User|Confirmation sent at"
 msgstr ""
