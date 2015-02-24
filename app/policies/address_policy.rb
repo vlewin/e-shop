@@ -10,11 +10,11 @@ class AddressPolicy < ApplicationPolicy
   end
 
   def index?
-    @user.admin? || @user.addresses.active.exists?(record)
+    @user.admin? || @user.addresses.active.exists?(record.id)
   end
 
   def show?
-    @user.admin? || @user.addresses.active.exists?(record)
+    @user.admin? || @user.addresses.active.exists?(record.id)
   end
 
   # def new?
@@ -26,15 +26,15 @@ class AddressPolicy < ApplicationPolicy
   # end
 
   def edit?
-    @user.admin? || @user.addresses.active.exists?(record)
+    @user.admin? || @user.addresses.active.exists?(record.id)
   end
 
   def update?
-    @user.admin? || @user.addresses.active.exists?(record)
+    @user.admin? || @user.addresses.active.exists?(record.id)
   end
 
   def delete?
-    @user.admin? || @user.addresses.active.exists?(record)
+    @user.admin? || @user.addresses.active.exists?(record.id)
   end
 
   def destroy?
