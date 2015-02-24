@@ -18,7 +18,6 @@ gem 'therubyracer'
 
 gem 'jquery-rails'
 gem 'haml-rails'
-# gem 'slim-rails'
 gem 'less-rails'
 
 gem 'less-rails-bootstrap'
@@ -66,7 +65,7 @@ end
 group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
-  gem 'rspec-rails', '~> 3.0.1'
+  gem 'rspec-rails', '~> 3.1'
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'launchy'
