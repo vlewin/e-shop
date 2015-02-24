@@ -1,21 +1,17 @@
 class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
-  # TODO: refactoring (method too long)
   def add_product(product_id, quantity=1)
-    current_item = line_items.find_by(product_id: product_id)
+    quantity = quantity.to_i.zero? ? 1 : quantity.to_i
 
-    if current_item
-      if current_item.quantity
-        current_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i
-      else
-        current_item.quantity = quantity
-      end
+    product = Product.find(product_id)
+    line_item = line_items.find_by(product_id: product.id)
+
+    if line_item
+      line_item.quantity += quantity
     else
-      current_item = line_items.build(product_id: product_id, quantity: quantity)
-      current_item.price = current_item.product.price
+      line_items.create(product_id: product.id, quantity: quantity, price: product.price)
     end
-    current_item
   end
 
   def empty?
