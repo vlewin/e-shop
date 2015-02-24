@@ -18,7 +18,7 @@ class LineItemsController < ApplicationController
   end
 
   def destroy
-    @line_item = LineItem.find(params[:id])
+    @line_item = @current_cart.line_items.find(params[:id])
     @line_item.destroy
 
     if current_cart.empty?
