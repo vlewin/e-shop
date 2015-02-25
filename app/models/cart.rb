@@ -2,16 +2,16 @@ class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
 
   def add_product(product_id, quantity=1)
-    quantity = quantity.to_i.zero? ? 1 : quantity.to_i
-
-    product = Product.find(product_id)
-    line_item = line_items.find_by(product_id: product.id)
+    line_item = line_items.find_by(product_id: product_id)
 
     if line_item
-      line_item.quantity += quantity
+      line_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i
     else
-      line_items.create(product_id: product.id, quantity: quantity, price: product.price)
+      product = Product.find(product_id)
+      line_item = line_items.build(product_id: product_id, quantity: quantity, price: product.price)
     end
+
+    line_item
   end
 
   def empty?
