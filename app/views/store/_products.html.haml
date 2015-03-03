@@ -17,9 +17,6 @@
                 %h4.title
                   = product.title
                   %p.description= product.description
-
-                  %p= "#{product.reserved_count}/#{product.quantity}"
-
                 .row
                   .col-xs-12.col-sm-5.col-md-5
                     %b= number_to_currency(product.price)
@@ -32,35 +29,32 @@
                       = _('Add to cart')
 
   - else
-    .panel.panel-default
-      / .panel-heading
-      .panel-body
-        %table.table.table-hover
-          %thead
-            %tr
-              %th{ width: '5%'}= _('Image')
-              %th= _('Title')
-              %th= _('Price')
-              %th.hidden-xs.hidden-sm{ width: '17%'}= _('Quantity')
+    %table.table.table-hover
+      %thead
+        %tr
+          %th{ width: '5%'}= _('Image')
+          %th= _('Title')
+          %th= _('Price')
+          %th.hidden-xs.hidden-sm{ width: '17%'}= _('Quantity')
 
-          %tbody
-            - @products.each_with_index do |product, index|
-              - out_of_stock = product.out_of_stock?
-              %tr.product-list{ class: out_of_stock ? 'out-of-stock' : '' }
-                %td= product_image_tag(product)
-                %td
-                  .title= link_to product.title, store_product_path(product)
-                  .description= product.description
-                %td= number_to_currency(product.price)
-                %td{ width: '15%'}
-                  - if out_of_stock
-                    %span.label.label-danger= _('Out of stock')
-                  - else
-                    = form_tag line_items_path(:product_id => product), class: 'form-inline' do
-                      .pull-left.hidden-xs.hidden-sm= quantity_field_tag 1, { max: product.available_quantity}
-                      .pull-right
-                        = button_tag(type: "submit", class: "btn btn-sm btn-success") do
-                          %i.fa.fa-shopping-cart
+      %tbody
+        - @products.each_with_index do |product, index|
+          - out_of_stock = product.out_of_stock?
+          %tr.product-list{ class: out_of_stock ? 'out-of-stock' : '' }
+            %td= product_image_tag(product)
+            %td
+              .title= link_to product.title, store_product_path(product)
+              .description= product.description
+            %td= number_to_currency(product.price)
+            %td{ width: '15%'}
+              - if out_of_stock
+                %span.label.label-default.label-md= _('Out of stock')
+              - else
+                = form_tag line_items_path(:product_id => product), class: 'form-inline' do
+                  .pull-left.hidden-xs.hidden-sm= quantity_field_tag 1, { max: product.available_quantity}
+                  .pull-right
+                    = button_tag(type: "submit", class: "btn btn-sm btn-success") do
+                      %i.fa.fa-shopping-cart
 
 
 
