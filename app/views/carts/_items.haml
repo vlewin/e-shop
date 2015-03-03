@@ -17,8 +17,7 @@
         %td= link_to item.product.title, store_product_path(item.product)
         %td= number_to_currency(item.price)
         %td
-          = form_for @current_cart, method: :patch, remote: false, class: 'form-inline' do
-            = hidden_field_tag :line_item_id, item.id
+          = form_for item, method: :patch, class: 'form-inline' do
             = quantity_field_tag item.quantity
         %td.hidden-xs= number_to_currency(item.subtotal)
         %td.hidden-xs= number_to_percentage(item.product.vat.rate, precision: 0)

@@ -4,47 +4,25 @@ class CartsController < ApplicationController
 
   def index
     authorize :carts, :index?
+
     @carts = Cart.all.order(:updated_at)
   end
 
   def show
-    if current_cart.empty?
-      flash.notice = _('Your cart is empty!')
-      redirect_to root_path
-    end
-  end
-
-  def update
-    quantity = params[:quantity].to_i
-    line_item = current_cart.line_items.includes(:product).find(params[:line_item_id])
-
-    if quantity.zero?
-      line_item.destroy
-    else
-      if quantity <= line_item.max_quantity
-        line_item.update_attribute(:quantity, params[:quantity])
-      end
-    end
-
-    if current_cart.empty?
-      flash.notice = _('Your cart is empty!')
-      redirect_to root_path
-    else
-      redirect_to cart_path
-    end
+    redirect_to root_path, notice: _('Your cart is empty!') if current_cart.empty?
   end
 
   def purge
-    puts "**** PURGE"
     authorize :carts, :purge?
+
     Cart.where("updated_at  <?", 2.hours.ago).destroy_all
     redirect_to carts_path
   end
 
   def destroy
-    @cart = (current_user && current_user.admin?) ? Cart.find(params[:id]) : current_cart
+    cart = (current_user && current_user.admin?) ? Cart.find(params[:id]) : current_cart
 
-    if @cart.destroy
+    if cart.destroy
       flash.notice = _('Cart was successfully destroyed.')
     else
       flash.error = _('Something went wrong')

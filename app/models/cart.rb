@@ -1,17 +1,25 @@
 class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
+  has_many :products, through: :line_items
 
-  def add_product(product_id, quantity=1)
+  def add_item(product_id, quantity)
     line_item = line_items.find_by(product_id: product_id)
 
     if line_item
-      line_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i
+      quantity = line_item.quantity + quantity.to_i
+      update_item(line_item.id, quantity)
     else
       product = Product.find(product_id)
-      line_item = line_items.build(product_id: product_id, quantity: quantity, price: product.price)
+      line_item = line_items.create(product_id: product.id, price: product.price, quantity: quantity)
     end
 
     line_item
+  end
+
+  def update_item(line_item_id, quantity)
+    quantity = quantity.to_i
+    line_item = line_items.find(line_item_id)
+    line_item.update_attributes(quantity: quantity) if quantity <= line_item.max_quantity
   end
 
   def empty?
