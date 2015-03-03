@@ -7,6 +7,7 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 LANGUAGES = {
+  en: 'English',
   de: 'Deutsch',
   ru: 'Русский'
 }
