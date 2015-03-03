@@ -31,10 +31,11 @@ class Product < ActiveRecord::Base
   end
 
   def available_quantity
-    quantity - reserved_quantity
+    quantity - reserved_count
   end
 
   def reserved_quantity
+    ap line_items.where(order_id: nil).sum(:quantity)
     line_items.where(order_id: nil).sum(:quantity)
   end
 
@@ -43,7 +44,7 @@ class Product < ActiveRecord::Base
   end
 
   def out_of_stock?
-    quantity.zero? || reserved_quantity >= quantity
+    quantity.zero? || reserved_count == quantity
   end
 
   private

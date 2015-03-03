@@ -18,6 +18,8 @@
                   = product.title
                   %p.description= product.description
 
+                  %p= "#{product.reserved_count}/#{product.quantity}"
+
                 .row
                   .col-xs-12.col-sm-5.col-md-5
                     %b= number_to_currency(product.price)

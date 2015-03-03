@@ -3,10 +3,11 @@ class Cart < ActiveRecord::Base
   has_many :products, through: :line_items
 
   def add_item(product_id, quantity)
+    quantity = quantity.to_i
     line_item = line_items.find_by(product_id: product_id)
 
     if line_item
-      quantity = line_item.quantity + quantity.to_i
+      quantity = line_item.quantity + quantity
       update_item(line_item.id, quantity)
     else
       product = Product.find(product_id)
@@ -19,7 +20,13 @@ class Cart < ActiveRecord::Base
   def update_item(line_item_id, quantity)
     quantity = quantity.to_i
     line_item = line_items.find(line_item_id)
-    line_item.update_attributes(quantity: quantity) if quantity <= line_item.max_quantity
+
+    if quantity <= line_item.max_quantity
+      ActiveRecord::Base.transaction do
+        line_item.product.update(reserved_count: quantity)
+        line_item.update_attributes(quantity: quantity)
+      end
+    end
   end
 
   def empty?

@@ -28,6 +28,14 @@ describe Cart do
         expect(line_items.count).to eq 1
         expect(line_items.first.quantity).to eq 2
       end
+
+      it 'increases a product reserved counter' do
+        expect(product.reserved_count).to eq 0
+
+        empty_cart.add_item(product.id, 2)
+
+        expect(product.reload.reserved_count).to eq 2
+      end
     end
 
     describe '#empty?' do
@@ -38,16 +46,25 @@ describe Cart do
   end
 
   describe '#update_item' do
+    let(:line_item) { subject.line_items.first }
     it 'updates a quantity' do
-      expect(subject.line_items.first.quantity).to eq 1
-      subject.update_item(subject.line_items.first.id, 2)
-      expect(subject.line_items.first.quantity).to eq 2
+      expect(line_item.quantity).to eq 1
+      subject.update_item(line_item.id, 2)
+      expect(line_item.reload.quantity).to eq 2
+    end
+
+    it 'increases a product reserved counter' do
+      expect(product.reserved_count).to eq 0
+
+      empty_cart.add_item(product.id, 2)
+
+      expect(product.reload.reserved_count).to eq 2
     end
 
     it 'preserves the max of available product quantity' do
-      expect(subject.line_items.first.quantity).to eq 1
-      subject.update_item(subject.line_items.first.id, 3)
-      expect(subject.line_items.first.quantity).to eq 1
+      expect(line_item.quantity).to eq 1
+      subject.update_item(line_item.id, 3)
+      expect(line_item.reload.quantity).to eq 1
     end
   end
 

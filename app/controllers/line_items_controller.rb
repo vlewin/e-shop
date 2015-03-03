@@ -8,7 +8,7 @@ class LineItemsController < ApplicationController
 
   def create
     linet_item = @current_cart.add_item(params[:product_id], params[:quantity])
-    flash[:notice] = _("%s x %s added to your cart!") % [params[:quantity], item.product.title] if linet_item
+    flash[:notice] = _("%s x %s added to your cart!") % [params[:quantity], linet_item.product.title] if linet_item
     redirect_to_back_or_default root_path
   end
 

@@ -38,12 +38,6 @@ describe Product do
     end
   end
 
-  describe '.reserved_quantity' do
-    it 'calculates reserved quantity' do
-      expect(subject.reserved_quantity).to eq 0
-    end
-  end
-
   describe '.sold_quantity' do
     it 'calculates sold quantity' do
       expect(subject.sold_quantity).to eq 0
