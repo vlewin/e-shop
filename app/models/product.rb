@@ -34,11 +34,6 @@ class Product < ActiveRecord::Base
     quantity - reserved_count
   end
 
-  def reserved_quantity
-    ap line_items.where(order_id: nil).sum(:quantity)
-    line_items.where(order_id: nil).sum(:quantity)
-  end
-
   def sold_quantity
     line_items.where.not(order_id: nil).sum(:quantity)
   end
