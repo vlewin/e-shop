@@ -29,11 +29,11 @@ describe Product do
 
   describe '.available_quantity' do
     it 'calculates available quantity' do
-      expect(subject.available_quantity).to eq 2
+      expect(subject.available_quantity).to eq subject.quantity
     end
 
     it 'returns 0 if all products sold or reserved' do
-      expect(subject).to receive(:reserved_quantity).and_return 2
+      subject.update(reserved_count: subject.quantity)
       expect(subject.available_quantity).to eq 0
     end
   end
