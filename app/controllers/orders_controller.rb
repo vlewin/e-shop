@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
 
         # FIXME: Send notification email
-        UserMailer.order_confirmation(current_user, @order).deliver
+        UserMailer.order_confirmation(current_user, @order).deliver_now
 
         format.html { redirect_to root_path, notice: _('Thank you for your order!') }
       else
