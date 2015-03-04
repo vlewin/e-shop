@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   devise :invitable, :database_authenticatable, :registerable, :confirmable, :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :cart
   has_many :addresses, -> { active }
   has_many :orders
 
