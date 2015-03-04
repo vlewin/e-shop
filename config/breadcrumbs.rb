@@ -1,5 +1,5 @@
 crumb :root do
-  link _('Home'), root_path
+  link _('E-Shop'), root_path
 end
 
 crumb :product do |product|
@@ -21,18 +21,9 @@ crumb :account do
 end
 
 crumb :order do |order|
-  ap current_user.admin?
-
-  link "Order ##{order.id}", account_path
-  if current_user.admin?
-    parent :orders
-  else
+  unless current_user.admin?
+    link "Order ##{order.id}", account_path
     parent :account
   end
-end
-
-# Admin crumbs
-crumb :orders do
-  link _('Orders'), orders_path
 end
 
