@@ -44,7 +44,6 @@ GEM
     better_errors (1.1.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
-    breadcrumbs_on_rails (2.3.0)
     builder (3.2.2)
     byebug (3.1.2)
       columnize (~> 0.8)
@@ -101,6 +100,8 @@ GEM
       activerecord (>= 4.2.0, < 4.3)
     globalize-accessors (0.1.5)
       globalize (>= 3)
+    gretel (3.0.8)
+      rails (>= 3.2.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -278,7 +279,6 @@ PLATFORMS
 DEPENDENCIES
   awesome_print
   better_errors
-  breadcrumbs_on_rails
   byebug
   carrierwave
   cloudinary
@@ -295,6 +295,7 @@ DEPENDENCIES
   gettext_i18n_rails
   globalize
   globalize-accessors
+  gretel
   haml-rails
   heroku
   jquery-rails

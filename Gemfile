@@ -23,7 +23,8 @@ gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
 
-gem 'breadcrumbs_on_rails'
+# gem 'breadcrumbs_on_rails'
+gem 'gretel'
 gem 'prawn'
 
 # Authentication and authorization
