@@ -7,7 +7,6 @@ crumb :product do |product|
 end
 
 crumb :cart do |cart|
-  ap cart
   link _('Your Cart'), cart_path(current_cart)
 end
 

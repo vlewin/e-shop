@@ -225,7 +225,7 @@ msgstr "Очистить корзину"
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
-msgid "Checkout"
+msgid "Proceed to Checkout"
 msgstr "Оформить заказ"
 
 msgid "New category"
@@ -541,6 +541,12 @@ msgstr ""
 
 msgid "No pending invitations"
 msgstr ""
+
+msgid "E-Shop"
+msgstr ""
+
+msgid "Checkout"
+msgstr "Оформление заказа"
 
 msgid "Address|City"
 msgstr "Город"

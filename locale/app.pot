@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 10:00+0100\n"
-"PO-Revision-Date: 2015-02-20 10:00+0100\n"
+"POT-Creation-Date: 2015-03-05 09:36+0100\n"
+"PO-Revision-Date: 2015-03-05 09:36+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: ../app/controllers/line_items_controller.rb:14
+#: ../app/controllers/line_items_controller.rb:11
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:8
+#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:10
 msgid "Accepted"
 msgstr ""
 
-#: ../app/views/account/show.haml:63
+#: ../app/views/account/show.haml:65
 msgid "Account"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:61 ../app/views/store/_products.html.haml:53
+#: ../app/views/store/show.html.haml:63 ../app/views/store/_products.html.haml:52
 msgid "Add to cart"
 msgstr ""
 
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Address was successfully updated."
 msgstr ""
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:130 ../app/views/users/show.haml:35
+#: ../app/views/account/show.haml:37 ../app/views/layouts/_navigation.haml:130 ../app/views/users/show.haml:35
 msgid "Addresses"
 msgstr ""
 
@@ -82,11 +82,11 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: ../app/views/shipments/index.haml:59 ../app/views/payments/index.haml:42 ../app/views/carts/show.haml:23 ../app/views/orders/index.html.haml:76
+#: ../app/views/shipments/index.haml:59 ../app/views/payments/index.haml:42 ../app/views/carts/show.haml:25 ../app/views/orders/index.html.haml:76
 msgid "Are you sure?"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:36 ../app/views/products/show.haml:41
+#: ../app/views/store/show.html.haml:38 ../app/views/products/show.haml:41
 msgid "Available: %d of %d"
 msgstr ""
 
@@ -98,11 +98,11 @@ msgstr ""
 msgid "Back to cart"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
+#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:60
 msgid "Billing address"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:68
+#: ../app/controllers/orders_controller.rb:64
 msgid "Can not change order status"
 msgstr ""
 
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:48
+#: ../app/controllers/carts_controller.rb:26
 msgid "Cart was successfully destroyed."
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Change your password"
 msgstr ""
 
-#: ../app/views/carts/show.haml:38
+#: ../config/breadcrumbs.rb:15
 msgid "Checkout"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Click the link below to unlock your account:"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
+#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:25
 msgid "Completed"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Confirm new password"
 msgstr ""
 
-#: ../app/views/carts/show.haml:36
+#: ../app/views/carts/show.haml:38
 msgid "Continue shopping"
 msgstr ""
 
@@ -226,6 +226,10 @@ msgstr ""
 msgid "Don't have an account?"
 msgstr ""
 
+#: ../config/breadcrumbs.rb:2
+msgid "E-Shop"
+msgstr ""
+
 #: ../app/views/products/index.haml:26 ../app/views/products/_form.haml:32
 msgid "EAN"
 msgstr ""
@@ -234,7 +238,7 @@ msgstr ""
 msgid "EAN is composed of category id prefix and next product id"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:32 ../app/views/products/show.haml:37
+#: ../app/views/store/show.html.haml:34 ../app/views/products/show.haml:37
 msgid "EAN: %s"
 msgstr ""
 
@@ -246,7 +250,7 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: ../app/views/carts/show.haml:23
+#: ../app/views/carts/show.haml:25
 msgid "Empty cart"
 msgstr ""
 
@@ -286,11 +290,11 @@ msgstr ""
 msgid "If you need to contact us about your order please send us an email. You may also call us at (0123) 45678"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:69 ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/index.haml:22 ../app/views/products/_form.haml:83
+#: ../app/views/store/_products.html.haml:62 ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/index.haml:22 ../app/views/products/_form.haml:83
 msgid "Image"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:13
+#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:15
 msgid "In progress"
 msgstr ""
 
@@ -322,11 +326,11 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:34 ../app/views/products/show.haml:39
+#: ../app/views/store/show.html.haml:36 ../app/views/products/show.haml:39
 msgid "MwSt: %s"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:70
+#: ../app/views/layouts/_navigation.haml:70 ../config/breadcrumbs.rb:20
 msgid "My Account"
 msgstr ""
 
@@ -334,7 +338,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ../app/views/addresses/index.haml:7 ../app/views/account/show.haml:40 ../app/views/orders/_address.haml:12
+#: ../app/views/addresses/index.haml:7 ../app/views/account/show.haml:42 ../app/views/orders/_address.haml:12
 msgid "New address"
 msgstr ""
 
@@ -370,19 +374,19 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: ../app/views/orders/show.haml:41
+#: ../app/views/orders/show.haml:43
 msgid "Order #%d"
 msgstr ""
 
-#: ../app/views/orders/show.haml:122
+#: ../app/views/orders/show.haml:124
 msgid "Order date"
 msgstr ""
 
-#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:148 ../app/views/orders/new.haml:34
+#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:150 ../app/views/orders/new.haml:36
 msgid "Order summary"
 msgstr ""
 
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:106 ../app/views/orders/index.html.haml:1 ../app/views/users/show.haml:13
+#: ../app/views/account/show.haml:15 ../app/views/layouts/_navigation.haml:106 ../app/views/orders/index.html.haml:1 ../app/views/users/show.haml:13
 msgid "Orders"
 msgstr ""
 
@@ -390,7 +394,7 @@ msgstr ""
 msgid "Order|Status"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:100
+#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:93
 msgid "Out of stock"
 msgstr ""
 
@@ -406,7 +410,7 @@ msgstr ""
 msgid "Payment"
 msgstr ""
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/show.haml:108 ../app/views/orders/new.haml:26 ../app/views/users/_order.haml:17
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/show.haml:110 ../app/views/orders/new.haml:28 ../app/views/users/_order.haml:17
 msgid "Payment method"
 msgstr ""
 
@@ -458,15 +462,19 @@ msgstr ""
 msgid "Please create a category first."
 msgstr ""
 
-#: ../app/views/store/index.haml:44 ../app/views/store/_products.html.haml:73 ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/index.haml:30 ../app/views/products/_form.haml:61
+#: ../app/views/store/index.haml:44 ../app/views/store/_products.html.haml:66 ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:170 ../app/views/products/index.haml:30 ../app/views/products/_form.haml:61
 msgid "Price"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:45
+#: ../app/views/store/show.html.haml:47
 msgid "Price:"
 msgstr ""
 
-#: ../app/views/orders/show.haml:163 model_attributes.rb:22
+#: ../app/views/carts/show.haml:40
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: ../app/views/orders/show.haml:165 model_attributes.rb:22
 msgid "Product"
 msgstr ""
 
@@ -522,7 +530,7 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:75 ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/index.haml:28 ../app/views/products/_form.haml:50
+#: ../app/views/store/_products.html.haml:68 ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:175 ../app/views/products/index.haml:28 ../app/views/products/_form.haml:50
 msgid "Quantity"
 msgstr ""
 
@@ -578,7 +586,7 @@ msgstr ""
 msgid "Set your password"
 msgstr ""
 
-#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:96 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:215 ../app/views/users/_order.haml:19 model_attributes.rb:29
+#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:94 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:217 ../app/views/users/_order.haml:19 model_attributes.rb:29
 msgid "Shipment"
 msgstr ""
 
@@ -614,19 +622,19 @@ msgstr ""
 msgid "Shipment|Title"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:18
+#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:20
 msgid "Shipped"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:82
+#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:84
 msgid "Shipping address"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:10
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:12
 msgid "Shipping and Billing address"
 msgstr ""
 
-#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:18
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:20
 msgid "Shipping method"
 msgstr ""
 
@@ -662,11 +670,11 @@ msgstr ""
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:50
+#: ../app/controllers/carts_controller.rb:28
 msgid "Something went wrong"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:122
+#: ../app/views/store/_products.html.haml:115
 msgid "Sorry, the product was not found."
 msgstr ""
 
@@ -682,11 +690,11 @@ msgstr ""
 msgid "Street"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:64 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:205
+#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:62 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:207
 msgid "Subtotal"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:53
+#: ../app/controllers/orders_controller.rb:49
 msgid "Thank you for your order!"
 msgstr ""
 
@@ -698,7 +706,7 @@ msgstr ""
 msgid "This product is out of stock"
 msgstr ""
 
-#: ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:71 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:13 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
+#: ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:64 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:13 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
 msgid "Title"
 msgstr ""
 
@@ -710,7 +718,7 @@ msgstr ""
 msgid "Token"
 msgstr ""
 
-#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:114 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:20 ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225 ../app/views/users/_order.haml:21
+#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:112 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:20 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227 ../app/views/users/_order.haml:21
 msgid "Total"
 msgstr ""
 
@@ -802,7 +810,7 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:80 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/index.haml:32 ../app/views/products/_form.haml:72
+#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:78 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/index.haml:32 ../app/views/products/_form.haml:72
 msgid "VAT"
 msgstr ""
 
@@ -850,7 +858,7 @@ msgstr ""
 msgid "You must enter your current password to make changes."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:15
+#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:17 ../config/breadcrumbs.rb:11
 msgid "Your Cart"
 msgstr ""
 
@@ -866,7 +874,7 @@ msgstr ""
 msgid "Your addresses list is empty, please add at least one address"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:12 ../app/controllers/carts_controller.rb:30 ../app/controllers/orders_controller.rb:33 ../app/views/carts/show.haml:28
+#: ../app/controllers/line_items_controller.rb:25 ../app/controllers/carts_controller.rb:12 ../app/controllers/orders_controller.rb:30 ../app/views/carts/show.haml:30
 msgid "Your cart is empty!"
 msgstr ""
 

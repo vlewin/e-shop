@@ -224,8 +224,8 @@ msgstr "Warenkorb leeren"
 msgid "Continue shopping"
 msgstr "Weiter einkaufen"
 
-msgid "Checkout"
-msgstr "zur Kasse"
+msgid "Proceed to Checkout"
+msgstr "Zur Kasse"
 
 msgid "New category"
 msgstr "Neue Kategorie"
@@ -534,6 +534,12 @@ msgstr ""
 
 msgid "No pending invitations"
 msgstr ""
+
+msgid "E-Shop"
+msgstr ""
+
+msgid "Checkout"
+msgstr "Kasse"
 
 msgid "Address|City"
 msgstr "Stadt"

@@ -17,41 +17,693 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 
-#: ../app/controllers/line_items_controller.rb:14
-msgid "%s x %s added to your cart!"
-msgstr "%s x %s in den Warenkorb gelegt!"
-
-#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:8
-msgid "Accepted"
-msgstr "Angenommen"
-
-#: ../app/views/account/show.haml:63
-msgid "Account"
-msgstr "Konto"
-
-#: ../app/views/store/show.html.haml:61 ../app/views/store/_products.html.haml:53
-msgid "Add to cart"
-msgstr "in den Warenkorb"
-
-#: ../app/views/addresses/show.haml:5 ../app/views/addresses/show.haml:10 ../app/views/addresses/_modal.haml:11 model_attributes.rb:2
-msgid "Address"
-msgstr "Adresse"
-
 #: ../app/controllers/addresses_controller.rb:26
 msgid "Address was successfully created."
 msgstr "Adresse wurde erfolgreich erstellt."
-
-#: ../app/controllers/addresses_controller.rb:66 ../app/controllers/addresses_controller.rb:76
-msgid "Address was successfully destroyed."
-msgstr "Adresse wurde erfolgreich zerstört."
 
 #: ../app/controllers/addresses_controller.rb:46
 msgid "Address was successfully updated."
 msgstr "Adresse wurde erfolgreich aktualisiert."
 
-#: ../app/views/account/show.haml:35 ../app/views/layouts/_navigation.haml:130 ../app/views/users/show.haml:35
+#: ../app/controllers/addresses_controller.rb:66 ../app/controllers/addresses_controller.rb:76
+msgid "Address was successfully destroyed."
+msgstr "Adresse wurde erfolgreich zerstört."
+
+#: ../app/controllers/application_controller.rb:44
+msgid "This product is out of stock"
+msgstr "Dieses Produkt ist ausverkauft"
+
+#: ../app/controllers/application_controller.rb:54 ../app/controllers/application_controller.rb:57
+msgid "You are not authorized to perform this action"
+msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
+
+#: ../app/controllers/carts_controller.rb:12 ../app/controllers/line_items_controller.rb:25 ../app/controllers/orders_controller.rb:30 ../app/views/carts/show.haml:30
+msgid "Your cart is empty!"
+msgstr "Ihr Warenkorb ist leer!"
+
+#: ../app/controllers/carts_controller.rb:26
+msgid "Cart was successfully destroyed."
+msgstr "Warenkorb wurde erfolgreich zerstört."
+
+#: ../app/controllers/carts_controller.rb:28
+msgid "Something went wrong"
+msgstr "Etwas ist schiefgelaufen"
+
+#: ../app/controllers/categories_controller.rb:28
+msgid "Category was successfully created."
+msgstr "Kategorie wurde erfolgreich erstellt."
+
+#: ../app/controllers/categories_controller.rb:38
+msgid "Category was successfully updated."
+msgstr "Kategorie wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/categories_controller.rb:48
+msgid "Category was successfully destroyed."
+msgstr "Kategorie wurde erfolgreich zerstört."
+
+#: ../app/controllers/line_items_controller.rb:11
+msgid "%s x %s added to your cart!"
+msgstr "%s x %s in den Warenkorb gelegt!"
+
+#: ../app/controllers/orders_controller.rb:49
+msgid "Thank you for your order!"
+msgstr "Vielen Dank für Ihre Bestellung!"
+
+#: ../app/controllers/orders_controller.rb:64
+msgid "Can not change order status"
+msgstr "Auftragsstatus kann nicht geändern werden"
+
+#: ../app/controllers/payments_controller.rb:24
+msgid "Payment was successfully created."
+msgstr "Zahlungsart wurde erfolgreich erstellt."
+
+#: ../app/controllers/payments_controller.rb:32
+msgid "Payment was successfully updated."
+msgstr "Zahlungsart wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/payments_controller.rb:40
+msgid "Payment was successfully destroyed."
+msgstr "Zahlungsart wurde erfolgreich zerstört."
+
+#: ../app/controllers/products_controller.rb:18
+msgid "Please create a category first."
+msgstr ""
+
+#: ../app/controllers/products_controller.rb:34
+msgid "Product was successfully created."
+msgstr "Produkt wurde erfolgreich erstellt."
+
+#: ../app/controllers/products_controller.rb:44
+msgid "Product was successfully updated."
+msgstr "Produkt wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/products_controller.rb:55
+msgid "Product was successfully destroyed."
+msgstr "Produkt wurde erfolgreich zerstört."
+
+#: ../app/controllers/shipments_controller.rb:24
+msgid "Shipment was successfully created."
+msgstr "Versandart wurde erfolgreich erstellt."
+
+#: ../app/controllers/shipments_controller.rb:32
+msgid "Shipment was successfully updated."
+msgstr "Versandart wurde erfolgreich aktualisiert."
+
+#: ../app/controllers/shipments_controller.rb:40
+msgid "Shipment was successfully destroyed."
+msgstr "Versandart wurde erfolgreich zerstört."
+
+#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:10
+msgid "Accepted"
+msgstr "Angenommen"
+
+#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:15
+msgid "In progress"
+msgstr "In Bearbeitung"
+
+#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:20
+msgid "Shipped"
+msgstr "Versand"
+
+#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:25
+msgid "Completed"
+msgstr "Abgeschlossen"
+
+#: ../app/views/account/_account.haml:12 ../app/views/devise/invitations/edit.haml:21 ../app/views/devise/registrations/new.haml:25 ../app/views/users/index.haml:23
+msgid "Name"
+msgstr "Name"
+
+#: ../app/views/account/_account.haml:23 ../app/views/addresses/show.haml:40 ../app/views/devise/confirmations/new.haml:19 ../app/views/devise/invitations/new.haml:19 ../app/views/devise/passwords/new.haml:19 ../app/views/devise/registrations/new.haml:32 ../app/views/devise/sessions/new.haml:19 ../app/views/users/index.haml:25 ../app/views/users/index.haml:93
+msgid "Email"
+msgstr "E-Mail"
+
+#: ../app/views/account/_account.haml:37 ../app/views/devise/registrations/new.haml:39 ../app/views/devise/sessions/new.haml:27
+msgid "Password"
+msgstr "Passwort"
+
+#: ../app/views/account/_account.haml:43
+msgid "Leave these fields blank if you don't want to change your password."
+msgstr "Lassen Sie diese Feldern leer wenn Sie das Passwort nicht ändern wollen"
+
+#: ../app/views/account/_account.haml:50
+msgid "Password confirmation"
+msgstr ""
+
+#: ../app/views/account/_account.haml:64
+msgid "Current password"
+msgstr "Aktuelles Passwort"
+
+#: ../app/views/account/_account.haml:70
+msgid "You must enter your current password to make changes."
+msgstr "Bitte geben Sie Ihr aktuelles Passwort um die Änderungen zu übernehmen"
+
+#: ../app/views/account/_account.haml:79
+msgid "Update account"
+msgstr "Konto aktualisieren"
+
+#: ../app/views/account/_address.haml:42 ../app/views/categories/show.haml:40 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/show.haml:48 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35
+msgid "Edit"
+msgstr "Ändern"
+
+#: ../app/views/account/_address.haml:48
+msgid "Destroy"
+msgstr "Löschen"
+
+#: ../app/views/account/_address.haml:64
+msgid "Your addresses list is empty"
+msgstr "Ihre Adressen-Liste ist leer"
+
+#: ../app/views/account/_order.haml:9 ../app/views/orders/index.html.haml:14 ../app/views/users/_order.haml:13
+msgid "Status"
+msgstr "Status"
+
+#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:16 ../app/views/users/_order.haml:15
+msgid "Date"
+msgstr "Datum"
+
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:28 ../app/views/orders/show.haml:110 ../app/views/users/_order.haml:17
+msgid "Payment method"
+msgstr "Zahlungsart"
+
+#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:94 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:217 ../app/views/users/_order.haml:19 model_attributes.rb:29
+msgid "Shipment"
+msgstr "Versand"
+
+#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:112 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:20 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227 ../app/views/users/_order.haml:21
+msgid "Total"
+msgstr "Gesamt"
+
+#: ../app/views/account/_order.haml:50
+msgid "Your orders list is empty"
+msgstr "Ihre Auftragsliste ist leer"
+
+#: ../app/views/account/show.haml:15 ../app/views/layouts/_navigation.haml:106 ../app/views/orders/index.html.haml:1 ../app/views/users/show.haml:13
+msgid "Orders"
+msgstr "Aufträge"
+
+#: ../app/views/account/show.haml:37 ../app/views/layouts/_navigation.haml:130 ../app/views/users/show.haml:35
 msgid "Addresses"
 msgstr "Adressen"
+
+#: ../app/views/account/show.haml:42 ../app/views/addresses/index.haml:7 ../app/views/orders/_address.haml:12
+msgid "New address"
+msgstr "Neue Adresse"
+
+#: ../app/views/account/show.haml:65
+msgid "Account"
+msgstr "Konto"
+
+#: ../app/views/addresses/_form.haml:24
+msgid "Recipient"
+msgstr "Empfänger"
+
+#: ../app/views/addresses/_form.haml:35
+msgid "City"
+msgstr "Stadt"
+
+#: ../app/views/addresses/_form.haml:46
+msgid "Street"
+msgstr "Straße"
+
+#: ../app/views/addresses/_form.haml:78 ../app/views/categories/_form.haml:19 ../app/views/devise/invitations/edit.haml:42 ../app/views/payments/_form.haml:19 ../app/views/products/_form.haml:116 ../app/views/shipments/_form.haml:63
+msgid "Save"
+msgstr "Speichern"
+
+#: ../app/views/addresses/_form.haml:80 ../app/views/categories/_form.haml:21 ../app/views/categories/show.haml:42 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108 ../app/views/payments/_form.haml:21 ../app/views/payments/show.haml:21 ../app/views/products/_form.haml:118 ../app/views/products/show.haml:50 ../app/views/shipments/_form.haml:65 ../app/views/shipments/show.haml:37
+msgid "Back"
+msgstr "Zurück"
+
+#: ../app/views/addresses/_modal.haml:11 ../app/views/addresses/show.haml:5 ../app/views/addresses/show.haml:10 model_attributes.rb:2
+msgid "Address"
+msgstr "Adresse"
+
+#: ../app/views/addresses/_modal.haml:88
+msgid "Save changes"
+msgstr "Änderungen speichern"
+
+#: ../app/views/addresses/_modal.haml:90
+msgid "Cancel"
+msgstr "Abbrechen"
+
+#: ../app/views/addresses/index.haml:55
+msgid "This address is referenced by an order"
+msgstr ""
+
+#: ../app/views/addresses/show.haml:36 model_attributes.rb:34
+msgid "User"
+msgstr "Benutzer"
+
+#: ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/_form.haml:83 ../app/views/products/index.haml:22 ../app/views/store/_products.html.haml:62
+msgid "Image"
+msgstr "Bild"
+
+#: ../app/views/carts/_items.haml:9 ../app/views/categories/_form.haml:13 ../app/views/categories/index.haml:22 ../app/views/orders/_summary.haml:24 ../app/views/payments/_form.haml:13 ../app/views/payments/index.haml:22 ../app/views/payments/show.haml:10 ../app/views/products/_form.haml:25 ../app/views/products/index.haml:24 ../app/views/shipments/_form.haml:27 ../app/views/shipments/index.haml:26 ../app/views/shipments/show.haml:18 ../app/views/store/_products.html.haml:64 ../app/views/store/index.haml:39
+msgid "Title"
+msgstr "Bezeichnung"
+
+#: ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:170 ../app/views/products/_form.haml:61 ../app/views/products/index.haml:30 ../app/views/store/_products.html.haml:66 ../app/views/store/index.haml:44
+msgid "Price"
+msgstr "Preis"
+
+#: ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:175 ../app/views/products/_form.haml:50 ../app/views/products/index.haml:28 ../app/views/store/_products.html.haml:68
+msgid "Quantity"
+msgstr "Anzahl"
+
+#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:62 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:207
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:78 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/_form.haml:72 ../app/views/products/index.haml:32
+msgid "VAT"
+msgstr "MwSt"
+
+#: ../app/views/carts/show.haml:17 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../config/breadcrumbs.rb:11
+msgid "Your Cart"
+msgstr "Ihr Warenkorb"
+
+#: ../app/views/carts/show.haml:25 ../app/views/orders/index.html.haml:76 ../app/views/payments/index.haml:42 ../app/views/shipments/index.haml:59
+msgid "Are you sure?"
+msgstr "Sind Sie sicher?"
+
+#: ../app/views/carts/show.haml:25
+msgid "Empty cart"
+msgstr "Warenkorb leeren"
+
+#: ../app/views/carts/show.haml:38
+msgid "Continue shopping"
+msgstr "Weiter einkaufen"
+
+#: ../app/views/carts/show.haml:40
+msgid "Proceed to Checkout"
+msgstr "Zur Kasse"
+
+#: ../app/views/categories/index.haml:7
+msgid "New category"
+msgstr "Neue Kategorie"
+
+#: ../app/views/categories/index.haml:24
+msgid "Product count"
+msgstr "Produktanzahl"
+
+#: ../app/views/categories/show.haml:5 ../app/views/products/_form.haml:15 model_attributes.rb:8
+msgid "Category"
+msgstr "Kategorie"
+
+#: ../app/views/categories/show.haml:11
+msgid "Title %s:"
+msgstr "Bezeichnung %s"
+
+#: ../app/views/categories/show.haml:19
+msgid "Products:"
+msgstr "Produkte:"
+
+#: ../app/views/categories/show.haml:32 ../app/views/products/index.haml:7
+msgid "New product"
+msgstr "Neues Produkt"
+
+#: ../app/views/devise/confirmations/new.haml:9 ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25 ../app/views/devise/sessions/new.haml:32
+msgid "Reset password"
+msgstr "Passwort zurücksetzen"
+
+#: ../app/views/devise/confirmations/new.haml:25
+msgid "Resend confirmation instructions"
+msgstr "Bestätigungsmail erneut senden"
+
+#: ../app/views/devise/confirmations/new.haml:31
+msgid "We'll resend the confirmation instructions."
+msgstr "Bald bekommen Sie eine Bestätigung Anweisungen."
+
+#: ../app/views/devise/invitations/edit.haml:9
+msgid "Set your password"
+msgstr "Passwort setzen"
+
+#: ../app/views/devise/invitations/edit.haml:29 ../app/views/devise/passwords/edit.haml:21
+msgid "New password"
+msgstr "Neues Passwort"
+
+#: ../app/views/devise/invitations/edit.haml:36 ../app/views/devise/passwords/edit.haml:28
+msgid "Confirm new password"
+msgstr "Passwort bestätigen"
+
+#: ../app/views/devise/invitations/new.haml:9
+msgid "Send invitation"
+msgstr ""
+
+#: ../app/views/devise/invitations/new.haml:25
+msgid "Send an invitation"
+msgstr ""
+
+#: ../app/views/devise/invitations/new.haml:31
+msgid "We'll send the invitation instructions."
+msgstr "Bald bekommen Sie eine Einladung Anweisungen."
+
+#: ../app/views/devise/mailer/confirmation_instructions.html.erb:1
+msgid "Welcome"
+msgstr ""
+
+#: ../app/views/devise/mailer/confirmation_instructions.html.erb:3
+msgid "You can confirm your account email through the link below:"
+msgstr ""
+
+#: ../app/views/devise/mailer/confirmation_instructions.html.erb:5
+msgid "Confirm my account"
+msgstr ""
+
+#: ../app/views/devise/mailer/reset_password_instructions.html.erb:1 ../app/views/devise/mailer/unlock_instructions.html.erb:1
+msgid "Hello"
+msgstr ""
+
+#: ../app/views/devise/mailer/reset_password_instructions.html.erb:3
+msgid "Someone has requested a link to change your password. You can do this through the link below."
+msgstr ""
+
+#: ../app/views/devise/mailer/reset_password_instructions.html.erb:5 ../app/views/devise/passwords/edit.haml:34
+msgid "Change my password"
+msgstr "Passwort ändern"
+
+#: ../app/views/devise/mailer/reset_password_instructions.html.erb:7
+msgid "If you didn't request this, please ignore this email."
+msgstr ""
+
+#: ../app/views/devise/mailer/reset_password_instructions.html.erb:8
+msgid "Your password won't change until you access the link above and create a new one."
+msgstr ""
+
+#: ../app/views/devise/mailer/unlock_instructions.html.erb:3
+msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+msgstr ""
+
+#: ../app/views/devise/mailer/unlock_instructions.html.erb:5
+msgid "Click the link below to unlock your account:"
+msgstr ""
+
+#: ../app/views/devise/mailer/unlock_instructions.html.erb:7
+msgid "Unlock my account"
+msgstr "Konto freischalten"
+
+#: ../app/views/devise/passwords/edit.haml:9
+msgid "Change your password"
+msgstr "Ihr Passwort ändern"
+
+#: ../app/views/devise/passwords/new.haml:31
+msgid "We'll send password reset instructions."
+msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
+
+#: ../app/views/devise/registrations/new.haml:9
+msgid "Sign-up"
+msgstr "Registrierung"
+
+#: ../app/views/devise/registrations/new.haml:13 ../app/views/devise/shared/_links.html.haml:17
+msgid "Didn't receive confirmation instructions?"
+msgstr "Keine Anleitung zur Bestätigung erhalten?"
+
+#: ../app/views/devise/registrations/new.haml:46
+msgid "Confirm Password"
+msgstr "Passwort bestätigen"
+
+#: ../app/views/devise/registrations/new.haml:52 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/shared/_links.html.haml:7 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92
+msgid "Sign up"
+msgstr "Registrieren"
+
+#: ../app/views/devise/registrations/new.haml:58
+msgid "Already have an account?"
+msgstr "Haben Sie bereits ein Konto?"
+
+#: ../app/views/devise/registrations/new.haml:62 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/shared/_links.html.haml:2 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90
+msgid "Sign in"
+msgstr "Anmelden"
+
+#: ../app/views/devise/sessions/new.haml:9
+msgid "Sign-in"
+msgstr "Anmeldung"
+
+#: ../app/views/devise/sessions/new.haml:45
+msgid "Remember me"
+msgstr "Eingeloggt bleiben"
+
+#: ../app/views/devise/sessions/new.haml:58
+msgid "Don't have an account?"
+msgstr "Haben Sie noch kein Konto?"
+
+#: ../app/views/devise/shared/_links.html.haml:12
+msgid "Forgot your password?"
+msgstr "Passwort vergessen?"
+
+#: ../app/views/devise/shared/_links.html.haml:22
+msgid "Didn't receive unlock instructions?"
+msgstr "Keine Anleitung zum Entsperren erhalten?"
+
+#: ../app/views/layouts/_navigation.haml:70 ../config/breadcrumbs.rb:20
+msgid "My Account"
+msgstr "Mein Konto"
+
+#: ../app/views/layouts/_navigation.haml:72
+msgid "Sign out"
+msgstr "Abmelden"
+
+#: ../app/views/layouts/_navigation.haml:112
+msgid "Categories"
+msgstr "Kategorien"
+
+#: ../app/views/layouts/_navigation.haml:118
+msgid "Products"
+msgstr "Produkte"
+
+#: ../app/views/layouts/_navigation.haml:124
+msgid "Users"
+msgstr "Benützer"
+
+#: ../app/views/layouts/_navigation.haml:136
+msgid "Shipments"
+msgstr "Versandarts"
+
+#: ../app/views/layouts/_navigation.haml:142
+msgid "Payments"
+msgstr "Zahlungsarten"
+
+#: ../app/views/layouts/_navigation.haml:148
+msgid "Carts"
+msgstr "Warenkörbe"
+
+#: ../app/views/mailers/order_confirmation.html.erb:1
+msgid "Hi %s,"
+msgstr ""
+
+#: ../app/views/mailers/order_confirmation.html.erb:3
+msgid "thank you for your order."
+msgstr "Vielen Dank für Ihre Bestellung!"
+
+#: ../app/views/mailers/order_confirmation.html.erb:5
+msgid "Your order has been received and will be processed shortly."
+msgstr ""
+
+#: ../app/views/mailers/order_confirmation.html.erb:6
+msgid "If you need to contact us about your order please send us an email. You may also call us at (0123) 45678"
+msgstr ""
+
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:12
+msgid "Shipping and Billing address"
+msgstr "Versand- und Rechnungsadresse"
+
+#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:84
+msgid "Shipping address"
+msgstr "Versandadresse"
+
+#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:60
+msgid "Billing address"
+msgstr "Rechnungsadresse"
+
+#: ../app/views/orders/_address.haml:49
+msgid "billing address is same as shipping address"
+msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
+
+#: ../app/views/orders/_address.haml:73
+msgid "Your addresses list is empty, please add at least one address"
+msgstr "Ihre Adressen-Liste ist leer, fügen Sie bitte mindestens eine Adresse hinzu"
+
+#: ../app/views/orders/_address.haml:81
+msgid "Back to cart"
+msgstr "Zurück zum Warenkorb"
+
+#: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
+msgid "Next"
+msgstr "Weiter"
+
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:20
+msgid "Shipping method"
+msgstr "Versandart"
+
+#: ../app/views/orders/_summary.haml:7 ../app/views/orders/new.haml:36 ../app/views/orders/show.haml:150
+msgid "Order summary"
+msgstr "Bestellübersicht"
+
+#: ../app/views/orders/_summary.haml:110
+msgid "Place order"
+msgstr "Bestellung aufgeben"
+
+#: ../app/views/orders/index.html.haml:18 model_attributes.rb:20
+msgid "Payment"
+msgstr "Zahlung"
+
+#: ../app/views/orders/show.haml:43
+msgid "Order #%d"
+msgstr "Auftrag #%d"
+
+#: ../app/views/orders/show.haml:124
+msgid "Order date"
+msgstr "Auftragsdatum"
+
+#: ../app/views/orders/show.haml:165 model_attributes.rb:22
+msgid "Product"
+msgstr "Produkt"
+
+#: ../app/views/payments/index.haml:3
+msgid "Payment methods"
+msgstr "Zahlungsarten"
+
+#: ../app/views/payments/index.haml:7
+msgid "New payment"
+msgstr "Neuer Zahlungsart"
+
+#: ../app/views/products/_form.haml:20
+msgid "Select category"
+msgstr "Kategorie wählen"
+
+#: ../app/views/products/_form.haml:27
+msgid "Description"
+msgstr "Beschreibung"
+
+#: ../app/views/products/_form.haml:32 ../app/views/products/index.haml:26
+msgid "EAN"
+msgstr "Artikelnummer"
+
+#: ../app/views/products/_form.haml:42
+msgid "EAN is composed of category id prefix and next product id"
+msgstr ""
+
+#: ../app/views/products/_form.haml:105
+msgid "Please be patient the image upload may take a few seconds..."
+msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
+
+#: ../app/views/products/show.haml:37 ../app/views/store/show.html.haml:34
+msgid "EAN: %s"
+msgstr "Artikelnummer: %s"
+
+#: ../app/views/products/show.haml:39 ../app/views/store/show.html.haml:36
+msgid "MwSt: %s"
+msgstr ""
+
+#: ../app/views/products/show.haml:41 ../app/views/store/show.html.haml:38
+msgid "Available: %d of %d"
+msgstr "Verfügbar: %d von %d"
+
+#: ../app/views/shipments/index.haml:3
+msgid "Shipping methods"
+msgstr "Versandmöglichkeiten"
+
+#: ../app/views/shipments/index.haml:7
+msgid "New shipment"
+msgstr "Neuer Versand"
+
+#: ../app/views/shipments/index.haml:22
+msgid "Default"
+msgstr "Standard"
+
+#: ../app/views/shipments/index.haml:24 ../app/views/shipments/show.haml:10
+msgid "Provider"
+msgstr "Anbieter"
+
+#: ../app/views/shipments/index.haml:28 ../app/views/shipments/show.haml:26
+msgid "Fee"
+msgstr "Gebühr"
+
+#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:93
+msgid "Out of stock"
+msgstr "Ausverkauft"
+
+#: ../app/views/store/_products.html.haml:52 ../app/views/store/show.html.haml:63
+msgid "Add to cart"
+msgstr "in den Warenkorb"
+
+#: ../app/views/store/_products.html.haml:115
+msgid "Sorry, the product was not found."
+msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
+
+#: ../app/views/store/index.haml:16
+msgid "Search"
+msgstr "Suche"
+
+#: ../app/views/store/index.haml:31
+msgid "Sort"
+msgstr "Sortierung"
+
+#: ../app/views/store/index.haml:49
+msgid "Created at"
+msgstr "Erstellt am"
+
+#: ../app/views/store/index.haml:56
+msgid "View"
+msgstr "Ansicht"
+
+#: ../app/views/store/index.haml:71
+msgid "Per page"
+msgstr ""
+
+#: ../app/views/store/index.haml:99 ../app/views/store/index.haml:114
+msgid "All categories"
+msgstr "Alle Kategorien"
+
+#: ../app/views/store/show.html.haml:47
+msgid "Price:"
+msgstr "Preis:"
+
+#: ../app/views/users/index.haml:7
+msgid "Invitation new user"
+msgstr ""
+
+#: ../app/views/users/index.haml:21
+msgid "Role"
+msgstr ""
+
+#: ../app/views/users/index.haml:27
+msgid "Last sign in"
+msgstr ""
+
+#: ../app/views/users/index.haml:29
+msgid "Sign in count"
+msgstr "Anzhal der Anmeldungen"
+
+#: ../app/views/users/index.haml:42
+msgid "Pending invitation"
+msgstr ""
+
+#: ../app/views/users/index.haml:81
+msgid "Pending user invitations"
+msgstr ""
+
+#: ../app/views/users/index.haml:91
+msgid "Sent at"
+msgstr ""
+
+#: ../app/views/users/index.haml:95
+msgid "Invited by"
+msgstr ""
+
+#: ../app/views/users/index.haml:97
+msgid "Token"
+msgstr ""
+
+#: ../app/views/users/index.haml:118
+msgid "No pending invitations"
+msgstr ""
+
+#: ../config/breadcrumbs.rb:2
+msgid "E-Shop"
+msgstr ""
+
+#: ../config/breadcrumbs.rb:15
+msgid "Checkout"
+msgstr "Kasse"
 
 #: model_attributes.rb:3
 msgid "Address|City"
@@ -73,70 +725,6 @@ msgstr "Straße"
 msgid "Address|Zip code"
 msgstr "PLZ"
 
-#: ../app/views/store/index.haml:99 ../app/views/store/index.haml:114
-msgid "All categories"
-msgstr "Alle Kategorien"
-
-#: ../app/views/devise/registrations/new.haml:58
-msgid "Already have an account?"
-msgstr "Haben Sie bereits ein Konto?"
-
-#: ../app/views/shipments/index.haml:59 ../app/views/payments/index.haml:42 ../app/views/carts/show.haml:23 ../app/views/orders/index.html.haml:76
-msgid "Are you sure?"
-msgstr "Sind Sie sicher?"
-
-#: ../app/views/store/show.html.haml:36 ../app/views/products/show.haml:41
-msgid "Available: %d of %d"
-msgstr "Verfügbar: %d von %d"
-
-#: ../app/views/categories/_form.haml:21 ../app/views/categories/show.haml:42 ../app/views/shipments/_form.haml:65 ../app/views/shipments/show.haml:37 ../app/views/addresses/_form.haml:80 ../app/views/payments/_form.haml:21 ../app/views/payments/show.haml:21 ../app/views/orders/_summary.haml:108 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/products/_form.haml:118 ../app/views/products/show.haml:50
-msgid "Back"
-msgstr "Zurück"
-
-#: ../app/views/orders/_address.haml:81
-msgid "Back to cart"
-msgstr "Zurück zum Warenkorb"
-
-#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:58
-msgid "Billing address"
-msgstr "Rechnungsadresse"
-
-#: ../app/controllers/orders_controller.rb:68
-msgid "Can not change order status"
-msgstr "Auftragsstatus kann nicht geändern werden"
-
-#: ../app/views/addresses/_modal.haml:90
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: ../app/controllers/carts_controller.rb:48
-msgid "Cart was successfully destroyed."
-msgstr "Warenkorb wurde erfolgreich zerstört."
-
-#: ../app/views/layouts/_navigation.haml:148
-msgid "Carts"
-msgstr "Warenkörbe"
-
-#: ../app/views/layouts/_navigation.haml:112
-msgid "Categories"
-msgstr "Kategorien"
-
-#: ../app/views/categories/show.haml:5 ../app/views/products/_form.haml:15 model_attributes.rb:8
-msgid "Category"
-msgstr "Kategorie"
-
-#: ../app/controllers/categories_controller.rb:28
-msgid "Category was successfully created."
-msgstr "Kategorie wurde erfolgreich erstellt."
-
-#: ../app/controllers/categories_controller.rb:48
-msgid "Category was successfully destroyed."
-msgstr "Kategorie wurde erfolgreich zerstört."
-
-#: ../app/controllers/categories_controller.rb:38
-msgid "Category was successfully updated."
-msgstr "Kategorie wurde erfolgreich aktualisiert."
-
 #: model_attributes.rb:9
 msgid "Category|Description"
 msgstr "Beschreibung"
@@ -148,114 +736,6 @@ msgstr "Anzahl der Produkte"
 #: model_attributes.rb:11
 msgid "Category|Title"
 msgstr "Bezeichnung"
-
-#: ../app/views/devise/mailer/reset_password_instructions.html.erb:5 ../app/views/devise/passwords/edit.haml:34
-msgid "Change my password"
-msgstr "Passwort ändern"
-
-#: ../app/views/devise/passwords/edit.haml:9
-msgid "Change your password"
-msgstr "Ihr Passwort ändern"
-
-#: ../app/views/carts/show.haml:38
-msgid "Checkout"
-msgstr "zur Kasse"
-
-#: ../app/views/addresses/_form.haml:35
-msgid "City"
-msgstr "Stadt"
-
-#: ../app/views/devise/mailer/unlock_instructions.html.erb:5
-msgid "Click the link below to unlock your account:"
-msgstr ""
-
-#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:23
-msgid "Completed"
-msgstr "Abgeschlossen"
-
-#: ../app/views/devise/registrations/new.haml:46
-msgid "Confirm Password"
-msgstr "Passwort bestätigen"
-
-#: ../app/views/devise/mailer/confirmation_instructions.html.erb:5
-msgid "Confirm my account"
-msgstr ""
-
-#: ../app/views/devise/invitations/edit.haml:36 ../app/views/devise/passwords/edit.haml:28
-msgid "Confirm new password"
-msgstr "Passwort bestätigen"
-
-#: ../app/views/carts/show.haml:36
-msgid "Continue shopping"
-msgstr "Weiter einkaufen"
-
-#: ../app/views/store/index.haml:49
-msgid "Created at"
-msgstr "Erstellt am"
-
-#: ../app/views/account/_account.haml:64
-msgid "Current password"
-msgstr "Aktuelles Passwort"
-
-#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:16 ../app/views/users/_order.haml:15
-msgid "Date"
-msgstr "Datum"
-
-#: ../app/views/shipments/index.haml:22
-msgid "Default"
-msgstr "Standard"
-
-#: ../app/views/products/_form.haml:27
-msgid "Description"
-msgstr "Beschreibung"
-
-#: ../app/views/account/_address.haml:48
-msgid "Destroy"
-msgstr "Löschen"
-
-#: ../app/views/devise/shared/_links.html.haml:17 ../app/views/devise/registrations/new.haml:13
-msgid "Didn't receive confirmation instructions?"
-msgstr "Keine Anleitung zur Bestätigung erhalten?"
-
-#: ../app/views/devise/shared/_links.html.haml:22
-msgid "Didn't receive unlock instructions?"
-msgstr "Keine Anleitung zum Entsperren erhalten?"
-
-#: ../app/views/devise/sessions/new.haml:58
-msgid "Don't have an account?"
-msgstr "Haben Sie noch kein Konto?"
-
-#: ../app/views/products/index.haml:26 ../app/views/products/_form.haml:32
-msgid "EAN"
-msgstr "Artikelnummer"
-
-#: ../app/views/products/_form.haml:42
-msgid "EAN is composed of category id prefix and next product id"
-msgstr ""
-
-#: ../app/views/store/show.html.haml:32 ../app/views/products/show.haml:37
-msgid "EAN: %s"
-msgstr "Artikelnummer: %s"
-
-#: ../app/views/categories/show.haml:40 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35 ../app/views/account/_address.haml:42 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/show.haml:48
-msgid "Edit"
-msgstr "Ändern"
-
-#: ../app/views/devise/invitations/new.haml:19 ../app/views/devise/confirmations/new.haml:19 ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:32 ../app/views/devise/passwords/new.haml:19 ../app/views/addresses/show.haml:40 ../app/views/account/_account.haml:23 ../app/views/users/index.haml:25 ../app/views/users/index.haml:93
-msgid "Email"
-msgstr "E-Mail"
-
-#: ../app/views/carts/show.haml:23
-msgid "Empty cart"
-msgstr "Warenkorb leeren"
-
-#: ../app/views/shipments/index.haml:28 ../app/views/shipments/show.haml:26
-msgid "Fee"
-msgstr "Gebühr"
-
-#: ../app/views/devise/shared/_links.html.haml:12
-msgid "Forgot your password?"
-msgstr "Passwort vergessen?"
 
 #: model_attributes.rb:12
 msgid "Globalize/active record/translation"
@@ -269,46 +749,6 @@ msgstr "Region"
 msgid "Globalize::ActiveRecord::Translation|Title"
 msgstr "Bezeichnung"
 
-#: ../app/views/devise/mailer/unlock_instructions.html.erb:1 ../app/views/devise/mailer/reset_password_instructions.html.erb:1
-msgid "Hello"
-msgstr ""
-
-#: ../app/views/mailers/order_confirmation.html.erb:1
-msgid "Hi %s,"
-msgstr ""
-
-#: ../app/views/devise/mailer/reset_password_instructions.html.erb:7
-msgid "If you didn't request this, please ignore this email."
-msgstr ""
-
-#: ../app/views/mailers/order_confirmation.html.erb:6
-msgid "If you need to contact us about your order please send us an email. You may also call us at (0123) 45678"
-msgstr ""
-
-#: ../app/views/store/_products.html.haml:69 ../app/views/carts/_items.haml:7 ../app/views/orders/_summary.haml:22 ../app/views/products/index.haml:22 ../app/views/products/_form.haml:83
-msgid "Image"
-msgstr "Bild"
-
-#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:13
-msgid "In progress"
-msgstr "In Bearbeitung"
-
-#: ../app/views/users/index.haml:7
-msgid "Invitation new user"
-msgstr ""
-
-#: ../app/views/users/index.haml:95
-msgid "Invited by"
-msgstr ""
-
-#: ../app/views/users/index.haml:27
-msgid "Last sign in"
-msgstr ""
-
-#: ../app/views/account/_account.haml:43
-msgid "Leave these fields blank if you don't want to change your password."
-msgstr "Lassen Sie diese Feldern leer wenn Sie das Passwort nicht ändern wollen"
-
 #: model_attributes.rb:15
 msgid "Line item"
 msgstr "Auftragsposition"
@@ -321,177 +761,17 @@ msgstr "Preis"
 msgid "LineItem|Quantity"
 msgstr "Anzahl"
 
-#: ../app/views/store/show.html.haml:34 ../app/views/products/show.haml:39
-msgid "MwSt: %s"
-msgstr ""
-
-#: ../app/views/layouts/_navigation.haml:70
-msgid "My Account"
-msgstr "Mein Konto"
-
-#: ../app/views/devise/invitations/edit.haml:21 ../app/views/devise/registrations/new.haml:25 ../app/views/account/_account.haml:12 ../app/views/users/index.haml:23
-msgid "Name"
-msgstr "Name"
-
-#: ../app/views/addresses/index.haml:7 ../app/views/account/show.haml:40 ../app/views/orders/_address.haml:12
-msgid "New address"
-msgstr "Neue Adresse"
-
-#: ../app/views/categories/index.haml:7
-msgid "New category"
-msgstr "Neue Kategorie"
-
-#: ../app/views/devise/invitations/edit.haml:29 ../app/views/devise/passwords/edit.haml:21
-msgid "New password"
-msgstr "Neues Passwort"
-
-#: ../app/views/payments/index.haml:7
-msgid "New payment"
-msgstr "Neuer Zahlungsart"
-
-#: ../app/views/categories/show.haml:32 ../app/views/products/index.haml:7
-msgid "New product"
-msgstr "Neues Produkt"
-
-#: ../app/views/shipments/index.haml:7
-msgid "New shipment"
-msgstr "Neuer Versand"
-
-#: ../app/views/orders/_address.haml:87 ../app/views/orders/_payment.haml:32 ../app/views/orders/_shipping.haml:35
-msgid "Next"
-msgstr "Weiter"
-
-#: ../app/views/users/index.haml:118
-msgid "No pending invitations"
-msgstr ""
-
 #: model_attributes.rb:18
 msgid "Order"
 msgstr "Auftrag"
-
-#: ../app/views/orders/show.haml:41
-msgid "Order #%d"
-msgstr "Auftrag #%d"
-
-#: ../app/views/orders/show.haml:122
-msgid "Order date"
-msgstr "Auftragsdatum"
-
-#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:148 ../app/views/orders/new.haml:34
-msgid "Order summary"
-msgstr "Bestellübersicht"
-
-#: ../app/views/account/show.haml:13 ../app/views/layouts/_navigation.haml:106 ../app/views/orders/index.html.haml:1 ../app/views/users/show.haml:13
-msgid "Orders"
-msgstr "Aufträge"
 
 #: model_attributes.rb:19
 msgid "Order|Status"
 msgstr "Status"
 
-#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:100
-msgid "Out of stock"
-msgstr "Ausverkauft"
-
-#: ../app/views/devise/sessions/new.haml:27 ../app/views/devise/registrations/new.haml:39 ../app/views/account/_account.haml:37
-msgid "Password"
-msgstr "Passwort"
-
-#: ../app/views/account/_account.haml:50
-msgid "Password confirmation"
-msgstr ""
-
-#: ../app/views/orders/index.html.haml:18 model_attributes.rb:20
-msgid "Payment"
-msgstr "Zahlung"
-
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/show.haml:108 ../app/views/orders/new.haml:26 ../app/views/users/_order.haml:17
-msgid "Payment method"
-msgstr "Zahlungsart"
-
-#: ../app/views/payments/index.haml:3
-msgid "Payment methods"
-msgstr "Zahlungsarten"
-
-#: ../app/controllers/payments_controller.rb:24
-msgid "Payment was successfully created."
-msgstr "Zahlungsart wurde erfolgreich erstellt."
-
-#: ../app/controllers/payments_controller.rb:40
-msgid "Payment was successfully destroyed."
-msgstr "Zahlungsart wurde erfolgreich zerstört."
-
-#: ../app/controllers/payments_controller.rb:32
-msgid "Payment was successfully updated."
-msgstr "Zahlungsart wurde erfolgreich aktualisiert."
-
-#: ../app/views/layouts/_navigation.haml:142
-msgid "Payments"
-msgstr "Zahlungsarten"
-
 #: model_attributes.rb:21
 msgid "Payment|Title"
 msgstr "Bezeichnung"
-
-#: ../app/views/users/index.haml:42
-msgid "Pending invitation"
-msgstr ""
-
-#: ../app/views/users/index.haml:81
-msgid "Pending user invitations"
-msgstr ""
-
-#: ../app/views/store/index.haml:71
-msgid "Per page"
-msgstr ""
-
-#: ../app/views/orders/_summary.haml:110
-msgid "Place order"
-msgstr "Bestellung aufgeben"
-
-#: ../app/views/products/_form.haml:105
-msgid "Please be patient the image upload may take a few seconds..."
-msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
-
-#: ../app/controllers/products_controller.rb:18
-msgid "Please create a category first."
-msgstr ""
-
-#: ../app/views/store/index.haml:44 ../app/views/store/_products.html.haml:73 ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:168 ../app/views/products/index.haml:30 ../app/views/products/_form.haml:61
-msgid "Price"
-msgstr "Preis"
-
-#: ../app/views/store/show.html.haml:45
-msgid "Price:"
-msgstr "Preis:"
-
-#: ../app/views/orders/show.haml:163 model_attributes.rb:22
-msgid "Product"
-msgstr "Produkt"
-
-#: ../app/views/categories/index.haml:24
-msgid "Product count"
-msgstr "Produktanzahl"
-
-#: ../app/controllers/products_controller.rb:34
-msgid "Product was successfully created."
-msgstr "Produkt wurde erfolgreich erstellt."
-
-#: ../app/controllers/products_controller.rb:55
-msgid "Product was successfully destroyed."
-msgstr "Produkt wurde erfolgreich zerstört."
-
-#: ../app/controllers/products_controller.rb:44
-msgid "Product was successfully updated."
-msgstr "Produkt wurde erfolgreich aktualisiert."
-
-#: ../app/views/layouts/_navigation.haml:118
-msgid "Products"
-msgstr "Produkte"
-
-#: ../app/views/categories/show.haml:19
-msgid "Products:"
-msgstr "Produkte:"
 
 #: model_attributes.rb:23
 msgid "Product|Description"
@@ -517,86 +797,6 @@ msgstr "Anzahl"
 msgid "Product|Title"
 msgstr "Bezeichnung"
 
-#: ../app/views/shipments/index.haml:24 ../app/views/shipments/show.haml:10
-msgid "Provider"
-msgstr "Anbieter"
-
-#: ../app/views/store/_products.html.haml:75 ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:173 ../app/views/products/index.haml:28 ../app/views/products/_form.haml:50
-msgid "Quantity"
-msgstr "Anzahl"
-
-#: ../app/views/addresses/_form.haml:24
-msgid "Recipient"
-msgstr "Empfänger"
-
-#: ../app/views/devise/sessions/new.haml:45
-msgid "Remember me"
-msgstr "Eingeloggt bleiben"
-
-#: ../app/views/devise/confirmations/new.haml:25
-msgid "Resend confirmation instructions"
-msgstr "Bestätigungsmail erneut senden"
-
-#: ../app/views/devise/confirmations/new.haml:9 ../app/views/devise/sessions/new.haml:32 ../app/views/devise/passwords/new.haml:9 ../app/views/devise/passwords/new.haml:25
-msgid "Reset password"
-msgstr "Passwort zurücksetzen"
-
-#: ../app/views/users/index.haml:21
-msgid "Role"
-msgstr ""
-
-#: ../app/views/categories/_form.haml:19 ../app/views/shipments/_form.haml:63 ../app/views/devise/invitations/edit.haml:42 ../app/views/addresses/_form.haml:78 ../app/views/payments/_form.haml:19 ../app/views/products/_form.haml:116
-msgid "Save"
-msgstr "Speichern"
-
-#: ../app/views/addresses/_modal.haml:88
-msgid "Save changes"
-msgstr "Änderungen speichern"
-
-#: ../app/views/store/index.haml:16
-msgid "Search"
-msgstr "Suche"
-
-#: ../app/views/products/_form.haml:20
-msgid "Select category"
-msgstr "Kategorie wählen"
-
-#: ../app/views/devise/invitations/new.haml:25
-msgid "Send an invitation"
-msgstr ""
-
-#: ../app/views/devise/invitations/new.haml:9
-msgid "Send invitation"
-msgstr ""
-
-#: ../app/views/users/index.haml:91
-msgid "Sent at"
-msgstr ""
-
-#: ../app/views/devise/invitations/edit.haml:9
-msgid "Set your password"
-msgstr "Passwort setzen"
-
-#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:96 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:215 ../app/views/users/_order.haml:19 model_attributes.rb:29
-msgid "Shipment"
-msgstr "Versand"
-
-#: ../app/controllers/shipments_controller.rb:24
-msgid "Shipment was successfully created."
-msgstr "Versandart wurde erfolgreich erstellt."
-
-#: ../app/controllers/shipments_controller.rb:40
-msgid "Shipment was successfully destroyed."
-msgstr "Versandart wurde erfolgreich zerstört."
-
-#: ../app/controllers/shipments_controller.rb:32
-msgid "Shipment was successfully updated."
-msgstr "Versandart wurde erfolgreich aktualisiert."
-
-#: ../app/views/layouts/_navigation.haml:136
-msgid "Shipments"
-msgstr "Versandarts"
-
 #: model_attributes.rb:30
 msgid "Shipment|Default"
 msgstr "Standard"
@@ -612,122 +812,6 @@ msgstr "Anbieter"
 #: model_attributes.rb:33
 msgid "Shipment|Title"
 msgstr "Bezeichnung"
-
-#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:18
-msgid "Shipped"
-msgstr "Versand"
-
-#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:82
-msgid "Shipping address"
-msgstr "Versandadresse"
-
-#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:10
-msgid "Shipping and Billing address"
-msgstr "Versand- und Rechnungsadresse"
-
-#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:18
-msgid "Shipping method"
-msgstr "Versandart"
-
-#: ../app/views/shipments/index.haml:3
-msgid "Shipping methods"
-msgstr "Versandmöglichkeiten"
-
-#: ../app/views/devise/shared/_links.html.haml:2 ../app/views/devise/sessions/new.haml:51 ../app/views/devise/registrations/new.haml:62 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:90
-msgid "Sign in"
-msgstr "Anmelden"
-
-#: ../app/views/users/index.haml:29
-msgid "Sign in count"
-msgstr "Anzhal der Anmeldungen"
-
-#: ../app/views/layouts/_navigation.haml:72
-msgid "Sign out"
-msgstr "Abmelden"
-
-#: ../app/views/devise/shared/_links.html.haml:7 ../app/views/devise/sessions/new.haml:62 ../app/views/devise/registrations/new.haml:52 ../app/views/layouts/_navigation.haml:83 ../app/views/layouts/_navigation.haml:92
-msgid "Sign up"
-msgstr "Registrieren"
-
-#: ../app/views/devise/sessions/new.haml:9
-msgid "Sign-in"
-msgstr "Anmeldung"
-
-#: ../app/views/devise/registrations/new.haml:9
-msgid "Sign-up"
-msgstr "Registrierung"
-
-#: ../app/views/devise/mailer/reset_password_instructions.html.erb:3
-msgid "Someone has requested a link to change your password. You can do this through the link below."
-msgstr ""
-
-#: ../app/controllers/carts_controller.rb:50
-msgid "Something went wrong"
-msgstr "Etwas ist schiefgelaufen"
-
-#: ../app/views/store/_products.html.haml:122
-msgid "Sorry, the product was not found."
-msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
-
-#: ../app/views/store/index.haml:31
-msgid "Sort"
-msgstr "Sortierung"
-
-#: ../app/views/account/_order.haml:9 ../app/views/orders/index.html.haml:14 ../app/views/users/_order.haml:13
-msgid "Status"
-msgstr "Status"
-
-#: ../app/views/addresses/_form.haml:46
-msgid "Street"
-msgstr "Straße"
-
-#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:64 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:205
-msgid "Subtotal"
-msgstr "Zwischensumme"
-
-#: ../app/controllers/orders_controller.rb:53
-msgid "Thank you for your order!"
-msgstr "Vielen Dank für Ihre Bestellung!"
-
-#: ../app/views/addresses/index.haml:55
-msgid "This address is referenced by an order"
-msgstr ""
-
-#: ../app/controllers/application_controller.rb:44
-msgid "This product is out of stock"
-msgstr "Dieses Produkt ist ausverkauft"
-
-#: ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:71 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:13 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
-msgid "Title"
-msgstr "Bezeichnung"
-
-#: ../app/views/categories/show.haml:11
-msgid "Title %s:"
-msgstr "Bezeichnung %s"
-
-#: ../app/views/users/index.haml:97
-msgid "Token"
-msgstr ""
-
-#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:114 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:20 ../app/views/orders/show.haml:178 ../app/views/orders/show.haml:225 ../app/views/users/_order.haml:21
-msgid "Total"
-msgstr "Gesamt"
-
-#: ../app/views/devise/mailer/unlock_instructions.html.erb:7
-msgid "Unlock my account"
-msgstr "Konto freischalten"
-
-#: ../app/views/account/_account.haml:79
-msgid "Update account"
-msgstr "Konto aktualisieren"
-
-#: ../app/views/addresses/show.haml:36 model_attributes.rb:34
-msgid "User"
-msgstr "Benutzer"
-
-#: ../app/views/layouts/_navigation.haml:124
-msgid "Users"
-msgstr "Benützer"
 
 #: model_attributes.rb:35
 msgid "User|Confirmation sent at"
@@ -801,10 +885,6 @@ msgstr "Benutzer"
 msgid "User|Unconfirmed email"
 msgstr "Unbestätigte email"
 
-#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:80 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/index.haml:32 ../app/views/products/_form.haml:72
-msgid "VAT"
-msgstr "MwSt"
-
 #: model_attributes.rb:53
 msgid "Vat"
 msgstr "MwSt"
@@ -817,103 +897,3 @@ msgstr "Satz"
 msgid "Vat|Title"
 msgstr "Bezeichnung"
 
-#: ../app/views/store/index.haml:56
-msgid "View"
-msgstr "Ansicht"
-
-#: ../app/views/devise/confirmations/new.haml:31
-msgid "We'll resend the confirmation instructions."
-msgstr "Bald bekommen Sie eine Bestätigung Anweisungen."
-
-#: ../app/views/devise/passwords/new.haml:31
-msgid "We'll send password reset instructions."
-msgstr "Bald bekommen Sie eine Passwort-Reset-Anweisungen."
-
-#: ../app/views/devise/invitations/new.haml:31
-msgid "We'll send the invitation instructions."
-msgstr "Bald bekommen Sie eine Einladung Anweisungen."
-
-#: ../app/views/devise/mailer/confirmation_instructions.html.erb:1
-msgid "Welcome"
-msgstr ""
-
-#: ../app/controllers/application_controller.rb:54 ../app/controllers/application_controller.rb:57
-msgid "You are not authorized to perform this action"
-msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
-
-#: ../app/views/devise/mailer/confirmation_instructions.html.erb:3
-msgid "You can confirm your account email through the link below:"
-msgstr ""
-
-#: ../app/views/account/_account.haml:70
-msgid "You must enter your current password to make changes."
-msgstr "Bitte geben Sie Ihr aktuelles Passwort um die Änderungen zu übernehmen"
-
-#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:15
-msgid "Your Cart"
-msgstr "Ihr Warenkorb"
-
-#: ../app/views/devise/mailer/unlock_instructions.html.erb:3
-msgid "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
-msgstr ""
-
-#: ../app/views/account/_address.haml:64
-msgid "Your addresses list is empty"
-msgstr "Ihre Adressen-Liste ist leer"
-
-#: ../app/views/orders/_address.haml:73
-msgid "Your addresses list is empty, please add at least one address"
-msgstr "Ihre Adressen-Liste ist leer, fügen Sie bitte mindestens eine Adresse hinzu"
-
-#: ../app/controllers/carts_controller.rb:12 ../app/controllers/carts_controller.rb:30 ../app/controllers/orders_controller.rb:33 ../app/views/carts/show.haml:28
-msgid "Your cart is empty!"
-msgstr "Ihr Warenkorb ist leer!"
-
-#: ../app/views/mailers/order_confirmation.html.erb:5
-msgid "Your order has been received and will be processed shortly."
-msgstr ""
-
-#: ../app/views/account/_order.haml:50
-msgid "Your orders list is empty"
-msgstr "Ihre Auftragsliste ist leer"
-
-#: ../app/views/devise/mailer/reset_password_instructions.html.erb:8
-msgid "Your password won't change until you access the link above and create a new one."
-msgstr ""
-
-#: ../app/views/orders/_address.haml:49
-msgid "billing address is same as shipping address"
-msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
-
-#: ../app/views/mailers/order_confirmation.html.erb:3
-msgid "thank you for your order."
-msgstr "Vielen Dank für Ihre Bestellung!"
-
-#: ../app/views/products/show.haml:53
-#~ msgid "Availability:"
-#~ msgstr "Verfügbarkeit"
-
-#: ../app/views/products/show.haml:37
-#~ msgid "EAN:"
-#~ msgstr "Artikelnummer:"
-
-#: ../app/views/orders/index.html.haml:22
-#~ msgid "Tax"
-#~ msgstr "Steuer"
-
-#: ../app/views/payments/_form.haml:19 ../app/views/shipments/_form.haml:35
-#~ msgid "Title %s"
-#~ msgstr "Bezeichnung %s"
-
-#: ../app/views/products/show.haml:45
-#~ msgid "VAT:"
-#~ msgstr "MwSt:"
-
-#~ msgid "Description %s"
-#~ msgstr "Beschreibung %s"
-#~ msgid "Description"
-#~ msgstr "Beschreibung"
-#~ msgid "Translation"
-#~ msgstr "Übersetzung"
-#~ msgid "title_de"
-#~ msgstr "Bezeichnung"
