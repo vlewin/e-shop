@@ -18,7 +18,6 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     redirect_to account_path(resource: resource), locals: 'errors'
-    # redirect_to :back, :foo => 'params[:foo]'
   end
 
   # Redirect back to user profile
