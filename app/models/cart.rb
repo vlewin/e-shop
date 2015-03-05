@@ -1,21 +1,32 @@
 class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
+  has_many :products, through: :line_items
 
-  # TODO: refactoring (method too long)
-  def add_product(product_id, quantity=1)
-    current_item = line_items.find_by(product_id: product_id)
+  def add_item(product_id, quantity)
+    quantity = quantity.to_i
+    line_item = line_items.find_by(product_id: product_id)
 
-    if current_item
-      if current_item.quantity
-        current_item.quantity += quantity.to_i.zero? ? 1 : quantity.to_i
-      else
-        current_item.quantity = quantity
-      end
+    if line_item
+      quantity = line_item.quantity + quantity
+      update_item(line_item.id, quantity)
     else
-      current_item = line_items.build(product_id: product_id, quantity: quantity)
-      current_item.price = current_item.product.price
+      product = Product.find(product_id)
+      line_item = line_items.create(product_id: product.id, price: product.price, quantity: quantity)
     end
-    current_item
+
+    line_item
+  end
+
+  def update_item(line_item_id, quantity)
+    quantity = quantity.to_i
+    line_item = line_items.find(line_item_id)
+
+    if quantity <= line_item.max_quantity
+      ActiveRecord::Base.transaction do
+        line_item.product.update(reserved_count: quantity)
+        line_item.update_attributes(quantity: quantity)
+      end
+    end
   end
 
   def empty?

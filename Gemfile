@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 #ruby '2.1.3'
 
-gem 'rails', '~> 4.1.6'
+gem 'rails', '~> 4.2.0'
 
 # App localization
 gem 'rails-i18n', '~> 4.0.0'
@@ -18,13 +18,13 @@ gem 'therubyracer'
 
 gem 'jquery-rails'
 gem 'haml-rails'
-gem 'slim-rails'
 gem 'less-rails'
 
 gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
 
-gem 'breadcrumbs_on_rails'
+# gem 'breadcrumbs_on_rails'
+gem 'gretel'
 gem 'prawn'
 
 # Authentication and authorization
@@ -66,7 +66,7 @@ end
 group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
-  gem 'rspec-rails', '~> 3.0.1'
+  gem 'rspec-rails', '~> 3.1'
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'launchy'

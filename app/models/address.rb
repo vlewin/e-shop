@@ -14,13 +14,13 @@ class Address < ActiveRecord::Base
   end
 
   def in_use?
-    !ensure_not_referenced_by_any_order
+    Order.where('billing_address_id = ? OR shipping_address_id = ?', id, id).exists?
   end
 
   private
   # Ensure that there are no orders referencing this address
   def ensure_not_referenced_by_any_order
-    if Order.where("billing_address_id = ? or shipping_address_id = ?", id, id).exists?
+    if in_use?
       errors.add(:address, 'is referenced by an order')
       return false
     else

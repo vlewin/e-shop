@@ -9,7 +9,7 @@ en:
   number:
     currency:
       format:
-        unit:           "$"
+        unit:           "€"
         precision:      2
         separator:      "."
         delimiter:      ","

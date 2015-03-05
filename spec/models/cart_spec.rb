@@ -1,21 +1,71 @@
 require "rails_helper"
 
 describe Cart do
-  subject { FactoryGirl.build(:cart) }
+  subject { FactoryGirl.create(:cart) }
+  let(:cart_product) { subject.products.first }
   let(:empty_cart) { FactoryGirl.create(:empty_cart) }
   let(:product) { FactoryGirl.create(:product) }
   let(:shipment) { FactoryGirl.create(:shipment) }
 
+
   it { should have_many :line_items }
 
-  it 'adds product to cart' do
-    item = subject.add_product(product.id, 3)
-    expect(item.cart_id).to eq subject.id
-    expect(item.quantity).to eq 3
+  context 'empty cart' do
+    describe '#add_item' do
+      it 'adds new item' do
+        empty_cart.add_item(product.id, 2)
+
+        expect(empty_cart.line_items.count).to eq 1
+        expect(empty_cart.line_items.first.quantity).to eq 2
+      end
+
+      it 'sums a quantity' do
+        empty_cart.add_item(product.id, 1)
+        empty_cart.add_item(product.id, 1)
+
+        line_items = empty_cart.line_items.reload
+
+        expect(line_items.count).to eq 1
+        expect(line_items.first.quantity).to eq 2
+      end
+
+      it 'increases a product reserved counter' do
+        expect(product.reserved_count).to eq 0
+
+        empty_cart.add_item(product.id, 2)
+
+        expect(product.reload.reserved_count).to eq 2
+      end
+    end
+
+    describe '#empty?' do
+      it 'checks if cart is empty' do
+        expect(empty_cart.empty?).to be true
+      end
+    end
   end
 
-  it 'checks if cart is empty' do
-    expect(empty_cart.empty?).to be true
+  describe '#update_item' do
+    let(:line_item) { subject.line_items.first }
+    it 'updates a quantity' do
+      expect(line_item.quantity).to eq 1
+      subject.update_item(line_item.id, 2)
+      expect(line_item.reload.quantity).to eq 2
+    end
+
+    it 'increases a product reserved counter' do
+      expect(product.reserved_count).to eq 0
+
+      empty_cart.add_item(product.id, 2)
+
+      expect(product.reload.reserved_count).to eq 2
+    end
+
+    it 'preserves the max of available product quantity' do
+      expect(line_item.quantity).to eq 1
+      subject.update_item(line_item.id, 3)
+      expect(line_item.reload.quantity).to eq 1
+    end
   end
 
   it 'counts the quantity of all products' do

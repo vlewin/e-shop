@@ -22,16 +22,12 @@ class OrdersController < ApplicationController
   end
 
   def new
-    # add_breadcrumb _('Store'), :root_path
-    # add_breadcrumb _('Check-out'), new_order_path
-
     @cart = current_cart
     @shipments = Shipment.all
     @address = Address.new
 
     if @cart.line_items.empty?
-      redirect_to root_path, notice: _('Your cart is empty!')
-      return
+      redirect_to root_path, notice: _('Your cart is empty!') and return
     else
       @order = Order.new
     end
@@ -48,7 +44,7 @@ class OrdersController < ApplicationController
         session[:cart_id] = nil
 
         # FIXME: Send notification email
-        UserMailer.order_confirmation(current_user, @order).deliver
+        UserMailer.order_confirmation(current_user, @order).deliver_now
 
         format.html { redirect_to root_path, notice: _('Thank you for your order!') }
       else
@@ -92,13 +88,13 @@ class OrdersController < ApplicationController
   end
 
   private
-    def set_order
-      @order = policy_scope(Order).find(params[:id])
-    end
+  def set_order
+    @order = policy_scope(Order).find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def order_params
-      params.require(:order).permit(:shipping_address_id, :billing_address_id, :shipment_id, :payment_id, :status)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def order_params
+    params.require(:order).permit(:shipping_address_id, :billing_address_id, :shipment_id, :payment_id, :status)
+  end
 
 end

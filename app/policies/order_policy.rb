@@ -18,7 +18,7 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def show?
-    @user.admin? || @user.orders.exists?(record)
+    @user.admin? || @user.orders.exists?(record.id)
   end
 
   def update?

@@ -20,7 +20,7 @@
               = link_to _('Edit'), '#address', data: { target: "#address_modal_#{address.id}", toggle: 'modal' }, class: 'btn btn-default'
             .btn-group
               - link = address.in_use? ? delete_address_url(address) : address
-              = link_to _('Destroy'), link, data: {:confirm => 'Are you sure?'}, disabled: false, :method => :delete, class: 'btn btn-danger'
+              = link_to _('Destroy'), link, data: { confirm: 'Are you sure?' }, method: :delete, class: 'btn btn-danger'
 
 
       = render 'addresses/modal', address: address

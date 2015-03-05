@@ -15,8 +15,10 @@ class ProductsController < ApplicationController
   end
 
   def new
+    redirect_to products_url, alert: _('Please create a category first.') unless Category.exists?
+
     @product = Product.new
-    @next_id = (Product.maximum(:id) + 1).to_s.rjust(2, '0')
+    @next_id = Product.next_id
     authorize @product
   end
 

@@ -27,7 +27,7 @@ class StoreController < ApplicationController
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
     @products = @search.result.page(params[:page]).per(params[:limit])
 
-    @init_letters = Product.joins(:translations).uniq.select('product_translations.title').map{ |product| product.title.first }.uniq.sort
+    @init_letters = @products.map{|p| p.title.first if p.title}.uniq.sort
     @categories ||= Category.all.order(:title)
   end
 

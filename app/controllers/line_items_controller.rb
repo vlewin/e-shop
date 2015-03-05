@@ -7,22 +7,22 @@ class LineItemsController < ApplicationController
   end
 
   def create
-    @cart = current_cart
-    @line_item = @cart.add_product(params[:product_id], params[:quantity])
+    linet_item = @current_cart.add_item(params[:product_id], params[:quantity])
+    flash[:notice] = _("%s x %s added to your cart!") % [params[:quantity], linet_item.product.title] if linet_item
+    redirect_to_back_or_default root_path
+  end
 
-    if @line_item.save!
-      redirect_to root_path, notice: _("%s x %s added to your cart!") % [params[:quantity], @line_item.product.title]
-    else
-      render action: 'new'
-    end
+  def update
+    line_item = @current_cart.update_item(params[:id], params[:quantity])
+    redirect_to cart_path
   end
 
   def destroy
-    @line_item = LineItem.find(params[:id])
-    @line_item.destroy
+    line_item = @current_cart.line_items.find(params[:id])
+    line_item.destroy
 
     if current_cart.empty?
-      redirect_to root_path
+      redirect_to root_path, notice: _('Your cart is empty!')
     else
       redirect_to_back_or_default root_path
     end
