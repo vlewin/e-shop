@@ -63,12 +63,11 @@
                         %i.fa.fa-shopping-cart
 
 
-
-  %hr.line
-  = paginate @products, remote: true
+  - if @products.size > Settings.pagination.per_page
+    %hr.line
+    = paginate @products, remote: true
 
 - else
-  -# %br
   %h4
     = _('Sorry, the product was not found.')
   %hr

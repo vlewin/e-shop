@@ -37,7 +37,8 @@
           %small= _('Per page')
         .btn-group
           = form_tag root_path, method: :get do
-            = select_tag :limit, options_for_select([12, 24, 36, 48], selected: @limit || 12), class: 'input-sm form-control'
+            - options = 4.times.map{|i| (i+1) * Settings.pagination.per_page}
+            = select_tag :limit, options_for_select(options, selected: @limit || Settings.pagination.per_page), class: 'input-sm form-control'
 
   %hr.line
 
@@ -68,6 +69,7 @@
       - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
       %li{ class: cat.title == params[:category_translations_title_eq] ? 'active' : '' }
         = link_to title, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+
   .tab-content
     #products.tab-pane.active
       = render 'products'

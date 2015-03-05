@@ -22,7 +22,7 @@ class StoreController < ApplicationController
     # end
     # query = Hash[params[:q].map{|k,v| [k,Unicode::capitalize(v)]}] if (params[:q] && params[:q][:translations_title_cont])
 
-    @limit = params[:limit] || 12
+    @limit = params[:limit] || Settings.pagination.per_page
     @search = Product.includes(:line_items).search(query)
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
     @products = @search.result.page(params[:page]).per(params[:limit])
