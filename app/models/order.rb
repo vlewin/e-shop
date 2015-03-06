@@ -15,7 +15,7 @@ class Order < ActiveRecord::Base
   belongs_to :billing_address, class_name: 'Address', foreign_key: :billing_address_id
   belongs_to :shipping_address, class_name: 'Address', foreign_key: :shipping_address_id
 
-  has_many :line_items, dependent: :destroy
+  has_many :line_items, -> { includes(product: [:vat]) }, dependent: :destroy
 
   validates :shipping_address_id, :shipment_id, :payment_id, presence: true
 
