@@ -105,4 +105,11 @@ module ApplicationHelper
 
     html.html_safe
   end
+
+  def ransack_search_form_for(url, target=nil)
+    target ||= "##{controller_name}"
+    search_form_for @search, url: url, method: :get, id: 'search-form', class: 'text-right', data: { target: target }, remote: true do |f|
+      f.text_field :translations_title_cont, placeholder: _('Search'), class: 'form-control'
+    end
+  end
 end
