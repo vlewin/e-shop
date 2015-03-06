@@ -25,7 +25,7 @@ class StoreController < ApplicationController
     @limit = params[:limit] || Settings.pagination.per_page
     @search = Product.includes(:line_items).search(query)
     @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
-    @products = @search.result.page(params[:page]).per(params[:limit])
+    @products = @search.result.page(params[:page]).per(@limit)
 
     @init_letters = @products.map{|p| p.title.first if p.title}.uniq.sort
     @categories ||= Category.all.order(:title)

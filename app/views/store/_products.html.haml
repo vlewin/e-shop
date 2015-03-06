@@ -63,9 +63,12 @@
                         %i.fa.fa-shopping-cart
 
 
-  - if @products.size > Settings.pagination.per_page
-    %hr.line
-    = paginate @products, remote: true
+  %hr.line
+    .row
+      .col-sm-6.col-md-6
+        = page_entries_info @products, entry_name: _('Product'), collection_name: _('Products')
+      .col-sm-6.col-md-6
+        .text-right= paginate @products, remote: true
 
 - else
   %h4

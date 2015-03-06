@@ -2,11 +2,11 @@ ru:
   helpers:
     page_entries_info:
       more_pages:
-        display_entries: Показана %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> из <b>%{total}</b>
+        display_entries: "%{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> из <b>%{total}</b>"
       one_page:
         display_entries:
-          one: Показано <b>1</b> %{entry_name}
-          other: Показаны <b>все %{count}</b> %{entry_name}
+          one: "Показано <b>1</b> %{entry_name}"
+          other: "Показаны все <b>%{count}</b> %{entry_name}"
   views:
     pagination:
       first: ! '&laquo; Первая'
