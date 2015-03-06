@@ -4,7 +4,11 @@ class CategoriesController < ApplicationController
 
   def index
     authorize :categories, :index?
-    @categories = Category.all
+
+    @search = Category.search(params[:q])
+    @items = @search.result.order(:title).page(params[:page]).per(params[:limit] || Settings.pagination.per_page)
+
+    render(partial: 'categories', layout: false) and return if request.xhr?
   end
 
   def show
