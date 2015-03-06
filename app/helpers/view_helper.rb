@@ -108,14 +108,20 @@ module ViewHelper
 
     html ||= content_tag(:tr) do
       concat(
-        content_tag(:td, class: 'dotted-line') do
-          page_entries_info items, entry_name: entry_name, collection_name: collection_name
-        end
-      )
+        content_tag(:td, class: 'thick-line', colspan: '100%') do
+          content_tag(:div, class: 'row') do
+            concat(
+              content_tag(:div, class: 'col-sm-5') do
+                page_entries_info items, entry_name: entry_name, collection_name: collection_name
+              end
+            )
 
-      concat(
-        content_tag(:td, class: 'dotted-line text-right', colspan: 2) do
-          paginate items
+            concat(
+              content_tag(:div, class: 'col-sm-7 text-right') do
+                paginate items
+              end
+            )
+          end
         end
       )
     end

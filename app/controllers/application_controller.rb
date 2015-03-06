@@ -39,11 +39,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def find_and_paginate(collection = nil, options)
+    scope = collection || model_name.constantize
+    order = options.try(:[], :order)
 
-  def find_and_paginate(class_name = nil)
-    class_name ||= model_name
-    @search = class_name.constantize.search(params[:q])
-    @search.result.order(:title).page(params[:page]).per(params[:limit] || Settings.pagination.per_page)
+    @search = scope.search(params[:q])
+    @search.result.order(order).page(params[:page]).per(params[:limit] || Settings.pagination.per_page)
   end
 
   private
