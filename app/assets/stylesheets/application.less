@@ -8,57 +8,31 @@
  *= require_self
 */
 
-
-hr.line {
-  margin:10px 0px;
+html, body {
+  height: 100%;
 }
 
-.no-margin {
-  margin: 0;
+body {
+  color: #444444;
+  background: #f8f8f8;
+  padding-top: 80px;
+  text-rendering: optimizeLegibility;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 
-.no-padding {
-  padding: 0;
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -50px;
+  /* Pad bottom by footer height */
+  padding: 0 0 90px;
 }
 
-
-.bs-callout {
-  -moz-border-bottom-colors: none;
-  -moz-border-left-colors: none;
-  -moz-border-right-colors: none;
-  -moz-border-top-colors: none;
-  border-color: #eee;
-  border-image: none;
-  border-radius: 5px;
-  border-style: solid;
-  border-width: 1px 1px 1px 1px;
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #fff;
-
-  h4 {
-    margin-bottom: 5px;
-    margin-top: 0;
-  }
-
-  &.bs-callout-warning {
-    border-color: #f0ad4e;
-    h4 {
-      color: #f0ad4e;
-    }
-  }
-
-  &.bs-callout-danger {
-    border-left-color: #d9534f;
-    h4 {
-      color: #d9534f;
-    }
-  }
-
-  &.bs-callout-info {
-    border-left-color: #5bc0de;
-    h4 {
-      color: #5bc0de;
-    }
-  }
+footer {
+  padding: 15px 0px;
+  background-color: #F5F5F5;
+  background-color: #ddd;
 }
+
