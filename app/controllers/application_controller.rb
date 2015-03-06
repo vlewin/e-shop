@@ -39,7 +39,19 @@ class ApplicationController < ActionController::Base
     end
   end
 
+
+  def find_and_paginate(class_name = nil)
+    class_name ||= model_name
+    @search = class_name.constantize.search(params[:q])
+    @search.result.order(:title).page(params[:page]).per(params[:limit] || Settings.pagination.per_page)
+  end
+
   private
+
+  def model_name
+    controller_name.classify
+  end
+
   def check_product_availability
     redirect_to(root_path, alert: _('This product is out of stock')) if @product.out_of_stock?
   end
