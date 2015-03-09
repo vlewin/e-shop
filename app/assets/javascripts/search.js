@@ -16,14 +16,10 @@ $(function() {
     var target = $(this).data('target');
     var handler = $(this).data('handler');
 
-    // console.log(target)
-    console.log(target)
-
     if(target === undefined) {
       console.warn('Please set data-target attribute on "' + $(this).text() + '" link');
     } else {
       if(handler === undefined) {
-        console.log(xhr.responseText)
         $(target).html(xhr.responseText);
       } else {
         $(target)[handler](xhr.responseText);

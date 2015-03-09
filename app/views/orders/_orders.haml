@@ -17,7 +17,7 @@
                 %label{for: radio_id, data: { target: "##{radio_id}"}}
                   %i{ class: "fa #{icons[status.to_sym]}"}
                   = status.humanize
-
+    %td= order.user.name
     %td= I18n.localize(order.created_at)
     %td= order.payment.title
     %td= number_to_currency order.total

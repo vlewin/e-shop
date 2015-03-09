@@ -10,8 +10,8 @@
         %tr
           %th= _('Title')
           %th= _('Product count')
-          %th{ colspan: 3, width: '30%' }
-            = ransack_search_form_for(categories_path)
+          %th{ colspan: 3, width: '25%' }
+            = ransack_search_form_for(categories_path, :translations_title_cont)
 
       %tbody#categories
         = render partial: 'categories'

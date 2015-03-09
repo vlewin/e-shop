@@ -4,10 +4,12 @@ class OrdersController < ApplicationController
   after_action :verify_policy_scoped, only: :index
 
   def index
-    orders = policy_scope(Order).includes(:shipment, :payment, :line_items)
+    authorize :orders, :index?
+
+    orders = policy_scope(Order).includes(:user, :shipment, :payment, :line_items)
     @items = find_and_paginate(orders, order: 'updated_at DESC')
 
-    authorize :orders, :index?
+    render(partial: 'orders', layout: false) and return if request.xhr?
   end
 
   def show

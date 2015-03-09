@@ -4,8 +4,8 @@ class CategoriesController < ApplicationController
 
   def index
     authorize :categories, :index?
-    @items = find_and_paginate(order: 'category_translations.title ASC')
 
+    @items = find_and_paginate(order: 'category_translations.title ASC')
     render(partial: 'categories', layout: false) and return if request.xhr?
   end
 

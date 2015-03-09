@@ -95,10 +95,13 @@ module ViewHelper
     html.html_safe
   end
 
-  def ransack_search_form_for(url, target=nil)
+
+  def ransack_search_form_for(url, target=nil, search_columns)
     target ||= "##{controller_name}"
-    search_form_for @search, url: url, method: :get, id: 'search-form', class: 'text-right', data: { target: target }, remote: true do |f|
-      f.text_field :translations_title_cont, placeholder: _('Search'), class: 'form-control'
+    value = params[:q].try(:[], search_columns) || ''
+
+    search_form_for @search, url: url, method: :get, id: 'search-form', class: 'text-right', data: { target: target }, remote: true do
+      search_field_tag "q[#{search_columns}]", value, placeholder: _('Search'), class: 'form-control'
     end
   end
 
