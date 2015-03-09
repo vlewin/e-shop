@@ -3,14 +3,14 @@ require 'rails_helper'
 describe AddressesController, type: :controller do
   login_admin
 
-  let(:address) { FactoryGirl.create(:address)}
+  let!(:address) { FactoryGirl.create(:address)}
   it { should use_before_action(:set_address) }
 
 
   describe "GET #index" do
-    it "assigns addresses to @addresses" do
+    it "assigns addresses to @items" do
       get :index
-      expect(assigns(:addresses)).to eq(Address.all)
+      expect(assigns(:items)).to match_array(Address.all)
     end
 
     it "renders the :index view" do

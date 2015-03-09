@@ -7,6 +7,7 @@ class AddressesController < ApplicationController
 
     addresses = Address.preload(:user, :billing_orders, :shipping_orders)
     @items = find_and_paginate(addresses, order: 'recipient ASC')
+
     render(partial: 'addresses', layout: false) and return if request.xhr?
   end
 
