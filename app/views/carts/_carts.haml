@@ -1,0 +1,11 @@
+- @items.each_with_index do |cart, index|
+  %tr
+    %td= cart.id
+    %td= cart.created_at
+    %td= cart.updated_at
+    %td= cart.line_items_count
+    %td.text-right
+      = icon_link_to '', cart, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+      = icon_link_to '', cart, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+
+= table_pagination(@items)

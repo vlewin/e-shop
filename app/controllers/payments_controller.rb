@@ -2,8 +2,10 @@ class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @payments = Payment.all
     authorize :payments, :index?
+
+    @items = find_and_paginate(order: 'payment_translations.title ASC')
+    render(partial: 'payments', layout: false) and return if request.xhr?
   end
 
   def show

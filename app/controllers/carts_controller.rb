@@ -5,7 +5,8 @@ class CartsController < ApplicationController
   def index
     authorize :carts, :index?
 
-    @carts = Cart.all.order(:updated_at)
+    @items = find_and_paginate(order: 'updated_at DESC')
+    render(partial: 'carts', layout: false) and return if request.xhr?
   end
 
   def show

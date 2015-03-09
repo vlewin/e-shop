@@ -9,13 +9,7 @@
       %thead
         %tr
           %th= _('Title')
-          %th{ colspan: 3 }
-
-      %tbody
-        - @payments.each do |payment|
-          %tr
-            %td= payment.title
-            %td.text-right
-              = icon_link_to '', payment, { class: 'btn btn-sm btn-default' }, 'fa-eye'
-              = icon_link_to '', edit_payment_path(payment), { class: 'btn btn-sm btn-default' }, 'fa-edit'
-              = icon_link_to '', payment, { data: {confirm: _('Are you sure?') }, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+          %th{ colspan: 3, width: '25%'}
+            = ransack_search_form_for(payments_path, :translations_title_cont)
+      %tbody{id: controller_name}
+        = render partial: controller_name
