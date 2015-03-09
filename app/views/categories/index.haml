@@ -13,5 +13,5 @@
           %th{ colspan: 3, width: '25%' }
             = ransack_search_form_for(categories_path, :translations_title_cont)
       %tbody{id: controller_name}
-        = render partial: 'categories'
+        = render partial: controller_name
 
