@@ -6,8 +6,10 @@ class ProductsController < ApplicationController
   after_action :verify_authorized, except: [:index, :show]
 
   def index
-    @products = Product.includes(:vat).all
     authorize :products, :index?
+
+    @items = find_and_paginate(Product.includes(:vat), order: 'product_translations.title ASC')
+    render(partial: 'products', layout: false) and return if request.xhr?
   end
 
   def show
