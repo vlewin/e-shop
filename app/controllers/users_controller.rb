@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   after_action :verify_authorized
 
   def index
-    @users = User.all
-    authorize @users
+    authorize :users, :index?
+
+    @items = find_and_paginate(order: 'name ASC')
+    render(partial: 'users', layout: false) and return if request.xhr?
   end
 
   def show

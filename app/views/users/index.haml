@@ -13,26 +13,10 @@
         %th= _('Email')
         %th.visible-md.visible-lg= _('Last sign in')
         %th.visible-md.visible-lg= _('Sign in count')
-        %th
-
-      %tbody
-        - @users.each do |user|
-          %tr
-            %td
-
-              - if user.invitation_token
-                %span.label.label-default{ rel: :tooltip, title: _('Pending invitation') }
-                  %i.fa.fa-exclamation-circle
-                  = user.role.capitalize
-              - else
-                %span.label{ class: user.admin? ? 'label-danger' : 'label-success'}
-                  = user.role.capitalize
-            %td= link_to user.name, user
-            %td= user.email
-            %td.visible-md.visible-lg= user.last_sign_in_at
-            %td.visible-md.visible-lg= user.sign_in_count
-            %td.text-right
-              = icon_link_to '', user, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+        %th{ width: '25%'}
+          = ransack_search_form_for(users_path, :name_or_email_cont)
+      %tbody{id: controller_name}
+        = render partial: controller_name
 
 .panel.panel-default
   .panel-heading
