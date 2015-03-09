@@ -1,0 +1,17 @@
+- @items.each do |shipment|
+  %tr
+    %td
+      - if shipment.default
+        %label.label.label-default Default
+      - else
+        = '---'
+
+    %td= shipment.provider
+    %td= shipment.title
+    %td= number_to_currency shipment.fee
+    %td.text-right
+      = icon_link_to '', shipment, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+      = icon_link_to '', edit_shipment_path(shipment), { class: 'btn btn-sm btn-default' }, 'fa-edit'
+      = icon_link_to '', shipment, { data: {confirm: _('Are you sure?') }, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+
+= table_pagination(@items)
