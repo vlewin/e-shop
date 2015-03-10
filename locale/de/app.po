@@ -170,6 +170,9 @@ msgstr "Konto"
 msgid "This address is referenced by an order"
 msgstr "Diese Adresse wird durch einen Auftrag referenziert"
 
+msgid "%s address"
+msgstr "%s Adresse"
+
 msgid "Recipient"
 msgstr "Empfänger"
 
@@ -229,6 +232,9 @@ msgstr "Weiter einkaufen"
 
 msgid "Proceed to Checkout"
 msgstr "Zur Kasse"
+
+msgid "%s category"
+msgstr "%s Kategorie"
 
 msgid "Categories"
 msgstr "Kategorien"
@@ -444,11 +450,17 @@ msgstr "Auftragsdatum"
 msgid "Product"
 msgstr "Produkt"
 
+msgid "%s payment method"
+msgstr "%s Zahlungsart"
+
 msgid "Payment methods"
 msgstr "Zahlungsarten"
 
 msgid "New payment"
 msgstr "Neuer Zahlungsart"
+
+msgid "%s product"
+msgstr "%s Produkt"
 
 msgid "Select category"
 msgstr "Kategorie wählen"
@@ -473,6 +485,9 @@ msgstr "MwSt: %s"
 
 msgid "Available: %d of %d"
 msgstr "Verfügbar: %d von %d"
+
+msgid "%s shipping method"
+msgstr "%s Versandart"
 
 msgid "Shipping methods"
 msgstr "Versandmöglichkeiten"

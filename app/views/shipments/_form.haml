@@ -1,7 +1,7 @@
 .panel.panel-default
   = form_for @shipment, html: { class: 'form-horizontal' } do |f|
     .panel-heading
-      %h4.page-header.no-margin= "#{action} shipping method"
+      %h4.page-header.no-margin= _("%s shipping method") % action
     .panel-body
       = render 'layouts/errors', object: @shipment
       .row

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-10 08:52+0100\n"
-"PO-Revision-Date: 2015-03-10 08:52+0100\n"
+"POT-Creation-Date: 2015-03-10 09:02+0100\n"
+"PO-Revision-Date: 2015-03-10 09:02+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -17,6 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: ../app/views/addresses/_form.haml:7
+msgid "%s address"
+msgstr ""
+
+#: ../app/views/categories/_form.haml:5
+msgid "%s category"
+msgstr ""
+
+#: ../app/views/payments/_form.haml:5
+msgid "%s payment method"
+msgstr ""
+
+#: ../app/views/products/_form.haml:5
+msgid "%s product"
+msgstr ""
+
+#: ../app/views/shipments/_form.haml:5
+msgid "%s shipping method"
+msgstr ""
 
 #: ../app/controllers/line_items_controller.rb:11
 msgid "%s x %s added to your cart!"
@@ -90,7 +110,7 @@ msgstr ""
 msgid "Available: %d of %d"
 msgstr ""
 
-#: ../app/views/categories/_form.haml:21 ../app/views/categories/show.haml:42 ../app/views/shipments/_form.haml:65 ../app/views/shipments/show.haml:37 ../app/views/addresses/_form.haml:80 ../app/views/payments/_form.haml:21 ../app/views/payments/show.haml:21 ../app/views/orders/_summary.haml:108 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/products/_form.haml:118 ../app/views/products/show.haml:50
+#: ../app/views/categories/_form.haml:21 ../app/views/categories/show.haml:42 ../app/views/shipments/_form.haml:65 ../app/views/shipments/show.haml:37 ../app/views/addresses/_form.haml:80 ../app/views/payments/_form.haml:22 ../app/views/payments/show.haml:21 ../app/views/orders/_summary.haml:108 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/products/_form.haml:118 ../app/views/products/show.haml:50
 msgid "Back"
 msgstr ""
 
@@ -246,7 +266,7 @@ msgstr ""
 msgid "EAN: %s"
 msgstr ""
 
-#: ../app/views/categories/show.haml:40 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35 ../app/views/account/_address.haml:42 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/show.haml:48
+#: ../app/views/categories/edit.haml:1 ../app/views/categories/show.haml:40 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35 ../app/views/addresses/edit.haml:1 ../app/views/account/_address.haml:42 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/edit.haml:1 ../app/views/products/show.haml:48
 msgid "Edit"
 msgstr ""
 
@@ -554,7 +574,7 @@ msgstr ""
 msgid "Role"
 msgstr ""
 
-#: ../app/views/categories/_form.haml:19 ../app/views/shipments/_form.haml:63 ../app/views/devise/invitations/edit.haml:42 ../app/views/addresses/_form.haml:78 ../app/views/payments/_form.haml:19 ../app/views/products/_form.haml:116
+#: ../app/views/categories/_form.haml:19 ../app/views/shipments/_form.haml:63 ../app/views/devise/invitations/edit.haml:42 ../app/views/addresses/_form.haml:78 ../app/views/payments/_form.haml:20 ../app/views/products/_form.haml:116
 msgid "Save"
 msgstr ""
 
@@ -706,7 +726,7 @@ msgstr ""
 msgid "This product is out of stock"
 msgstr ""
 
-#: ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:64 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:13 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
+#: ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:64 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:14 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
 msgid "Title"
 msgstr ""
 

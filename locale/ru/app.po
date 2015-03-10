@@ -171,6 +171,9 @@ msgstr "Аккаунт"
 msgid "This address is referenced by an order"
 msgstr "Этот адрес использется в заказе"
 
+msgid "%s address"
+msgstr "%s адрес"
+
 msgid "Recipient"
 msgstr "Получатель"
 
@@ -230,6 +233,9 @@ msgstr "Продолжить покупки"
 
 msgid "Proceed to Checkout"
 msgstr "Оформить заказ"
+
+msgid "%s category"
+msgstr "%s категорию"
 
 msgid "Categories"
 msgstr "Категории"
@@ -445,11 +451,17 @@ msgstr "Дата заказа"
 msgid "Product"
 msgstr "Продукт"
 
+msgid "%s payment method"
+msgstr "%s способ оплаты"
+
 msgid "Payment methods"
 msgstr "Способы оплаты"
 
 msgid "New payment"
 msgstr "Новый метод оплаты"
+
+msgid "%s product"
+msgstr "%s продукт"
 
 msgid "Select category"
 msgstr "Выберите категорию"
@@ -476,6 +488,9 @@ msgstr "НДС %s"
 
 msgid "Available: %d of %d"
 msgstr "Доступно %d из %d"
+
+msgid "%s shipping method"
+msgstr "%s способ доставки"
 
 msgid "Shipping methods"
 msgstr "Способы доставки"
