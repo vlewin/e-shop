@@ -19,7 +19,7 @@ class LineItem < ActiveRecord::Base
   end
 
   def tax
-    subtotal * (product.vat.rate / 100)
+    subtotal * (product.vat.rate / 100.0)
   end
 
   private

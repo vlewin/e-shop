@@ -22,6 +22,6 @@ describe LineItem do
   end
 
   it 'calculates a total tax amount based on quantity' do
-    expect(subject.tax).to eq(subject.subtotal * (subject.product.vat.rate / 100))
+    expect(subject.tax).to eq(subject.subtotal * (subject.product.vat.rate / 100.0))
   end
 end
