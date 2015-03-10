@@ -28,6 +28,23 @@ $(function() {
     }
   })
 
+  $('#shipping input[type=radio]').on('change', function(e) {
+    var url = $('#shipping').data('endpoint');
+    var shipment_id = $(this).val();
+
+    $.ajax({
+      url: url,
+      method: 'PUT',
+      data: { shipment_id: shipment_id },
+
+      success: function(data) {
+        $('#summary').parent().html(data)
+      },
+      error: function() {
+        $('#summary').parent().html(data)
+      }
+    })
+  })
 
   $('#update_status label').on('click', function(e) {
     var target = $(this).data('target');

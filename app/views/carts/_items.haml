@@ -38,19 +38,12 @@
       %td.no-line{ colspan: 3 }= _('VAT')
       %td.no-line{ colspan: 2 }
         = number_to_currency(@current_cart.taxes)
-    %tr.text-muted
-      %td.no-line.hidden-xs
-      %td.no-line.hidden-xs
-      %td.no-line.hidden-xs
-      %td.no-line{ colspan: 3 }= _('Shipment')
-      %td.no-line{ colspan: 2 }
-        = number_to_currency(Shipment.default.fee)
     %tr
       %td.thick-line.hidden-xs
       %td.thick-line.hidden-xs
       %td.thick-line.hidden-xs
       %td.thick-line{ colspan: 3 }
-        %b= _('Total')
+        %b= _('Total exc. shipping')
       %td.thick-line{ colspan: 2 }
         %b= number_to_currency(@current_cart.total)
 
