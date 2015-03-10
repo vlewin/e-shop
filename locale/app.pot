@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-05 09:36+0100\n"
-"PO-Revision-Date: 2015-03-05 09:36+0100\n"
+"POT-Creation-Date: 2015-03-10 08:52+0100\n"
+"PO-Revision-Date: 2015-03-10 08:52+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "%s x %s added to your cart!"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:66 ../app/views/orders/show.haml:10
+#: ../app/helpers/view_helper.rb:55 ../app/views/orders/show.haml:10
 msgid "Accepted"
 msgstr ""
 
@@ -30,7 +30,7 @@ msgstr ""
 msgid "Account"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:63 ../app/views/store/_products.html.haml:52
+#: ../app/views/store/show.html.haml:63 ../app/views/store/_products.html.haml:52 ../app/views/store/_products.html.haml:109
 msgid "Add to cart"
 msgstr ""
 
@@ -38,15 +38,15 @@ msgstr ""
 msgid "Address"
 msgstr ""
 
-#: ../app/controllers/addresses_controller.rb:26
+#: ../app/controllers/addresses_controller.rb:30
 msgid "Address was successfully created."
 msgstr ""
 
-#: ../app/controllers/addresses_controller.rb:66 ../app/controllers/addresses_controller.rb:76
+#: ../app/controllers/addresses_controller.rb:70 ../app/controllers/addresses_controller.rb:80
 msgid "Address was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/addresses_controller.rb:46
+#: ../app/controllers/addresses_controller.rb:50
 msgid "Address was successfully updated."
 msgstr ""
 
@@ -74,7 +74,7 @@ msgstr ""
 msgid "Address|Zip code"
 msgstr ""
 
-#: ../app/views/store/index.haml:99 ../app/views/store/index.haml:114
+#: ../app/views/store/index.haml:100 ../app/views/store/index.haml:115
 msgid "All categories"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Already have an account?"
 msgstr ""
 
-#: ../app/views/shipments/index.haml:59 ../app/views/payments/index.haml:42 ../app/views/carts/show.haml:25 ../app/views/orders/index.html.haml:76
+#: ../app/views/shipments/_shipments.haml:23 ../app/views/payments/_payments.haml:12 ../app/views/carts/show.haml:25 ../app/views/orders/_orders.haml:50
 msgid "Are you sure?"
 msgstr ""
 
@@ -102,7 +102,7 @@ msgstr ""
 msgid "Billing address"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:64
+#: ../app/controllers/orders_controller.rb:68
 msgid "Can not change order status"
 msgstr ""
 
@@ -110,7 +110,7 @@ msgstr ""
 msgid "Cancel"
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:26
+#: ../app/controllers/carts_controller.rb:27
 msgid "Cart was successfully destroyed."
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Carts"
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:112
+#: ../app/views/categories/index.haml:3 ../app/views/layouts/_navigation.haml:112
 msgid "Categories"
 msgstr ""
 
@@ -126,15 +126,15 @@ msgstr ""
 msgid "Category"
 msgstr ""
 
-#: ../app/controllers/categories_controller.rb:28
+#: ../app/controllers/categories_controller.rb:30
 msgid "Category was successfully created."
 msgstr ""
 
-#: ../app/controllers/categories_controller.rb:48
+#: ../app/controllers/categories_controller.rb:50
 msgid "Category was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/categories_controller.rb:38
+#: ../app/controllers/categories_controller.rb:40
 msgid "Category was successfully updated."
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Change your password"
 msgstr ""
 
-#: ../config/breadcrumbs.rb:15
+#: ../config/breadcrumbs.rb:14
 msgid "Checkout"
 msgstr ""
 
@@ -170,7 +170,7 @@ msgstr ""
 msgid "Click the link below to unlock your account:"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:69 ../app/views/orders/show.haml:25
+#: ../app/helpers/view_helper.rb:58 ../app/views/orders/show.haml:25
 msgid "Completed"
 msgstr ""
 
@@ -198,7 +198,11 @@ msgstr ""
 msgid "Current password"
 msgstr ""
 
-#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:16 ../app/views/users/_order.haml:15
+#: ../app/views/orders/index.html.haml:16
+msgid "Customer"
+msgstr ""
+
+#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:18 ../app/views/users/_order.haml:15
 msgid "Date"
 msgstr ""
 
@@ -246,7 +250,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ../app/views/devise/invitations/new.haml:19 ../app/views/devise/confirmations/new.haml:19 ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:32 ../app/views/devise/passwords/new.haml:19 ../app/views/addresses/show.haml:40 ../app/views/account/_account.haml:23 ../app/views/users/index.haml:25 ../app/views/users/index.haml:93
+#: ../app/views/devise/invitations/new.haml:19 ../app/views/devise/confirmations/new.haml:19 ../app/views/devise/sessions/new.haml:19 ../app/views/devise/registrations/new.haml:32 ../app/views/devise/passwords/new.haml:19 ../app/views/addresses/show.haml:40 ../app/views/account/_account.haml:23 ../app/views/users/index.haml:25 ../app/views/users/index.haml:64
 msgid "Email"
 msgstr ""
 
@@ -294,15 +298,15 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:67 ../app/views/orders/show.haml:15
+#: ../app/helpers/view_helper.rb:56 ../app/views/orders/show.haml:15
 msgid "In progress"
 msgstr ""
 
 #: ../app/views/users/index.haml:7
-msgid "Invitation new user"
+msgid "Invite new user"
 msgstr ""
 
-#: ../app/views/users/index.haml:95
+#: ../app/views/users/index.haml:66
 msgid "Invited by"
 msgstr ""
 
@@ -326,11 +330,7 @@ msgstr ""
 msgid "LineItem|Quantity"
 msgstr ""
 
-#: ../app/views/store/show.html.haml:36 ../app/views/products/show.haml:39
-msgid "MwSt: %s"
-msgstr ""
-
-#: ../app/views/layouts/_navigation.haml:70 ../config/breadcrumbs.rb:20
+#: ../app/views/layouts/_navigation.haml:70 ../config/breadcrumbs.rb:19
 msgid "My Account"
 msgstr ""
 
@@ -366,7 +366,7 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: ../app/views/users/index.haml:118
+#: ../app/views/users/index.haml:89
 msgid "No pending invitations"
 msgstr ""
 
@@ -382,7 +382,7 @@ msgstr ""
 msgid "Order date"
 msgstr ""
 
-#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:150 ../app/views/orders/new.haml:36
+#: ../app/views/orders/_summary.haml:7 ../app/views/orders/show.haml:150 ../app/views/orders/new.haml:40
 msgid "Order summary"
 msgstr ""
 
@@ -394,7 +394,7 @@ msgstr ""
 msgid "Order|Status"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:93
+#: ../app/views/store/_products.html.haml:15 ../app/views/store/_products.html.haml:95
 msgid "Out of stock"
 msgstr ""
 
@@ -406,11 +406,11 @@ msgstr ""
 msgid "Password confirmation"
 msgstr ""
 
-#: ../app/views/orders/index.html.haml:18 model_attributes.rb:20
+#: ../app/views/orders/index.html.haml:20 model_attributes.rb:20
 msgid "Payment"
 msgstr ""
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/show.haml:110 ../app/views/orders/new.haml:28 ../app/views/users/_order.haml:17
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/show.haml:110 ../app/views/orders/new.haml:32 ../app/views/users/_order.haml:17
 msgid "Payment method"
 msgstr ""
 
@@ -418,15 +418,15 @@ msgstr ""
 msgid "Payment methods"
 msgstr ""
 
-#: ../app/controllers/payments_controller.rb:24
+#: ../app/controllers/payments_controller.rb:26
 msgid "Payment was successfully created."
 msgstr ""
 
-#: ../app/controllers/payments_controller.rb:40
+#: ../app/controllers/payments_controller.rb:42
 msgid "Payment was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/payments_controller.rb:32
+#: ../app/controllers/payments_controller.rb:34
 msgid "Payment was successfully updated."
 msgstr ""
 
@@ -438,11 +438,11 @@ msgstr ""
 msgid "Payment|Title"
 msgstr ""
 
-#: ../app/views/users/index.haml:42
+#: ../app/views/users/_users.haml:6
 msgid "Pending invitation"
 msgstr ""
 
-#: ../app/views/users/index.haml:81
+#: ../app/views/users/index.haml:52
 msgid "Pending user invitations"
 msgstr ""
 
@@ -458,7 +458,7 @@ msgstr ""
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:18
+#: ../app/controllers/products_controller.rb:20
 msgid "Please create a category first."
 msgstr ""
 
@@ -474,7 +474,7 @@ msgstr ""
 msgid "Proceed to Checkout"
 msgstr ""
 
-#: ../app/views/orders/show.haml:165 model_attributes.rb:22
+#: ../app/views/store/_products.html.haml:122 ../app/views/orders/show.haml:165 model_attributes.rb:22
 msgid "Product"
 msgstr ""
 
@@ -482,19 +482,19 @@ msgstr ""
 msgid "Product count"
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:34
+#: ../app/controllers/products_controller.rb:36
 msgid "Product was successfully created."
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:55
+#: ../app/controllers/products_controller.rb:57
 msgid "Product was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/products_controller.rb:44
+#: ../app/controllers/products_controller.rb:46
 msgid "Product was successfully updated."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:118
+#: ../app/views/store/_products.html.haml:122 ../app/views/layouts/_navigation.haml:118
 msgid "Products"
 msgstr ""
 
@@ -562,7 +562,7 @@ msgstr ""
 msgid "Save changes"
 msgstr ""
 
-#: ../app/views/store/index.haml:16
+#: ../app/helpers/view_helper.rb:104 ../app/views/store/index.haml:16
 msgid "Search"
 msgstr ""
 
@@ -578,7 +578,7 @@ msgstr ""
 msgid "Send invitation"
 msgstr ""
 
-#: ../app/views/users/index.haml:91
+#: ../app/views/users/index.haml:62
 msgid "Sent at"
 msgstr ""
 
@@ -590,15 +590,15 @@ msgstr ""
 msgid "Shipment"
 msgstr ""
 
-#: ../app/controllers/shipments_controller.rb:24
+#: ../app/controllers/shipments_controller.rb:26
 msgid "Shipment was successfully created."
 msgstr ""
 
-#: ../app/controllers/shipments_controller.rb:40
+#: ../app/controllers/shipments_controller.rb:42
 msgid "Shipment was successfully destroyed."
 msgstr ""
 
-#: ../app/controllers/shipments_controller.rb:32
+#: ../app/controllers/shipments_controller.rb:34
 msgid "Shipment was successfully updated."
 msgstr ""
 
@@ -622,7 +622,7 @@ msgstr ""
 msgid "Shipment|Title"
 msgstr ""
 
-#: ../app/helpers/application_helper.rb:68 ../app/views/orders/show.haml:20
+#: ../app/helpers/view_helper.rb:57 ../app/views/orders/show.haml:20
 msgid "Shipped"
 msgstr ""
 
@@ -630,11 +630,11 @@ msgstr ""
 msgid "Shipping address"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:12
+#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:16
 msgid "Shipping and Billing address"
 msgstr ""
 
-#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:20
+#: ../app/views/orders/_shipping.haml:7 ../app/views/orders/new.haml:24
 msgid "Shipping method"
 msgstr ""
 
@@ -670,11 +670,11 @@ msgstr ""
 msgid "Someone has requested a link to change your password. You can do this through the link below."
 msgstr ""
 
-#: ../app/controllers/carts_controller.rb:28
+#: ../app/controllers/carts_controller.rb:29
 msgid "Something went wrong"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:115
+#: ../app/views/store/_products.html.haml:136
 msgid "Sorry, the product was not found."
 msgstr ""
 
@@ -694,15 +694,15 @@ msgstr ""
 msgid "Subtotal"
 msgstr ""
 
-#: ../app/controllers/orders_controller.rb:49
+#: ../app/controllers/orders_controller.rb:53
 msgid "Thank you for your order!"
 msgstr ""
 
-#: ../app/views/addresses/index.haml:55
+#: ../app/views/addresses/_addresses.haml:21
 msgid "This address is referenced by an order"
 msgstr ""
 
-#: ../app/controllers/application_controller.rb:44
+#: ../app/controllers/application_controller.rb:57
 msgid "This product is out of stock"
 msgstr ""
 
@@ -714,11 +714,11 @@ msgstr ""
 msgid "Title %s:"
 msgstr ""
 
-#: ../app/views/users/index.haml:97
+#: ../app/views/users/index.haml:68
 msgid "Token"
 msgstr ""
 
-#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:112 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:20 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227 ../app/views/users/_order.haml:21
+#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:112 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:22 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227 ../app/views/users/_order.haml:21
 msgid "Total"
 msgstr ""
 
@@ -814,6 +814,10 @@ msgstr ""
 msgid "VAT"
 msgstr ""
 
+#: ../app/views/store/show.html.haml:36 ../app/views/products/show.haml:39
+msgid "VAT: %s"
+msgstr ""
+
 #: model_attributes.rb:53
 msgid "Vat"
 msgstr ""
@@ -846,7 +850,7 @@ msgstr ""
 msgid "Welcome"
 msgstr ""
 
-#: ../app/controllers/application_controller.rb:54 ../app/controllers/application_controller.rb:57
+#: ../app/controllers/application_controller.rb:67 ../app/controllers/application_controller.rb:70
 msgid "You are not authorized to perform this action"
 msgstr ""
 
@@ -858,7 +862,7 @@ msgstr ""
 msgid "You must enter your current password to make changes."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:17 ../config/breadcrumbs.rb:11
+#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:17 ../config/breadcrumbs.rb:10
 msgid "Your Cart"
 msgstr ""
 
@@ -874,7 +878,7 @@ msgstr ""
 msgid "Your addresses list is empty, please add at least one address"
 msgstr ""
 
-#: ../app/controllers/line_items_controller.rb:25 ../app/controllers/carts_controller.rb:12 ../app/controllers/orders_controller.rb:30 ../app/views/carts/show.haml:30
+#: ../app/controllers/line_items_controller.rb:25 ../app/controllers/carts_controller.rb:13 ../app/controllers/orders_controller.rb:34 ../app/views/carts/show.haml:30
 msgid "Your cart is empty!"
 msgstr ""
 

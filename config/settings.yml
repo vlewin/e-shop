@@ -1,6 +1,6 @@
 defaults: &defaults
   pagination:
-    per_page: 12
+    per_page: 4
 
 development:
   <<: *defaults

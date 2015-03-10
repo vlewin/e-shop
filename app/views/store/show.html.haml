@@ -16,7 +16,7 @@
 
           .text-muted
             %p= _("EAN: %s") % @product.ean
-            %p= _("MwSt: %s") % number_to_percentage(@product.vat.rate)
+            %p= _("VAT: %s") % number_to_percentage(@product.vat.rate)
             %p= _("Available: %d of %d") % [@product.available_quantity, @product.quantity]
 
           %hr
