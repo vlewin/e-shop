@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :payment do
-    title Faker::Product.product
+    title 'Paypal'
   end
 end
 
