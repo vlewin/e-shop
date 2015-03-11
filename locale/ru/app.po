@@ -219,14 +219,35 @@ msgstr "Промежуточный итог"
 msgid "VAT"
 msgstr "НДС"
 
+msgid "Total exc. shipping"
+msgstr "Итого без пересылки"
+
+msgid "Carts"
+msgstr "Корзины"
+
+msgid "Purge stale carts"
+msgstr "Удалить устаревшие корзины"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "Created at"
+msgstr "Добавлен"
+
+msgid "Updated at"
+msgstr "Oбновлен"
+
+msgid "Product count"
+msgstr "Количество товаров"
+
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
-msgid "Are you sure?"
-msgstr "Вы уверены?"
-
 msgid "Empty cart"
 msgstr "Очистить корзину"
+
+msgid "Are you sure?"
+msgstr "Вы уверены?"
 
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
@@ -242,9 +263,6 @@ msgstr "Категории"
 
 msgid "New category"
 msgstr "Новая категория"
-
-msgid "Product count"
-msgstr "Количество товаров"
 
 msgid "Category"
 msgstr "Категория"
@@ -369,6 +387,9 @@ msgstr "Забыли свой пароль?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Не получили инструкции разблокировки?"
 
+msgid "Cart"
+msgstr "Корзина"
+
 msgid "My Account"
 msgstr "Мой аккаунт"
 
@@ -386,9 +407,6 @@ msgstr "Доставки"
 
 msgid "Payments"
 msgstr "Способы оплаты"
-
-msgid "Carts"
-msgstr "Корзины"
 
 msgid "Hi %s,"
 msgstr "Привет %s"
@@ -518,9 +536,6 @@ msgstr "К сожалению, продукт не найден."
 
 msgid "Sort"
 msgstr "Сортировка"
-
-msgid "Created at"
-msgstr "Добавлен"
 
 msgid "View"
 msgstr "Вид"

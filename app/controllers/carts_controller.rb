@@ -21,7 +21,7 @@ class CartsController < ApplicationController
   def purge
     authorize :carts, :purge?
 
-    Cart.where("updated_at  <?", 2.hours.ago).destroy_all
+    Cart.purge
     redirect_to carts_path
   end
 

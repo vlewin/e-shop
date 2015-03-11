@@ -1,12 +1,12 @@
-- if @addresses.present?
-  - @addresses.each do |address|
+- if @user.addresses.active.present?
+  - @user.addresses.active.each do |address|
     .col-xs-12.col-sm-6.col-md-4
       .panel.panel-default
         .panel-body
           .row
-            .hidden-xs.col-sm-3.col-md-3
-              %i.fa.fa-4x.fa-envelope.light-gray
-            .col-xs-12.col-sm-9.col-md-9
+            .hidden-xs.col-sm-5.col-md-5
+              %i.fa.fa-7x.fa-envelope.light-gray
+            .col-xs-12.col-sm-7.col-md-7
               %strong= address.recipient
               %div= address.street
               %div= "#{address.zip_code} #{address.city}"

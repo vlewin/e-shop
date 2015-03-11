@@ -13,7 +13,14 @@
 $(document).tooltip({
   selector: '[rel="tooltip"], [data-toggle="tooltip"]',
   container: 'body'
-})
+});
+
+// Hide flash message
+$(document).ready(function() {
+  setTimeout(function(){
+    $('#rails_flash').fadeOut('slow')
+  }, 2000)
+});
 
 $(document).on( "click", ".quantity-helper button", function() {
   var $input = $(this).parents('.quantity-helper').find('input');

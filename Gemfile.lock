@@ -264,6 +264,7 @@ GEM
     thor (0.19.1)
     thread_safe (0.3.4)
     tilt (1.4.1)
+    timecop (0.7.1)
     ttfunk (1.1.1)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
@@ -324,5 +325,6 @@ DEPENDENCIES
   spring-commands-rspec
   sqlite3
   therubyracer
+  timecop
   uglifier
   unicode

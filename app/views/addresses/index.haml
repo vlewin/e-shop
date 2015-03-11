@@ -1,5 +1,5 @@
 %h4.page-header.no-margin
-  Addresses
+  = _('Addresses')
   .pull-right
     = link_to _('New address'), new_address_path, class: 'btn btn-xs btn-success'
 
@@ -8,9 +8,9 @@
     %table.table.table-hover
       %thead
         %tr
-          %th Status
-          %th Recipient
-          %th User
+          %th= _('Status')
+          %th= _('Recipient')
+          %th= _('User')
           %th{ colspan: 3, width: '25%' }
             = ransack_search_form_for(addresses_path, :recipient_or_user_name_cont)
       %tbody{id: controller_name}

@@ -3,6 +3,12 @@ class Cart < ActiveRecord::Base
   has_many :line_items, dependent: :destroy
   has_many :products, through: :line_items
 
+  class << self
+    def purge
+      Cart.where("updated_at  <?", 2.hours.ago).destroy_all
+    end
+  end
+
   def add_item(product_id, quantity)
     quantity = quantity.to_i
     line_item = line_items.find_by(product_id: product_id)
