@@ -71,6 +71,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'launchy'
+  gem 'timecop'
 end
 
 group :production do

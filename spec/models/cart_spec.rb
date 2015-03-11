@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Cart do
-  subject { FactoryGirl.create(:cart) }
+  subject! { FactoryGirl.create(:cart) }
   let(:cart_product) { subject.products.first }
   let(:empty_cart) { FactoryGirl.create(:empty_cart) }
   let(:product) { FactoryGirl.create(:product) }
@@ -9,6 +9,26 @@ describe Cart do
 
 
   it { should have_many :line_items }
+
+  describe '.purge' do
+    it 'destroyes staled carts' do
+      expect(Cart.count).to eq 1
+
+      Timecop.freeze(3.hours.from_now) do
+        subject.class.purge()
+      end
+
+      expect(Cart.count).to eq 0
+    end
+
+    it 'keeps active carts' do
+      expect(Cart.count).to eq 1
+
+      subject.class.purge()
+
+      expect(Cart.count).to eq 1
+    end
+  end
 
   context 'empty cart' do
     describe '#add_item' do

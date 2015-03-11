@@ -1,7 +1,7 @@
 class LineItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
-  belongs_to :cart, counter_cache: true
+  belongs_to :cart, touch: true, counter_cache: true
 
   after_create :increase_product_reserved_count
   before_destroy :descrease_product_reserved_count
