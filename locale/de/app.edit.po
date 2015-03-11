@@ -313,7 +313,7 @@ msgstr "Aktualisiert am"
 msgid "Product count"
 msgstr "Produktanzahl"
 
-#: ../app/views/carts/show.haml:17 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../config/breadcrumbs.rb:10
+#: ../app/views/carts/show.haml:17 ../config/breadcrumbs.rb:10
 msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
@@ -492,6 +492,10 @@ msgstr "Passwort vergessen?"
 #: ../app/views/devise/shared/_links.html.haml:22
 msgid "Didn't receive unlock instructions?"
 msgstr "Keine Anleitung zum Entsperren erhalten?"
+
+#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34
+msgid "Cart"
+msgstr "Warenkorb"
 
 #: ../app/views/layouts/_navigation.haml:70 ../config/breadcrumbs.rb:19
 msgid "My Account"

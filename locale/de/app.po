@@ -386,6 +386,9 @@ msgstr "Passwort vergessen?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Keine Anleitung zum Entsperren erhalten?"
 
+msgid "Cart"
+msgstr "Warenkorb"
+
 msgid "My Account"
 msgstr "Mein Konto"
 

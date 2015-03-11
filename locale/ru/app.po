@@ -387,6 +387,9 @@ msgstr "Забыли свой пароль?"
 msgid "Didn't receive unlock instructions?"
 msgstr "Не получили инструкции разблокировки?"
 
+msgid "Cart"
+msgstr "Корзина"
+
 msgid "My Account"
 msgstr "Мой аккаунт"
 

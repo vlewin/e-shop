@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-11 09:19+0100\n"
-"PO-Revision-Date: 2015-03-11 09:19+0100\n"
+"POT-Creation-Date: 2015-03-11 11:55+0100\n"
+"PO-Revision-Date: 2015-03-11 11:55+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -128,6 +128,10 @@ msgstr ""
 
 #: ../app/views/addresses/_modal.haml:90
 msgid "Cancel"
+msgstr ""
+
+#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34
+msgid "Cart"
 msgstr ""
 
 #: ../app/controllers/carts_controller.rb:32
@@ -898,7 +902,7 @@ msgstr ""
 msgid "You must enter your current password to make changes."
 msgstr ""
 
-#: ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../app/views/carts/show.haml:17 ../config/breadcrumbs.rb:10
+#: ../app/views/carts/show.haml:17 ../config/breadcrumbs.rb:10
 msgid "Your Cart"
 msgstr ""
 
