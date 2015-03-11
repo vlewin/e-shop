@@ -225,7 +225,7 @@ msgid "Carts"
 msgstr "Warenkörbe"
 
 msgid "Purge stale carts"
-msgstr ""
+msgstr "Veraltete Warenkörbe löschen"
 
 msgid "ID"
 msgstr "ID"

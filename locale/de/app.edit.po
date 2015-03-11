@@ -295,7 +295,7 @@ msgstr "Warenkörbe"
 
 #: ../app/views/carts/index.haml:7
 msgid "Purge stale carts"
-msgstr ""
+msgstr "Veraltete Warenkörbe löschen"
 
 #: ../app/views/carts/index.haml:22
 msgid "ID"
