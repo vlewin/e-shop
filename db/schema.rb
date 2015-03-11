@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
 
   create_table "carts", force: :cascade do |t|
     t.integer  "line_items_count", default: 0
+    t.integer  "shipment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

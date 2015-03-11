@@ -12,18 +12,10 @@
           %th Created at
           %th Updated at
           %th Items count
-          %th{ colspan: 3 }
-      %tbody
-        - @carts.each_with_index do |cart, index|
-          %tr
-            %td= cart.id
-            %td= cart.created_at
-            %td= cart.updated_at
-            %td= cart.line_items_count
-            %td.text-right
-              = icon_link_to '', cart, { class: 'btn btn-sm btn-default' }, 'fa-eye'
-              = icon_link_to '', cart, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
-
+          %th{ colspan: 3, width: '25%'}
+            = ransack_search_form_for(carts_path, :user_name_cont)
+      %tbody{id: controller_name}
+        = render partial: controller_name
 
 
 

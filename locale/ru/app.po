@@ -70,7 +70,7 @@ msgid "Payment was successfully destroyed."
 msgstr "Способ оплаты был успешно удален."
 
 msgid "Please create a category first."
-msgstr ""
+msgstr "Пожалуйста, создайте категорию в первую очередь."
 
 msgid "Product was successfully created."
 msgstr "Продукт был успешно создан."
@@ -102,6 +102,9 @@ msgstr "Отправлено"
 msgid "Completed"
 msgstr "Завершено"
 
+msgid "Search"
+msgstr "Поиск"
+
 msgid "Name"
 msgstr "Имя"
 
@@ -115,7 +118,7 @@ msgid "Leave these fields blank if you don't want to change your password."
 msgstr "Оставьте эти поля пустыми, если вы не хотите изменить пароль."
 
 msgid "Password confirmation"
-msgstr ""
+msgstr "Подтверждение пароля"
 
 msgid "Current password"
 msgstr "Текущий пароль"
@@ -165,6 +168,12 @@ msgstr "Новый адрес"
 msgid "Account"
 msgstr "Аккаунт"
 
+msgid "This address is referenced by an order"
+msgstr "Этот адрес использется в заказе"
+
+msgid "%s address"
+msgstr "%s адрес"
+
 msgid "Recipient"
 msgstr "Получатель"
 
@@ -188,9 +197,6 @@ msgstr "Сохранить изменения"
 
 msgid "Cancel"
 msgstr "Отменить"
-
-msgid "This address is referenced by an order"
-msgstr ""
 
 msgid "User"
 msgstr "Пользователь"
@@ -225,8 +231,14 @@ msgstr "Очистить корзину"
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
-msgid "Checkout"
+msgid "Proceed to Checkout"
 msgstr "Оформить заказ"
+
+msgid "%s category"
+msgstr "%s категорию"
+
+msgid "Categories"
+msgstr "Категории"
 
 msgid "New category"
 msgstr "Новая категория"
@@ -280,21 +292,23 @@ msgid "You can confirm your account email through the link below:"
 msgstr "Вы можете подтвердить свой аккаунт электронной почты через ссылку ниже:"
 
 msgid "Confirm my account"
-msgstr ""
+msgstr "Подтвердите свой аккаунт"
 
 msgid "Hello"
-msgstr ""
+msgstr "Здравствуйте"
 
 msgid ""
 "Someone has requested a link to change your password. You can do this through "
 "the link below."
 msgstr ""
+"Кто-то просил ссылку для смены пароля. Вы можете сделать это через ссылку ниже"
+"."
 
 msgid "Change my password"
 msgstr "Изменение пароля"
 
 msgid "If you didn't request this, please ignore this email."
-msgstr ""
+msgstr "Если вы не запрашивали это, не обращайте внимания на это сообщение."
 
 msgid ""
 "Your password won't change until you access the link above and create a new on"
@@ -311,7 +325,7 @@ msgstr ""
 "ода."
 
 msgid "Click the link below to unlock your account:"
-msgstr ""
+msgstr "Нажмите на ссылку ниже, чтобы разблокировать профиль:"
 
 msgid "Unlock my account"
 msgstr "Разблокировать профиль"
@@ -361,9 +375,6 @@ msgstr "Мой аккаунт"
 msgid "Sign out"
 msgstr "Выйти"
 
-msgid "Categories"
-msgstr "Категории"
-
 msgid "Products"
 msgstr "Продукты"
 
@@ -380,7 +391,7 @@ msgid "Carts"
 msgstr "Корзины"
 
 msgid "Hi %s,"
-msgstr ""
+msgstr "Привет %s"
 
 msgid "thank you for your order."
 msgstr "Спасибо за Ваш заказ!"
@@ -392,6 +403,8 @@ msgid ""
 "If you need to contact us about your order please send us an email. You may al"
 "so call us at (0123) 45678"
 msgstr ""
+"Если вам нужно связаться с нами по вашим заказом, пожалуйста, отправьте нам пи"
+"сьмо. Вы также можете позвонить нам по телефону (0123) 45678"
 
 msgid "Shipping and Billing address"
 msgstr "Адрес доставки и платежа"
@@ -423,6 +436,9 @@ msgstr "Перечень заказа"
 msgid "Place order"
 msgstr "Разместить заказ"
 
+msgid "Customer"
+msgstr "Kлиент"
+
 msgid "Payment"
 msgstr "Оплата"
 
@@ -435,11 +451,17 @@ msgstr "Дата заказа"
 msgid "Product"
 msgstr "Продукт"
 
+msgid "%s payment method"
+msgstr "%s способ оплаты"
+
 msgid "Payment methods"
 msgstr "Способы оплаты"
 
 msgid "New payment"
 msgstr "Новый метод оплаты"
+
+msgid "%s product"
+msgstr "%s продукт"
 
 msgid "Select category"
 msgstr "Выберите категорию"
@@ -451,7 +473,7 @@ msgid "EAN"
 msgstr "Артикул"
 
 msgid "EAN is composed of category id prefix and next product id"
-msgstr ""
+msgstr "EAN состоит из префикса идентификатор категории и идентификатора продукта"
 
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr ""
@@ -461,11 +483,14 @@ msgstr ""
 msgid "EAN: %s"
 msgstr "Артикул %s"
 
-msgid "MwSt: %s"
-msgstr ""
+msgid "VAT: %s"
+msgstr "НДС %s"
 
 msgid "Available: %d of %d"
 msgstr "Доступно %d из %d"
+
+msgid "%s shipping method"
+msgstr "%s способ доставки"
 
 msgid "Shipping methods"
 msgstr "Способы доставки"
@@ -491,9 +516,6 @@ msgstr "Добавить в корзину"
 msgid "Sorry, the product was not found."
 msgstr "К сожалению, продукт не найден."
 
-msgid "Search"
-msgstr "Поиск"
-
 msgid "Sort"
 msgstr "Сортировка"
 
@@ -504,7 +526,7 @@ msgid "View"
 msgstr "Вид"
 
 msgid "Per page"
-msgstr ""
+msgstr "На странице"
 
 msgid "All categories"
 msgstr "Все категории"
@@ -512,35 +534,41 @@ msgstr "Все категории"
 msgid "Price:"
 msgstr "Цена:"
 
-msgid "Invitation new user"
-msgstr ""
+msgid "Pending invitation"
+msgstr "В ожидании приглашения"
+
+msgid "Invite new user"
+msgstr "Пригласить нового пользователя"
 
 msgid "Role"
-msgstr ""
+msgstr "Роль"
 
 msgid "Last sign in"
-msgstr ""
+msgstr "Последний вход"
 
 msgid "Sign in count"
 msgstr "Количество входов"
 
-msgid "Pending invitation"
-msgstr ""
-
 msgid "Pending user invitations"
-msgstr ""
+msgstr "В ожидании приглашения"
 
 msgid "Sent at"
 msgstr "Отправлено в"
 
 msgid "Invited by"
-msgstr ""
+msgstr "По приглашению"
 
 msgid "Token"
-msgstr ""
+msgstr "Код"
 
 msgid "No pending invitations"
-msgstr ""
+msgstr "Нет ожидающих приглашения"
+
+msgid "E-Shop"
+msgstr "E-Shop"
+
+msgid "Checkout"
+msgstr "Оформление заказа"
 
 msgid "Address|City"
 msgstr "Город"

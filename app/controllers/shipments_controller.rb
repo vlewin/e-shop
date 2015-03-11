@@ -2,8 +2,10 @@ class ShipmentsController < ApplicationController
   before_action :set_shipments, only: [:show, :edit, :update, :destroy]
 
   def index
-    @shipments = Shipment.all
     authorize :shipments, :index?
+
+    @items = find_and_paginate(order: 'provider ASC')
+    render(partial: 'shipments', layout: false) and return if request.xhr?
   end
 
   def show

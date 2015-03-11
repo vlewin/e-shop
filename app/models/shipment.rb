@@ -9,7 +9,7 @@ class Shipment < ActiveRecord::Base
   before_create :set_default
 
   default_scope {
-    includes(:translations)
+    includes(:translations).uniq
   }
 
   def self.default

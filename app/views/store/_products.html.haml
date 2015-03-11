@@ -29,13 +29,13 @@
                       = _('Add to cart')
 
   - else
-    %table.table.table-hover
+    %table.table.table-hover.table-responsive
       %thead
         %tr
           %th{ width: '5%'}= _('Image')
           %th= _('Title')
           %th= _('Price')
-          %th.hidden-xs.hidden-sm{ width: '17%'}= _('Quantity')
+          %th.hidden-xs.hidden-sm{ width: '30%'}= _('Quantity')
 
       %tbody
         - @products.each_with_index do |product, index|
@@ -46,23 +46,31 @@
               .title= link_to product.title, store_product_path(product)
               .description= product.description
             %td= number_to_currency(product.price)
-            %td{ width: '15%'}
+            %td
               - if out_of_stock
-                %span.label.label-default.label-md= _('Out of stock')
+                .pull-right
+                  %span.label.label-default.label-md= _('Out of stock')
               - else
-                = form_tag line_items_path(:product_id => product), class: 'form-inline' do
+                = form_tag line_items_path(product_id: product), class: 'form-inline' do
                   .pull-left.hidden-xs.hidden-sm= quantity_field_tag 1, { max: product.available_quantity}
                   .pull-right
-                    = button_tag(type: "submit", class: "btn btn-sm btn-success") do
-                      %i.fa.fa-shopping-cart
-
+                    .visible-md.visible-lg
+                      = button_tag(type: "submit", class: "btn btn-sm #{out_of_stock ? 'btn-disabled' : 'btn-success'}") do
+                        %i.fa.fa-shopping-cart
+                        = _('Add to cart')
+                    .visible-xs.visible-sm
+                      = button_tag(type: "submit", class: "btn btn-sm btn-success") do
+                        %i.fa.fa-shopping-cart
 
 
   %hr.line
-  = paginate @products, remote: true
+    .row
+      .col-sm-6.col-md-6
+        = page_entries_info @products, entry_name: _('Product'), collection_name: _('Products')
+      .col-sm-6.col-md-6
+        .text-right= paginate @products, remote: true
 
 - else
-  -# %br
   %h4
     = _('Sorry, the product was not found.')
   %hr

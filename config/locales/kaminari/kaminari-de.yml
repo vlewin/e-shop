@@ -1,17 +1,17 @@
 de:
-  views:
-    pagination:
-      first: "&laquo; Erste"
-      last: "Letzte &raquo;"
-      previous: "&lsaquo; Vorherige"
-      next: "Nächste &rsaquo;"
-      truncate: "&hellip;"
   helpers:
     page_entries_info:
+      more_pages:
+        display_entries: "%{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> von insgesamt <b>%{total}</b>"
       one_page:
         display_entries:
           zero: "Keine %{entry_name} gefunden"
           one: "Zeige <b>1</b> %{entry_name} an"
-          other: "Zeige <b>alle %{count}</b> %{entry_name} an"
-      more_pages:
-        display_entries: "Zeige %{entry_name} <b>%{first}&nbsp;-&nbsp;%{last}</b> von insgesamt <b>%{total}</b>"
+          other: "Zeige alle <b>%{count}</b> %{entry_name} an"
+  views:
+    pagination:
+      first: '&laquo;'
+      last: '&raquo;'
+      next: '&rsaquo;'
+      previous: '&lsaquo;'
+      truncate: '&hellip;'

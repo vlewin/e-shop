@@ -38,8 +38,8 @@ module EShop
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-
     config.active_record.schema_format = :ruby
+    config.encoding = 'utf-8'
 
     config.generators do |g|
       g.helper false

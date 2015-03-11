@@ -8,24 +8,12 @@ class StoreController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def index
-    # ActiveRecord::Base.logger = nil
-
-    # FIXME: ILIKE case insensitive search (use LOWER() in ransacker and check POSTGRESQL)
     query = params[:q]
 
-    # INFO: issue with cyrillic characters 'слово'.capitalize => 'слово'
-    # Try it out instead of Unicode::capitalize
-    # begin
-    #   str.encode("UTF-8")
-    # rescue Encoding::UndefinedConversionError
-    #  # ...
-    # end
-    # query = Hash[params[:q].map{|k,v| [k,Unicode::capitalize(v)]}] if (params[:q] && params[:q][:translations_title_cont])
-
-    @limit = params[:limit] || 12
+    @limit = params[:limit] || Settings.pagination.per_page
     @search = Product.includes(:line_items).search(query)
-    @sorting = (params[:q] && params[:q][:s]) ? params[:q][:s] : ''
-    @products = @search.result.page(params[:page]).per(params[:limit])
+    @sorting = (query && query[:s]) ? query[:s] : ''
+    @products = @search.result.page(params[:page]).per(@limit)
 
     @init_letters = @products.map{|p| p.title.first if p.title}.uniq.sort
     @categories ||= Category.all.order(:title)

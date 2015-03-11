@@ -1,7 +1,7 @@
 .panel.panel-default
   = form_for @category, html: { class: "form-horizontal" } do |f|
     .panel-heading
-      %h4.page-header.no-margin= "#{action} category"
+      %h4.page-header.no-margin= _("%s category") % action
       = render 'layouts/errors', object: @category
 
     .panel-body

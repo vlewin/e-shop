@@ -135,10 +135,10 @@ describe CategoriesController, type: :controller do
     login_admin
 
     describe "GET #index" do
-      it "assigns the categories to @categories and renders the :index view" do
+      it "assigns the categories to @items and renders the :index view" do
         get :index
 
-        expect(assigns(:categories)).to eq(Category.all)
+        expect(assigns(:items)).to match_array(Category.all)
         expect(response).to render_template :index
       end
     end

@@ -38,7 +38,8 @@
         %tr.text-muted
           %td.thick-line{ colspan: 6 }= _('Shipment')
           %td.thick-line{ colspan: 2 }
-            = number_to_currency(Shipment.default.fee)
+            - shipment = @current_cart.shipment || Shipment.default
+            = number_to_currency(shipment.fee)
         %tr
           %td{ colspan: 6 }
             %b= _('Total')
@@ -47,4 +48,4 @@
 
     %hr
     .pull-left= icon_link_to _('Back'), '#payment', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 3 } }, 'fa-chevron-circle-left'
-    .pull-right= form.submit _('Place order'), class: 'btn btn-success'
+    .pull-right= submit_tag _('Place order'), class: 'btn btn-success'

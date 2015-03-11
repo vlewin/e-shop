@@ -1,7 +1,8 @@
 .panel.panel-default
   = form_for @payment, html: { class: 'form-horizontal' } do |f|
     .panel-heading
-      %h4.page-header.no-margin= "#{action} payment method"
+      %h4.page-header.no-margin= _("%s payment method") % action
+
     .panel-body
       = render 'layouts/errors', object: @payment
 

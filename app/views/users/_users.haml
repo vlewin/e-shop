@@ -1,0 +1,20 @@
+- @items.each do |user|
+  %tr
+    %td
+
+      - if user.invitation_token
+        %span.label.label-default{ rel: :tooltip, title: _('Pending invitation') }
+          %i.fa.fa-exclamation-circle
+          = user.role.capitalize
+      - else
+        %span.label{ class: user.admin? ? 'label-danger' : 'label-success'}
+          = user.role.capitalize
+    %td= link_to user.name, user
+    %td= user.email
+    %td.visible-md.visible-lg= user.last_sign_in_at
+    %td.visible-md.visible-lg= user.sign_in_count
+    %td.text-right
+      = icon_link_to '', user, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+
+
+= table_pagination(@items)

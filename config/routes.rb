@@ -22,6 +22,10 @@ EShop::Application.routes.draw do
   end
 
   resources :carts do
+    member do
+      put :update_shipment
+    end
+
     collection do
       delete :purge
     end

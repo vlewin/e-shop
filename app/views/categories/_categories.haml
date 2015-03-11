@@ -1,0 +1,13 @@
+- @items.each do |category|
+  %tr
+    %td= category.title
+    %td= link_to "#{category.products_count} products", category_path(category)
+    %td.text-right
+      = icon_link_to '', category, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+      = icon_link_to '', edit_category_path(category), { class: 'btn btn-sm btn-default' }, 'fa-edit'
+      = icon_link_to '', category, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+
+
+= table_pagination(@items)
+
+

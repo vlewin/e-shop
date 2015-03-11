@@ -1,5 +1,5 @@
 %h4.page-header.no-margin
-  Categories
+  = _('Categories')
   .pull-right
     = link_to _('New category'), new_category_path, class: 'btn btn-xs btn-success'
 
@@ -10,18 +10,8 @@
         %tr
           %th= _('Title')
           %th= _('Product count')
-          %th{ colspan: 3 }
-
-      %tbody
-        - @categories.each do |category|
-          %tr
-            %td= category.title
-            %td= link_to "#{category.products_count} products", category_path(category)
-            %td.text-right
-              = icon_link_to '', category, { class: 'btn btn-sm btn-default' }, 'fa-eye'
-              = icon_link_to '', edit_category_path(category), { class: 'btn btn-sm btn-default' }, 'fa-edit'
-              = icon_link_to '', category, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
-
-
-
+          %th{ colspan: 3, width: '25%' }
+            = ransack_search_form_for(categories_path, :translations_title_cont)
+      %tbody{id: controller_name}
+        = render partial: controller_name
 

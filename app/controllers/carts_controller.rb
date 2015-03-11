@@ -5,11 +5,17 @@ class CartsController < ApplicationController
   def index
     authorize :carts, :index?
 
-    @carts = Cart.all.order(:updated_at)
+    @items = find_and_paginate(order: 'updated_at DESC')
+    render(partial: 'carts', layout: false) and return if request.xhr?
   end
 
   def show
     redirect_to root_path, notice: _('Your cart is empty!') if current_cart.empty?
+  end
+
+  def update_shipment
+    current_cart.update(shipment_id: params[:shipment_id])
+    render(partial: 'orders/summary', layout: false) and return if request.xhr?
   end
 
   def purge

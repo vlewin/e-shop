@@ -1,0 +1,17 @@
+- @items.each do |address|
+  %tr
+    %td
+      %span.label{ class: address.active? ? 'label-success' : 'label-default' }= address.status
+    %td= address.full_address
+    %td= address.user.name
+    %td.text-right
+      = icon_link_to '', address, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+      = icon_link_to '', edit_address_path(address), { class: 'btn btn-sm btn-default' }, 'fa-edit'
+
+      - if address.in_use?
+        %label{ rel: :tooltip, title: _('This address is referenced by an order') }
+          = icon_link_to '', '', { class: 'btn btn-sm btn-default disabled' }, 'fa-trash-o'
+      - else
+        = icon_link_to '', address, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+
+= table_pagination(@items)

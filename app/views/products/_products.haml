@@ -1,0 +1,14 @@
+- @items.each do |product|
+  %tr
+    %td= product_image_tag product
+    %td= product.title
+    %td= product.ean
+    %td= product.quantity
+    %td= number_to_currency product.price
+    %td= number_to_percentage(product.vat.rate, precision: 0)
+    %td.text-right
+      = icon_link_to '', product, { class: 'btn btn-sm btn-default' }, 'fa-eye'
+      = icon_link_to '', edit_product_path(product), { class: 'btn btn-sm btn-default' }, 'fa-edit'
+      = icon_link_to '', product, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+
+= table_pagination(@items)

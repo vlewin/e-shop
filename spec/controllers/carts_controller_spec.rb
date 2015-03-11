@@ -49,9 +49,9 @@ describe CartsController, type: :controller do
     login_admin
 
     describe "GET #index" do
-      it "assigns carts to @carts" do
+      it "assigns carts to @items" do
         get :index
-        expect(assigns(:carts)).to eq(Cart.all.order(:updated_at))
+        expect(assigns(:items)).to match_array(Cart.all)
       end
 
       it "renders index view" do

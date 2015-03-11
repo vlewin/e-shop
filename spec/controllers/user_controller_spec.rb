@@ -8,9 +8,9 @@ describe UsersController, type: :controller do
     login_admin
 
     describe "GET #index" do
-      it "assigns the users as @users" do
+      it "assigns the users as @items" do
         get :index
-        expect(assigns(:users)).to eq([subject.current_user])
+        expect(assigns(:items)).to eq([subject.current_user])
       end
 
       it "renders the :index view" do
@@ -21,7 +21,7 @@ describe UsersController, type: :controller do
     end
 
     describe "GET #show" do
-      it "assigns the users as @users" do
+      it "assigns the user to @user and renders the :show view" do
         get :show, id: subject.current_user
         expect(response).to render_template :show
       end

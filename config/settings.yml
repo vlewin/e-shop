@@ -1,0 +1,12 @@
+defaults: &defaults
+  pagination:
+    per_page: 12
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

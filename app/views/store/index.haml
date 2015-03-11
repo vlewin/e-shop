@@ -37,7 +37,8 @@
           %small= _('Per page')
         .btn-group
           = form_tag root_path, method: :get do
-            = select_tag :limit, options_for_select([12, 24, 36, 48], selected: @limit || 12), class: 'input-sm form-control'
+            - options = 4.times.map{|i| (i+1) * Settings.pagination.per_page}
+            = select_tag :limit, options_for_select(options, selected: @limit || Settings.pagination.per_page), class: 'input-sm form-control'
 
   %hr.line
 
@@ -51,7 +52,7 @@
   %hr.line
 
   -# Mobile
-  %ul.list-group.hidden-sm.hidden-md.hidden-lg
+  %ul.list-group.hidden-md.hidden-lg
     = link_to _('All categories'), root_path(view: @view), class: params[:category_translations_title_eq].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
     - @categories.each do |cat|
       - title = "#{cat.title} (#{cat.products_count})"
@@ -60,7 +61,7 @@
       = link_to title, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
 
   -# Desktop
-  %ul#categories.nav.nav-tabs.hidden-xs
+  %ul#categories.nav.nav-tabs.hidden-xs.hidden-sm
     %li{ class: params[:category_translations_title_eq].nil? ? 'active' : '' }
       = link_to _('All categories'), root_path(view: @view), remote: :true
     - @categories.each do |cat|
@@ -68,6 +69,7 @@
       - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
       %li{ class: cat.title == params[:category_translations_title_eq] ? 'active' : '' }
         = link_to title, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
+
   .tab-content
     #products.tab-pane.active
       = render 'products'

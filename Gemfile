@@ -23,7 +23,6 @@ gem 'less-rails'
 gem 'less-rails-bootstrap'
 gem 'font-awesome-less'
 
-# gem 'breadcrumbs_on_rails'
 gem 'gretel'
 gem 'prawn'
 
@@ -41,6 +40,8 @@ gem 'kaminari-bootstrap', '~> 3.0.1'
 gem 'carrierwave'
 gem 'cloudinary'
 gem 'rmagick', require: false
+
+gem 'settingslogic'
 
 # FIXME: move to development/test group (used in seed.rb)
 gem 'ffaker'

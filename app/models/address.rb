@@ -1,5 +1,8 @@
 class Address < ActiveRecord::Base
   belongs_to :user
+  has_many :billing_orders, class_name: 'Order', foreign_key: :billing_address_id
+  has_many :shipping_orders, class_name: 'Order', foreign_key: :shipping_address_id
+
   validates :recipient, :city, :street, :zip_code, :phone, :user_id,  presence: true
 
   before_destroy :ensure_not_referenced_by_any_order
@@ -9,12 +12,16 @@ class Address < ActiveRecord::Base
   scope :active, -> { where(status: statuses[:active]) }
   scope :inactive, -> { where(status: statuses[:inactive]) }
 
+  def orders
+    Order.where('billing_address_id=? OR shipping_address_id=?', id, id)
+  end
+
   def full_address
     "#{recipient}, #{street}, #{zip_code} #{city}"
   end
 
   def in_use?
-    Order.where('billing_address_id = ? OR shipping_address_id = ?', id, id).exists?
+    orders.exists?
   end
 
   private
