@@ -7,12 +7,12 @@
     .form-group
       = f.label _('Name'), class: 'col-sm-2 control-label'
       .col-sm-6
-        = f.text_field :name, value: current_user.name, autofocus: true, class: 'form-control'
+        = f.text_field :name, value: @user.name, autofocus: true, class: 'form-control'
 
     .form-group
       = f.label _('Email'), class: 'col-sm-2 control-label'
       .col-sm-6
-        = f.email_field :email, value: current_user.email, class: 'form-control'
+        = f.email_field :email, value: @user.email, class: 'form-control'
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           %small.text-warning= "Currently waiting confirmation for: #{resource.unconfirmed_email}"
 

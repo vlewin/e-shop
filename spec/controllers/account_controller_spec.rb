@@ -20,7 +20,6 @@ describe AccountController, type: :controller do
       it "assigns the current_user to @user and renders the :account view" do
         get :show
         expect(assigns(:user)).to eq(subject.current_user)
-        expect(assigns(:addresses)).to eq(subject.current_user.addresses)
         expect(response).to render_template :show
       end
     end
@@ -32,7 +31,6 @@ describe AccountController, type: :controller do
       it "assigns the current_user to @user and renders the :account view" do
         get :show
         expect(assigns(:user)).to eq(subject.current_user)
-        expect(assigns(:addresses)).to eq(subject.current_user.addresses)
         expect(response).to render_template :show
       end
     end

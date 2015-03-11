@@ -1,5 +1,5 @@
 #orders
-  - if current_user.orders.present?
+  - if @user.orders.present?
     %table.table.table-hover.table-responsive
       %thead
         %tr
@@ -11,7 +11,7 @@
           %th{ collspan: 2}
 
       %tbody
-        - current_user.orders.each do |order|
+        - @user.orders.each do |order|
           %tr
             %td= order_status(order.status)
             %td= I18n.localize(order.created_at)
