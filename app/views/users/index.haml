@@ -1,5 +1,5 @@
 %h4.page-header.no-margin
-  Users
+  = _('Users')
   .pull-right
     = link_to _('Invite new user'), new_user_invitation_path, class: 'btn btn-xs btn-success'
 
@@ -38,7 +38,7 @@
               %td= user.email
               %td= user.invited_by.try(:name)
               %td.visible-md.visible-lg= user.invitation_token
-              %td.text-right= icon_link_to '', user, { data: {confirm: 'Are you sure?'}, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
+              %td.text-right= icon_link_to '', user, { data: {confirm: _('Are you sure?') }, method: :delete, class: 'btn btn-sm btn-default' }, 'fa-trash-o'
     - else
       %b= _('No pending invitations')
 

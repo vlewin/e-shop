@@ -41,11 +41,11 @@ msgstr "Sie sind nicht berechtigt, diese Aktion durchzuführen"
 msgid "Your cart is empty!"
 msgstr "Ihr Warenkorb ist leer!"
 
-#: ../app/controllers/carts_controller.rb:27
+#: ../app/controllers/carts_controller.rb:32
 msgid "Cart was successfully destroyed."
 msgstr "Warenkorb wurde erfolgreich zerstört."
 
-#: ../app/controllers/carts_controller.rb:29
+#: ../app/controllers/carts_controller.rb:34
 msgid "Something went wrong"
 msgstr "Etwas ist schiefgelaufen"
 
@@ -165,7 +165,7 @@ msgstr "Bitte geben Sie Ihr aktuelles Passwort um die Änderungen zu übernehmen
 msgid "Update account"
 msgstr "Konto aktualisieren"
 
-#: ../app/views/account/_address.haml:42 ../app/views/addresses/edit.haml:1 ../app/views/categories/edit.haml:1 ../app/views/categories/show.haml:40 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/edit.haml:1 ../app/views/products/show.haml:48 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35
+#: ../app/views/account/_address.haml:42 ../app/views/addresses/edit.haml:1 ../app/views/categories/edit.haml:1 ../app/views/categories/show.haml:39 ../app/views/payments/edit.haml:1 ../app/views/payments/show.haml:19 ../app/views/products/edit.haml:1 ../app/views/products/show.haml:48 ../app/views/shipments/edit.haml:1 ../app/views/shipments/show.haml:35
 msgid "Edit"
 msgstr "Ändern"
 
@@ -177,23 +177,23 @@ msgstr "Löschen"
 msgid "Your addresses list is empty"
 msgstr "Ihre Adressen-Liste ist leer"
 
-#: ../app/views/account/_order.haml:9 ../app/views/orders/index.html.haml:14 ../app/views/users/_order.haml:13
+#: ../app/views/account/_order.haml:9 ../app/views/addresses/index.haml:22 ../app/views/orders/index.html.haml:14
 msgid "Status"
 msgstr "Status"
 
-#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:18 ../app/views/users/_order.haml:15
+#: ../app/views/account/_order.haml:11 ../app/views/orders/index.html.haml:18
 msgid "Date"
 msgstr "Datum"
 
-#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:32 ../app/views/orders/show.haml:110 ../app/views/users/_order.haml:17
+#: ../app/views/account/_order.haml:13 ../app/views/orders/_payment.haml:7 ../app/views/orders/new.haml:32 ../app/views/orders/show.haml:110
 msgid "Payment method"
 msgstr "Zahlungsart"
 
-#: ../app/views/account/_order.haml:15 ../app/views/carts/_items.haml:94 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:217 ../app/views/users/_order.haml:19 model_attributes.rb:29
+#: ../app/views/account/_order.haml:15 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:217 model_attributes.rb:29
 msgid "Shipment"
 msgstr "Versand"
 
-#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/carts/_items.haml:112 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:94 ../app/views/orders/index.html.haml:22 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227 ../app/views/users/_order.haml:21
+#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:95 ../app/views/orders/index.html.haml:22 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227
 msgid "Total"
 msgstr "Gesamt"
 
@@ -205,7 +205,7 @@ msgstr "Ihre Auftragsliste ist leer"
 msgid "Orders"
 msgstr "Aufträge"
 
-#: ../app/views/account/show.haml:37 ../app/views/layouts/_navigation.haml:130 ../app/views/users/show.haml:35
+#: ../app/views/account/show.haml:37 ../app/views/addresses/index.haml:3 ../app/views/layouts/_navigation.haml:130 ../app/views/users/show.haml:35
 msgid "Addresses"
 msgstr "Adressen"
 
@@ -225,7 +225,7 @@ msgstr "Diese Adresse wird durch einen Auftrag referenziert"
 msgid "%s address"
 msgstr "%s Adresse"
 
-#: ../app/views/addresses/_form.haml:24
+#: ../app/views/addresses/_form.haml:24 ../app/views/addresses/index.haml:24
 msgid "Recipient"
 msgstr "Empfänger"
 
@@ -241,7 +241,7 @@ msgstr "Straße"
 msgid "Save"
 msgstr "Speichern"
 
-#: ../app/views/addresses/_form.haml:80 ../app/views/categories/_form.haml:21 ../app/views/categories/show.haml:42 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:108 ../app/views/payments/_form.haml:22 ../app/views/payments/show.haml:21 ../app/views/products/_form.haml:118 ../app/views/products/show.haml:50 ../app/views/shipments/_form.haml:65 ../app/views/shipments/show.haml:37
+#: ../app/views/addresses/_form.haml:80 ../app/views/categories/_form.haml:21 ../app/views/categories/show.haml:41 ../app/views/orders/_payment.haml:30 ../app/views/orders/_shipping.haml:33 ../app/views/orders/_summary.haml:109 ../app/views/payments/_form.haml:22 ../app/views/payments/show.haml:21 ../app/views/products/_form.haml:118 ../app/views/products/show.haml:50 ../app/views/shipments/_form.haml:65 ../app/views/shipments/show.haml:37
 msgid "Back"
 msgstr "Zurück"
 
@@ -257,7 +257,7 @@ msgstr "Änderungen speichern"
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: ../app/views/addresses/show.haml:36 model_attributes.rb:34
+#: ../app/views/addresses/index.haml:26 ../app/views/addresses/show.haml:36 model_attributes.rb:34
 msgid "User"
 msgstr "Benutzer"
 
@@ -285,17 +285,45 @@ msgstr "Zwischensumme"
 msgid "VAT"
 msgstr "MwSt"
 
+#: ../app/views/carts/_items.haml:96
+msgid "Total exc. shipping"
+msgstr "Gesamt zzgl. Versandkosten"
+
+#: ../app/views/carts/index.haml:3 ../app/views/layouts/_navigation.haml:148
+msgid "Carts"
+msgstr "Warenkörbe"
+
+#: ../app/views/carts/index.haml:7
+msgid "Purge stale carts"
+msgstr ""
+
+#: ../app/views/carts/index.haml:22
+msgid "ID"
+msgstr "ID"
+
+#: ../app/views/carts/index.haml:24 ../app/views/store/index.haml:49
+msgid "Created at"
+msgstr "Erstellt am"
+
+#: ../app/views/carts/index.haml:26
+msgid "Updated at"
+msgstr "Aktualisiert am"
+
+#: ../app/views/carts/index.haml:28 ../app/views/categories/index.haml:24
+msgid "Product count"
+msgstr "Produktanzahl"
+
 #: ../app/views/carts/show.haml:17 ../app/views/layouts/_navigation.haml:28 ../app/views/layouts/_navigation.haml:34 ../config/breadcrumbs.rb:10
 msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
-#: ../app/views/carts/show.haml:25 ../app/views/orders/_orders.haml:50 ../app/views/payments/_payments.haml:12 ../app/views/shipments/_shipments.haml:23
-msgid "Are you sure?"
-msgstr "Sind Sie sicher?"
-
 #: ../app/views/carts/show.haml:25
 msgid "Empty cart"
 msgstr "Warenkorb leeren"
+
+#: ../app/views/carts/show.haml:25 ../app/views/orders/_orders.haml:50 ../app/views/payments/_payments.haml:12 ../app/views/products/_products.haml:22 ../app/views/shipments/_shipments.haml:23 ../app/views/users/index.haml:85
+msgid "Are you sure?"
+msgstr "Sind Sie sicher?"
 
 #: ../app/views/carts/show.haml:38
 msgid "Continue shopping"
@@ -317,10 +345,6 @@ msgstr "Kategorien"
 msgid "New category"
 msgstr "Neue Kategorie"
 
-#: ../app/views/categories/index.haml:24
-msgid "Product count"
-msgstr "Produktanzahl"
-
 #: ../app/views/categories/show.haml:5 ../app/views/products/_form.haml:15 model_attributes.rb:8
 msgid "Category"
 msgstr "Kategorie"
@@ -333,7 +357,7 @@ msgstr "Bezeichnung %s"
 msgid "Products:"
 msgstr "Produkte:"
 
-#: ../app/views/categories/show.haml:32 ../app/views/products/index.haml:7
+#: ../app/views/categories/show.haml:31 ../app/views/products/index.haml:7
 msgid "New product"
 msgstr "Neues Produkt"
 
@@ -481,7 +505,7 @@ msgstr "Abmelden"
 msgid "Products"
 msgstr "Produkte"
 
-#: ../app/views/layouts/_navigation.haml:124
+#: ../app/views/layouts/_navigation.haml:124 ../app/views/users/index.haml:3
 msgid "Users"
 msgstr "Benützer"
 
@@ -492,10 +516,6 @@ msgstr "Versandarts"
 #: ../app/views/layouts/_navigation.haml:142
 msgid "Payments"
 msgstr "Zahlungsarten"
-
-#: ../app/views/layouts/_navigation.haml:148
-msgid "Carts"
-msgstr "Warenkörbe"
 
 #: ../app/views/mailers/order_confirmation.html.erb:1
 msgid "Hi %s,"
@@ -549,7 +569,7 @@ msgstr "Versandart"
 msgid "Order summary"
 msgstr "Bestellübersicht"
 
-#: ../app/views/orders/_summary.haml:110
+#: ../app/views/orders/_summary.haml:111
 msgid "Place order"
 msgstr "Bestellung aufgeben"
 
@@ -660,10 +680,6 @@ msgstr "Entschuldigung! Das gesuchte Produkt wurde leider nicht gefunden"
 #: ../app/views/store/index.haml:31
 msgid "Sort"
 msgstr "Sortierung"
-
-#: ../app/views/store/index.haml:49
-msgid "Created at"
-msgstr "Erstellt am"
 
 #: ../app/views/store/index.haml:56
 msgid "View"

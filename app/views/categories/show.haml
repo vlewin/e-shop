@@ -12,7 +12,6 @@
       - if @category.products.exists?
         - @category.products.each_with_index do |product, index|
           %dd
-            -# # = "#{index+1}. #{product.title}"
             = icon_link_to "#{index+1}. #{product.title}", edit_product_path(product), { class: '' }, 'fa-edit'
       - else
         %dd
