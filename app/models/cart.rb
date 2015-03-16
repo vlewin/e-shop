@@ -40,19 +40,23 @@ class Cart < ActiveRecord::Base
     line_items.count.zero?
   end
 
-  def subtotal
-    line_items.to_a.sum { |item| item.subtotal }
-  end
-
-  def total
-    line_items.to_a.sum { |item| item.total } + Shipment.default.fee # + Default shipping cost
-  end
-
   def count
     line_items.sum(:quantity)
   end
 
+  def subtotal
+    line_items.to_a.sum { |item| item.total }
+  end
+
+  def total
+    line_items.to_a.sum { |item| item.total } + shipping
+  end
+
   def taxes
     line_items.to_a.sum { |item| item.tax }
+  end
+
+  def shipping
+    shipment.try(:fee) || Shipment.default.fee
   end
 end

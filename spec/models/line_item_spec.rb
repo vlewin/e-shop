@@ -28,10 +28,10 @@ describe LineItem do
   end
 
   it 'calculates a total price without tax based on quantity' do
-    expect(subject.subtotal).to eq(subject.product.price * subject.quantity)
+    expect(subject.subtotal).to eq(subject.product.netto * subject.quantity)
   end
 
   it 'calculates a total tax amount based on quantity' do
-    expect(subject.tax).to eq(subject.subtotal * (subject.product.vat.rate / 100.0))
+    expect(subject.tax).to eq(subject.product.tax * subject.quantity)
   end
 end

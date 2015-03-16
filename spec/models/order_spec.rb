@@ -38,22 +38,31 @@ describe Order do
       end
     end
 
-    it 'calculates a subtotal without taxes and shipment' do
-      subtotal = subject.line_items.to_a.sum { |item| item.subtotal }
-      expect(subject.subtotal).to eq(subtotal)
+    describe '#subtotal' do
+      it 'calculates a price without taxes and shipment' do
+        subtotal = subject.line_items.to_a.sum(&:subtotal)
+        expect(subject.subtotal).to eq(subtotal)
+      end
     end
 
-    it 'calculates a total with taxes and shipment' do
-      total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.fee
-      expect(subject.total).to eq(total)
+    describe '#total' do
+      it 'calculates a total with taxes and shipment' do
+        total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.fee
+        expect(subject.total).to eq(total)
+      end
     end
 
-    it 'calculates a price without taxes' do
-      expect(subject.subtotal).to eq(5)
+    describe '#count' do
+      it 'calculates a total with taxes and shipment' do
+        total = subject.line_items.to_a.sum { |item| item.total } + subject.shipment.fee
+        expect(subject.total).to eq(total)
+      end
     end
 
-    it 'calculates a tax amount' do
-      expect(subject.taxes).to eq(subject.line_items.to_a.sum { |item| item.tax })
+    describe '#taxes' do
+      it 'calculates a tax amount' do
+        expect(subject.taxes).to eq(subject.line_items.to_a.sum { |item| item.tax })
+      end
     end
   end
 
