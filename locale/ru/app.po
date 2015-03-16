@@ -219,6 +219,9 @@ msgstr "Промежуточный итог"
 msgid "VAT"
 msgstr "НДС"
 
+msgid "incl. VAT"
+msgstr "вкл. НДС"
+
 msgid "Total exc. shipping"
 msgstr "Итого без пересылки"
 
@@ -243,11 +246,11 @@ msgstr "Количество товаров"
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
-msgid "Empty cart"
-msgstr "Очистить корзину"
-
 msgid "Are you sure?"
 msgstr "Вы уверены?"
+
+msgid "Empty cart"
+msgstr "Очистить корзину"
 
 msgid "Continue shopping"
 msgstr "Продолжить покупки"

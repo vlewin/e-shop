@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-11 11:55+0100\n"
-"PO-Revision-Date: 2015-03-11 11:55+0100\n"
+"POT-Creation-Date: 2015-03-16 13:31+0100\n"
+"PO-Revision-Date: 2015-03-16 13:31+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -850,7 +850,7 @@ msgstr ""
 msgid "User|Unconfirmed email"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:17 ../app/views/carts/_items.haml:78 ../app/views/orders/_summary.haml:32 ../app/views/orders/_summary.haml:72 ../app/views/products/index.haml:32 ../app/views/products/_form.haml:72
+#: ../app/views/carts/_items.haml:17 ../app/views/orders/_summary.haml:32 ../app/views/products/index.haml:32 ../app/views/products/_form.haml:72
 msgid "VAT"
 msgstr ""
 
@@ -936,6 +936,10 @@ msgstr ""
 
 #: ../app/views/orders/_address.haml:49
 msgid "billing address is same as shipping address"
+msgstr ""
+
+#: ../app/views/carts/_items.haml:78 ../app/views/orders/_summary.haml:72
+msgid "incl. VAT"
 msgstr ""
 
 #: ../app/views/mailers/order_confirmation.html.erb:3
