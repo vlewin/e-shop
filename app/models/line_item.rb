@@ -15,11 +15,11 @@ class LineItem < ActiveRecord::Base
   end
 
   def subtotal
-    (product.price * quantity)
+    (product.netto * quantity)
   end
 
   def tax
-    subtotal * (product.vat.rate / 100.0)
+    (product.tax * quantity)
   end
 
   private

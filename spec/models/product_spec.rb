@@ -1,7 +1,7 @@
 require "rails_helper"
 
 describe Product do
-  subject { FactoryGirl.build(:product, quantity: 2) }
+  subject { FactoryGirl.build(:product, price: 10, quantity: 2) }
 
   it { should belong_to :category }
   it { should belong_to :vat }
@@ -13,7 +13,7 @@ describe Product do
   it { should validate_numericality_of(:price).is_greater_than_or_equal_to(0.01) }
   it { should validate_uniqueness_of :title }
 
-  describe '.decrease_quantity' do
+  describe '#decrease_quantity' do
     it 'decreases quantity by 1 per default' do
       expect{subject.decrease_quantity}.to change{subject.quantity}.by(-1)
     end
@@ -27,7 +27,7 @@ describe Product do
     end
   end
 
-  describe '.available_quantity' do
+  describe '#available_quantity' do
     it 'calculates available quantity' do
       expect(subject.available_quantity).to eq subject.quantity
     end
@@ -38,13 +38,13 @@ describe Product do
     end
   end
 
-  describe '.sold_quantity' do
+  describe '#sold_quantity' do
     it 'calculates sold quantity' do
       expect(subject.sold_quantity).to eq 0
     end
   end
 
-  describe '.out_of_stock?' do
+  describe '#out_of_stock?' do
     it 'returns true if quantity 0' do
       subject.quantity = 0
       expect(subject.out_of_stock?).to eq true
@@ -55,7 +55,30 @@ describe Product do
     end
   end
 
-  describe '.ensure_not_referenced_by_any_line_item' do
+  describe '#netto' do
+    it 'returns netto price' do
+      expect(subject.netto).to eq 8.40
+    end
+  end
+
+  describe '#tax' do
+    it 'returns tax value' do
+      expect(subject.tax).to eq 1.60
+    end
+  end
+
+  describe '#tax_factor' do
+    it 'calculates tax factor (standard VAT rate)' do
+      expect(subject.tax_factor).to eq 1.19
+    end
+
+    it 'calculates tax factor (non-standard VAT rate)' do
+      subject.vat = FactoryGirl.create(:vat, rate: 4)
+      expect(subject.tax_factor).to eq 1.04
+    end
+  end
+
+  describe '#ensure_not_referenced_by_any_line_item' do
     it 'ensure that there are no line items referencing this product' do
       expect(subject.send(:ensure_not_referenced_by_any_line_item)).to eq true
     end

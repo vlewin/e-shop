@@ -15,7 +15,7 @@
               = icon_link_to "#{_('Cart')} (0)", '#', { class: :disabled }, 'fa-shopping-cart'
           - else
             %li{ class: controller_name == 'carts' ? 'active' : '' }
-              = icon_link_to "#{_('Cart')} (#{current_cart.count} | #{number_to_currency(current_cart.total)} )", cart_path(current_cart), 'fa-shopping-cart'
+              = icon_link_to "#{_('Cart')} (#{current_cart.count} | #{number_to_currency(current_cart.subtotal)} )", cart_path(current_cart), 'fa-shopping-cart'
 
         %li.dropdown
           %a.dropdown-toggle{ 'data-toggle' => 'dropdown', href: '#' }

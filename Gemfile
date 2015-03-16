@@ -32,7 +32,7 @@ gem 'devise_invitable'
 gem 'pundit'
 
 # Search, filtering and pagination
-gem 'ransack', '~> 1.4.1'
+gem 'ransack'
 gem 'kaminari'
 gem 'kaminari-bootstrap', '~> 3.0.1'
 

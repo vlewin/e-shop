@@ -218,6 +218,9 @@ msgstr "Zwischensumme"
 msgid "VAT"
 msgstr "MwSt"
 
+msgid "incl. VAT"
+msgstr "inkl. MwSt"
+
 msgid "Total exc. shipping"
 msgstr "Gesamt zzgl. Versandkosten"
 
@@ -242,11 +245,11 @@ msgstr "Produktanzahl"
 msgid "Your Cart"
 msgstr "Ihr Warenkorb"
 
-msgid "Empty cart"
-msgstr "Warenkorb leeren"
-
 msgid "Are you sure?"
 msgstr "Sind Sie sicher?"
+
+msgid "Empty cart"
+msgstr "Warenkorb leeren"
 
 msgid "Continue shopping"
 msgstr "Weiter einkaufen"

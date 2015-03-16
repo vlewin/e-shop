@@ -42,6 +42,18 @@ class Product < ActiveRecord::Base
     quantity.zero? || reserved_count == quantity
   end
 
+  def netto
+    (price - tax).round(2)
+  end
+
+  def tax
+    (price - (price / tax_factor)).round(2)
+  end
+
+  def tax_factor
+    vat.rate.to_f/100+1
+  end
+
   private
 
   # Ensure that there are no line items referencing this product

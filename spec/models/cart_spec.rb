@@ -88,23 +88,31 @@ describe Cart do
     end
   end
 
-  it 'counts the quantity of all products' do
-    expect(subject.count).to eq(subject.line_items.sum(:quantity))
+  describe '#count' do
+    it 'counts the quantity of all products' do
+      expect(subject.count).to eq(subject.line_items.sum(:quantity))
+    end
   end
 
-  it 'calculates a price with taxes and shipping costs' do
-    total = subject.line_items.to_a.sum { |item| item.total } + shipment.fee
-    expect(subject.total).to eq(total)
+  describe '#subtotal' do
+    it 'calculates a price with taxes' do
+      subtotal = subject.line_items.to_a.sum { |item| item.total }
+      expect(subject.subtotal).to eq(subtotal)
+    end
   end
 
-  it 'calculates a price without taxes' do
-    subtotal = subject.line_items.to_a.sum { |item| item.subtotal }
-    expect(subject.subtotal).to eq(subtotal)
+  describe '#total' do
+    it 'calculates a price with taxes and shipping costs' do
+      quantity = subject.line_items.to_a.sum(&:quantity)
+      expect(subject.count).to eq(quantity)
+    end
   end
 
-  it 'calculates a tax amount' do
-    taxes = subject.line_items.to_a.sum { |item| item.tax }
-    expect(subject.taxes).to eq(taxes)
+  describe '#taxes' do
+    it 'calculates a tax amount' do
+      taxes = subject.line_items.to_a.sum { |item| item.tax }
+      expect(subject.taxes).to eq(taxes)
+    end
   end
 end
 

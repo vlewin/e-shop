@@ -32,7 +32,7 @@
           %td.thick-line{ colspan: 2 }
             = number_to_currency(@current_cart.subtotal)
         %tr.text-muted
-          %td{ colspan: 6 }= _('VAT')
+          %td{ colspan: 6 }= _('incl. VAT')
           %td{ colspan: 2 }
             = number_to_currency(@current_cart.taxes)
         %tr.text-muted
