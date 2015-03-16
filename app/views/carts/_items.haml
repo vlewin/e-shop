@@ -35,7 +35,7 @@
       %td.no-line.hidden-xs
       %td.no-line.hidden-xs
       %td.no-line.hidden-xs
-      %td.no-line{ colspan: 3 }= _('VAT')
+      %td.no-line{ colspan: 3 }= _('incl. VAT')
       %td.no-line{ colspan: 2 }
         = number_to_currency(@current_cart.taxes)
     %tr
@@ -45,7 +45,7 @@
       %td.thick-line{ colspan: 3 }
         %b= _('Total exc. shipping')
       %td.thick-line{ colspan: 2 }
-        %b= number_to_currency(@current_cart.total)
+        %b= number_to_currency(@current_cart.subtotal)
 
 
 
