@@ -103,7 +103,7 @@ describe Cart do
 
   describe '#total' do
     it 'calculates a price with taxes and shipping costs' do
-      quantity = line_items.to_a.sum(&:quantity)
+      quantity = subject.line_items.to_a.sum(&:quantity)
       expect(subject.count).to eq(quantity)
     end
   end
