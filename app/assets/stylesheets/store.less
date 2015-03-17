@@ -1,5 +1,17 @@
 @import "custom_bootstrap/mixins.less";
 
+@media (min-width: @screen-xs) {
+  .text-auto {
+    text-align: left;
+  }
+}
+
+@media (min-width: @screen-sm) {
+  .text-auto {
+    text-align: right;
+  }
+}
+
 #categories {
   &.navbar-nav {
     li {

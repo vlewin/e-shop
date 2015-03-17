@@ -3,7 +3,7 @@
     .row
       - @products.each_with_index do |product, index|
         - out_of_stock = product.out_of_stock?
-        .col-xs-6.col-sm-4.col-md-3
+        .col-xs-12.col-sm-4.col-md-3
           = form_tag line_items_path(product_id: product), class: 'form-inline' do
             .product-grid{ class: out_of_stock ? 'out-of-stock' : '' }
               - if out_of_stock
@@ -33,8 +33,8 @@
       %thead
         %tr
           %th{ width: '5%'}= _('Image')
-          %th= _('Title')
-          %th= _('Price')
+          %th{ width: '50%'}= _('Title')
+          %th{ width: '10%'}= _('Price')
           %th.hidden-xs.hidden-sm{ width: '30%'}= _('Quantity')
 
       %tbody
@@ -44,11 +44,11 @@
             %td= product_image_tag(product)
             %td
               .title= link_to product.title, store_product_path(product)
-              .description= product.description
+              .description.hidden-xs= product.description
             %td= number_to_currency(product.price)
             %td
               - if out_of_stock
-                .pull-right
+                .pull-right.hidden-xs
                   %span.label.label-default.label-md= _('Out of stock')
               - else
                 = form_tag line_items_path(product_id: product), class: 'form-inline' do

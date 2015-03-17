@@ -8,12 +8,12 @@
           %span.input-group-addon
             %i.fa.fa-search
 
-          = f.text_field :translations_title_cont, placeholder: _('Search'), class: 'form-control'
+          = f.text_field :translations_title_cont, placeholder: _('Search'), class: 'input-sm form-control'
 
     .col-xs-12.hidden-sm.hidden-md.hidden-lg &nbsp;
 
     .col-xs-12.col-sm-7.col-md-7
-      .text-right
+      .text-auto
         %span.hidden-xs.hidden-sm
           %small= _('Sort')
 
@@ -27,7 +27,7 @@
 
         %span.hidden-xs.hidden-sm
           %small= _('View')
-        .btn-group.btn-group-sm
+        .btn-group.btn-group-sm.hidden-xs
           - css_class = "btn btn-default #{'active' if current_view == 'grid'}"
           = icon_link_to '', root_path(view: :grid, limit: @limit), { class: css_class }, 'fa-lg fa-th-large text-muted'
           - css_class = "btn btn-default #{'active' if current_view == 'list'}"
