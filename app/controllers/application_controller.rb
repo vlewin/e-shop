@@ -4,21 +4,17 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
-  before_filter :set_gettext_locale, :authenticate_user!, :current_cart #, :purge_stale_carts
+  before_filter :set_gettext_locale, :authenticate_user!, :current_cart
   helper_method :current_view, :current_cart, :current_locale
 
   rescue_from Exception, with: :handle_exceptions
-
-  # def purge_stale_carts
-  #   Cart.where("updated_at  <?", 30.minutes.ago).destroy_all
-  # end
 
   def current_locale
     I18n.locale
   end
 
   def current_view
-    @current_view ||= params[:view] || ((session[:view] == '')? nil : session[:view]) || 'grid'
+    @current_view ||= params[:view] || (session[:view].blank? ? nil : session[:view]) || 'grid'
     session[:view] = @current_view
     @current_view
   end
