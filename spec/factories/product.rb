@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :product do
-    sequence(:title)   { |n| "#{Faker::Product.product}#{n}" }
-    ean             Faker.numerify('#####')
-    description     Faker::Lorem.sentence
+    sequence(:title)   { |n| "#{FFaker::Product.product}#{n}" }
+    ean             FFaker.numerify('#####')
+    description     FFaker::Lorem.sentence
     quantity        2
     price           5
 
