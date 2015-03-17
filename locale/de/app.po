@@ -104,6 +104,39 @@ msgstr "Abgeschlossen"
 msgid "Search"
 msgstr "Suche"
 
+msgid "Shipping and Billing address"
+msgstr "Versand- und Rechnungsadresse"
+
+msgid "Shipping address"
+msgstr "Versandadresse"
+
+msgid "Billing address"
+msgstr "Rechnungsadresse"
+
+msgid "Total"
+msgstr "Gesamt"
+
+msgid "Title"
+msgstr "Bezeichnung"
+
+msgid "Price"
+msgstr "Preis"
+
+msgid "Nr"
+msgstr ""
+
+msgid "Quantity"
+msgstr "Anzahl"
+
+msgid "Subtotal"
+msgstr "Zwischensumme"
+
+msgid "Shipment"
+msgstr "Versand"
+
+msgid "incl. VAT"
+msgstr "inkl. MwSt"
+
 msgid "Name"
 msgstr "Name"
 
@@ -145,12 +178,6 @@ msgstr "Datum"
 
 msgid "Payment method"
 msgstr "Zahlungsart"
-
-msgid "Shipment"
-msgstr "Versand"
-
-msgid "Total"
-msgstr "Gesamt"
 
 msgid "Your orders list is empty"
 msgstr "Ihre Auftragsliste ist leer"
@@ -203,23 +230,8 @@ msgstr "Benutzer"
 msgid "Image"
 msgstr "Bild"
 
-msgid "Title"
-msgstr "Bezeichnung"
-
-msgid "Price"
-msgstr "Preis"
-
-msgid "Quantity"
-msgstr "Anzahl"
-
-msgid "Subtotal"
-msgstr "Zwischensumme"
-
 msgid "VAT"
 msgstr "MwSt"
-
-msgid "incl. VAT"
-msgstr "inkl. MwSt"
 
 msgid "Total exc. shipping"
 msgstr "Gesamt zzgl. Versandkosten"
@@ -426,15 +438,6 @@ msgstr ""
 "Wenn Sie mit uns über Ihren Auftrag sprechen wollen, senden Sie uns bitte eine"
 " Email. Sie können uns telefonisch erreichen unter: (0123) 45678"
 
-msgid "Shipping and Billing address"
-msgstr "Versand- und Rechnungsadresse"
-
-msgid "Shipping address"
-msgstr "Versandadresse"
-
-msgid "Billing address"
-msgstr "Rechnungsadresse"
-
 msgid "billing address is same as shipping address"
 msgstr "Rechnungsadresse ist die gleiche wie Versandadresse"
 
@@ -497,6 +500,9 @@ msgstr "EAN ist aus der Kategorie-ID Präfix und nächsten Artikel ID zusammenge
 
 msgid "Please be patient the image upload may take a few seconds..."
 msgstr "Bitte haben Sie Geduld der Bild-Upload kann einige Sekunden dauern ..."
+
+msgid "New"
+msgstr ""
 
 msgid "EAN: %s"
 msgstr "Artikelnummer: %s"
