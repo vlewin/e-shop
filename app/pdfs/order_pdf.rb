@@ -1,4 +1,6 @@
 # encoding: utf-8
+require 'prawn'
+require 'prawn/table'
 
 class OrderPdf < Prawn::Document
   def initialize(order, view)
@@ -9,7 +11,7 @@ class OrderPdf < Prawn::Document
 
     header
     bounding_box([bounds.left, bounds.top - 170], height: 650, width: 523) do
-      text "Invoice No. ##{@order.id}", style: :bold
+      text _("Order #%d") % @order.id, style: :bold
       items
       total
     end
@@ -23,36 +25,31 @@ class OrderPdf < Prawn::Document
 
   def header
     bounding_box([bounds.left, bounds.top], width: 250) do
-      text "E-Shop, Inc", color: "000000", size: 12, style: :bold
-      text "Musterstrasse 1
-            3000 Musterstadt", size: 10
+      text "E-Shop GmbH", size: 12, style: :bold
+      text "Musterstrasse 1"
+      text "3000 Musterstadt"
     end
-
-    # bounding_box([bounds.left, bounds.top-70], width: 250) do
-    #   text @order.billing_address.recipient, size: 12, style: :bold
-    #   text "#{@order.billing_address.street}
-    #         #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
-    # end
 
     bounding_box([bounds.left + 380, bounds.top], width: 260) do
       if @order.billing_address == @order.shipping_address
-        text "Shipping & Billing to:", style: :bold
-        text @order.billing_address.recipient, style: :bold
-        text "#{@order.billing_address.street}
-            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10
+        text _('Shipping and Billing address'), style: :bold
+        text @order.billing_address.recipient
+        text @order.billing_address.street
+        text "#{@order.billing_address.zip_code} #{@order.billing_address.city}"
 
       else
-        text "Shipping to:", style: :bold
-        text @order.shipping_address.recipient, style: :bold
-        text "#{@order.shipping_address.street}
-            #{@order.shipping_address.zip_code} #{@order.shipping_address.city}", size: 10
+        text _('Billing address'), style: :bold
+        text @order.billing_address.recipient
+        text @order.billing_address.street
+        text "#{@order.billing_address.zip_code} #{@order.billing_address.city}"
 
-        move_down 10
+        move_down 20
 
-        text "Billing to:", style: :bold
-        text @order.billing_address.recipient, style: :bold
-        text "#{@order.billing_address.street}
-            #{@order.billing_address.zip_code} #{@order.billing_address.city}", size: 10      end
+        text _('Shipping address'), style: :bold
+        text @order.shipping_address.recipient
+        text @order.shipping_address.street
+        text "#{@order.shipping_address.zip_code} #{@order.shipping_address.city}"
+      end
     end
   end
 
@@ -83,7 +80,7 @@ class OrderPdf < Prawn::Document
   end
 
   def thead
-    [["Nr", "Product title", "Unit price", "Quantity", "Total"]]
+    [[_('Nr'), _('Title'), _('Quantity'), _('Price'), _('Total')]]
   end
 
   def tbody
@@ -91,9 +88,9 @@ class OrderPdf < Prawn::Document
       [
         index + 1,
         item.product.title,
-        price(item.product.price),
         item.quantity,
-        price(item.subtotal)
+        price(item.product.price),
+        price(item.price)
       ]
     end
   end
@@ -111,10 +108,10 @@ class OrderPdf < Prawn::Document
 
   def total_rows
     [
-      ["", "Sub Total", "#{price(@order.subtotal)}"],
-      ["", "Shipping & Handling", "#{price(@order.shipment.fee) rescue 'not calculated'}"],
-      ["", "VAT", "#{price(@order.taxes)}"],
-      ["", "Total", "#{price(@order.total)}"]
+      ['', _('Subtotal'), "#{price(@order.subtotal)}"],
+      ['', _('Shipment'), "#{price(@order.shipment.fee) rescue 'not calculated'}"],
+      ['', _('incl. VAT'), "#{price(@order.taxes)}"],
+      ['', _('Total'), "#{price(@order.total)}"]
     ]
   end
 
@@ -123,7 +120,7 @@ class OrderPdf < Prawn::Document
       page = i + 1
       go_to_page(page)
       bounding_box([bounds.left+1, bounds.bottom + 10], width: 500) do
-        text "Thank you for your business!", size: 8
+        text _('Thank you for your business!'), size: 8
       end
     end
   end
