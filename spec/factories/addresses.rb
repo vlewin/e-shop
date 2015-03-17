@@ -1,10 +1,10 @@
 FactoryGirl.define do
   factory :address do
-    recipient     "#{Faker::NameDE.first_name} #{Faker::NameDE.last_name}"
-    city          Faker::AddressDE.city
-    street        Faker::AddressDE.street_address
-    zip_code      Faker::AddressDE.zip_code
-    phone         Faker::PhoneNumberDE.mobile_phone_number
+    recipient     "#{FFaker::NameDE.first_name} #{FFaker::NameDE.last_name}"
+    city          FFaker::AddressDE.city
+    street        FFaker::AddressDE.street_address
+    zip_code      FFaker::AddressDE.zip_code
+    phone         FFaker::PhoneNumberDE.mobile_phone_number
 
     association :user, factory: :user
   end

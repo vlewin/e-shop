@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: app 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-16 13:31+0100\n"
-"PO-Revision-Date: 2015-03-16 13:31+0100\n"
+"POT-Creation-Date: 2015-03-17 10:12+0100\n"
+"PO-Revision-Date: 2015-03-17 10:12+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Back to cart"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:60
+#: ../app/pdfs/order_pdf.rb:48 ../app/views/orders/_address.haml:41 ../app/views/orders/show.haml:60
 msgid "Billing address"
 msgstr ""
 
@@ -366,6 +366,10 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+#: ../app/views/products/new.haml:1
+msgid "New"
+msgstr ""
+
 #: ../app/views/addresses/index.haml:7 ../app/views/account/show.haml:42 ../app/views/orders/_address.haml:12
 msgid "New address"
 msgstr ""
@@ -396,6 +400,10 @@ msgstr ""
 
 #: ../app/views/users/index.haml:89
 msgid "No pending invitations"
+msgstr ""
+
+#: ../app/pdfs/order_pdf.rb:82
+msgid "Nr"
 msgstr ""
 
 #: model_attributes.rb:18
@@ -490,7 +498,7 @@ msgstr ""
 msgid "Please create a category first."
 msgstr ""
 
-#: ../app/views/store/index.haml:44 ../app/views/store/_products.html.haml:66 ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:170 ../app/views/products/index.haml:30 ../app/views/products/_form.haml:61
+#: ../app/pdfs/order_pdf.rb:82 ../app/views/store/index.haml:44 ../app/views/store/_products.html.haml:66 ../app/views/carts/_items.haml:11 ../app/views/orders/_summary.haml:28 ../app/views/orders/show.haml:170 ../app/views/products/index.haml:30 ../app/views/products/_form.haml:61
 msgid "Price"
 msgstr ""
 
@@ -562,7 +570,7 @@ msgstr ""
 msgid "Purge stale carts"
 msgstr ""
 
-#: ../app/views/store/_products.html.haml:68 ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:175 ../app/views/products/index.haml:28 ../app/views/products/_form.haml:50
+#: ../app/pdfs/order_pdf.rb:82 ../app/views/store/_products.html.haml:68 ../app/views/carts/_items.haml:13 ../app/views/orders/_summary.haml:26 ../app/views/orders/show.haml:175 ../app/views/products/index.haml:28 ../app/views/products/_form.haml:50
 msgid "Quantity"
 msgstr ""
 
@@ -618,7 +626,7 @@ msgstr ""
 msgid "Set your password"
 msgstr ""
 
-#: ../app/views/account/_order.haml:15 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:217 model_attributes.rb:29
+#: ../app/pdfs/order_pdf.rb:111 ../app/views/account/_order.haml:15 ../app/views/orders/_summary.haml:82 ../app/views/orders/show.haml:217 model_attributes.rb:29
 msgid "Shipment"
 msgstr ""
 
@@ -658,11 +666,11 @@ msgstr ""
 msgid "Shipped"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:84
+#: ../app/pdfs/order_pdf.rb:41 ../app/views/orders/_address.haml:22 ../app/views/orders/show.haml:84
 msgid "Shipping address"
 msgstr ""
 
-#: ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:16
+#: ../app/pdfs/order_pdf.rb:35 ../app/views/orders/_address.haml:7 ../app/views/orders/new.haml:16
 msgid "Shipping and Billing address"
 msgstr ""
 
@@ -722,7 +730,7 @@ msgstr ""
 msgid "Street"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:62 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:207
+#: ../app/pdfs/order_pdf.rb:110 ../app/views/carts/_items.haml:15 ../app/views/carts/_items.haml:62 ../app/views/orders/_summary.haml:30 ../app/views/orders/_summary.haml:62 ../app/views/orders/show.haml:207
 msgid "Subtotal"
 msgstr ""
 
@@ -738,7 +746,7 @@ msgstr ""
 msgid "This product is out of stock"
 msgstr ""
 
-#: ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:64 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:14 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
+#: ../app/pdfs/order_pdf.rb:82 ../app/views/store/index.haml:39 ../app/views/store/_products.html.haml:64 ../app/views/categories/index.haml:22 ../app/views/categories/_form.haml:13 ../app/views/shipments/index.haml:26 ../app/views/shipments/_form.haml:27 ../app/views/shipments/show.haml:18 ../app/views/payments/index.haml:22 ../app/views/payments/_form.haml:14 ../app/views/payments/show.haml:10 ../app/views/carts/_items.haml:9 ../app/views/orders/_summary.haml:24 ../app/views/products/index.haml:24 ../app/views/products/_form.haml:25
 msgid "Title"
 msgstr ""
 
@@ -750,7 +758,7 @@ msgstr ""
 msgid "Token"
 msgstr ""
 
-#: ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:95 ../app/views/orders/index.html.haml:22 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227
+#: ../app/pdfs/order_pdf.rb:82 ../app/pdfs/order_pdf.rb:113 ../app/views/account/_order.haml:17 ../app/views/carts/_items.haml:19 ../app/views/orders/_summary.haml:34 ../app/views/orders/_summary.haml:95 ../app/views/orders/index.html.haml:22 ../app/views/orders/show.haml:180 ../app/views/orders/show.haml:227
 msgid "Total"
 msgstr ""
 
@@ -938,7 +946,7 @@ msgstr ""
 msgid "billing address is same as shipping address"
 msgstr ""
 
-#: ../app/views/carts/_items.haml:78 ../app/views/orders/_summary.haml:72
+#: ../app/pdfs/order_pdf.rb:112 ../app/views/carts/_items.haml:78 ../app/views/orders/_summary.haml:72
 msgid "incl. VAT"
 msgstr ""
 

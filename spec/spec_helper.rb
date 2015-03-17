@@ -20,7 +20,6 @@ if ENV['CODECLIMATE_REPO_TOKEN']
   CodeClimate::TestReporter.start
 else
   require 'simplecov'
-  # SimpleCov.start
   SimpleCov.start 'rails'
 end
 
