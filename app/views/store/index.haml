@@ -1,8 +1,8 @@
 #store
   .row
     .col-xs-12.col-sm-5.col-md-5
-      = search_form_for @search, url: root_path(view: current_view, limit: @limit), method: :get, remote: true, class: '' do |f|
-        = hidden_field_tag :view, params[:view]
+      = search_form_for @search, url: root_path, method: :get, remote: true, class: '' do |f|
+        = hidden_field_tag :view, current_view
 
         .input-group
           %span.input-group-addon
@@ -19,19 +19,19 @@
 
         .btn-group.btn-group-sm
           .btn.btn-default{ class: (@sorting.include?('title')) ? 'active' : ''}
-            = sort_link @search, :translations_title, _('Title'), { limit: @limit }
+            = sort_link @search, :translations_title, _('Title')
           .btn.btn-default{ class: (@sorting.include?('price')) ? 'active' : ''}
-            = sort_link @search, :price, _('Price'), { limit: @limit }
+            = sort_link @search, :price, _('Price')
           .btn.btn-default{ class: (@sorting.include?('created_at')) ? 'active' : ''}
-            = sort_link @search, :created_at, _('Created at'), { limit: @limit }
+            = sort_link @search, :created_at, _('Created at')
 
         %span.hidden-xs.hidden-sm
           %small= _('View')
         .btn-group.btn-group-sm.hidden-xs
           - css_class = "btn btn-default #{'active' if current_view == 'grid'}"
-          = icon_link_to '', root_path(view: :grid, limit: @limit), { class: css_class }, 'fa-lg fa-th-large text-muted'
+          = icon_link_to '', root_path(view: 'grid'), { class: css_class }, 'fa-lg fa-th-large text-muted'
           - css_class = "btn btn-default #{'active' if current_view == 'list'}"
-          = icon_link_to '', root_path(view: :list, limit: @limit), { class: css_class }, 'fa-lg fa-th-list text-muted'
+          = icon_link_to '', root_path(view: 'list'), { class: css_class }, 'fa-lg fa-th-list text-muted'
 
         %span.hidden-xs.hidden-sm
           %small= _('Per page')
@@ -53,20 +53,20 @@
 
   -# Mobile
   %ul.list-group.hidden-md.hidden-lg
-    = link_to _('All categories'), root_path(view: @view), class: params[:category_translations_title_eq].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
+    = link_to _('All categories'), root_path, class: params[:category_translations_title_eq].nil? ? 'list-group-item active' : 'list-group-item', remote: :true
     - @categories.each do |cat|
       - title = "#{cat.title} (#{cat.products_count})"
-      - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
+      - path = root_path(q: { "category_translations_title_eq" => cat.title })
       - css_class = cat.title == params[:category_translations_title_eq] ? 'list-group-item active' : 'list-group-item'
       = link_to title, path, class: css_class, "data-toggle" => "tab", 'data-url' => path, remote: :true
 
   -# Desktop
   %ul#categories.nav.nav-tabs.hidden-xs.hidden-sm
     %li{ class: params[:category_translations_title_eq].nil? ? 'active' : '' }
-      = link_to _('All categories'), root_path(view: @view), remote: :true
+      = link_to _('All categories'), root_path, remote: :true
     - @categories.each do |cat|
       - title = "#{cat.title} (#{cat.products_count})"
-      - path = root_path(q: { "category_translations_title_eq" => cat.title}, view: @view, limit: @limit)
+      - path = root_path(q: { "category_translations_title_eq" => cat.title} )
       %li{ class: cat.title == params[:category_translations_title_eq] ? 'active' : '' }
         = link_to title, path, "data-toggle" => "tab", 'data-url' => path, remote: :true
 

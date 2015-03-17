@@ -33,8 +33,8 @@
       %thead
         %tr
           %th{ width: '5%'}= _('Image')
-          %th{ width: '50%'}= _('Title')
-          %th{ width: '10%'}= _('Price')
+          %th{ width: '55%'}= sort_link @search, :translations_title, _('Title')
+          %th{ width: '10%'}= sort_link @search, :price, _('Price')
           %th.hidden-xs.hidden-sm{ width: '30%'}= _('Quantity')
 
       %tbody
