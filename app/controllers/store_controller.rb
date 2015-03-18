@@ -25,7 +25,7 @@ class StoreController < ApplicationController
 
   def set_filters
     @page = params[:page]
-    @limit = params[:limit] || 4
+    @limit = params[:limit] || Settings.pagination.per_page
 
     @query = params[:q]
     @sorting = (@query && @query[:s]) ? @query[:s] : ''
