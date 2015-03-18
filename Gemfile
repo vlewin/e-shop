@@ -63,6 +63,8 @@ group :development do
 
   gem 'gettext', require: false
   gem 'ruby_parser', require: false
+
+  gem 'lol_dba'
 end
 
 group :test do
