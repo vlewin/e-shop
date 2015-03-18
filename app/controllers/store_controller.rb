@@ -11,9 +11,7 @@ class StoreController < ApplicationController
   def index
     @search = Product.search(@query)
     @products = @search.result.page(@page).per(@limit)
-
-    # FIXME: Use database
-    @init_letters = @products.map{|p| p.title.first if p.title}.uniq.sort
+    @init_letters = Product.first_letters
     @categories ||= Category.all.order(:title)
   end
 
