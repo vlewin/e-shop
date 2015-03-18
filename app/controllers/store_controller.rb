@@ -11,7 +11,6 @@ class StoreController < ApplicationController
   def index
     @search = Product.search(@query)
     @products = @search.result.page(@page).per(@limit)
-    @init_letters = Product.first_letters
     @categories ||= Category.all.order(:title)
   end
 

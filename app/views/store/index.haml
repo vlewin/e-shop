@@ -47,7 +47,7 @@
       #alphabet
         - alphabet = (current_locale == :ru)? ('А'..'Я') : ('A'..'Z')
         - alphabet.each do |char|
-          = link_to char, root_path(q: { translations_title_start: char }), class: @init_letters.include?(char) ? '' : 'disabled',  remote: true
+          = link_to char, root_path(q: { translations_title_start: char }), class: Product.first_letters.include?(char) ? '' : 'disabled',  remote: true
 
   %hr.line
 
