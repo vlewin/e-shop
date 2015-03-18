@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150318100011) do
+ActiveRecord::Schema.define(version: 20150318114323) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "recipient"
@@ -134,6 +134,9 @@ ActiveRecord::Schema.define(version: 20150318100011) do
   end
 
   add_index "products", ["category_id"], name: "index_products_on_category_id"
+  add_index "products", ["created_at"], name: "index_products_on_created_at"
+  add_index "products", ["price"], name: "index_products_on_price"
+  add_index "products", ["updated_at"], name: "index_products_on_updated_at"
   add_index "products", ["vat_id"], name: "index_products_on_vat_id"
 
   create_table "shipment_translations", force: :cascade do |t|
