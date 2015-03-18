@@ -11,9 +11,6 @@ class StoreController < ApplicationController
   def index
     @search = Product.search(@query)
     @products = @search.result.page(@page).per(@limit)
-
-    # FIXME: Use database
-    @init_letters = @products.map{|p| p.title.first if p.title}.uniq.sort
     @categories ||= Category.all.order(:title)
   end
 
@@ -27,7 +24,7 @@ class StoreController < ApplicationController
 
   def set_filters
     @page = params[:page]
-    @limit = params[:limit] || 4
+    @limit = params[:limit] || Settings.pagination.per_page
 
     @query = params[:q]
     @sorting = (@query && @query[:s]) ? @query[:s] : ''

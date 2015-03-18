@@ -23,6 +23,11 @@ class Product < ActiveRecord::Base
     def next_id
       (Product.maximum(:id).to_i + 1).to_s.rjust(2, '0')
     end
+
+    def first_letters
+      query = 'SELECT DISTINCT(substr(title,1,1)) AS first_letter FROM product_translations'
+      Product.find_by_sql(query).map(&:first_letter).sort
+    end
   end
 
   def decrease_quantity(amount=1)

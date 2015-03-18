@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141028203225) do
+ActiveRecord::Schema.define(version: 20150318100011) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "recipient"
@@ -25,12 +25,18 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
+  add_index "addresses", ["status"], name: "index_addresses_on_status"
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
+
   create_table "carts", force: :cascade do |t|
     t.integer  "line_items_count", default: 0
     t.integer  "shipment_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "carts", ["shipment_id"], name: "index_carts_on_shipment_id"
+  add_index "carts", ["updated_at"], name: "index_carts_on_updated_at"
 
   create_table "categories", force: :cascade do |t|
     t.string   "title"
@@ -50,6 +56,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
 
   add_index "category_translations", ["category_id"], name: "index_category_translations_on_category_id"
   add_index "category_translations", ["locale"], name: "index_category_translations_on_locale"
+  add_index "category_translations", ["title"], name: "index_category_translations_on_title"
 
   create_table "line_items", force: :cascade do |t|
     t.integer  "product_id"
@@ -76,6 +83,12 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["billing_address_id"], name: "index_orders_on_billing_address_id"
+  add_index "orders", ["payment_id"], name: "index_orders_on_payment_id"
+  add_index "orders", ["shipment_id"], name: "index_orders_on_shipment_id"
+  add_index "orders", ["shipping_address_id"], name: "index_orders_on_shipping_address_id"
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
+
   create_table "payment_translations", force: :cascade do |t|
     t.integer  "payment_id", null: false
     t.string   "locale",     null: false
@@ -86,6 +99,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
 
   add_index "payment_translations", ["locale"], name: "index_payment_translations_on_locale"
   add_index "payment_translations", ["payment_id"], name: "index_payment_translations_on_payment_id"
+  add_index "payment_translations", ["title"], name: "index_payment_translations_on_title"
 
   create_table "payments", force: :cascade do |t|
     t.string "title"
@@ -102,6 +116,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
 
   add_index "product_translations", ["locale"], name: "index_product_translations_on_locale"
   add_index "product_translations", ["product_id"], name: "index_product_translations_on_product_id"
+  add_index "product_translations", ["title"], name: "index_product_translations_on_title"
 
   create_table "products", force: :cascade do |t|
     t.string   "title"
@@ -118,6 +133,9 @@ ActiveRecord::Schema.define(version: 20141028203225) do
     t.datetime "updated_at"
   end
 
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
+  add_index "products", ["vat_id"], name: "index_products_on_vat_id"
+
   create_table "shipment_translations", force: :cascade do |t|
     t.integer  "shipment_id", null: false
     t.string   "locale",      null: false
@@ -128,6 +146,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
 
   add_index "shipment_translations", ["locale"], name: "index_shipment_translations_on_locale"
   add_index "shipment_translations", ["shipment_id"], name: "index_shipment_translations_on_shipment_id"
+  add_index "shipment_translations", ["title"], name: "index_shipment_translations_on_title"
 
   create_table "shipments", force: :cascade do |t|
     t.string  "provider"
@@ -170,6 +189,7 @@ ActiveRecord::Schema.define(version: 20141028203225) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["invitation_token"], name: "index_users_on_invitation_token", unique: true
+  add_index "users", ["invited_by_id", "invited_by_type"], name: "index_users_on_invited_by_id_and_invited_by_type"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
   create_table "vats", force: :cascade do |t|

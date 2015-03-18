@@ -13,6 +13,50 @@ describe Product do
   it { should validate_numericality_of(:price).is_greater_than_or_equal_to(0.01) }
   it { should validate_uniqueness_of :title }
 
+  describe '.next_id' do
+    context 'empty database' do
+      it 'returns the next unused product ID' do
+        expect(described_class.next_id).to eq '01'
+      end
+    end
+
+    context 'not empty database' do
+      it 'returns the next unused product ID' do
+        FactoryGirl.create(:product)
+        expect(described_class.next_id).to eq '02'
+      end
+    end
+  end
+
+  describe '.first_letters' do
+    context 'English' do
+      it 'returns the first letters of product title translations' do
+        I18n.locale = :en
+        ['Aa', 'Bb', 'Yy', 'Zz'].each{|title| FactoryGirl.create(:product, title: title) }
+
+        expect(described_class.first_letters).to match_array(['A', 'B', 'Y', 'Z'])
+      end
+    end
+
+    context 'German' do
+      it 'returns the first letters of product title translations' do
+        I18n.locale = :de
+        ['Ää', 'Öö', 'Üü'].each{|title| FactoryGirl.create(:product, title: title) }
+
+        expect(described_class.first_letters).to match_array(['Ä', 'Ö', 'Ü'])
+      end
+    end
+
+    context 'Russian' do
+      it 'returns the first letters of product title translations' do
+        I18n.locale = :ru
+        ['Аа', 'Бб', 'Юю', 'Яя'].each{|title| FactoryGirl.create(:product, title: title) }
+
+        expect(described_class.first_letters).to match_array(['А', 'Б', 'Ю', 'Я'])
+      end
+    end
+  end
+
   describe '#decrease_quantity' do
     it 'decreases quantity by 1 per default' do
       expect{subject.decrease_quantity}.to change{subject.quantity}.by(-1)
