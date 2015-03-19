@@ -19,8 +19,12 @@
     - else
       #items= render 'items'
 
-    %p
-      .pull-left= link_to _('Continue shopping'), root_path, class: 'btn btn-default'
-      .pull-right= link_to _('Proceed to Checkout'), new_order_path, class: 'btn btn-success'
+    %hr
+
+    .row
+      .col-xs-12.col-sm-6.col-md-3.col
+        %p= link_to _('Continue shopping'), root_path, class: 'btn btn-default btn-block'
+      .col-xs-12.col-sm-6.col-md-3.col-md-offset-6
+        %p= link_to _('Proceed to Checkout'), new_order_path, class: 'btn btn-success btn-block'
 
 

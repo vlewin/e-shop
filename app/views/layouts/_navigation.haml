@@ -7,6 +7,9 @@
         %i.fa.fa-bars.fa-lg
       = icon_link_to 'E-Shop', root_path, { class: 'navbar-brand' }, 'fa-bitcoin'
 
+      .visible-xs.navbar-collapse.pull-right
+        = icon_link_to '', cart_path(current_cart), { class: 'btn btn-default navbar-btn' }, 'fa-shopping-cart'
+
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-right
         - unless [new_user_registration_url, new_user_session_url, new_user_password_url].include? request.url
