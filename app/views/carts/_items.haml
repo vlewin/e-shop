@@ -17,8 +17,10 @@
         %td= link_to item.product.title, store_product_path(item.product)
         %td= number_to_currency(item.price)
         %td
-          = form_for item, method: :patch, class: 'form-inline' do
-            = quantity_field_tag item.quantity
+          .visible-xs= item.quantity
+          .hidden-xs
+            = form_for item, method: :patch, class: 'form-inline' do
+              = quantity_field_tag item.quantity
         %td.hidden-xs= number_to_currency(item.subtotal)
         %td.hidden-xs= number_to_percentage(item.product.vat.rate, precision: 0)
         %td= number_to_currency(item.total)
@@ -39,12 +41,12 @@
       %td.no-line{ colspan: 2 }
         = number_to_currency(@current_cart.taxes)
     %tr
-      %td.thick-line.hidden-xs
-      %td.thick-line.hidden-xs
-      %td.thick-line.hidden-xs
-      %td.thick-line{ colspan: 3 }
+      %td.hidden-xs
+      %td.hidden-xs
+      %td.hidden-xs
+      %td{ colspan: 3 }
         %b= _('Total exc. shipping')
-      %td.thick-line{ colspan: 2 }
+      %td{ colspan: 2 }
         %b= number_to_currency(@current_cart.subtotal)
 
 

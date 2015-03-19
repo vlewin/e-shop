@@ -1,3 +1,5 @@
+@import "custom_bootstrap/mixins.less";
+
 // FIXME: absolute to fixed
 form {
   .progress-steps {
@@ -70,10 +72,19 @@ form {
         }
       }
 
-      li.step:nth-child(1) { left: 0; }
-      li.step:nth-child(2) { left: 30%; }
-      li.step:nth-child(3) { left: 60%; }
-      li.step:nth-child(4) { right: 0; }
+      @media (max-width: @screen-xs) {
+        li.step:nth-child(1) { left: 0; }
+        li.step:nth-child(2) { left: 28%; }
+        li.step:nth-child(3) { right: 28%; }
+        li.step:nth-child(4) { right: 0; }
+      }
+
+      @media (min-width: @screen-sm) {
+        li.step:nth-child(1) { left: 0; }
+        li.step:nth-child(2) { left: 30%; }
+        li.step:nth-child(3) { right: 30%; }
+        li.step:nth-child(4) { right: 0; }
+      }
     }
   }
 }

@@ -19,7 +19,7 @@ module ViewHelper
   end
 
   def quantity_field_tag(quantity, options = {})
-    content_tag(:div, nil, class: 'input-group input-group-sm quantity-helper') do
+    content_tag(:span, nil, class: 'input-group input-group-sm quantity-helper pull-left') do
       concat(
         content_tag(:span, nil, class: 'input-group-btn') do
           button_tag('-', type: 'button', class: 'btn btn-default quantity_minus')

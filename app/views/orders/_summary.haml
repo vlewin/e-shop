@@ -8,44 +8,91 @@
     %table.table.table-hover.table-responsive
       %thead
         %tr
-          %th= _('Image')
+          %th.hidden-xs{width: '5%'}= _('Image')
           %th= _('Title')
-          %th= _('Quantity')
           %th= _('Price')
-          %th= _('Subtotal')
-          %th= _('VAT')
+          %th= _('Quantity')
+          %th.hidden-xs= _('Subtotal')
+          %th.hidden-xs= _('VAT')
           %th= _('Total')
 
       %tbody
         - @current_cart.line_items.each do |item|
           %tr
-            %td= product_image_tag item.product
+            %td.hidden-xs= product_image_tag item.product
             %td= link_to item.product.title, store_product_path(item.product)
-            %td= item.quantity
             %td= number_to_currency(item.price)
-            %td= number_to_currency(item.subtotal)
-            %td= number_to_percentage(item.product.vat.rate, precision: 0)
+            %td= item.quantity
+            %td.hidden-xs= number_to_currency(item.subtotal)
+            %td.hidden-xs= number_to_percentage(item.product.vat.rate, precision: 0)
             %td= number_to_currency(item.total)
 
         %tr.text-muted
-          %td.thick-line{ colspan: 6 }= _('Subtotal')
-          %td.thick-line{ colspan: 2 }
+          %td.hidden-xs
+          %td.hidden-xs
+          %td.hidden-xs
+          %td{ colspan: 3 }= _('Subtotal')
+          %td{ colspan: 2 }
             = number_to_currency(@current_cart.subtotal)
         %tr.text-muted
-          %td{ colspan: 6 }= _('incl. VAT')
-          %td{ colspan: 2 }
+          %td.no-line.hidden-xs
+          %td.no-line.hidden-xs
+          %td.no-line.hidden-xs
+          %td.no-line{ colspan: 3 }= _('incl. VAT')
+          %td.no-line{ colspan: 2 }
             = number_to_currency(@current_cart.taxes)
-        %tr.text-muted
-          %td.thick-line{ colspan: 6 }= _('Shipment')
-          %td.thick-line{ colspan: 2 }
-            - shipment = @current_cart.shipment || Shipment.default
-            = number_to_currency(shipment.fee)
         %tr
-          %td{ colspan: 6 }
-            %b= _('Total')
+          %td.hidden-xs
+          %td.hidden-xs
+          %td.hidden-xs
+          %td{ colspan: 3 }
+            %b= _('Total exc. shipping')
           %td{ colspan: 2 }
-            %b= number_to_currency(@current_cart.total)
+            %b= number_to_currency(@current_cart.subtotal)
+
+    -# %table.table.table-hover.table-responsive
+    -#   %thead
+    -#     %tr
+    -#       %th.hidden-xs= _('Image')
+    -#       %th= _('Title')
+    -#       %th= _('Quantity')
+    -#       %th= _('Price')
+    -#       %th.hidden-xs= _('Subtotal')
+    -#       %th.hidden-xs= _('VAT')
+    -#       %th= _('Total')
+
+    -#   %tbody
+    -#     - @current_cart.line_items.each do |item|
+    -#       %tr
+    -#         %td.hidden-xs= product_image_tag item.product
+    -#         %td= link_to item.product.title, store_product_path(item.product)
+    -#         %td= item.quantity
+    -#         %td= number_to_currency(item.price)
+    -#         %td.hidden-xs= number_to_currency(item.subtotal)
+    -#         %td.hidden-xs= number_to_percentage(item.product.vat.rate, precision: 0)
+    -#         %td= number_to_currency(item.total)
+
+    -#     %tr.text-muted
+    -#       %td.thick-line{ colspan: 6 }= _('Subtotal')
+    -#       %td.thick-line{ colspan: 2 }
+    -#         = number_to_currency(@current_cart.subtotal)
+    -#     %tr.text-muted
+    -#       %td{ colspan: 6 }= _('incl. VAT')
+    -#       %td{ colspan: 2 }
+    -#         = number_to_currency(@current_cart.taxes)
+    -#     %tr.text-muted
+    -#       %td.thick-line{ colspan: 6 }= _('Shipment')
+    -#       %td.thick-line{ colspan: 2 }
+    -#         - shipment = @current_cart.shipment || Shipment.default
+    -#         = number_to_currency(shipment.fee)
+    -#     %tr
+    -#       %td{ colspan: 6 }
+    -#         %b= _('Total')
+    -#       %td{ colspan: 2 }
+    -#         %b= number_to_currency(@current_cart.total)
 
     %hr
     .pull-left= icon_link_to _('Back'), '#payment', { class: 'btn btn-back btn-default', data: { parent: '#accordion', toggle: 'collapse', step: 3 } }, 'fa-chevron-circle-left'
     .pull-right= submit_tag _('Place order'), class: 'btn btn-success'
+
+
