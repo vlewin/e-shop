@@ -3,9 +3,10 @@
 .panel.panel-default.product-details
   .panel-body
     .row
-      .col-xs-6.col-md-5.border-right
+      .col-xs-12.col-sm-5.col-md-5.border-right
         = product_image_tag(@product, :show)
-      .col-xs-6.col-md-7
+      .col-xs-12.col-sm-7.col-md-7
+        %hr.visible-xs
         .product
           %h3
             = @product.title
@@ -21,15 +22,10 @@
 
           %hr
 
-          %h3
+          %h4
             = _('Price:')
             = " #{number_to_currency(@product.price)}"
 
-          .row
-            = form_tag line_items_path(product_id: @product) do
-              .col-xs-4.col-md-2
-                = quantity_field_tag 1, { max: @product.available_quantity}
-              .col-xs-5.col-md-4
-                = button_tag _('Add to cart'), type: 'submit', class: 'btn btn-sm btn-success'
-
-
+          = form_tag line_items_path(product_id: @product) do
+            = quantity_field_tag 1, { max: @product.available_quantity}
+            = button_tag _('Add to cart'), type: 'submit', class: 'btn btn-sm btn-success margin-horizontal-5px'
