@@ -69,11 +69,18 @@
   }
 
   .tab-content {
-    padding: 30px 10px 10px 10px;
-    background-color: #fff;
+    @media (max-width: @screen-xs) {
+      padding: 15px 10px 10px 10px;
+      border-radius: 4px;
+    }
 
+    @media (min-width: @screen-sm) {
+      border-top: none;
+      padding: 20px 10px 0px 10px;
+    }
+
+    background-color: #fff;
     border: 1px solid #dddddd;
-    border-top: none;
 
     ul.list-group li:first-child {
       border-top:none;
