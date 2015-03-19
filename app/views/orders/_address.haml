@@ -3,12 +3,15 @@
     %span.round 1
     = _('Shipping and Billing address')
 
-    .pull-right
-      = link_to _('New address'), '#new_address', class: 'btn btn-sm btn-success', data: { target: '#address_modal', toggle: 'modal' }
-
 #address.panel-collapse.collapse.in
   .panel-body
-    %h5= _('Shipping address')
+    .row
+      .col-xs-6
+        %h5.bold= _('Shipping address')
+      .col-xs-6
+        .text-right
+          = link_to _('Add new address'), '#new_address', class: 'text-link', data: { target: '#address_modal', toggle: 'modal' }
+
     - if current_user.addresses.present?
       #shipping_addresses
         - current_user.addresses.each_with_index do |address, index|
@@ -16,9 +19,16 @@
             %label
               = form.radio_button :shipping_address_id, address.id, checked: (address == current_user.addresses.first)
               = address.full_address
+
       %hr
 
-      %h5= _('Billing address')
+      .row
+        .col-xs-6
+          %h5.bold= _('Billing address')
+        .col-xs-6
+          .text-right
+            = link_to _('Add new address'), '#new_address', class: 'text-link', data: { target: '#address_modal', toggle: 'modal' }
+
       .checkbox
         %label
           = check_box_tag :bill_to_shipping, true, checked: true
@@ -35,6 +45,9 @@
       %h5
         %i.fa.fa-info-circle
         = _('Your addresses list is empty, please add at least one address')
+      .row
+        .col-xs-12
+          = link_to _('Add new address'), '#new_address', class: 'text-link', data: { target: '#address_modal', toggle: 'modal' }
 
     %hr
     .pull-left
