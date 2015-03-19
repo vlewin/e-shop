@@ -9,6 +9,8 @@ class StoreController < ApplicationController
   skip_before_filter :authenticate_user!
 
   def index
+    @first_letters = Product.first_letters
+
     @search = Product.search(@query)
     @products = @search.result.page(@page).per(@limit)
     @categories ||= Category.all.order(:title)
