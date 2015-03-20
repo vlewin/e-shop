@@ -72,6 +72,13 @@ form {
         }
       }
 
+      @media (min-width: @screen-xs) {
+        li.step:nth-child(1) { left: 0; }
+        li.step:nth-child(2) { left: 28%; }
+        li.step:nth-child(3) { right: 28%; }
+        li.step:nth-child(4) { right: 0; }
+      }
+
       @media (max-width: @screen-xs) {
         li.step:nth-child(1) { left: 0; }
         li.step:nth-child(2) { left: 28%; }
