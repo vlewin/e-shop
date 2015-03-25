@@ -20,7 +20,7 @@
             %td= number_to_currency order.total
             %td.text-right{ width: '20%' }
               = icon_link_to '', order_path(order), { class: 'btn btn-default' }, 'fa-eye'
-              .hidden-xs= icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-default' } , 'fa-print'
+              = icon_link_to '', order_path(order, format: 'pdf'), { class: 'btn btn-default hidden-xs' } , 'fa-print'
 
 
   - else

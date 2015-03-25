@@ -105,26 +105,29 @@ msgstr "Завершено"
 msgid "Search"
 msgstr "Поиск"
 
+msgid "Order #%d"
+msgstr "Заказ #%d"
+
 msgid "Shipping and Billing address"
 msgstr "Адрес доставки и платежа"
-
-msgid "Shipping address"
-msgstr "Адрес доставки"
 
 msgid "Billing address"
 msgstr "Платежный адрес"
 
-msgid "Total"
-msgstr "Всего"
-
-msgid "Title"
-msgstr "Название"
+msgid "Shipping address"
+msgstr "Адрес доставки"
 
 msgid "Price"
 msgstr "Цена"
 
+msgid "Total"
+msgstr "Всего"
+
 msgid "Nr"
 msgstr ""
+
+msgid "Title"
+msgstr "Название"
 
 msgid "Quantity"
 msgstr "Количество"
@@ -137,6 +140,9 @@ msgstr "Доставка"
 
 msgid "incl. VAT"
 msgstr "вкл. НДС"
+
+msgid "Thank you for your business!"
+msgstr "Спасибо за Ваш заказ!"
 
 msgid "Name"
 msgstr "Имя"
@@ -258,11 +264,11 @@ msgstr "Количество товаров"
 msgid "Your Cart"
 msgstr "Ваша корзина"
 
-msgid "Are you sure?"
-msgstr "Вы уверены?"
-
 msgid "Empty cart"
 msgstr "Очистить корзину"
+
+msgid "Are you sure?"
+msgstr "Вы уверены?"
 
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
@@ -439,6 +445,9 @@ msgstr ""
 "Если вам нужно связаться с нами по вашим заказом, пожалуйста, отправьте нам пи"
 "сьмо. Вы также можете позвонить нам по телефону (0123) 45678"
 
+msgid "Add new address"
+msgstr "Добавить новый адрес"
+
 msgid "billing address is same as shipping address"
 msgstr "платежный адрес такой же, как адрес доставки"
 
@@ -465,9 +474,6 @@ msgstr "Kлиент"
 
 msgid "Payment"
 msgstr "Оплата"
-
-msgid "Order #%d"
-msgstr "Заказ #%d"
 
 msgid "Order date"
 msgstr "Дата заказа"

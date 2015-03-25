@@ -6,6 +6,16 @@ class OrderPdf < Prawn::Document
   def initialize(order, view)
     super(page_size: 'A4', page_layout: :portrait)
 
+    font_families.update(
+      'Verdana' => {
+        normal:   Rails.root.join('app/pdfs/fonts/Verdana.ttf'),
+        bold:     Rails.root.join('app/pdfs/fonts/Verdana-Bold.ttf'),
+        italic:   Rails.root.join('app/pdfs/fonts/Verdana-Italic.ttf')
+      }
+    )
+
+    font "Verdana", size: 10, :leading => 500
+
     @order = order
     @view = view
 
@@ -19,33 +29,33 @@ class OrderPdf < Prawn::Document
   end
 
   def price(num)
-    self.font(Rails.root.join('app/pdfs/fonts/LiberationSans-Regular.ttf'))
     @view.number_to_currency(num)
   end
 
   def header
     bounding_box([bounds.left, bounds.top], width: 250) do
-      text "E-Shop GmbH", size: 12, style: :bold
+      text "E-Shop GmbH", style: :bold, leading: 5
       text "Musterstrasse 1"
       text "3000 Musterstadt"
+      text "Tel: (0123) 456789"
     end
 
-    bounding_box([bounds.left + 380, bounds.top], width: 260) do
+    bounding_box([bounds.left + 360, bounds.top], width: 260) do
       if @order.billing_address == @order.shipping_address
-        text _('Shipping and Billing address'), style: :bold
+        text _('Shipping and Billing address'), style: :bold, :leading => 5
         text @order.billing_address.recipient
         text @order.billing_address.street
         text "#{@order.billing_address.zip_code} #{@order.billing_address.city}"
 
       else
-        text _('Billing address'), style: :bold
+        text _('Billing address'), style: :bold, :leading => 5
         text @order.billing_address.recipient
         text @order.billing_address.street
         text "#{@order.billing_address.zip_code} #{@order.billing_address.city}"
 
         move_down 20
 
-        text _('Shipping address'), style: :bold
+        text _('Shipping address'), style: :bold, :leading => 5
         text @order.shipping_address.recipient
         text @order.shipping_address.street
         text "#{@order.shipping_address.zip_code} #{@order.shipping_address.city}"
@@ -57,7 +67,7 @@ class OrderPdf < Prawn::Document
     move_down 15
 
     table thead do |t|
-      t.cell_style = { borders: [], size: 10 }
+      t.cell_style = { borders: [] }
       t.column_widths = { 0 => 20, 1 => 200, 2 => 100, 3 => 100, 4 => 100 }
       t.columns(0..4).align = :left
 
@@ -67,7 +77,7 @@ class OrderPdf < Prawn::Document
     end
 
     table tbody do |t|
-      t.cell_style = { borders: [], size: 10 }
+      t.cell_style = { borders: [] }
       t.column_widths = { 0 => 20, 1 => 200, 2 => 100, 3 => 100, 4 => 100 }
       t.row_colors = ["FAFAFA", "FFFFFF"]
       t.columns(0..4).align = :left
@@ -80,7 +90,7 @@ class OrderPdf < Prawn::Document
   end
 
   def thead
-    [[_('Nr'), _('Title'), _('Quantity'), _('Price'), _('Total')]]
+    [['#', _('Title'), _('Quantity'), _('Price'), _('Total')]]
   end
 
   def tbody
@@ -100,9 +110,9 @@ class OrderPdf < Prawn::Document
 
     table total_rows do
       self.cell_style = { borders: [], size: 10, align: :right }
-      self.column_widths = { 0 => 323, 1 => 100, 2 => 90 }
+      self.column_widths = { 0 => 260, 1 => 162, 2 => 100 }
       self.header = true
-      rows(3).borders = [:top, :bottom]
+      rows(3).borders = [:top]
     end
   end
 

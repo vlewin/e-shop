@@ -1,21 +1,21 @@
 source 'https://rubygems.org'
 ruby '2.1.3'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.2.1'
 
 # App localization
-gem 'rails-i18n', '~> 4.0.0'
+gem 'rails-i18n'
 gem 'devise-i18n'
 gem 'fast_gettext'
 gem 'gettext_i18n_rails'
 gem 'globalize'
 gem 'globalize-accessors'
-gem 'unicode'
 
 gem 'puma'
 gem 'uglifier'
 gem 'therubyracer'
 
+# UI gems
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'less-rails'
@@ -35,7 +35,7 @@ gem 'pundit'
 # Search, filtering and pagination
 gem 'ransack'
 gem 'kaminari'
-gem 'kaminari-bootstrap', '~> 3.0.1'
+gem 'kaminari-bootstrap'
 
 # Image uploads
 gem 'carrierwave'
@@ -57,20 +57,16 @@ end
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
-
+  gem 'lol_dba' # Finds missing indexes
   gem 'spring-commands-rspec', require: false
   gem 'heroku', require: false
-
   gem 'gettext', require: false
-  gem 'ruby_parser', require: false
-
-  gem 'lol_dba'
 end
 
 group :test do
   gem 'simplecov'
   gem 'codeclimate-test-reporter'
-  gem 'rspec-rails', '~> 3.1'
+  gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'shoulda-matchers', require: false
   gem 'launchy'
