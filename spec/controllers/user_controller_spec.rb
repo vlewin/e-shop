@@ -35,7 +35,7 @@ describe UsersController, type: :controller do
       it "denies access to users page and shows a flash message" do
         get :index
 
-        should set_the_flash.to('You are not authorized to perform this action')
+        should set_flash.to('You are not authorized to perform this action')
         expect(response).to redirect_to(root_path)
       end
     end
