@@ -23,7 +23,7 @@ FactoryGirl.define do
     end
 
     factory :user_with_addresses do
-      ignore do
+      transient do
         count 1
       end
 
@@ -34,4 +34,3 @@ FactoryGirl.define do
   end
 
 end
-
