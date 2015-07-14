@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.1.3'
 
-gem 'rails', '~> 4.2.1'
+gem 'rails'
 
 # App localization
 gem 'rails-i18n'
@@ -19,9 +19,7 @@ gem 'therubyracer'
 gem 'jquery-rails'
 gem 'haml-rails'
 gem 'less-rails'
-
 gem 'less-rails-bootstrap'
-gem 'font-awesome-less'
 
 gem 'gretel'
 gem 'prawn', require: false
