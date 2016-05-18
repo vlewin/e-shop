@@ -15,3 +15,5 @@ TODO:
 - Try [filterrific](https://github.com/jhund/filterrific)
 - Read [blog post about rails AJAX search, sorting and pagination](http://techbrownbags.wordpress.com/2014/01/17/rails-ajax-search-sort-paginate-with-ransack-kaminari/)
 - Integrate [Bootstrap Validator](https://github.com/1000hz/bootstrap-validator)
+
+TEST
